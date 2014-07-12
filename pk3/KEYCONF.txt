@@ -1,0 +1,5 @@
+clearplayerclasses
+addplayerclass MeleePlayer
+
+addslotdefault 1 Hwando
+//addslotdefault 2 "Hunting Pistol"

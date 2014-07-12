@@ -1,0 +1,41 @@
+statusbar normal, forcescaled
+{
+drawimage ammoicon1, 297, 180, center;
+drawnumber 3, BIGFONT, untranslated, ammo1, drawshadow, 287, 175;
+drawimage ammoicon2, 297, 193, center;
+drawnumber 3, BIGFONT, untranslated, ammo2, drawshadow, 287, 188;
+
+InInventory ContraLifeToken, 1 { drawimage "lifebard", 10, 186; }
+InInventory ContraLifeToken, 2 { drawimage "lifebard", 15, 186; }
+InInventory ContraLifeToken, 3 { drawimage "lifebard", 20, 186; }
+InInventory ContraLifeToken, 4 { drawimage "lifebard", 25, 186; }
+InInventory ContraLifeToken, 5 { drawimage "lifebard", 30, 186; }
+InInventory ContraLifeToken, 6 { drawimage "lifebard", 35, 186; }
+InInventory ContraLifeToken, 7 { drawimage "lifebard", 40, 186; }
+InInventory ContraLifeToken, 8 { drawimage "lifebard", 45, 186; }
+InInventory ContraLifeToken, 9 { drawimage "lifebard", 50, 186; }
+InInventory ContraLifeToken, 10 { drawimage "lifebard", 55, 186; }
+InInventory ContraLifeToken, 11 { drawimage "lifebard", 60, 186; }
+InInventory ContraLifeToken, 12 { drawimage "lifebard", 65, 186; }
+
+InInventory ContraArmorToken, 1 { drawimage "armrbard", 10, 178; }
+InInventory ContraArmorToken, 2 { drawimage "armrbard", 15, 178; }
+InInventory ContraArmorToken, 3 { drawimage "armrbard", 20, 178; }
+InInventory ContraArmorToken, 4 { drawimage "armrbard", 25, 178; }
+InInventory ContraArmorToken, 5 { drawimage "armrbard", 30, 178; }
+InInventory ContraArmorToken, 6 { drawimage "armrbard", 35, 178; }
+InInventory ContraArmorToken, 7 { drawimage "armrbard", 40, 178; }
+InInventory ContraArmorToken, 8 { drawimage "armrbard", 45, 178; }
+InInventory ContraArmorToken, 9 { drawimage "armrbard", 50, 178; }
+InInventory ContraArmorToken, 10 { drawimage "armrbard", 55, 178; }
+
+	gamemode cooperative, singleplayer
+    {
+		InInventory BlueCard, 1 { drawimage "STKEYS0", 310, 161; }
+		InInventory YellowCard, 1 { drawimage "STKEYS1", 310, 167; }
+		InInventory RedCard, 1 { drawimage "STKEYS2", 310, 173; }
+		InInventory BlueSkull, 1 { drawimage "STKEYS3", 310, 179; }
+		InInventory YellowSkull, 1 { drawimage "STKEYS4", 310, 185; }
+		InInventory RedSkull, 1 { drawimage "STKEYS5", 310, 191; }
+	}
+}

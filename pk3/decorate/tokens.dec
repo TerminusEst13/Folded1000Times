@@ -1,0 +1,20 @@
+actor KatanaSwung : Boolean {}
+actor SequenceFireActivated : Boolean {}
+actor BabyMarker : Boolean {}
+actor EasyMarker : Boolean {}
+actor NormalMarker : Boolean {}
+actor HardMarker : Boolean {}
+actor NightmareMarker : Boolean {}
+actor ImAlive : Boolean {}
+actor SlashingLikeAGaijin : Boolean {}
+actor DoubleTapBack : Boolean {}
+actor DoubleTapLeft : Boolean {}
+actor DoubleTapForward : Boolean {}
+actor DoubleTapRight : Boolean {}
+
+actor LungeCharge : Counter { Inventory.MaxAmount 99 }
+actor SwordAttack : Counter { Inventory.MaxAmount 99 }
+actor GhostStepCooldown : Counter { Inventory.MaxAmount 20 }
+actor RazorLife : Counter {}
+actor ContraLifeToken : Counter { Inventory.MaxAmount 12 }
+actor ContraArmorToken : Counter { Inventory.MaxAmount 10 }

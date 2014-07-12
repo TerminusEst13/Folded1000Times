@@ -1,0 +1,17 @@
+[enu default]
+
+QUITMSG = "In the fight between light and darkness,\nthe armor must be strong."; // Impellitteri - The Battle Rages On
+QUITMSG1 = "More severe things await."; // Sulphuris - More Severe Things Await
+QUITMSG2 = "Is this the end of all we know?"; // Symphony X - Fool's Paradise
+QUITMSG3 = "Strength in numbers? Hah!\nYour number is one."; // Black Sabbath - I (with some rephrasing)
+QUITMSG4 = "You can release yourself,\nbut the only way to go is down."; // Dio - The Last in Line
+QUITMSG5 = "And then there were none."; // Exodus - And Then There Were None
+QUITMSG6 = "I'm praying that you'll never know\nthat I'm facing hell."; // Ozzy Osbourne - Facing Hell
+QUITMSG7 = "Can you see the light as you pass?"; // Testament - D.N.R.
+QUITMSG8 = "The shell may wither,\nbut the fire burns eternal."; // Shadows Fall - The Light that Blinds
+QUITMSG9 = "If there's a new way,\nI'll be the first in line."; // Megadeth - Peace Sells
+QUITMSG10 = "Nothing left to kill."; // Metallica - Blackened
+QUITMSG11 = "This is the resolution?\nThe end of all progress."; // Lamb of God - Ruin
+QUITMSG12 = "Nobody's chains are holding you."; // W.A.S.P. - I Wanna Be Someone
+QUITMSG13 = "Death is my savior tonight."; // Annihilated - Denied
+QUITMSG14 = "So all shall understand, that if I fall...\nI will live again."; // Manowar - The Dawn of Battle

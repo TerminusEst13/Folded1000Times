@@ -1,0 +1,20 @@
+SPECIAL THANKS TO:
+=========
+- Special thanks to GMOTA Guy and Shiga95, who respectively made GMOTA and Swan
+  Fox, both of which were big inspirations for this.
+
+
+GRAPHICS:
+=========
+- Creation's End (Titlescreen: A New Beginning)
+
+CODE:
+=========
+- Ijon Tichy (The double-tap code (taken from Parkmore), the shockwave from the
+  spin attack, the trail for the bullets)
+- Doom667Shogun (For the blood/dismembering effects)
+
+MUSIC:
+=========
+- Cryptomnesia (Titlescreen: Live Like a God, Die Like a God)
+- Prometheus (Intermission: Lovers)

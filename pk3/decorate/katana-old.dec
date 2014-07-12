@@ -1,0 +1,839 @@
+ACTOR Katana : Weapon
+{
+    Weapon.KickBack 50
+    Weapon.SlotNumber 1
+    Weapon.AmmoUse 0
+    Weapon.AmmoUse2 0
+    Weapon.AmmoGive 0
+    Weapon.AmmoType ""
+    Weapon.AmmoType2 ""
+    Obituary "%k tore %o apart."
+    Decal BulletChip
+    +Weapon.AXEBLOOD
+    +NOALERT
+    +NOAUTOFIRE
+    +NOEXTREMEDEATH
+    +ALT_AMMO_OPTIONAL
+    States
+    {
+    Spawn:
+        KATN Z -1
+        stop
+    Ready:
+        SWRD A 1 A_WeaponReady
+        Loop
+    Deselect:
+        SWRD A 1 A_Lower
+        Loop
+    Select: 
+        TNT1 AAAAAAA 0 A_Raise
+        TNT1 AA 1 A_Raise
+        WAC1 C 0 A_PlayWeaponSound("sword/draw")
+        TNT1 A 1 A_Raise
+        KTUP ABCDE 1 A_Raise
+        KTUP FG 1
+        TNT1 A 12
+        SWRC FECA 1
+        Goto Ready
+    Select2: 
+        TNT1 A 0 A_Raise
+        SWRD AA 1 A_Raise
+        Loop
+    Fire:
+        TNT1 A 0 A_JumpIfInventory("SequenceFireActivated",1,"FireSequence1")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 13, "Fire13")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 12, "Fire12")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 11, "Fire11")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 10, "Fire10")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 9, "Fire9")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 8, "Fire8")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 7, "Fire7")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 6, "Fire6")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 5, "Fire5")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 4, "Fire4")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 3, "Fire3")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 2, "Fire2")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 1, "Fire1")
+        SWRC A 1
+        goto Fire1
+    FireConsider:
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 13, "Fire13")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 12, "Fire12")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 11, "Fire11")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 10, "Fire10")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 9, "Fire9")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 8, "Fire8")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 7, "Fire7")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 6, "Fire6")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 5, "Fire5")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 4, "Fire4")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 3, "Fire3")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 2, "Fire2")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack", 1, "Fire1")
+    Fire1: //Attack Chain 1, Part 1: Right-side slash
+        SWR1 A 1
+        TNT1 A 1
+        SWR1 B 2
+        TNT1 A 0 A_Recoil(-1)
+        SWR1 C 2
+        TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")
+        SWR1 D 2
+        SWR1 E 1
+        SWR1 F 1
+        SWR1 G 1 A_CustomPunch(72,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackMedium",0,0,0,2)
+        SWR1 HI 1
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 A 0 A_GiveInventory("SwordAttack", 2) //Attack Chain 1, Part 2
+      
+        SWR1 J 1 A_WeaponReady
+        TNT1 A 1 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+      
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 A 0 A_GiveInventory("SwordAttack", 12) //Attack Chain 3, Part 2
+      
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+      
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 AAA 1 A_Lower
+        TNT1 AAAA 0 A_Lower
+        Goto Select2
+    Fire2: //Attack Chain 1, Part 2: Left-side slash
+        SWR2 AB 2
+      TNT1 A 0 A_Recoil(-1)
+      TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")
+      SWR2 CD 2
+      SWR2 E 1
+      SWR2 F 1 A_CustomPunch(72,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackMedium",0,0,0,2)
+      SWR2 GH 1
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 3) //Attack Chain 1, Part 3
+      
+      SWR2 I 1 A_WeaponReady
+      TNT1 A 1 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 6) //Attack Chain 2, Part 3
+      
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAA 1 A_Lower
+      TNT1 AAAA 0 A_Lower
+      Goto Select2
+    Fire3: //Attack Chain 1, Part 3: Right-to-left swipe
+      SWR3 A 2
+      TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")
+      SWR3 B 2
+      SWR3 C 2
+      SWR3 D 1
+      SWR3 E 1 A_CustomPunch(72,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackMedium",0,0,0,2)
+      SWR3 F 1
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 4) //Attack Chain 1, Part 4
+      
+      SWR3 G 1 A_WeaponReady
+      TNT1 A 1 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAA 1 A_Lower
+      TNT1 AAAA 0 A_Lower
+      Goto Select2
+    Fire4: //Attack Chain 1, Part 4: Left-to-right swipe
+      SWR4 A 2
+      TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")
+      SWR4 B 2
+      SWR4 C 2
+      SWR4 D 1
+      SWR4 E 1 A_CustomPunch(72,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackMedium",0,0,0,2)
+      SWR4 F 1
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 5) //Attack Chain 1, Part 5
+      
+      SWR4 G 1 A_WeaponReady
+      TNT1 A 1 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAA 1 A_Lower
+      TNT1 AAAA 0 A_Lower
+      Goto Select2
+    Fire5: //Attack Chain 1, Part 6: Powerful cleave
+      SWR5 A 4
+      TNT1 A 0 A_PlaySoundEX("sword/swingheavy","SoundSlot7")
+      SWR5 B 3
+      TNT1 A 0 A_Recoil(-5)
+      SWR5 CD 2
+      SWR5 E 1
+      SWR5 F 1 A_CustomPunch(148,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackHeavy",0,0,0,2)
+      SWR5 GHIJ 1
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAAAAAA 1 A_Lower
+      Goto Select2
+    Fire6: //Attack Chain 2, Part 3: Shield bash
+      TNT1 A 0 A_Recoil(-1)
+      SHLB AB 2
+      TNT1 A 0 A_PlaySoundEX("sword/shieldswing","SoundSlot7")
+      SHLB C 1
+      SHLB D 1 //A_FireCustomMissile("ShieldAttack",0,0,0,2)
+      SHLB EF 1
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 7) //Attack Chain 2, Part 4
+      
+      SHLB G 1 A_WeaponReady
+      TNT1 A 1 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAA 1 A_Lower
+      TNT1 AAAA 0 A_Lower
+      Goto Select2
+    Fire7: //Attack Chain 2, Part 4: Quick stab 1
+      TNT1 A 0 A_PlaySoundEX("sword/swingsmall","SoundSlot7")
+      SWR8 ABC 1
+      SWR8 D 1 A_CustomPunch(32,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackLight",0,0,0,2)
+      SWR8 CB 1
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 8) //Attack Chain 2, Part 5
+      
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAA 1 A_Lower
+      TNT1 AAAA 0 A_Lower
+      Goto Select2
+    Fire8: //Attack Chain 2, Part 5: Quick stab 2
+      TNT1 A 0 A_PlaySoundEX("sword/swingsmall","SoundSlot7")
+      SWR9 ABC 1
+      SWR9 D 1 A_CustomPunch(32,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackLight",0,0,0,2)
+      SWR9 CB 1
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 9) //Attack Chain 2, Part 6
+      
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAA 1 A_Lower
+      TNT1 AAAA 0 A_Lower
+      Goto Select2
+    Fire9: //Attack Chain 2, Part 6: Quick stab 3
+      TNT1 A 0 A_PlaySoundEX("sword/swingsmall","SoundSlot7")
+      SW10 ABC 1
+      SW10 D 1 A_CustomPunch(32,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackLight",0,0,0,2)
+      SW10 CB 1
+      TNT1 A 1 A_TakeInventory("SwordAttack", 99)
+      TNT1 A 0 A_GiveInventory("SwordAttack", 10) //Attack Chain 2, Part 7
+      
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      TNT1 A 2 A_WeaponReady
+      
+      TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+      TNT1 AAA 1 A_Lower
+      TNT1 AAAA 0 A_Lower
+      Goto Select2
+    Fire10: //Attack Chain 2, Part 7: Quick stab 4
+        TNT1 A 0 A_PlaySoundEX("sword/swingsmall","SoundSlot7")
+        SW11 ABC 1
+        SW11 D 1 A_CustomPunch(32,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackLight",0,0,0,2)
+        SW11 CB 1
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 A 0 A_GiveInventory("SwordAttack", 11) //Attack Chain 2, Part 8
+      
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
+      
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 AAA 1 A_Lower
+        TNT1 AAAA 0 A_Lower
+        Goto Select2
+    Fire11://Attack Chain 2, Part 8: Finishing Slash
+        SWR5 AB 2
+        TNT1 A 0 A_Recoil(-2)
+        TNT1 A 0 A_PlaySoundEX("sword/swingheavy","SoundSlot7")
+        SWR5 CD 2
+        SWR5 E 1
+        SWR5 F 1 A_CustomPunch(72,1,0,"SwordPuff",96)//A_FireCustomMissile("SwordAttackHeavy",0,0,0,2)
+        SWR5 GHI 1
+        TNT1 A 1
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 AAAAAAA 1 A_Lower
+        Goto Select2
+    Fire12: //Attack Chain 3, Part 2: Impale
+        TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")
+        TNT1 A 0 A_Recoil(-10)
+        SWR6 ABCD 1
+        SWR6 E 2 A_CustomPunch(72,1,0,"SwordPuff",96)//A_Saw ("","sword/hit",random(6,6.5),"SwordPuff")
+        SWR6 F 2 A_CustomPunch(72,1,0,"SwordPuff",96)//A_Saw ("","sword/hit",random(6,6.5),"SwordPuff")
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 A 0 A_GiveInventory("SwordAttack", 13) //Attack Chain 3, Part 3
+        SWR6 FFFFFFFFFF 2 A_WeaponReady
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        SWR6 EDCBA 2
+        TNT1 AAAAAAA 1 A_Lower
+        Goto Select2
+    Fire13: //Attack Chain 3, Part 3: Rip
+        TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")
+        SWR7 A 1
+        TNT1 A 0 A_Recoil(-5)
+        SWR7 ABCD 1 A_CustomPunch(42,1,0,"SwordPuff",96)//A_Saw ("","sword/hit",random(4,4.5),"SwordPuff")
+        TNT1 A 1 A_CustomPunch(42,1,0,"SwordPuff",96)//A_Saw ("","sword/hit",random(4,4.5),"SwordPuff")
+        TNT1 A 0 A_TakeInventory("SwordAttack", 99)
+        TNT1 AAAAAAA 1 A_Lower
+        Goto Select2
+
+    FireSequence1:
+        SWRC A 1
+        SWR1 A 1
+        TNT1 A 1
+    Hold:
+        TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")//A_PlayWeaponSound("wp/KaTaNa1")
+        TNT1 A 0 A_JumpIfInventory("KatanaSwung",1,"FireSequence2")
+        KATN F 1
+        KATN G 1
+        TNT1 A 0 A_CustomPunch(30,1,0,"SwordPuff",96)
+        KATN H 1
+        TNT1 A 0 A_CustomPunch(30,1,0,"SwordPuff",96)
+        KATN I 1
+        TNT1 A 0 A_FireCustomMissile("KaTaNaGuard",0,0) 
+        KATN J 1 A_GiveInventory("KatanaSwung",1)
+        TNT1 A 0 A_FireCustomMissile("KaTaNaGuard",0,0) 
+        TNT1 A 1
+    Fired:
+        TNT1 A 10
+        TNT1 A 0 A_ReFire
+        TNT1 A 1 A_TakeInventory("KatanaSwung",1)
+        TNT1 A 0 A_ClearRefire
+        Goto Select2
+    FireSequence2:
+        KATN A 1
+        KATN B 1
+        TNT1 A 0 A_CustomPunch(30,1,0,"SwordPuff",96)
+        KATN C 1
+        TNT1 A 0 A_CustomPunch(30,1,0,"SwordPuff",96)
+        KATN D 1
+        TNT1 A 0 A_FireCustomMissile("KaTaNaGuard",0,0) 
+        KATN E 1 A_TakeInventory("KatanaSwung",1)
+        TNT1 A 0 A_FireCustomMissile("KaTaNaGuard",0,0) 
+        TNT1 A 1
+        goto Fired
+
+
+
+
+
+
+
+
+
+
+
+    AltFire:
+        SWRC A 1
+        TNT1 A 0 A_Refire
+        goto Charge0
+    AltHold:
+        TNT1 A 0 A_JumpIfInventory("LungeCharge",99,"Charge5")
+        TNT1 A 0 A_JumpIfInventory("LungeCharge",65,"Charge4")
+        TNT1 A 0 A_JumpIfInventory("LungeCharge",35,"Charge3")
+        TNT1 A 0 A_JumpIfInventory("LungeCharge",20,"Charge2")
+        TNT1 A 0 A_JumpIfInventory("LungeCharge",10,"Charge1")
+
+        SWRC A 1
+      
+        TNT1 A 0 A_GiveInventory("LungeCharge",1)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_TakeInventory("LungeCharge", 99)
+        TNT1 A 0 A_ClearRefire
+        SWRC B 1
+        //goto FireConsider
+    Charge0:
+        SWRC CEF 1 A_TakeInventory("SwordAttack",99)
+        TNT1 A 1 A_ClearRefire
+        TNT1 A 0 A_PlaySound("sword/swingsmall",7,1,0)
+        KATN K 1
+        //TNT1 A 0 A_PlayWeaponSound("sword/swingsmall")
+        KATN KLM 1
+        KATN N 1 A_CustomPunch(32,1,0,"SwordPuff",96)//A_FireCustomMissile("RazorWind1",0,0,0,0,0,0)
+        KATN O 1
+        TNT1 A 0 A_TakeInventory("LungeCharge", 99)
+        KATN P 1
+        TNT1 A 15 A_ClearRefire
+        TNT1 AAA 1 A_Lower
+        TNT1 AAAA 0 A_Lower
+        Goto Select2
+
+    Charge1:
+        SWRC B 1
+        TNT1 A 0 A_GiveInventory("LungeCharge",1)
+        TNT1 A 0 A_Refire
+        SWRC CEF 1 A_TakeInventory("SwordAttack",99)
+        TNT1 A 1 A_ClearRefire
+        TNT1 A 0 A_PlaySound("sword/swingsmall",7,1,0)
+        KATN K 1
+        TNT1 A 0 A_PlayWeaponSound("sword/beam1")
+        KATN KLM 1
+        TNT1 A 0 A_CustomPunch(32,1,0,"SwordPuff",96)
+        KATN N 1 A_FireCustomMissile("RazorWind1",0,0,0,0,0,0)
+        KATN O 1
+        TNT1 A 0 A_TakeInventory("LungeCharge", 99)
+        KATN P 1
+        TNT1 A 15 A_ClearRefire
+        TNT1 AAA 1 A_Lower
+        TNT1 AAAA 0 A_Lower
+        Goto Select2
+    Charge2:
+        SWRC C 1
+        TNT1 A 0 A_GiveInventory("LungeCharge",1)
+        TNT1 A 0 A_Refire
+        SWRC DEF 1 A_TakeInventory("SwordAttack",99)
+        TNT1 A 0 A_PlaySound("sword/swingsmall",7,1,0)
+        KATN K 1
+        TNT1 A 0 A_PlayWeaponSound("sword/beam1")
+        KATN KLM 1
+        TNT1 A 0 A_CustomPunch(32,1,0,"SwordPuff",96)
+        KATN N 1 A_FireCustomMissile("RazorWind2",0,0,0,0,0,0)
+        KATN O 1
+        TNT1 A 0 A_TakeInventory("LungeCharge", 99)
+        KATN P 1
+        TNT1 A 15 A_ClearRefire
+        TNT1 AAA 1 A_Lower
+        TNT1 AAAA 0 A_Lower
+        Goto Select2
+    Charge3:
+        SWRC D 1
+        TNT1 A 0 A_GiveInventory("LungeCharge",1)
+        TNT1 A 0 A_Refire
+        SWRC EF 1 A_TakeInventory("SwordAttack",99)
+        TNT1 A 1 A_ClearRefire
+        TNT1 A 0 A_PlaySound("sword/swingsmall",7,1,0)
+        KATN K 1
+        TNT1 A 0 A_PlayWeaponSound("sword/beam2")
+        KATN KLM 1
+        TNT1 A 0 A_CustomPunch(32,1,0,"SwordPuff",96)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2",2,0,0,0,0,0)
+        KATN N 1 A_FireCustomMissile("RazorWind2",-2,0,0,0,0,0)
+        KATN O 1
+        TNT1 A 0 A_TakeInventory("LungeCharge", 99)
+        KATN P 1
+        TNT1 A 15 A_ClearRefire
+        TNT1 AAA 1 A_Lower
+        TNT1 AAAA 0 A_Lower
+        Goto Select2
+    Charge4:
+        SWRC E 1
+        TNT1 A 0 A_GiveInventory("LungeCharge",1)
+        TNT1 A 0 A_Refire
+        SWRC F 1 A_TakeInventory("SwordAttack",99)
+        TNT1 A 1 A_ClearRefire
+        TNT1 A 0 A_PlaySound("sword/swingsmall",7,1,0)
+        KATN K 1
+        TNT1 A 0 A_PlayWeaponSound("sword/beam2")
+        KATN KLM 1
+        TNT1 A 0 A_CustomPunch(32,1,0,"SwordPuff",96)
+        TNT1 A 0 A_FireCustomMissile("RazorWind3",0,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind3",3,0,0,0,0,0)
+        KATN N 1 A_FireCustomMissile("RazorWind3",-3,0,0,0,0,0)
+        KATN O 1
+        TNT1 A 0 A_TakeInventory("LungeCharge", 99)
+        KATN P 1
+        TNT1 A 15 A_ClearRefire
+        TNT1 AAAAAAA 1 A_Lower
+        Goto Select2
+    Charge5:
+        SWRC F 1
+        TNT1 A 0 A_Refire
+        TNT1 A 1 A_TakeInventory("SwordAttack",99)
+        TNT1 A 1 A_ClearRefire
+        TNT1 A 0 A_PlaySound("sword/swingsmall",7,1,0)
+        KATN K 1
+        TNT1 A 0 A_PlayWeaponSound("sword/beam3")
+        KATN KLM 1
+        TNT1 A 0 A_CustomPunch(32,1,0,"SwordPuff",96)
+        TNT1 A 0 A_FireCustomMissile("RazorWind3",0,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind3",2,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind3",4,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind3",-2,0,0,0,0,0)
+        KATN N 1 A_FireCustomMissile("RazorWind3",-4,0,0,0,0,0)
+        KATN O 1
+        TNT1 A 0 A_TakeInventory("LungeCharge", 99)
+        KATN P 1
+        TNT1 A 15 A_ClearRefire
+        TNT1 AAAAAAA 1 A_Lower
+        Goto Select2
+    }
+}
+
+ACTOR SwordPuff : BulletPuff
+{
+    +PUFFONACTORS
+    +NOEXTREMEDEATH
+    DamageType "kubiuti"
+    RenderStyle Add
+    VSpeed 0.4
+    Scale 0.5
+    States
+    {
+    Crash:
+        TNT1 A 0
+        TNT1 A 0 A_PlayWeaponSound("sword/wallpuff")
+        FHFX S 1
+        TNT1 AAA 0 A_SpawnItemEx("SwordPuff2",random(-100,100)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-100,400)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("SlugShard",random(-100,100)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(-100,800)/100.00,random(-180,180),160)
+    Spawn:
+        FHFX S 3
+        FHFX TUVW 3
+        Stop
+    Melee:
+        TNT1 A 1
+        TNT1 A 0 A_PlaySound("sword/hit")
+        stop
+    }
+}
+
+ACTOR SwordPuff2
+{
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    +NOINTERACTION
+    +RANDOMIZE
+    Scale 0.15
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        FHFX STUVW 1
+        Stop
+    }
+}
+
+ACTOR SlugShard
+{
+    Radius 3
+    Height 6
+    Scale 0.2
+    Mass 0
+    BounceFactor 0.55
+    WallBounceFactor 1.1
+    BounceCount 6
+    +MISSILE
+    +DOOMBOUNCE
+    +FLOORCLIP
+    +DONTSPLASH
+    +NOTELEPORT
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        SHRD NLMNLMNLMNLMNLMNLMLMNLMNLMNLMNLMNLMNLM 2
+        goto Death
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Death1","Death2","Death3")
+        SHRD N 1
+        loop
+    Death1:
+        SHRD NNNNNNNNNN 1 A_FadeOut(0.1)
+        TNT1 A 0
+        Stop
+    Death2:
+        SHRD MMMMMMMMMM 1 A_FadeOut(0.1)
+        TNT1 A 0
+        Stop
+    Death3:
+        SHRD LLLLLLLLLL 1 A_FadeOut(0.1)
+        TNT1 A 0
+        Stop
+    }
+}
+
+
+actor KatanaGuard
+{
+    Radius 16
+    Height 16
+    Health 2
+    Speed 8
+    Damage 0
+    PROJECTILE
+    +SHOOTABLE
+    +NOBLOOD
+    +DONTSPLASH
+    +NOCLIP
+    -NOBLOCKMAP
+    DeathSound "sword/shieldpuff"
+    States
+    {
+    Spawn:
+        TNT1 AA 2
+        Stop
+    Death:
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor RazorWind1
+{
+    Height 6
+    Radius 12
+    Scale 0.45
+    Renderstyle Add
+    BounceFactor 1.0
+    WallBounceFactor 1.0
+    Alpha 0.9
+    Speed 70
+    Damage (40)
+    Projectile
+    +NOGRAVITY
+    +RIPPER
+    +PIERCEARMOR
+    +NOEXTREMEDEATH
+    +FOILINVUL
+    +DONTREFLECT
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_JumpIfInventory("RazorLife",5,"Death")
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", 0,               0,              2)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail",     momx /-35.0,     -momy /-35.0, 2+    momz /-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (3 *momx)/-35.0, -(3 *momy)/-35.0, 2+(3 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (5 *momx)/-35.0, -(5 *momy)/-35.0, 2+(5 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (7 *momx)/-35.0, -(7 *momy)/-35.0, 2+(7 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (9 *momx)/-35.0, -(9 *momy)/-35.0, 2+(9 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (11*momx)/-35.0, -(11*momy)/-35.0, 2+(11*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (13*momx)/-35.0, -(13*momy)/-35.0, 2+(13*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (15*momx)/-35.0, -(15*momy)/-35.0, 2+(15*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (17*momx)/-35.0, -(17*momy)/-35.0, 2+(17*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (18*momx)/-35.0, -(18*momy)/-35.0, 2+(18*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (19*momx)/-35.0, -(19*momy)/-35.0, 2+(19*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (20*momx)/-35.0, -(20*momy)/-35.0, 2+(20*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (21*momx)/-35.0, -(21*momy)/-35.0, 2+(21*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (22*momx)/-35.0, -(22*momy)/-35.0, 2+(22*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (23*momx)/-35.0, -(23*momy)/-35.0, 2+(23*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (24*momx)/-35.0, -(24*momy)/-35.0, 2+(24*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (25*momx)/-35.0, -(25*momy)/-35.0, 2+(25*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (26*momx)/-35.0, -(26*momy)/-35.0, 2+(26*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (27*momx)/-35.0, -(27*momy)/-35.0, 2+(27*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (28*momx)/-35.0, -(28*momy)/-35.0, 2+(28*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (29*momx)/-35.0, -(29*momy)/-35.0, 2+(29*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (30*momx)/-35.0, -(30*momy)/-35.0, 2+(30*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (31*momx)/-35.0, -(31*momy)/-35.0, 2+(31*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (32*momx)/-35.0, -(32*momy)/-35.0, 2+(32*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (33*momx)/-35.0, -(33*momy)/-35.0, 2+(33*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (34*momx)/-35.0, -(34*momy)/-35.0, 2+(34*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 1 A_GiveInventory("RazorLife",1)
+        loop
+    Death:
+        WIND A 2
+        Stop
+    }
+}
+
+actor RazorWind2 : RazorWind1
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_JumpIfInventory("RazorLife",10,"Death")
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", 0,               0,              2)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail",     momx /-35.0,     -momy /-35.0, 2+    momz /-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (3 *momx)/-35.0, -(3 *momy)/-35.0, 2+(3 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (5 *momx)/-35.0, -(5 *momy)/-35.0, 2+(5 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (7 *momx)/-35.0, -(7 *momy)/-35.0, 2+(7 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (9 *momx)/-35.0, -(9 *momy)/-35.0, 2+(9 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (11*momx)/-35.0, -(11*momy)/-35.0, 2+(11*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (13*momx)/-35.0, -(13*momy)/-35.0, 2+(13*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (15*momx)/-35.0, -(15*momy)/-35.0, 2+(15*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (17*momx)/-35.0, -(17*momy)/-35.0, 2+(17*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (18*momx)/-35.0, -(18*momy)/-35.0, 2+(18*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (19*momx)/-35.0, -(19*momy)/-35.0, 2+(19*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (20*momx)/-35.0, -(20*momy)/-35.0, 2+(20*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (21*momx)/-35.0, -(21*momy)/-35.0, 2+(21*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (22*momx)/-35.0, -(22*momy)/-35.0, 2+(22*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (23*momx)/-35.0, -(23*momy)/-35.0, 2+(23*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (24*momx)/-35.0, -(24*momy)/-35.0, 2+(24*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (25*momx)/-35.0, -(25*momy)/-35.0, 2+(25*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (26*momx)/-35.0, -(26*momy)/-35.0, 2+(26*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (27*momx)/-35.0, -(27*momy)/-35.0, 2+(27*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (28*momx)/-35.0, -(28*momy)/-35.0, 2+(28*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (29*momx)/-35.0, -(29*momy)/-35.0, 2+(29*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (30*momx)/-35.0, -(30*momy)/-35.0, 2+(30*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (31*momx)/-35.0, -(31*momy)/-35.0, 2+(31*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (32*momx)/-35.0, -(32*momy)/-35.0, 2+(32*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (33*momx)/-35.0, -(33*momy)/-35.0, 2+(33*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (34*momx)/-35.0, -(34*momy)/-35.0, 2+(34*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 1 A_GiveInventory("RazorLife",1)
+        loop
+    }
+}
+
+actor RazorWind3 : RazorWind1
+{
+    +HEXENBOUNCE
+    Damage (60)
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_JumpIfInventory("RazorLife",15,"Death")
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", 0,               0,              2)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail",     momx /-35.0,     -momy /-35.0, 2+    momz /-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (3 *momx)/-35.0, -(3 *momy)/-35.0, 2+(3 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (5 *momx)/-35.0, -(5 *momy)/-35.0, 2+(5 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (7 *momx)/-35.0, -(7 *momy)/-35.0, 2+(7 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (9 *momx)/-35.0, -(9 *momy)/-35.0, 2+(9 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (11*momx)/-35.0, -(11*momy)/-35.0, 2+(11*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (13*momx)/-35.0, -(13*momy)/-35.0, 2+(13*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (15*momx)/-35.0, -(15*momy)/-35.0, 2+(15*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (17*momx)/-35.0, -(17*momy)/-35.0, 2+(17*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (18*momx)/-35.0, -(18*momy)/-35.0, 2+(18*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (19*momx)/-35.0, -(19*momy)/-35.0, 2+(19*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (20*momx)/-35.0, -(20*momy)/-35.0, 2+(20*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (21*momx)/-35.0, -(21*momy)/-35.0, 2+(21*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (22*momx)/-35.0, -(22*momy)/-35.0, 2+(22*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (23*momx)/-35.0, -(23*momy)/-35.0, 2+(23*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (24*momx)/-35.0, -(24*momy)/-35.0, 2+(24*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (25*momx)/-35.0, -(25*momy)/-35.0, 2+(25*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (26*momx)/-35.0, -(26*momy)/-35.0, 2+(26*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (27*momx)/-35.0, -(27*momy)/-35.0, 2+(27*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (28*momx)/-35.0, -(28*momy)/-35.0, 2+(28*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (29*momx)/-35.0, -(29*momy)/-35.0, 2+(29*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (30*momx)/-35.0, -(30*momy)/-35.0, 2+(30*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (31*momx)/-35.0, -(31*momy)/-35.0, 2+(31*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (32*momx)/-35.0, -(32*momy)/-35.0, 2+(32*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (33*momx)/-35.0, -(33*momy)/-35.0, 2+(33*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (34*momx)/-35.0, -(34*momy)/-35.0, 2+(34*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (35*momx)/-35.0, -(35*momy)/-35.0, 2+(35*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 1 A_GiveInventory("RazorLife",1)
+        loop
+    }
+}
+
+actor RazorWindTrail
+{
+    RenderStyle Add
+    Alpha 0.95
+    Scale 0.75
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    States
+    {
+    Spawn:
+        WIND A 1 A_Fadeout(0.1)
+        loop
+    }
+}

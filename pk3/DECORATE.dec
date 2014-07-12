@@ -1,0 +1,32 @@
+actor Boolean: Inventory
+{
+    Inventory.MaxAmount 1
+    +UNDROPPABLE
+    -INVBAR
+}
+
+actor Counter: Inventory
+{
+    Inventory.MaxAmount 0x7FFFFFFF
+    +UNDROPPABLE
+    -INVBAR
+}
+
+#include "decorate/tokens.dec"
+#include "decorate/hwando.dec"
+//#include "decorate/pistol.dec"
+#include "decorate/player.dec"
+#include "decorate/items.dec"
+
+#include "decorate/bloodeffects.dec"
+
+#include "decorate/enemies/zombies.dec"
+#include "decorate/enemies/imp.dec"
+#include "decorate/enemies/demons.dec"
+#include "decorate/enemies/hellnobles.dec"
+#include "decorate/enemies/cacodemon.dec"
+#include "decorate/enemies/bosses.dec"
+#include "decorate/enemies/arachnotron.dec"
+#include "decorate/enemies/fatso.dec"
+#include "decorate/enemies/thebestguy.dec"
+#include "decorate/enemies/archvile.dec"

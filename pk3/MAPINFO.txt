@@ -1,0 +1,50 @@
+skill baby
+{
+	ACSReturn = 0
+    EasyBossBrain
+	SpawnFilter = Baby
+	Name = "Return to Serenity" // Testament
+}
+
+skill easy
+{
+	ACSReturn = 1
+	EasyBossBrain
+	SpawnFilter = Easy
+	Name = "Never Say Die" // Black Sabbath
+}
+
+skill normal
+{
+	ACSReturn = 2
+	SpawnFilter = Normal
+	Name = "Point of No Return" // Lords of Decadence
+	//DefaultSkill
+}
+
+skill hard
+{
+	ACSReturn = 3
+	SpawnFilter = Hard
+	Name = "Thrash 'Till Death" // Destruction
+}
+
+skill nightmare
+{
+	ACSReturn = 4
+	FastMonsters
+	SpawnFilter = Nightmare
+	Name = "Set the World Afire" // Megadeth
+	MustConfirm = "Pray to whatever God you worship."
+	Aggressiveness = 0.55
+}
+
+skill ohgodhelpme
+{
+	ACSReturn = 5
+	FastMonsters
+	DisableCheats
+	SpawnFilter = Nightmare
+	Name = "   "
+	MustConfirm = "Your prayers are in vain."
+}

@@ -1,0 +1,98 @@
+// System
+
+menu/activate             MENUUP   // Bring up the main menu. - Sound taken from World of Warcraft
+menu/clear                MENUDOWN // Close main menu. - ORIGINAL SOUND PLEASE DON'T STEAL :(
+menu/choose               MENUYES  // Choose an item on the menu. - Sound taken from Painkiller
+menu/backup               MENUNO   // Go back to previous menu. - Sound taken from Painkiller
+menu/cursor               MENUSCRL // Move cursor up/down. - Sound taken from Zelda: Twilight Princess
+menu/change               MENUCHNG // Changing options around. - Sound taken from World of Warcraft
+menu/prompt               MENUQUIT // Are you sure you want to quit? - Sound taken from Painkiller
+menu/dismiss              MENUDSMS // Dismiss a prompt. - Sound taken from Painkiller
+menu/invalid              MENUFAIL // Menu not available. - Sound taken from World of Warcraft
+
+misc/secret               SCRTGET // Taken from Quake III Arena
+
+// Player
+
+armor/hit                 ARMRHIT
+ghost/step                NINJDODG
+
+// Hwando
+
+sword/bootswing           MELESWNG //Taken from qubodup on FreeSound.org
+sword/bootpuff            MELEWALL
+sword/boothit             MELEEHIT //Taken from thebondman on FreeSound.org
+sword/draw                SWORDUP // Taken from...somewhere. I can't recall, sorry!
+sword/sheath              SWORDDWN // Taken from the Oblivion Combat Sound Replacement
+sword/swingheavy          SWINGHEV // Taken from the Oblivion Combat Sound Replacement
+sword/shieldbash          SHLDHIT // Taken from the Oblivion Combat Sound Replacement
+sword/shieldswing         SHLDSWNG // Taken from Kohan 2; Kings of War
+sword/shieldlift          SHIELDUP // Taken from the Oblivion Combat Sound Replacement
+sword/shieldlower         SHIELDDW // Taken from the Oblivion Combat Sound Replacement
+
+sword/spinattack          SPINATCK
+
+
+$random sword/shielddefense { block1 block2 block3 } // Taken from the Oblivion Combat Sound Replacement
+block1                    SHLDBLK1
+block2                    SHLDBLK2
+block3                    SHLDBLK3
+$random sword/shieldpuff { shieldpuff1 shieldpuff2 shieldpuff3 } // Taken from Painkiller
+shieldpuff1               SHLDWAL1
+shieldpuff2               SHLDWAL2
+shieldpuff3               SHLDWAL3
+$random sword/swingmed { medswing1 medswing2 medswing3 } // Taken from the Oblivion Combat Sound Replacement
+medswing1                 SWINGMD1
+medswing2                 SWINGMD2
+medswing3                 SWINGMD3
+$random sword/swingsmall { smswing1 smswing2 smswing3 } // Taken from the Oblivion Combat Sound Replacement
+smswing1                  SWINGSM1
+smswing2                  SWINGSM2
+smswing3                  SWINGSM3
+$random sword/wallpuff { swordpuff1 swordpuff2 swordpuff3 swordpuff4 } // Taken from World of Warcraft
+swordpuff1                SWRDPUF1
+swordpuff2                SWRDPUF2
+swordpuff3                SWRDPUF3
+swordpuff4                SWRDPUF4
+$random sword/hit { swordhit1 swordhit2 swordhit3 }
+swordhit1                 SORDHIT1
+swordhit2                 SORDHIT2
+swordhit3                 SORDHIT3
+
+
+sword/beam1               SRDBEEM1
+sword/beam2               SRDBEEM2
+sword/beam3               SRDBEEM3
+
+// Pistol sounds
+
+pistol/fire               HPISFIRE
+
+
+// Enemy sounds
+trooper/fire              ENSHOT1 
+sergeant/fire             ENSHOT2 // Taken from Mega Man X4
+chngnner/fire             ENSHOT3 // Ditto
+
+enemy/bisected            ENBISECT // Taken from some Neo-Geo fighter
+
+
+
+
+
+
+// Taken from Radys that I haven't changed yet
+
+S_Cut			NGORE4
+S_Cutdead		NGORE5
+
+S_Blodf1		NBLODF1
+
+S_Blodd1		NBLODd1
+S_Blodd2		NBLODd2
+S_Blodd3		NBLODd3
+$random	S_Blodd	{ S_Blodd1 S_Blodd2 S_Blodd3 }
+$limit S_Blodd	1
+
+
+wp/kickh1		NSWA014
