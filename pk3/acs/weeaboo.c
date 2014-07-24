@@ -17,6 +17,7 @@ script WEEB_RESPAWN respawn
     if (GameSkill () == 2) { GiveInventory("ContraLifeToken",6); }
     if (GameSkill () == 3) { GiveInventory("ContraLifeToken",4); }
     if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
+    
     ACS_ExecuteAlways(268,0,0,0);
     //ACS_ExecuteAlways(269,0,0,0);
 }
@@ -25,63 +26,46 @@ script WEEB_DECORATE (int burrshet)
 {
     switch (burrshet)
     {
-    case 0:
+    case WEEB_DEC_DAMAGE:
+        int delaytotal = 104;
+        int delaytimer = delaytotal;
+        int delaytime = 10;
+        int delaycount = 0;
+        
         if (CheckInventory("ContraArmorToken") >= 1)
-        {
             TakeInventory("ContraArmorToken",1);
-            SetActorProperty(0,APROP_INVULNERABLE,1);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(10);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(10);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(9);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(9);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(8);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(8);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(7);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(7);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(6);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(6);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(5);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(5);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(4);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(4);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(3);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(3);
-            SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
-            SetActorProperty(0,APROP_INVULNERABLE,0);
-        }
-        else
+        else if (CheckInventory("ContraLifeToken") >= 1)
+            TakeInventory("ContraLifeToken",1);
+        
+        SetActorProperty(0,APROP_INVULNERABLE,1);
+        
+        while (delaytimer > 0)
         {
-            if (CheckInventory("ContraLifeToken") >= 1)
+            if (delaytimer % 2)
+                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy);
+            else
+                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add);
+            
+            delaytimer--;
+            delaycount++;
+            if (delaycount > 1)
             {
-                TakeInventory("ContraLifeToken",1);
-                SetActorProperty(0,APROP_INVULNERABLE,1);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(10);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(10);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(9);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(9);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(8);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(8);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(7);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(7);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(6);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(6);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(5);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(5);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(4);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(4);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Fuzzy); delay(3);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Add); delay(3);
-                SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
-                SetActorProperty(0,APROP_INVULNERABLE,0);
+                delaytime--;
+                delaycount = 0;
             }
+            
+            Delay(delaytime);
         }
+        
+        SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
+        SetActorProperty(0,APROP_INVULNERABLE,0);
     break;
 
-    case 1:
+    case WEEB_DEC_FREEZE:
         SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
         break;
 
-    case 2:
+    case WEEB_DEC_UNFREEZE:
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
         break;
     }
