@@ -22,6 +22,11 @@ actor BlankPuff
     }
 }
 
+// Constants which are paired with their ACS counterparts
+const int WEEB_DEC_DAMAGE = 0;
+const int WEEB_DEC_FREEZE = 1;
+const int WEEB_DEC_UNFREEZE = 2;
+
 #include "decorate/tokens.dec"
 #include "decorate/items.dec"
 #include "decorate/ammo.dec"
