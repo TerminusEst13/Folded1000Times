@@ -1,8 +1,11 @@
 ACTOR WeeabooDemon : Demon replaces Demon
 {
     Speed 15
+    Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
+    DamageFactor "GuardMove", 0.0
+    DamageFactor "ArchvileFire", 0.0
     States
     {
     Melee:
@@ -16,121 +19,140 @@ ACTOR WeeabooDemon : Demon replaces Demon
 
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         goto Super::Pain
     Death.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
-        goto "death.kubiuti"
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        goto death.kubiuti+1
 
-Death2:
-XDD2 A 5 A_NoBlocking
-XDD2 B 5 A_Scream
-XDD2 CD 5
-XDD2 E -1
-    Stop
-Death3:
-XDD2 F 5 A_NoBlocking
-XDD2 G 5 A_Scream
-XDD2 HI 5
-XDD2 J -1
-    Stop
-xdeath:
-SARG O 5    A_Jump(96,"xdeath2")
-SARG P 0    A_SpawnItem("SARXKubiuted",0,40,0)
-SARG PPPPP 0 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-SARG PPPPP 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-SARG P 0 A_XScream
-SARG PPPPP 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
-SARG PPPPP 1 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-SARG Q 0 A_NoBlocking
-SARG QQQQQ 1 A_SpawnDebris("BloodShower2")
-SARG RSTU 5
-SARG V -1
-    wait
-xdeath2:
-XDD5 A 5
-XDD5 AAAAA 0 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-XDD5 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-XDD5 B 0 A_XScream
-XDD5 BBBBB 1 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-XDD5 C 0 A_NoBlocking
-XDD5 CCCCC 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
-XDD5 CCCCC 1 A_SpawnDebris("BloodShower2")
-XDD5 DEFG 5
-XDD5 I -1
-    wait    
-    
-death.hunter:    
-XDD1 A 0    A_PlaySound("S_Cutdead")
-    goto death.kubiuti+2
-death.kubiuti:    
-XDC1 A 0    A_Jump(96,"Death.Bloody","Death.Hunter")
-XDD1 A 0    A_PlaySound("enemy/bisected")
-XDD1 A 0    A_Jump(96,"kubiuti2")
-XDD1 A 0    A_Jump(96,"kubiuti3")
-XDD1 A 10    A_SpawnItem("SARXKubiuted",0,40,0)
-XDD1 B 7    A_NoBlocking
-XDD1 CDE 7
-XDD1 F -1
-    wait
-kubiuti2:
-XDD1 G 1    A_SpawnDebris("BloodShower2",0)
-XDD1 GGGGGG 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))
-XDD1 GGGGGGGGG 1    A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
-XDD1 H 0    A_NoBlocking
-XDD1 HHHIIIJJJ 2    A_SpawnDebris("BloodSplashGus1",0)
-XDD1 J -1
-    wait    
-kubiuti3:
-XDD1 M 10    A_SpawnItem("SARXKubiuted",0,40,0)
-XDD1 N 7    A_NoBlocking
-XDD1 OPQ 7
-XDD1 R -1
-    wait
-    
-death.Bloody:
-XDD3 A 0    A_Scream
-XDD3 A 0    A_Jump(96,"XDeath")
-XDD3 A 0    A_Jump(96,"Death.rocket")
-XDD3 A 0    A_Jump(96,"Bloody2")
-XDD3 A 0    A_Jump(96,"Bloody3")
-XDD3 A 0    A_Jump(96,"Bloody4")
-XDD3 AAA 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD3 B 0    A_Fall
-XDD3 BBB 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD3 CCC 2    A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
-XDD3 DDDDDD 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-XDD3 DDDEEE 2    A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
-XDD3 FFFFF 2    A_SpawnDebris("BloodShower2",0)
-XDD3 F -1
-    wait
-Bloody2:
-XDD3 GGG 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD3 H 0    A_Fall
-XDD3 HHH 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD3 III 2    A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
-XDD3 JJJJJJ 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-XDD3 JJJKKK 2    A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
-XDD3 LLLLL 2    A_SpawnDebris("BloodShower2",0)
-XDD3 L -1
-    wait
-Bloody3:
-XDD4 AAA 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD4 B 0    A_Fall
-XDD4 BBB 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD4 CCCCCC 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-XDD4 CCCDDDEEE 2    A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
-XDD4 FFFFF 2    A_SpawnDebris("BloodShower2",0)
-XDD4 F -1
-    wait
-Bloody4:
-XDD4 GGG 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD4 H 0    A_Fall
-XDD4 HHH 2    A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
-XDD4 IIIIII 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
-XDD4 IIIJJJKKK 2    A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
-XDD4 LLLLL 2    A_SpawnDebris("BloodShower2",0)
-XDD4 L -1
-    wait
+    Death2:
+        XDD2 A 5 A_NoBlocking
+        XDD2 B 5 A_Scream
+        XDD2 CD 5
+        XDD2 E -1
+        Stop
+    Death3:
+        XDD2 F 5 A_NoBlocking
+        XDD2 G 5 A_Scream
+        XDD2 HI 5
+        XDD2 J -1
+        Stop
+    XDeath:
+        SARG O 5 A_Jump(96,"xdeath2")
+        SARG P 0 A_SpawnItem("SARXKubiuted",0,40,0)
+        SARG PPPPP 0 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        SARG PPPPP 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        SARG P 0 A_XScream
+        SARG PPPPP 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
+        SARG PPPPP 1 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        SARG Q 0 A_NoBlocking
+        SARG QQQQQ 1 A_SpawnDebris("BloodShower2")
+        SARG RSTU 5
+        SARG V -1
+        wait
+    xdeath2:
+        XDD5 A 5
+        XDD5 AAAAA 0 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        XDD5 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        XDD5 B 0 A_XScream
+        XDD5 BBBBB 1 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        XDD5 C 0 A_NoBlocking
+        XDD5 CCCCC 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
+        XDD5 CCCCC 1 A_SpawnDebris("BloodShower2")
+        XDD5 DEFG 5
+        XDD5 I -1
+        wait    
+
+    death.hunter:    
+        XDD1 A 0 A_PlaySound("S_Cutdead")
+        goto death.kubiuti+3
+    death.kubiuti:
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
+        XDC1 A 0 A_Jump(128,"Death.Bloody","Death.Hunter","Death4")
+        XDD1 A 0 A_PlaySound("enemy/bisected")
+        XDD1 A 0 A_Jump(96,"kubiuti2")
+        XDD1 A 0 A_Jump(96,"kubiuti3")
+        XDD1 A 10 A_SpawnItem("SARXKubiuted",0,40,0)
+        XDD1 B 7 A_NoBlocking
+        XDD1 CDE 7
+        XDD1 F -1
+        wait
+    kubiuti2:
+        XDD1 G 1 A_SpawnDebris("BloodShower2",0)
+        XDD1 GGGGGG 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))
+        XDD1 GGGGGGGGG 1 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
+        XDD1 H 0 A_NoBlocking
+        XDD1 HHHIIIJJJ 2 A_SpawnDebris("BloodSplashGus1",0)
+        XDD1 J -1
+        wait    
+    kubiuti3:
+        XDD1 M 10 A_SpawnItem("SARXKubiuted",0,40,0)
+        XDD1 N 7 A_NoBlocking
+        XDD1 OPQ 7
+        XDD1 R -1
+        wait
+
+    death.Bloody:
+        XDD3 A 0 A_Scream
+        XDD3 A 0 A_Jump(96,"XDeath")
+        XDD3 A 0 A_Jump(96,"Death.rocket")
+        XDD3 A 0 A_Jump(96,"Bloody2")
+        XDD3 A 0 A_Jump(96,"Bloody3")
+        XDD3 A 0 A_Jump(96,"Bloody4")
+        XDD3 AAA 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD3 B 0 A_Fall
+        XDD3 BBB 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD3 CCC 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
+        XDD3 DDDDDD 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        XDD3 DDDEEE 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
+        XDD3 FFFFF 2 A_SpawnDebris("BloodShower2",0)
+        XDD3 F -1
+        wait
+    Bloody2:
+        XDD3 GGG 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD3 H 0 A_Fall
+        XDD3 HHH 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD3 III 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
+        XDD3 JJJJJJ 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        XDD3 JJJKKK 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
+        XDD3 LLLLL 2 A_SpawnDebris("BloodShower2",0)
+        XDD3 L -1
+        wait
+    Bloody3:
+        XDD4 AAA 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD4 B 0 A_Fall
+        XDD4 BBB 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD4 CCCCCC 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        XDD4 CCCDDDEEE 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
+        XDD4 FFFFF 2 A_SpawnDebris("BloodShower2",0)
+        XDD4 F -1
+        wait
+    Bloody4:
+        XDD4 GGG 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD4 H 0 A_Fall
+        XDD4 HHH 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
+        XDD4 IIIIII 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        XDD4 IIIJJJKKK 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
+        XDD4 LLLLL 2 A_SpawnDebris("BloodShower2",0)
+        XDD4 L -1
+        wait
+
+    Death4:
+        PXD1 A 3
+        TNT1 AAAAA 0 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        TNT1 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_XScream
+        PXD1 BBBBB 1 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_NoBlocking
+        TNT1 AAAAA 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
+        PXD1 CCCCC 1 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
+        TNT1 AAAAA 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
+        PXD1 DE 4
+        PXD1 F 3
+        PXD1 G -1
+        stop
     }
 }
 
@@ -139,42 +161,42 @@ actor WeeabooSpectre : WeeabooDemon replaces Spectre {}
 
 actor SARXKubiuted : POSXKubiuted
 {
-states
-{
-Spawn:
-XDD1 S 0
-XDD1 S 0 ThrustThing (random(0,255),random(1,4))
-XDD1 S 0 ThrustThingZ(0,random(15,40),0,0)
-XDD1 SSS 1 A_SpawnItem("BloodShower3",0)
-XDD1 S 0 A_CheckFloor("Spawned")
-XDD1 TTT 1 A_SpawnItem("BloodShower3",0)
-XDD1 T 0 A_CheckFloor("Spawned")
-XDD1 UUU 1 A_SpawnItem("BloodShower3",0)
-XDD1 U 0 A_CheckFloor("Spawned")
-XDD1 VVV 1 A_SpawnItem("BloodShower3",0)
-XDD1 V 0 A_CheckFloor("Spawned")
-    goto Spawn+3
-Spawned:
-XDD1 S 0 A_SpawnItem("BloodShower4",0,0,0,1)
-XDD1 S 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
-XDD1 S 0 A_Jump(200,3)
-XDD1 S 1 A_PlaySound("S_Blodd")
-XDD1 S 0 ThrustThingZ(0,random(10,20),0,0)
-    goto Spawn+3
-XDD1 S 0 A_PlaySound("S_Blodd")
-XDD1 S 0 A_ChangeFlag("PUSHABLE",0)
-Spawned2:
-XDD1 W 0 A_Jump(160,2)
-XDD1 W 1 A_chase
-    goto Spawned2+1
-XDD1 X 1 A_chase
-    goto Spawned2+2
-Melee:
-XDD1 X 1 A_FaceTarget
-XDD1 X 0 damageThing(1)
-XDD1 X 0 A_ChangeFlag("PUSHABLE",1)
-XDD1 X 0 ThrustThingZ(0,random(15,40),0,0)
-XDD1 X 0 A_Recoil(2+random(0,8))
-    goto Spawn+3
-}
+    States
+    {
+    Spawn:
+        XDD1 S 0
+        XDD1 S 0 ThrustThing (random(0,255),random(1,4))
+        XDD1 S 0 ThrustThingZ(0,random(15,40),0,0)
+        XDD1 SSS 1 A_SpawnItem("BloodShower3",0)
+        XDD1 S 0 A_CheckFloor("Spawned")
+        XDD1 TTT 1 A_SpawnItem("BloodShower3",0)
+        XDD1 T 0 A_CheckFloor("Spawned")
+        XDD1 UUU 1 A_SpawnItem("BloodShower3",0)
+        XDD1 U 0 A_CheckFloor("Spawned")
+        XDD1 VVV 1 A_SpawnItem("BloodShower3",0)
+        XDD1 V 0 A_CheckFloor("Spawned")
+        goto Spawn+3
+    Spawned:
+        XDD1 S 0 A_SpawnItem("BloodShower4",0,0,0,1)
+        XDD1 S 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
+        XDD1 S 0 A_Jump(200,3)
+        XDD1 S 1 A_PlaySound("S_Blodd")
+        XDD1 S 0 ThrustThingZ(0,random(10,20),0,0)
+        goto Spawn+3
+        XDD1 S 0 A_PlaySound("S_Blodd")
+        XDD1 S 0 A_ChangeFlag("PUSHABLE",0)
+    Spawned2:
+        XDD1 W 0 A_Jump(160,2)
+        XDD1 W 1 A_chase
+        goto Spawned2+1
+        XDD1 X 1 A_chase
+        goto Spawned2+2
+    Melee:
+        XDD1 X 1 A_FaceTarget
+        XDD1 X 0 damageThing(1)
+        XDD1 X 0 A_ChangeFlag("PUSHABLE",1)
+        XDD1 X 0 ThrustThingZ(0,random(15,40),0,0)
+        XDD1 X 0 A_Recoil(2+random(0,8))
+        goto Spawn+3
+    }
 }

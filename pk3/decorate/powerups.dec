@@ -1,0 +1,47 @@
+actor ComboDamageLevel1 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "Normal", 1.0
+    DamageFactor "Kubiuti", 1.5
+    DamageFactor "KubiSpinAttack", 1.5
+}
+
+actor ComboDamageLevel2 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "Normal", 1.0
+    DamageFactor "Kubiuti", 1.425 // 2.1375
+    DamageFactor "KubiSpinAttack", 1.425
+}
+
+actor ComboDamageLevel3 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "Normal", 1.0
+    DamageFactor "Kubiuti", 1.35 // 2.885625
+    DamageFactor "KubiSpinAttack", 1.35
+}
+
+actor ComboDamageLevel4 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "Normal", 1.0
+    DamageFactor "Kubiuti", 1.275 // 3.679171875
+    DamageFactor "KubiSpinAttack", 1.275
+}
+
+actor ComboDamageLevel5 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "Normal", 1.0
+    DamageFactor "Kubiuti", 1.2 // 4.41500625
+    DamageFactor "KubiSpinAttack", 1.2
+}
+
+actor ComboDamageLevel6 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "Normal", 1.0
+    DamageFactor "Kubiuti", 1.15 // 5.0772571875
+    DamageFactor "KubiSpinAttack", 1.15
+}

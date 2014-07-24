@@ -10,7 +10,10 @@ menu/prompt               MENUQUIT // Are you sure you want to quit? - Sound tak
 menu/dismiss              MENUDSMS // Dismiss a prompt. - Sound taken from Painkiller
 menu/invalid              MENUFAIL // Menu not available. - Sound taken from World of Warcraft
 
-misc/secret               SCRTGET // Taken from Quake III Arena
+misc/secret               DSSECRET // Taken from Quake III Arena
+weapon/summon             LITNGHIT // Taken from Marathon
+
+$rolloff weapon/summon 800 5200
 
 // Player
 
@@ -31,6 +34,9 @@ sword/shieldlift          SHIELDUP // Taken from the Oblivion Combat Sound Repla
 sword/shieldlower         SHIELDDW // Taken from the Oblivion Combat Sound Replacement
 
 sword/spinattack          SPINATCK
+sword/beam3               SRDBEEM3
+sword/block               SRDBLOCK
+sword/reflect             SRDRFLCT
 
 
 $random sword/shielddefense { block1 block2 block3 } // Taken from the Oblivion Combat Sound Replacement
@@ -62,12 +68,41 @@ swordhit3                 SORDHIT3
 
 sword/beam1               SRDBEEM1
 sword/beam2               SRDBEEM2
-sword/beam3               SRDBEEM3
 
 // Pistol sounds
 
 pistol/fire               HPISFIRE
+pistol/dry                HPISDRY // Taken from Killing Floor
 
+// Shotgun sounds
+
+shotgun/fire              SHOTFIRE
+shotgun/reload            SHOTCOCK
+shotgun/dry               SHOTDRY // Taken from Killing Floor
+
+// Uzi sounds
+
+uzi/fire                  UZIFIRE
+uzi/dry                   UZIDRY // Taken from Halo: Reach
+
+// Carronade sounds
+
+carronade/fire            GLFOONT // All three of these sounds have unknown sources.
+carronade/turn            GLTURN // Sorry, I just kind of lost track of where they came from.
+carronade/dry             GLEMPT // If you know, please let me know!
+
+$random grenades/explode { grenades/explode1 grenades/explode2 grenades/explode3 grenades/explode4 grenades/explode5 } // Taken from Doom 3
+grenades/explode1         GLXBOM1
+grenades/explode2         GLXBOM2
+grenades/explode3         GLXBOM3
+grenades/explode4         GLXBOM4
+grenades/explode5         GLXBOM5
+
+$rolloff grenades/explode1 400 1600
+$rolloff grenades/explode2 400 1600
+$rolloff grenades/explode3 400 1600
+$rolloff grenades/explode4 400 1600
+$rolloff grenades/explode5 400 1600
 
 // Enemy sounds
 trooper/fire              ENSHOT1 

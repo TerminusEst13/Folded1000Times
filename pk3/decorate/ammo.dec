@@ -1,0 +1,116 @@
+actor NothingReplacer1 : BlankPuff replaces Shotgun {}
+actor NothingReplacer2 : BlankPuff replaces Chainsaw {}
+actor NothingReplacer3 : BlankPuff replaces RocketLauncher {}
+actor NothingReplacer4 : BlankPuff replaces BFG9000 {}
+
+actor WeebClip : Ammo replaces Clip
+{
+    Inventory.PickupMessage "Picked up a \cq>clip" // "Picked up a clip."
+    Inventory.Amount 5
+    Inventory.MaxAmount 100
+    Ammo.BackpackAmount 5
+    Ammo.BackpackMaxAmount 200
+    Inventory.Icon "CLIPA0"
+    States
+    {
+    Spawn:
+        CLIP A -1
+        Stop
+    }
+}
+
+actor WeebClipBox : WeebClip replaces ClipBox
+{
+    Inventory.PickupMessage "$GOTCLIPBOX" // "Picked up a box of bullets."
+    Inventory.Amount 20
+    States
+    {
+    Spawn:
+        AMMO A -1
+        Stop
+    }
+}
+
+actor WeebShell : Ammo replaces Shell
+{
+    Inventory.PickupMessage "$GOTSHELLS" // "Picked up 4 shotgun shells."
+    Inventory.Amount 4
+    Inventory.MaxAmount 20
+    Ammo.BackpackAmount 4
+    Ammo.BackpackMaxAmount 60
+    Inventory.Icon "SHELA0"
+    States
+    {
+    Spawn:
+        SHEL A -1
+        Stop
+    }
+}
+
+actor WeebShellBox : WeebShell replaces ShellBox
+{
+    Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
+    Inventory.Amount 10
+    States
+    {
+    Spawn:
+        SBOX A -1
+        Stop
+    }
+}
+
+actor WeebRocket : Ammo replaces RocketAmmo
+{
+    Inventory.PickupMessage "$GOTROCKET" // "Picked up a rocket."
+    Inventory.Amount 2
+    Inventory.MaxAmount 30
+    Ammo.BackpackAmount 2
+    Ammo.BackpackMaxAmount 80
+    Inventory.Icon "ROCKA0"
+    States
+    {
+    Spawn:
+        ROCK A -1
+        Stop
+    }
+}
+
+actor WeebRocketBox : WeebRocket replaces RocketBox
+{
+    Inventory.PickupMessage "$GOTROCKBOX" // "Picked up a box of rockets."
+    Inventory.Amount 5
+    States
+    {
+    Spawn:
+        BROK A -1
+        Stop
+    }
+}
+
+actor WeebCell : Ammo replaces Cell
+{
+    Inventory.PickupMessage "$GOTCELL" // "Picked up an energy cell."
+    Inventory.Amount 20
+    Inventory.MaxAmount 200
+    Ammo.BackpackAmount 20
+    Ammo.BackpackMaxAmount 400
+    Inventory.Icon "CELLA0"
+    States
+    {
+    Spawn:
+        CELL A -1
+        Stop
+    }
+}
+
+actor WeebCellPack : WeebCell replaces CellPack
+{
+    Inventory.PickupMessage "$GOTCELLBOX" // "Picked up an energy cell pack."
+    Inventory.Amount 50
+    States
+    {
+    Spawn:
+        CELP A -1
+        Stop
+    }
+}

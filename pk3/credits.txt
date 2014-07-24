@@ -2,19 +2,27 @@ SPECIAL THANKS TO:
 =========
 - Special thanks to GMOTA Guy and Shiga95, who respectively made GMOTA and Swan
   Fox, both of which were big inspirations for this.
+- Special thanks to 3D Realms and MAIET Entertainment, respectively for Shadow
+  Warrior and GunZ, both of which were also big inspirations for this.
 
 
 GRAPHICS:
 =========
 - Creation's End (Titlescreen: A New Beginning)
+- Paul/NMN (The pistol)
+- Captain J/Cortlong50 (The Uzi)
+- Duke Nukem 64 (The Uzi's pickup/ammo graphics)
+- Aeons of Death (For the Carronade explosion graphics)
 
 CODE:
 =========
 - Ijon Tichy (The double-tap code (taken from Parkmore), the shockwave from the
   spin attack, the trail for the bullets)
 - Doom667Shogun (For the blood/dismembering effects)
+- Vaecrius (For the redone Archvile (taken from Make It Snappy))
 
 MUSIC:
 =========
 - Cryptomnesia (Titlescreen: Live Like a God, Die Like a God)
 - Prometheus (Intermission: Lovers)
+- Finntroll (Read Me: Haterop)

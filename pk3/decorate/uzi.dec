@@ -1,0 +1,57 @@
+actor "Hwando + Uzi" : HwandoBase //replaces PlasmaRifle
+{
+    -CHEATNOTWEAPON
+    Inventory.PickupMessage "You got the uzi!"
+    Weapon.AmmoUse2 1
+    Weapon.AmmoGive2 50
+    Weapon.AmmoType2 "WeebCell"
+    States
+    {
+    Spawn:
+        SUZI P -1
+        Stop
+    AltFire:
+        TNT1 A 0 A_JumpIfInventory("KatanaSwung",1,"AltFirePrepare")
+        TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
+        SWRC ACE 1
+        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
+    AltFireGun:
+    AltHold:
+        SUZI A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        //TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_Light1
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_PlayWeaponSound("uzi/fire")
+        TNT1 A 0 A_JumpIfInventory("UziLikeAGuzzi",1,"AltNonComboBullet")
+        TNT1 A 0 A_FireCustomMissile("UziBullet1",random(-550,550)/100.00,1,0,1,0,random(-450,450)/100.00)
+        TNT1 A 0 A_GiveInventory("UziLikeAGuzzi",1)
+        goto AltFinish
+    AltNonComboBullet:
+        TNT1 A 0 A_FireCustomMissile("UziBullet2",random(-550,550)/100.00,1,0,1,0,random(-450,450)/100.00)
+        TNT1 A 0 A_TakeInventory("UziLikeAGuzzi",1)
+        goto AltFinish
+    AltFinish:
+        TNT1 A 0 A_Recoil(0.1)
+        TNT1 A 0 A_SetAngle(angle+(random(-350,350)/1000.000))
+        TNT1 A 0 A_SetPitch(pitch-(random(200,550)/1000.000))
+        SUZI B 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light0
+        SUZI C 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire
+        SUZI A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ClearRefire
+        SUZI A 70 A_WeaponReady
+        Goto Fired
+    Nope:
+        TNT1 A 0  A_PlaySoundEx("uzi/dry","soundslot7",0,0)
+        SUZI A 10 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        SUZI A 35 A_Weaponready
+        Goto Fired
+    AltFirePrepare:
+        TNT1 A 1 A_TakeInventory("KatanaSwung",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
+        goto AltFireGun
+    }
+}

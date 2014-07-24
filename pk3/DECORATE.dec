@@ -12,11 +12,30 @@ actor Counter: Inventory
     -INVBAR
 }
 
+actor BlankPuff
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    }
+}
+
 #include "decorate/tokens.dec"
-#include "decorate/hwando.dec"
-//#include "decorate/pistol.dec"
-#include "decorate/player.dec"
 #include "decorate/items.dec"
+#include "decorate/ammo.dec"
+#include "decorate/pickups.dec"
+#include "decorate/hwando.dec"
+#include "decorate/hwandospecial.dec"
+#include "decorate/hwandoeffects.dec"
+#include "decorate/bullets.dec"
+#include "decorate/pistol.dec"
+#include "decorate/shotgun.dec"
+#include "decorate/launcher.dec"
+#include "decorate/uzi.dec"
+#include "decorate/player.dec"
+#include "decorate/powerups.dec"
 
 #include "decorate/bloodeffects.dec"
 
@@ -30,3 +49,4 @@ actor Counter: Inventory
 #include "decorate/enemies/fatso.dec"
 #include "decorate/enemies/thebestguy.dec"
 #include "decorate/enemies/archvile.dec"
+#include "decorate/enemies/soulpain.dec"

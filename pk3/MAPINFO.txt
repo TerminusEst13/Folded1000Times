@@ -47,4 +47,5 @@ skill ohgodhelpme
 	SpawnFilter = Nightmare
 	Name = "   "
 	MustConfirm = "Your prayers are in vain."
+	Aggressiveness = 0.95
 }

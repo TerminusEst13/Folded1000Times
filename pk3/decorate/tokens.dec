@@ -1,20 +1,46 @@
 actor KatanaSwung : Boolean {}
 actor SequenceFireActivated : Boolean {}
+actor SlashingLikeAGaijin : Boolean {}
+actor ShootingLikeABaka : Boolean {}
+actor UziLikeAGuzzi : Boolean {}
+actor StopTheBlock : Boolean {}
+actor FakeAttack : Boolean {}
+actor AlreadyInLevel : Boolean {}
+
+actor ImAlive : Boolean {}
+actor DoubleTapBack : Boolean {}
+actor DoubleTapLeft : Boolean {}
+actor DoubleTapForward : Boolean {}
+actor DoubleTapRight : Boolean {}
 actor BabyMarker : Boolean {}
 actor EasyMarker : Boolean {}
 actor NormalMarker : Boolean {}
 actor HardMarker : Boolean {}
 actor NightmareMarker : Boolean {}
-actor ImAlive : Boolean {}
-actor SlashingLikeAGaijin : Boolean {}
-actor DoubleTapBack : Boolean {}
-actor DoubleTapLeft : Boolean {}
-actor DoubleTapForward : Boolean {}
-actor DoubleTapRight : Boolean {}
+actor FRank : Boolean {}
+actor DRank : Boolean {}
+actor CRank : Boolean {}
+actor BRank : Boolean {}
+actor ARank : Boolean {}
+actor SRank : Boolean {}
+
 
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }
 actor GhostStepCooldown : Counter { Inventory.MaxAmount 20 }
 actor RazorLife : Counter {}
-actor ContraLifeToken : Counter { Inventory.MaxAmount 12 }
-actor ContraArmorToken : Counter { Inventory.MaxAmount 10 }
+actor BlockLife : Counter { Inventory.MaxAmount 105 }
+actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
+actor ContraArmorToken : Counter { Inventory.MaxAmount 6 }
+actor SuperMeterCounter : Counter { Inventory.MaxAmount 300 }
+actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
+actor SuperCounter1 : Counter { Inventory.MaxAmount 100 }
+actor SuperCounter2 : Counter { Inventory.MaxAmount 100 }
+actor SuperCounter3 : Counter { Inventory.MaxAmount 100 }
+actor ComboCounter1 : Counter { Inventory.MaxAmount 50 }
+actor ComboCounter2 : Counter { Inventory.MaxAmount 50 }
+actor ComboCounter3 : Counter { Inventory.MaxAmount 50 }
+actor ComboCounter4 : Counter { Inventory.MaxAmount 50 }
+actor ComboCounter5 : Counter { Inventory.MaxAmount 50 }
+actor ComboCounter6 : Counter { Inventory.MaxAmount 50 }
+actor ComboCounter7 : Counter { Inventory.MaxAmount 50 }

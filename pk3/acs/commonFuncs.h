@@ -1209,3 +1209,37 @@ function int intcmp(int x, int y)
     if (x > y) { return  1; }
     return 0;
 }
+
+
+function int RaiseAmmoCapacity(int ammoname, int newcapacity, int raiseammo)
+{
+    int ammo = CheckInventory(ammoname);
+    int capacity = GetAmmoCapacity(ammoname);
+
+    if (capacity < newcapacity)
+    {
+        SetAmmoCapacity(ammoname, newcapacity);
+        capacity = newcapacity;
+    }
+
+    if ((ammo < capacity) && raiseammo)
+    {
+        GiveInventory(ammoname, capacity - ammo);
+    }
+    
+    return CheckInventory(ammo);
+}
+
+function int Zand_GetCVarFixed(int cvarname)
+{
+    int tmpName = StrParam(s:"tmpcvar_rand", d:random(12000, 24000));
+    ConsoleCommand(StrParam(s:"set ", s:tmpName, s:" 0"));
+
+    int evalCmd = StrParam(s:"eval * $", s:cvarname, s:" 65536 ", s:tmpName);
+    ConsoleCommand(evalCmd);
+
+    int ret = GetCVar(tmpName);
+    ConsoleCommand(StrParam(s:"unset ", d:tmpName));
+
+    return ret;
+}

@@ -1,5 +1,7 @@
 clearplayerclasses
 addplayerclass MeleePlayer
 
-addslotdefault 1 Hwando
-//addslotdefault 2 "Hunting Pistol"
+addslotdefault 1 "Hwando + Pistol"
+addslotdefault 2 "Hwando + Shotgun"
+addslotdefault 3 "Hwando + Carronade"
+addslotdefault 4 "Hwando + Uzi"
