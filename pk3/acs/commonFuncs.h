@@ -287,7 +287,7 @@ function int sqrt_i(int number)
     return oldAns;
 }
 
-function int sqrt(int number)
+function int zand_sqrt(int number)
 {
     if (number == 1.0) { return 1.0; }
     if (number <= 0) { return 0; }
@@ -541,7 +541,7 @@ function int sliceString(int string, int start, int end)
     return ret;
 }
 
-function int strcmp(int str1, int str2)
+function int zand_strcmp(int str1, int str2)
 {
     int i,j,k,l;
     int len1 = StrLen(str1);
