@@ -1,4 +1,4 @@
-ACTOR WeeabooImp : DoomImp //replaces DoomImp
+ACTOR WeeabooImp : DoomImp replaces DoomImp
 {
     +MISSILEMORE
     Species "Body"
@@ -45,12 +45,13 @@ ACTOR WeeabooImp : DoomImp //replaces DoomImp
         goto death.kubiuti+3
     death.kubiuti:
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
-        TNT1 A 0 A_Jump(128,"Death4","Death.Bloody","Death2","Death2b","Death3","Death3b") 
+        TNT1 A 0 A_Jump(128,"Bisected","Death.Bloody","Death2","Death2b","Death3","Death3b") 
         XDC2 A 0 A_PlaySound("enemy/bisected")
-        XDC2 A 0 A_Jump(128,"kubiuti3")
+        XDC2 A 0 A_Jump(128,"Decapitation3")
+    Decapitation1:
         XDC2 A 2 A_SpawnItem("TROXKubiuted",0,40,0)
         XDC2 A 0 A_NoBlocking
-        XDC2 A 0 A_Jump(96,"kubiuti2")
+        XDC2 A 0 A_Jump(96,"Decapitation2")
         XDC2 A 0 A_SpawnDebris("BloodShower2",1)
         XDC2 AAA 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
         XDC2 A 0 A_Jump(64,1)
@@ -58,18 +59,18 @@ ACTOR WeeabooImp : DoomImp //replaces DoomImp
         XDC2 BBBBCCCDDDEEEEE 2 A_SpawnDebris("BloodShower2",0)
         XDC2 E -1
         stop
-    kubiuti2:    
+    Decapitation2:    
         XDC2 GGGG 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
         XDC2 HHHIIIJJJJJ 2 A_SpawnDebris("BloodShower2",1)
         XDC2 J -1
         stop
-    kubiuti3:
+    Decapitation3:
         XDC3 A 0 A_SpawnItem("TROXKubiuted2",0,40,0)
         XDC3 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
         XDC3 A 0 A_NoBlocking
         XDC3 AAAAA 2 A_ThrowGrenade ("BloodSplashGus1",-16,5+random(0,7),5+random(0,7))
         XDC3 A 0 A_Jump(64,1)
-        goto kubiuti3+8
+        goto Decapitation3+8
         XDC3 BCDEFG 4 A_SpawnDebris("BloodShower2",0)
         XDC3 H -1
         stop
@@ -104,16 +105,16 @@ ACTOR WeeabooImp : DoomImp //replaces DoomImp
         XDC1 R -1
         Stop
 
-    Death4:
+    Bisected:
         TROO H 1
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        IXD1 A 1 A_Pain
-        IXD1 BCD 2 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        IXD1 A 2 A_Pain
+        IXD1 BC 3 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
         TNT1 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
         TNT1 A 0 A_SpawnItemEx("BisectedImpTorso",0,0,45,random(-35,35)/10.0,random(-35,35)/10.0,random(55,155)/10.0,random(-180,180),32)
         TNT1 AAAA 0 A_SpawnDebris("BloodShower2",1)
-        IXD1 EF 3 A_SpawnDebris("BloodShower2")
-        IXD1 GH 2 A_SpawnDebris("BloodShower2")
+        IXD1 DEF 4 A_SpawnDebris("BloodShower2")
+        IXD1 GH 3 A_SpawnDebris("BloodShower2")
         IXD1 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII 3 A_SpawnDebris("BloodShower2")
         IXD1 I -1
         stop
@@ -209,8 +210,12 @@ actor BisectedImpTorso : POSXKubiuted
     States
     {
     Spawn:
+        TNT1 A 0 A_SpawnItem("BloodShower3",0)
+        TNT1 A 0 A_SpawnItem("BloodShower3",0)
         IXD1 J 1 A_SpawnItem("BloodShower3",0)
         TNT1 I 0 A_CheckFloor("Land")
+        TNT1 A 0 A_SpawnItem("BloodShower3",0)
+        TNT1 A 0 A_SpawnItem("BloodShower3",0)
         IXD1 K 1 A_SpawnItem("BloodShower3",0)
         TNT1 I 0 A_CheckFloor("Land")
         goto Spawn
