@@ -8,6 +8,10 @@ int playerTimers[PLAYERMAX][TIMER_COUNT];
 int ClientEnterLocks[PLAYERMAX];
 int dodgeitem;
 
+int GotShotgun;
+int GotCarronade;
+int GotUzi;
+
 #include "weeb_doubletap.h"
 
 script WEEB_RESPAWN respawn
@@ -68,6 +72,21 @@ script WEEB_DECORATE (int burrshet)
     case WEEB_DEC_UNFREEZE:
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
         break;
+
+    case WEEB_DEC_SHOTCHECK:
+        if (isSinglePlayer() && GotShotgun == 1) { SetResultValue(1); }
+        else { SetResultValue(0); }
+        break;
+
+    case WEEB_DEC_CARRCHECK:
+        if (isSinglePlayer() && GotCarronade == 1) { SetResultValue(1); }
+        else { SetResultValue(0); }
+        break;
+
+    case WEEB_DEC_UZICHECK:
+        if (isSinglePlayer() && GotUzi == 1) { SetResultValue(1); }
+        else { SetResultValue(0); }
+        break;
     }
 }
 
@@ -107,11 +126,13 @@ script WEEB_ENTER ENTER
         else
         { TakeInventory("FakeAttack",0x7FFFFFFF); }
 
+        // MAAAAAX!!
         SuperCount = CheckInventory("SuperMeterCounter");
         SetInventory("SuperCounter1",SuperCount);
         if (CheckInventory("SuperMeterCounter") > 100) { SetInventory("SuperCounter2",(SuperCount - 100)); } else { TakeInventory("SuperCounter2",0x7FFFFFFF); }
         if (CheckInventory("SuperMeterCounter") > 200) { SetInventory("SuperCounter3",(SuperCount - 200)); } else { TakeInventory("SuperCounter3",0x7FFFFFFF); }
 
+        // 666 COMBO! SUPER SWEET STYLISH!
         ComboCount = CheckInventory("HyperComboCounter");
         SetInventory("ComboCounter1",ComboCount);
         if (CheckInventory("HyperComboCounter") <= 50) { TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
@@ -121,6 +142,14 @@ script WEEB_ENTER ENTER
         if (CheckInventory("HyperComboCounter") > 200) { SetInventory("ComboCounter5",(ComboCount - 200)); GiveInventory("ComboDamageLevel4",1); TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
         if (CheckInventory("HyperComboCounter") > 250) { SetInventory("ComboCounter6",(ComboCount - 250)); GiveInventory("ComboDamageLevel5",1); TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
         if (CheckInventory("HyperComboCounter") > 300) { SetInventory("ComboCounter7",(ComboCount - 300)); GiveInventory("ComboDamageLevel6",1); TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); } else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
+
+        // Global variables
+        if (isSinglePlayer())
+        {
+            if (CheckInventory("GotShotgun") == 1) { GotShotgun = 1; }
+            if (CheckInventory("GotCarronade") == 1) { GotCarronade = 1; }
+            if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
+        }
 
         if (isDead(0)) { terminate; }
     }

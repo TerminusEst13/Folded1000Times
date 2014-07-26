@@ -1,7 +1,25 @@
-actor UziPickup : CustomInventory replaces PlasmaRifle
+actor PowerupPickup : CustomInventory replaces Berserk
+{
+    Inventory.PickupMessage "\cfPower surges through you..."
+    Inventory.PickupSound "powerup/pickup"
+    States
+    {
+    Spawn:
+        PSTR A -1
+        stop
+	Pickup:
+        TNT1 A 0 A_SetBlend(Red,0.9,70)
+	    TNT1 A 0 A_GiveInventory("HyperComboCounter",50)
+        TNT1 A 0 A_GiveInventory("SuperMeterCounter",50)
+		stop
+    }
+}
+
+actor ShotgunPickup : CustomInventory replaces SuperShotgun
 {
     Health 10000000000
     Inventory.PickupMessage "\cfYou may wield it..."
+    Inventory.PickupSound "weapon/pickup"
     MONSTER
 	+NOTARGET
 	+LOOKALLAROUND
@@ -18,13 +36,150 @@ actor UziPickup : CustomInventory replaces PlasmaRifle
     States
     {
     Spawn:
-        TNT1 ABCD 1 A_Look
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
+        TNT1 AAAA 1 A_Look
         loop
 	See:
-	    TNT1 A 1 //A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-450,450)/100.00,random(-450,450)/100.00,random(400,900)/100.00,random(-180,180),160,224)
-	    TNT1 B 1 //A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-450,450)/100.00,random(-450,450)/100.00,random(400,900)/100.00,random(-180,180),160,128)
-	    TNT1 C 1 //A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-450,450)/100.00,random(-450,450)/100.00,random(400,900)/100.00,random(-180,180),160,128)
-		TNT1 D 1
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
+	    TNT1 AAAA 1
+		TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+		goto Spawn
+	See2:
+	    TNT1 A 0
+	    TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+		goto See
+	Reveal:
+		TNT1 A 0
+	    TNT1 A 0 A_SpawnItemEx("LightningStarter",0,0,9999,0,0,0,0,32)
+		TNT1 A 0 A_PlaySoundEx("weapon/summon","soundslot6",0,0)
+		TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+		TNT1 A 0 A_SpawnItemEx("LightningSphere",0,0,16,0,0,0,0,32)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 A 1 A_SetTranslucent(1,0)
+	Spawn2:
+	    SGN2 A -1
+		stop
+	Pickup:
+	    TNT1 A 0 A_GiveInventory("Hwando + Shotgun",1)
+        TNT1 A 0 A_GiveInventory("GotShotgun",1)
+		stop
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("ShellBox",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor CarronadePickup : CustomInventory replaces RocketLauncher
+{
+    Health 10000000000
+    Inventory.PickupMessage "\cfYou may wield it..."
+    Inventory.PickupSound "weapon/pickup"
+    MONSTER
+	+NOTARGET
+	+LOOKALLAROUND
+	+NOTIMEFREEZE
+	+INVULNERABLE
+	+NORADIUSDMG
+	RenderStyle Add
+	Alpha 0.15
+	//+NOTELEFRAG
+	+DONTGIB
+	+NOBLOOD
+	-SOLID
+	DamageFactor "Normal", 0.0
+    States
+    {
+    Spawn:
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
+        TNT1 AAAA 1 A_Look
+        loop
+	See:
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
+	    TNT1 AAAA 1
+		TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+		goto Spawn
+	See2:
+	    TNT1 A 0
+	    TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+		goto See
+	Reveal:
+		TNT1 A 0
+	    TNT1 A 0 A_SpawnItemEx("LightningStarter",0,0,9999,0,0,0,0,32)
+		TNT1 A 0 A_PlaySoundEx("weapon/summon","soundslot6",0,0)
+		TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+		TNT1 A 0 A_SpawnItemEx("LightningSphere",0,0,16,0,0,0,0,32)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+		TNT1 A 1 A_SetTranslucent(1,0)
+	Spawn2:
+	    GLAU A -1
+		stop
+	Pickup:
+	    TNT1 A 0 A_GiveInventory("Hwando + Carronade",1)
+        TNT1 A 0 A_GiveInventory("GotCarronade",1)
+		stop
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("RocketBox",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor UziPickup : CustomInventory replaces PlasmaRifle
+{
+    Health 10000000000
+    Inventory.PickupMessage "\cfYou may wield it..."
+    Inventory.PickupSound "weapon/pickup"
+    MONSTER
+	+NOTARGET
+	+LOOKALLAROUND
+	+NOTIMEFREEZE
+	+INVULNERABLE
+	+NORADIUSDMG
+	RenderStyle Add
+	Alpha 0.15
+	//+NOTELEFRAG
+	+DONTGIB
+	+NOBLOOD
+	-SOLID
+	DamageFactor "Normal", 0.0
+    States
+    {
+    Spawn:
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
+        TNT1 AAAA 1 A_Look
+        loop
+	See:
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
+	    TNT1 AAAA 1
 		TNT1 A 0 A_JumpIfTargetInLos("See2",360)
 		goto Spawn
 	See2:
@@ -58,7 +213,12 @@ actor UziPickup : CustomInventory replaces PlasmaRifle
 		stop
 	Pickup:
 	    TNT1 A 0 A_GiveInventory("Hwando + Uzi",1)
+        TNT1 A 0 A_GiveInventory("GotUzi",1)
 		stop
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("CellPack",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
     }
 }
 

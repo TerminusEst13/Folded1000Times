@@ -1,4 +1,4 @@
-actor "Hwando + Shotgun" : HwandoBase replaces SuperShotgun
+actor "Hwando + Shotgun" : HwandoBase //replaces SuperShotgun
 {
     -CHEATNOTWEAPON
     Inventory.PickupMessage "You got the shotgun!"

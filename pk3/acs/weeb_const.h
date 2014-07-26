@@ -32,6 +32,9 @@
 #define TIMER_DIDDODGE   5
 #define TIMER_HBACK      6
 
-#define WEEB_DEC_DAMAGE    0
-#define WEEB_DEC_FREEZE    1
-#define WEEB_DEC_UNFREEZE  2
+#define WEEB_DEC_DAMAGE       0
+#define WEEB_DEC_FREEZE       1
+#define WEEB_DEC_UNFREEZE     2
+#define WEEB_DEC_SHOTCHECK    3
+#define WEEB_DEC_CARRCHECK    4
+#define WEEB_DEC_UZICHECK     5
