@@ -64,6 +64,8 @@ actor ArachnotronPlasma2 : ArachnotronPlasma replaces ArachnotronPlasma
     Health 5
     Speed 30
     Species "EnemyShot"
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "ArchvileFire", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST

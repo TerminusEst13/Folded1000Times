@@ -74,6 +74,8 @@ actor RevenantTracer2 : RevenantTracer replaces RevenantTracer
 {
     Health 5
     Species "EnemyShot"
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "ArchvileFire", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST

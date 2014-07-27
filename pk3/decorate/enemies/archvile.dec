@@ -106,11 +106,13 @@ actor SnappyArchieFire
 actor SnappyArchieFireFire : BaronBall
 {
     Translation "112:127=160:167"
-    DamageType "ArchvileFire"
     Radius 8
     Height 10
     Health 5
     Species "EnemyShot"
+    DamageType "ArchvileFire"
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "ArchvileFire", 0.0
     +THRUSPECIES
     +THRUGHOST
     +SHOOTABLE

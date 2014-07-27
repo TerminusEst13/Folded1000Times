@@ -81,6 +81,8 @@ actor WeeabooFatShot : FatShot replaces FatShot
     Health 5
     Speed 15
     Species "EnemyShot"
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "ArchvileFire", 0.0
     +THRUSPECIES
     +THRUGHOST
     +SHOOTABLE

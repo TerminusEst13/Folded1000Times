@@ -108,6 +108,8 @@ actor BulletBase : FastProjectile
     Projectile
     Renderstyle "Normal"
     Species "EnemyShot" // Heh.
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "ArchvileFire", 0.0
     +BLOODSPLATTER
     +THRUGHOST
     +THRUSPECIES

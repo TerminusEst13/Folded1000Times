@@ -54,6 +54,8 @@ actor CyberRocket : Rocket replaces Rocket
 {
     Health 5
     Species "EnemyShot"
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "ArchvileFire", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST

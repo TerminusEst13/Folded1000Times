@@ -91,6 +91,8 @@ actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
     Speed 15
     FastSpeed 25
     Species "EnemyShot"
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "ArchvileFire", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST
