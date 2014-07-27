@@ -111,7 +111,7 @@ ACTOR ChibiRocketDamage
     {
       Spawn:
 		TNT1 A 0
-		TNT1 A 1 A_Explode(128,192,1)
+		TNT1 A 1 A_Explode(160,192,1)
         Stop
     }
 }
