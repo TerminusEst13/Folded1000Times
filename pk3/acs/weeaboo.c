@@ -87,6 +87,12 @@ script WEEB_DECORATE (int burrshet)
         if (isSinglePlayer() && GotUzi == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
+
+    case 6:
+        GiveInventory("DodgeGhostOn",1);
+        Delay(18);
+        GiveInventory("DodgeGhostOff",1);
+        break;
     }
 }
 
@@ -181,25 +187,29 @@ script WEEB_ENTER ENTER
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35); }
+              GiveInventory("GhostStepCooldown",35);
+              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVELEFT)
               { ThrustThing(KurtAngle+64,45,0,0);
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35); }
+              GiveInventory("GhostStepCooldown",35); 
+              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_BACK)
               { ThrustThing(KurtAngle+128,45,0,0);
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35); }
+              GiveInventory("GhostStepCooldown",35); 
+              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVERIGHT)
               { ThrustThing(KurtAngle+192,45,0,0);
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35); }
+              GiveInventory("GhostStepCooldown",35); 
+              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_JUMP && CheckInventory("SuperMeterCounter") >= 5)
               { if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,44,0,0); } else { ThrustThingZ(0,52,0,0); }
               ActivatorSound("ghost/jump",127);
