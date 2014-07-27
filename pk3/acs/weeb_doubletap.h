@@ -48,7 +48,7 @@ script WEEB_TAPSPECIFY (int type, int direction, int mask)
 {
     int newDir = -1;
 
-    if (CheckInventory("GhostStepCooldown") == 0)
+    if (CheckInventory("DoubleTapCooldown") == 0)
 	{
     if (type == WB_DODGE)
     {
@@ -100,7 +100,7 @@ script WEEB_TAPSPECIFY (int type, int direction, int mask)
     if (type == WB_DODGE)
     {
         if (CheckInventory("SuperMeterCounter") >= 10) {
-	    GiveInventory("GhostStepCooldown",25);
+	    GiveInventory("DoubleTapCooldown",25);
         GiveInventory(dodgeitem,1); }
     }
     terminate;

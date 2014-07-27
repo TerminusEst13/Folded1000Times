@@ -9,6 +9,7 @@ ACTOR HwandoBase : Weapon
     Weapon.AmmoType2 ""
     Obituary "%k tore %o apart."
     DamageType "kubiuti"
+    Weapon.UpSound "weapon/switch"
     Decal BulletChip
     +Weapon.AXEBLOOD
     +NOALERT

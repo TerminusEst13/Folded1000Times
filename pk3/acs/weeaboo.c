@@ -90,11 +90,27 @@ script WEEB_DECORATE (int burrshet)
     }
 }
 
+//
+function void evade_start(int angle, int dir)
+{
+	GiveInventory("EvadingPlayer",1);
+	SetPlayerProperty(0, ON, PROP_FROZEN);
+	ThrustThing(angle+dir, 45, 0, 0);
+	ThrustThingZ (0, 140, 1, 1);
+}
+
+function void evade_end(void)
+{
+	SetPlayerProperty(0, OFF, PROP_FROZEN);
+	TakeInventory("EvadingPlayer",1);
+}
+
 script WEEB_ENTER ENTER
 {
-    int buttons;
+    int Buttons;
     int SuperCount;
     int ComboCount;
+    int KurtAngle;
 
     if (CheckInventory("ImAlive") == 0)
     {
@@ -112,15 +128,20 @@ script WEEB_ENTER ENTER
     
     while (1)
     {
+        Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+        KurtAngle = GetActorAngle(0) >> 8;
+
         TakeInventory("GhostStepCooldown",1);
+        TakeInventory("DoubleTapCooldown",1);
     
+        // If the player still has life left, they get full health.
         if (CheckInventory("ContraLifeToken") >= 1)
         { GiveInventory("999Health",999); }
         else
         { SetActorProperty(0,APROP_HEALTH,1); }
         Delay(1);
 
-        buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+        // For back-back-attack block. Likely to be removed.
         if (buttons & BT_ATTACK)
         { GiveInventory("FakeAttack",1); }
         else
@@ -149,6 +170,42 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotShotgun") == 1) { GotShotgun = 1; }
             if (CheckInventory("GotCarronade") == 1) { GotCarronade = 1; }
             if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
+        }
+
+        // Floor
+        if ((GetActorZ(0) - GetActorFloorZ(0)) == 0) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); } else { TakeInventory("OnTheGround",1); }
+        // Dodging
+        if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
+        { if (buttons & BT_SPEED && buttons & BT_FORWARD)
+              { ThrustThing(KurtAngle+0,45,0,0);
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              ActivatorSound("ghost/step",127);
+              GiveInventory("GhostStepDone",1);
+              GiveInventory("GhostStepCooldown",35); }
+          if (buttons & BT_SPEED && buttons & BT_MOVELEFT)
+              { ThrustThing(KurtAngle+64,45,0,0);
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              ActivatorSound("ghost/step",127);
+              GiveInventory("GhostStepDone",1);
+              GiveInventory("GhostStepCooldown",35); }
+          if (buttons & BT_SPEED && buttons & BT_BACK)
+              { ThrustThing(KurtAngle+128,45,0,0);
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              ActivatorSound("ghost/step",127);
+              GiveInventory("GhostStepDone",1);
+              GiveInventory("GhostStepCooldown",35); }
+          if (buttons & BT_SPEED && buttons & BT_MOVERIGHT)
+              { ThrustThing(KurtAngle+192,45,0,0);
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              ActivatorSound("ghost/step",127);
+              GiveInventory("GhostStepDone",1);
+              GiveInventory("GhostStepCooldown",35); }
+          if (buttons & BT_SPEED && buttons & BT_JUMP && CheckInventory("SuperMeterCounter") >= 5)
+              { if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,44,0,0); } else { ThrustThingZ(0,52,0,0); }
+              ActivatorSound("ghost/jump",127);
+              GiveInventory("GhostStepDone",1);
+              TakeInventory("SuperMeterCounter",5);
+              GiveInventory("GhostStepCooldown",35); }
         }
 
         if (isDead(0)) { terminate; }
@@ -198,4 +255,6 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapRight",1);
     TakeInventory("StopTheBlock",0x7FFFFFFF);
     TakeInventory("BlockLife",0x7FFFFFFF);
+    TakeInventory("GhostStepCooldown",0x7FFFFFFF);
+    TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
 }

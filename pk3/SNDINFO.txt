@@ -14,6 +14,7 @@ misc/secret               DSSECRET // Taken from Quake III Arena
 weapon/summon             LITNGHIT // Taken from Marathon
 weapon/pickup             WEAPGET  // Taken from Devil May Cry 3
 powerup/pickup            POWRUP   // Taken from Devil May Cry 3
+weapon/switch             WEPSWTCH
 
 $rolloff weapon/summon 800 5200
 
@@ -21,6 +22,7 @@ $rolloff weapon/summon 800 5200
 
 armor/hit                 ARMRHIT
 ghost/step                NINJDODG
+ghost/jump                NINJDJMP
 
 // Hwando
 
