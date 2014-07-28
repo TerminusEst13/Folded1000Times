@@ -39,7 +39,7 @@ actor DoubleTapCooldown : Counter { Inventory.MaxAmount 20 }
 actor RazorLife : Counter {}
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
 actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
-actor ContraArmorToken : Counter { Inventory.MaxAmount 6 }
+actor ContraArmorToken : Counter { Inventory.MaxAmount 5 }
 actor SuperMeterCounter : Counter { Inventory.MaxAmount 300 }
 actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
 actor SuperCounter1 : Counter { Inventory.MaxAmount 100 }

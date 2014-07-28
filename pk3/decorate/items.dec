@@ -264,7 +264,7 @@ actor ArmorPackSmall: CustomInventory replaces GreenArmor
 
 actor ArmorPackLarge: CustomInventory replaces BlueArmor
 {
-    Inventory.PickupMessage "Picked up 6 Armor Tokens."
+    Inventory.PickupMessage "Picked up 5 Armor Tokens."
     states
     {
       Spawn:
@@ -273,9 +273,9 @@ actor ArmorPackLarge: CustomInventory replaces BlueArmor
         Loop
 
       Pickup:
-        TNT1 A 0 A_JumpIfInventory("ContraArmorToken",6,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("ContraArmorToken",5,"PickupFail")
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
-        TNT1 A 0 A_GiveInventory("ContraArmorToken",6)
+        TNT1 A 0 A_GiveInventory("ContraArmorToken",5)
         stop
 
       PickupFail:
@@ -286,7 +286,7 @@ actor ArmorPackLarge: CustomInventory replaces BlueArmor
 
 actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
 {
-    Inventory.PickupMessage "Picked up 6 Armor and 10 Health Tokens!"
+    Inventory.PickupMessage "Picked up 5 Armor and 10 Health Tokens!"
     Inventory.PickupSound "misc/p_pkup"
     states
     {
@@ -295,9 +295,9 @@ actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
         Loop
 
       Pickup:
-        TNT1 A 0 A_JumpIfInventory("ContraArmorToken",6,"Pickup2")
+        TNT1 A 0 A_JumpIfInventory("ContraArmorToken",5,"Pickup2")
         TNT1 A 0 A_SetBlend("Blue",0.6,15)
-        TNT1 A 0 A_GiveInventory("ContraArmorToken",6)
+        TNT1 A 0 A_GiveInventory("ContraArmorToken",5)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",6)
         stop
         
