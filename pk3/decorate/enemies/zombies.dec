@@ -109,12 +109,14 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
 
 actor POSXKubiuted
 {
-    +ISMONSTER
+    -ISMONSTER
+    -COUNTKILL
     +SHOOTABLE
     +HEXENBOUNCE
     +SLIDESONWALLS
     +NOBLOCKMONST
     +NOTELEPORT
+    -SOLID
     DamageFactor "KubiSpinAttack", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
