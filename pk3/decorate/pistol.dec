@@ -2,6 +2,7 @@ actor "Hwando + Pistol" : HwandoBase
 {
     Weapon.AmmoUse2 1
     Weapon.AmmoType2 "WeebClip"
+    Weapon.SlotNumber 2
     States
     {
     AltFire:

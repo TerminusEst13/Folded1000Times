@@ -5,6 +5,7 @@ actor "Hwando + Uzi" : HwandoBase //replaces PlasmaRifle
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 50
     Weapon.AmmoType2 "WeebCell"
+    Weapon.SlotNumber 4
     States
     {
     Spawn:

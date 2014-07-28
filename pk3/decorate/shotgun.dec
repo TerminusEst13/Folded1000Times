@@ -5,6 +5,7 @@ actor "Hwando + Shotgun" : HwandoBase //replaces SuperShotgun
     Weapon.AmmoUse2 2
     Weapon.AmmoGive2 10
     Weapon.AmmoType2 "WeebShell"
+    Weapon.SlotNumber 3
     States
     {
     Spawn:

@@ -5,6 +5,7 @@ actor "Hwando + Carronade" : HwandoBase //replaces RocketLauncher
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 10
     Weapon.AmmoType2 "WeebRocket"
+    Weapon.SlotNumber 5
     States
     {
     Spawn:

@@ -1,7 +1,6 @@
 ACTOR HwandoBase : Weapon
 {
     Weapon.KickBack 50
-    Weapon.SlotNumber 1
     Weapon.AmmoUse 0
     Weapon.AmmoUse2 0
     Weapon.AmmoGive 0
