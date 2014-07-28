@@ -128,6 +128,7 @@ script WEEB_ENTER ENTER
     int SuperCount;
     int ComboCount;
     int KurtAngle;
+    int WalkTheDinosaur;
 
     if (CheckInventory("ImAlive") == 0)
     {
@@ -190,7 +191,8 @@ script WEEB_ENTER ENTER
         }
 
         // Floor
-        if ((GetActorZ(0) - GetActorFloorZ(0)) == 0) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); } else { TakeInventory("OnTheGround",1); }
+        WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);
+        if (WalkTheDinosaur >= 0 && WalkTheDinosaur <= 10) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); } else { TakeInventory("OnTheGround",1); }
         // Dodging
         if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
         { if (buttons & BT_SPEED && buttons & BT_FORWARD)
@@ -221,12 +223,12 @@ script WEEB_ENTER ENTER
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          if (buttons & BT_SPEED && buttons & BT_JUMP && CheckInventory("SuperMeterCounter") >= 5)
-              { if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,44,0,0); } else { ThrustThingZ(0,52,0,0); }
+          /*if (buttons & BT_SPEED && buttons & BT_JUMP && CheckInventory("SuperMeterCounter") >= 5)
+              { if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,120,0,0); } else { ThrustThingZ(0,52,0,0); } // Bleh, doesn't work. I'll need to think of a way to get a higher jump while on the ground.
               ActivatorSound("ghost/jump",127);
               GiveInventory("GhostStepDone",1);
               TakeInventory("SuperMeterCounter",5);
-              GiveInventory("GhostStepCooldown",35); }
+              GiveInventory("GhostStepCooldown",35); }*/
         }
 
         if (isDead(0)) { terminate; }
