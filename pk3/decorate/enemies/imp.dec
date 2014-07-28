@@ -76,8 +76,8 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         stop
 
     Death2:
-        XDC1 E 0 A_NoBlocking
         XDC1 AAA 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
         XDC1 B 0 A_Scream
         XDC1 BBB 2 A_SpawnDebris("BloodShower2")
         XDC1 CCCDDDDD 2 A_SpawnDebris("BloodShower2")
@@ -85,6 +85,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         Stop
     Death2b:    
         XDC1 EEE 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
         XDC1 F 0 A_Scream
         XDC1 FFF 2 A_SpawnDebris("BloodShower2")
         XDC1 GGGHHHHH 2 A_SpawnDebris("BloodShower2")
@@ -92,6 +93,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         Stop
     Death3:
         XDC1 III 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
         XDC1 J 0 A_Scream
         XDC1 JJJ 2 A_SpawnDebris("BloodShower2")
         XDC1 KKKLLLMMMMM 2 A_SpawnDebris("BloodShower2")
@@ -99,6 +101,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         Stop
     Death3b:
         XDC1 NNN 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
         XDC1 O 0 A_Scream
         XDC1 OOO 2 A_SpawnDebris("BloodShower2")
         XDC1 PPPQQQRRRRR 2 A_SpawnDebris("BloodShower2")
