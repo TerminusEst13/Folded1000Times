@@ -29,6 +29,8 @@ const int WEEB_DEC_UNFREEZE    = 2;
 const int WEEB_DEC_SHOTCHECK   = 3;
 const int WEEB_DEC_CARRCHECK   = 4;
 const int WEEB_DEC_UZICHECK    = 5;
+//const int WEEB_DEC_ICANTREMEMBERANDIDONTCARE    = 6;
+const int WEEB_DEC_MEGASPHERE  = 7;
 
 #include "decorate/tokens.dec"
 #include "decorate/items.dec"

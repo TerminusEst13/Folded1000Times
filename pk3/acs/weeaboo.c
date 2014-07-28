@@ -38,6 +38,8 @@ script WEEB_DECORATE (int burrshet)
         
         if (CheckInventory("ContraArmorToken") >= 1)
             TakeInventory("ContraArmorToken",1);
+        else if (CheckInventory("OverLifeToken") >= 1)
+            TakeInventory("OverLifeToken",1);
         else if (CheckInventory("ContraLifeToken") >= 1)
             TakeInventory("ContraLifeToken",1);
         
@@ -92,6 +94,15 @@ script WEEB_DECORATE (int burrshet)
         GiveInventory("DodgeGhostOn",1);
         Delay(18);
         GiveInventory("DodgeGhostOff",1);
+        break;
+
+    case WEEB_DEC_MEGASPHERE:
+        if (GameSkill () == 0) { SetInventory("ContraLifeToken",10); SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",4); }
+        if (GameSkill () == 1) { SetInventory("ContraLifeToken",8);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",4); }
+        if (GameSkill () == 2) { SetInventory("ContraLifeToken",6);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",3); }
+        if (GameSkill () == 3) { SetInventory("ContraLifeToken",4);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",3); }
+        if (GameSkill () == 4) { SetInventory("ContraLifeToken",2);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",2); }
+        if (GameSkill () == 5) { SetInventory("ContraLifeToken",0);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",1); }
         break;
     }
 }

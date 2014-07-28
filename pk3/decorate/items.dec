@@ -21,44 +21,73 @@ actor HealPackSmall: CustomInventory replaces StimPack
     Spawn:
         STIM A -1
         Stop
-
     Pickup:
         TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
         TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
         TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
         TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
         TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
-      
     BabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverBabyPickup")
+    BabyFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-      
     EasyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverEasyPickup")
+    EasyFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-      
     NormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNormalPickup")
+    NormalFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-        
     HardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverHardPickup")
+    HardFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-        
     NightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNightmarePickup")
+    NightmareFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
 
+    OverBabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"BabyFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverEasyPickup: // Heh.
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"EasyFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverNormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"NormalFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverHardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"HardFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverNightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"NightmareFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
     PickupFail:
         TNT1 A 0
         fail
@@ -73,65 +102,186 @@ actor HealPackMedium: CustomInventory replaces Medikit
     Spawn:
         MEDI A -1
         Stop
-
     Pickup:
         TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
         TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
         TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
         TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
         TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
-      
+        stop
     BabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverBabyPickup")
+    BabyFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+    BabyFailCheck2:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupStop")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-      
     EasyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverEasyPickup")
+    EasyFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+    EasyFailCheck2:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupStop")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-      
     NormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNormalPickup")
+    NormalFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+    NormalFailCheck2:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupStop")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-        
     HardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverHardPickup")
+    HardFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+    HardFailCheck2:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupStop")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-        
     NightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNightmarePickup")
+    NightmareFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+    NightmareFailCheck2:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupStop")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
         stop
-        
+
+    OverBabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"BabyFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"BabyFailCheck2")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverEasyPickup: // Heh.
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"EasyFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"EasyFailCheck2")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverNormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"NormalFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"NormalFailCheck2")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverHardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"HardFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"HardFailCheck2")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverNightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"NightmareFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"NightmareFailCheck2") // Just in case you get hit while picking this up.
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
     PickupStop:
         TNT1 A 0
         stop
-
     PickupFail:
         TNT1 A 0
         fail
     }
 }
 
-actor HealPackLarge: CustomInventory replaces Soulsphere
+actor OverHealPack : CustomInventory replaces SoulSphere
+{
+    Inventory.PickupMessage "Picked up some Over-Life Tokens."
+    Inventory.PickupSound "misc/p_pkup"
+    States
+    {
+    Spawn:
+        SOUL ABCDCB 6 Bright
+        Loop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
+        TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
+        TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
+        TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
+        TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
+        goto OhGodHelpMePickup
+    BabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    EasyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    NormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    HardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    NightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"PickupStop")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OhGodHelpMePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    PickupStop:
+        TNT1 A 0
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+/*actor HealPackLarge: CustomInventory replaces Soulsphere
 {
     Inventory.PickupMessage "Picked up 5 Life Tokens."
     Inventory.PickupSound "misc/p_pkup"
@@ -226,7 +376,7 @@ actor HealPackLarge: CustomInventory replaces Soulsphere
         TNT1 A 0
         fail
     }
-}
+}*/
 
 actor ArmorPackSmall: CustomInventory replaces GreenArmor
 {
@@ -286,17 +436,34 @@ actor ArmorPackLarge: CustomInventory replaces BlueArmor
 
 actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
 {
-    Inventory.PickupMessage "Picked up 5 Armor and 10 Health Tokens!"
+    Inventory.PickupMessage "Full recharge!"
     Inventory.PickupSound "misc/p_pkup"
     states
     {
-      Spawn:
+    Spawn:
         MEGA ABCD 6 Bright
         Loop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("ContraArmorToken",5,"Pickup2")
+    Pickup: // That strange sensation when you realize your health system has gotten
+            // so complex that it's actually easier to do in ACS than in Decorate.
+        //TNT1 A 0 A_JumpIfInventory("ContraArmorToken",5,"Pickup2")
         TNT1 A 0 A_SetBlend("Blue",0.6,15)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_MEGASPHERE,0,0)
+        stop
+    /*Pickup2:
+        TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
+        TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
+        TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
+        TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
+        TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
+        goto Pickup3:
+    
+    Pickup3:
+        TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"OverBabyPickup")
+        TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"OverEasyPickup")
+        TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"OverNormalPickup")
+        TNT1 A 0 A_JumpIfInventory("HardMarker",1,"OverHardPickup")
+        TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"OverNightmarePickup")
+      /*TNT1 A 0 A_JumpIfInventory("ContraArmorToken",5,"Pickup2")
         TNT1 A 0 A_GiveInventory("ContraArmorToken",5)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",6)
         stop
@@ -305,6 +472,81 @@ actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupFail")
         TNT1 A 0 A_SetBlend("Blue",0.6,15)
         TNT1 A 0 A_GiveInventory("ContraLifeToken",10)
+        stop*/
+        /*TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
+        TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
+        TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
+        TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
+        TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
+        
+    BabyPickup:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+        
+    EasyPickup:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+        
+    NormalPickup:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+        
+    HardPickup:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+        
+    NightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupStop")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupStop") // Just in case you somehow get hit while healing...
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupStop") // Twice...
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupStop") // Thrice...
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)*/
         stop
 
       PickupFail:

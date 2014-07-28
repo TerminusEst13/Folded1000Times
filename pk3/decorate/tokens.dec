@@ -40,6 +40,7 @@ actor RazorLife : Counter {}
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
 actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
 actor ContraArmorToken : Counter { Inventory.MaxAmount 5 }
+actor OverLifeToken : Counter { Inventory.MaxAmount 3 }
 actor SuperMeterCounter : Counter { Inventory.MaxAmount 300 }
 actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
 actor SuperCounter1 : Counter { Inventory.MaxAmount 100 }

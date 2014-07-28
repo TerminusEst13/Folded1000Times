@@ -26,16 +26,71 @@ InInventory BRank, 1 { DrawImage "STYLVL4", 265, 13; }
 InInventory ARank, 1 { DrawImage "STYLVL5", 264, 14; }
 InInventory SRank, 1 { DrawImage "STYLVL6", 271, 13; }
 
-InInventory ContraLifeToken, 1 { drawimage "lifebard", 10, 184; }
-InInventory ContraLifeToken, 2 { drawimage "lifebard", 15, 184; }
-InInventory ContraLifeToken, 3 { drawimage "lifebard", 20, 184; }
-InInventory ContraLifeToken, 4 { drawimage "lifebard", 25, 184; }
-InInventory ContraLifeToken, 5 { drawimage "lifebard", 30, 184; }
-InInventory ContraLifeToken, 6 { drawimage "lifebard", 35, 184; }
-InInventory ContraLifeToken, 7 { drawimage "lifebard", 40, 184; }
-InInventory ContraLifeToken, 8 { drawimage "lifebard", 45, 184; }
-InInventory ContraLifeToken, 9 { drawimage "lifebard", 50, 184; }
-InInventory ContraLifeToken, 10 { drawimage "lifebard", 55, 184; }
+// I would kill for Else clauses about now.
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 10, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 15, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 20, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 25, 184; }
+InInventory ContraLifeToken, 1
+    { drawimage "lifebard", 10, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 15, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 20, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 25, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 30, 184; } }
+InInventory ContraLifeToken, 2
+    { drawimage "lifebard", 15, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 20, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 25, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 30, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 35, 184; } }
+InInventory ContraLifeToken, 3
+    { drawimage "lifebard", 20, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 25, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 30, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 35, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 40, 184; } }
+InInventory ContraLifeToken, 4
+    { drawimage "lifebard", 25, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 30, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 35, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 40, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 45, 184; } }
+InInventory ContraLifeToken, 5
+    { drawimage "lifebard", 30, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 35, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 40, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 45, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 50, 184; } }
+InInventory ContraLifeToken, 6
+    { drawimage "lifebard", 35, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 40, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 45, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 50, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 55, 184; } }
+InInventory ContraLifeToken, 7
+    { drawimage "lifebard", 40, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 45, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 50, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 55, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 60, 184; } }
+InInventory ContraLifeToken, 8
+    { drawimage "lifebard", 45, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 50, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 55, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 60, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 65, 184; } }
+InInventory ContraLifeToken, 9
+    { drawimage "lifebard", 50, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 55, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 60, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 65, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 70, 184; } }
+InInventory ContraLifeToken, 10
+    { drawimage "lifebard", 55, 184;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 60, 184; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 65, 184; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 70, 184; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 75, 184; } }
 
 InInventory ContraArmorToken, 1 { drawimage "armrbard", 10, 176; }
 InInventory ContraArmorToken, 2 { drawimage "armrbard", 15, 176; }
