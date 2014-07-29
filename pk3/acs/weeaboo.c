@@ -104,6 +104,10 @@ script WEEB_DECORATE (int burrshet)
         if (GameSkill () == 4) { SetInventory("ContraLifeToken",2);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",2); }
         if (GameSkill () == 5) { SetInventory("ContraLifeToken",0);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",1); }
         break;
+
+    case WEEB_DEC_WEPSTAY:
+        SetResultValue(!!GetCVar("sv_weaponstay"));
+        break;
     }
 }
 

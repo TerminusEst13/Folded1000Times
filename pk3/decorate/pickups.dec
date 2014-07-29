@@ -30,6 +30,18 @@ actor PickupBase : CustomInventory
     -COUNTKILL
     -ISMONSTER
     -SOLID
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    CheckStay:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_WEPSTAY,0,0) == 1, "PickupFail")
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
+    }
 }
 
 actor ShotgunPickup : PickupBase replaces SuperShotgun
@@ -43,8 +55,7 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
         TNT1 AAAA 1 A_Look
         loop
     See:
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
-        TNT1 AAAA 1
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
         goto Spawn
     See2:
@@ -52,8 +63,9 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
         goto See
     Reveal:
-        TNT1 A 0
+        TNT1 A 1
         TNT1 A 0 A_SpawnItemEx("LightningStarter",0,0,9999,0,0,0,0,32)
+        TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("weapon/summon","soundslot6",0,0)
         TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
         TNT1 A 0 A_SpawnItemEx("LightningSphere",0,0,16,0,0,0,0,32)
@@ -77,9 +89,10 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
         SGN2 A -1
         stop
     Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotShotgun",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("Hwando + Shotgun",1)
         TNT1 A 0 A_GiveInventory("GotShotgun",1)
-        stop
+        goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("ShellBox",0,0,0,0,0,0,0,32)
         TNT1 A 0
@@ -98,8 +111,7 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
         TNT1 AAAA 1 A_Look
         loop
     See:
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
-        TNT1 AAAA 1
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
         goto Spawn
     See2:
@@ -107,8 +119,9 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
         goto See
     Reveal:
-        TNT1 A 0
+        TNT1 A 1
         TNT1 A 0 A_SpawnItemEx("LightningStarter",0,0,9999,0,0,0,0,32)
+        TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("weapon/summon","soundslot6",0,0)
         TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
         TNT1 A 0 A_SpawnItemEx("LightningSphere",0,0,16,0,0,0,0,32)
@@ -132,9 +145,10 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
         GLAU A -1
         stop
     Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotCarronade",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("Hwando + Carronade",1)
         TNT1 A 0 A_GiveInventory("GotCarronade",1)
-        stop
+        goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("RocketBox",0,0,0,0,0,0,0,32)
         TNT1 A 0
@@ -153,8 +167,7 @@ actor UziPickup : PickupBase replaces PlasmaRifle
         TNT1 AAAA 1 A_Look
         loop
     See:
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
-        TNT1 AAAA 1
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
         goto Spawn
     See2:
@@ -162,8 +175,9 @@ actor UziPickup : PickupBase replaces PlasmaRifle
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
         goto See
     Reveal:
-        TNT1 A 0
+        TNT1 A 1
         TNT1 A 0 A_SpawnItemEx("LightningStarter",0,0,9999,0,0,0,0,32)
+        TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("weapon/summon","soundslot6",0,0)
         TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
         TNT1 A 0 A_SpawnItemEx("LightningSphere",0,0,16,0,0,0,0,32)
@@ -187,9 +201,10 @@ actor UziPickup : PickupBase replaces PlasmaRifle
         SUZI P -1
         stop
     Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotUzi",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("Hwando + Uzi",1)
         TNT1 A 0 A_GiveInventory("GotUzi",1)
-        stop
+        goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("CellPack",0,0,0,0,0,0,0,32)
         TNT1 A 0
@@ -206,12 +221,10 @@ actor ScreenFlashWhite : CustomInventory
     Spawn:
         TNT1 A 0
         stop
-         
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("White",0.5,35)
         stop
-
     UseStop:
         TNT1 A 0
         stop
@@ -229,10 +242,12 @@ actor LightningStarter
     -SOLID
     +SPAWNCEILING
     +CEILINGHUGGER
+    +CLIENTSIDEONLY
     States
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 1
         TNT1 A 0 A_SpawnItemEx("LightningThick",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("LightningThin",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("LightningThick",0,0,-45,0,0,0,0,32)
@@ -271,6 +286,7 @@ actor LightningStarter
         TNT1 A 0 A_SpawnItemEx("LightningThin",0,0,-765,0,0,0,0,32)
         //TNT1 A 0 A_CustomMissile("LightningThick",0,0,0,4,-90)
         //TNT1 A 0 A_CustomMissile("LightningThin",0,0,0,4,-90)
+        TNT1 A 1
     Death:
         TNT1 A 0
         stop
@@ -315,7 +331,7 @@ actor LightningThin
         ZOT1 EABCDEABCD 1
         goto Death
     Death:
-        TNT1 A 0
+        TNT1 A 1
         stop
     }
 }
