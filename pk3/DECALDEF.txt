@@ -1,0 +1,124 @@
+Stretcher BloodDrencherA
+{
+   GoalY 1.5
+   StretchStart 1
+   StretchTime 11
+}
+
+Stretcher BloodDrencherB
+{
+   GoalY 1.2
+   StretchStart 1
+   StretchTime 11
+}
+
+
+Slider BloodDripper
+{
+	SlideTime	15
+	DistY		-5
+}
+
+Combiner BloodSmearer
+{
+	BloodDripper
+	BloodDrencherA
+}
+
+Decal BloodSplat1
+{
+	Pic BSPLT01
+	randomflipx
+	randomflipy
+	lowerdecal BloodSmear3
+}
+
+Decal BloodSplat2
+{
+	Pic BSPLT02
+	randomflipx
+	randomflipy
+	lowerdecal BloodSmear1
+}
+
+Decal BloodSplat3
+{
+	Pic BSPLT03
+	randomflipx
+	randomflipy
+	lowerdecal BloodSmear1
+}
+	
+Decal BloodSplat4
+{
+	Pic BSPLT04
+	randomflipx
+	randomflipy
+	lowerdecal BloodSmear3
+}
+	
+Decal BloodSplat5
+{
+	Pic BSPLT05
+	randomflipx
+	randomflipy
+	lowerdecal BloodSmear4
+}
+
+Decal BloodSplat6
+{
+	Pic BSPLT06
+	randomflipx
+	randomflipy
+}
+
+Decal BloodSplat7
+{
+	Pic BSPLT07
+	randomflipx
+	animator BloodSmearer
+}
+
+Decal BloodSmear1
+{
+	Pic BSMEAR01
+	randomflipx
+	animator BloodDrencherA
+}	
+
+Decal BloodSmear2
+{
+	Pic BSMEAR02
+	randomflipx
+	animator BloodDrencherB
+}	
+
+Decal BloodSmear3
+{
+	Pic BSMEAR03
+	randomflipx
+	animator BloodDrencherA
+}	
+
+Decal BloodSmear4
+{
+	Pic BSMEAR04
+	randomflipx
+	animator BloodDrencherB
+}
+
+Decal BloodSmear5
+{
+	Pic BSMEAR05
+	randomflipx
+	animator BloodDrencherA
+}	
+	
+Decalgroup BloodDrip
+{
+	BloodSmear1 1
+	BloodSmear2 1
+	BloodSmear3 1
+	BloodSmear4 1
+	BloodSmear5 1
+}	

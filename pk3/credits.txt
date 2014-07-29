@@ -13,7 +13,7 @@ GRAPHICS:
 - Captain J/Cortlong50 (The Uzi)
 - Duke Nukem 64 (The Uzi's pickup/ammo graphics)
 - Aeons of Death (For the Carronade explosion graphics)
-- Mike12 (The torsogone/bisection custom deaths)
+- Mike12 (The torsogone/bisection custom deaths, the gore decals/graphics)
 
 CODE:
 =========
