@@ -9,6 +9,13 @@ actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
 actor GhostStepDone : Boolean {}
 
+actor UziFrame1 : Boolean {}
+actor UziFrame2 : Boolean {}
+actor UziFrame3 : Boolean {}
+actor UziFrame4 : Boolean {}
+actor UziFrame5 : Boolean {}
+actor UziFrame6 : Boolean {}
+
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}
 actor DoubleTapLeft : Boolean {}
@@ -43,6 +50,7 @@ actor ContraArmorToken : Counter { Inventory.MaxAmount 5 }
 actor OverLifeToken : Counter { Inventory.MaxAmount 3 }
 actor SuperMeterCounter : Counter { Inventory.MaxAmount 300 }
 actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
+actor UziSequence : Counter { Inventory.MaxAmount 60 }
 actor SuperCounter1 : Counter { Inventory.MaxAmount 100 }
 actor SuperCounter2 : Counter { Inventory.MaxAmount 100 }
 actor SuperCounter3 : Counter { Inventory.MaxAmount 100 }
