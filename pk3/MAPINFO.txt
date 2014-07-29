@@ -4,6 +4,7 @@ skill baby
     EasyBossBrain
 	SpawnFilter = Baby
 	Name = "Return to Serenity" // Testament
+	MustConfirm = "$CONFIRM_BABY"
 }
 
 skill easy
@@ -12,6 +13,7 @@ skill easy
 	EasyBossBrain
 	SpawnFilter = Easy
 	Name = "Never Say Die" // Black Sabbath
+	MustConfirm = "$CONFIRM_EASY"
 }
 
 skill normal
@@ -19,6 +21,7 @@ skill normal
 	ACSReturn = 2
 	SpawnFilter = Normal
 	Name = "Point of No Return" // Lords of Decadence
+	MustConfirm = "$CONFIRM_NORMAL"
 	//DefaultSkill
 }
 
@@ -27,6 +30,7 @@ skill hard
 	ACSReturn = 3
 	SpawnFilter = Hard
 	Name = "Thrash 'Till Death" // Destruction
+	MustConfirm = "$CONFIRM_HARD"
 }
 
 skill nightmare
@@ -35,7 +39,7 @@ skill nightmare
 	FastMonsters
 	SpawnFilter = Nightmare
 	Name = "Set the World Afire" // Megadeth
-	MustConfirm = "Pray to whatever God you worship."
+	MustConfirm = "$CONFIRM_NIGHTMARE"
 	Aggressiveness = 0.55
 }
 
@@ -46,6 +50,6 @@ skill ohgodhelpme
 	DisableCheats
 	SpawnFilter = Nightmare
 	Name = "   "
-	MustConfirm = "Your prayers are in vain."
+	MustConfirm = "$CONFIRM_OHGODHELPME"
 	Aggressiveness = 0.95
 }
