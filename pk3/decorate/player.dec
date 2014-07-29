@@ -21,10 +21,6 @@ ACTOR MeleePlayer : PlayerPawn
     Player.ForwardMove 1.15, 1.2
     Player.SideMove 1.15, 1.15
     Player.DisplayName "Hae-Lin"
-    Player.WeaponSlot 1, "Hwando + Pistol"
-    Player.WeaponSlot 2, "Hwando + Shotgun"
-    Player.WeaponSlot 2, "Hwando + Carronade"
-    Player.WeaponSlot 4, "Hwando + Uzi"
 	PainChance "EnemyInfightDamage", 0
 	DamageFactor "Normal", 0.75
 	DamageFactor "EnemyInfightDamage", 0.0
