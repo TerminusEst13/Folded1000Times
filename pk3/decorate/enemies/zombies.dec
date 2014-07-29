@@ -97,9 +97,9 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         XDA4 N -1
         Stop
     TorsoGone:
-        ZXD1 ABB 2 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
-        ZXD1 CCDD 2 A_SpawnItem("BloodShower",0,16)
-        TNT1 A 0 A_SpawnItemEx("BisectedZombiemanTorso",0,0,45,random(-35,35)/10.0,random(-35,35)/10.0,random(55,155)/10.0,random(-180,180),32)
+        ZXD1 ABB 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        ZXD1 CCDD 1 A_SpawnItem("BloodShower",0,16)
+        TNT1 A 0 A_SpawnItemEx("BisectedZombiemanTorso",0,0,45,random(-25,0)/10.0,random(-15,15)/10.0,random(25,105)/10.0,random(-180,180),32)
         TNT1 A 0 A_NoBlocking
         ZXD1 EFGH 2 A_SpawnItem("BloodShower",0,16)
         ZXD1 I -1
@@ -215,18 +215,14 @@ actor BisectedZombiemanTorso : POSXKubiuted
         TNT1 A 0 A_SpawnItem("BloodShower3",0)
         TNT1 A 0 A_SpawnItem("BloodShower3",0)
         ZXD1 J 1 A_SpawnItem("BloodShower3",0)
-        TNT1 I 0 A_CheckFloor("Land")
-        TNT1 A 0 A_SpawnItem("BloodShower3",0)
-        TNT1 A 0 A_SpawnItem("BloodShower3",0)
-        ZXD1 K 1 A_SpawnItem("BloodShower3",0)
-        TNT1 I 0 A_CheckFloor("Land")
+        TNT1 A 0 A_CheckFloor("Land")
         goto Spawn
     Land:
-        TNT1 I 0 A_SpawnItemEx("BloodShower4",0,0,0,random(-20,20)/10.0,random(-20,20)/10.0,-2,random(-180,180),32)
-        TNT1 I 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
-        TNT1 I 0 A_PlaySound("S_Blodd")
-        TNT1 I 0 A_ChangeFlag("PUSHABLE",0)
-        ZXD1 LM 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_SpawnItemEx("BloodShower4",0,0,0,random(-20,20)/10.0,random(-20,20)/10.0,-2,random(-180,180),32)
+        TNT1 A 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_PlaySound("S_Blodd")
+        TNT1 A 0 A_ChangeFlag("PUSHABLE",0)
+        ZXD1 KLM 2 A_SpawnDebris("BloodShower2")
     Melee:
         ZXD1 N -1
         goto Melee
@@ -349,9 +345,9 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         Stop
     TorsoGone:
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        SXD1 ABB 2 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
-        SXD1 CCDD 2 A_SpawnItem("BloodShower",0,16)
-        TNT1 A 0 A_SpawnItemEx("BisectedShotgunnerTorso",0,0,45,random(-35,35)/10.0,random(-35,35)/10.0,random(55,155)/10.0,random(-180,180),32)
+        SXD1 ABB 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        SXD1 CCDD 1 A_SpawnItem("BloodShower",0,16)
+        TNT1 A 0 A_SpawnItemEx("BisectedShotgunnerTorso",0,0,45,random(-25,0)/10.0,random(-15,15)/10.0,random(25,105)/10.0,random(-180,180),32)
         TNT1 A 0 A_NoBlocking
         SXD1 EFGH 2 A_SpawnItem("BloodShower",0,16)
         SXD1 I -1
@@ -368,18 +364,14 @@ actor BisectedShotgunnerTorso : POSXKubiuted
         TNT1 A 0 A_SpawnItem("BloodShower3",0)
         TNT1 A 0 A_SpawnItem("BloodShower3",0)
         SXD1 J 1 A_SpawnItem("BloodShower3",0)
-        TNT1 I 0 A_CheckFloor("Land")
-        TNT1 A 0 A_SpawnItem("BloodShower3",0)
-        TNT1 A 0 A_SpawnItem("BloodShower3",0)
-        SXD1 K 1 A_SpawnItem("BloodShower3",0)
-        TNT1 I 0 A_CheckFloor("Land")
+        TNT1 A 0 A_CheckFloor("Land")
         goto Spawn
     Land:
-        TNT1 I 0 A_SpawnItemEx("BloodShower4",0,0,0,random(-20,20)/10.0,random(-20,20)/10.0,-2,random(-180,180),32)
-        TNT1 I 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
-        TNT1 I 0 A_PlaySound("S_Blodd")
-        TNT1 I 0 A_ChangeFlag("PUSHABLE",0)
-        SXD1 LM 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_SpawnItemEx("BloodShower4",0,0,0,random(-20,20)/10.0,random(-20,20)/10.0,-2,random(-180,180),32)
+        TNT1 A 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_PlaySound("S_Blodd")
+        TNT1 A 0 A_ChangeFlag("PUSHABLE",0)
+        SXD1 KLM 2 A_SpawnDebris("BloodShower2")
     Melee:
         SXD1 N -1
         goto Melee
