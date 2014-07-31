@@ -11,6 +11,7 @@ int dodgeitem;
 int GotShotgun;
 int GotCarronade;
 int GotUzi;
+int GotHam; // HAM
 
 #include "weeb_doubletap.h"
 
@@ -108,6 +109,11 @@ script WEEB_DECORATE (int burrshet)
     case WEEB_DEC_WEPSTAY:
         SetResultValue(!!GetCVar("sv_weaponstay"));
         break;
+
+    case WEEB_DEC_HAMCHECK: // HAAAAAM
+        if (isSinglePlayer() && GotHam == 1) { SetResultValue(1); } // HAAAAAAAAAM
+        else { SetResultValue(0); } // HAAAAAAAAAAAAAAAAAAAAAAM
+        break;
     }
 }
 
@@ -133,6 +139,7 @@ script WEEB_ENTER ENTER
     int ComboCount;
     int KurtAngle;
     int WalkTheDinosaur;
+    int RideTheLightning;
 
     if (CheckInventory("ImAlive") == 0)
     {
@@ -150,6 +157,13 @@ script WEEB_ENTER ENTER
     
     while (1)
     {
+        // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
+        if (CheckInventory("HammerUp") == 1)
+        {
+           if (RideTheLightning == 3) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }
+           else { RideTheLightning++; }
+        }
+
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
 
@@ -161,7 +175,6 @@ script WEEB_ENTER ENTER
         { GiveInventory("999Health",999); }
         else
         { SetActorProperty(0,APROP_HEALTH,1); }
-        Delay(1);
 
         // For back-back-attack block. Likely to be removed.
         if (buttons & BT_ATTACK)
@@ -192,6 +205,7 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotShotgun") == 1) { GotShotgun = 1; }
             if (CheckInventory("GotCarronade") == 1) { GotCarronade = 1; }
             if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
+            if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
         }
 
         // Floor
@@ -235,6 +249,7 @@ script WEEB_ENTER ENTER
               GiveInventory("GhostStepCooldown",35); }*/
         }
 
+        Delay(1);
         if (isDead(0)) { terminate; }
     }
 }

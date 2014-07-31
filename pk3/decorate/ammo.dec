@@ -3,6 +3,22 @@ actor NothingReplacer2 : BlankPuff replaces Chainsaw {}
 actor NothingReplacer3 : BlankPuff replaces RocketLauncher {}
 actor NothingReplacer4 : BlankPuff replaces BFG9000 {}
 
+actor HammerCharge : Ammo
+{
+    Inventory.PickupMessage "Don't think you should've gotten this."
+    Inventory.Amount 1
+    Inventory.MaxAmount 100
+    Ammo.BackpackAmount 0
+    Ammo.BackpackMaxAmount 100
+    Inventory.Icon "DPLED0"
+    States
+    {
+    Spawn:
+        PLSE D -1
+        Stop
+    }
+}
+
 actor WeebClip : Ammo replaces Clip
 {
     Inventory.PickupMessage "Picked up a \cq>clip" // "Picked up a clip."

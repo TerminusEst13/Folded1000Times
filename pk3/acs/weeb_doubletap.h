@@ -100,7 +100,7 @@ script WEEB_TAPSPECIFY (int type, int direction, int mask)
     if (type == WB_DODGE)
     {
         if (CheckInventory("SuperMeterCounter") >= 10) {
-	    GiveInventory("DoubleTapCooldown",25);
+	    GiveInventory("DoubleTapCooldown",20);
         GiveInventory(dodgeitem,1); }
     }
     terminate;
@@ -119,7 +119,9 @@ script WEEB_ENTERDOUBLETAP enter clientside
 
     while (ClientEnterLocks[pln] == myLock)
     {
-        dodgeDir = -1;
+
+    dodgeDir = -1;
+    if (PlayerNumber() != ConsolePlayerNumber()) { terminate; }
 
         if (!getTimer(pln, TIMER_DIDDODGE))
         {

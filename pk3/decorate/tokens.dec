@@ -2,19 +2,23 @@ actor KatanaSwung : Boolean {}
 actor SequenceFireActivated : Boolean {}
 actor SlashingLikeAGaijin : Boolean {}
 actor ShootingLikeABaka : Boolean {}
-actor UziLikeAGuzzi : Boolean {}
 actor StopTheBlock : Boolean {}
 actor FakeAttack : Boolean {}
 actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
 actor GhostStepDone : Boolean {}
 
+actor UziLikeAGuzzi : Boolean {}
 actor UziFrame1 : Boolean {}
 actor UziFrame2 : Boolean {}
 actor UziFrame3 : Boolean {}
 actor UziFrame4 : Boolean {}
 actor UziFrame5 : Boolean {}
 actor UziFrame6 : Boolean {}
+actor HammerHit : Boolean {}
+actor HammerUp : Boolean {}
+actor ShockCanDie : Boolean {}
+actor ShockArcDie : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}
@@ -36,6 +40,7 @@ actor SRank : Boolean {}
 actor GotShotgun : Boolean {}
 actor GotCarronade : Boolean {}
 actor GotUzi : Boolean {}
+actor GotHammer : Boolean {}
 
 
 

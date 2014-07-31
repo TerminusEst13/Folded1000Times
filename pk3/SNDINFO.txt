@@ -24,6 +24,59 @@ armor/hit                 ARMRHIT
 ghost/step                NINJDODG
 ghost/jump                NINJDJMP
 
+// Hammer
+
+$random hammer/swing { hamswing1 hamswing2 hamswing3 } // Ah, the beloved Ham Swing, ritual dance of the 20s.
+hamswing1                 HAMSWNG1
+hamswing2                 HAMSWNG2
+hamswing3                 HAMSWNG3
+$limit hammer/swing 0
+
+$random hammer/wall { hamwall1 hamwall2 hamwall3 } // The Great Wall of Ham, China's 13th most impressive achievement.
+hamwall1                  HAMWALL1
+hamwall2                  HAMWALL2
+hamwall3                  HAMWALL3
+$limit hammer/wall 0
+
+$random hammer/hit { hamhit1 hamhit2 hamhit3 } // Punching ham is considered a great way to relieve stress.
+hamhit1                   HAMHIT1
+hamhit2                   HAMHIT2
+hamhit3                   HAMHIT3
+$limit hammer/hit 0
+
+$random hammer/spark { hspark1 hspark2 hspark3 hspark4 hspark5 hspark6 hspark7 hspark8 hspark9 } // If your ham sparks, please consult nearby physician.
+hspark1                   HSPARK1
+hspark2                   HSPARK2
+hspark3                   HSPARK3
+hspark4                   HSPARK4
+hspark5                   HSPARK5
+hspark6                   HSPARK6
+hspark7                   HSPARK7 // 1-7 was taken from the General Series 6000
+hspark8                   HSPARK8 // 8-9 were taken from Devil May Cry 3
+hspark9                   HSPARK9
+$limit hammer/spark 0
+
+hammer/snap               HAMSNAP // Taken from Devil May Cry
+
+$random hammer/stun { hstun1 hstun2 hstun3 } // I wonder if I can get through his without making an H-Game joke.
+hstun1                    HAMSTUN1
+hstun2                    HAMSTUN1 // All three of these taken from Devil May Cry
+hstun3                    HAMSTUN1
+$limit hammer/stun 0
+
+$random hammer/shooter { hshoot1 hshoot2 hshoot3 } // THE HAM HAS A GUN IT'S SHOOTING NOW
+hshoot1                   HSHOCKR1 // Taken from Painkiller
+hshoot2                   HSHOCKR2 // Taken from DMC3
+hshoot3                   HSHOCKR3 // Taken from DMC3
+$limit hammer/shooter 0
+
+$random hammer/fullcharge { hcharge1 hcharge2 hcharge3 } // MY HAM IS FULLY CHARGED
+hcharge1                  HAMFLCH1
+hcharge2                  HAMFLCH2
+hcharge3                  HAMFLCH3
+$limit hammer/fullcharge 0
+$rolloff hammer/fullcharge 800 3200
+
 // Hwando
 
 sword/bootswing           MELESWNG //Taken from qubodup on FreeSound.org

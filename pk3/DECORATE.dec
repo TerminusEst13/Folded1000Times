@@ -32,6 +32,7 @@ const int WEEB_DEC_UZICHECK    = 5;
 //const int WEEB_DEC_ICANTREMEMBERANDIDONTCARE    = 6;
 const int WEEB_DEC_MEGASPHERE  = 7;
 const int WEEB_DEC_WEPSTAY     = 8;
+const int WEEB_DEC_HAMCHECK    = 9;
 
 #include "decorate/tokens.dec"
 #include "decorate/items.dec"
@@ -45,6 +46,7 @@ const int WEEB_DEC_WEPSTAY     = 8;
 #include "decorate/shotgun.dec"
 #include "decorate/launcher.dec"
 #include "decorate/uzi.dec"
+#include "decorate/hammer.dec"
 #include "decorate/player.dec"
 #include "decorate/powerups.dec"
 

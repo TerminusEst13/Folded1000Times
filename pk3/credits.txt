@@ -1,28 +1,33 @@
 SPECIAL THANKS TO:
 =========
-- Special thanks to GMOTA Guy and Shiga95, who respectively made GMOTA and Swan
-  Fox, both of which were big inspirations for this.
+- Special thanks to Combine_Kegan and Shiga95, who respectively made GMOTA and
+  Swan Fox, both of which were big inspirations for this.
 - Special thanks to 3D Realms and MAIET Entertainment, respectively for Shadow
   Warrior and GunZ, both of which were also big inspirations for this.
+- Special thanks to Mike12 for his incredible patience in dealing with my
+  stubborn push of ideas and my flighty attention span, as well as his jaw-
+  droppingly astounding artistic work 
 
 
 GRAPHICS:
 =========
 - Creation's End (Titlescreen: A New Beginning)
-- Paul/NMN (The pistol)
+- Mike12 (The torsogone/bisection custom deaths, the gore decals/graphics, the
+          custom blood for the Hwando)
 - Captain J/Cortlong50 (The Uzi)
 - Duke Nukem 64 (The Uzi's pickup/ammo graphics)
 - Aeons of Death (For the Carronade explosion graphics)
-- Mike12 (The torsogone/bisection custom deaths, the gore decals/graphics)
 
 CODE:
 =========
 - Ijon Tichy (The double-tap code (taken from Parkmore), the shockwave from the
-  spin attack, the trail for the bullets)
+  spin attack, the trail for the bullets, the 2nd level spatter for the Hammer)
 - Doom667Shogun (For the blood/dismembering effects)
 - Vaecrius (For the redone Archvile (taken from Make It Snappy))
 - Kyle873 (Polishing the post-damage invulnerability code)
 - MagSigmaX (Inspiration for the dodging code)
+- Lioyd_Irving/le_L (The basis for the Hammer's impact code)
+- Scroton (The 3rd level spatter for the Hammer)
 
 MUSIC:
 =========

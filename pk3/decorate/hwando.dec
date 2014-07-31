@@ -10,7 +10,7 @@ ACTOR HwandoBase : Weapon
     DamageType "kubiuti"
     Weapon.UpSound "weapon/switch"
     Decal BulletChip
-    +Weapon.AXEBLOOD
+    +AXEBLOOD
     +NOALERT
     +NOAUTOFIRE
     +NOEXTREMEDEATH

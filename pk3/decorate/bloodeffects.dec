@@ -1,4 +1,28 @@
-// Everything in here was coded by Doom667Shogun for dr6zn_beta3b.pk3, not me.
+ACTOR CuttingBlood : AxeBlood replaces AxeBlood
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+    Spawn1:
+        BSPR ABC 3
+        goto Death
+    Spawn2:
+        BSPR DEF 3
+        goto Death
+    Spawn3:
+        BSPR GHI 3
+        goto Death
+    Spawn4:
+        BSPR JKL 3
+    Death:
+        TNT1 A 1
+        Stop
+    }
+}
+
+// Everything below here was coded by Doom667Shogun for dr6zn_beta3b.pk3, not me.
 // Incredible work, man!
 
 

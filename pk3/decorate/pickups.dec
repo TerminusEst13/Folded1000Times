@@ -212,6 +212,62 @@ actor UziPickup : PickupBase replaces PlasmaRifle
     }
 }
 
+actor HammerPickup : PickupBase replaces Chainsaw
+{
+    Inventory.PickupMessage "\cfYou may wield it..."
+    Inventory.PickupSound "weapon/pickup"
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope") // Yum.
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+        goto Spawn
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See
+    Reveal:
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("LightningStarter",0,0,9999,0,0,0,0,32)
+        TNT1 A 1
+        TNT1 A 0 A_PlaySoundEx("weapon/summon","soundslot6",0,0)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 0 A_SpawnItemEx("LightningSphere",0,0,16,0,0,0,0,32)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LightningSpark2",random(-5,5),random(-5,5),0,random(-700,700)/100.00,random(-700,700)/100.00,random(0,700)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+    Spawn2:
+        CSAW A -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotHammer",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Hwando + Hammer",1)
+        TNT1 A 0 A_GiveInventory("GotHammer",1)
+        goto CheckStay
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
 actor ScreenFlashWhite : CustomInventory
 {
     Inventory.MaxAmount 0
@@ -316,19 +372,19 @@ actor LightningThin
         TNT1 A 0 A_CheckFloor("Death")
         TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
     Spawn1:
-        ZOT1 ABCDEABCDE 1
+        ZOT1 ABCDEABCDE 1 BRIGHT
         goto Death
     Spawn2:
-        ZOT1 BCDEABCDEA 1
+        ZOT1 BCDEABCDEA 1 BRIGHT
         goto Death
     Spawn3:
-        ZOT1 CDEABCDEAB 1
+        ZOT1 CDEABCDEAB 1 BRIGHT
         goto Death
     Spawn4:
-        ZOT1 DEABCDEABC 1
+        ZOT1 DEABCDEABC 1 BRIGHT
         goto Death
     Spawn5:
-        ZOT1 EABCDEABCD 1
+        ZOT1 EABCDEABCD 1 BRIGHT
         goto Death
     Death:
         TNT1 A 1
@@ -359,19 +415,19 @@ actor LightningThick
         TNT1 A 0 A_CheckFloor("Death")
         TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
     Spawn1:
-        ZOT2 ABCDE 2
+        ZOT2 ABCDE 2 BRIGHT
         goto Death
     Spawn2:
-        ZOT2 BCDEA 2
+        ZOT2 BCDEA 2 BRIGHT
         goto Death
     Spawn3:
-        ZOT2 CDEAB 2
+        ZOT2 CDEAB 2 BRIGHT
         goto Death
     Spawn4:
-        ZOT2 DEABC 2
+        ZOT2 DEABC 2 BRIGHT
         goto Death
     Spawn5:
-        ZOT2 EABCD 2
+        ZOT2 EABCD 2 BRIGHT
         goto Death
     Death:
         TNT1 A 0
@@ -422,9 +478,9 @@ actor LightningSphere
     States
     {
     Spawn:
-        ZAP7 A 3
+        ZAP7 A 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere2",0,0,0,0,0,0,0,32)
-        ZAP7 A 1
+        ZAP7 A 1 BRIGHT
         stop
     }
 }
@@ -442,9 +498,9 @@ actor LightningSphere2
     States
     {
     Spawn:
-        ZAP7 B 3
+        ZAP7 B 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere3",0,0,0,0,0,0,0,32)
-        ZAP7 B 1
+        ZAP7 B 1 BRIGHT
         stop
     }
 }
@@ -462,9 +518,9 @@ actor LightningSphere3
     States
     {
     Spawn:
-        ZAP7 C 3
+        ZAP7 C 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere4",0,0,0,0,0,0,0,32)
-        ZAP7 C 1
+        ZAP7 C 1 BRIGHT
         stop
     }
 }
@@ -482,9 +538,9 @@ actor LightningSphere4
     States
     {
     Spawn:
-        ZAP7 D 3
+        ZAP7 D 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere5",0,0,0,0,0,0,0,32)
-        ZAP7 D 1
+        ZAP7 D 1 BRIGHT
         stop
     }
 }
@@ -502,9 +558,9 @@ actor LightningSphere5
     States
     {
     Spawn:
-        ZAP7 E 3
+        ZAP7 E 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere6",0,0,0,0,0,0,0,32)
-        ZAP7 E 1
+        ZAP7 E 1 BRIGHT
         stop
     }
 }
@@ -522,9 +578,9 @@ actor LightningSphere6
     States
     {
     Spawn:
-        ZAP7 A 3
+        ZAP7 A 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere7",0,0,0,0,0,0,0,32)
-        ZAP7 A 1
+        ZAP7 A 1 BRIGHT
         stop
     }
 }
@@ -542,9 +598,9 @@ actor LightningSphere7
     States
     {
     Spawn:
-        ZAP7 B 3
+        ZAP7 B 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere8",0,0,0,0,0,0,0,32)
-        ZAP7 B 1
+        ZAP7 B 1 BRIGHT
         stop
     }
 }
@@ -562,9 +618,9 @@ actor LightningSphere8
     States
     {
     Spawn:
-        ZAP7 C 3
+        ZAP7 C 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere9",0,0,0,0,0,0,0,32)
-        ZAP7 C 1
+        ZAP7 C 1 BRIGHT
         stop
     }
 }
@@ -582,9 +638,9 @@ actor LightningSphere9
     States
     {
     Spawn:
-        ZAP7 D 3
+        ZAP7 D 3 BRIGHT
         TNT1 A 0 A_SpawnItemEx("LightningSphere10",0,0,0,0,0,0,0,32)
-        ZAP7 D 1
+        ZAP7 D 1 BRIGHT
         stop
     }
 }
@@ -602,7 +658,7 @@ actor LightningSphere10
     States
     {
     Spawn:
-        ZAP7 E 5
+        ZAP7 E 5 BRIGHT
         stop
     }
 }
@@ -616,7 +672,6 @@ actor ElecSpark
     PROJECTILE
     +DOOMBOUNCE
     +NOGRAVITY
-    +BRIGHT
     +DONTSPLASH   
     +EXPLODEONWATER
     -CANBOUNCEWATER
@@ -626,7 +681,7 @@ actor ElecSpark
     States
     {
     Spawn:
-        1052 ABCDEF 4
+        1052 ABCDEF 4 BRIGHT
         Stop
     }
 }
@@ -638,8 +693,8 @@ actor ElecSpark2 : ElecSpark
     States
     {
     Spawn:
-        1052 ABCDEF 4
-        1052 ABCDEF 4
+        1052 ABCDEF 4 BRIGHT
+        1052 ABCDEF 4 BRIGHT
         TNT1 A 0 A_Jump(128,"Spawn")
         Stop
     }
