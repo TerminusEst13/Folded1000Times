@@ -141,6 +141,8 @@ script WEEB_ENTER ENTER
     int WalkTheDinosaur;
     int RideTheLightning;
 
+    if (PlayerNumber() != ConsolePlayerNumber()) { terminate; }
+
     if (CheckInventory("ImAlive") == 0)
     {
         if (GameSkill () == 0) { GiveInventory("BabyMarker",1); GiveInventory("ContraLifeToken",10); }
@@ -160,7 +162,7 @@ script WEEB_ENTER ENTER
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
         if (CheckInventory("HammerUp") == 1)
         {
-           if (RideTheLightning == 3) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }
+           if (RideTheLightning == 20) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }
            else { RideTheLightning++; }
         }
 
