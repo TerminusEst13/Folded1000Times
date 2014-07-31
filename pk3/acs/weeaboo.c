@@ -162,8 +162,17 @@ script WEEB_ENTER ENTER
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
         if (CheckInventory("HammerUp") == 1)
         {
-           if (RideTheLightning == 20) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }
-           else { RideTheLightning++; }
+           if (CheckInventory("HammerCharge") >= 80)
+               { if (RideTheLightning == 25) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+           else if (CheckInventory("HammerCharge") >= 60)
+               { if (RideTheLightning == 20) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+           else if (CheckInventory("HammerCharge") >= 40)
+               { if (RideTheLightning == 15) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+           else if (CheckInventory("HammerCharge") >= 20)
+               { if (RideTheLightning == 10) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+           else if (CheckInventory("HammerCharge") >= 0)
+               { if (RideTheLightning == 5)  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+           RideTheLightning++;
         }
 
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
