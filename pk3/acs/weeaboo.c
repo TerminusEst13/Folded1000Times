@@ -215,28 +215,28 @@ script WEEB_ENTER ENTER
         if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
         { if (buttons & BT_SPEED && buttons & BT_FORWARD)
               { ThrustThing(KurtAngle+0,45,0,0);
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVELEFT)
               { ThrustThing(KurtAngle+64,45,0,0);
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_BACK)
               { ThrustThing(KurtAngle+128,45,0,0);
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVERIGHT)
               { ThrustThing(KurtAngle+192,45,0,0);
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,80,1,1); } else { ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
