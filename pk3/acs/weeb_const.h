@@ -42,3 +42,6 @@
 #define WEEB_DEC_MEGASPHERE   7
 #define WEEB_DEC_WEPSTAY      8
 #define WEEB_DEC_HAMCHECK     9
+#define WEEB_DEC_HAMAMMO1     10
+#define WEEB_DEC_HAMAMMO2     11
+#define WEEB_DEC_HAMAMMO3     12

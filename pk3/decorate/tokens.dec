@@ -46,6 +46,7 @@ actor GotHammer : Boolean {}
 
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }
+actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
 actor GhostStepCooldown : Counter { Inventory.MaxAmount 35 }
 actor DoubleTapCooldown : Counter { Inventory.MaxAmount 20 }
 actor RazorLife : Counter {}

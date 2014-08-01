@@ -114,6 +114,20 @@ script WEEB_DECORATE (int burrshet)
         if (isSinglePlayer() && GotHam == 1) { SetResultValue(1); } // HAAAAAAAAAM
         else { SetResultValue(0); } // HAAAAAAAAAAAAAAAAAAAAAAM
         break;
+
+    case WEEB_DEC_HAMAMMO1: // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
+        SetAmmoCapacity("HammerCharge",200);
+        break;
+
+    case WEEB_DEC_HAMAMMO2: // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
+        SetInventory("HammerCharge",80);
+        SetAmmoCapacity("HammerCharge",100);
+        break;
+
+    case WEEB_DEC_HAMAMMO3: // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
+        SetInventory("HammerCharge",0);
+        SetAmmoCapacity("HammerCharge",100);
+        break;
     }
 }
 
@@ -156,13 +170,18 @@ script WEEB_ENTER ENTER
     SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
     SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
     GiveInventory("NewLevelStatReset",1);
+    if (CheckInventory("HammerCharge") > 100) { SetAmmoCapacity("HammerCharge",100); SetInventory("HammerCharge",80); }
     
     while (1)
     {
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
         if (CheckInventory("HammerUp") == 1)
         {
-           if (CheckInventory("HammerCharge") >= 80 && CheckInventory("HammerCharge") <= 100 )
+           if (CheckInventory("HammerCharge") >= 90 && CheckInventory("HammerCharge") <= 100 )
+               { if (RideTheLightning >= 30) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+           else if (CheckInventory("HammerCharge") > 100)
+               { if (RideTheLightning >= 7) { GiveInventory("HammerCharge",1); GiveInventory("ChargeScreenFlash",1); RideTheLightning = 0; }}
+           else if (CheckInventory("HammerCharge") >= 80)
                { if (RideTheLightning >= 25) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 60)
                { if (RideTheLightning >= 20) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}

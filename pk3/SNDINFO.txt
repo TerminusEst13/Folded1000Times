@@ -60,8 +60,8 @@ hammer/snap               HAMSNAP // Taken from Devil May Cry
 
 $random hammer/stun { hstun1 hstun2 hstun3 } // I wonder if I can get through his without making an H-Game joke.
 hstun1                    HAMSTUN1
-hstun2                    HAMSTUN1 // All three of these taken from Devil May Cry
-hstun3                    HAMSTUN1
+hstun2                    HAMSTUN2 // All three of these taken from Devil May Cry
+hstun3                    HAMSTUN3
 $limit hammer/stun 0
 
 $random hammer/shooter { hshoot1 hshoot2 hshoot3 } // THE HAM HAS A GUN IT'S SHOOTING NOW
@@ -76,6 +76,21 @@ hcharge2                  HAMFLCH2
 hcharge3                  HAMFLCH3
 $limit hammer/fullcharge 0
 $rolloff hammer/fullcharge 800 3200
+
+$random hammer/pulsing { hpulse1 hpulse2 hpulse3 hpulse4 hpulse5 hpulse6 hpulse7 hpulse8 } // EW, MY HAM HAS A PULSE
+hpulse1                   HAMPULS1
+hpulse2                   HAMPULS2
+hpulse3                   HAMPULS3
+hpulse4                   HAMPULS4
+hpulse5                   HAMPULS5
+hpulse6                   HAMPULS6
+hpulse7                   HAMPULS7
+hpulse8                   HAMPULS8
+$limit hammer/pulsing 0
+
+hammer/overcharge         HAMOVRCH
+$limit hammer/overcharge 0
+$rolloff hammer/overcharge 1200 5600
 
 // Hwando
 
