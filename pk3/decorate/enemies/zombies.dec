@@ -30,45 +30,15 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         goto death.kubiuti+1
-
-    ArmGone:
-        XDA1 A 0 A_NoBlocking
-        XDA1 A 0 A_Scream
-        XDA1 A 0 A_Jump(96,"ArmGone2")
-        XDA1 A 0 A_Jump(96,"ArmGone3")
-        XDA1 A 0 A_FaceTarget
-        XDA1 AAABBB 2 A_SpawnDebris("BloodShower2")
-        XDA1 CD 5    
-        XDA1 E -1
-        Stop
-    ArmGone2:
-        XDA1 F 0 A_FaceTarget
-        XDA1 FFFGGG 2 A_SpawnDebris("BloodShower2")
-        XDA1 HI 5    
-        XDA1 J -1
-        Stop
-    ArmGone3:
-        XDA1 A 0 A_Jump(128,"DeathC2")
-        XDA2 A 0 A_FaceTarget
-        XDA2 AAAABBB 2 A_SpawnDebris("BloodShower2")
-        XDA2 C 5
-        XDA2 D -1
-        Stop
-    DeathC2:
-        XDA2 E 0    A_FaceTarget
-        XDA2 EEEEFFF 2 A_SpawnDebris("BloodShower2")
-        XDA2 G 5
-        XDA2 H -1
-        Stop
     death.Bloody:
     death.hunter:    
         XDA3 A 0 A_PlaySound("S_Cutdead")
         goto death.kubiuti+3
     death.kubiuti:
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
-        TNT1 A 0 A_Jump(128,"Death","Death.Bloody","ArmGone")    
+        TNT1 A 0 A_Jump(128,"Death.Bloody")
         XDA3 A 0 A_PlaySound("enemy/bisected")
-        XDA3 A 0 A_Jump(128,"TorsoGone","TorsoGone2")
+        XDA3 A 0 A_Jump(128,"TorsoGone","TorsoGone2","ArmGone","ArmGone2","LegGone","LegGone2")
         XDA3 A 0 A_SpawnItem("POSXKubiuted",0,40,0)
         XDA3 A 0 A_Jump(128,"kubiuti1B")
         XDA3 AAAAAAAAAA 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
@@ -97,6 +67,42 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_NoBlocking
         ZXD1 STUV 2 A_SpawnItem("BloodShower",0,16)
         ZXD1 W -1
+        Stop
+    ArmGone:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        ZXD2 AAABBB 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        ZXD2 CD 5    
+        ZXD2 E -1
+        Stop
+    ArmGone2:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        ZXD2 FFFGGG 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        ZXD2 HI 5    
+        ZXD2 J -1
+        Stop
+    LegGone:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        ZXD3 AAABBB 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        ZXD3 CD 5    
+        ZXD3 E -1
+        Stop
+    LegGone2:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        ZXD3 FFFGGG 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        ZXD3 HI 5    
+        ZXD3 J -1
         Stop
     }
 }
@@ -263,35 +269,6 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         goto death.kubiuti+1
 
-    Death2:
-        XDB2 A 0 A_NoBlocking
-        XDB2 A 0 A_Scream
-        XDB2 A 0 A_Jump(96,"DeathC1")
-    DeathB:
-        XDB2 AAABBB 2 A_SpawnDebris("BloodSplashGus1")
-        XDB2 CD 5
-        XDB2 E 3 A_Jump(32,1)
-        goto DeathB+8
-        XDB2 F -1
-        Stop
-    DeathB2:
-        XDB2 GGGHHH 2 A_SpawnDebris("BloodSplashGus1")
-        XDB2 IJ 5
-        XDB2 K 3 A_Jump(32,1)
-        Wait
-        XDB2 L -1
-        Stop
-    DeathC1:
-        XDB2 M 0 A_Jump(128,"DeathC2")
-        XDB2 MMMMMM 2 A_SpawnDebris("BloodSplashGus1")
-        XDB2 NO 5
-        XDB2 P -1
-        Stop
-    DeathC2:
-        XDB2 QQQQQQ 2 A_SpawnDebris("BloodSplashGus1")
-        XDB2 RS 5
-        XDB2 T -1
-        Stop
     death.Bloody:
     death.hunter:
         XDB3 A 0 A_PlaySound("S_Cutdead")
@@ -299,8 +276,9 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     death.kubiuti:
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0
-        XDB3 A 0 A_Jump(196,"Death2","Death.Bloody","TorsoGone","TorsoGone2")
+        XDB3 A 0 A_Jump(196,"Death.Bloody")
         TNT1 A 0 A_PlaySound("enemy/bisected")
+        TNT1 A 0 A_Jump(196,"TorsoGone","TorsoGone2","ArmGone","LegGone","ArmGone2","LegGone2")
         XDB3 A 0 A_SpawnItem("SPOXKubiuted",0,40,0)
         XDB3 AAAAAAAAAA 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),4)
         XDB3 B 0 A_NoBlocking
@@ -346,6 +324,42 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_NoBlocking
         SXD1 STUV 2 A_SpawnItem("BloodShower",0,16)
         SXD1 W -1
+        Stop
+    ArmGone:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        SXD2 AAABBB 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        SXD2 CD 5    
+        SXD2 E -1
+        Stop
+    ArmGone2:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        SXD2 FFFGGG 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        SXD2 HI 5    
+        SXD2 J -1
+        Stop
+    LegGone:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        SXD3 AAABBB 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        SXD3 CD 5    
+        SXD3 E -1
+        Stop
+    LegGone2:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_FaceTarget
+        SXD3 FFFGGG 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        SXD3 HI 5    
+        SXD3 J -1
         Stop
     }
 }

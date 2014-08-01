@@ -41,46 +41,46 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         Stop
 
     death.Bloody:
-    death.hunter:    
-        XDC2 A 0 A_PlaySound("S_Cutdead")
-        goto death.kubiuti+3
+        TNT1 A 0 A_PlaySound("S_Cutdead")
+        goto Decapitation1
     death.kubiuti:
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
-        TNT1 A 0 A_Jump(128,"Bisected","Bisected2","Death.Bloody","Death2","Death2b","Death3","Death3b") 
-        XDC2 A 0 A_PlaySound("enemy/bisected")
+        TNT1 A 0 A_Jump(196,"Bisected","Bisected2","Death.Bloody","Gutted","Gutted2","Death3","Death3b") 
+        TNT1 A 0 A_PlaySound("enemy/bisected")
     Decapitation1:
-        XDC2 A 2 A_SpawnItem("TROXKubiuted",0,40,0)
-        XDC2 A 0 A_NoBlocking
-        XDC2 A 0 A_Jump(96,"Decapitation2")
-        XDC2 A 0 A_SpawnDebris("BloodShower2",1)
-        XDC2 AAA 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
-        XDC2 A 0 A_Jump(64,1)
-        goto death.kubiuti+6
-        XDC2 BBBBCCCDDDEEEEE 2 A_SpawnDebris("BloodShower2",0)
-        XDC2 E -1
+        TNT1 A 0 A_Jump(128,"Decapitation3")
+        IXD3 A 2 A_SpawnItem("TROXKubiuted",0,40,0)
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_SpawnDebris("BloodShower2",1)
+        IXD3 AAA 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
+        TNT1 A 0 A_Jump(32,1)
+        goto Decapitation1+4
+        TNT1 A 0 A_Jump(128,"Decapitation2")
+        IXD3 BBBBCCCDDDEEEEE 2 A_SpawnDebris("BloodShower2",0)
+        IXD3 E -1
         stop
     Decapitation2:    
-        XDC2 GGGG 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
-        XDC2 HHHIIIJJJJJ 2 A_SpawnDebris("BloodShower2",1)
-        XDC2 J -1
+        IXD3 FFFF 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
+        IXD3 GGGGHHHHIIIII 2 A_SpawnDebris("BloodShower2",1)
+        IXD3 I -1
+        stop
+    Decapitation3:
+        IXD3 J 2 A_SpawnItem("TROXKubiuted",0,40,0)
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_SpawnDebris("BloodShower2",1)
+        IXD3 JJJ 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
+        TNT1 A 0 A_Jump(32,1)
+        goto Decapitation3+4
+        TNT1 A 0 A_Jump(128,"Decapitation4")
+        IXD3 KKKKLLLMMMNNNNN 2 A_SpawnDebris("BloodShower2",0)
+        IXD3 N -1
+        stop
+    Decapitation4:    
+        IXD3 OOOO 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
+        IXD3 PPPPQQQQRRRRR 2 A_SpawnDebris("BloodShower2",1)
+        IXD3 R -1
         stop
 
-    Death2:
-        XDC1 AAA 2 A_SpawnDebris("BloodShower2")
-        TNT1 A 0 A_NoBlocking
-        XDC1 B 0 A_Scream
-        XDC1 BBB 2 A_SpawnDebris("BloodShower2")
-        XDC1 CCCDDDDD 2 A_SpawnDebris("BloodShower2")
-        XDC1 D -1
-        Stop
-    Death2b:    
-        XDC1 EEE 2 A_SpawnDebris("BloodShower2")
-        TNT1 A 0 A_NoBlocking
-        XDC1 F 0 A_Scream
-        XDC1 FFF 2 A_SpawnDebris("BloodShower2")
-        XDC1 GGGHHHHH 2 A_SpawnDebris("BloodShower2")
-        XDC1 H -1
-        Stop
     Death3:
         XDC1 III 2 A_SpawnDebris("BloodShower2")
         TNT1 A 0 A_NoBlocking
@@ -126,6 +126,22 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         IXD1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW 3 A_SpawnDebris("BloodShower2")
         IXD1 W -1
         stop
+    Gutted:
+        IXD2 AAB 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_Scream
+        IXD2 BBC 2 A_SpawnDebris("BloodShower2")
+        IXD2 CCDDDEEE 2 A_SpawnDebris("BloodShower2")
+        IXD2 F -1
+        Stop
+    Gutted2:
+        IXD2 GGH 2 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_Scream
+        IXD2 HHI 2 A_SpawnDebris("BloodShower2")
+        IXD2 IIJJJKKK 2 A_SpawnDebris("BloodShower2")
+        IXD2 L -1
+        Stop
     }
 }
 
