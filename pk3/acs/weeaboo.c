@@ -201,7 +201,7 @@ script WEEB_ENTER ENTER
         TakeInventory("DoubleTapCooldown",1);
     
         // If the player still has life left, they get full health.
-        if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1)
+        if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1 || CheckInventory("ContraArmorToken") >= 1)
         { GiveInventory("999Health",999); }
         else
         { SetActorProperty(0,APROP_HEALTH,1); }
@@ -325,6 +325,7 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapBack",1);
     TakeInventory("DoubleTapLeft",1);
     TakeInventory("DoubleTapRight",1);
+    TakeInventory("HammerOverchargeLevel",0x7FFFFFFF);
     TakeInventory("StopTheBlock",0x7FFFFFFF);
     TakeInventory("BlockLife",0x7FFFFFFF);
     TakeInventory("GhostStepCooldown",0x7FFFFFFF);
