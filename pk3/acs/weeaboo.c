@@ -182,7 +182,7 @@ script WEEB_ENTER ENTER
         TakeInventory("DoubleTapCooldown",1);
     
         // If the player still has life left, they get full health.
-        if (CheckInventory("ContraLifeToken") >= 1)
+        if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1)
         { GiveInventory("999Health",999); }
         else
         { SetActorProperty(0,APROP_HEALTH,1); }
