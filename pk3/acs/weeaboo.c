@@ -180,7 +180,7 @@ script WEEB_ENTER ENTER
            if (CheckInventory("HammerCharge") >= 90 && CheckInventory("HammerCharge") <= 100 )
                { if (RideTheLightning >= 30) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") > 100)
-               { if (RideTheLightning >= 7) { GiveInventory("HammerCharge",1); GiveInventory("ChargeScreenFlash",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 8) { GiveInventory("HammerCharge",1); GiveInventory("ChargeScreenFlash",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 80)
                { if (RideTheLightning >= 25) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 60)
