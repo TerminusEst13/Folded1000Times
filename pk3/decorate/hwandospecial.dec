@@ -118,26 +118,18 @@ ACTOR RazorWindExplosion
     {
       Spawn:
 		TNT1 A 0
-		TNT1 A 1 A_Explode(64,64,0)
+		TNT1 A 1 A_Explode(128,128,0)
         Stop
     }
 }
 
-ACTOR RazorWindExplosion2
+ACTOR RazorWindExplosion2 : RazorWindExplosion
 {
-    Radius 1
-    Height 1
-	Speed 0
-    +NOCLIP
-	+FORCERADIUSDMG
-    -SOLID
-    DamageType "KubiSpinAttack"
-    Obituary "%k split %o in half with a dash attack."
     States
     {
       Spawn:
 		TNT1 A 0
-		TNT1 A 1 A_Explode(128,128,0)
+		TNT1 A 1 A_Explode(64,128,0)
         Stop
     }
 }
