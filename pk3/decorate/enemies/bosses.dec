@@ -2,6 +2,7 @@ ACTOR WeeabooMastermind : SpiderMastermind replaces SpiderMastermind
 {
 	DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    +DONTRIP
 	States
 	{
 	Missile:
@@ -35,6 +36,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
     Scale 1.1
 	DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    +DONTRIP
     States
     {
     Pain.KubiSpinAttack:
