@@ -458,7 +458,7 @@ actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
     }
 }
 
-actor PowerShield : PowerupGiver
+actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
 {
     Inventory.PickupMessage "Invulnerability!"
     Powerup.Type "ShieldProtection"
