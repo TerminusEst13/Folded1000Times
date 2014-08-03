@@ -287,7 +287,7 @@ function int sqrt_i(int number)
     return oldAns;
 }
 
-function int zand_sqrt(int number)
+function int sqrt(int number)
 {
     if (number == 1.0) { return 1.0; }
     if (number <= 0) { return 0; }

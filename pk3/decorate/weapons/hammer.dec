@@ -269,7 +269,7 @@ ACTOR HammerAttackNormal : HammerAttackBase
     XDeath:
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("HammerHit",1)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_PlaySound("hammer/hit")
         TNT1 AAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
@@ -288,8 +288,8 @@ ACTOR HammerAttackLight : HammerAttackBase
     XDeath:
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("HammerHit",1)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",5)
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
         TNT1 A 0 A_PlaySound("hammer/hit")
         TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
         TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",0,0,0,0,0,0,0,48)
@@ -359,8 +359,8 @@ ACTOR HammerAttackMedium : HammerAttackBase
     XDeath:
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("HammerHit",1)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",3)
         TNT1 A 0 A_PlaySound("hammer/hit")
         TNT1 A 0 A_PlaySoundEx("hammer/shooter","soundslot7",0,0)
         TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
@@ -384,8 +384,8 @@ ACTOR HammerAttackHeavy : HammerAttackBase
     XDeath:
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("HammerHit",1)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",15)
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",5)
         TNT1 A 0 A_PlaySound("hammer/hit")
         TNT1 A 0 A_PlaySoundEx("hammer/fullcharge","soundslot7",0,0)
         TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
@@ -430,8 +430,8 @@ ACTOR HammerAttackOvercharge : HammerAttackBase
     XDeath:
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("HammerHit",1)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",50)
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",10)
         TNT1 A 0 A_PlaySound("hammer/hit")
         TNT1 A 0 A_PlaySoundEx("hammer/overcharge","soundslot7",0,0)
         TNT1 A 0 A_PlaySoundEx("hammer/overcharge","soundslot6",0,0) // Fuck it, let's deafen people.
