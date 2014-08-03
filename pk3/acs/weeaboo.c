@@ -328,6 +328,8 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapLeft",1);
     TakeInventory("DoubleTapRight",1);
     TakeInventory("HammerOverchargeLevel",0x7FFFFFFF);
+    TakeInventory("EnviroDamageCount",0x7FFFFFFF);
+    TakeInventory("EnviroDamageCooldown",0x7FFFFFFF);
     TakeInventory("StopTheBlock",0x7FFFFFFF);
     TakeInventory("BlockLife",0x7FFFFFFF);
     TakeInventory("GhostStepCooldown",0x7FFFFFFF);
