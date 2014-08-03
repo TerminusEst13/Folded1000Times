@@ -194,23 +194,16 @@ script WEEB_ENTER ENTER
            RideTheLightning++;
         }
 
-        Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
-        KurtAngle = GetActorAngle(0) >> 8;
-
         TakeInventory("GhostStepCooldown",1);
         TakeInventory("DoubleTapCooldown",1);
+        TakeInventory("EnviroDamageCooldown",1);
+        if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
         // If the player still has life left, they get full health.
         if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1 || CheckInventory("ContraArmorToken") >= 1)
         { GiveInventory("999Health",999); }
         else
         { SetActorProperty(0,APROP_HEALTH,1); }
-
-        // For back-back-attack block. Likely to be removed.
-        if (buttons & BT_ATTACK)
-        { GiveInventory("FakeAttack",1); }
-        else
-        { TakeInventory("FakeAttack",0x7FFFFFFF); }
 
         // MAAAAAX!!
         SuperCount = CheckInventory("SuperMeterCounter");
@@ -237,6 +230,15 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
             if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
         }
+
+        Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+        KurtAngle = GetActorAngle(0) >> 8;
+
+        // For back-back-attack block. Likely to be removed.
+        if (buttons & BT_ATTACK)
+        { GiveInventory("FakeAttack",1); }
+        else
+        { TakeInventory("FakeAttack",0x7FFFFFFF); }
 
         // Floor
         WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);

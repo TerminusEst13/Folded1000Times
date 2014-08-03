@@ -99,7 +99,7 @@ ACTOR KatanaExplosion
     {
       Spawn:
 		TNT1 A 0
-		TNT1 A 1 A_Explode(512,256,0)
+		TNT1 A 1 A_Explode(512,384,0)
         Stop
     }
 }
@@ -129,7 +129,7 @@ ACTOR RazorWindExplosion2 : RazorWindExplosion
     {
       Spawn:
 		TNT1 A 0
-		TNT1 A 1 A_Explode(64,128,0)
+		TNT1 A 1 A_Explode(48,128,0)
         Stop
     }
 }
