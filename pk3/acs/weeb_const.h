@@ -8,6 +8,7 @@
 #define WEEB_TAPSPECIFY                      271
 #define WEEB_COMBOREMOVAL                    272
 #define WEEB_UNLOADING                       273
+#define WEEB_OPEN                            274
 
 // Definitions
 

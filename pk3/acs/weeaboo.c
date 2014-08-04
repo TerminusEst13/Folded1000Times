@@ -7,13 +7,14 @@
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int ClientEnterLocks[PLAYERMAX];
 int dodgeitem;
+int IsServer;
 
 int GotShotgun;
 int GotCarronade;
 int GotUzi;
 int GotHam; // HAM
 
-#include "weeb_doubletap.h"
+//#include "weeb_doubletap.h"
 
 script WEEB_RESPAWN respawn
 {
@@ -25,6 +26,17 @@ script WEEB_RESPAWN respawn
     
     ACS_ExecuteAlways(268,0,0,0);
     //ACS_ExecuteAlways(269,0,0,0);
+}
+
+script WEEB_OPEN OPEN
+{
+    IsServer = 1;
+
+    while (1)
+    {
+        if (!GetCvar("ds_runninginzdoom") == 0) { if (!GetCvar("compat_clientssendfullbuttoninfo")) { ConsoleCommand("set compat_clientssendfullbuttoninfo 1"); } }
+        delay(1);
+    }
 }
 
 script WEEB_DECORATE (int burrshet)
@@ -154,8 +166,7 @@ script WEEB_ENTER ENTER
     int KurtAngle;
     int WalkTheDinosaur;
     int RideTheLightning;
-
-    if (PlayerNumber() != ConsolePlayerNumber()) { terminate; }
+    int CountVonCount;
 
     if (CheckInventory("ImAlive") == 0)
     {
@@ -174,6 +185,8 @@ script WEEB_ENTER ENTER
     
     while (1)
     {
+        //if (CheckInventory("ImAlive") == 1) { if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } }
+
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
         if (CheckInventory("HammerUp") == 1)
         {
@@ -197,6 +210,10 @@ script WEEB_ENTER ENTER
         TakeInventory("GhostStepCooldown",1);
         TakeInventory("DoubleTapCooldown",1);
         TakeInventory("EnviroDamageCooldown",1);
+        TakeInventory("DoubleTapReadyRight",1);
+        TakeInventory("DoubleTapReadyForward",1);
+        TakeInventory("DoubleTapReadyLeft",1);
+        TakeInventory("DoubleTapReadyBack",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
         // If the player still has life left, they get full health.
@@ -207,20 +224,37 @@ script WEEB_ENTER ENTER
 
         // MAAAAAX!!
         SuperCount = CheckInventory("SuperMeterCounter");
-        SetInventory("SuperCounter1",SuperCount);
-        if (CheckInventory("SuperMeterCounter") > 100) { SetInventory("SuperCounter2",(SuperCount - 100)); } else { TakeInventory("SuperCounter2",0x7FFFFFFF); }
-        if (CheckInventory("SuperMeterCounter") > 200) { SetInventory("SuperCounter3",(SuperCount - 200)); } else { TakeInventory("SuperCounter3",0x7FFFFFFF); }
+        //SetInventory("SuperCounter1",SuperCount); // Life would be so much easier if this worked online.
+        TakeInventory("SuperCounter1", 0x7FFFFFFF);
+        GiveInventory("SuperCounter1", SuperCount);
+        if (CheckInventory("SuperMeterCounter") > 100) { TakeInventory("SuperCounter2",0x7FFFFFFF); GiveInventory("SuperCounter2", SuperCount - 100); } //SetInventory("SuperCounter2",(SuperCount - 100)); }
+            else { TakeInventory("SuperCounter2",0x7FFFFFFF); }
+        if (CheckInventory("SuperMeterCounter") > 200) { TakeInventory("SuperCounter3",0x7FFFFFFF); GiveInventory("SuperCounter3", SuperCount - 200); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+            else { TakeInventory("SuperCounter3",0x7FFFFFFF); }
 
         // 666 COMBO! SUPER SWEET STYLISH!
         ComboCount = CheckInventory("HyperComboCounter");
-        SetInventory("ComboCounter1",ComboCount);
+        TakeInventory("ComboCounter1",0x7FFFFFFF);
+        GiveInventory("ComboCounter1",ComboCount);
         if (CheckInventory("HyperComboCounter") <= 50) { TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
-        if (CheckInventory("HyperComboCounter") > 50) { SetInventory("ComboCounter2",(ComboCount - 50)); GiveInventory("ComboDamageLevel1",1); GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 100) { SetInventory("ComboCounter3",(ComboCount - 100)); GiveInventory("ComboDamageLevel2",1); TakeInventory("FRank",1); GiveInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter3",0x7FFFFFFF); TakeInventory("ComboDamageLevel2",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 150) { SetInventory("ComboCounter4",(ComboCount - 150)); GiveInventory("ComboDamageLevel3",1); TakeInventory("FRank",1); TakeInventory("DRank",1); GiveInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter4",0x7FFFFFFF); TakeInventory("ComboDamageLevel3",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 200) { SetInventory("ComboCounter5",(ComboCount - 200)); GiveInventory("ComboDamageLevel4",1); TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 250) { SetInventory("ComboCounter6",(ComboCount - 250)); GiveInventory("ComboDamageLevel5",1); TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 300) { SetInventory("ComboCounter7",(ComboCount - 300)); GiveInventory("ComboDamageLevel6",1); TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); } else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
+        if (CheckInventory("HyperComboCounter") > 50)
+            { TakeInventory("ComboCounter2",0x7FFFFFFF); GiveInventory("ComboCounter2",(ComboCount - 50)); GiveInventory("ComboDamageLevel1",1);
+              GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
+        if (CheckInventory("HyperComboCounter") > 100)
+            { TakeInventory("ComboCounter3",0x7FFFFFFF); GiveInventory("ComboCounter3",(ComboCount - 100)); GiveInventory("ComboDamageLevel2",1);
+              TakeInventory("FRank",1); GiveInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter3",0x7FFFFFFF); TakeInventory("ComboDamageLevel2",0x7FFFFFFF); }
+        if (CheckInventory("HyperComboCounter") > 150)
+            { TakeInventory("ComboCounter4",0x7FFFFFFF); GiveInventory("ComboCounter4",(ComboCount - 150)); GiveInventory("ComboDamageLevel3",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); GiveInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter4",0x7FFFFFFF); TakeInventory("ComboDamageLevel3",0x7FFFFFFF); }
+        if (CheckInventory("HyperComboCounter") > 200)
+            { TakeInventory("ComboCounter5",0x7FFFFFFF); GiveInventory("ComboCounter5",(ComboCount - 200)); GiveInventory("ComboDamageLevel4",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
+        if (CheckInventory("HyperComboCounter") > 250)
+            { TakeInventory("ComboCounter6",0x7FFFFFFF); GiveInventory("ComboCounter6",(ComboCount - 250)); GiveInventory("ComboDamageLevel5",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
+        if (CheckInventory("HyperComboCounter") > 300)
+            { TakeInventory("ComboCounter7",0x7FFFFFFF); GiveInventory("ComboCounter7",(ComboCount - 300)); GiveInventory("ComboDamageLevel6",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); } else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
 
         // Global variables
         if (isSinglePlayer())
@@ -233,12 +267,34 @@ script WEEB_ENTER ENTER
 
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
+        CountVonCount = GetCvar("ds_doubletapwindow");
 
         // For back-back-attack block. Likely to be removed.
         if (buttons & BT_ATTACK)
         { GiveInventory("FakeAttack",1); }
         else
         { TakeInventory("FakeAttack",0x7FFFFFFF); }
+
+        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_MOVERIGHT) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_MOVERIGHT))
+            { if (CheckInventory("SuperMeterCounter") >= 10)
+                { if (CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
+                      else { GiveInventory("DoubleTapReadyRight",8); }}}}
+        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_MOVELEFT) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_MOVELEFT))
+            { if (CheckInventory("SuperMeterCounter") >= 10)
+                { if (CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",20); }
+                      else { GiveInventory("DoubleTapReadyLeft",8); }}}}
+        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_FORWARD) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_FORWARD))
+            { if (CheckInventory("SuperMeterCounter") >= 10)
+                { if (CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",20); }
+                      else { GiveInventory("DoubleTapReadyForward",8); }}}}
+        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_BACK) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_BACK))
+            { if (CheckInventory("SuperMeterCounter") >= 10)
+                { if (CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
+                      else { GiveInventory("DoubleTapReadyBack",8); }}}}
 
         // Floor
         WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);
@@ -306,13 +362,13 @@ script WEEB_COMBOREMOVAL ENTER
 {
     while (1)
     {
-        if (CheckInventory("HyperComboCounter") < 50) { Delay(22); }
-        if (CheckInventory("HyperComboCounter") >= 50 && CheckInventory("HyperComboCounter") < 100 ) { Delay(18); }
-        if (CheckInventory("HyperComboCounter") >= 100 && CheckInventory("HyperComboCounter") < 150 ) { Delay(16); }
-        if (CheckInventory("HyperComboCounter") >= 150 && CheckInventory("HyperComboCounter") < 200 ) { Delay(14); }
-        if (CheckInventory("HyperComboCounter") >= 200 && CheckInventory("HyperComboCounter") < 250 ) { Delay(12); }
-        if (CheckInventory("HyperComboCounter") >= 250 && CheckInventory("HyperComboCounter") < 300 ) { Delay(10); }
-        if (CheckInventory("HyperComboCounter") >= 300 ) { Delay(8); }
+        if (CheckInventory("HyperComboCounter") < 50) { Delay(10); }
+        if (CheckInventory("HyperComboCounter") >= 50 && CheckInventory("HyperComboCounter") < 100 ) { Delay(9); }
+        if (CheckInventory("HyperComboCounter") >= 100 && CheckInventory("HyperComboCounter") < 150 ) { Delay(8); }
+        if (CheckInventory("HyperComboCounter") >= 150 && CheckInventory("HyperComboCounter") < 200 ) { Delay(7); }
+        if (CheckInventory("HyperComboCounter") >= 200 && CheckInventory("HyperComboCounter") < 250 ) { Delay(6); }
+        if (CheckInventory("HyperComboCounter") >= 250 && CheckInventory("HyperComboCounter") < 300 ) { Delay(5); }
+        if (CheckInventory("HyperComboCounter") >= 300 ) { Delay(4); }
         TakeInventory("HyperComboCounter",1);
     }
 }
@@ -327,6 +383,10 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapBack",1);
     TakeInventory("DoubleTapLeft",1);
     TakeInventory("DoubleTapRight",1);
+    TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyBack",0x7FFFFFFF);
     TakeInventory("HammerOverchargeLevel",0x7FFFFFFF);
     TakeInventory("EnviroDamageCount",0x7FFFFFFF);
     TakeInventory("EnviroDamageCooldown",0x7FFFFFFF);
