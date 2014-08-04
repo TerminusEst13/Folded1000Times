@@ -48,6 +48,10 @@ actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }
 actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
 actor GhostStepCooldown : Counter { Inventory.MaxAmount 35 }
+actor DoubleTapReadyRight : Counter { Inventory.MaxAmount 8 }
+actor DoubleTapReadyForward : Counter { Inventory.MaxAmount 8 }
+actor DoubleTapReadyBack : Counter { Inventory.MaxAmount 8 }
+actor DoubleTapReadyLeft : Counter { Inventory.MaxAmount 8 }
 actor DoubleTapCooldown : Counter { Inventory.MaxAmount 20 }
 actor RazorLife : Counter {}
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
