@@ -52,9 +52,9 @@ actor WeebShell : Ammo replaces Shell
 {
     Inventory.PickupMessage "$GOTSHELLS" // "Picked up 4 shotgun shells."
     Inventory.Amount 4
-    Inventory.MaxAmount 20
+    Inventory.MaxAmount 40
     Ammo.BackpackAmount 4
-    Ammo.BackpackMaxAmount 60
+    Ammo.BackpackMaxAmount 80
     Inventory.Icon "SHELA0"
     States
     {
@@ -80,9 +80,9 @@ actor WeebRocket : Ammo replaces RocketAmmo
 {
     Inventory.PickupMessage "$GOTROCKET" // "Picked up a rocket."
     Inventory.Amount 2
-    Inventory.MaxAmount 30
+    Inventory.MaxAmount 20
     Ammo.BackpackAmount 2
-    Ammo.BackpackMaxAmount 80
+    Ammo.BackpackMaxAmount 30
     Inventory.Icon "ROCKA0"
     States
     {
