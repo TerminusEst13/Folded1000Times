@@ -16,6 +16,7 @@ GRAPHICS:
 - Creation's End (Titlescreen: A New Beginning)
 - Mike12 (The gore decals/graphics, the custom blood for the Hwando)
 - Captain J/Cortlong50 (The Uzi)
+- Captain J (The Uzi ammo pack)
 - Duke Nukem 64 (The Uzi's pickup/ammo graphics)
 - Aeons of Death (For the Carronade explosion graphics)
 

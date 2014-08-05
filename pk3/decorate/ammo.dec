@@ -106,7 +106,7 @@ actor WeebRocketBox : WeebRocket replaces RocketBox
 
 actor WeebCell : Ammo replaces Cell
 {
-    Inventory.PickupMessage "$GOTCELL" // "Picked up an energy cell."
+    Inventory.PickupMessage "Picked up an SMG magazine." // "Picked up an energy cell."
     Inventory.Amount 20
     Inventory.MaxAmount 200
     Ammo.BackpackAmount 20
@@ -122,7 +122,7 @@ actor WeebCell : Ammo replaces Cell
 
 actor WeebCellPack : WeebCell replaces CellPack
 {
-    Inventory.PickupMessage "$GOTCELLBOX" // "Picked up an energy cell pack."
+    Inventory.PickupMessage "Picked up a box of SMG ammo." // "Picked up an energy cell pack."
     Inventory.Amount 50
     States
     {
