@@ -1,3 +1,9 @@
+map MAPFINAL "...And Into the Flame"
+{
+    next = "MAP01"
+    music = "D_FINAL1" // Finntroll - Haterop
+}
+
 skill baby
 {
 	ACSReturn = 0
