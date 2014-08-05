@@ -18,7 +18,8 @@ GRAPHICS:
 - Captain J/Cortlong50 (The Uzi)
 - Captain J (The Uzi ammo pack)
 - Duke Nukem 64 (The Uzi's pickup/ammo graphics)
-- Aeons of Death (For the Carronade explosion graphics)
+- Aeons of Death (The Carronade explosion graphics)
+- Ettingrinder (The Candelabra)
 
 CODE:
 =========

@@ -1,0 +1,172 @@
+actor DecorationSpawner
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
+        TNT1 A 1
+        loop
+    SpawnStimpack:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        stop
+    SpawnMedikit:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("Medikit",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        stop
+    SpawnBullets:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("WeebClip",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        stop
+    SpawnShells:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("WeebShell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        stop
+    SpawnRockets:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("WeebRocket",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        stop
+    SpawnCell:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("WeebCell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        stop
+    Nothing:
+        TNT1 A 0
+        stop
+    }
+}
+
+ACTOR Candelabra2 replaces Candelabra
+{
+    Radius 16
+    Height 60
+    Health 0x7FFFFFFF
+    Mass 0x7FFFFFFF
+    ProjectilePassHeight -16
+    +SOLID
+    +SHOOTABLE
+    +NORADIUSDMG
+    +RANDOMIZE
+    +NOBLOOD
+    +DONTGIB
+    BloodType "BlankPuff"
+    RadiusDamageFactor 0.0
+    DamageFactor "Normal", 0.0
+    DamageFactor "Kubiuti", 1.0
+    PainChance 0
+    PainChance "Kubiuti", 255
+    PainChance "HaltHammerzeit", 255
+    States
+    {
+    Spawn:
+        CBR2 ABC 5 bright
+        loop
+    Pain.HaltHammerzeit:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("CandelabraDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        CBR2 D -1
+        stop
+    }
+}
+
+actor CandelabraDestroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +CLIENTSIDEONLY
+    Gravity 0.95
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        CBR2 EFGH 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        CBR2 H 3500
+		CBR2 HHHHH 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        CBR2 F 3500
+		CBR2 FFFFF 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+Actor BarrelRemains1
+{
+	Projectile
+	-SOLID
+    -NOGRAVITY
+	+DOOMBOUNCE
+	+CLIENTSIDEONLY
+    Scale 0.5
+    Gravity 0.85
+	BounceFactor 0.4
+	BounceCount 4
+	States
+	{
+	Spawn: 
+		BPC1 ABCD 2
+		loop
+	Death:
+		BPC1 A 3500
+		BPC1 AAAAA 2 A_FadeOut(0.2)
+		Stop
+	}
+}
+
+Actor BarrelRemains2 : BarrelRemains1
+{
+	States
+	{
+	Spawn: 
+		BPC2 ABCD 2
+		loop
+	Death:
+		BPC2 A 3500
+		BPC2 AAAAA 2 A_FadeOut(0.2)
+		Stop
+	}
+}
+
+Actor BarrelRemains3 : BarrelRemains1
+{
+	States
+	{
+	Spawn: 
+		BPC3 ABCD 2
+		loop
+	Death:
+		BPC3 A 3500
+		BPC3 AAAAA 2 A_FadeOut(0.2)
+		Stop
+	}
+}
+
+Actor BarrelRemains4 : BarrelRemains1
+{
+	States
+	{
+	Spawn: 
+		BPC4 ABCD 2
+		loop
+	Death:
+		BPC4 A 3500
+		BPC4 AAAAA 2 A_FadeOut(0.2)
+		Stop
+	}
+}

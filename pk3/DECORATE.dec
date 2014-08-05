@@ -52,6 +52,7 @@ const int WEEB_DEC_HAMAMMO3    = 12;
 #include "decorate/weapons/hammer.dec"
 #include "decorate/player.dec"
 #include "decorate/powerups.dec"
+#include "decorate/decorations.dec"
 
 #include "decorate/bloodeffects.dec"
 
