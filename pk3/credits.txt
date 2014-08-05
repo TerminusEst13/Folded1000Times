@@ -34,6 +34,8 @@ CODE:
 
 MUSIC:
 =========
-- Cryptomnesia (Titlescreen: Live Like a God, Die Like a God - Free download off SoundCloud)
+- Cryptomnesia (Titlescreen: Live Like a God, Die Like a God - Free to download off SoundCloud)
 - Megadeth (Intermission: Kick the Chair - Released as a free download in 2004)
-- Finntroll (Read Me: Haterop - Released as a free download in 2005)
+- SlayeR (Read Me: Chaos Abounds - Free to download)
+- Finntroll (Final1: Haterop - Released as a free download in 2005)
+- Yasuharu Takanashi (Final2: Power Up, Akanbe! - Released as a promotional CD to Precure anime)
