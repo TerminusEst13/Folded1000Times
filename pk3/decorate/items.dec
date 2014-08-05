@@ -13,14 +13,16 @@ actor ArmorPackShitAll: ShitAll replaces ArmorBonus {}
 actor ShotgunShitAll : ShitAll replaces Shotgun {}
 actor ChaingunShitAll : ShitAll replaces Chaingun {}
 
-actor HealPackSmall: CustomInventory replaces StimPack
+actor HealPackSmall: CustomInventory //replaces StimPack
 {
     Inventory.PickupMessage "Picked up 1 Life Token."
+    Inventory.PickupSound "health/soda"
+    Scale 0.9
     States
     {
     Spawn:
-        STIM A -1
-        Stop
+        TNT1 A 1
+        loop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
         TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
@@ -94,14 +96,81 @@ actor HealPackSmall: CustomInventory replaces StimPack
     }
 }
 
-actor HealPackMedium: CustomInventory replaces Medikit
+actor HealPackSmall1 : HealPackSmall
 {
-    Inventory.PickupMessage "Picked up 2 Life Tokens."
     States
     {
     Spawn:
-        MEDI A -1
-        Stop
+        SODA A 1 BRIGHT
+        SODA A 30
+        loop
+    }
+}
+
+actor HealPackSmall2 : HealPackSmall
+{
+    States
+    {
+    Spawn:
+        SODA B 1 BRIGHT
+        SODA B 30
+        loop
+    }
+}
+
+actor HealPackSmall3 : HealPackSmall
+{
+    States
+    {
+    Spawn:
+        SODA C 1 BRIGHT
+        SODA C 30
+        loop
+    }
+}
+
+actor HealPackSmall4 : HealPackSmall
+{
+    States
+    {
+    Spawn:
+        SODA D 1 BRIGHT
+        SODA D 30
+        loop
+    }
+}
+
+actor HealPackSmall5 : HealPackSmall
+{
+    YScale 0.8
+    States
+    {
+    Spawn:
+        SODA E 1 BRIGHT
+        SODA E 30
+        loop
+    }
+}
+
+actor HealPackSmallSpawner : RandomSpawner replaces Stimpack
+{
+    DropItem "HealPackSmall1"
+    DropItem "HealPackSmall2"
+    DropItem "HealPackSmall3"
+    DropItem "HealPackSmall4"
+    DropItem "HealPackSmall5"
+}
+
+actor HealPackMedium: CustomInventory
+{
+    Inventory.PickupMessage "Picked up 2 Life Tokens."
+    Inventory.PickupSound "health/apple"
+    Scale 0.85
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        loop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
         TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
@@ -204,14 +273,69 @@ actor HealPackMedium: CustomInventory replaces Medikit
     }
 }
 
-actor OverHealPack : CustomInventory replaces SoulSphere
+
+
+actor HealPackMedium1 : HealPackMedium
 {
-    Inventory.PickupMessage "Picked up some Over-Life Tokens."
-    Inventory.PickupSound "misc/p_pkup"
     States
     {
     Spawn:
-        SOUL ABCDCB 6 Bright
+        APPL A 1 BRIGHT
+        APPL A 30
+        loop
+    }
+}
+
+actor HealPackMedium2 : HealPackMedium
+{
+    States
+    {
+    Spawn:
+        APPL B 1 BRIGHT
+        APPL B 30
+        loop
+    }
+}
+
+actor HealPackMedium3 : HealPackMedium
+{
+    States
+    {
+    Spawn:
+        APPL C 1 BRIGHT
+        APPL C 30
+        loop
+    }
+}
+
+actor HealPackMedium4 : HealPackMedium
+{
+    States
+    {
+    Spawn:
+        APPL D 1 BRIGHT
+        APPL D 30
+        loop
+    }
+}
+
+actor HealPackMediumSpawner : RandomSpawner replaces Medikit
+{
+    DropItem "HealPackMedium1"
+    DropItem "HealPackMedium2"
+    DropItem "HealPackMedium3"
+    DropItem "HealPackMedium4"
+}
+
+actor OverHealPack : CustomInventory
+{
+    Inventory.PickupMessage "Picked up some Over-Life Tokens."
+    Inventory.PickupSound "health/burger"
+    Scale 0.75
+    States
+    {
+    Spawn:
+        TNT1 A 1
         Loop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
@@ -281,6 +405,58 @@ actor OverHealPack : CustomInventory replaces SoulSphere
     }
 }
 
+actor OverHealPack1 : OverHealPack
+{
+    States
+    {
+    Spawn:
+        BRGR A 1 BRIGHT
+        BRGR A 30
+        loop
+    }
+}
+
+actor OverHealPack2 : OverHealPack
+{
+    States
+    {
+    Spawn:
+        BRGR B 1 BRIGHT
+        BRGR B 30
+        loop
+    }
+}
+
+actor OverHealPack3 : OverHealPack
+{
+    States
+    {
+    Spawn:
+        BRGR C 1 BRIGHT
+        BRGR C 30
+        loop
+    }
+}
+
+actor OverHealPack4 : OverHealPack
+{
+    States
+    {
+    Spawn:
+        BRGR D 1 BRIGHT
+        BRGR D 30
+        loop
+    }
+}
+
+actor OverHealPackSpawner : RandomSpawner replaces Soulsphere
+{
+    DropItem "OverHealPack1"
+    DropItem "OverHealPack2"
+    DropItem "OverHealPack3"
+    DropItem "OverHealPack4"
+}
+
 actor ArmorPackSmall: CustomInventory replaces GreenArmor
 {
     Inventory.PickupMessage "Picked up 3 Armor Tokens."
@@ -340,11 +516,13 @@ actor ArmorPackLarge: CustomInventory replaces BlueArmor
 actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
 {
     Inventory.PickupMessage "Full recharge!"
-    Inventory.PickupSound "misc/p_pkup"
+    Inventory.PickupSound "health/ramen"
+    Scale 0.8
     states
     {
     Spawn:
-        MEGA ABCD 6 Bright
+        RAMN A 1 Bright
+        RAMN AAAAAA 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
         Loop
     Pickup: // That strange sensation when you realize your health system has gotten
             // so complex that it's actually easier to do in ACS than in Decorate.
@@ -458,14 +636,27 @@ actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
     }
 }
 
+ACTOR RamenSmoke
+{
+    Scale 0.2
+    Alpha 0.5
+    +RANDOMIZE
+    +NOINTERACTION
+    Renderstyle Add
+    States
+    {
+    Spawn:
+        SMOK ABCDEFGHIJKLMNOPQ 1 A_FadeOut(0.01)
+        Stop
+    }
+}
+
 actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
 {
     Inventory.PickupMessage "Invulnerability!"
     Powerup.Type "ShieldProtection"
     Powerup.Duration -30
     Powerup.Color blue2 0.10
-    +NOTIMEFREEZE
-    +FLOATBOB
     +INVENTORY.AUTOACTIVATE
     States
     {

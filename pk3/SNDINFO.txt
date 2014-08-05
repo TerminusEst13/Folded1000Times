@@ -18,6 +18,17 @@ weapon/switch             WEPSWTCH
 
 $rolloff weapon/summon 800 5200
 
+// Destructable decorations
+
+destroy/candelabra        CNDLCUT
+
+// Pickups
+
+health/soda               SODADRNK // By Aenima
+health/apple              APPLMNCH // By Agaxly off Freesound, edited
+health/burger             BRGRMNCH // Edited from thedust82's cracker eating sound off Freesound
+health/ramen              RAMNDRNK // Edited from DaveHammond's soup drinking sound off Freesound
+
 // Player
 
 armor/hit                 ARMRHIT
