@@ -8,7 +8,7 @@ actor "Hwando + Hammer" : HwandoBase //replaces SuperShotgun
     States
     {
     Spawn:
-        CSAW A -1
+        CMCP A -1
         Stop
     Select:
         TNT1 A 0 A_GiveInventory("HammerUp",1)
