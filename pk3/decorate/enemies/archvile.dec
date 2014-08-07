@@ -65,6 +65,7 @@ actor SnappyArchieFire
     Mass 14
     Health 20
     Speed 6
+    +NOBLOOD
     +NOGRAVITY
     +FLOATBOB
     +FLOAT
