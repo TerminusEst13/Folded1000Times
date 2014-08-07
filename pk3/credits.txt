@@ -20,6 +20,7 @@ GRAPHICS:
 - Duke Nukem 64 (The Uzi's pickup/ammo graphics)
 - Aeons of Death (The Carronade explosion graphics)
 - Ettingrinder (The Candelabra)
+- NeuralStunner (The Hammer's pickup sprite)
 
 CODE:
 =========
