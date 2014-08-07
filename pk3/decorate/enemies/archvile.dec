@@ -114,6 +114,8 @@ actor SnappyArchieFireFire : BaronBall
     DamageType "ArchvileFire"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "HaltHammerzeit", 0.0
+    DamageFactor "RocketJumpDamage", 0.0
     +THRUSPECIES
     +THRUGHOST
     +SHOOTABLE

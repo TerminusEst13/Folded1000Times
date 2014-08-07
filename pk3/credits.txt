@@ -11,7 +11,7 @@ SPECIAL THANKS TO:
 
 GRAPHICS:
 =========
-- Mike12/DrDoctor/David G (Custom deaths)
+- Mike12/DrDoctor/David G/Vader (Custom deaths)
   ^ All custom deaths have been sorted in folders according to the artist
 - Creation's End (Titlescreen: A New Beginning)
 - Mike12 (The gore decals/graphics, the custom blood for the Hwando)
@@ -31,6 +31,7 @@ CODE:
 - MagSigmaX (Inspiration for the dodging code)
 - Lioyd_Irving/le_L (The basis for the Hammer's impact code)
 - Scroton (The 3rd level spatter for the Hammer)
+- PillowBlaster (The overcharge shockwaves for the Hammer)
 
 MUSIC:
 =========

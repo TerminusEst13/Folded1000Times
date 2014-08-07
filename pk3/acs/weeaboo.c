@@ -166,7 +166,6 @@ script WEEB_ENTER ENTER
     int KurtAngle;
     int WalkTheDinosaur;
     int RideTheLightning;
-    int CountVonCount;
 
     if (CheckInventory("ImAlive") == 0)
     {
@@ -204,8 +203,9 @@ script WEEB_ENTER ENTER
                { if (RideTheLightning >= 10) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 0)
                { if (RideTheLightning >= 5)  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
-           RideTheLightning++;
         }
+        else { if (RideTheLightning >= 25)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
+        RideTheLightning++;
 
         TakeInventory("GhostStepCooldown",1);
         TakeInventory("DoubleTapCooldown",1);
@@ -267,7 +267,6 @@ script WEEB_ENTER ENTER
 
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
-        CountVonCount = GetCvar("ds_doubletapwindow");
 
         // For back-back-attack block. Likely to be removed.
         if (buttons & BT_ATTACK)

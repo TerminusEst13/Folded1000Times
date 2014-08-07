@@ -31,26 +31,26 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         goto death.kubiuti+1
     death.Bloody:
-    death.hunter:    
-        XDA3 A 0 A_PlaySound("S_Cutdead")
+    death.hunter:
+        TNT1 A 0 A_PlaySound("S_Cutdead")
         goto death.kubiuti+3
     death.kubiuti:
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Jump(128,"Death.Bloody")
-        XDA3 A 0 A_PlaySound("enemy/bisected")
-        XDA3 A 0 A_Jump(128,"TorsoGone","TorsoGone2","ArmGone","ArmGone2","LegGone","LegGone2")
-        XDA3 A 0 A_SpawnItem("POSXKubiuted",0,40,0)
-        XDA3 A 0 A_Jump(128,"kubiuti1B")
-        XDA3 AAAAAAAAAA 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
-        XDA3 B 5 A_NoBlocking
-        XDA3 CDE 5
-        XDA3 F -1
+        TNT1 A 0 A_PlaySound("enemy/bisected")
+        TNT1 A 0 A_Jump(192,"TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4","ArmGone","ArmGone2","LegGone","LegGone2")
+        TNT1 A 0 A_SpawnItem("POSXKubiuted",0,40,0)
+        TNT1 A 0 A_Jump(128,"kubiuti1B")
+        ZXD0 AAAAAAAAAA 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        ZXD0 B 5 A_NoBlocking
+        ZXD0 CDE 5
+        ZXD0 F -1
         Stop
     kubiuti1B:
-        XDA3 GGGGGGGGGG 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
-        XDA3 H 5 A_NoBlocking
-        XDA3 IJK 5
-        XDA3 L -1
+        ZXD0 GGGGGGGGGG 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        ZXD0 H 5 A_NoBlocking
+        ZXD0 IJK 5
+        ZXD0 L -1
         Stop
     TorsoGone:
         ZXD1 ABB 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
@@ -67,6 +67,34 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_NoBlocking
         ZXD1 STUV 2 A_SpawnItem("BloodShower",0,16)
         ZXD1 W -1
+        Stop
+    TorsoGone3:
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_SpawnItemEx("BisectedZombiemanTorso",0,0,45,random(-25,0)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
+        ZXD4 A 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 A 0
+        ZXD4 BBCCDD 1 A_SpawnDebris("BloodShower2",1)
+        TNT1 A 0 A_Jump(32,1)
+        goto TorsoGone3+5
+        ZXD4 EFGHI 2 A_SpawnItem("BloodShower",0,16)
+        ZXD4 I 10
+        ZXD4 JK 4
+        ZXD4 L -1
+        Stop
+    TorsoGone4:
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_SpawnItemEx("BisectedZombiemanTorso2",0,0,45,random(0,25)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
+        ZXD4 M 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 A 0
+        ZXD4 NNOOPP 1 A_SpawnDebris("BloodShower2",1)
+        TNT1 A 0 A_Jump(32,1)
+        goto TorsoGone4+5
+        ZXD4 QRSTU 2 A_SpawnItem("BloodShower",0,16)
+        ZXD4 U 10
+        ZXD4 VW 4
+        ZXD4 X -1
         Stop
     ArmGone:
         TNT1 A 0
@@ -131,36 +159,36 @@ actor POSXKubiuted
     States
     {
     Spawn:
-        XDA3 M 0
-        XDA3 M 0 ThrustThing (random(0,255),random(1,4))
-        XDA3 M 0 ThrustThingZ(0,random(40,40),0,0)
+        TNT1 A 0
+        TNT1 A 0 ThrustThing (random(0,255),random(1,4))
+        TNT1 A 0 ThrustThingZ(0,random(40,40),0,0)
         XDA3 MMM 1 A_SpawnItem("BloodShower3",0)
-        XDA3 M 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         XDA3 NNN 1 A_SpawnItem("BloodShower3",0)
-        XDA3 N 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         XDA3 OOO 1 A_SpawnItem("BloodShower3",0)
-        XDA3 O 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         XDA3 PPP 1 A_SpawnItem("BloodShower3",0)
-        XDA3 P 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         XDA3 QQQ 1 A_SpawnItem("BloodShower3",0)
-        XDA3 Q 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         XDA3 RRR 1 A_SpawnItem("BloodShower3",0)
-        XDA3 R 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         XDA3 SSS 1 A_SpawnItem("BloodShower3",0)
-        XDA3 S 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         XDA3 TTT 1 A_SpawnItem("BloodShower3",0)
-        XDA3 T 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         goto Spawn+3
     Spawned:
-        XDA3 M 0 A_SpawnItem("BloodShower4",0,0,0,1)
-        XDA3 M 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
-        XDA3 M 0 A_Jump(200,3)
+        TNT1 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
+        TNT1 A 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_Jump(200,3)
         XDA3 M 1 A_PlaySound("S_Blodd")
-        XDA3 M 0 ThrustThingZ(0,random(10,20),0,0)
+        TNT1 A 0 ThrustThingZ(0,random(10,20),0,0)
         goto Spawn+3
-        XDA3 M 0 A_PlaySound("S_Blodd")
-        XDA3 M 0 A_ChangeFlag("PUSHABLE",0)
-        XDA3 M 0 A_Jump(64,9)
+        TNT1 A 0 A_PlaySound("S_Blodd")
+        TNT1 A 0 A_ChangeFlag("PUSHABLE",0)
+        TNT1 A 0 A_Jump(64,9)
         XDA3 MNOPQRST 3 A_SpawnItem("BloodShower4",0,0,0,1)
     Spawned2:    
         XDA3 M 1 A_Chase
@@ -168,16 +196,16 @@ actor POSXKubiuted
 
     Melee:
         XDA3 M 1 A_FaceTarget
-        XDA3 M 0 damageThing(1)
-        XDA3 M 0 A_ChangeFlag("PUSHABLE",1)
-        XDA3 M 0 ThrustThingZ(0,random(15,40),0,0)
-        XDA3 M 0 A_Recoil(2+random(0,8))
+        TNT1 A 0 damageThing(1)
+        TNT1 A 0 A_ChangeFlag("PUSHABLE",1)
+        TNT1 A 0 ThrustThingZ(0,random(15,40),0,0)
+        TNT1 A 0 A_Recoil(2+random(0,8))
         goto Spawn+3
     Death:
-        BLD1 C 0 A_Fall
-        BLD1 C 0 A_Scream
-        BLD1 C 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
-        BLD1 CCCCC 0 A_SpawnDebris("BloodSplashGus1")
+        BLD1 A 0 A_Fall
+        BLD1 A 0 A_Scream
+        BLD1 A 0 A_CustomMissile("EnemySplashGus1",0,0,random(0,360),2,random(0,360))
+        BLD1 AAAAA 0 A_SpawnDebris("BloodSplashGus1")
         BLD1 CBA 1
         Stop
     }
@@ -278,7 +306,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0
         XDB3 A 0 A_Jump(196,"Death.Bloody")
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        TNT1 A 0 A_Jump(196,"TorsoGone","TorsoGone2","ArmGone","LegGone","ArmGone2","LegGone2")
+        TNT1 A 0 A_Jump(196,"TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4","ArmGone","LegGone","ArmGone2","LegGone2")
         XDB3 A 0 A_SpawnItem("SPOXKubiuted",0,40,0)
         XDB3 AAAAAAAAAA 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),4)
         XDB3 B 0 A_NoBlocking
@@ -324,6 +352,34 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_NoBlocking
         SXD1 STUV 2 A_SpawnItem("BloodShower",0,16)
         SXD1 W -1
+        Stop
+    TorsoGone3:
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_SpawnItemEx("BisectedShotgunnerTorso",0,0,45,random(-25,0)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
+        SXD4 ABC 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 A 0
+        SXD4 DDEEFF 1 A_SpawnDebris("BloodShower2",1)
+        TNT1 A 0 A_Jump(32,1)
+        goto TorsoGone3+7
+        ZXD4 GHI 2 A_SpawnItem("BloodShower",0,16)
+        ZXD4 I 10
+        ZXD4 JK 4
+        ZXD4 L -1
+        Stop
+    TorsoGone4:
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_SpawnItemEx("BisectedShotgunnerTorso2",0,0,45,random(0,25)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
+        SXD4 MNO 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 A 0
+        SXD4 PPQQRR 1 A_SpawnDebris("BloodShower2",1)
+        TNT1 A 0 A_Jump(32,1)
+        goto TorsoGone4+7
+        SXD4 STU 2 A_SpawnItem("BloodShower",0,16)
+        SXD4 U 10
+        SXD4 VW 4
+        SXD4 X -1
         Stop
     ArmGone:
         TNT1 A 0
