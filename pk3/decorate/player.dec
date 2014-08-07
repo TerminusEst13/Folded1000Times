@@ -24,6 +24,7 @@ ACTOR MeleePlayer : PlayerPawn
 	PainChance "EnemyInfightDamage", 0
 	DamageFactor "Normal", 0.75
 	DamageFactor "EnemyInfightDamage", 0.0
+	DamageFactor "RocketJumpDamage", 0.0
 	DamageFactor "HaltHammerzeit", 0.0
 	DamageFactor "GuardMove", 0.0
 	DamageFactor "Telefrag", 2.00
@@ -113,7 +114,7 @@ ACTOR MeleePlayer : PlayerPawn
         WARR G 4 A_Pain
         Goto Spawn
 	PainArmored:
-		TNT1 A 0 A_SetBlend("White",0.5,15)
+		TNT1 A 0 A_SetBlend("Yellow",0.5,15)
 		TNT1 A 0 A_PlaySound("armor/hit")
         WARR G 4 A_Recoil(5)
         WARR G 4
