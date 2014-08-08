@@ -1,4 +1,3 @@
 // Boy, this is gonna be odd if Zandro ever catches up with ZDoom.
 // Talk about not futureproof.
 server int ds_runninginzdoom = 1;
-server int ds_doubletapwindow = 8;
