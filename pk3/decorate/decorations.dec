@@ -55,13 +55,13 @@ ACTOR Candelabra2 replaces Candelabra
     DamageFactor "Kubiuti", 1.0
     PainChance 0
     PainChance "Kubiuti", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "KubiSpinAttack", 255
     States
     {
     Spawn:
         CBR2 ABC 5 bright
         loop
-    Pain.HaltHammerzeit:
+    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
@@ -102,6 +102,158 @@ actor CandelabraDestroyed
     Death2:
         CBR2 F 3500
 		CBR2 FFFFF 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+ACTOR BlueTorch2 replaces BlueTorch
+{
+    Radius 16
+    Height 68
+    Health 0x7FFFFFFF
+    Mass 0x7FFFFFFF
+    ProjectilePassHeight -16
+    +SOLID
+    +SHOOTABLE
+    +NORADIUSDMG
+    +RANDOMIZE
+    +NOBLOOD
+    +DONTGIB
+    BloodType "BlankPuff"
+    RadiusDamageFactor 0.0
+    DamageFactor "Normal", 0.0
+    DamageFactor "Kubiuti", 1.0
+    PainChance 0
+    PainChance "Kubiuti", 255
+    PainChance "KubiSpinAttack", 255
+    States
+    {
+    Spawn:
+        TRC2 ABCD 4 bright
+        loop
+    Pain.KubiSpinAttack:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("TorchDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC2 M -1
+        stop
+    }
+}
+
+ACTOR RedTorch2 replaces RedTorch
+{
+    Radius 16
+    Height 68
+    Health 0x7FFFFFFF
+    Mass 0x7FFFFFFF
+    ProjectilePassHeight -16
+    +SOLID
+    +SHOOTABLE
+    +NORADIUSDMG
+    +RANDOMIZE
+    +NOBLOOD
+    +DONTGIB
+    BloodType "BlankPuff"
+    RadiusDamageFactor 0.0
+    DamageFactor "Normal", 0.0
+    DamageFactor "Kubiuti", 1.0
+    PainChance 0
+    PainChance "Kubiuti", 255
+    PainChance "KubiSpinAttack", 255
+    States
+    {
+    Spawn:
+        TRC2 EFGH 4 bright
+        loop
+    Pain.KubiSpinAttack:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("TorchDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC2 M -1
+        stop
+    }
+}
+
+ACTOR GreenTorch2 replaces GreenTorch
+{
+    Radius 16
+    Height 68
+    Health 0x7FFFFFFF
+    Mass 0x7FFFFFFF
+    ProjectilePassHeight -16
+    +SOLID
+    +SHOOTABLE
+    +NORADIUSDMG
+    +RANDOMIZE
+    +NOBLOOD
+    +DONTGIB
+    BloodType "BlankPuff"
+    RadiusDamageFactor 0.0
+    DamageFactor "Normal", 0.0
+    DamageFactor "Kubiuti", 1.0
+    PainChance 0
+    PainChance "Kubiuti", 255
+    PainChance "KubiSpinAttack", 255
+    States
+    {
+    Spawn:
+        TRC2 IJKL 4 bright
+        loop
+    Pain.KubiSpinAttack:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("TorchDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC2 M -1
+        stop
+    }
+}
+
+actor TorchDestroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +CLIENTSIDEONLY
+    Gravity 0.85
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        TRC2 NOPQ 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        TRC2 O 3500
+		TRC2 OOOOO 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        TRC2 Q 3500
+		TRC2 QQQQQ 2 A_FadeOut(0.2)
         stop
     }
 }
