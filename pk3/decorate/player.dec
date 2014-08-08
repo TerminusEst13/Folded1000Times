@@ -31,7 +31,7 @@ ACTOR MeleePlayer : PlayerPawn
 	DamageFactor "Suicide", 2.00
     RadiusDamageFactor 0.5
     Player.StartItem "Hwando + Pistol", 1
-    Player.StartItem "SuperMeterCounter", 10
+    Player.StartItem "SuperMeterCounter", 20
     Player.StartItem "WeebClip", 20
     Player.ColorRange 112, 127
     Player.AttackZOffset 16
