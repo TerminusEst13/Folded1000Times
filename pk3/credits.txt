@@ -41,3 +41,7 @@ MUSIC:
 - SlayeR (Read Me: Chaos Abounds - Free to download)
 - Finntroll (Final1: Haterop - Released as a free download in 2005)
 - Yasuharu Takanashi (Final2: Power Up, Akanbe! - Released as a promotional CD to Precure anime)
+
+SOUNDS:
+=========
+- All sounds are credited to their respective owner in SNDINFO.

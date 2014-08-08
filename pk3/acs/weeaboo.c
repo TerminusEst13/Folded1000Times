@@ -143,19 +143,33 @@ script WEEB_DECORATE (int burrshet)
     }
 }
 
-//
-function void evade_start(int angle, int dir)
+script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 {
-	GiveInventory("EvadingPlayer",1);
-	SetPlayerProperty(0, ON, PROP_FROZEN);
-	ThrustThing(angle+dir, 45, 0, 0);
-	ThrustThingZ (0, 140, 1, 1);
-}
+    if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } 
 
-function void evade_end(void)
-{
-	SetPlayerProperty(0, OFF, PROP_FROZEN);
-	TakeInventory("EvadingPlayer",1);
+    switch (boreshut)
+    {
+    case WEEB_DEC_GETMESSAGES:
+        switch (bowlshot)
+        {
+        case 0:
+          Log(s:"\cfThe \cjTestament \cfshotgun. You may wield it...");
+          break;
+
+        case 1:
+          Log(s:"\cfThe \cjPaladin \cfgrenade launcher. You may wield it...");
+          break;
+
+        case 2:
+          Log(s:"\cfThe \cjSabbath \cfsubmachine gun. You may wield it...");
+          break;
+
+        case 3:
+          Log(s:"\cfThe \cjWitchhunter \cfHammer. You may wield it...");
+          break;
+        }
+        break;
+    }
 }
 
 script WEEB_ENTER ENTER
@@ -174,6 +188,8 @@ script WEEB_ENTER ENTER
         if (GameSkill () == 2) { GiveInventory("NormalMarker",1); GiveInventory("ContraLifeToken",6); }
         if (GameSkill () == 3) { GiveInventory("HardMarker",1); GiveInventory("ContraLifeToken",4); }
         if (GameSkill () == 4) { GiveInventory("NightmareMarker",1); GiveInventory("ContraLifeToken",2); }
+        FadeRange(0,0,0,1.00,0,0,0,0,3.50);
+        LocalAmbientSound("level/intro",127);
         GiveInventory("ImAlive",1);
     }
     SetActorProperty(0,APROP_INVULNERABLE,0); // Just in case some wiseass exits while invuln.
@@ -204,7 +220,7 @@ script WEEB_ENTER ENTER
            else if (CheckInventory("HammerCharge") >= 0)
                { if (RideTheLightning >= 5)  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
         }
-        else { if (RideTheLightning >= 25)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
+        else { if (RideTheLightning >= 20)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
         RideTheLightning++;
 
         TakeInventory("GhostStepCooldown",1);

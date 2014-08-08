@@ -9,6 +9,7 @@
 #define WEEB_COMBOREMOVAL                    272
 #define WEEB_UNLOADING                       273
 #define WEEB_OPEN                            274
+#define WEEB_CLIENTDECORATE                  275
 
 // Definitions
 
@@ -46,3 +47,5 @@
 #define WEEB_DEC_HAMAMMO1     10
 #define WEEB_DEC_HAMAMMO2     11
 #define WEEB_DEC_HAMAMMO3     12
+
+#define WEEB_DEC_GETMESSAGES  0
