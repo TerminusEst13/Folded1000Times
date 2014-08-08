@@ -1,6 +1,7 @@
 ACTOR WeeabooImp : DoomImp replaces DoomImp
 {
     +MISSILEMORE
+    +MISSILEEVENMORE
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255

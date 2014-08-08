@@ -9,6 +9,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     DamageFactor "ArchvileFire", 0.0
     BloodColor DarkOliveGreen
     +MISSILEMORE
+    +MISSILEEVENMORE
     States
     {
     Melee:
@@ -128,6 +129,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
 	DamageFactor "GuardMove", 0.0
     BloodColor DarkOliveGreen
     +MISSILEMORE
+    +MISSILEEVENMORE
     States
     {
     Melee:

@@ -9,6 +9,7 @@ ACTOR WeeabooCacodemon : Cacodemon replaces Cacodemon
     DamageFactor "ArchvileFire", 0.0
     BloodColor blue
     +MISSILEMORE
+    +MISSILEEVENMORE
     States
     {
     See:

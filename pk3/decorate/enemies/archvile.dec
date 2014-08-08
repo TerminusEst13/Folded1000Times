@@ -53,18 +53,19 @@ actor WeeabooArchvile : Archvile replaces Archvile
 
 actor SnappyArchieFire
 {
-    Species "EnemyShot"
-    SeeSound "vile/firecrkl"
-    DeathSound "vile/firestrt"
-    +THRUSPECIES
-    Monster
-    RenderStyle ADD
-    -SOLID
     Radius 16
     Height 32
     Mass 14
     Health 20
     Speed 6
+    RenderStyle Add
+    Alpha 0.9
+    Species "EnemyShot"
+    SeeSound "vile/firecrkl"
+    DeathSound "vile/firestrt"
+    Monster
+    +THRUSPECIES
+    -SOLID
     +NOBLOOD
     +NOGRAVITY
     +FLOATBOB
@@ -72,6 +73,8 @@ actor SnappyArchieFire
     +LOOKALLAROUND
     +MISSILEMORE
     +MISSILEEVENMORE
+    DamageFactor "GuardMove", 0.0
+    DamageFactor "ArchvileFire", 0.0
     Obituary "%o was burned by something vile."
     states
     {

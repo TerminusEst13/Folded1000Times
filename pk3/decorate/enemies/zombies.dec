@@ -1,7 +1,7 @@
 ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
 {
     +MISSILEMORE
-    //+MISSILEEVENMORE
+    +MISSILEEVENMORE
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
@@ -18,9 +18,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS E 0 A_PlaySound("trooper/fire")
         POSS F 6 bright A_CustomMissile("EnemyBullet",32,0,random(-600,600)/100.00)
         POSS E 6
-        TNT1 A 0 A_Jump(196,"See")
-        TNT1 A 0 A_SpidRefire
-        goto Missile
+        goto See
 
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -261,7 +259,7 @@ actor BisectedZombiemanTorso2 : POSXKubiuted
 ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 {
     +MISSILEMORE
-    //+MISSILEEVENMORE
+    +MISSILEEVENMORE
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
@@ -284,9 +282,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         SPOS F 0 A_PlaySound("sergeant/fire")
         SPOS F 6 bright A_CustomMissile("EnemyBullet",32,0,random(-500,500)/100.00)
         SPOS E 6
-        TNT1 A 0 A_Jump(196,"See")
-        TNT1 A 0 A_SpidRefire
-        goto Missile
+        goto See
 
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -515,6 +511,7 @@ actor SPOXKubiuted : POSXKubiuted
 ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
 {
     +MISSILEMORE
+    +MISSILEEVENMORE
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
