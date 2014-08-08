@@ -8,7 +8,7 @@ skill baby
 {
 	ACSReturn = 0
     EasyBossBrain
-	SpawnFilter = Baby
+	SpawnFilter = Hard
 	Name = "Return to Serenity" // Testament
 	MustConfirm = "$CONFIRM_BABY"
 }
@@ -17,7 +17,7 @@ skill easy
 {
 	ACSReturn = 1
 	EasyBossBrain
-	SpawnFilter = Easy
+	SpawnFilter = Hard
 	Name = "Never Say Die" // Black Sabbath
 	MustConfirm = "$CONFIRM_EASY"
 }
@@ -25,7 +25,7 @@ skill easy
 skill normal
 {
 	ACSReturn = 2
-	SpawnFilter = Normal
+	SpawnFilter = Hard
 	Name = "Point of No Return" // Lords of Decadence
 	MustConfirm = "$CONFIRM_NORMAL"
 	//DefaultSkill
