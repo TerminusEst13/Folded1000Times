@@ -231,11 +231,15 @@ $rolloff grenades/explode4 400 1600
 $rolloff grenades/explode5 400 1600
 
 // Enemy sounds
-trooper/fire              ENSHOT1 
-sergeant/fire             ENSHOT2 // Taken from Mega Man X4
-chngnner/fire             ENSHOT3 // Ditto
 
-enemy/bisected            ENBISECT // Taken from some Neo-Geo fighter
+trooper/gunready          ENREAD1 // Taken from Smash Bros. Melee
+sergeant/gunready         ENREAD2 // Taken from Smash Bros. Brawl
+chngnner/gunready         ENREAD3 // Taken from Smash Bros. Brawl
+trooper/fire              ENSHOT1 
+sergeant/fire             ENSHOT2
+chngnner/fire             ENSHOT3
+
+enemy/bisected            ENBISECT // Taken from Splatterhouse
 
 
 

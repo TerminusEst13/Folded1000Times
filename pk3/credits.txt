@@ -6,7 +6,7 @@ SPECIAL THANKS TO:
   Shadow Warrior 2013 and GunZ, both also big inspirations for this.
 - Special thanks to Mike12 for his incredible patience in dealing with my
   stubborn push of ideas and my flighty attention span, as well as his jaw-
-  droppingly astounding artistic work 
+  droppingly astounding artistic work.
 
 
 GRAPHICS:
@@ -25,6 +25,8 @@ GRAPHICS:
 - Aeons of Death (The Carronade explosion graphics)
 - Ettingrinder (The Candelabra)
 - NeuralStunner (The Hammer's pickup sprite)
+- Raven Software (All the lightning effects, from Strife)
+- Id Software (The laser shots from the zombies)
 
 CODE:
 =========
