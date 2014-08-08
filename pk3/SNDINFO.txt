@@ -37,6 +37,26 @@ weapon/switch             WEPSWTCH
 
 $rolloff weapon/summon 800 5200
 
+world/drip                dsdrip
+world/drip1               dsdrip1
+world/watersplash         dssplash
+world/watersplashsmall    dssplsml
+world/sludgegloop         dsploosh
+world/sludgegloopsmall    dsplosml
+world/lavasizzle          dslvsiz
+world/lavsiz2             dslvsiz2
+world/lavasizzlesmall     dslavsml
+world/thunder             dsthun
+
+$limit world/drip             1
+$limit world/watersplash      1
+$limit world/watersplashsmall 2
+$limit world/sludgegloop      1
+$limit world/sludgegloopsmall 2
+$limit world/lavasizzle       1
+$limit world/lavsiz2          1
+$limit world/lavasizzlesmall  2
+
 // Destructable decorations
 
 destroy/candelabra        CNDLCUT
@@ -224,16 +244,16 @@ enemy/bisected            ENBISECT // Taken from some Neo-Geo fighter
 
 // Taken from Radys that I haven't changed yet
 
-S_Cut			NGORE4
-S_Cutdead		NGORE5
+S_Cut            NGORE4
+S_Cutdead        NGORE5
 
-S_Blodf1		NBLODF1
+S_Blodf1        NBLODF1
 
-S_Blodd1		NBLODd1
-S_Blodd2		NBLODd2
-S_Blodd3		NBLODd3
-$random	S_Blodd	{ S_Blodd1 S_Blodd2 S_Blodd3 }
-$limit S_Blodd	1
+S_Blodd1        NBLODd1
+S_Blodd2        NBLODd2
+S_Blodd3        NBLODd3
+$random    S_Blodd    { S_Blodd1 S_Blodd2 S_Blodd3 }
+$limit S_Blodd    1
 
 
-wp/kickh1		NSWA014
+wp/kickh1        NSWA014

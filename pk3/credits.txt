@@ -2,8 +2,8 @@ SPECIAL THANKS TO:
 =========
 - Special thanks to Combine_Kegan and Shiga95, who respectively made GMOTA and
   Swan Fox, both of which were big inspirations for this.
-- Special thanks to 3D Realms and MAIET Entertainment, respectively for Shadow
-  Warrior and GunZ, both of which were also big inspirations for this.
+- Special thanks to Flying Wild Hog and MAIET Entertainment, respectively for
+  Shadow Warrior 2013 and GunZ, both also big inspirations for this.
 - Special thanks to Mike12 for his incredible patience in dealing with my
   stubborn push of ideas and my flighty attention span, as well as his jaw-
   droppingly astounding artistic work 
@@ -14,7 +14,11 @@ GRAPHICS:
 - Mike12/DrDoctor/David G/Vader (Custom deaths)
   ^ All custom deaths have been sorted in folders according to the artist
 - Creation's End (Titlescreen: A New Beginning)
-- Mike12 (The gore decals/graphics, the custom blood for the Hwando)
+- Mike12
+  ^ Numerous custom deaths (as mentioned)
+  ^ The gore decals/graphics
+  ^ The custom blood for the Hwando
+  ^ The pistol
 - Captain J/Cortlong50 (The Uzi)
 - Captain J (The Uzi ammo pack)
 - Duke Nukem 64 (The Uzi's pickup/ammo graphics)
@@ -24,8 +28,11 @@ GRAPHICS:
 
 CODE:
 =========
-- Ijon Tichy (The double-tap code (taken from Parkmore), the shockwave from the
-  spin attack, the trail for the bullets, the 2nd level spatter for the Hammer)
+- Ijon Tichy 
+  ^ The double-tap code (taken from Parkmore)
+  ^ The shockwave from the spin attack
+  ^ The trail for the zombie lasers/razor wind
+  ^ The second level spatter for the hammer
 - Doom667Shogun (For the blood/dismembering effects)
 - Vaecrius (For the redone Archvile (taken from Make It Snappy))
 - Kyle873 (Polishing the post-damage invulnerability code)
@@ -33,6 +40,7 @@ CODE:
 - Lioyd_Irving/le_L (The basis for the Hammer's impact code)
 - Scroton (The 3rd level spatter for the Hammer)
 - PillowBlaster (The overcharge shockwaves for the Hammer)
+- Xaser/Enjay/Corwin (The TERRAIN lump from Psychic)
 
 MUSIC:
 =========

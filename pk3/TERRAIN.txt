@@ -1,0 +1,172 @@
+// Terrain nicked from Psychic, which in turn is nicked from Zen.
+// Which in turn was originally by Enjay, and based on work by Corwin.
+// Basically what I'm saying is that I'm a filthy thief.
+// There's layers to this shit.
+
+
+
+splash Water
+{
+	smallclass		WaterSplashBase
+	smallclip		12
+	smallsound		world/watersplashsmall
+
+	baseclass		WaterSplashBase
+	chunkclass		WaterSplash
+	chunkxvelshift	8
+	chunkyvelshift	8
+	chunkzvelshift	8
+	chunkbasezvel	2
+	sound			world/watersplash
+	NoAlert
+}
+
+splash Blood
+{
+	smallclass		BloodSplash
+	smallclip		10
+	smallsound		world/sludgegloopsmall
+
+	baseclass		BloodSplash
+	chunkclass		BloodSplash
+	chunkxvelshift	0
+	chunkyvelshift	0
+	chunkzvelshift	0
+	chunkbasezvel	0
+	sound			world/sludgegloop
+	NoAlert
+}
+
+splash Nukage
+{
+	smallclass		SludgeSplash
+	smallclip		6
+	smallsound		world/lavasizzlesmall
+
+	baseclass		SludgeSplash
+	chunkclass		LavaSmoke
+	chunkxvelshift	-1
+	chunkyvelshift	-1
+	chunkzvelshift	7
+	chunkbasezvel	1
+	sound			world/lavasizzle
+	NoAlert
+}
+
+splash Lava
+{
+	smallclass		LavaSplash
+	smallclip		12
+	smallsound		world/lavasizzlesmall
+
+	baseclass		LavaSplash
+	chunkclass		LavaSmoke
+	chunkxvelshift	-1
+	chunkyvelshift	-1
+	chunkzvelshift	7
+	chunkbasezvel	1
+	sound			world/lavasizzle
+	NoAlert
+}
+
+splash Slime
+{
+	smallclass		SlimeSplash
+	smallclip		6
+	smallsound		world/sludgegloopsmall
+
+	baseclass		SlimeSplash
+	chunkclass		SlimeChunk
+	chunkxvelshift	8
+	chunkyvelshift	8
+	chunkzvelshift	8
+	chunkbasezvel	1
+	sound			world/sludgegloop
+	NoAlert
+}
+
+splash Hot
+{
+    smallclass       LavaSmoke
+    smallclip        0
+
+    baseclass        LavaSmoke
+}
+
+terrain Water
+{
+    splash          Water
+    footclip        12
+    liquid
+}
+
+terrain Lava
+{
+    splash          Lava
+    footclip        12
+    damagetype      Fire
+    liquid
+}
+
+terrain Blood
+{
+    splash          Blood
+    footclip        12
+    damagetype      Slime
+    liquid
+}
+
+terrain Nukage
+{
+    splash          Nukage
+    footclip        8
+    damagetype      Slime
+    liquid
+}
+
+terrain Slime
+{
+    splash          Slime
+    footclip        8
+    damagetype      Slime
+    liquid
+}
+
+terrain Hot
+{
+    splash          Hot
+    damagetype      Fire
+}
+
+ifdoom
+floor BLOOD1 Blood
+floor BLOOD2 Blood
+floor BLOOD3 Blood
+floor FWATER1 Water
+floor FWATER2 Water
+floor FWATER3 Water
+floor FWATER4 Water
+floor LAVA1 Lava
+floor LAVA2 Lava
+floor LAVA3 Lava
+floor LAVA4 Lava
+floor NUKAGE1 Nukage
+floor NUKAGE2 Nukage
+floor NUKAGE3 Nukage
+floor RROCK05 Hot
+floor RROCK06 Hot
+floor RROCK07 Hot
+floor RROCK08 Hot
+floor SLIME01 Slime
+floor SLIME02 Slime
+floor SLIME03 Slime
+floor SLIME04 Slime
+floor SLIME05 Slime
+floor SLIME06 Slime
+floor SLIME07 Slime
+floor SLIME08 Slime
+floor SLIME09 Hot
+floor SLIME10 Hot
+floor SLIME11 Hot
+floor SLIME12 Hot
+endif
