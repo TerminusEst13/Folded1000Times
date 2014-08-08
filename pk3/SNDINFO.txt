@@ -1,5 +1,23 @@
 // System
 
+$random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 }
+
+intro1                    INTRO1
+intro2                    INTRO2
+intro3                    INTRO3
+intro4                    INTRO4  // Taken from Doom 3
+intro5                    INTRO5  // Also taken from Doom 3
+intro6                    INTRO6  // Ditto
+intro7                    INTRO7  // Double ditto
+intro8                    INTRO8  // Triple ditto
+intro9                    INTRO9  // M-M-M-MONSTER DITTO
+intro10                   INTRO10 // Taken from Painkiller
+intro11                   INTRO11 // Taken from Quake 3
+intro12                   INTRO12 // Taken from Quack 3
+intro13                   INTRO13 // Taken from Quark III
+intro14                   INTRO14 // Taken from Quag Tres
+intro15                   INTRO15 // Taken from Quiche Trio
+
 menu/activate             MENUUP   // Bring up the main menu. - Sound taken from World of Warcraft
 menu/clear                MENUDOWN // Close main menu. - ORIGINAL SOUND PLEASE DON'T STEAL :(
 menu/choose               MENUYES  // Choose an item on the menu. - Sound taken from Painkiller
@@ -28,6 +46,10 @@ health/soda               SODADRNK // By Aenima
 health/apple              APPLMNCH // By Agaxly off Freesound, edited
 health/burger             BRGRMNCH // Edited from thedust82's cracker eating sound off Freesound
 health/ramen              RAMNDRNK // Edited from DaveHammond's soup drinking sound off Freesound
+weapon/shotgun            GETSHTGN
+weapon/carronade          GETCARND // I was lazy and just inserted an Unreal Championship 2 sound in here and added reverb
+weapon/uzi                GETUZI
+weapon/hammer             GETHAMMR
 
 // Player
 

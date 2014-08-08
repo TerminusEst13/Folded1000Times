@@ -37,6 +37,8 @@ const int WEEB_DEC_HAMAMMO1    = 10;
 const int WEEB_DEC_HAMAMMO2    = 11;
 const int WEEB_DEC_HAMAMMO3    = 12;
 
+const int WEEB_DEC_GETMESSAGES = 0;
+
 #include "decorate/tokens.dec"
 #include "decorate/items.dec"
 #include "decorate/ammo.dec"

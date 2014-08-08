@@ -46,8 +46,8 @@ actor PickupBase : CustomInventory
 
 actor ShotgunPickup : PickupBase replaces SuperShotgun
 {
-    Inventory.PickupMessage "\cfYou may wield it..."
-    Inventory.PickupSound "weapon/pickup"
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "ThereOnceWasAManInNantucket"
     States
     {
     Spawn:
@@ -92,6 +92,9 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
         TNT1 A 0 A_JumpIfInventory("GotShotgun",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("Hwando + Shotgun",1)
         TNT1 A 0 A_GiveInventory("GotShotgun",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,0,0)
+        TNT1 A 0 A_PlaySound("weapon/shotgun", CHAN_ITEM)
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("ShellBox",0,0,0,0,0,0,0,32)
@@ -102,8 +105,8 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
 
 actor CarronadePickup : PickupBase replaces RocketLauncher
 {
-    Inventory.PickupMessage "\cfYou may wield it..."
-    Inventory.PickupSound "weapon/pickup"
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "WhoHadHisHeadStuckInABucket"
     States
     {
     Spawn:
@@ -148,6 +151,9 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
         TNT1 A 0 A_JumpIfInventory("GotCarronade",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("Hwando + Carronade",1)
         TNT1 A 0 A_GiveInventory("GotCarronade",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,1,0)
+        TNT1 A 0 A_PlaySound("weapon/carronade", CHAN_ITEM)
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("RocketBox",0,0,0,0,0,0,0,32)
@@ -158,8 +164,8 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
 
 actor UziPickup : PickupBase replaces PlasmaRifle
 {
-    Inventory.PickupMessage "\cfYou may wield it..."
-    Inventory.PickupSound "weapon/pickup"
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "HeWouldTugAndTryThenSitDownAndCry"
     States
     {
     Spawn:
@@ -204,6 +210,9 @@ actor UziPickup : PickupBase replaces PlasmaRifle
         TNT1 A 0 A_JumpIfInventory("GotUzi",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("Hwando + Uzi",1)
         TNT1 A 0 A_GiveInventory("GotUzi",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,2,0)
+        TNT1 A 0 A_PlaySound("weapon/uzi", CHAN_ITEM)
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("CellPack",0,0,0,0,0,0,0,32)
@@ -214,8 +223,8 @@ actor UziPickup : PickupBase replaces PlasmaRifle
 
 actor HammerPickup : PickupBase replaces Chainsaw
 {
-    Inventory.PickupMessage "\cfYou may wield it..."
-    Inventory.PickupSound "weapon/pickup"
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "BecauseHeHadntTheMettleToRemoveTheMetal"
     States
     {
     Spawn:
@@ -260,6 +269,9 @@ actor HammerPickup : PickupBase replaces Chainsaw
         TNT1 A 0 A_JumpIfInventory("GotHammer",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("Hwando + Hammer",1)
         TNT1 A 0 A_GiveInventory("GotHammer",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,3,0)
+        TNT1 A 0 A_PlaySound("weapon/hammer", CHAN_ITEM)
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,0,0,0,0,32)
