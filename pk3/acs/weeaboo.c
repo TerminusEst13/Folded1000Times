@@ -34,7 +34,7 @@ script WEEB_OPEN OPEN
 
     while (1)
     {
-        if (!GetCvar("ds_runninginzdoom") == 0) { if (!GetCvar("compat_clientssendfullbuttoninfo")) { ConsoleCommand("set compat_clientssendfullbuttoninfo 1"); } }
+        if (GetCvar("ds_runninginzdoom") == 0) { if (!GetCvar("compat_clientssendfullbuttoninfo")) { ConsoleCommand("set compat_clientssendfullbuttoninfo 1"); } }
         delay(1);
     }
 }
