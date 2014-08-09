@@ -17,7 +17,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_PlaySound("trooper/gunready")
         POSS E 15 A_FaceTarget
         POSS E 0 A_PlaySound("trooper/fire")
-        POSS F 6 bright A_CustomMissile("EnemyBullet",32,0,random(-600,600)/100.00)
+        POSS F 6 bright A_CustomMissile("EnemyBullet",32,10,random(-600,600)/100.00)
         POSS E 6
         goto See
 
@@ -276,13 +276,13 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_PlaySound("sergeant/gunready")
         SPOS E 15 A_FaceTarget
         SPOS F 0 A_PlaySound("sergeant/fire")
-        SPOS F 6 bright A_CustomMissile("EnemyBullet",32,0,random(-500,500)/100.00)
+        SPOS F 6 bright A_CustomMissile("EnemyBullet",32,10,random(-500,500)/100.00)
         SPOS E 6 A_FaceTarget
         SPOS F 0 A_PlaySound("sergeant/fire")
-        SPOS F 6 bright A_CustomMissile("EnemyBullet",32,0,random(-500,500)/100.00)
+        SPOS F 6 bright A_CustomMissile("EnemyBullet",32,10,random(-500,500)/100.00)
         SPOS E 6 A_FaceTarget
         SPOS F 0 A_PlaySound("sergeant/fire")
-        SPOS F 6 bright A_CustomMissile("EnemyBullet",32,0,random(-500,500)/100.00)
+        SPOS F 6 bright A_CustomMissile("EnemyBullet",32,10,random(-500,500)/100.00)
         SPOS E 6
         goto See
 
@@ -529,7 +529,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_PlaySound("chngnner/gunready")
         CPOS E 15 A_FaceTarget
         CPOS F 0 A_PlaySound("chngnner/fire")
-        CPOS F 4 bright A_CustomMissile("EnemyBullet",32,15,random(-100,100)/100.00)
+        CPOS F 4 bright A_CustomMissile("EnemyBullet",30,15,random(-100,100)/100.00)
         CPOS E 4 A_CPosRefire
         Goto Missile+2
 

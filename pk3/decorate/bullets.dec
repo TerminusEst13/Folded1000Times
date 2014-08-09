@@ -9,6 +9,7 @@ ACTOR EnemyBullet
     SeeSound None
     DeathSound None
     Species "EnemyShot"
+    Decal HImpScorch
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "RocketJumpDamage", 0.0
@@ -42,20 +43,19 @@ ACTOR EnemyBullet
         TNT1 A 0 A_SpawnItemEx("BulletBlasterTrail", (32*momx)/-35.0, -(32*momy)/-35.0, 2+(32*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("BulletBlasterTrail", (34*momx)/-35.0, -(34*momy)/-35.0, 2+(34*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("BulletBlasterTrail", (36*momx)/-35.0, -(36*momy)/-35.0, 2+(36*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("BulletBlasterTrail", (38*momx)/-35.0, -(38*momy)/-35.0, 2+(38*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("BulletBlasterTrail", (40*momx)/-35.0, -(40*momy)/-35.0, 2+(40*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         Loop
     Death:
         TNT1 A 0
         TNT1 A 0 A_SpawnItemEx("EnemyBulletInfight",0,0,0,0,0,0,0,32)
-        TNT1 A 0 A_PlaySound("lbeam/hit")
+        TNT1 A 0 A_PlaySound("enemy/shothit")
         TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LaserHaze",0,0,0,random(-100,100)/150.0,random(-100,100)/150.0,random(-100,100)/150.0,0,32)
         TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LaserHaze2",0,0,0,random(-100,100)/80.0,random(-100,100)/80.0,random(-100,100)/80.0,0,32)
         TNT1 A 4
         stop
-        Stop
     }
 }
-
-
 
 actor LaserHaze
 {
@@ -94,7 +94,7 @@ actor LaserHaze2
 
 actor BulletBlasterTrail
 {
-    Scale 0.15
+    Scale 0.175
     RenderStyle Add
     Alpha 0.9
     +NOINTERACTION

@@ -239,6 +239,7 @@ trooper/fire              ENSHOT1
 sergeant/fire             ENSHOT2
 chngnner/fire             ENSHOT3
 
+enemy/shothit             ENSHOTHT
 enemy/bisected            ENBISECT // Taken from Splatterhouse
 
 
