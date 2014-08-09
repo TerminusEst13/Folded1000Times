@@ -217,6 +217,8 @@ carronade/fire            GLFOONT // All three of these sounds have unknown sour
 carronade/turn            GLTURN // Sorry, I just kind of lost track of where they came from.
 carronade/dry             GLEMPT // If you know, please let me know!
 
+$pitchshift carronade/dry 0
+
 $random grenades/explode { grenades/explode1 grenades/explode2 grenades/explode3 grenades/explode4 grenades/explode5 } // Taken from Doom 3
 grenades/explode1         GLXBOM1
 grenades/explode2         GLXBOM2
