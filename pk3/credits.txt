@@ -27,6 +27,7 @@ GRAPHICS:
 - NeuralStunner (The Hammer's pickup sprite)
 - Raven Software (All the lightning effects, from Strife)
 - Id Software (The laser shots from the zombies)
+- Ravage/rf' (The red/blue/green torches)
 
 CODE:
 =========
