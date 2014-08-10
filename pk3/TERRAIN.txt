@@ -3,8 +3,6 @@
 // Basically what I'm saying is that I'm a filthy thief.
 // There's layers to this shit.
 
-
-
 splash Water
 {
 	smallclass		WaterSplashBase
