@@ -1,7 +1,7 @@
-actor "Hwando + Hammer" : HwandoBase //replaces SuperShotgun
+actor "Hwando + Witchhunter" : HwandoBase //replaces SuperShotgun
 {
     -CHEATNOTWEAPON
-    Inventory.PickupMessage "You got the Hammer!"
+    Inventory.PickupMessage "You got the Witchhunter war hammer!"
     Weapon.AmmoUse2 0
     Weapon.AmmoType2 "HammerCharge"
     Weapon.SlotNumber 1

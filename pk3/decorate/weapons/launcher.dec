@@ -1,7 +1,7 @@
-actor "Hwando + Carronade" : HwandoBase //replaces RocketLauncher
+actor "Hwando + Exodus" : HwandoBase //replaces RocketLauncher
 {
     -CHEATNOTWEAPON
-    Inventory.PickupMessage "You got the carronade!"
+    Inventory.PickupMessage "You got the Exodus handheld grenade laucher!"
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 10
     Weapon.AmmoType2 "WeebRocket"

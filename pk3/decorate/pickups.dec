@@ -90,7 +90,7 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
         stop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("GotShotgun",1,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Hwando + Shotgun",1)
+        TNT1 A 0 A_GiveInventory("Hwando + Testament",1)
         TNT1 A 0 A_GiveInventory("GotShotgun",1)
         TNT1 A 0 A_SetBlend("White",0.45,35)
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,0,0)
@@ -149,7 +149,7 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
         stop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("GotCarronade",1,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Hwando + Carronade",1)
+        TNT1 A 0 A_GiveInventory("Hwando + Exodus",1)
         TNT1 A 0 A_GiveInventory("GotCarronade",1)
         TNT1 A 0 A_SetBlend("White",0.45,35)
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,1,0)
@@ -208,7 +208,7 @@ actor UziPickup : PickupBase replaces PlasmaRifle
         stop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("GotUzi",1,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Hwando + Uzi",1)
+        TNT1 A 0 A_GiveInventory("Hwando + Sabbath",1)
         TNT1 A 0 A_GiveInventory("GotUzi",1)
         TNT1 A 0 A_SetBlend("White",0.45,35)
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,2,0)
@@ -267,7 +267,7 @@ actor HammerPickup : PickupBase replaces Chainsaw
         stop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("GotHammer",1,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Hwando + Hammer",1)
+        TNT1 A 0 A_GiveInventory("Hwando + Witchhunter",1)
         TNT1 A 0 A_GiveInventory("GotHammer",1)
         TNT1 A 0 A_SetBlend("White",0.45,35)
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,3,0)

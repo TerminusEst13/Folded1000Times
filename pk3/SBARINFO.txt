@@ -2,17 +2,17 @@ statusbar normal, forcescaled
 {
 drawimage "AMMBOX", 308, 182, center;
 drawimage ammoicon1, 258, 186, center;
-isselected "Hwando + Hammer" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
+isselected "Hwando + Witchhunter" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
                                InInventory not HammerCharge, 100 { InInventory HammerCharge, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not HammerCharge, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
-isselected "Hwando + Pistol" { InInventory WeebClip, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
+isselected "Hwando + Acacia A-22" { InInventory WeebClip, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
                                InInventory not WeebClip, 100 { InInventory WeebClip, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not WeebClip, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
-isselected "Hwando + Shotgun" { InInventory WeebShell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+isselected "Hwando + Testament" { InInventory WeebShell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                InInventory not WeebShell, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; } }
-isselected "Hwando + Carronade" { InInventory WeebRocket, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+isselected "Hwando + Exodus" { InInventory WeebRocket, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                InInventory not WeebRocket, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; } }
-isselected "Hwando + Uzi" { InInventory WeebCell, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
+isselected "Hwando + Sabbath" { InInventory WeebCell, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
                                InInventory not WeebCell, 100 { InInventory WeebCell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not WeebCell, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
 

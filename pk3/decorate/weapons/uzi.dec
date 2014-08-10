@@ -1,7 +1,7 @@
-actor "Hwando + Uzi" : HwandoBase //replaces PlasmaRifle
+actor "Hwando + Sabbath" : HwandoBase //replaces PlasmaRifle
 {
     -CHEATNOTWEAPON
-    Inventory.PickupMessage "You got the uzi!"
+    Inventory.PickupMessage "You got the Sabbath submachine gun!"
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 50
     Weapon.AmmoType2 "WeebCell"

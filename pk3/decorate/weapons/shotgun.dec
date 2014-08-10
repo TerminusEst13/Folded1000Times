@@ -1,7 +1,7 @@
-actor "Hwando + Shotgun" : HwandoBase //replaces SuperShotgun
+actor "Hwando + Testament" : HwandoBase //replaces SuperShotgun
 {
     -CHEATNOTWEAPON
-    Inventory.PickupMessage "You got the shotgun!"
+    Inventory.PickupMessage "You got the Testament sawed-off shotgun!"
     Weapon.AmmoUse2 2
     Weapon.AmmoGive2 10
     Weapon.AmmoType2 "WeebShell"

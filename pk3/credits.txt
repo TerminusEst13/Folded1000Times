@@ -18,8 +18,8 @@ GRAPHICS:
   ^ Numerous custom deaths (as mentioned)
   ^ The gore decals/graphics
   ^ The custom blood for the Hwando
-  ^ The pistol
-- Captain J/Cortlong50 (The Uzi)
+  ^ The Acacia A-22 hunting pistol
+- Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)
 - Captain J (The Uzi ammo pack)
 - Duke Nukem 64 (The Uzi's pickup/ammo graphics)
 - Aeons of Death (The Carronade explosion graphics)
@@ -29,6 +29,11 @@ GRAPHICS:
 - Raven Software (The skull keys, edited from Hexen)
 - Id Software (The laser shots from the zombies)
 - Ravage/rf' (The red/blue/green torches)
+- CastleVania: Dawn of Sorrow/Order of Ecclesia/Portrait of Ruin (Bits and pieces of the HUD)
+- Chrono Trigger (Bits and pieces of the HUD)
+- Dark Kingdom (Yup, HUD bits)
+- Final Fantasy 6 (The fire used to represent health)
+- Dungeons n' Dragons (Font used for the HUD)
 
 CODE:
 =========
