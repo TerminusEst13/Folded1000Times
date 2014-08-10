@@ -1,7 +1,7 @@
 ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
 {
     +MISSILEMORE
-    +MISSILEEVENMORE
+    //+MISSILEEVENMORE
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
@@ -260,7 +260,7 @@ actor BisectedZombiemanTorso2 : POSXKubiuted
 ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 {
     +MISSILEMORE
-    +MISSILEEVENMORE
+    //+MISSILEEVENMORE
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
