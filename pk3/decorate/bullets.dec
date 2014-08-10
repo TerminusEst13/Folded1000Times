@@ -178,10 +178,10 @@ actor BulletBaseNoCombo : BulletBase
 }
 
 actor HuntingPistolBullet : BulletBase { Damage (15) }
-actor ShotgunBullet1 : BulletBase { Damage (12) }
-actor ShotgunBullet2 : BulletBaseNoCombo { Damage (12) }
-actor UziBullet1 : BulletBase { Damage (10) }
-actor UziBullet2 : BulletBaseNoCombo { Damage (10) }
+actor ShotgunBullet1 : BulletBase { Damage (13) }
+actor ShotgunBullet2 : BulletBaseNoCombo { Damage (13) }
+actor UziBullet1 : BulletBase { Damage (11) }
+actor UziBullet2 : BulletBaseNoCombo { Damage (11) }
 
 ACTOR WeebBulletPuff
 {
