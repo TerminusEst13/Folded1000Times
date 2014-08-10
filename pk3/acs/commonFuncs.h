@@ -287,7 +287,7 @@ function int sqrt_i(int number)
     return oldAns;
 }
 
-function int sqrt(int number)
+function int zan_sqrt(int number)
 {
     if (number == 1.0) { return 1.0; }
     if (number <= 0) { return 0; }
@@ -336,7 +336,7 @@ function int magnitudeThree_f(int x, int y, int z)
 
 function int quadPos(int a, int b, int c)
 {
-    int s1 = sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
+    int s1 = zan_sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
     int s2 = (2 * a);
     int b1 = FixedDiv(-b + s1, s2);
 
@@ -345,7 +345,7 @@ function int quadPos(int a, int b, int c)
 
 function int quadNeg(int a, int b, int c)
 {
-    int s1 = sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
+    int s1 = zan_sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
     int s2 = (2 * a);
     int b1 = FixedDiv(-b - s1, s2);
 
@@ -995,7 +995,7 @@ function int HeightFromJumpZ(int jumpz, int gravFactor)
 
 function int JumpZFromHeight(int height, int gravFactor)
 {
-    return sqrt(2 * height * gravFactor);
+    return zan_sqrt(2 * height * gravFactor);
 }
 
 function int roundZero(int toround)
@@ -1183,7 +1183,7 @@ function int quadSlope(int orgX, int orgY, int pntX, int pntY, int floatY)
         height = -height;
     }
     
-    int slope = cond(floatY, sqrt(height), sqrt(itof(height)));
+    int slope = cond(floatY, zan_sqrt(height), zan_sqrt(itof(height)));
 
     slope = (slope / dist);
 
