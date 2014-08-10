@@ -38,77 +38,77 @@ InInventory ARank, 1 { DrawImage "STYLVL5", 264, 14; }
 InInventory SRank, 1 { DrawImage "STYLVL6", 271, 13; }
 
 // I would kill for Else clauses about now.
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 10, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 20, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 30, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 40, 169; }
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 10, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 20, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 30, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 40, 168; }
 InInventory ContraLifeToken, 1
-    { drawimage "HLTHFIR1", 10, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 20, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 30, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 40, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 50, 169; } }
+    { drawimage "HLTHFIR1", 10, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 20, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 30, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 40, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 50, 168; } }
 InInventory ContraLifeToken, 2
-    { drawimage "HLTHFIR1", 20, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 30, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 40, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 50, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 60, 169; } }
+    { drawimage "HLTHFIR1", 20, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 30, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 40, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 50, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 60, 168; } }
 InInventory ContraLifeToken, 3
-    { drawimage "HLTHFIR1", 30, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 40, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 50, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 60, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 70, 169; } }
+    { drawimage "HLTHFIR1", 30, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 40, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 50, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 60, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 70, 168; } }
 InInventory ContraLifeToken, 4
-    { drawimage "HLTHFIR1", 40, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 50, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 60, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 70, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 80, 169; } }
+    { drawimage "HLTHFIR1", 40, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 50, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 60, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 70, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 80, 168; } }
 InInventory ContraLifeToken, 5
-    { drawimage "HLTHFIR1", 50, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 60, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 70, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 80, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 90, 169; } }
+    { drawimage "HLTHFIR1", 50, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 60, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 70, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 80, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 90, 168; } }
 InInventory ContraLifeToken, 6
-    { drawimage "HLTHFIR1", 60, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 70, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 80, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 90, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 100, 169; } }
+    { drawimage "HLTHFIR1", 60, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 70, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 80, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 90, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 100, 168; } }
 InInventory ContraLifeToken, 7
-    { drawimage "HLTHFIR1", 70, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 80, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 90, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 100, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 110, 169; } }
+    { drawimage "HLTHFIR1", 70, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 80, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 90, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 100, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 110, 168; } }
 InInventory ContraLifeToken, 8
-    { drawimage "HLTHFIR1", 80, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 90, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 100, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 110, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 120, 169; } }
+    { drawimage "HLTHFIR1", 80, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 90, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 100, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 110, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 120, 168; } }
 InInventory ContraLifeToken, 9
-    { drawimage "HLTHFIR1", 90, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 100, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 110, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 120, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 130, 169; } }
+    { drawimage "HLTHFIR1", 90, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 100, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 110, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 120, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 130, 168; } }
 InInventory ContraLifeToken, 10
-    { drawimage "HLTHFIR1", 100, 169;
-      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 110, 169; }
-      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 120, 169; }
-      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 130, 169; }
-      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 140, 169; } }
+    { drawimage "HLTHFIR1", 100, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 110, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 120, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 130, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 140, 168; } }
 
-InInventory ContraArmorToken, 1 { drawimage "HLTHSHLD", 10, 169; }
-InInventory ContraArmorToken, 2 { drawimage "HLTHSHLD", 20, 169; }
-InInventory ContraArmorToken, 3 { drawimage "HLTHSHLD", 30, 169; }
-InInventory ContraArmorToken, 4 { drawimage "HLTHSHLD", 40, 169; }
-InInventory ContraArmorToken, 5 { drawimage "HLTHSHLD", 50, 169; }
-InInventory ContraArmorToken, 6 { drawimage "HLTHSHLD", 60, 169; }
+InInventory ContraArmorToken, 1 { drawimage "HLTHSHLD", 10, 168; }
+InInventory ContraArmorToken, 2 { drawimage "HLTHSHLD", 20, 168; }
+InInventory ContraArmorToken, 3 { drawimage "HLTHSHLD", 30, 168; }
+InInventory ContraArmorToken, 4 { drawimage "HLTHSHLD", 40, 168; }
+InInventory ContraArmorToken, 5 { drawimage "HLTHSHLD", 50, 168; }
+InInventory ContraArmorToken, 6 { drawimage "HLTHSHLD", 60, 168; }
 
     gamemode cooperative, singleplayer
     {
