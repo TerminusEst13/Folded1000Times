@@ -25,7 +25,8 @@ GRAPHICS:
 - Aeons of Death (The Carronade explosion graphics)
 - Ettingrinder (The Candelabra)
 - NeuralStunner (The Hammer's pickup sprite)
-- Raven Software (All the lightning effects, from Strife)
+- Rogue Software (All the lightning effects and the keycard bases, from Strife)
+- Raven Software (The skull keys, edited from Hexen)
 - Id Software (The laser shots from the zombies)
 - Ravage/rf' (The red/blue/green torches)
 
@@ -47,7 +48,7 @@ CODE:
 
 MUSIC:
 =========
-- Cryptomnesia (Titlescreen: Live Like a God, Die Like a God - Free to download off SoundCloud)
+- Cryptomnesia (Titlescreen: Live Like a God, Die Like a God - Free to download off Soundcloud)
 - Megadeth (Intermission: Kick the Chair - Released as a free download in 2004)
 - SlayeR (Read Me: Chaos Abounds - Free to download)
 - Finntroll (Final1: Haterop - Released as a free download in 2005)
