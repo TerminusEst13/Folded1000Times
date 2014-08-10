@@ -230,3 +230,8 @@ InInventory ContraArmorToken, 6 { drawimage "armrbard", 35, 176; }
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
 }
+
+statusbar automap, forcescaled
+{
+    DrawImage "HEMPTY", 151, 4;
+}
