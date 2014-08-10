@@ -50,11 +50,11 @@ script WEEB_DECORATE (int burrshet)
         int delaycount = 0;
         
         if (CheckInventory("ContraArmorToken") >= 1)
-            TakeInventory("ContraArmorToken",1);
+            { TakeInventory("ContraArmorToken",1); }
         else if (CheckInventory("OverLifeToken") >= 1)
-            TakeInventory("OverLifeToken",1);
+            { TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",25); }
         else if (CheckInventory("ContraLifeToken") >= 1)
-            TakeInventory("ContraLifeToken",1);
+            { TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",25); }
         
         SetActorProperty(0,APROP_INVULNERABLE,1);
         
