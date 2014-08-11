@@ -103,11 +103,11 @@ actor CandelabraDestroyed
     Death:
         TNT1 A 0 A_Jump(128,"Death2")
         CBR2 H 3500
-		CBR2 HHHHH 2 A_FadeOut(0.2)
+        CBR2 HHHHH 2 A_FadeOut(0.2)
         stop
     Death2:
         CBR2 F 3500
-		CBR2 FFFFF 2 A_FadeOut(0.2)
+        CBR2 FFFFF 2 A_FadeOut(0.2)
         stop
     }
 }
@@ -207,11 +207,11 @@ actor TorchDestroyed
     Death:
         TNT1 A 0 A_Jump(128,"Death2")
         TRC2 O 3500
-		TRC2 OOOOO 2 A_FadeOut(0.2)
+        TRC2 OOOOO 2 A_FadeOut(0.2)
         stop
     Death2:
         TRC2 Q 3500
-		TRC2 QQQQQ 2 A_FadeOut(0.2)
+        TRC2 QQQQQ 2 A_FadeOut(0.2)
         stop
     }
 }
@@ -311,76 +311,76 @@ actor SmallTorchDestroyed
     Death:
         TNT1 A 0 A_Jump(128,"Death2")
         TRC3 O 3500
-		TRC3 OOOOO 2 A_FadeOut(0.2)
+        TRC3 OOOOO 2 A_FadeOut(0.2)
         stop
     Death2:
         TRC3 Q 3500
-		TRC3 QQQQQ 2 A_FadeOut(0.2)
+        TRC3 QQQQQ 2 A_FadeOut(0.2)
         stop
     }
 }
 
 Actor BarrelRemains1
 {
-	Projectile
-	-SOLID
+    Projectile
+    -SOLID
     -NOGRAVITY
-	+DOOMBOUNCE
-	+CLIENTSIDEONLY
+    +DOOMBOUNCE
+    +CLIENTSIDEONLY
     Scale 0.5
     Gravity 0.85
-	BounceFactor 0.4
-	BounceCount 4
-	States
-	{
-	Spawn: 
-		BPC1 ABCD 2
-		loop
-	Death:
-		BPC1 A 3500
-		BPC1 AAAAA 2 A_FadeOut(0.2)
-		Stop
-	}
+    BounceFactor 0.4
+    BounceCount 4
+    States
+    {
+    Spawn: 
+        BPC1 ABCD 2
+        loop
+    Death:
+        BPC1 A 3500
+        BPC1 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
 }
 
 Actor BarrelRemains2 : BarrelRemains1
 {
-	States
-	{
-	Spawn: 
-		BPC2 ABCD 2
-		loop
-	Death:
-		BPC2 A 3500
-		BPC2 AAAAA 2 A_FadeOut(0.2)
-		Stop
-	}
+    States
+    {
+    Spawn: 
+        BPC2 ABCD 2
+        loop
+    Death:
+        BPC2 A 3500
+        BPC2 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
 }
 
 Actor BarrelRemains3 : BarrelRemains1
 {
-	States
-	{
-	Spawn: 
-		BPC3 ABCD 2
-		loop
-	Death:
-		BPC3 A 3500
-		BPC3 AAAAA 2 A_FadeOut(0.2)
-		Stop
-	}
+    States
+    {
+    Spawn: 
+        BPC3 ABCD 2
+        loop
+    Death:
+        BPC3 A 3500
+        BPC3 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
 }
 
 Actor BarrelRemains4 : BarrelRemains1
 {
-	States
-	{
-	Spawn: 
-		BPC4 ABCD 2
-		loop
-	Death:
-		BPC4 A 3500
-		BPC4 AAAAA 2 A_FadeOut(0.2)
-		Stop
-	}
+    States
+    {
+    Spawn: 
+        BPC4 ABCD 2
+        loop
+    Death:
+        BPC4 A 3500
+        BPC4 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
 }

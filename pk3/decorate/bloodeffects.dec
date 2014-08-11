@@ -102,11 +102,11 @@ actor Bloodmeatprj2B : Bloodmeatprj2
 scale    0.5
 }
 
-//	=	=	=	=	=	=	=	=	=
+//    =    =    =    =    =    =    =    =    =
 
 actor BloodShower : Blood //replaces Blood
 {
-health	2
+health    2
 +DONTSPLASH+LOWGRAVITY
 states
 {
@@ -118,7 +118,7 @@ BEF1 E 0 A_SpawnDebris("BloodShower2",1)
 BEF1 E 4
 BEF1 F 4
 BEF1 G 4
-	stop
+    stop
 }
 }
 
@@ -127,34 +127,34 @@ actor BloodShower2 : Blood
 +MISSILE+CORPSE
 +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST //-NOBLOOD
 +DONTSPLASH
-scale	0.7
-health	1
-radius	8
-height	1
-mass	1
-speed	16
-RenderStyle	Translucent
-alpha	0.8
+scale    0.7
+health    1
+radius    8
+height    1
+mass    1
+speed    16
+RenderStyle    Translucent
+alpha    0.8
 states
 {
 Spawn:
 BEF1 A 0 
 See:
 BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
-	loop
+    loop
 Death:
 BEF1 D 1 A_CheckFloor("Crash")
-	stop
+    stop
 Crash:
 BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-	stop
+    stop
 }
 }
 
 actor BloodShowerB2 : BloodShower2
 {
 translation "176:191=195:207"
-BloodColor	"00 88 FF"
+BloodColor    "00 88 FF"
 states
 {
 Spawn:
@@ -162,10 +162,10 @@ BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
 BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
 BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
 BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-	loop
+    loop
 Crash:
 BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-	stop	
+    stop    
 }
 }
 
@@ -180,10 +180,10 @@ BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
 BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
 BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
 BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-	loop
+    loop
 Crash:
 BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-	stop	
+    stop    
 }
 }
 
@@ -191,10 +191,10 @@ actor BloodShower3 : Blood
 {
 +LOWGRAVITY+CORPSE+NOTELEPORT+NOBLOCKMAP
 +NOBLOCKMONST+DONTSPLASH
-scale	0.7
-mass	1
-RenderStyle	Translucent
-alpha	0.5
+scale    0.7
+mass    1
+RenderStyle    Translucent
+alpha    0.5
 states
 {
 Spawn:
@@ -202,7 +202,7 @@ BEF2 A 4
 BEF2 B 4
 BEF2 C 4
 BEF2 D 4
-	stop
+    stop
 }
 }
 
@@ -210,41 +210,41 @@ actor BloodShower4 : Blood
 {
 +CORPSE+NOTELEPORT-NOBLOCKMAP
 +NOBLOCKMONST+DONTSPLASH
-radius	8
-height	2
-mass	1
-RenderStyle	Translucent
-alpha	0.5
+radius    8
+height    2
+mass    1
+RenderStyle    Translucent
+alpha    0.5
 states
 {
 Spawn:
 BEF3 AA 1 A_PlaySound("S_Blodf") //S_Bloed
 BEF3 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
-	Stop
+    Stop
 Spawn1:
 BEF3 AAAAAAAAAA 100 A_FadeOut
-	Stop
+    Stop
 Spawn2:
 BEF3 BBBBBBBBBB 100 A_FadeOut
-	Stop
+    Stop
 Spawn3:
 BEF3 CCCCCCCCCC 100 A_FadeOut
-	Stop
+    Stop
 Spawn4:
 BEF3 DDDDDDDDDD 100 A_FadeOut
-	Stop
+    Stop
 }
 }
 
 actor BloodShowerB3 : BloodShower3
 {
 translation "176:191=195:207"
-BloodColor	"00 88 FF"
+BloodColor    "00 88 FF"
 }
 actor BloodShowerB4 : BloodShower4 
 {
 translation "176:191=195:207"
-BloodColor	"00 88 FF"
+BloodColor    "00 88 FF"
 }
 
 actor BloodShowerC3 : BloodShower3
@@ -262,23 +262,23 @@ actor BloodShower5 : Blood
 {
 +MISSILE+CORPSE +LOWGRAVITY
 +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST
-health	1
-radius	8
-height	1
-mass	1
-speed	8
-scale	1
+health    1
+radius    8
+height    1
+mass    1
+speed    8
+scale    1
 states
 {
 Spawn:
 BFE4 BBCCDDEE 1 A_SpawnItem("BloodShower3",0,0,0,1)
-	loop
+    loop
 Death:
 BFE4 D 1 A_CheckFloor("Crash")
-	stop
+    stop
 Crash:
 BFE4 A 0 A_SpawnItem("BloodShower5b",0,0,0,1)
-	stop
+    stop
 }
 }
 
@@ -286,20 +286,20 @@ actor BloodShower5b
 {
 +SHOOTABLE//+NOBLOCKMAP
 +NOTELEPORT+NOBLOCKMONST+DONTSPLASH
-health	10
-radius	4
-height	4
-mass	1000
-scale	1
-damagefactor		"normal",	0.1
-damagefactor		"bloody",	0.2
-DeathSound	"S_Cut"
+health    10
+radius    4
+height    4
+mass    1000
+scale    1
+damagefactor        "normal",    0.1
+damagefactor        "bloody",    0.2
+DeathSound    "S_Cut"
 states
 {
 Spawn:
 BFE4 A 100
 BFE4 A 100 A_FadeOut
-	Wait
+    Wait
 Death.bloody:
 Death:
 BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
@@ -307,18 +307,18 @@ BEF2 A 2 A_Scream
 BEF2 A 0 A_Fall
 BEF2 BB 1 A_SpawnDebris("BloodShower2")
 BEF1 EFG 2
-	stop
+    stop
 }
 }
 
 actor BloodSplashGus1 : BloodShower2
 {
-scale	0.7
-health	1
-radius	8
-height	1
-mass	1
-speed	16
+scale    0.7
+health    1
+radius    8
+height    1
+mass    1
+speed    16
 states
 {
 Spawn:
@@ -326,26 +326,26 @@ BEF1 A 0
 BEF1 A 0 A_SpawnItem("EnemySplashGus1",0,0,0,1)
 See:
 BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
-	loop
+    loop
 Death:
 BEF1 D 1 A_CheckFloor("Crash")
-	stop
+    stop
 Crash:
 BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-	stop
+    stop
 }
 }
 
 actor BloodSplashGus1b : BloodShower2
 {
-scale	0.7
-health	1
-radius	8
-height	1
-mass	1
-speed	16
+scale    0.7
+health    1
+radius    8
+height    1
+mass    1
+speed    16
 translation "176:191=195:207"
-BloodColor	"00 88 FF"
+BloodColor    "00 88 FF"
 states
 {
 Spawn:
@@ -356,21 +356,21 @@ BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
 BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
 BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
 BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-	loop
+    loop
 Crash:
 BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-	stop
+    stop
 }
 }
 
 actor BloodSplashGus1c : BloodShower2
 {
-scale	0.7
-health	1
-radius	8
-height	1
-mass	1
-speed	16
+scale    0.7
+health    1
+radius    8
+height    1
+mass    1
+speed    16
 translation "176:191=116:127"
 BloodColor "77 EE 00" 
 states
@@ -383,10 +383,10 @@ BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
 BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
 BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
 BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-	loop
+    loop
 Crash:
 BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-	stop
+    stop
 }
 }
 
@@ -394,58 +394,58 @@ actor EfectPrj
 {
 +NOBLOOD+NOBLOCKMAP+NOBLOCKMONST+NOTELEPORT+NOGRAVITY
 +ALLOWPARTICLES+FORCEXYBILLBOARD
-health	2
+health    2
 }
 
 actor PlayerSplashGus1 : EfectPrj
 {
 -NOGRAVITY+LOWGRAVITY
-Radius		8
-Height		8
-Speed		4
-scale		0.5
-renderstyle	Translucent
-alpha		0.8
+Radius        8
+Height        8
+Speed        4
+scale        0.5
+renderstyle    Translucent
+alpha        0.8
 States
 {
 Spawn:
 WG34 I 10
 WG34 JKLM 3
 WG34 N 1 A_FadeOut
-	Wait
+    Wait
 }
 }
 
 actor PlayerSplashGus2 : PlayerSplashGus1
 {
-scale		0.2
-alpha		0.5
-Speed		2
+scale        0.2
+alpha        0.5
+Speed        2
 }
 
 actor EnemySplashGus1
 {
 +NOBLOCKMAP+NOBLOCKMONST+NOTELEPORT+NOGRAVITY
 +ALLOWPARTICLES+FORCEXYBILLBOARD
-Radius		8
-Height		8
-Speed		2
-scale		0.3
-renderstyle	Translucent
-alpha		0.5
+Radius        8
+Height        8
+Speed        2
+scale        0.3
+renderstyle    Translucent
+alpha        0.5
 States
 {
 Spawn:
 WG34 I 2
 WG34 JKLM 3
 WG34 N 1 A_FadeOut
-	Wait
+    Wait
 }
 }
 actor EnemySplashGus2 : EnemySplashGus1
 { 
-Speed		4
-scale		0.8
+Speed        4
+scale        0.8
 translation "16:47=200:207"
 States
 {
@@ -453,13 +453,13 @@ Spawn:
 WG34 I 5
 WG34 JKLM 3
 WG34 N 1 A_FadeOut
-	Wait
+    Wait
 }
 }
 actor EnemySplashGus3 : EnemySplashGus1
 { 
-Speed		2
-scale		0.4
+Speed        2
+scale        0.4
 translation "16:47=112:127"
 States
 {
@@ -467,6 +467,6 @@ Spawn:
 WG34 I 5
 WG34 JKLM 3
 WG34 N 1 A_FadeOut
-	Wait
+    Wait
 }
 }

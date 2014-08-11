@@ -4,8 +4,9 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
     PainChance "HaltHammerzeit", 255
-	DamageFactor "GuardMove", 0.0
+    DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     States
     {
@@ -30,8 +31,9 @@ actor WeebElemental : PainElemental replaces PainElemental
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
     PainChance "HaltHammerzeit", 255
-	DamageFactor "GuardMove", 0.0
+    DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     States
     {
     Pain.KubiSpinAttack:

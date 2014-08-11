@@ -6,6 +6,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
     PainChance "HaltHammerzeit", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     States
     {
     Missile:
@@ -75,6 +76,7 @@ actor SnappyArchieFire
     +MISSILEEVENMORE
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     Obituary "%o was burned by something vile."
     states
     {
@@ -119,7 +121,7 @@ actor SnappyArchieFireFire : BaronBall
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
-    DamageFactor "RocketJumpDamage", 0.0
+    DamageFactor "ExodusJump", 0.0
     +THRUSPECIES
     +THRUGHOST
     +SHOOTABLE

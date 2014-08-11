@@ -1,6 +1,4 @@
 actor NothingReplacer1 : BlankPuff replaces Shotgun {}
-actor NothingReplacer2 : BlankPuff replaces Chainsaw {}
-actor NothingReplacer3 : BlankPuff replaces RocketLauncher {}
 actor NothingReplacer4 : BlankPuff replaces BFG9000 {}
 
 actor HammerCharge : Ammo

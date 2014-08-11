@@ -12,7 +12,7 @@ ACTOR EnemyBullet
     Decal HImpScorch
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "ArchvileFire", 0.0
-    DamageFactor "RocketJumpDamage", 0.0
+    DamageFactor "ExodusJump", 0.0
     +THRUSPECIES
     +MISSILE
     -NOCLIP

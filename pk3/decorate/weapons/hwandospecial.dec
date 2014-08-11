@@ -1,22 +1,22 @@
 actor RazorWind
 {
     RenderStyle Add
-	Alpha 0.95
-	Radius 2
-	Height 1
-	Speed 60
-	Damage (0) //(30)
+    Alpha 0.95
+    Radius 2
+    Height 1
+    Speed 60
+    Damage (0) //(30)
     Scale 0.85
-	Projectile
-	Obituary "%k shouldn't have killed %o with this."
+    Projectile
+    Obituary "%k shouldn't have killed %o with this."
     +THRUACTORS//+RIPPER
-	+PIERCEARMOR
-	+NOEXTREMEDEATH
-	+FOILINVUL
-	+DONTREFLECT
-	States
-	{
-	Spawn:
+    +PIERCEARMOR
+    +NOEXTREMEDEATH
+    +FOILINVUL
+    +DONTREFLECT
+    States
+    {
+    Spawn:
         TNT1 A 0 A_SpawnItemEx("RazorWindExplosion2",0,0,0,0,0,0,0,48)
         TNT1 A 1 A_SpawnItemEx("RazorWindTrail", 0,               0,              2)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (2 *momx)/-30.0, -(2 *momy)/-30.0, 2+(2 *momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
@@ -34,30 +34,30 @@ actor RazorWind
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (26*momx)/-30.0, -(26*momy)/-30.0, 2+(26*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_JumpIfInventory("RazorLife",7,"Death")
         TNT1 A 0 A_GiveInventory("RazorLife",1)
-		loop
-	Death:
-		TNT1 A 1
-		Stop
-	}
+        loop
+    Death:
+        TNT1 A 1
+        Stop
+    }
 }
 
 actor RazorWind2 : RazorWind
 {
-	Speed 15
-	States
-	{
-	Spawn:
+    Speed 15
+    States
+    {
+    Spawn:
         TNT1 A 0 A_RadiusThrust(800,512,0)
         TNT1 A 1 A_SpawnItemEx("RazorWindTrail", 0,               0,              2)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (2 *momx)/-10.0, -(2 *momy)/-10.0, 2+(2 *momz)/-10.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (4 *momx)/-10.0, -(4 *momy)/-10.0, 2+(4 *momz)/-10.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (6 *momx)/-10.0, -(6 *momy)/-10.0, 2+(6 *momz)/-10.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (8 *momx)/-10.0, -(8 *momy)/-10.0, 2+(8 *momz)/-10.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-		loop
-	Death:
-		TNT1 A 1
-		Stop
-	}
+        loop
+    Death:
+        TNT1 A 1
+        Stop
+    }
 }
 
 actor KatanaGuard
@@ -107,17 +107,17 @@ ACTOR KatanaExplosion
 {
     Radius 1
     Height 1
-	Speed 0
+    Speed 0
     +NOCLIP
-	+FORCERADIUSDMG
+    +FORCERADIUSDMG
     -SOLID
     DamageType "KubiSpinAttack"
     Obituary "%k diced %o with a spin attack."
     States
     {
       Spawn:
-		TNT1 A 0
-		TNT1 A 1 A_Explode(512,384,0)
+        TNT1 A 0
+        TNT1 A 1 A_Explode(512,384,0)
         Stop
     }
 }
@@ -126,17 +126,17 @@ ACTOR RazorWindExplosion
 {
     Radius 1
     Height 1
-	Speed 0
+    Speed 0
     +NOCLIP
-	+FORCERADIUSDMG
+    +FORCERADIUSDMG
     -SOLID
     DamageType "KubiSpinAttack"
     Obituary "%k split %o in half with a dash attack."
     States
     {
       Spawn:
-		TNT1 A 0
-		TNT1 A 1 A_Explode(128,128,0)
+        TNT1 A 0
+        TNT1 A 1 A_Explode(128,128,0)
         Stop
     }
 }
@@ -146,8 +146,8 @@ ACTOR RazorWindExplosion2 : RazorWindExplosion
     States
     {
       Spawn:
-		TNT1 A 0
-		TNT1 A 1 A_Explode(48,128,0)
+        TNT1 A 0
+        TNT1 A 1 A_Explode(48,128,0)
         Stop
     }
 }
@@ -156,17 +156,17 @@ ACTOR TelefragHack
 {
     Radius 1
     Height 1
-	Speed 0
+    Speed 0
     +NOCLIP
-	+FORCERADIUSDMG
+    +FORCERADIUSDMG
     -SOLID
     DamageType "KubiSpinAttack"
     Obituary "%k split %o open with a dash attack."
     States
     {
       Spawn:
-		TNT1 A 0
-		TNT1 A 1 A_Explode(2560,16,0)
+        TNT1 A 0
+        TNT1 A 1 A_Explode(2560,16,0)
         Stop
     }
 }

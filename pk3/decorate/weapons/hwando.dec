@@ -176,7 +176,7 @@ ACTOR HwandoBase : Weapon
         KATN O 1 A_SetAngle(angle+50)
         KATN P 1 A_SetAngle(angle+45)
         TNT1 A 1 A_SetAngle(angle+22.5)
-		TNT1 A 1 A_SetAngle(angle+11.25)
+        TNT1 A 1 A_SetAngle(angle+11.25)
         goto SpecialAttackFinish
 
     SpinAttackRight:
@@ -197,14 +197,14 @@ ACTOR HwandoBase : Weapon
         KTUP E 1 A_SetAngle(angle-50)
         KTUP F 1 A_SetAngle(angle-45)
         TNT1 A 1 A_SetAngle(angle-22.5)
-		TNT1 A 1 A_SetAngle(angle-11.25)
+        TNT1 A 1 A_SetAngle(angle-11.25)
         goto SpecialAttackFinish
 
     SpecialAttackFinish:
-		TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
-		TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
-		TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
-		TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
         goto Fired
 
     LungeAttack:

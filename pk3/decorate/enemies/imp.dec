@@ -8,6 +8,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     PainChance "HaltHammerzeit", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     Speed 12
     States
     {
@@ -184,7 +185,7 @@ actor WeeabooImpBall : DoomImpBall replaces DoomImpBall
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
-    DamageFactor "RocketJumpDamage", 0.0
+    DamageFactor "ExodusJump", 0.0
     +THRUSPECIES
     +THRUGHOST
     +SHOOTABLE

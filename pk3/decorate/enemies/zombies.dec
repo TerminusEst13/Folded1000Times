@@ -8,6 +8,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     PainChance "HaltHammerzeit", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     DropItem "BlankPuff"
     Speed 10
@@ -147,6 +148,7 @@ actor POSXKubiuted
     DamageFactor "KubiSpinAttack", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     AttackSound "wp/kickh1"
     DeathSound "S_Cut"
     Health 20
@@ -267,6 +269,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     PainChance "HaltHammerzeit", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     DropItem "BlankPuff"
     Speed 10
@@ -520,6 +523,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     PainChance "HaltHammerzeit", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     DropItem "BlankPuff"
     Speed 10
@@ -678,6 +682,7 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
     PainChance "HaltHammerzeit", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     Speed 10
     States

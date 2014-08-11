@@ -4,8 +4,9 @@ actor WeeabooArachnotron : Arachnotron replaces Arachnotron
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
     PainChance "HaltHammerzeit", 255
-	DamageFactor "GuardMove", 0.0
+    DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     States
     {
     Missile:
@@ -68,7 +69,7 @@ actor ArachnotronPlasma2 : ArachnotronPlasma replaces ArachnotronPlasma
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
-    DamageFactor "RocketJumpDamage", 0.0
+    DamageFactor "ExodusJump", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST

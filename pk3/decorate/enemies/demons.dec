@@ -7,6 +7,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     PainChance "HaltHammerzeit", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
     States
     {
     Melee:
