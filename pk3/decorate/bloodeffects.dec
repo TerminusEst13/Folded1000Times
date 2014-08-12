@@ -371,7 +371,7 @@ radius    8
 height    1
 mass    1
 speed    16
-translation "176:191=116:127"
+translation "176:191=112:127" //"176:191=116:127"
 BloodColor "77 EE 00" 
 states
 {
@@ -460,7 +460,7 @@ actor EnemySplashGus3 : EnemySplashGus1
 { 
 Speed        2
 scale        0.4
-translation "16:47=112:127"
+translation "176:191=112:127"//"16:47=112:127"
 States
 {
 Spawn:
