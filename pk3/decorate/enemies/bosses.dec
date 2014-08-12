@@ -75,6 +75,7 @@ actor CyberRocket : Rocket replaces Rocket
     +THRUGHOST
     -NOBLOCKMAP 
     +NOBLOOD
+    -FIREDAMAGE
     States
     {
     Death.Kubiuti: // Doesn't work, for some reason.
