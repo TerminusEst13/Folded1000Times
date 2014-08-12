@@ -67,6 +67,7 @@ ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
     Spawn:
         CBR2 ABC 5 bright
         loop
+    Pain.HaltHammerzeitImpact:
     Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
@@ -121,6 +122,7 @@ ACTOR BlueTorch2 : DestructableDecorationBase replaces BlueTorch
     Spawn:
         TRC2 ABCD 4 bright
         loop
+    Pain.HaltHammerzeitImpact:
     Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
@@ -146,6 +148,7 @@ ACTOR RedTorch2 : DestructableDecorationBase replaces RedTorch
     Spawn:
         TRC2 EFGH 4 bright
         loop
+    Pain.HaltHammerzeitImpact:
     Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
@@ -171,6 +174,7 @@ ACTOR GreenTorch2 : DestructableDecorationBase replaces GreenTorch
     Spawn:
         TRC2 IJKL 4 bright
         loop
+    Pain.HaltHammerzeitImpact:
     Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
@@ -225,6 +229,7 @@ ACTOR ShortBlueTorch2 : DestructableDecorationBase replaces ShortBlueTorch
     Spawn:
         TRC3 ABCD 4 bright
         loop
+    Pain.HaltHammerzeitImpact:
     Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
@@ -250,6 +255,7 @@ ACTOR ShortRedTorch2 : DestructableDecorationBase replaces ShortRedTorch
     Spawn:
         TRC3 EFGH 4 bright
         loop
+    Pain.HaltHammerzeitImpact:
     Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
@@ -275,6 +281,7 @@ ACTOR ShortGreenTorch2 : DestructableDecorationBase replaces ShortGreenTorch
     Spawn:
         TRC3 IJKL 4 bright
         loop
+    Pain.HaltHammerzeitImpact:
     Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
