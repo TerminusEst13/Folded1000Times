@@ -460,12 +460,14 @@ actor OverHealPackSpawner : RandomSpawner replaces Soulsphere
 actor ArmorPackSmall: CustomInventory replaces GreenArmor
 {
     Inventory.PickupMessage "Picked up 3 Armor Tokens."
+    Inventory.PickupSound "armor/silver"
+    Scale 0.9
+    +FLOATBOB
     states
     {
       Spawn:
-        ARM1 A 6
-        ARM1 B 6 Bright
-        Loop
+        ARMR A -1 Bright
+        stop
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",3,"PickupFail")
@@ -494,12 +496,13 @@ actor ArmorPackSmall: CustomInventory replaces GreenArmor
 actor ArmorPackLarge: CustomInventory replaces BlueArmor
 {
     Inventory.PickupMessage "Picked up 5 Armor Tokens."
+    Inventory.PickupSound "armor/gold"
+    +FLOATBOB
     states
     {
       Spawn:
-        ARM2 A 6
-        ARM2 B 6 Bright
-        Loop
+        ARMR B -1 Bright
+        stop
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",5,"PickupFail")
