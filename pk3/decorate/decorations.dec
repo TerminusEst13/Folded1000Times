@@ -53,9 +53,11 @@ ACTOR DestructableDecorationBase
     RadiusDamageFactor 0.0
     DamageFactor "Normal", 0.0
     DamageFactor "Kubiuti", 1.0
+    DamageFactor "HaltHammerzeitImpact", 1.0
     PainChance 0
     PainChance "Kubiuti", 255
-    PainChance "KubiSpinAttack", 255
+    //PainChance "KubiSpinAttack", 255
+    PainChance "HaltHammerzeitImpact", 255
 }
 
 ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
@@ -68,7 +70,6 @@ ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
         CBR2 ABC 5 bright
         loop
     Pain.HaltHammerzeitImpact:
-    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
@@ -123,7 +124,6 @@ ACTOR BlueTorch2 : DestructableDecorationBase replaces BlueTorch
         TRC2 ABCD 4 bright
         loop
     Pain.HaltHammerzeitImpact:
-    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
@@ -149,7 +149,6 @@ ACTOR RedTorch2 : DestructableDecorationBase replaces RedTorch
         TRC2 EFGH 4 bright
         loop
     Pain.HaltHammerzeitImpact:
-    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
@@ -175,7 +174,6 @@ ACTOR GreenTorch2 : DestructableDecorationBase replaces GreenTorch
         TRC2 IJKL 4 bright
         loop
     Pain.HaltHammerzeitImpact:
-    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
@@ -230,7 +228,6 @@ ACTOR ShortBlueTorch2 : DestructableDecorationBase replaces ShortBlueTorch
         TRC3 ABCD 4 bright
         loop
     Pain.HaltHammerzeitImpact:
-    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
@@ -256,7 +253,6 @@ ACTOR ShortRedTorch2 : DestructableDecorationBase replaces ShortRedTorch
         TRC3 EFGH 4 bright
         loop
     Pain.HaltHammerzeitImpact:
-    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
@@ -282,7 +278,6 @@ ACTOR ShortGreenTorch2 : DestructableDecorationBase replaces ShortGreenTorch
         TRC3 IJKL 4 bright
         loop
     Pain.HaltHammerzeitImpact:
-    Pain.KubiSpinAttack:
     Pain.Kubiuti:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
