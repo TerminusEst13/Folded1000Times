@@ -20,16 +20,17 @@ actor HammerCharge : Ammo
 
 actor WeebClip : Ammo replaces Clip
 {
-    Inventory.PickupMessage "Picked up a \cq>clip" // "Picked up a clip."
+    Inventory.PickupMessage "Picked up a few bullets."
+    Inventory.PickupSound "ammo/bullet1"
     Inventory.Amount 5
     Inventory.MaxAmount 100
     Ammo.BackpackAmount 5
     Ammo.BackpackMaxAmount 200
-    Inventory.Icon "CLIPA0"
+    Inventory.Icon "ABULC0"
     States
     {
     Spawn:
-        CLIP A -1
+        ABUL A -1
         Stop
     }
 }
@@ -37,6 +38,7 @@ actor WeebClip : Ammo replaces Clip
 actor WeebClipBox : WeebClip replaces ClipBox
 {
     Inventory.PickupMessage "$GOTCLIPBOX" // "Picked up a box of bullets."
+    Inventory.PickupSound "ammo/bullet2"
     Inventory.Amount 20
     States
     {
@@ -49,15 +51,16 @@ actor WeebClipBox : WeebClip replaces ClipBox
 actor WeebShell : Ammo replaces Shell
 {
     Inventory.PickupMessage "$GOTSHELLS" // "Picked up 4 shotgun shells."
+    Inventory.PickupSound "ammo/shell1"
     Inventory.Amount 4
     Inventory.MaxAmount 40
     Ammo.BackpackAmount 4
     Ammo.BackpackMaxAmount 80
-    Inventory.Icon "SHELA0"
+    Inventory.Icon "ASHLC0"
     States
     {
     Spawn:
-        SHEL A -1
+        ASHL A -1
         Stop
     }
 }
@@ -65,6 +68,7 @@ actor WeebShell : Ammo replaces Shell
 actor WeebShellBox : WeebShell replaces ShellBox
 {
     Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
+    Inventory.PickupSound "ammo/shell2"
     Inventory.Amount 10
     States
     {
@@ -76,28 +80,30 @@ actor WeebShellBox : WeebShell replaces ShellBox
 
 actor WeebRocket : Ammo replaces RocketAmmo
 {
-    Inventory.PickupMessage "$GOTROCKET" // "Picked up a rocket."
-    Inventory.Amount 2
+    Inventory.PickupMessage "Picked up a grenade." // "Picked up a rocket."
+    Inventory.PickupSound "ammo/rocket1"
+    Inventory.Amount 1
     Inventory.MaxAmount 20
     Ammo.BackpackAmount 2
     Ammo.BackpackMaxAmount 30
-    Inventory.Icon "ROCKA0"
+    Inventory.Icon "AGRNA0"
     States
     {
     Spawn:
-        ROCK A -1
+        AGRN A -1
         Stop
     }
 }
 
 actor WeebRocketBox : WeebRocket replaces RocketBox
 {
-    Inventory.PickupMessage "$GOTROCKBOX" // "Picked up a box of rockets."
+    Inventory.PickupMessage "Picked up a box of grenades." // "Picked up a box of rockets."
+    Inventory.PickupSound "ammo/rocket2"
     Inventory.Amount 5
     States
     {
     Spawn:
-        BROK A -1
+        AGRN B -1
         Stop
     }
 }
@@ -105,27 +111,29 @@ actor WeebRocketBox : WeebRocket replaces RocketBox
 actor WeebCell : Ammo replaces Cell
 {
     Inventory.PickupMessage "Picked up an SMG magazine." // "Picked up an energy cell."
+    Inventory.PickupSound "ammo/cell1"
     Inventory.Amount 20
     Inventory.MaxAmount 200
     Ammo.BackpackAmount 20
     Ammo.BackpackMaxAmount 400
-    Inventory.Icon "CELLA0"
+    Inventory.Icon "ASMGA0"
     States
     {
     Spawn:
-        CELL A -1
+        ASMG A -1
         Stop
     }
 }
 
 actor WeebCellPack : WeebCell replaces CellPack
 {
-    Inventory.PickupMessage "Picked up a box of SMG ammo." // "Picked up an energy cell pack."
+    Inventory.PickupMessage "Picked up a box of SMG magazines." // "Picked up an energy cell pack."
+    Inventory.PickupSound "ammo/cell2"
     Inventory.Amount 50
     States
     {
     Spawn:
-        CELP A -1
+        ASMG B -1
         Stop
     }
 }
