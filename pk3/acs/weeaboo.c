@@ -220,7 +220,7 @@ script WEEB_ENTER ENTER
            else if (CheckInventory("HammerCharge") >= 0)
                { if (RideTheLightning >= 5)  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
         }
-        else { if (RideTheLightning >= 20)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
+        else { if (RideTheLightning >= 40)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
         RideTheLightning++;
 
         TakeInventory("GhostStepCooldown",1);
@@ -410,3 +410,74 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("GhostStepCooldown",0x7FFFFFFF);
     TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
 }
+
+/*
+
+int array_custmischarg[PLAYERMAX];
+int array_runrunruu[PLAYERMAX];
+int array_doomHealth[PLAYERMAX];
+int array_metpick[PLAYERMAX];
+int array_hitindic[PLAYERMAX];
+
+function int MetroidClientVars(void)
+{
+    int custmischarg      = !!GetCVar("metroid_cl_custommissilecharge");
+    int hitindic          = !!GetCVar("metroid_cl_hitindicator");
+    int metpick           = !!GetCVar("metroid_cl_nometroidpickups");
+    int doomHealth        = !!GetCVar("metroid_cl_doomhealth");
+    int runrunruu         = !!GetCVar("cl_run");
+
+    return (custmischarg << 4) + (hitindic << 3) + (metpick << 2) + (doomHealth << 1) + runrunruu;
+}
+
+script METROID_ENTER_CLIENTSIDE ENTER clientside
+{
+    int execInt, oExecInt, execStr;
+    int pln = PlayerNumber();
+
+    while(1)
+    {
+        if (ConsolePlayerNumber() != PlayerNumber()) { Delay(1); continue; }
+
+        oExecInt = execInt;
+        execInt = MetroidClientVars();
+
+        if (execInt != oExecInt)
+        {
+            if (!IsServer)
+            {
+                execStr = StrParam(s:"puke -", d:METROID_PUKE, s:" ", d:execInt, s:" ", d:pln);
+                ConsoleCommand(execStr);
+            }
+            else
+            {
+                ACS_ExecuteWithResult(METROID_PUKE, execInt, pln);
+            }
+        }
+
+        delay(1);
+    }
+}
+
+script METROID_PUKE (int values) net
+{
+    int pln = PlayerNumber();
+
+    array_runrunruu[pln]     = values & 1;
+    array_doomHealth[pln]    = values & 2;
+    array_metpick[pln]       = values & 4;
+    array_hitindic[pln]      = values & 8;
+    array_custmischarg[pln]  = values & 16;
+}
+
+        if (array_custmischarg[pln]) { GiveInventory("CustomMissileCharge", 1); }
+        else { TakeInventory("CustomMissileCharge", 0x7FFFFFFF); }
+
+        if (array_doomHealth[pln]) { GiveInventory("DoomHealthCounter", 1); }
+        else { TakeInventory("DoomHealthCounter", 0x7FFFFFFF); }
+        
+        if (array_runrunruu[pln]) { GiveInventory("AlwaysRunIsOn", 1); }
+        else { TakeInventory("AlwaysRunIsOn", 0x7FFFFFFF); }
+        
+        if (array_metpick[pln]) { GiveInventory("NoMetroidPickupSystem", 1); }
+        else { TakeInventory("NoMetroidPickupSystem", 0x7FFFFFFF); }
