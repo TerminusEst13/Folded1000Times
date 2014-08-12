@@ -217,7 +217,7 @@ actor HammerAttackBase
     SeeSound "none"
     DeathSound "none"
     Species "EnemyShot"
-    DamageType "HaltHammerzeit"
+    DamageType "HaltHammerzeitImpact"
     Projectile
     +BLOODSPLATTER
     +THRUSPECIES
