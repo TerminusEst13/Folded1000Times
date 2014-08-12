@@ -72,6 +72,8 @@ ammo/rocket2              AMMGRND2 // From Left 4 Dead 2
 ammo/cell1                AMMSMGA1 // From Killing Floor
 ammo/cell2                AMMSMGA2 // From Left 4 Dead 2
 
+misc/k_pkup               KEYPKUP  // From Painkiller
+
 health/soda               SODADRNK // By Aenima
 health/apple              APPLMNCH // By Agaxly off Freesound, edited
 health/burger             BRGRMNCH // Edited from thedust82's cracker eating sound off Freesound
