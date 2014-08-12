@@ -1,7 +1,7 @@
 statusbar normal, forcescaled
 {
 drawimage "AMMBOX", 308, 182, center;
-drawimage ammoicon1, 258, 186, center;
+drawimage ammoicon1, 258, 187, center;
 isselected "Hwando + Witchhunter" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
                                InInventory not HammerCharge, 100 { InInventory HammerCharge, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not HammerCharge, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
@@ -123,7 +123,7 @@ InInventory ContraArmorToken, 6 { drawimage "HLTHSHLD", 60, 168; }
 
 statusbar fullscreen, forcescaled
 {
-drawimage ammoicon1, 258, 186, center;
+drawimage ammoicon1, 258, 187, center;
 drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
 
 DrawImage "HUDBARX", 5, 193;

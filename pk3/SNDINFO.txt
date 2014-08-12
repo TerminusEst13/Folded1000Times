@@ -63,6 +63,15 @@ destroy/candelabra        CNDLCUT
 
 // Pickups
 
+ammo/bullet1              AMMBLLT1 // From Chronicles of Riddick: Assault on Dark Athena
+ammo/bullet2              AMMBLLT2 // From Chronicles of Riddick: Assault on Dark Athena
+ammo/shell1               AMMSHLL1
+ammo/shell2               AMMSHLL2 // From Left 4 Dead 2
+ammo/rocket1              AMMGRND1 // From Left 4 Dead 2
+ammo/rocket2              AMMGRND2 // From Left 4 Dead 2
+ammo/cell1                AMMSMGA1 // From Killing Floor
+ammo/cell2                AMMSMGA2 // From Left 4 Dead 2
+
 health/soda               SODADRNK // By Aenima
 health/apple              APPLMNCH // By Agaxly off Freesound, edited
 health/burger             BRGRMNCH // Edited from thedust82's cracker eating sound off Freesound

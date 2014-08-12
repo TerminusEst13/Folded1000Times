@@ -20,11 +20,11 @@ GRAPHICS:
   ^ The custom blood for the Hwando
   ^ The Acacia A-22 hunting pistol
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)
-- Captain J (The Uzi ammo pack)
-- Duke Nukem 64 (The Uzi's pickup/ammo graphics)
-- Aeons of Death (The Carronade explosion graphics)
+- Captain J (The Sabbath large ammo pack)
+- Duke Nukem 64 (The Sabbath's pickup graphics)
+- Aeons of Death (The Exodus explosion graphics)
 - Ettingrinder (The Candelabra)
-- NeuralStunner (The Hammer's pickup sprite)
+- NeuralStunner (The Witchhunter's pickup sprite)
 - Rogue Software (All the lightning effects and the keycard bases, from Strife)
 - Raven Software (The skull keys, edited from Hexen)
 - Id Software (The laser shots from the zombies)
@@ -34,6 +34,8 @@ GRAPHICS:
 - Dark Kingdom (Yup, HUD bits)
 - Final Fantasy 6 (The fire used to represent health)
 - Dungeons n' Dragons (Font used for the HUD)
+- HellCattX (The base for the Exodus/Acacia A-22 ammo pickups)
+- amv2k9 (The base for the Testament ammo pickups)
 
 CODE:
 =========
@@ -41,14 +43,14 @@ CODE:
   ^ The double-tap code (taken from Parkmore)
   ^ The shockwave from the spin attack
   ^ The trail for the zombie lasers/razor wind
-  ^ The second level spatter for the hammer
+  ^ The second level spatter for the Witchhunter
 - Doom667Shogun (For the blood/dismembering effects)
 - Vaecrius (For the redone Archvile (taken from Make It Snappy))
 - Kyle873 (Polishing the post-damage invulnerability code)
 - MagSigmaX (Inspiration for the dodging code)
-- Lioyd_Irving/le_L (The basis for the Hammer's impact code)
-- Scroton (The 3rd level spatter for the Hammer)
-- PillowBlaster (The overcharge shockwaves for the Hammer)
+- Lioyd_Irving/le_L (The basis for the Witchhunter's impact code)
+- Scroton (The 3rd level spatter for the Witchhunter)
+- PillowBlaster (The overcharge shockwaves for the Witchhunter)
 - Xaser/Enjay/Corwin (The TERRAIN lump from Psychic)
 
 MUSIC:
