@@ -113,6 +113,15 @@ actor "Hwando + Witchhunter" : HwandoBase //replaces SuperShotgun
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
         goto AltFireGun
+    Fired:
+        TNT1 A 10 A_WeaponReady(WRF_NOBOB | WRF_NOSWITCH/* | WRF_NOSECONDARY*/)
+        //TNT1 A 0 A_ReFire
+        TNT1 A 1 A_TakeInventory("KatanaSwung",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_ClearRefire
+        TNT1 AAAAAAA 0 A_Lower
+        Goto Select2
     AltHold:
         TNT1 A 0 A_JumpIfInventory("HammerOverchargeLevel",1,"AltHoldTime")
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_HAMAMMO1,0,0)
@@ -173,7 +182,7 @@ actor "Hwando + Witchhunter" : HwandoBase //replaces SuperShotgun
     HammerFinalCharge:
         TNT1 A 0 A_TakeInventory("HammerOverchargeLevel",35)
         TNT1 A 0 A_PlaySoundEx("hammer/stun","soundslot5",0,0)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_HAMAMMO3,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_HAMAMMO2,0,0)
         TNT1 A 0 A_ClearRefire
         CMC3 ABCD 1
         CMC3 EEEE 1
@@ -434,6 +443,7 @@ ACTOR HammerAttackOvercharge : HammerAttackBase
         TNT1 A 0 A_GiveToTarget("HammerHit",1)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",50)
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",10)
+        TNT1 A 0 A_TakeFromTarget("HammerCharge",0x7FFFFFFF)
         TNT1 A 0 A_PlaySound("hammer/hit")
         TNT1 A 0 A_PlaySoundEx("hammer/overcharge","soundslot7",0,0)
         TNT1 A 0 A_PlaySoundEx("hammer/overcharge","soundslot6",0,0) // Fuck it, let's deafen people.
