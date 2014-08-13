@@ -466,8 +466,9 @@ actor ArmorPackSmall: CustomInventory replaces GreenArmor
     states
     {
       Spawn:
-        ARMR A -1 Bright
-        stop
+        ARMR A 1 Bright
+        ARMR A 30
+        loop
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",3,"PickupFail")
@@ -501,8 +502,9 @@ actor ArmorPackLarge: CustomInventory replaces BlueArmor
     states
     {
       Spawn:
-        ARMR B -1 Bright
-        stop
+        ARMR B 1 Bright
+        ARMR B 30
+        loop
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",5,"PickupFail")

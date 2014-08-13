@@ -43,7 +43,7 @@ actor WeebClipBox : WeebClip replaces ClipBox
     States
     {
     Spawn:
-        AMMO A -1
+        ABUL B -1
         Stop
     }
 }
@@ -73,7 +73,7 @@ actor WeebShellBox : WeebShell replaces ShellBox
     States
     {
     Spawn:
-        SBOX A -1
+        ASHL B -1
         Stop
     }
 }
