@@ -19,6 +19,10 @@ GRAPHICS:
   ^ The gore decals/graphics
   ^ The custom blood for the Hwando
   ^ The Acacia A-22 hunting pistol
+  ^ The Hwando
+- Absolutely no thanks to Rottsprite for shitting out on us and not letting us
+  rotate the Hwando properly forcing us to rely on Photoshop's really ugly and
+  jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)
 - Captain J (The Sabbath large ammo pack)
 - Duke Nukem 64 (The Sabbath's pickup graphics)
@@ -36,6 +40,7 @@ GRAPHICS:
 - Dungeons n' Dragons (Font used for the HUD)
 - HellCattX (The base for the Exodus/Acacia A-22 ammo pickups)
 - amv2k9 (The base for the Testament ammo pickups)
+- Eriance/JoeyTD (The base for the placeholder hands used for the Hwando)
 
 CODE:
 =========
