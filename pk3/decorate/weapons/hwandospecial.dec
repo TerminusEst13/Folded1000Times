@@ -69,6 +69,7 @@ actor KatanaGuard
     Damage (10)
     DamageType "GuardMove"
     DamageFactor "kubiuti", 0.0
+    DamageFactor "HaltHammerzeit", 0.0
     Species "Player"
     Projectile
     +THRUSPECIES
