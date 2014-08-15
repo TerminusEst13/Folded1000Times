@@ -85,7 +85,7 @@ actor WeebRocket : Ammo replaces RocketAmmo
     Inventory.Amount 1
     Inventory.MaxAmount 20
     Ammo.BackpackAmount 2
-    Ammo.BackpackMaxAmount 30
+    Ammo.BackpackMaxAmount 40
     Inventory.Icon "AGRNA0"
     States
     {
@@ -115,7 +115,7 @@ actor WeebCell : Ammo replaces Cell
     Inventory.Amount 20
     Inventory.MaxAmount 200
     Ammo.BackpackAmount 20
-    Ammo.BackpackMaxAmount 400
+    Ammo.BackpackMaxAmount 500
     Inventory.Icon "ASMGA0"
     States
     {
