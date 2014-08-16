@@ -1,0 +1,130 @@
+TO DO in no particular order:
+1b: Implement found headshot dead sprites--imps/zombies/shotgunners will be finished!
+4: Make pickup sprites for the weapons
+8: Berserk pickup sprite/sound
+9: Cvar to remove recoil/vertical movement off dodging for semi-purist play.
+13: Forward, Left, right, and both attack buttons activates Iron Maiden mode
+17: Polish up hammer's placeholder sprites--they're just placeholder, but they don't need to be so damn ugly
+19: Give each of the guns/special attacks their own damagetype.
+20: Mid-air flight sounds for projectiles, so as to easily gauge location.
+22: Randomized muzzleflashes for the pistol.
+23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
+    SPECTRE: Sabreclaw
+    CACODEMON: Dark Bishop
+    PAIN ELEMENTAL: Riever
+    ARACHNOTRON:
+    SPIDER MASTERMIND: Heresiarch
+24: Include Shivers' idle animation
+25: Respawning gives too much health
+26: In multiplayer people can cut each other up for combo
+27: sv_unblockplayers allows people to go through enemies.
+29: SASS RAINBOW: you should make berserk give free combos for 20 seconds
+30: Easy path to S--find group of enemies, sword-dash into them
+31: Fountain-blood corpses seem to be looping endlessly online.
+32: <TerminusEst13> ...I wonder if there's a way I can choke how much [combo meter] is given at once.
+    <ijon> store the amount you have right when you start the attack
+    <ijon> have ACS or custominventory or something check that and only give you more if it'd place you no more than X above that count
+33: Make all enemy projectiles go A_UnsetShootable on death.
+34: Replace explosive barrels with something of neater substance.
+35: Replace generic blood with something of neater substance, like Psychic's or a smaller version of AtM's.
+37: Pretty up all non-laser enemy attacks, like the fireballs.
+38: I can include different melee styles, each with their own focus. People have been constantly suggesting more DMC inspiration, so one thing I could do is borrow the four "styles" of play and do different melee modes around that.
+Like one style is to tap repeatedly for really fast strikes (what's currently in).
+Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
+Another style is single strikes, where holding down fire charges up a more powerful strike.
+And the final style...ummm. Hm.
+39: Replace graphics on main menu options.
+40: Lightning sparks from hammer overcharge need to +DONTSPLASH
+41: Why do the Hell Nobles/Cacos not have colored blood wall decals?
+42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
+43: GLDEFS
+44: Expand on final map.
+
+<PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
+
+<Mystical> spinning skull for the menu screen selection cursor
+<Mystical> skull with a  pointer for mouse
+
+
+DONE:
+1a: Code Mike's new deaths
+2: Make aura placeholders for Zael's Slayer of Light
+3: Hammer overcharge crashes online play--due to HammerLightningLonger sucking up all the bandwidth. Find alternative?
+4b: Find names for the weapons, make pickup sounds
+5: Convert custominventory weapon pickups from Inventory.PickupSound to A_PlaySoundEx, currently don't activate with sv_weaponstay
+6: More destructable environmental stuff
+7: Figure out what armor pickups should be
+10: Port in Mike's pistol sprites
+11: More dramatic sound/effect for dodging
+12: Back-back-slash is a wide sword beam shooting ahead a repulsive wave to defend yourself with
+14: Redo shotgunner's/chaingunner's firing sound.
+15: Give newer, prettier graphic for zombie laser shots than just an NES Contra sprite.
+16: M_DOOM logo
+18: Sound on enemy-laser impact
+21: Stylize up the HUD a little.
+28: Less particle spam on Exodus.
+36: Edit the LANGUAGE lump and replace existing messages with more metal references.
+
+
+
+
+
+DESTRUCTABLE OBJECTS TO REPLACE:
+
+Column                  // Mini Tech Light
+BurningBarrel           // Barrel Fire
+ExplosiveBarrel         // Exploding Barrel(Doom)
+TechLamp                // Large Tech Lamp
+TechLamp2               // Small Tech Lamp
+TechPillar              // Tech Column
+
+BigTree                 // Big Scorched Tree
+Candlestick             // Candle
+EvilEye                 // Floating Eye above Candle
+FloatingSkull           // Floating Skulls
+HeadCandles             // Skulls with Candles
+HeadOnAStick            // Stick with Impaled Head
+HeadsOnAStick           // Stick with several Impaled Heads
+HeartColumn             // Green Pillar with Heart
+ShortGreenColumn        // Short Green Pillar
+ShortRedColumn          // Short Red Pillar
+SkullColumn             // Red Pillar with Skull
+Stalagtite              // Stalagmite (on the ground)
+TallGreenColumn         // Tall Green Pillar
+TallRedColumn           // Tall Red Pillar
+TorchTree               // Small Burned Tree
+
+
+
+
+TOTAL:
+
+Column                  // Mini Tech Light
+BurningBarrel           // Barrel Fire
+ExplosiveBarrel         // Exploding Barrel(Doom)
+TechLamp                // Large Tech Lamp
+TechLamp2               // Small Tech Lamp
+TechPillar              // Tech Column
+
+BigTree                 // Big Scorched Tree
+BlueTorch               // Large Blue Torch
+Candelabra              // Candelabra
+Candlestick             // Candle
+EvilEye                 // Floating Eye above Candle
+FloatingSkull           // Floating Skulls
+GreenTorch              // Large Green Torch
+HeadCandles             // Skulls with Candles
+HeadOnAStick            // Stick with Impaled Head
+HeadsOnAStick           // Stick with several Impaled Heads
+HeartColumn             // Green Pillar with Heart
+RedTorch                // Large Red Torch
+ShortBlueTorch          // Small Blue Torch
+ShortGreenColumn        // Short Green Pillar
+ShortGreenTorch         // Small Green Torch
+ShortRedColumn          // Short Red Pillar
+ShortRedTorch           // Small Red Torch
+SkullColumn             // Red Pillar with Skull
+Stalagtite              // Stalagmite (on the ground)
+TallGreenColumn         // Tall Green Pillar
+TallRedColumn           // Tall Red Pillar
+TorchTree               // Small Burned Tree
