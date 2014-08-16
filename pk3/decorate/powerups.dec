@@ -1,3 +1,9 @@
+actor PowerShieldProtection : PowerProtection
+{
+    DamageFactor "Normal", 0.0
+    +NORADIUSDMG
+}
+
 actor ComboDamageLevel1 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF

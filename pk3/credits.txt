@@ -57,6 +57,7 @@ CODE:
 - Scroton (The 3rd level spatter for the Witchhunter)
 - PillowBlaster (The overcharge shockwaves for the Witchhunter)
 - Xaser/Enjay/Corwin (The TERRAIN lump from Psychic)
+- Tormentor667/Ghastly_Dragon (The Powerline spawners for the armor, from the Stronghold Powerpad)
 
 MUSIC:
 =========

@@ -1,0 +1,32 @@
+Glow
+{
+    Flats
+    {    
+    NUKAGE1
+    NUKAGE2
+    NUKAGE3
+    LAVA1
+    LAVA2
+    LAVA3
+    LAVA4
+    SLIME01
+    SLIME02
+    SLIME03
+    SLIME04
+    SLIME05
+    SLIME06
+    SLIME07
+    SLIME08
+    SLIME09
+    SLIME10
+    SLIME11
+    SLIME12
+    RROCK05
+    RROCK06
+    RROCK07
+    RROCK08
+    GATE1
+    GATE2
+    GATE3
+    }
+}

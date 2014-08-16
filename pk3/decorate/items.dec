@@ -466,8 +466,10 @@ actor ArmorPackSmall: CustomInventory replaces GreenArmor
     states
     {
       Spawn:
-        ARMR A 1 Bright
-        ARMR A 30
+        ARMR A 1 Bright A_SpawnItemEx("SilverPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR AAAAA 2 A_SpawnItemEx("SilverPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR AAAAA 2 A_SpawnItemEx("SilverPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR AAAAA 2 A_SpawnItemEx("SilverPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
         loop
 
       Pickup:
@@ -502,8 +504,10 @@ actor ArmorPackLarge: CustomInventory replaces BlueArmor
     states
     {
       Spawn:
-        ARMR B 1 Bright
-        ARMR B 30
+        ARMR B 1 Bright A_SpawnItemEx("GoldPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR BBBBB 2 A_SpawnItemEx("GoldPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR BBBBB 2 A_SpawnItemEx("GoldPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR BBBBB 2 A_SpawnItemEx("GoldPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
         loop
 
       Pickup:
@@ -670,9 +674,25 @@ actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
         Loop
     }
 }
-     
-actor PowerShieldProtection : PowerProtection
+
+ACTOR SilverPowerLine
 {
-    DamageFactor "Normal", 0.0
-    +NORADIUSDMG
+    Speed 1
+    Radius 0
+    Height 0
+    Alpha 0.01
+    Scale 0.5
+    RenderStyle Add
+    +MISSILE
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        SPFX AAAAA 1 Bright A_FadeIn(0.2)
+        SPFX AAAAA 2 Bright A_FadeOut(0.1)
+        Stop
+    }
 }
+
+actor GoldPowerLine : SilverPowerLine { Translation "80:111=160:167", "5:5=167:167" }
