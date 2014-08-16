@@ -1,6 +1,6 @@
 ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
 {
-    +MISSILEMORE
+    //+MISSILEMORE
     //+MISSILEEVENMORE
     Species "Body"
     PainChance "kubiuti", 255
@@ -11,7 +11,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     DropItem "BlankPuff"
-    Speed 10
+    Speed 7
     States
     {
     Missile:
@@ -273,7 +273,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     DropItem "BlankPuff"
-    Speed 10
+    Speed 7
     States
     {
     Missile:
@@ -527,7 +527,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
     DropItem "BlankPuff"
-    Speed 10
+    Speed 6
     States
     {
     Missile:
