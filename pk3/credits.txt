@@ -30,7 +30,7 @@ GRAPHICS:
 - Ettingrinder (The Candelabra)
 - NeuralStunner (The Witchhunter's pickup sprite)
 - Rogue Software (All the lightning effects and the keycard bases, from Strife)
-- Raven Software (The skull keys, edited from Hexen)
+- Raven Software (The skull keys edited from Hexen, the Steel Beast edited from Heretic's Sabreclaw)
 - Id Software (The laser shots from the zombies)
 - Ravage/rf' (The red/blue/green torches)
 - CastleVania: Dawn of Sorrow/Order of Ecclesia/Portrait of Ruin (Bits and pieces of the HUD)
