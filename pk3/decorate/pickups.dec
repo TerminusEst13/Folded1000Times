@@ -311,6 +311,7 @@ actor LightningStarter
     +SPAWNCEILING
     +CEILINGHUGGER
     +CLIENTSIDEONLY
+    +DONTSPLASH
     States
     {
     Spawn:
@@ -377,6 +378,7 @@ actor LightningThin
     +FORCEYBILLBOARD
     +CLIENTSIDEONLY
     +NOINTERACTION
+    +DONTSPLASH
     States
     {
     Spawn:
@@ -420,6 +422,7 @@ actor LightningThick
     +FORCEYBILLBOARD
     +CLIENTSIDEONLY
     +NOINTERACTION
+    +DONTSPLASH
     States
     {
     Spawn:
@@ -463,6 +466,7 @@ actor LightningSpark
     -NOGRAVITY
     -SOLID
     +WINDTHRUST
+    +DONTSPLASH
     +CLIENTSIDEONLY
     States
     {

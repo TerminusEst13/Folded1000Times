@@ -320,6 +320,7 @@ ACTOR ElectricExplosion
     Height 1
     Speed 0
     +NOCLIP
+    +DONTSPLASH
     -SOLID
     DamageType "HaltHammerzeit"
     Obituary "%k crushed %o beyond dust."
@@ -348,6 +349,7 @@ ACTOR ElectricExplosionForce : ElectricExplosion { +FORCERADIUSDMG }
 actor HammerLightningX
 {
     +NOINTERACTION
+    +DONTSPLASH
     RenderStyle Add
     Alpha 0.4
     Scale 0.45
@@ -676,6 +678,7 @@ actor ElecTrail: BulletPuff
     +BLOODLESSIMPACT
     +NOINTERACTION
     +CLIENTSIDEONLY
+    +DONTSPLASH
     +NOPAIN
     VSpeed 0
     Scale 0.35
@@ -724,6 +727,7 @@ actor ElecBeam: FastProjectile
     Scale 0.4
     RenderStyle Add
     Alpha 0.65
+    +DONTSPLASH
     +NODAMAGETHRUST
     +FORCERADIUSDMG
     DamageType "HaltHammerzeit"
@@ -758,6 +762,7 @@ actor ShockPellet : FastProjectile
   +NOTIMEFREEZE
   +NODAMAGETHRUST
   +RANDOMIZE
+  +DONTSPLASH
   +CLIENTSIDEONLY
   Alpha 1.0
   //Decal ShockScorchPirate
@@ -826,6 +831,7 @@ actor ShockScatter
   +NOBLOCKMAP
   +NOGRAVITY
   +DROPOFF
+  +DONTSPLASH
   +NOTELEPORT
   +CLIENTSIDEONLY
   States
@@ -986,6 +992,7 @@ actor ShockScatterArc
   +NOCLIP
   +NOBLOCKMAP
   +NOGRAVITY
+  +DONTSPLASH
   //+FORCEPAIN
   -RANDOMIZE
   States
