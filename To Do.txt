@@ -39,6 +39,7 @@ And the final style...ummm. Hm.
 42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
 43: GLDEFS
 44: Expand on final map.
+45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
 
