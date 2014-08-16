@@ -689,8 +689,8 @@ ACTOR SilverPowerLine
     States
     {
     Spawn:
-        SPFX AAAAA 1 Bright A_FadeIn(0.2)
-        SPFX AAAAA 2 Bright A_FadeOut(0.1)
+        SPFX AAAAA 1 Bright A_FadeIn(0.1)
+        SPFX AAAAA 2 Bright A_FadeOut(0.05)
         Stop
     }
 }
