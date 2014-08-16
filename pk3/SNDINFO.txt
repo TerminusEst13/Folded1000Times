@@ -246,6 +246,10 @@ $rolloff grenades/explode3 400 1600
 $rolloff grenades/explode4 400 1600
 $rolloff grenades/explode5 400 1600
 
+
+
+
+
 // Enemy sounds
 
 trooper/gunready          ENREAD1 // Taken from Smash Bros. Melee
@@ -257,6 +261,18 @@ chngnner/fire             ENSHOT3
 
 enemy/shothit             ENSHOTHT
 enemy/bisected            ENBISECT // Taken from Splatterhouse
+
+steelbeast/attack         STLBATCK // Taken from Painkiller
+steelbeast/death          STLBDETH // Taken from Painkiller
+steelbeast/hwandohit      STLBSRD1 // Taken from Devil May Cry 3
+steelbeast/hurt           STLBHURT // Taken from Painkiller
+steelbeast/idle           STLBIDLE // Taken from Painkiller
+steelbeast/sight          STLBSGHT // Taken from Painkiller
+steelbeast/step           STLBWALK // Taken from Painkiller
+$limit steelbeast/step 0
+steelbeast/attackhit      STLBHIT  // Taken from Left 4 Dead 2
+steelbeast/attackmiss     STLBMISS // Taken from Left 4 Dead 2
+steelbeast/explode        STLBXPLD // Taken from Quake III Arena
 
 
 

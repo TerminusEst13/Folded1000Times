@@ -41,6 +41,7 @@ GRAPHICS:
 - HellCattX (The base for the Exodus/Acacia A-22 ammo pickups)
 - amv2k9 (The base for the Testament ammo pickups)
 - Eriance/JoeyTD (The base for the placeholder hands used for the Hwando)
+- Eriance (The explosion used for the Steel Beast's death)
 
 CODE:
 =========

@@ -9,7 +9,6 @@ TO DO in no particular order:
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
 22: Randomized muzzleflashes for the pistol.
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
-    SPECTRE: Sabreclaw
     CACODEMON: Dark Bishop
     PAIN ELEMENTAL: Riever
     ARACHNOTRON:
@@ -34,7 +33,6 @@ Another style is retro SNES-style beat-'em-up combos where landed hits go into o
 Another style is single strikes, where holding down fire charges up a more powerful strike.
 And the final style...ummm. Hm.
 39: Replace graphics on main menu options.
-40: Lightning sparks from hammer overcharge need to +DONTSPLASH
 41: Why do the Hell Nobles/Cacos not have colored blood wall decals?
 42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
 43: GLDEFS
@@ -64,8 +62,11 @@ DONE:
 16: M_DOOM logo
 18: Sound on enemy-laser impact
 21: Stylize up the HUD a little.
+23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
+    SPECTRE: Sabreclaw
 28: Less particle spam on Exodus.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
+40: Lightning sparks from hammer overcharge need to +DONTSPLASH
 
 
 
