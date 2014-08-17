@@ -37,7 +37,6 @@ And the final style...ummm. Hm.
 42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
 43: GLDEFS
 44: Expand on final map.
-45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 46: HammerCharge needs a smaller/new ammo icon.
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
@@ -67,6 +66,7 @@ DONE:
 28: Less particle spam on Exodus.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
 40: Lightning sparks from hammer overcharge need to +DONTSPLASH
+45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 
 
 
