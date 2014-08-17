@@ -50,11 +50,11 @@ script WEEB_DECORATE (int burrshet)
         int delaycount = 0;
         
         if (CheckInventory("ContraArmorToken") >= 1)
-            { TakeInventory("ContraArmorToken",1); }
+            { TakeInventory("ContraArmorToken",1); TakeInventory("HyperComboCounter",25); }
         else if (CheckInventory("OverLifeToken") >= 1)
-            { TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",25); }
+            { TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",50); }
         else if (CheckInventory("ContraLifeToken") >= 1)
-            { TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",25); }
+            { TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",50); }
         
         SetActorProperty(0,APROP_INVULNERABLE,1);
         
@@ -230,6 +230,7 @@ script WEEB_ENTER ENTER
         TakeInventory("DoubleTapReadyForward",1);
         TakeInventory("DoubleTapReadyLeft",1);
         TakeInventory("DoubleTapReadyBack",1);
+        TakeInventory("MidCombat",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
         // If the player still has life left, they get full health.
@@ -377,14 +378,14 @@ script WEEB_COMBOREMOVAL ENTER
 {
     while (1)
     {
-        if (CheckInventory("HyperComboCounter") < 50) { Delay(10); }
-        if (CheckInventory("HyperComboCounter") >= 50 && CheckInventory("HyperComboCounter") < 100 ) { Delay(9); }
+        if (CheckInventory("HyperComboCounter") < 50) { Delay(12); }
+        if (CheckInventory("HyperComboCounter") >= 50 && CheckInventory("HyperComboCounter") < 100 ) { Delay(10); }
         if (CheckInventory("HyperComboCounter") >= 100 && CheckInventory("HyperComboCounter") < 150 ) { Delay(8); }
-        if (CheckInventory("HyperComboCounter") >= 150 && CheckInventory("HyperComboCounter") < 200 ) { Delay(7); }
-        if (CheckInventory("HyperComboCounter") >= 200 && CheckInventory("HyperComboCounter") < 250 ) { Delay(6); }
-        if (CheckInventory("HyperComboCounter") >= 250 && CheckInventory("HyperComboCounter") < 300 ) { Delay(5); }
-        if (CheckInventory("HyperComboCounter") >= 300 ) { Delay(4); }
-        TakeInventory("HyperComboCounter",1);
+        if (CheckInventory("HyperComboCounter") >= 150 && CheckInventory("HyperComboCounter") < 200 ) { Delay(6); }
+        if (CheckInventory("HyperComboCounter") >= 200 && CheckInventory("HyperComboCounter") < 250 ) { Delay(4); }
+        if (CheckInventory("HyperComboCounter") >= 250 && CheckInventory("HyperComboCounter") < 300 ) { Delay(2); }
+        if (CheckInventory("HyperComboCounter") >= 300 ) { Delay(1); }
+        if (CheckInventory("MidCombat") == 0) { TakeInventory("HyperComboCounter",1); }
     }
 }
 
@@ -409,6 +410,7 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("BlockLife",0x7FFFFFFF);
     TakeInventory("GhostStepCooldown",0x7FFFFFFF);
     TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
+    TakeInventory("MidCombat",0x7FFFFFFF);
 }
 
 /*
