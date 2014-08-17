@@ -128,7 +128,7 @@ actor EnemyImpBallInfight
     Radius 1
     Height 1
     Speed 0
-    DamageType "EnemyInfightDamage"
+    DamageType "EnemyInfightDamageImp"
     +FORCERADIUSDMG
     States
     {

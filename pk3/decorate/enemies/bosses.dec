@@ -74,6 +74,7 @@ actor CyberRocket : Rocket replaces Rocket
     Health 5
     Species "EnemyShot"
     DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0

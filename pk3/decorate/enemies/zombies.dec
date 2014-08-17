@@ -155,6 +155,8 @@ actor POSXKubiuted
     +NOBLOCKMONST
     +NOTELEPORT
     -SOLID
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "KubiSpinAttack", 0.0
     DamageFactor "KubiLungeAttack", 0.0
     DamageFactor "GuardMove", 0.0

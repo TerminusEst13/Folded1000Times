@@ -8,6 +8,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
+    DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -194,6 +195,7 @@ actor WeeabooImpBall : DoomImpBall replaces DoomImpBall
     Speed 12
     Species "EnemyShot"
     DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
