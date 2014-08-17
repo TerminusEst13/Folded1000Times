@@ -9,3 +9,26 @@ pic 1 tics 6
 pic 2 tics 6
 pic 3 tics 6
 pic 4 tics 6
+
+Warp Texture NUKAGE1
+Warp Texture NUKAGE2
+Warp Texture NUKAGE3
+Warp Texture LAVA1
+Warp Texture LAVA2
+Warp Texture LAVA3
+Warp Texture LAVA4
+Warp Texture SLIME01
+Warp Texture SLIME02
+Warp Texture SLIME03
+Warp Texture SLIME04
+Warp Texture SLIME05
+Warp Texture SLIME06
+Warp Texture SLIME07
+Warp Texture SLIME08
+Warp Texture FWATER1
+Warp Texture FWATER2
+Warp Texture FWATER3
+Warp Texture FWATER4
+Warp Texture BLOOD1
+Warp Texture BLOOD2
+Warp Texture BLOOD3
