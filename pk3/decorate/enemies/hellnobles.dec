@@ -6,6 +6,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
+    DamageFactor "EnemyInfightDamageNoble", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
     BloodColor DarkOliveGreen
@@ -220,6 +221,11 @@ actor WeeabooBaronBall : BaronBall replaces BaronBall
     Species "EnemyShot"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
+    DamageFactor "EnemyInfightDamageArachnotron", 0.0
+    DamageFactor "EnemyInfightDamageNoble", 0.0
+    DamageFactor "EnemyInfightDamageRevenant", 0.0
+    DamageFactor "EnemyInfightDamageFatso", 0.0
+    DamageFactor "EnemyInfightDamageCaco", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -232,6 +238,7 @@ actor WeeabooBaronBall : BaronBall replaces BaronBall
     {
     Death:
         TNT1 A 0 A_UnsetShootable
+        TNT1 A 0 A_SpawnItemEx("EnemyNobleInfight",0,0,0,0,0,0,0,32)
         goto Super::Death
     }
 }

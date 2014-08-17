@@ -6,6 +6,7 @@ actor WeeabooFatty : Fatso replaces Fatso
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
+    DamageFactor "EnemyInfightDamageFatso", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
     +MISSILEMORE
@@ -116,6 +117,11 @@ actor WeeabooFatShot : FatShot replaces FatShot
     Species "EnemyShot"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
+    DamageFactor "EnemyInfightDamageArachnotron", 0.0
+    DamageFactor "EnemyInfightDamageNoble", 0.0
+    DamageFactor "EnemyInfightDamageRevenant", 0.0
+    DamageFactor "EnemyInfightDamageFatso", 0.0
+    DamageFactor "EnemyInfightDamageCaco", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -128,6 +134,7 @@ actor WeeabooFatShot : FatShot replaces FatShot
     {
     Death:
         TNT1 A 0 A_UnsetShootable
+        TNT1 A 0 A_SpawnItemEx("EnemyFatsoInfight",0,0,0,0,0,0,0,32)
         goto Super::Death
     }
 }
