@@ -9,7 +9,7 @@ actor HammerCharge : Ammo
     Ammo.BackpackAmount 0
     Ammo.BackpackMaxAmount 100
     +IGNORESKILL
-    Inventory.Icon "DPLED0"
+    Inventory.Icon "AHAMA0"
     States
     {
     Spawn:
