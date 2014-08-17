@@ -5,7 +5,6 @@ TO DO in no particular order:
 9: Cvar to remove recoil/vertical movement off dodging for semi-purist play.
 13: Forward, Left, right, and both attack buttons activates Iron Maiden mode
 17: Polish up hammer's placeholder sprites--they're just placeholder, but they don't need to be so damn ugly
-19: Give each of the guns/special attacks their own damagetype.
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
 22: Randomized muzzleflashes for the pistol.
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
@@ -71,6 +70,7 @@ DONE:
 15: Give newer, prettier graphic for zombie laser shots than just an NES Contra sprite.
 16: M_DOOM logo
 18: Sound on enemy-laser impact
+19: Give each of the guns/special attacks their own damagetype.
 21: Stylize up the HUD a little.
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
     SPECTRE: Sabreclaw

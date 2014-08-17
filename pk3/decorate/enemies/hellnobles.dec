@@ -4,6 +4,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
+    PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
@@ -21,6 +22,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_SpidRefire
         Goto See
 
+    Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
@@ -126,6 +128,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
+    PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
@@ -143,6 +146,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_SpidRefire
         Goto See
 
+    Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)

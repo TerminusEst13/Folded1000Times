@@ -56,7 +56,6 @@ ACTOR DestructableDecorationBase
     DamageFactor "HaltHammerzeitImpact", 1.0
     PainChance 0
     PainChance "Kubiuti", 255
-    //PainChance "KubiSpinAttack", 255
     PainChance "HaltHammerzeitImpact", 255
 }
 

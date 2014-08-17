@@ -131,7 +131,7 @@ ACTOR RazorWindExplosion
     +NOCLIP
     +FORCERADIUSDMG
     -SOLID
-    DamageType "KubiSpinAttack"
+    DamageType "KubiLungeAttack"
     Obituary "%k split %o in half with a dash attack."
     States
     {
@@ -161,7 +161,7 @@ ACTOR TelefragHack
     +NOCLIP
     +FORCERADIUSDMG
     -SOLID
-    DamageType "KubiSpinAttack"
+    DamageType "KubiLungeAttack"
     Obituary "%k split %o open with a dash attack."
     States
     {
