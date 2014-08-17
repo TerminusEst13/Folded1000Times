@@ -78,8 +78,12 @@ actor CyberRocket : Rocket replaces Rocket
     -FIREDAMAGE
     States
     {
+    Death:
+        TNT1 A 0 A_UnsetShootable
+        goto Super::Death
     Death.Kubiuti: // Doesn't work, for some reason.
     Death.GuardMove:
+        TNT1 A 0 A_UnsetShootable
         MISL B 8 Bright
         MISL C 6 Bright
         MISL D 4 Bright

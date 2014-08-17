@@ -23,7 +23,6 @@ TO DO in no particular order:
 32: <TerminusEst13> ...I wonder if there's a way I can choke how much [combo meter] is given at once.
     <ijon> store the amount you have right when you start the attack
     <ijon> have ACS or custominventory or something check that and only give you more if it'd place you no more than X above that count
-33: Make all enemy projectiles go A_UnsetShootable on death.
 34: Replace explosive barrels with something of neater substance.
 35: Replace generic blood with something of neater substance, like Psychic's or a smaller version of AtM's.
 37: Pretty up all non-laser enemy attacks, like the fireballs.
@@ -64,6 +63,7 @@ DONE:
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
     SPECTRE: Sabreclaw
 28: Less particle spam on Exodus.
+33: Make all enemy projectiles go A_UnsetShootable on death.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
 40: Lightning sparks from hammer overcharge need to +DONTSPLASH
 45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)

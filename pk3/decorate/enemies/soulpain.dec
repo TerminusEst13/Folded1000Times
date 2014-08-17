@@ -3,7 +3,7 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -30,7 +30,7 @@ actor WeebElemental : PainElemental replaces PainElemental
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0

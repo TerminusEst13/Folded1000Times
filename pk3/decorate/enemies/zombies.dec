@@ -5,7 +5,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -149,7 +149,7 @@ actor POSXKubiuted
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
-    DamageFactor "HaltHammerzeit", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
     AttackSound "wp/kickh1"
     DeathSound "S_Cut"
     Health 20
@@ -267,7 +267,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -521,7 +521,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -680,7 +680,7 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0

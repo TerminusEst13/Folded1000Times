@@ -4,7 +4,7 @@ ACTOR WeeabooCacodemon : Cacodemon replaces Cacodemon
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
-    PainChance "HaltHammerzeit", 255
+    PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -103,6 +103,12 @@ actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
     +THRUGHOST
     -NOBLOCKMAP 
     +NOBLOOD
+    States
+    {
+    Death:
+        TNT1 A 0 A_UnsetShootable
+        goto Super::Death
+    }
 }
 
 actor HEADXDeathed
