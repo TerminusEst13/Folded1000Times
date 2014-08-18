@@ -18,9 +18,11 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "SabbathDamage", 5.0
     DamageFactor "ExodusDamage", 5.0
     DropItem "BlankPuff"
-    Speed 7
     States
     {
+    See: // Apparently changing their speed gets them blocked on each other?
+        POSS AABBCCDD 5 A_Chase // Well, whatever. This works just as well.
+        Loop
     Missile:
         TNT1 A 0 A_PlaySound("trooper/gunready")
         POSS E 25 A_FaceTarget
@@ -298,9 +300,11 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "SabbathDamage", 3.3
     DamageFactor "ExodusDamage", 3.3
     DropItem "BlankPuff"
-    Speed 7
     States
     {
+    See:
+        SPOS AABBCCDD 4 A_Chase
+        Loop
     Missile:
         SPOS E 3 A_FaceTarget
         TNT1 A 0 A_PlaySound("sergeant/gunready")
@@ -568,9 +572,11 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "SabbathDamage", 1.5
     DamageFactor "ExodusDamage", 1.5
     DropItem "BlankPuff"
-    Speed 6
     States
     {
+    See:
+        CPOS AABBCCDD 4 A_Chase
+        Loop
     Missile:
         TNT1 A 0 A_PlaySound("chngnner/gunready")
         CPOS E 30 A_FaceTarget
