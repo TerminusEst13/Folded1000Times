@@ -32,7 +32,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
-        goto death.kubiuti+1
+        goto death.kubiuti+2
 
     Death:
         BOS2 I 8
@@ -84,7 +84,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         BOS2 H 1
         XDI3 E 0 A_PlaySound("enemy/bisected")
         XDI3 E 0 A_Jump(128,1)
-        goto death.kubiuti+4
+        goto death.kubiuti+5
         XDI3 L 0 A_Fall
         XDI3 LLLLL 0 A_CustomMissile("EnemySplashGus3",random(52,60),0,random(0,360),2,random(0,360))
         XDI3 L 1 A_SpawnItem("BOS2Kubiuted2",0,32,0)
@@ -105,6 +105,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         XDI3 O -1
         Stop
     death.kubiuti:
+        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",3)
         BOS2 H 1
         TNT1 A 0 A_Jump(128,"Death.Hunter","Death.Bloody","Death.Bloody2","XDeath")    
@@ -157,7 +158,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto death.kubiuti+1
+        goto death.kubiuti+2
 
     death.Bloody:
         BOSS P 8
@@ -178,7 +179,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         XDI1 A 0 A_Jump(96,"DThunter2")
         XDI1 A 0 A_SpawnItem("BOSSKubiuted",0,32,0)    
         XDI1 AAAAAAAAAA 1 A_ThrowGrenade ("BloodSplashGus1c",-2,5+random(0,7),8)    
-        goto death.kubiuti+5
+        goto death.kubiuti+6
     DThunter2:
         XDI1 H 0 A_SpawnItem("BOSSKubiuted2",0,32,0)    
         XDI1 HHHHHHHHHH 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
@@ -201,6 +202,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         XDI1 O -1
         stop
     death.kubiuti:
+        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",5)
         BOSS I 1
         TNT1 A 0 A_Jump(128,"Death.Bloody","Death.Hunter")
