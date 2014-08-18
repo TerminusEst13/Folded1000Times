@@ -122,6 +122,7 @@ actor WeeabooFatShot : FatShot replaces FatShot
     DamageFactor "EnemyInfightDamageRevenant", 0.0
     DamageFactor "EnemyInfightDamageFatso", 0.0
     DamageFactor "EnemyInfightDamageCaco", 0.0
+    DamageFactor "EnemyInfightDamageCyber", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
