@@ -36,6 +36,9 @@ And the final style...ummm. Hm.
 43: GLDEFS
 44: Expand on final map.
 
+
+<PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
+
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
 
 <Mystical> spinning skull for the menu screen selection cursor
