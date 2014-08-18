@@ -43,6 +43,7 @@ GRAPHICS:
 - Eriance/JoeyTD (The base for the placeholder hands used for the Hwando)
 - Eriance (The explosion used for the Steel Beast's death)
 - Tormentor667/Z86 (The pretty effects for the Imp/Hell Noble balls, taken from UTNT/Particle Fire Enhancer)
+- Jimmy91 (The fonts used, Gargoyle Wing for BIGFONT and Apostacy for SMALLFONT)
 
 CODE:
 =========

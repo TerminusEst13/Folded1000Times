@@ -11,6 +11,7 @@ skill baby
 	SpawnFilter = Hard
 	Name = "Return to Serenity" // Testament
 	MustConfirm = "$CONFIRM_BABY"
+    TextColor = white
 }
 
 skill easy
@@ -20,6 +21,7 @@ skill easy
 	SpawnFilter = Hard
 	Name = "Never Say Die" // Black Sabbath
 	MustConfirm = "$CONFIRM_EASY"
+    TextColor = white
 }
 
 skill normal
@@ -28,6 +30,7 @@ skill normal
 	SpawnFilter = Hard
 	Name = "Point of No Return" // Lords of Decadence
 	MustConfirm = "$CONFIRM_NORMAL"
+    TextColor = white
 	//DefaultSkill
 }
 
@@ -37,6 +40,7 @@ skill hard
 	SpawnFilter = Hard
 	Name = "Thrash 'Till Death" // Destruction
 	MustConfirm = "$CONFIRM_HARD"
+    TextColor = white
 }
 
 skill nightmare
@@ -46,6 +50,7 @@ skill nightmare
 	SpawnFilter = Nightmare
 	Name = "Set the World Afire" // Megadeth
 	MustConfirm = "$CONFIRM_NIGHTMARE"
+    TextColor = white
 	Aggressiveness = 0.55
 }
 
@@ -57,5 +62,6 @@ skill ohgodhelpme
 	SpawnFilter = Nightmare
 	Name = "   "
 	MustConfirm = "$CONFIRM_OHGODHELPME"
+    TextColor = white
 	Aggressiveness = 0.95
 }
