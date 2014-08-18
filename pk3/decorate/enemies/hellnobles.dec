@@ -132,6 +132,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
+    DamageFactor "EnemyInfightDamageNoble", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
     BloodColor DarkOliveGreen
