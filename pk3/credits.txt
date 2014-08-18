@@ -42,6 +42,7 @@ GRAPHICS:
 - amv2k9 (The base for the Testament ammo pickups)
 - Eriance/JoeyTD (The base for the placeholder hands used for the Hwando)
 - Eriance (The explosion used for the Steel Beast's death)
+- Tormentor667/Z86 (The pretty effects for the Imp/Hell Noble balls, taken from UTNT/Particle Fire Enhancer)
 
 CODE:
 =========
@@ -59,6 +60,7 @@ CODE:
 - PillowBlaster (The overcharge shockwaves for the Witchhunter)
 - Xaser/Enjay/Corwin (The TERRAIN lump from Psychic)
 - Tormentor667/Ghastly_Dragon (The Powerline spawners for the armor, from the Stronghold Powerpad)
+- PresidentPeople (Fixing the corpses to keep them from bouncing everywhere)
 
 MUSIC:
 =========

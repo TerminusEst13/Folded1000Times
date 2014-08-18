@@ -302,11 +302,14 @@ actor SARXKubiuted : POSXKubiuted
         XDD1 S 0 A_PlaySound("S_Blodd")
         XDD1 S 0 A_ChangeFlag("PUSHABLE",0)
     Spawned2:
-        XDD1 W 0 A_Jump(160,2)
-        XDD1 W 1 A_chase
-        goto Spawned2+1
-        XDD1 X 1 A_chase
-        goto Spawned2+2
+        //XDD1 W 0 A_Jump(160,2)
+        XDD1 W 1 A_Look
+        goto Spawned2
+        //XDD1 X 1 A_chase
+        //goto Spawned2
+    See:    
+        XDD1 W 1 A_Chase
+        loop
     Melee:
         XDD1 X 1 A_FaceTarget
         XDD1 X 0 damageThing(1)
