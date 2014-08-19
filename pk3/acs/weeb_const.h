@@ -10,6 +10,7 @@
 #define WEEB_UNLOADING                       273
 #define WEEB_OPEN                            274
 #define WEEB_CLIENTDECORATE                  275
+#define WEEB_DEATH                           276
 
 // Definitions
 

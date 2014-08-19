@@ -413,6 +413,8 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("MidCombat",0x7FFFFFFF);
 }
 
+script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
+
 /*
 
 int array_custmischarg[PLAYERMAX];
