@@ -41,6 +41,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
+    DamageFactor "EnemyInfightDamageCyber", 0.0
     +DONTRIP
     States
     {
