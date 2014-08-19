@@ -233,6 +233,7 @@ actor WeeabooBaronBall : BaronBall replaces BaronBall
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
+    DamageFactor "ExodusDamage", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST
