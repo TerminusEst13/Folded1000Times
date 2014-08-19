@@ -62,12 +62,13 @@ ACTOR ExodusRocket
     +GRENADETRAIL
     -NOGRAVITY
     Gravity 0.25
+    Scale 0.4
     DeathSound "grenades/explode"
     States
     {
     Spawn:
-        HORN A 1 Bright A_CustomMissile("ExodusRocketFlameSpawner",0,0,0,0)
-        HORN A 0 Bright A_CustomMissile("ExodusRocketFlameSpawner2",0,0,random(-100,100)/150.00,2,random(-100,100)/150.00)
+        HORN A 1 Bright A_CustomMissile("ExodusRocketFlameSpawner",2,0,0,0)
+        TNT1 A 0 A_CustomMissile("ExodusRocketFlameSpawner2",2,0,random(-100,100)/150.00,2,random(-100,100)/150.00)
         Loop
     Death:
         TNT1 A 0 A_Scream

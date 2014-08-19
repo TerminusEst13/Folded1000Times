@@ -26,6 +26,7 @@ GRAPHICS:
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)
 - Captain J (The Sabbath large ammo pack)
 - Duke Nukem 64 (The Sabbath's pickup graphics)
+- Shadow Warrior (The Exodus grenade sprites)
 - Aeons of Death (The Exodus explosion graphics)
 - Ettingrinder (The Candelabra)
 - NeuralStunner (The Witchhunter's pickup sprite)
