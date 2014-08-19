@@ -8,7 +8,6 @@ TO DO in no particular order:
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
 22: Randomized muzzleflashes for the pistol.
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
-    CACODEMON: Dark Bishop
     PAIN ELEMENTAL: Riever
     ARACHNOTRON:
     SPIDER MASTERMIND: Heresiarch
@@ -76,6 +75,7 @@ DONE:
 21: Stylize up the HUD a little.
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
     SPECTRE: Sabreclaw
+    CACODEMON: Dark Bishop
 28: Less particle spam on Exodus.
 33: Make all enemy projectiles go A_UnsetShootable on death.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.

@@ -1,6 +1,10 @@
-ACTOR WeeabooCacodemon : Cacodemon replaces Cacodemon
+ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemon
 {
+    Health 450
+    Radius 22
+    Height 65
     Speed 10
+    Mass 400
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "KubiSpinAttack", 255
@@ -10,95 +14,108 @@ ACTOR WeeabooCacodemon : Cacodemon replaces Cacodemon
     DamageFactor "EnemyInfightDamageCaco", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
-    BloodColor blue
+    SeeSound "wizard/see"
+    PainSound "wizard/pain"
+    DeathSound "wizard/death"
+    ActiveSound "wizard/idle"
+    //BloodColor blue
+    PainChance 128
+    Monster
+    +FLOAT
+    +NOGRAVITY
+    +TELESTOMP
+    +DONTOVERLAP
     +MISSILEMORE
-    +MISSILEEVENMORE
+    Obituary "%o was cursed by a dark wizard."
     States
     {
+    Spawn:
+        WZRD AB 10 A_Look
+        loop
     See:
-        HEAD A 2 A_FastChase
-        HEAD AAAAAAAA 2 A_Chase
+        TNT1 A 0 A_JumpIfCloser(384,"SeeClose")
+        WZRD AAB 3 A_FastChase
+        WZRD BAA 3 A_Chase
+        WZRD BBA 3 A_FastChase
+        WZRD ABB 3 A_Chase
         Loop
+    SeeClose:
+        WZRD AAABBB 2 A_Chase
+        goto See
     Melee:
     Missile:
-        HEAD BC 6 A_FaceTarget
-        HEAD D 4 Bright A_CustomMissile("CacodemonBall")//A_HeadAttack
-        TNT1 A 0 A_Jump(128,"See")
-        TNT1 A 0 A_SpidRefire
+        TNT1 A 0 A_PlaySound("wizard/shotprepare")
+        WZRD XYZ 7 Bright A_FaceTarget
+        TNT1 A 0 A_FaceTarget
+        WZRD DE 5
+        TNT1 A 0 A_PlaySound("wizard/shotfire")
+        TNT1 A 0 A_PlaySoundEx("wizard/shotpew","soundslot6",0,0)
+        TNT1 A 0 A_CustomMissile("WizardSpell",32,0,6)
+        TNT1 A 0 A_CustomMissile("WizardSpell",32,0,0)
+        TNT1 A 0 A_CustomMissile("WizardSpell",32,0,-6)
+        WZRD F 5 Bright
+        WZRD AAABBB 2 A_Wander
         Goto See
 
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
-        goto Super::Pain
+        goto Pain
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto death.kubiuti+2
+        goto death//.kubiuti+2
+    Pain:
+        WZRD C 3
+        WZRD C 3 A_Pain
+        Goto See
 
-    XDeath:    
-    death.rocket:
-        HEAD G 0 A_XScream
-        HEAD GGGGG 0 A_ThrowGrenade ("BloodShowerB2",-2,5+random(0,7),4)    
-        HEAD G 1 A_ThrowGrenade ("BloodShowerB2",-2,5+random(0,7),4)    
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,0)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,180)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,30)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,60)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,60)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,90)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,120)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,150)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,-30)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,-60)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,-60)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,-90)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,-120)
-        XDE2 A 0 A_CustomMissile("BloodShowerB2",16,0,-150)
-        XDE2 A 1 A_NoBlocking
-        XDE2 AAAAAAAAAA 0 A_SpawnDebris("BloodShower2",1)
-        XDE2 AAAAAAAAAA 0 A_CustomMissile("EnemySplashGus2",random(24,48),0,random(0,360),2,random(0,360))
-        XDE2 A -1 A_SpawnDebris("HEADXDeathed",1)    
-        stop
-    death.hunter:    
-        HEAD G 0 ThrustThing (random(0,255),random(4,8))
-        HEAD G 0 ThrustThingZ(0,random(20,60),0,0)
-        goto xdeath
-    death.kubiuti:
-        TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
-        HEAD G 0 A_PlaySound("enemy/bisected")
-        HEAD G 0 A_Jump(64,"death.hunter")
-        HEAD G 0 A_Jump(128,"kubiuti2")
-        HEAD GG 1 A_ThrowGrenade("BloodSplashGus1b",-2,5+random(0,7),40)    
-        HEAD H 2 A_NoBlocking
-        HEAD I 2
-        XDE2 GGGGGGGGGG 0 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE2 A -1 A_SpawnItem("HEADKubiuted",0,32)
-        stop    
-    kubiuti2:
-        XDE1 IIIII 1 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE1 J 0 A_NoBlocking
-        XDE1 JJJJJ 1 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE1 KKKKK 1 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE1 LLLLL 1 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE1 MMMMM 1 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE1 NNNNN 1 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE1 OOOOO 1 A_ThrowGrenade ("BloodSplashGus1b",-2,5+random(0,7),40)    
-        XDE1 O -1 A_SpawnDebris("BloodShowerB2",1)    
-        stop
+    Death:
+        WZRD G 6 A_Gravity
+        WZRD H 6 Bright A_Scream
+        WZRD I 5 Bright A_NoBlocking
+        WZRD J 5 Bright
+        WZRD K 5 Bright
+        WZRD LM 4 Bright
+        TNT1 AA 0 A_SpawnItemEx("WizardPuff",0,0,40,random(-50,50)/100.00,random(-50,50)/100.00,random(25,100)/100.00,random(-180,180),160)
+        WZRD N 4 Bright A_SpawnItemEx("WizardPuff",0,0,40,0,0,0.5,0,160)
+        WZRD O 4 //A_QueueCorpse
+        WZRD P -1
+        Stop
     }
 }
 
-actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
+ACTOR WizardPuff
 {
+    +NOBLOCKMAP
+    +NOGRAVITY
+    RenderStyle Translucent
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        WZRD QRST 6 Bright A_FadeOut(0.1)
+        WZRD UV 7 Bright A_FadeOut(0.1)
+        WZRD W 6 Bright A_FadeOut(0.1)
+        Stop
+    }
+}
+
+actor WizardSpell
+{
+    Radius 6
+    Height 8
     Health 5
-    Speed 15
-    FastSpeed 25
+    Speed 10
+    FastSpeed 20
+    Damage 5
+    RenderStyle Add
+    Alpha 1
+    Scale 0.75
     Species "EnemyShot"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
@@ -112,6 +129,8 @@ actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
+    DeathSound "wizard/shothit"
+    Projectile
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST
@@ -119,99 +138,44 @@ actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
     +NOBLOOD
     States
     {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("WizardTrail2",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        SPZR A 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        TNT1 A 0 A_SpawnItemEx("WizardTrail2",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        SPZR B 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        TNT1 A 0 A_SpawnItemEx("WizardTrail2",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        SPZR C 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        TNT1 A 0 A_SpawnItemEx("WizardTrail2",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        SPZR D 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        loop
     Death:
         TNT1 A 0 A_UnsetShootable
         TNT1 A 0 A_SpawnItemEx("EnemyCacoInfight",0,0,0,0,0,0,0,32)
-        goto Super::Death
+        TNT1 AAAAAA 0 A_SpawnItemEx("WizardTrail1",0,0,0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,0,160)
+        SPZR E 1 BRIGHT A_Scream
+        SPZR FGHIJKLMNOP 1 BRIGHT
+        stop
     }
 }
 
-actor HEADXDeathed
+actor WizardTrail1
 {
-    PROJECTILE
-    +LOWGRAVITY
-    -NOGRAVITY
-    -MISSILE
-    Speed 0
-    Health 1
-    Radius 1
-    Height 2
-    Mass 1000
+    Alpha 0.95
+    Scale 0.55
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
     States
     {
     Spawn:
-        XDE2 BBBBBBBBB 5 //A_CustomMissile("WBsmokeMin",random(1,8),random(-8,8)) //A_SpawnItem("WBsmokeMin",0)
-        XDE2 B 0 A_FadeOut
-        Loop
-    }
-}
-
-actor HEADKubiuted : POSXKubiuted
-{
-    +SOLID
-    Radius 16
-    Height 33
-    MeleeRange 40
-    BloodColor "00 88 FF"
-    States
-    {
-    Spawn:
-        XDE1 A 0
-        XDE1 A 0 ThrustThing (random(0,255),random(1,4))
-        XDE1 A 0 ThrustThingZ(0,random(10,30),0,0)
-        XDE1 AAA 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 B 0 A_CheckFloor("Spawned")
-        XDE1 B 0 A_SpawnDebris("BloodShowerB2")
-        XDE1 BBB 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 C 0 A_CheckFloor("Spawned")
-        XDE1 C 0 A_SpawnDebris("BloodShowerB2")
-        XDE1 CCC 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 C 0 A_CheckFloor("Spawned")
-        XDE1 D 0 A_SpawnDebris("BloodShowerB2")
-        XDE1 DDD 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 D 0 A_CheckFloor("Spawned")
-        XDE1 E 0 A_SpawnDebris("BloodShowerB2")
-        XDE1 EEE 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 E 0 A_CheckFloor("Spawned")
-        XDE1 F 0 A_SpawnDebris("BloodShowerB2")
-        XDE1 FFF 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 F 0 A_CheckFloor("Spawned")
-        XDE1 G 0 A_SpawnDebris("BloodShowerB2")
-        XDE1 GGG 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 G 0 A_CheckFloor("Spawned")
-        XDE1 H 0 A_SpawnDebris("BloodShowerB2")
-        XDE1 HHH 1 A_SpawnItem("BloodShowerB3",0)
-        XDE1 H 0 A_CheckFloor("Spawned")
-        goto Spawn+3
-    Spawned:
-        XDE1 A 0 A_Jump(200,3)
-        XDE1 A 1 A_PlaySound("S_Blodd")
-        XDE1 A 0 ThrustThingZ(0,random(10,20),0,0)
-        goto Spawn+3
-        XDE1 A 0 A_PlaySound("S_Blodd")
-        XDE1 A 0 A_ChangeFlag("PUSHABLE",0)
-    Spawned2:
-        //XDE1 A 0 A_Jump(160,2)
-        XDE1 A 1 A_Look
-        goto Spawned2
-        //XDE1 E 1 A_chase
-        //goto Spawned2+2
-    See:    
-        XDE1 A 1 A_Chase
+        TNT1 A 0
+        SPZR Q 1 BRIGHT A_FadeOut(0.1)
+        SPZR Q 1 BRIGHT A_FadeOut(0.1)
+        SPZR R 1 BRIGHT A_FadeOut(0.1)
+        SPZR R 1 BRIGHT A_FadeOut(0.1)
         loop
-    Melee:
-        XDE1 A 1 A_FaceTarget
-        XDE1 A 0 damageThing(1)
-        XDE1 A 0 A_ChangeFlag("PUSHABLE",1)
-        XDE1 A 0 ThrustThingZ(0,random(15,40),0,0)
-        XDE1 A 0 A_Recoil(2+random(0,8))
-        goto Spawn+3
-    Death:
-        BLD1 C 0 A_Fall
-        BLD1 C 0 A_Scream
-        BLD1 CCC 0 A_CustomMissile("EnemySplashGus2",0,0,random(0,360),2,random(0,360))
-        BLD1 CCCCC 0 A_SpawnDebris("BloodShowerB2")
-        BLD1 CBA 1
-        Stop
     }
 }
+
+actor WizardTrail2 : WizardTrail1 { Alpha 0.85 Scale 0.25 }
