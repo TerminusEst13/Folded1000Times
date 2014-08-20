@@ -741,6 +741,7 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
     DamageFactor "KubiSpinAttack", 2.0
+    DropItem "BlankPuff"
     Speed 10
     States
     {
