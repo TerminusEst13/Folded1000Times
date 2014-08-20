@@ -81,10 +81,12 @@ script WEEB_DECORATE (int burrshet)
     break;
 
     case WEEB_DEC_FREEZE:
+        SetActorProperty(0,APROP_Species,"Body");
         SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
         break;
 
     case WEEB_DEC_UNFREEZE:
+        SetActorProperty(0,APROP_Species,"Player");
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
         break;
 
@@ -195,6 +197,7 @@ script WEEB_ENTER ENTER
     }
     SetActorProperty(0,APROP_INVULNERABLE,0); // Just in case some wiseass exits while invuln.
     SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
+    SetActorProperty(0,APROP_Species,"Player");
     SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
     GiveInventory("NewLevelStatReset",1);
     if (CheckInventory("HammerCharge") > 100) { SetAmmoCapacity("HammerCharge",100); SetInventory("HammerCharge",80); }
@@ -240,7 +243,7 @@ script WEEB_ENTER ENTER
         else
         { SetActorProperty(0,APROP_HEALTH,1); }
 
-        // MAAAAAX!!
+        // Not the kind you lean on.
         SuperCount = CheckInventory("SuperMeterCounter");
         //SetInventory("SuperCounter1",SuperCount); // Life would be so much easier if this worked online.
         TakeInventory("SuperCounter1", 0x7FFFFFFF);
@@ -312,10 +315,10 @@ script WEEB_ENTER ENTER
 
         // Floor
         WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);
-        if (WalkTheDinosaur >= -10 && WalkTheDinosaur <= 10) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); TakeInventory("AcesHigh",1); TakeInventory("ReadyToDoubleJump",1); } else { TakeInventory("OnTheGround",1); }
+        if (WalkTheDinosaur >= -64 && WalkTheDinosaur <= 30) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); TakeInventory("AcesHigh",1); TakeInventory("ReadyToDoubleJump",1); } else { TakeInventory("OnTheGround",1); }
         // Doublejump
-        if (keypressed(BT_JUMP))
-            { if (CheckInventory("OnTheGround") == 0 && CheckInventory("AcesHigh") == 0)
+        if (CheckInventory("OnTheGround") == 0 && CheckInventory("AcesHigh") == 0)
+            { if (keypressed(BT_JUMP))
                 { if (CheckInventory("ReadyToDoubleJump") == 1) { ActivatorSound("ghost/jump",127); ThrustThingZ(0,36,0,0); GiveInventory("AcesHigh",1); }
                   else { GiveInventory("ReadyToDoubleJump",1); }}}
         // Dodging

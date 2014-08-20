@@ -214,8 +214,9 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
         TNT1 A 0 A_ChangeFlag("GHOST",1)
-        TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE,0,0)
+        TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
+        TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("sword/beam3")
         TNT1 AA 0 A_SpawnItemEx("RazorWindExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,125,0,0,0,48)
