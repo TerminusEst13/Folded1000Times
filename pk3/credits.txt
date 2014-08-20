@@ -55,7 +55,7 @@ CODE:
   ^ The second level spatter for the Witchhunter
 - Doom667Shogun (For the blood/dismembering effects)
 - Vaecrius (For the redone Archvile (taken from Make It Snappy))
-- Kyle873 (Polishing the post-damage invulnerability code)
+- Kyle873 (Polishing the post-damage invulnerability code, rehauling the double-jump code)
 - MagSigmaX (Inspiration for the dodging code)
 - Lioyd_Irving/le_L (The basis for the Witchhunter's impact code)
 - Scroton (The 3rd level spatter for the Witchhunter)

@@ -313,14 +313,35 @@ script WEEB_ENTER ENTER
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
                       else { GiveInventory("DoubleTapReadyBack",8); }}}
 
-        // Floor
-        WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);
-        if (WalkTheDinosaur >= -64 && WalkTheDinosaur <= 30) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); TakeInventory("AcesHigh",1); TakeInventory("ReadyToDoubleJump",1); } else { TakeInventory("OnTheGround",1); }
-        // Doublejump
-        if (CheckInventory("OnTheGround") == 0 && CheckInventory("AcesHigh") == 0)
-            { if (keypressed(BT_JUMP))
-                { if (CheckInventory("ReadyToDoubleJump") == 1) { ActivatorSound("ghost/jump",127); ThrustThingZ(0,36,0,0); GiveInventory("AcesHigh",1); }
-                  else { GiveInventory("ReadyToDoubleJump",1); }}}
+    // This block of code was done by Kyle873.
+    // He wishes me to inform you that ACS is a pile of cocks that owes him money.
+    // If ACS ever met him IRL for a 1v1 fite, he would totally kick ACS' ass.
+    // He has a blackbelt in punchyourshitology and got a masters in ohgodmyfuckingkneecapsjutsu.
+    // Unfortunately ACS is a bitch pussy and never returns his calls.
+    // But he is waiting. Oh, yes, he is waiting.
+        WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);        
+        //print(f:WalkTheDinosaur, s:" ", f:GetActorVelZ(0), s:"\n", d:CheckInventory("OnTheGround"), s:" ", d:CheckInventory("AcesHigh"));
+        // Floor check
+        if (GetActorZ(0) - GetActorFloorZ(0) == 0)
+        {
+              GiveInventory("OnTheGround", 1);
+              TakeInventory("GhostStepDone",1); 
+        }
+        else
+            { TakeInventory("OnTheGround", 1); }
+        // Double Jump
+        if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP))
+        {
+            ActivatorSound("ghost/jump", 127);
+            ThrustThingZ(0, 36, 0, 0);
+            GiveInventory("AcesHigh", 1);
+        }
+        // Remove AcesHigh when we're back on the ground
+        if (CheckInventory("OnTheGround") && CheckInventory("AcesHigh"))
+            TakeInventory("AcesHigh", 1);
+    // This concludes the block of code done by Kyle873.
+    // You may now applaud his genius.
+
         // Dodging
         if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
         { if (buttons & BT_SPEED && buttons & BT_FORWARD)
