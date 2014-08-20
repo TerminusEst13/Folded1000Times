@@ -70,7 +70,8 @@ BFE4 F 100 A_FadeOut
 
 actor Bloodmeatprj2 : Bloodmeatprj1
 {
-+SHOOTABLE -NOBLOCKMAP
+/*+SHOOTABLE*/ -NOBLOCKMAP
++CLIENTSIDEONLY
 health    10
 radius    8
 height    12
@@ -284,8 +285,9 @@ BFE4 A 0 A_SpawnItem("BloodShower5b",0,0,0,1)
 
 actor BloodShower5b
 {
-+SHOOTABLE//+NOBLOCKMAP
+//+SHOOTABLE//+NOBLOCKMAP
 +NOTELEPORT+NOBLOCKMONST+DONTSPLASH
++CLIENTSIEONLY
 health    10
 radius    4
 height    4
