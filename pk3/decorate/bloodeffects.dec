@@ -35,6 +35,7 @@ ACTOR ExtreamCorpse
 +NOCLIP
 +DROPOFF
 +FLOORCLIP
++CLIENTSIDEONLY
 Radius        16
 Height        32
 scale        1.0
@@ -54,6 +55,7 @@ BFE4 F 100 A_FadeOut
 actor Bloodmeatprj1
 {
 +NOBLOCKMAP+NOTELEPORT+NOBLOCKMONST+DONTSPLASH
++CLIENTSIDEONLY
 radius    8
 height    4
 mass    1000
@@ -109,6 +111,7 @@ actor BloodShower : Blood //replaces Blood
 {
 health    2
 +DONTSPLASH+LOWGRAVITY
++CLIENTSIDEONLY
 states
 {
 Spawn:
@@ -128,6 +131,7 @@ actor BloodShower2 : Blood
 +MISSILE+CORPSE
 +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST //-NOBLOOD
 +DONTSPLASH
++CLIENTSIDEONLY
 scale    0.7
 health    1
 radius    8
@@ -192,6 +196,7 @@ actor BloodShower3 : Blood
 {
 +LOWGRAVITY+CORPSE+NOTELEPORT+NOBLOCKMAP
 +NOBLOCKMONST+DONTSPLASH
++CLIENTSIDEONLY
 scale    0.7
 mass    1
 RenderStyle    Translucent
@@ -211,6 +216,7 @@ actor BloodShower4 : Blood
 {
 +CORPSE+NOTELEPORT-NOBLOCKMAP
 +NOBLOCKMONST+DONTSPLASH
++CLIENTSIDEONLY
 radius    8
 height    2
 mass    1
@@ -263,6 +269,7 @@ actor BloodShower5 : Blood
 {
 +MISSILE+CORPSE +LOWGRAVITY
 +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST
++CLIENTSIDEONLY
 health    1
 radius    8
 height    1
@@ -396,6 +403,7 @@ actor EfectPrj
 {
 +NOBLOOD+NOBLOCKMAP+NOBLOCKMONST+NOTELEPORT+NOGRAVITY
 +ALLOWPARTICLES+FORCEXYBILLBOARD
++CLIENTSIDEONLY
 health    2
 }
 
@@ -429,6 +437,7 @@ actor EnemySplashGus1
 {
 +NOBLOCKMAP+NOBLOCKMONST+NOTELEPORT+NOGRAVITY
 +ALLOWPARTICLES+FORCEXYBILLBOARD
++CLIENTSIDEONLY
 Radius        8
 Height        8
 Speed        2
