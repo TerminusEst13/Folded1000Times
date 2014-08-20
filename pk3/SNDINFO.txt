@@ -90,7 +90,7 @@ weapon/hammer             GETHAMMR
 
 armor/hit                 ARMRHIT
 ghost/step                NINJDODG
-ghost/jump                NINJDJMP
+ghost/jump                NINJJUMP
 
 // Hammer
 
