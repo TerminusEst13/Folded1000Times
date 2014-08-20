@@ -15,7 +15,7 @@ ACTOR MeleePlayer : PlayerPawn
     +NOSKIN
     -NORADIUSDMG
     -THRUSPECIES
-    Species "Body"
+    Species "Player"
     Gravity 0.85
     Player.JumpZ 9.0
     Player.ForwardMove 1.15, 1.2
