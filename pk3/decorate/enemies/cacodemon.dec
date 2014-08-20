@@ -2,7 +2,7 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
 {
     Health 450
     Radius 22
-    Height 65
+    Height 56
     Speed 10
     Mass 400
     Species "Body"
