@@ -25,6 +25,11 @@ ACTOR MeleePlayer : PlayerPawn
     DamageFactor "Normal", 0.75
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
+    DamageFactor "EnemyInfightDamageArachnotron", 0.0
+    DamageFactor "EnemyInfightDamageNoble", 0.0
+    DamageFactor "EnemyInfightDamageRevenant", 0.0
+    DamageFactor "EnemyInfightDamageFatso", 0.0
+    DamageFactor "EnemyInfightDamageCaco", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ExodusJump", 0.0

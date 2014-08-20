@@ -47,13 +47,14 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
         TNT1 A 0 A_PlaySound("wizard/shotprepare")
         WZRD XYZ 7 Bright A_FaceTarget
         TNT1 A 0 A_FaceTarget
-        WZRD DE 5
+        WZRD DE 5 Bright
         TNT1 A 0 A_PlaySound("wizard/shotfire")
         TNT1 A 0 A_PlaySoundEx("wizard/shotpew","soundslot6",0,0)
-        TNT1 A 0 A_CustomMissile("WizardSpell",32,0,6)
         TNT1 A 0 A_CustomMissile("WizardSpell",32,0,0)
+        WZRD F 1 Bright // One tic delay so if the player's in his face, he only gets one point of damage instead of three.
+        TNT1 A 0 A_CustomMissile("WizardSpell",32,0,6)
         TNT1 A 0 A_CustomMissile("WizardSpell",32,0,-6)
-        WZRD F 5 Bright
+        WZRD F 4 Bright
         WZRD AAABBB 2 A_Wander
         Goto See
 
