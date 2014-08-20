@@ -43,14 +43,10 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+2
-    death.Bloody:
-    death.hunter:
-        TNT1 A 0 A_PlaySound("S_Cutdead")
-        goto death.kubiuti+4
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
-        TNT1 A 0 A_Jump(128,"Death.Bloody")
+        TNT1 A 0 A_Jump(64,"Decapitation2","Decapitation3")
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_Jump(192,"TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4","ArmGone","ArmGone2","LegGone","LegGone2")
         TNT1 A 0 A_SpawnItem("POSXKubiuted",0,40,0)
@@ -66,6 +62,23 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         ZXD0 IJK 5
         ZXD0 L -1
         Stop
+    Decapitation2:
+        ZXD5 A 3
+        TNT1 A 0 A_PlaySound("S_Cutdead")
+        TNT1 A 0 A_SpawnItem("POSXKubiuted",0,40,0)
+        TNT1 AAAAAAAAAAAAAA 0 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        ZXD5 BCDEF 5 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        ZXD5 G -1
+        stop
+    Decapitation3:
+        ZXD5 H 3
+        TNT1 A 0 A_PlaySound("S_Cutdead")
+        TNT1 A 0 A_SpawnItem("POSXKubiuted",0,40,0)
+        TNT1 AAAAAAAAAAAAAA 0 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        ZXD5 IJKLM 5 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        ZXD5 N -1
+        stop
+    
     TorsoGone:
         ZXD1 ABB 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
         ZXD1 CCDD 1 A_SpawnItem("BloodShower",0,16)
@@ -333,15 +346,11 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+2
 
-    death.Bloody:
-    death.hunter:
-        XDB3 A 0 A_PlaySound("S_Cutdead")
-        goto death.kubiuti+5
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0
-        XDB3 A 0 A_Jump(196,"Death.Bloody")
+        XDB3 A 0 A_Jump(64,"Decapitation2","Decapitation2")
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_Jump(196,"TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4","ArmGone","LegGone","ArmGone2","LegGone2")
         XDB3 A 0 A_SpawnItem("SPOXKubiuted",0,40,0)
@@ -352,6 +361,22 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         SPOS K 5
         SPOS L -1
         Wait
+    Decapitation2:
+        SXD5 A 3
+        TNT1 A 0 A_PlaySound("S_Cutdead")
+        TNT1 A 0 A_SpawnItem("SPOXKubiuted",0,40,0)
+        TNT1 AAAAAAAAAAAAAA 0 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        SXD5 BCDEF 5 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        SXD5 G -1
+        stop
+    Decapitation3:
+        SXD5 H 3
+        TNT1 A 0 A_PlaySound("S_Cutdead")
+        TNT1 A 0 A_SpawnItem("SPOXKubiuted",0,40,0)
+        TNT1 AAAAAAAAAAAAAA 0 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        SXD5 IJKLM 5 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
+        SXD5 N -1
+        stop
     kubiuti1b:
         XDB3 D 5 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),4)
         XDB3 EEFF 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),4)
