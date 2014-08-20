@@ -20,6 +20,10 @@ actor "Hwando + Witchhunter" : HwandoBase //replaces SuperShotgun
         TNT1 A 0 A_JumpIfInventory("KatanaSwung",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
         SWRC ACE 1
+        TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"Block")
+        TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
+        TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
+        TNT1 A 0 A_JumpIfInventory("DoubleTapRight",1,"SpinAttackRight")
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
     AltFireGun:
         TNT1 A 0 A_JumpIfInventory("HammerCharge",100,"AttackHeavy")
