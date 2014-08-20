@@ -7,6 +7,8 @@ actor FakeAttack : Boolean {}
 actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
 actor GhostStepDone : Boolean {}
+actor AcesHigh : Boolean {}
+actor ReadyToDoubleJump : Boolean {}
 
 actor UziLikeAGuzzi : Boolean {}
 actor UziFrame1 : Boolean {}
