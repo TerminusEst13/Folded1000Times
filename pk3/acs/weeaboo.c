@@ -174,6 +174,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
 script WEEB_ENTER ENTER
 {
+    int OldButtons;
     int Buttons;
     int SuperCount;
     int ComboCount;
@@ -282,6 +283,7 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
         }
 
+        OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
 
@@ -291,30 +293,31 @@ script WEEB_ENTER ENTER
         else
         { TakeInventory("FakeAttack",0x7FFFFFFF); }
 
-        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_MOVERIGHT) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_MOVERIGHT))
-            { if (CheckInventory("SuperMeterCounter") >= 20)
-                { if (CheckInventory("DoubleTapCooldown") == 0)
+        if ((Buttons & BT_MOVERIGHT) && !(OldButtons & BT_MOVERIGHT))
+            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyRight",8); }}}}
-        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_MOVELEFT) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_MOVELEFT))
-            { if (CheckInventory("SuperMeterCounter") >= 20)
-                { if (CheckInventory("DoubleTapCooldown") == 0)
+                      else { GiveInventory("DoubleTapReadyRight",8); }}}
+        if ((Buttons & BT_MOVELEFT) && !(OldButtons & BT_MOVELEFT))
+            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyLeft",8); }}}}
-        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_FORWARD) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_FORWARD))
-            { if (CheckInventory("SuperMeterCounter") >= 20)
-                { if (CheckInventory("DoubleTapCooldown") == 0)
+                      else { GiveInventory("DoubleTapReadyLeft",8); }}}
+        if ((Buttons & BT_FORWARD) && !(OldButtons & BT_FORWARD))
+            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyForward",8); }}}}
-        if ((getplayerinput(-1, INPUT_BUTTONS) & BT_BACK) && !(getplayerinput(-1, INPUT_OLDBUTTONS) & BT_BACK))
-            { if (CheckInventory("SuperMeterCounter") >= 20)
-                { if (CheckInventory("DoubleTapCooldown") == 0)
+                      else { GiveInventory("DoubleTapReadyForward",8); }}}
+        if ((Buttons & BT_BACK) && !(OldButtons & BT_BACK))
+            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyBack",8); }}}}
+                      else { GiveInventory("DoubleTapReadyBack",8); }}}
 
         // Floor
         WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);
-        if (WalkTheDinosaur >= 0 && WalkTheDinosaur <= 10) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); } else { TakeInventory("OnTheGround",1); }
+        if (WalkTheDinosaur >= -10 && WalkTheDinosaur <= 10) { GiveInventory("OnTheGround",1); TakeInventory("GhostStepDone",1); TakeInventory("AcesHigh",1); TakeInventory("ReadyToDoubleJump",1); } else { TakeInventory("OnTheGround",1); }
+        // Doublejump
+        if ((Buttons & BT_JUMP) && !(OldButtons & BT_JUMP))
+            { if (CheckInventory("OnTheGround") == 0 && CheckInventory("AcesHigh") == 0)
+                { if (CheckInventory("ReadyToDoubleJump") == 1) { ActivatorSound("ghost/jump",127); ThrustThingZ(0,36,0,0); GiveInventory("AcesHigh",1); }
+                  else { GiveInventory("ReadyToDoubleJump",1); }}}
         // Dodging
         if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
         { if (buttons & BT_SPEED && buttons & BT_FORWARD)
