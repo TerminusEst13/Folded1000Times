@@ -277,6 +277,22 @@ steelbeast/explode        STLBXPLD // Taken from Quake III Arena
 
 
 
+$random wizard/see { wizsee1 wizsee2 wizsee3 wizsee4 } // All of these are taken from Painkiller
+wizsee1                   WZRDSEE1
+wizsee2                   WZRDSEE2
+wizsee3                   WZRDSEE3
+wizsee4                   WZRDSEE4
+
+wizard/idle               WZRDIDLE // Taken from Painkiller
+wizard/shotprepare        WZRDPREP // Taken from Pornkiller
+wizard/shotfire           WZRDPFIR // Taken from Pooncaller
+wizard/shotpew            WZRDSHOT // Taken from Promcaller
+wizard/shothit            WZRDSHIT // The only non-Painkiller sound! Taken from Doom 3.
+wizard/pain               WZRDPAIN // Taken from Plumculler
+wizard/death              WZRDDETH // Taken from Poolkonger
+
+
+
 
 
 
