@@ -23,7 +23,6 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
     Monster
     +FLOAT
     +NOGRAVITY
-    +TELESTOMP
     +DONTOVERLAP
     +MISSILEMORE
     Obituary "%o was cursed by a dark wizard."
