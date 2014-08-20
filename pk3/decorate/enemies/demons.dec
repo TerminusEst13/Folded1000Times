@@ -179,7 +179,7 @@ ACTOR WeeabooClink replaces Spectre
 {
     Health 150
     Radius 20
-    Height 64
+    Height 56
     Mass 75
     Speed 18
     Scale 0.9
