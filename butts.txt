@@ -17,7 +17,6 @@ TO DO in no particular order:
 27: sv_unblockplayers allows people to go through enemies.
 29: SASS RAINBOW: you should make berserk give free combos for 20 seconds
 30: Easy path to S--find group of enemies, sword-dash into them
-31: Fountain-blood corpses seem to be looping endlessly online.
 32: <TerminusEst13> ...I wonder if there's a way I can choke how much [combo meter] is given at once.
     <ijon> store the amount you have right when you start the attack
     <ijon> have ACS or custominventory or something check that and only give you more if it'd place you no more than X above that count
@@ -77,6 +76,7 @@ DONE:
     SPECTRE: Sabreclaw
     CACODEMON: Dark Bishop
 28: Less particle spam on Exodus.
+31: Fountain-blood corpses seem to be looping endlessly online.
 33: Make all enemy projectiles go A_UnsetShootable on death.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
 40: Lightning sparks from hammer overcharge need to +DONTSPLASH

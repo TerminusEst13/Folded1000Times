@@ -63,6 +63,7 @@ CODE:
 - Xaser/Enjay/Corwin (The TERRAIN lump from Psychic)
 - Tormentor667/Ghastly_Dragon (The Powerline spawners for the armor, from the Stronghold Powerpad)
 - PresidentPeople (Fixing the corpses to keep them from bouncing everywhere)
+- IvanDobrovski (Fixing the eternally-looping imp blood fountain)
 
 MUSIC:
 =========
