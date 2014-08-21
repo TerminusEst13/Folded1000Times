@@ -1,4 +1,4 @@
-actor "Hwando + Exodus" : HwandoBase //replaces RocketLauncher
+actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
 {
     -CHEATNOTWEAPON
     Inventory.PickupMessage "You got the Exodus handheld grenade laucher!"

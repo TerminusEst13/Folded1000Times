@@ -167,7 +167,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
           break;
 
         case 3:
-          Log(s:"\cfThe \cjWitchhunter \cfHammer. You may wield it...");
+          Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it...");
           break;
         }
         break;

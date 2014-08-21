@@ -1,4 +1,4 @@
-actor "Hwando + Acacia A-22" : HwandoBase
+actor "Kharon + Acacia A-22" : HwandoBase
 {
     Weapon.AmmoUse2 1
     Weapon.AmmoType2 "WeebClip"

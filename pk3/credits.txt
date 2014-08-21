@@ -17,11 +17,11 @@ GRAPHICS:
 - Mike12
   ^ Numerous custom deaths (as mentioned)
   ^ The gore decals/graphics
-  ^ The custom blood for the Hwando
+  ^ The custom blood for the Kharon
   ^ The Acacia A-22 hunting pistol
-  ^ The Hwando
+  ^ The Kharon
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us
-  rotate the Hwando properly forcing us to rely on Photoshop's really ugly and
+  rotate the Kharon properly forcing us to rely on Photoshop's really ugly and
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)
 - Captain J (The Sabbath large ammo pack)
@@ -29,7 +29,7 @@ GRAPHICS:
 - Shadow Warrior (The Exodus grenade sprites)
 - Aeons of Death (The Exodus explosion graphics)
 - Ettingrinder (The Candelabra)
-- NeuralStunner (The Witchhunter's pickup sprite)
+- NeuralStunner (The Omen's pickup sprite)
 - Rogue Software (All the lightning effects and the keycard bases, from Strife)
 - Raven Software (The skull keys edited from Hexen, the Steel Beast edited from the Heretic Sabreclaw, the Wizard edited from the Hexen Bishop)
 - Id Software (The laser shots from the zombies)
@@ -41,7 +41,7 @@ GRAPHICS:
 - Dungeons n' Dragons (Font used for the HUD)
 - HellCattX (The base for the Exodus/Acacia A-22 ammo pickups)
 - amv2k9 (The base for the Testament ammo pickups)
-- Eriance/JoeyTD (The base for the placeholder hands used for the Hwando)
+- Eriance/JoeyTD (The base for the placeholder hands used for the Kharon)
 - Eriance (The explosion used for the Steel Beast death, the balls used for the Wizard spell)
 - Tormentor667/Z86 (The pretty effects for the Imp/Hell Noble balls, taken from UTNT/Particle Fire Enhancer)
 - Jimmy91 (The fonts used, Gargoyle Wing for BIGFONT and Apostacy for SMALLFONT)
@@ -52,14 +52,14 @@ CODE:
   ^ The double-tap code (taken from Parkmore)
   ^ The shockwave from the spin attack
   ^ The trail for the zombie lasers/razor wind
-  ^ The second level spatter for the Witchhunter
+  ^ The second level spatter for the Omen
 - Doom667Shogun (For the blood/dismembering effects)
 - Vaecrius (For the redone Archvile (taken from Make It Snappy))
 - Kyle873 (Polishing the post-damage invulnerability code, rehauling the double-jump code)
 - MagSigmaX (Inspiration for the dodging code)
-- Lioyd_Irving/le_L (The basis for the Witchhunter's impact code)
-- Scroton (The 3rd level spatter for the Witchhunter)
-- PillowBlaster (The overcharge shockwaves for the Witchhunter)
+- Lioyd_Irving/le_L (The basis for the Omen's impact code)
+- Scroton (The 3rd level spatter for the Omen)
+- PillowBlaster (The overcharge shockwaves for the Omen)
 - Xaser/Enjay/Corwin (The TERRAIN lump from Psychic)
 - Tormentor667/Ghastly_Dragon (The Powerline spawners for the armor, from the Stronghold Powerpad)
 - PresidentPeople (Fixing the corpses to keep them from bouncing everywhere)

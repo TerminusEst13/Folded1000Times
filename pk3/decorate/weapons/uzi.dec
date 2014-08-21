@@ -1,4 +1,4 @@
-actor "Hwando + Sabbath" : HwandoBase //replaces PlasmaRifle
+actor "Kharon + Sabbath" : HwandoBase //replaces PlasmaRifle
 {
     -CHEATNOTWEAPON
     Inventory.PickupMessage "You got the Sabbath submachine gun!"

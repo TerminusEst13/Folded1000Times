@@ -1,4 +1,4 @@
-actor "Hwando + Testament" : HwandoBase //replaces SuperShotgun
+actor "Kharon + Testament" : HwandoBase //replaces SuperShotgun
 {
     -CHEATNOTWEAPON
     Inventory.PickupMessage "You got the Testament sawed-off shotgun!"
