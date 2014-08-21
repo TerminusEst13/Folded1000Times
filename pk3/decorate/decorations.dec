@@ -92,6 +92,7 @@ actor CandelabraDestroyed
     -SOLID
     -NOGRAVITY
     +DOOMBOUNCE
+    +MOVEWITHSECTOR
     +CLIENTSIDEONLY
     Gravity 0.95
     BounceCount 6
@@ -196,6 +197,7 @@ actor TorchDestroyed
     -SOLID
     -NOGRAVITY
     +DOOMBOUNCE
+    +MOVEWITHSECTOR
     +CLIENTSIDEONLY
     Gravity 0.85
     BounceCount 6
@@ -300,6 +302,7 @@ actor SmallTorchDestroyed
     -SOLID
     -NOGRAVITY
     +DOOMBOUNCE
+    +MOVEWITHSECTOR
     +CLIENTSIDEONLY
     Gravity 0.85
     BounceCount 6
@@ -327,6 +330,7 @@ Actor BarrelRemains1
     -SOLID
     -NOGRAVITY
     +DOOMBOUNCE
+    +MOVEWITHSECTOR
     +CLIENTSIDEONLY
     Scale 0.5
     Gravity 0.85
