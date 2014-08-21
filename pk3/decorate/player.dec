@@ -18,8 +18,8 @@ ACTOR MeleePlayer : PlayerPawn
     Species "Player"
     Gravity 0.85
     Player.JumpZ 9.0
-    Player.ForwardMove 1.15, 1.2
-    Player.SideMove 1.15, 1.15
+    Player.ForwardMove 2.4, 1.2
+    Player.SideMove 2.3, 1.15
     Player.DisplayName "Hae-Lin"
     PainChance "EnemyInfightDamage", 0
     DamageFactor "Normal", 0.75
