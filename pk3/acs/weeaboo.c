@@ -290,12 +290,6 @@ script WEEB_ENTER ENTER
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
 
-        // For back-back-attack block. Likely to be removed.
-        if (buttons & BT_ATTACK)
-        { GiveInventory("FakeAttack",1); }
-        else
-        { TakeInventory("FakeAttack",0x7FFFFFFF); }
-
         if (keypressed(BT_MOVERIGHT))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
@@ -343,7 +337,7 @@ script WEEB_ENTER ENTER
     // You may now applaud his genius.
 
         // Dodging
-        if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
+        if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0 && !CheckInventory("CantStopTheBlock"))
         { if (buttons & BT_SPEED && buttons & BT_FORWARD)
               { ThrustThing(KurtAngle+0,45,0,0);
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
@@ -422,6 +416,7 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("KatanaSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
     TakeInventory("ShootingLikeABaka",1);
+    TakeInventory("CantStopTheBlock",1);
     TakeInventory("DoubleTapForward",1);
     TakeInventory("DoubleTapBack",1);
     TakeInventory("DoubleTapLeft",1);

@@ -116,13 +116,10 @@ actor BSPIKubiuted : POSXKubiuted
         XDH1 I 0 A_PlaySound("S_Blodd")
         XDH1 I 0 A_ChangeFlag("PUSHABLE",0)
     Spawned2:
-        //XDH1 I 0 A_Jump(128,2)
-        XDH1 I 1 A_Look
+        XDH1 I 3 A_Look
         goto Spawned2
-        //XDH1 J 1 A_Chase
-        //goto Spawned2+2
     See:    
-        XDH1 I 1 A_Chase
+        XDH1 I 3 A_Chase
         loop
 
     Melee:
@@ -156,11 +153,11 @@ actor BSPIKubiuted2 : POSXKubiuted
         XDH2 I 0 A_PlaySound("S_Blodd")
         XDH2 I 0 A_ChangeFlag("PUSHABLE",0)
     Spawned2:
-        XDH2 I 0 A_Jump(128,2)
-        XDH2 I 1 A_Chase
-        goto Spawned2+1
-        XDH2 J 1 A_Chase
-        goto Spawned2+2
+        XDH2 I 3 A_Look
+        loop
+    See:    
+        XDH2 I 3 A_Chase
+        loop
 
     Melee:
         XDH2 A 1 A_FaceTarget

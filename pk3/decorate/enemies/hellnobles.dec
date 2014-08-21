@@ -264,10 +264,10 @@ actor BOSSKubiuted : POSXKubiuted
         XDI1 E 0 A_PlaySound("S_Blodd")
         XDI1 E 0 A_ChangeFlag("PUSHABLE",0)
     Spawned2:
-        XDI1 E 1 A_Look
+        XDI1 E 3 A_Look
         goto Spawned2
     See:    
-        XDI1 E 1 A_Chase
+        XDI1 E 3 A_Chase
         loop
     Melee:
         XDI1 D 1 A_FaceTarget
@@ -330,10 +330,10 @@ actor BOS2Kubiuted : POSXKubiuted
         XDI3 I 0 A_PlaySound("S_Blodd")
         XDI3 I 0 A_ChangeFlag("PUSHABLE",0)
     Spawned2:
-        XDI3 I 1 A_Look
+        XDI3 3 1 A_Look
         goto Spawned2
     See:    
-        XDI3 I 1 A_Chase
+        XDI3 3 1 A_Chase
         loop
     Melee:
         XDI3 I 1 A_FaceTarget
