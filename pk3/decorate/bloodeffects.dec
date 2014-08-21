@@ -5,6 +5,8 @@ ACTOR CuttingBlood : AxeBlood replaces AxeBlood
     Spawn:
         TNT1 A 0
         TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        loop
     Spawn1:
         BSPR ABC 3
         goto Death
