@@ -4,6 +4,12 @@ actor PowerShieldProtection : PowerProtection
     +NORADIUSDMG
 }
 
+actor CantStopTheBlock : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.4
+}
+
 actor ComboDamageLevel1 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF

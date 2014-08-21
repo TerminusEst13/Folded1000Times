@@ -2,8 +2,6 @@ actor KatanaSwung : Boolean {}
 actor SequenceFireActivated : Boolean {}
 actor SlashingLikeAGaijin : Boolean {}
 actor ShootingLikeABaka : Boolean {}
-actor StopTheBlock : Boolean {}
-actor FakeAttack : Boolean {}
 actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
 actor GhostStepDone : Boolean {}
