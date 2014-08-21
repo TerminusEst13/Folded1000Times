@@ -28,7 +28,7 @@ Combiner BloodSmearer
 Decal BloodSplat1
 {
     Pic BSPLT01
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     randomflipy
     lowerdecal BloodSmear3
@@ -37,7 +37,7 @@ Decal BloodSplat1
 Decal BloodSplat2
 {
     Pic BSPLT02
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     randomflipy
     lowerdecal BloodSmear1
@@ -46,7 +46,7 @@ Decal BloodSplat2
 Decal BloodSplat3
 {
     Pic BSPLT03
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     randomflipy
     lowerdecal BloodSmear1
@@ -55,7 +55,7 @@ Decal BloodSplat3
 Decal BloodSplat4
 {
     Pic BSPLT04
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     randomflipy
     lowerdecal BloodSmear3
@@ -64,7 +64,7 @@ Decal BloodSplat4
 Decal BloodSplat5
 {
     Pic BSPLT05
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     randomflipy
     lowerdecal BloodSmear4
@@ -73,7 +73,7 @@ Decal BloodSplat5
 Decal BloodSplat6
 {
     Pic BSPLT06
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     randomflipy
 }
@@ -81,7 +81,7 @@ Decal BloodSplat6
 Decal BloodSplat7
 {
     Pic BSPLT07
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     animator BloodSmearer
 }
@@ -89,7 +89,7 @@ Decal BloodSplat7
 Decal BloodSmear1
 {
     Pic BSMEAR01
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     animator BloodDrencherA
 }    
@@ -97,7 +97,7 @@ Decal BloodSmear1
 Decal BloodSmear2
 {
     Pic BSMEAR02
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     animator BloodDrencherB
 }    
@@ -105,7 +105,7 @@ Decal BloodSmear2
 Decal BloodSmear3
 {
     Pic BSMEAR03
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     animator BloodDrencherA
 }    
@@ -113,7 +113,7 @@ Decal BloodSmear3
 Decal BloodSmear4
 {
     Pic BSMEAR04
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     animator BloodDrencherB
 }
@@ -121,7 +121,7 @@ Decal BloodSmear4
 Decal BloodSmear5
 {
     Pic BSMEAR05
-    shade "BloodDefault"
+    //shade "BloodDefault"
     randomflipx
     animator BloodDrencherA
 }    
