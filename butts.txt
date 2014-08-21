@@ -26,7 +26,6 @@ Like one style is to tap repeatedly for really fast strikes (what's currently in
 Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
 Another style is single strikes, where holding down fire charges up a more powerful strike.
 And the final style...ummm. Hm.
-39: Replace graphics on main menu options.
 42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
 43: GLDEFS
 44: Expand on final map.
@@ -35,9 +34,6 @@ And the final style...ummm. Hm.
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
-
-<Mystical> spinning skull for the menu screen selection cursor
-<Mystical> skull with a  pointer for mouse
 
 
 <PresidentPeople> TerminusEst13: Wraithverge needs to be in butts.txt
@@ -78,11 +74,15 @@ DONE:
 31: Fountain-blood corpses seem to be looping endlessly online.
 33: Make all enemy projectiles go A_UnsetShootable on death.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
+39: Replace graphics on main menu options.
 40: Lightning sparks from hammer overcharge need to +DONTSPLASH
 41: Why do the Hell Nobles/Cacos not have colored blood wall decals? // Zandro bug - http://forum.zdoom.org/viewtopic.php?f=7&t=20507
 45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 46: HammerCharge needs a smaller/new ammo icon.
 
+
+<Mystical> spinning skull for the menu screen selection cursor
+<Mystical> skull with a  pointer for mouse
 
 
 
