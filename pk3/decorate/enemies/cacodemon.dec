@@ -129,6 +129,7 @@ actor WizardSpell
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
+    DamageFactor "Kubiuti", 0.0
     DeathSound "wizard/shothit"
     Projectile
     +THRUSPECIES

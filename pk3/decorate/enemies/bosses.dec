@@ -89,6 +89,7 @@ actor CyberRocket : Rocket replaces Rocket
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
+    DamageFactor "Kubiuti", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST
@@ -101,7 +102,7 @@ actor CyberRocket : Rocket replaces Rocket
     Death:
         TNT1 A 0 A_UnsetShootable
         goto Super::Death
-    Death.Kubiuti: // Doesn't work, for some reason.
+    // Doesn't work, for some reason.
     Death.GuardMove:
         TNT1 A 0 A_UnsetShootable
         TNT1 A 1 Bright
