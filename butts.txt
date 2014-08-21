@@ -13,7 +13,6 @@ TO DO in no particular order:
     SPIDER MASTERMIND: Heresiarch
 24: Include Shivers' idle animation
 25: Respawning gives too much health
-26: In multiplayer people can cut each other up for combo
 29: SASS RAINBOW: you should make berserk give free combos for 20 seconds
 30: Easy path to S--find group of enemies, sword-dash into them
 32: <TerminusEst13> ...I wonder if there's a way I can choke how much [combo meter] is given at once.
@@ -73,6 +72,7 @@ DONE:
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
     SPECTRE: Sabreclaw
     CACODEMON: Dark Bishop
+26: In multiplayer people can cut each other up for combo
 27: sv_unblockplayers allows people to go through enemies.
 28: Less particle spam on Exodus.
 31: Fountain-blood corpses seem to be looping endlessly online.
