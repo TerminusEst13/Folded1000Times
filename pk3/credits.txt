@@ -35,6 +35,7 @@ GRAPHICS:
 - Id Software (The laser shots from the zombies)
 - Ravage/rf' (The red/blue/green torches)
 - CastleVania: Dawn of Sorrow/Order of Ecclesia/Portrait of Ruin (Bits and pieces of the HUD)
+- CastleVania: Symphony of the Night (The skull used for the main menu selector)
 - Chrono Trigger (Bits and pieces of the HUD)
 - Dark Kingdom (Yup, HUD bits)
 - Final Fantasy 6 (The fire used to represent health)
@@ -45,6 +46,7 @@ GRAPHICS:
 - Eriance (The explosion used for the Steel Beast death, the balls used for the Wizard spell)
 - Tormentor667/Z86 (The pretty effects for the Imp/Hell Noble balls, taken from UTNT/Particle Fire Enhancer)
 - Jimmy91 (The fonts used, Gargoyle Wing for BIGFONT and Apostacy for SMALLFONT)
+- Brothers of Metal (Font used for the main menu options)
 
 CODE:
 =========
