@@ -173,6 +173,8 @@ actor POSXKubiuted
     +SLIDESONWALLS
     +NOBLOCKMONST
     +NOTELEPORT
+    +MOVEWITHSECTOR
+    -NOTELEFRAG
     -SOLID
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
