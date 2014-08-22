@@ -324,7 +324,7 @@ script WEEB_ENTER ENTER
         else
             { TakeInventory("OnTheGround", 1); }
         // Double Jump
-        if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP))
+        if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
         {
             ActivatorSound("ghost/jump", 127);
             ThrustThingZ(0, 36, 0, 0);
