@@ -108,6 +108,7 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
 
 actor CarronadePickup : PickupBase replaces RocketLauncher
 {
+    Scale 0.75
     Inventory.PickupMessage ""
     Inventory.PickupSound "WhoHadHisHeadStuckInABucket"
     States
