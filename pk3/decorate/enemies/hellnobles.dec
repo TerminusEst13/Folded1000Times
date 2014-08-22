@@ -144,7 +144,11 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     Melee:
     Missile:
         BOSS EF 8 A_FaceTarget
-        BOSS G 8 A_CustomMissile("WeeabooBaronBall")//A_BruisAttack
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,0)
+        BOSS G 1
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,-7)
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,7)
+        BOSS G 8//A_BruisAttack
         Goto See
 
     Pain.KubiLungeAttack:
