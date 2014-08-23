@@ -26,9 +26,9 @@ Like one style is to tap repeatedly for really fast strikes (what's currently in
 Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
 Another style is single strikes, where holding down fire charges up a more powerful strike.
 And the final style...ummm. Hm.
-42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
 43: GLDEFS
-44: Expand on final map.
+44: Expand on final map
+47: Gun impact sounds on flesh and walls
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
@@ -77,6 +77,7 @@ DONE:
 39: Replace graphics on main menu options.
 40: Lightning sparks from hammer overcharge need to +DONTSPLASH
 41: Why do the Hell Nobles/Cacos not have colored blood wall decals? // Zandro bug - http://forum.zdoom.org/viewtopic.php?f=7&t=20507
+42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
 45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 46: HammerCharge needs a smaller/new ammo icon.
 

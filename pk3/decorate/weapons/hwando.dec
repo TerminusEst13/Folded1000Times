@@ -54,10 +54,6 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         SWRC ACE 1
-        //TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"Block")
-        //TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
-        //TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
-        //TNT1 A 0 A_JumpIfInventory("DoubleTapRight",1,"SpinAttackRight")
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
     FireSequence1: // Right to left
         TNT1 A 0 A_PlaySoundEX("sword/swingmed","SoundSlot7")//A_PlayWeaponSound("wp/KaTaNa1")
@@ -192,12 +188,12 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_CheckFloor("SpinAttackLeftContinue")
         TNT1 A 0 ThrustThingZ(0,24,0,0)
     SpinAttackLeftContinue:
-        KATN K 1 A_SetAngle(angle+45)
-        KATN L 1 A_SetAngle(angle+50)
-        KATN M 1 A_SetAngle(angle+55)
-        KATN N 1 A_SetAngle(angle+55)
-        KATN O 1 A_SetAngle(angle+50)
-        KATN P 1 A_SetAngle(angle+45)
+        KSPC G 1 A_SetAngle(angle+45)
+        KSPC H 1 A_SetAngle(angle+50)
+        KSPC I 1 A_SetAngle(angle+55)
+        KSPC J 1 A_SetAngle(angle+55)
+        KSPC K 1 A_SetAngle(angle+50)
+        KSPC L 1 A_SetAngle(angle+45)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 1 A_SetAngle(angle+11.25)
         goto SpecialAttackFinish
@@ -213,12 +209,12 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_CheckFloor("SpinAttackRightContinue")
         TNT1 A 0 ThrustThingZ(0,28,0,0)
     SpinAttackRightContinue:
-        KTUP A 1 A_SetAngle(angle-45)
-        KTUP B 1 A_SetAngle(angle-50)
-        KTUP C 1 A_SetAngle(angle-55)
-        KTUP D 1 A_SetAngle(angle-55)
-        KTUP E 1 A_SetAngle(angle-50)
-        KTUP F 1 A_SetAngle(angle-45)
+        KSPC M 1 A_SetAngle(angle-45)
+        KSPC N 1 A_SetAngle(angle-50)
+        KSPC O 1 A_SetAngle(angle-55)
+        KSPC P 1 A_SetAngle(angle-55)
+        KSPC Q 1 A_SetAngle(angle-50)
+        KSPC R 1 A_SetAngle(angle-45)
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 1 A_SetAngle(angle-11.25)
         goto SpecialAttackFinish
@@ -257,8 +253,8 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,121,0,0,-4,48)
         TNT1 A 0 ThrustThing(angle*256/360,120,1,0)
     LungeAttackContinue:
-        KATN FGHIJ 1 //A_CustomPunch(30,1,0,"SwordPuff",112) - Nope, jerks the camera.
-        TNT1 A 2
+        KSPC ABCDEF 1
+        TNT1 A 1
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_Stop // You'd think this would be redundant.
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE,0,0)
