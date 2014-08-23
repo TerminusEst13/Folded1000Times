@@ -20,9 +20,7 @@ actor PickupBase : CustomInventory
     Health 0x7FFFFFFF
     Mass 0x7FFFFFFF
     DamageFactor "Normal", 0.0
-    Species "Player"
     MONSTER
-    +THRUSPECIES
     +NOTARGET
     +LOOKALLAROUND
     +NOTIMEFREEZE
