@@ -80,7 +80,7 @@ actor SnappyArchieFire
     Speed 10
     RenderStyle Add
     Alpha 0.9
-    Species "EnemyShot"
+    Species "Body"
     SeeSound "vile/firecrkl"
     DeathSound "vile/firestrt"
     Monster
