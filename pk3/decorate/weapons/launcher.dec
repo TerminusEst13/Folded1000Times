@@ -63,7 +63,6 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         KATN I 1
         TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KATN J 1 A_GiveInventory("KatanaSwung",1)
-        TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         TNT1 A 1
         goto Fired
     FireSequence1B:
@@ -77,7 +76,6 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         KATN N 1
         TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KATN O 1 A_GiveInventory("KatanaSwung",1)
-        TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KATN P 1
         goto Fired
     FireSequence1C:
@@ -91,7 +89,6 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         KATN Y 1
         TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KATN Z 1 A_GiveInventory("KatanaSwung",1)
-        TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         TNT1 A 1
         goto Fired
 
@@ -109,7 +106,6 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         KATN D 1
         TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KATN E 1 A_TakeInventory("KatanaSwung",1)
-        TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         TNT1 A 1
         goto Fired
     FireSequence2B:
@@ -123,7 +119,6 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         KTUP D 1
         TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KTUP E 1 A_TakeInventory("KatanaSwung",1)
-        TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KTUP F 1
         goto Fired
     FireSequence2C:
@@ -137,7 +132,6 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         KATN T 1
         TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         KATN U 1 A_TakeInventory("KatanaSwung",1)
-        TNT1 A 0 A_FireCustomMissile("KatanaGuard",0,0) 
         TNT1 A 1
         goto Fired
 
