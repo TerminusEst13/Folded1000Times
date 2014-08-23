@@ -1,7 +1,7 @@
 actor WeeabooArchvile : Archvile replaces Archvile
 {
     Species "Body"
-    PainChance "kubiuti", 255
+    PainChance "kubiuti", 64
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
