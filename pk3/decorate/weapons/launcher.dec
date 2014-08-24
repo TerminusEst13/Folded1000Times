@@ -25,10 +25,9 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         TNT1 A 12 A_GiveInventory("AlreadyInLevel",1)
         WEPE DCBA 1
         Goto Ready
-    Select2: 
-        TNT1 A 0 A_Raise
-        WEPE AA 1 A_Raise
-        Loop
+    Select2:
+        WEPE DCB 1 A_WeaponReady
+        goto Ready
     Select3:
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Raise
         TNT1 A 1 A_Raise
@@ -160,15 +159,14 @@ actor "Kharon + Exodus" : HwandoBase //replaces RocketLauncher
         goto Fired2
 
     Fired:
-        TNT1 A 10 A_WeaponReady(WRF_NOBOB | WRF_NOSWITCH/* | WRF_NOSECONDARY*/)
+        TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_ReFire
-        TNT1 A 20 A_WeaponReady(WRF_NOBOB | WRF_NOSWITCH)
     Fired2:
-        TNT1 A 5 A_TakeInventory("KatanaSwung",1)
+        TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_TakeInventory("KatanaSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        TNT1 AAAAAAA 0 A_Lower
         Goto Select2
 
 
