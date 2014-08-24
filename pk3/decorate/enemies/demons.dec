@@ -44,12 +44,14 @@ ACTOR WeeabooDemon : Demon replaces Demon
         goto death.kubiuti+2
 
     Death2:
+        TNT1 A 0
         XDD2 A 5 A_NoBlocking
         XDD2 B 5 A_Scream
         XDD2 CD 5
         XDD2 E -1
         Stop
     Death3:
+        TNT1 A 0
         XDD2 F 5 A_NoBlocking
         XDD2 G 5 A_Scream
         XDD2 HI 5
