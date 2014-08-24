@@ -152,6 +152,7 @@ actor "Kharon + Omen" : HwandoBase //replaces SuperShotgun
     Fired:
         TNT1 A 10 A_WeaponReady(WRF_NOBOB | WRF_NOSWITCH/* | WRF_NOSECONDARY*/)
         TNT1 A 0 A_ReFire
+        TNT1 A 20 A_WeaponReady(WRF_NOBOB | WRF_NOSWITCH)
     Fired2:
         TNT1 A 5 A_TakeInventory("KatanaSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
@@ -493,6 +494,7 @@ actor HammerAttackBase
     Projectile
     +BLOODSPLATTER
     +THRUSPECIES
+    +THRUGHOST
     Obituary "%k crushed %o beyond dust."
     States
     {

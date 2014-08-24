@@ -143,6 +143,7 @@ actor "Kharon + Acacia A-22" : HwandoBase
     Fired:
         TNT1 A 10 A_WeaponReady(WRF_NOBOB | WRF_NOSWITCH/* | WRF_NOSECONDARY*/)
         TNT1 A 0 A_ReFire
+        TNT1 A 20 A_WeaponReady(WRF_NOBOB | WRF_NOSWITCH)
     Fired2:
         TNT1 A 5 A_TakeInventory("KatanaSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
