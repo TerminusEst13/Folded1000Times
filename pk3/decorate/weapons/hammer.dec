@@ -36,6 +36,19 @@ actor "Kharon + Omen" : HwandoBase //replaces SuperShotgun
     Deselect:
         TNT1 A 0 A_TakeInventory("HammerUp",1)
         goto "Super::DeSelect"
+    IdleAnimation:
+        WEPO ABCD 2 A_WeaponReady
+        IDLE ABC 2 A_WeaponReady
+        IDLE C 15 A_WeaponReady
+        IDLE DEFG 2 A_WeaponReady
+        IDLE G 15 A_WeaponReady
+        IDLE HIJKLMNOPQRSTUV 2 A_WeaponReady
+        IDLE V 15 A_WeaponReady
+        IDLE WXY 2 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        WEPO DCBA 2 A_WeaponReady
+        TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
+        goto Ready
 
 
 

@@ -33,6 +33,19 @@ actor "Kharon + Sabbath" : HwandoBase //replaces PlasmaRifle
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Raise
         TNT1 A 1 A_Raise
         loop
+    IdleAnimation:
+        WEPS ABCD 2 A_WeaponReady
+        IDLE ABC 2 A_WeaponReady
+        IDLE C 15 A_WeaponReady
+        IDLE DEFG 2 A_WeaponReady
+        IDLE G 15 A_WeaponReady
+        IDLE HIJKLMNOPQRSTUV 2 A_WeaponReady
+        IDLE V 15 A_WeaponReady
+        IDLE WXY 2 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        WEPS DCBA 2 A_WeaponReady
+        TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
+        goto Ready
 
 
 
