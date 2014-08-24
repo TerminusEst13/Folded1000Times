@@ -19,13 +19,7 @@ TO DO in no particular order:
     <ijon> store the amount you have right when you start the attack
     <ijon> have ACS or custominventory or something check that and only give you more if it'd place you no more than X above that count
 34: Replace explosive barrels with something of neater substance.
-35: Replace generic blood with something of neater substance, like Psychic's or a smaller version of AtM's.
 37: Pretty up all non-laser enemy attacks, like the fireballs.
-38: I can include different melee styles, each with their own focus. People have been constantly suggesting more DMC inspiration, so one thing I could do is borrow the four "styles" of play and do different melee modes around that.
-Like one style is to tap repeatedly for really fast strikes (what's currently in).
-Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
-Another style is single strikes, where holding down fire charges up a more powerful strike.
-And the final style...ummm. Hm.
 43: GLDEFS
 44: Expand on final map
 47: Gun impact sounds on flesh and walls
@@ -46,6 +40,16 @@ And the final style...ummm. Hm.
 <TerminusEst13> fug you i just put it back in
 <Roman6a> oh, good
 <PresidentPeople> >Wraithverge still isn't on it
+
+
+
+LATER, MAYBE:
+35: Replace generic blood with something of neater substance, like Psychic's or a smaller version of AtM's. // Nope, didn't work for some reason. I'll figure it out later.
+38: I can include different melee styles, each with their own focus. People have been constantly suggesting more DMC inspiration, so one thing I could do is borrow the four "styles" of play and do different melee modes around that.
+Like one style is to tap repeatedly for really fast strikes (what's currently in).
+Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
+Another style is single strikes, where holding down fire charges up a more powerful strike.
+And the final style...ummm. Hm.
 
 
 DONE:
