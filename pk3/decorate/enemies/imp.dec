@@ -142,11 +142,11 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         IXD1 W -1
         stop
     TorsoGone:
-        TNT1 A 0 A_NoBlocking
+        TNT1 A 0
         TNT1 A 0 A_XScream
         TNT1 A 0 A_SpawnItemEx("BisectedImpTorso",0,0,45,random(-25,0)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
         IXD4 ABC 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
-        TNT1 A 0
+        TNT1 A 0 A_NoBlocking
         IXD4 DDEEFF 1 A_SpawnDebris("BloodShower2",1)
         TNT1 A 0 A_Jump(32,"TorsoGoneB")
         goto TorsoGone+7
@@ -157,11 +157,11 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         IXD4 L -1
         Stop
     TorsoGone2:
-        TNT1 A 0 A_NoBlocking
+        TNT1 A 0
         TNT1 A 0 A_XScream
         TNT1 A 0 A_SpawnItemEx("BisectedImpTorso2",0,0,45,random(0,25)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
         IXD4 MNO 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
-        TNT1 A 0
+        TNT1 A 0 A_NoBlocking
         IXD4 PPQQRR 1 A_SpawnDebris("BloodShower2",1)
         TNT1 A 0 A_Jump(32,"TorsoGone2B")
         goto TorsoGone2+7
