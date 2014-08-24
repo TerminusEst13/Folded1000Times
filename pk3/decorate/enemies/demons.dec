@@ -68,7 +68,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         SARG QQQQQ 1 A_SpawnDebris("BloodShower2")
         SARG RSTU 5
         SARG V -1
-        wait
+        stop
 
     death.hunter:    
         XDD1 A 0 A_PlaySound("S_Cutdead")
@@ -84,7 +84,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         XDD1 B 7 A_NoBlocking
         XDD1 CDE 7
         XDD1 F -1
-        wait
+        stop
     kubiuti2:
         XDD1 G 1 A_SpawnDebris("BloodShower2",0)
         XDD1 GGGGGG 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))
@@ -92,13 +92,13 @@ ACTOR WeeabooDemon : Demon replaces Demon
         XDD1 H 0 A_NoBlocking
         XDD1 HHHIIIJJJ 2 A_SpawnDebris("BloodSplashGus1",0)
         XDD1 J -1
-        wait    
+        stop
     kubiuti3:
         XDD1 M 10 A_SpawnItem("SARXKubiuted",0,40,0)
         XDD1 N 7 A_NoBlocking
         XDD1 OPQ 7
         XDD1 R -1
-        wait
+        stop
 
     death.Bloody:
         XDD3 A 0 A_Scream
@@ -115,7 +115,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         XDD3 DDDEEE 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
         XDD3 FFFFF 2 A_SpawnDebris("BloodShower2",0)
         XDD3 F -1
-        wait
+        stop
     Bloody2:
         XDD3 GGG 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
         XDD3 H 0 A_Fall
@@ -125,7 +125,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         XDD3 JJJKKK 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
         XDD3 LLLLL 2 A_SpawnDebris("BloodShower2",0)
         XDD3 L -1
-        wait
+        stop
     Bloody3:
         XDD4 AAA 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
         XDD4 B 0 A_Fall
@@ -134,7 +134,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         XDD4 CCCDDDEEE 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
         XDD4 FFFFF 2 A_SpawnDebris("BloodShower2",0)
         XDD4 F -1
-        wait
+        stop
     Bloody4:
         XDD4 GGG 2 A_ThrowGrenade ("BloodSplashGus1",2,5+random(0,7),8)    
         XDD4 H 0 A_Fall
@@ -143,7 +143,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         XDD4 IIIJJJKKK 2 A_ThrowGrenade ("BloodShower",-2,5+random(0,7),8)    
         XDD4 LLLLL 2 A_SpawnDebris("BloodShower2",0)
         XDD4 L -1
-        wait
+        stop
 
     CleaveThrough:
         PXD1 A 3
