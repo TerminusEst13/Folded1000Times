@@ -12,7 +12,6 @@ TO DO in no particular order:
     ARACHNOTRON:
     SPIDER MASTERMIND: Heresiarch
 25: Respawning gives too much health
-29: SASS RAINBOW: you should make berserk give free combos for 20 seconds
 30: Easy path to S--find group of enemies, sword-dash into them
 32: <TerminusEst13> ...I wonder if there's a way I can choke how much [combo meter] is given at once.
     <ijon> store the amount you have right when you start the attack
@@ -21,7 +20,6 @@ TO DO in no particular order:
 37: Pretty up all non-laser enemy attacks, like the fireballs.
 43: GLDEFS
 44: Expand on final map
-47: Gun impact sounds on flesh and walls
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
@@ -49,6 +47,7 @@ Like one style is to tap repeatedly for really fast strikes (what's currently in
 Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
 Another style is single strikes, where holding down fire charges up a more powerful strike.
 And the final style...ummm. Hm.
+29: SASS RAINBOW: you should make berserk give free combos for 20 seconds // Berserk will be replaced by Brackish Tarot
 
 
 DONE:
@@ -84,6 +83,7 @@ DONE:
 42: Redo idle sprites so both gun and sword are visible, sword on the left and gun on the right. Reverse all sword attacks.
 45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 46: HammerCharge needs a smaller/new ammo icon.
+47: Gun impact sounds on flesh and walls
 
 
 <Mystical> spinning skull for the menu screen selection cursor

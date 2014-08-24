@@ -264,10 +264,12 @@ actor BulletBase : FastProjectile
         loop
     Death:
         TNT1 A 0
+        TNT1 A 0 A_PlaySound("bullet/miss")
         TNT1 A 1 A_SpawnItem("WeebBulletPuff")
         stop
     XDeath:
         TNT1 A 0
+        TNT1 A 0 A_PlaySound("bullet/hit")
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 1 A_GiveToTarget("HyperComboCounter",1)
         stop

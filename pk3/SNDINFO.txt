@@ -246,6 +246,25 @@ $rolloff grenades/explode3 400 1600
 $rolloff grenades/explode4 400 1600
 $rolloff grenades/explode5 400 1600
 
+$random bullet/hit { bullhit1 bullhit2 bullhit3 bullhit4 } // Taken from Halo: Reach
+bullhit1                  BULLHIT1
+bullhit2                  BULLHIT2
+bullhit3                  BULLHIT3
+bullhit4                  BULLHIT4
+
+$volume bullet/hit 0.5
+
+$random bullet/miss { bullmis1 bullmis2 bullmis3 bullmis4 bullmis5 bullmis6 bullmis7 } // Taken from Halo: Reach
+bullmis1                  BULLMIS1
+bullmis2                  BULLMIS2
+bullmis3                  BULLMIS3
+bullmis4                  BULLMIS4
+bullmis5                  BULLMIS5
+bullmis6                  BULLMIS6
+bullmis7                  BULLMIS7
+
+$volume bullet/miss 0.5
+
 
 
 
