@@ -20,7 +20,9 @@ actor PickupBase : CustomInventory
     Health 0x7FFFFFFF
     Mass 0x7FFFFFFF
     DamageFactor "Normal", 0.0
+    DamageFactor "Kubiuti", 0.0
     MONSTER
+    +GHOST
     +NOTARGET
     +LOOKALLAROUND
     +NOTIMEFREEZE
