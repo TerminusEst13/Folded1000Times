@@ -20,6 +20,7 @@ GRAPHICS:
   ^ The custom blood for the Kharon
   ^ The Acacia A-22 hunting pistol
   ^ The Kharon
+  ^ The widescreen Duke Nukem 64 grenade launcher for the Exodus
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us
   rotate the Kharon properly forcing us to rely on Photoshop's really ugly and
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA
