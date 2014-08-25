@@ -141,8 +141,12 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     +MISSILEEVENMORE
     States
     {
+    See:
+        BOSS AABBCCDD 2 A_Chase
+        Loop
     Melee:
     Missile:
+        TNT1 A 0 A_Jump(64,"Missile2")
         BOSS EF 8 A_FaceTarget
         TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,0)
         BOSS G 1
@@ -150,12 +154,37 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,7)
         BOSS G 8//A_BruisAttack
         Goto See
+    Missile2:
+        BOSS E 25 A_FaceTarget
+        BOSS EF 4 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,0)
+        BOSS G 1
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,-7)
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,7)
+        BOSS G 3
+        BOSS EF 4 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,0)
+        BOSS G 1
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,-7)
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,7)
+        BOSS G 3
+        BOSS EF 4 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,0)
+        BOSS G 1
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,-7)
+        TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,7)
+        BOSS G 3
+        goto See
 
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
-        goto Super::Pain
+    Pain:
+        BOSS H 1
+        BOSS H 1 A_Recoil(15)
+        BOSS H 1 A_Pain
+        Goto See
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -176,7 +205,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         BOSS TU 8
         BOSS V -1 A_BossDeath   
         Stop
-    death.hunter:
+    Death.Hunter:
         BOSS I 1
         BOSS I 0 A_Fall
         XDI1 A 0 A_PlaySound("S_Cutdead")
