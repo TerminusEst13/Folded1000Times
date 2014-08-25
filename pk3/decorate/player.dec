@@ -44,11 +44,10 @@ ACTOR MeleePlayer : PlayerPawn
     States
     {
     Spawn:
-        WARR A 1
-        TNT1 A 0 A_GiveInventory("WaitingTooLong",1)
+        WARR A -1
         loop
     See:
-        WARR ABCD 4 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
+        WARR ABCD 4
         Loop
     Missile:
     Melee:

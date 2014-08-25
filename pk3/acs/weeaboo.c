@@ -183,6 +183,10 @@ script WEEB_ENTER ENTER
     int KurtAngle;
     int WalkTheDinosaur;
     int RideTheLightning;
+    int XMen;
+    int Ys;
+    int XMen2;
+    int Ys2;
 
     if (CheckInventory("ImAlive") == 0)
     {
@@ -205,6 +209,13 @@ script WEEB_ENTER ENTER
     while (1)
     {
         //if (CheckInventory("ImAlive") == 1) { if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } }
+
+        XMen2 = XMen;
+        Ys2   = Ys;
+        XMen  = GetActorX(0);
+        Ys    = GetActorY(0);
+
+        if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); } else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
 
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
         if (CheckInventory("HammerUp") == 1)
