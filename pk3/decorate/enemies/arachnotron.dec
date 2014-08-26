@@ -51,6 +51,8 @@ actor WeeabooArachnotron : Arachnotron replaces Arachnotron
         XDH1 BBBBBBCCCCCCDDDD 1 A_SpawnDebris("BloodShower2",1)
         XDH1 D -1 A_BossDeath
         stop
+    Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",3)
     death.Bloody:
         TNT1 A 0
         TNT1 A 0 A_Scream

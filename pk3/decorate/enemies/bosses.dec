@@ -30,6 +30,7 @@ ACTOR WeeabooMastermind : SpiderMastermind replaces SpiderMastermind
         //TNT1 A 0 A_GiveToTarget("SuperMeterCounter",5)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Death
+    Death.IronFistDamage:
     Death.Kubiuti:
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",10)
         goto Super::Death
@@ -68,6 +69,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Death
+    Death.IronFistDamage:
     Death.Kubiuti:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GiveToTarget("SuperMeterCounter",10)

@@ -33,6 +33,21 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS E 8
         goto See
 
+    Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+    XDeath:
+        POSS M 5
+        TNT1 AAAAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_XScream
+        POSS NNNNN 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 A 0 A_NoBlocking
+        TNT1 AAAAA 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
+        POSS OOOOO 1 A_SpawnDebris("BloodShower2")
+        POSS PQRST 5
+        POSS U -1
+        Stop
+
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -393,6 +408,8 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         XDB3 G 5
         XDB3 H -1
         stop
+    Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
     XDeath:
         SPOS M 5
         SPOS NNNNNNNNNNNN 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
@@ -665,6 +682,8 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         XDB6 E 5 A_SpawnDebris("BloodShower",0,0,0)
         XDB6 F -1
         Stop  
+    Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
     xdeath:
         CPOS O 5 A_Jump(96,"xdeath2")
         CPOS PPPPP 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
@@ -803,6 +822,9 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Super::XDeath
+    Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         goto Super::XDeath
     }
 }
