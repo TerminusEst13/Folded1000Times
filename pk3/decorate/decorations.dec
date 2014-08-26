@@ -54,9 +54,11 @@ ACTOR DestructableDecorationBase
     DamageFactor "Normal", 0.0
     DamageFactor "Kubiuti", 1.0
     DamageFactor "HaltHammerzeitImpact", 1.0
+    DamageFactor "IronFistDamage", 1.0
     PainChance 0
     PainChance "Kubiuti", 255
     PainChance "HaltHammerzeitImpact", 255
+    PainChance "IronFistDamage", 255
 }
 
 ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
@@ -68,6 +70,7 @@ ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
     Spawn:
         CBR2 ABC 5 bright
         loop
+    Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
         TNT1 A 0
@@ -123,6 +126,7 @@ ACTOR BlueTorch2 : DestructableDecorationBase replaces BlueTorch
     Spawn:
         TRC2 ABCD 4 bright
         loop
+    Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
         TNT1 A 0
@@ -148,6 +152,7 @@ ACTOR RedTorch2 : DestructableDecorationBase replaces RedTorch
     Spawn:
         TRC2 EFGH 4 bright
         loop
+    Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
         TNT1 A 0
@@ -173,6 +178,7 @@ ACTOR GreenTorch2 : DestructableDecorationBase replaces GreenTorch
     Spawn:
         TRC2 IJKL 4 bright
         loop
+    Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
         TNT1 A 0
@@ -228,6 +234,7 @@ ACTOR ShortBlueTorch2 : DestructableDecorationBase replaces ShortBlueTorch
     Spawn:
         TRC3 ABCD 4 bright
         loop
+    Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
         TNT1 A 0
@@ -253,6 +260,7 @@ ACTOR ShortRedTorch2 : DestructableDecorationBase replaces ShortRedTorch
     Spawn:
         TRC3 EFGH 4 bright
         loop
+    Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
         TNT1 A 0
@@ -278,6 +286,7 @@ ACTOR ShortGreenTorch2 : DestructableDecorationBase replaces ShortGreenTorch
     Spawn:
         TRC3 IJKL 4 bright
         loop
+    Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
         TNT1 A 0
