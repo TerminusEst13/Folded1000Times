@@ -142,6 +142,14 @@ script WEEB_DECORATE (int burrshet)
         SetInventory("HammerCharge",0);
         SetAmmoCapacity("HammerCharge",100);
         break;
+
+    case WEEB_DEC_FREEZE2:
+        SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
+        break;
+
+    case WEEB_DEC_UNFREEZE2:
+        SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
+        break;
     }
 }
 

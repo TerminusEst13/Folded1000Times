@@ -5,6 +5,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -304,6 +305,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -592,6 +594,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -767,6 +770,7 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
     +MISSILEMORE
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255

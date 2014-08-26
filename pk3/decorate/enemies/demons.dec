@@ -3,6 +3,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     Speed 10
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -205,6 +206,7 @@ ACTOR WeeabooClink replaces Spectre
     Obituary "%o was bisected by a steel beast."
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255

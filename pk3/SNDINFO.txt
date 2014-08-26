@@ -265,6 +265,17 @@ bullmis7                  BULLMIS7
 
 $volume bullet/miss 0.5
 
+// Iron Maiden
+
+$random iron/hit { ironfist1 ironfist2 ironfist3 }
+ironfist1                 IRNPNCH1
+ironfist2                 IRNPNCH2
+ironfist3                 IRNPNCH3
+iron/miss                 IRNPWALL
+$random iron/swing { ironswing1 ironswing2 ironswing3 }
+ironswing1                IRNSWNG1
+ironswing2                IRNSWNG2
+ironswing3                IRNSWNG3
 
 
 

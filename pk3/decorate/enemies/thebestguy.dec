@@ -6,6 +6,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
     -LONGMELEERANGE
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -97,6 +98,8 @@ actor RevenantTracer2 : RevenantTracer replaces RevenantTracer
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "Kubiuti", 0.0
+    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST

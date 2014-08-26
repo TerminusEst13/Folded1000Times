@@ -36,6 +36,8 @@ const int WEEB_DEC_HAMCHECK    = 9;
 const int WEEB_DEC_HAMAMMO1    = 10;
 const int WEEB_DEC_HAMAMMO2    = 11;
 const int WEEB_DEC_HAMAMMO3    = 12;
+const int WEEB_DEC_FREEZE2     = 13;
+const int WEEB_DEC_UNFREEZE2   = 14;
 
 const int WEEB_DEC_GETMESSAGES = 0;
 
@@ -52,6 +54,7 @@ const int WEEB_DEC_GETMESSAGES = 0;
 #include "decorate/weapons/launcher.dec"
 #include "decorate/weapons/uzi.dec"
 #include "decorate/weapons/hammer.dec"
+#include "decorate/weapons/ironmaiden.dec"
 #include "decorate/player.dec"
 #include "decorate/powerups.dec"
 #include "decorate/decorations.dec"

@@ -2,6 +2,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
 {
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -129,6 +130,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     Speed 12
     Species "Body"
     PainChance "kubiuti", 64
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -268,6 +270,8 @@ actor WeeabooBaronBall : BaronBall replaces BaronBall
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "Kubiuti", 0.0
+    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST

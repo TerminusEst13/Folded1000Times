@@ -456,8 +456,7 @@ ACTOR ExodusRocketFlameTrail
     States
     {
     Spawn:
-        SMOK ABCDEFGHIJKLMNOP 1
-        SMOK Q 1 A_FadeOut
+        SMOK ABCDEFGHIJKLMNOPQ 1
         Stop
     }
 }

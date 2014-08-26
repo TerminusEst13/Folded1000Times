@@ -2,6 +2,7 @@ actor WeeabooSoul : LostSoul replaces LostSoul
 {
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -36,6 +37,7 @@ actor WeebElemental : PainElemental replaces PainElemental
     +ALWAYSFAST // THIS GON' BE GUD.
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255

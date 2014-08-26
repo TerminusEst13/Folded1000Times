@@ -19,6 +19,8 @@ actor HammerHit : Boolean {}
 actor HammerUp : Boolean {}
 actor ShockCanDie : Boolean {}
 actor ShockArcDie : Boolean {}
+actor FistSwung : Boolean {}
+actor FistHit : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}

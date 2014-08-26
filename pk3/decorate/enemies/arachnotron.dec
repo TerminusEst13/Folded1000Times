@@ -2,6 +2,7 @@ actor WeeabooArachnotron : Arachnotron replaces Arachnotron
 {
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -77,6 +78,7 @@ actor ArachnotronPlasma2 : ArachnotronPlasma replaces ArachnotronPlasma
 {
     Health 5
     Speed 30
+    Scale 0.35
     Species "EnemyShot"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
@@ -91,6 +93,8 @@ actor ArachnotronPlasma2 : ArachnotronPlasma replaces ArachnotronPlasma
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "Kubiuti", 0.0
+    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST

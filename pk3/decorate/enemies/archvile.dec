@@ -2,6 +2,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
 {
     Species "Body"
     PainChance "kubiuti", 64
+    PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
@@ -152,6 +153,8 @@ actor SnappyArchieFireFire : BaronBall
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "Kubiuti", 0.0
+    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
     +THRUSPECIES
     +THRUGHOST
     +SHOOTABLE

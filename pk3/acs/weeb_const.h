@@ -48,5 +48,7 @@
 #define WEEB_DEC_HAMAMMO1     10
 #define WEEB_DEC_HAMAMMO2     11
 #define WEEB_DEC_HAMAMMO3     12
+#define WEEB_DEC_FREEZE2      13
+#define WEEB_DEC_UNFREEZE2    14
 
 #define WEEB_DEC_GETMESSAGES  0
