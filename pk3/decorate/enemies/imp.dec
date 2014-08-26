@@ -19,6 +19,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     DamageFactor "TestamentDamage", 1.65
     DamageFactor "SabbathDamage", 1.65
     DamageFactor "ExodusDamage", 1.65
+    DamageFactor "IronMaidenShot", 1.65
     Speed 12
     States
     {

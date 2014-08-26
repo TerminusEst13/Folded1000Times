@@ -276,6 +276,8 @@ $random iron/swing { ironswing1 ironswing2 ironswing3 }
 ironswing1                IRNSWNG1
 ironswing2                IRNSWNG2
 ironswing3                IRNSWNG3
+holyshot/fire             IRNBLAST // A dramatically-souped-up Quake III sound
+holyshot/hit              IRNBLHIT // A dramatically-souped-up Quake III sound
 
 
 

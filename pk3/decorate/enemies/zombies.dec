@@ -18,6 +18,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "TestamentDamage", 5.0
     DamageFactor "SabbathDamage", 5.0
     DamageFactor "ExodusDamage", 5.0
+    DamageFactor "IronMaidenShot", 5.0
     DropItem "BlankPuff"
     States
     {
@@ -333,6 +334,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "TestamentDamage", 3.3
     DamageFactor "SabbathDamage", 3.3
     DamageFactor "ExodusDamage", 3.3
+    DamageFactor "IronMaidenShot", 3.3
     DropItem "BlankPuff"
     States
     {
@@ -624,6 +626,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "TestamentDamage", 1.5
     DamageFactor "SabbathDamage", 1.5
     DamageFactor "ExodusDamage", 1.5
+    DamageFactor "IronMaidenShot", 1.5
     DropItem "BlankPuff"
     States
     {
