@@ -67,6 +67,7 @@ CODE:
 - Tormentor667/Ghastly_Dragon (The Powerline spawners for the armor, from the Stronghold Powerpad)
 - PresidentPeople (Fixing the corpses to keep them from bouncing everywhere)
 - IvanDobrovski (Fixing the eternally-looping imp blood fountain)
+- Xaser/Tormentor667/Z86 (The explosive barrel, nicked from the Particle Fire Enhancer Mod)
 
 MUSIC:
 =========

@@ -60,6 +60,15 @@ $limit world/lavasizzlesmall  2
 // Destructable decorations
 
 destroy/candelabra        CNDLCUT
+$random damage/barrel { dbarl1 dbarl2 dbarl3 dbarl4 } // Taken from Painkiller
+dbarl1                    BARLHIT1
+dbarl2                    BARLHIT2
+dbarl3                    BARLHIT3
+dbarl4                    BARLHIT4
+$random destroy/barrel { dbxpl1 dbxpl2 dbxpl3 } // Taken from Halo: Reach
+dbxpl1                    BARLXPL1
+dbxpl2                    BARLXPL2
+dbxpl3                    BARLXPL3
 
 // Pickups
 
