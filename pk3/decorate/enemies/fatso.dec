@@ -22,35 +22,35 @@ actor WeeabooFatty : Fatso replaces Fatso
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,10,0,0)
         FATT H 5 Bright
         FATT I 5
-        FATT G 15 A_FaceTarget
+        FATT G 20 A_FaceTarget
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,-10,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,10,0,0)
         FATT H 5 Bright
         FATT I 5
-        FATT G 15 A_FaceTarget
+        FATT G 20 A_FaceTarget
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,-10,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,10,0,0)
         FATT H 5 Bright
         FATT I 5
-        FATT G 15 A_FaceTarget
+        FATT G 20 A_FaceTarget
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,-10,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,10,0,0)
         FATT H 5 Bright
         FATT I 5
-        FATT G 15 A_FaceTarget
+        FATT G 20 A_FaceTarget
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,-10,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,-40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,0,0,0)
         TNT1 A 0 A_CustomMissile("WeeabooFatShot",28,40,10,0,0)
         FATT H 5 Bright
         FATT I 5
-        FATT G 15 A_FaceTarget
+        FATT G 20 A_FaceTarget
         Goto See
 
     Pain.KubiLungeAttack:
@@ -132,7 +132,7 @@ actor WeeabooFatShot : FatShot replaces FatShot
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "Kubiuti", 0.0
-    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "IronFistExplode", 0.0
     DamageFactor "HaltHammerzeitImpact", 0.0
     +THRUSPECIES
     +THRUGHOST

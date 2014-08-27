@@ -1,0 +1,337 @@
+ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
+{
+    Radius 16
+    Height 60
+    States
+    {
+    Spawn:
+        CBR2 ABC 5 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("CandelabraDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        CBR2 D -1
+        stop
+    }
+}
+
+actor CandelabraDestroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Gravity 0.95
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        CBR2 EFGH 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        CBR2 H 3500
+        CBR2 HHHHH 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        CBR2 F 3500
+        CBR2 FFFFF 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+ACTOR BlueTorch2 : DestructableDecorationBase replaces BlueTorch
+{
+    Radius 16
+    Height 68
+    States
+    {
+    Spawn:
+        TRC2 ABCD 4 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("TorchDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC2 M -1
+        stop
+    }
+}
+
+ACTOR RedTorch2 : DestructableDecorationBase replaces RedTorch
+{
+    Radius 16
+    Height 68
+    States
+    {
+    Spawn:
+        TRC2 EFGH 4 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("TorchDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC2 M -1
+        stop
+    }
+}
+
+ACTOR GreenTorch2 : DestructableDecorationBase replaces GreenTorch
+{
+    Radius 16
+    Height 68
+    States
+    {
+    Spawn:
+        TRC2 IJKL 4 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("TorchDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC2 M -1
+        stop
+    }
+}
+
+actor TorchDestroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Gravity 0.85
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        TRC2 NOPQ 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        TRC2 O 3500
+        TRC2 OOOOO 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        TRC2 Q 3500
+        TRC2 QQQQQ 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+ACTOR ShortBlueTorch2 : DestructableDecorationBase replaces ShortBlueTorch
+{
+    Radius 16
+    Height 37
+    States
+    {
+    Spawn:
+        TRC3 ABCD 4 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,20,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("SmallTorchDestroyed",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC3 M -1
+        stop
+    }
+}
+
+ACTOR ShortRedTorch2 : DestructableDecorationBase replaces ShortRedTorch
+{
+    Radius 16
+    Height 37
+    States
+    {
+    Spawn:
+        TRC3 EFGH 4 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,20,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("SmallTorchDestroyed",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC3 M -1
+        stop
+    }
+}
+
+ACTOR ShortGreenTorch2 : DestructableDecorationBase replaces ShortGreenTorch
+{
+    Radius 16
+    Height 37
+    States
+    {
+    Spawn:
+        TRC3 IJKL 4 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/candelabra")
+        TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,20,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("SmallTorchDestroyed",0,0,20,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TRC3 M -1
+        stop
+    }
+}
+
+actor SmallTorchDestroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Gravity 0.85
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        TRC3 NOPQ 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        TRC3 O 3500
+        TRC3 OOOOO 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        TRC3 Q 3500
+        TRC3 QQQQQ 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+Actor BarrelRemains1
+{
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Scale 0.5
+    Gravity 0.85
+    BounceFactor 0.4
+    BounceCount 4
+    States
+    {
+    Spawn: 
+        BPC1 ABCD 2
+        loop
+    Death:
+        BPC1 A 3500
+        BPC1 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor BarrelRemains2 : BarrelRemains1
+{
+    States
+    {
+    Spawn: 
+        BPC2 ABCD 2
+        loop
+    Death:
+        BPC2 A 3500
+        BPC2 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor BarrelRemains3 : BarrelRemains1
+{
+    States
+    {
+    Spawn: 
+        BPC3 ABCD 2
+        loop
+    Death:
+        BPC3 A 3500
+        BPC3 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor BarrelRemains4 : BarrelRemains1
+{
+    States
+    {
+    Spawn: 
+        BPC4 ABCD 2
+        loop
+    Death:
+        BPC4 A 3500
+        BPC4 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
+}

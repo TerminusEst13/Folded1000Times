@@ -100,7 +100,7 @@ actor RevenantTracer2 : RevenantTracer replaces RevenantTracer
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "Kubiuti", 0.0
-    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "IronFistExplode", 0.0
     DamageFactor "HaltHammerzeitImpact", 0.0
     +THRUSPECIES
     +SHOOTABLE

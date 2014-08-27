@@ -137,7 +137,7 @@ actor WizardSpell
     DamageFactor "ExodusJump", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "Kubiuti", 0.0
-    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "IronFistExplode", 0.0
     DamageFactor "HaltHammerzeitImpact", 0.0
     DeathSound "wizard/shothit"
     Projectile
