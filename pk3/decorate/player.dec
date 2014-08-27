@@ -37,6 +37,7 @@ ACTOR MeleePlayer : PlayerPawn
     DamageFactor "Suicide", 2.00
     RadiusDamageFactor 0.5
     Player.StartItem "Kharon + Acacia A-22", 1
+    //Player.StartItem "Iron Fist", 1
     Player.StartItem "SuperMeterCounter", 20
     Player.StartItem "WeebClip", 20
     Player.ColorRange 112, 127
@@ -166,7 +167,7 @@ actor SwordSlingingStyleSwap : CustomInventory
         fail
     Use2:
         TNT1 A 0 A_Print("Glorious nippon discipline activated.")
-        TNT1 A 0 A_TakeInventory("KatanaSwung",1)
+        TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SequenceFireActivated",1)
         fail
     }

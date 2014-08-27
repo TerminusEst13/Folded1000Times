@@ -86,7 +86,9 @@ script WEEB_DECORATE (int burrshet)
         break;
 
     case WEEB_DEC_UNFREEZE:
-        SetActorProperty(0,APROP_Species,"Player");
+        
+        if (GameType() == GAME_NET_DEATHMATCH) { SetActorProperty(0,APROP_Species,"DMPlayer"); }
+        else { SetActorProperty(0,APROP_Species,"Player"); }
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
         break;
 
@@ -195,6 +197,10 @@ script WEEB_ENTER ENTER
     int Ys;
     int XMen2;
     int Ys2;
+    int IsBrutal = 0;
+    int mytid;
+    int i, j, k, ang;
+    i = unusedTID(37000, 47000);
 
     if (CheckInventory("ImAlive") == 0)
     {
@@ -207,15 +213,25 @@ script WEEB_ENTER ENTER
         LocalAmbientSound("level/intro",127);
         GiveInventory("ImAlive",1);
     }
+
+    if (Spawn("Brutal_Blood", GetActorX(0), GetActorY(0), GetActorZ(0), i))
+    {
+        Thing_Remove(i);
+        isbrutal = 1;
+    }
+
     SetActorProperty(0,APROP_INVULNERABLE,0); // Just in case some wiseass exits while invuln.
     SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
-    SetActorProperty(0,APROP_Species,"Player");
+    if (GameType() == GAME_NET_DEATHMATCH) { SetActorProperty(0,APROP_Species,"DMPlayer"); }
+    else { SetActorProperty(0,APROP_Species,"Player"); }
     SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
     GiveInventory("NewLevelStatReset",1);
     if (CheckInventory("HammerCharge") > 100) { SetAmmoCapacity("HammerCharge",100); SetInventory("HammerCharge",80); }
     
     while (1)
     {
+
+        mytid = defaultTID(-1);
         //if (CheckInventory("ImAlive") == 1) { if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } }
 
         XMen2 = XMen;
@@ -391,6 +407,29 @@ script WEEB_ENTER ENTER
               GiveInventory("GhostStepDone",1);
               TakeInventory("SuperMeterCounter",5);
               GiveInventory("GhostStepCooldown",35); }*/
+        }
+
+        // Brutal Doom compatibility provided by ijon tichy!
+        if (isbrutal)
+        {
+            k = unusedTID(23000, 33000);
+
+            for (i = 0; i < 4; i++)
+            {
+                ang = random(0, 1.0);
+                j = 0;
+
+                while (!Spawn("GetThatShitOutOfHere", GetActorX(0) + (8192 * sin(ang)),
+                                                      GetActorY(0) + (8192 * cos(ang)),
+                                                      GetActorZ(0) + j, k)
+                    && (j < 256.0))
+                {
+                    j += 16.0;
+                }
+            }
+
+            Thing_Hate(k, mytid, 2);
+            Thing_ChangeTID(k, 0);
         }
 
         Delay(1);

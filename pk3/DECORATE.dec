@@ -22,6 +22,17 @@ actor BlankPuff
     }
 }
 
+actor GetThatShitOutOfHere : Revenant
+{
+    +NODAMAGE
+    +INVULNERABLE
+    +NOCLIP
+    -SOLID
+    -SHOOTABLE
+    -COUNTKILL
+    -ISMONSTER
+}
+
 // Constants which are paired with their ACS counterparts
 const int WEEB_DEC_DAMAGE      = 0;
 const int WEEB_DEC_FREEZE      = 1;

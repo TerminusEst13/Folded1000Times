@@ -1,4 +1,4 @@
-actor KatanaSwung : Boolean {}
+actor KharonSwung : Boolean {}
 actor SequenceFireActivated : Boolean {}
 actor SlashingLikeAGaijin : Boolean {}
 actor ShootingLikeABaka : Boolean {}
@@ -32,6 +32,7 @@ actor EasyMarker : Boolean {}
 actor NormalMarker : Boolean {}
 actor HardMarker : Boolean {}
 actor NightmareMarker : Boolean {}
+actor DMMarker : Boolean {}
 actor FRank : Boolean {}
 actor DRank : Boolean {}
 actor CRank : Boolean {}
