@@ -471,7 +471,7 @@ script WEEB_COMBOREMOVAL ENTER
 script WEEB_UNLOADING UNLOADING
 {
     TakeInventory("AlreadyInLevel",1);
-    TakeInventory("KatanaSwung",1);
+    TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
     TakeInventory("ShootingLikeABaka",1);
     TakeInventory("CantStopTheBlock",1);
