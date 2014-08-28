@@ -43,7 +43,7 @@ actor RazorWind
 
 actor RazorWind2 : RazorWind
 {
-    ReactionTime 80
+    ReactionTime 70
     Speed 30
     DamageType "KubiRangeAttack"
     +FORCERADIUSDMG
@@ -52,7 +52,7 @@ actor RazorWind2 : RazorWind
     States
     {
     Spawn:
-        TNT1 A 0 A_Explode(8,96,0)
+        TNT1 A 0 A_Explode(10,96,0)
         TNT1 A 1 A_SpawnItemEx("RazorWindTrail", 0,               0,              2)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (2 *momx)/-10.0, -(2 *momy)/-10.0, 2+(2 *momz)/-10.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (4 *momx)/-10.0, -(4 *momy)/-10.0, 2+(4 *momz)/-10.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
