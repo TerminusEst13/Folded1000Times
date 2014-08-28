@@ -5,6 +5,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
+    PainChance "KubiRangeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "EnemyInfightDamageNoble", 0.0
@@ -26,7 +27,13 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Pain
+    Pain.KubiRangeAttack:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Super::Pain
+    Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
         //TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
@@ -135,6 +142,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
+    PainChance "KubiRangeAttack", 255
     PainChance "HaltHammerzeitImpact", 255
     DamageFactor "GuardMove", 0.0
     DamageFactor "EnemyInfightDamageNoble", 0.0
@@ -180,15 +188,22 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         BOSS G 3
         goto See
 
+    Pain.KubiRangeAttack:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Pain2
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
     Pain:
-        BOSS H 1
         BOSS H 1 A_Recoil(15)
+    Pain2:
+        BOSS H 1
         BOSS H 1 A_Pain
         Goto See
+    Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)

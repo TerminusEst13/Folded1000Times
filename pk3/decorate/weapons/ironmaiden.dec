@@ -288,28 +288,25 @@ actor "Iron Fist" : Weapon
         goto LungeAttackPrepare
 
     RepelWave:
-        KBLK ABCDE 1
-        KATN F 1
+        KBLK ABCDEE 1
+        KBLK F 15 A_PlayWeaponSound("sword/block")
+        KSPC STU 1
+        TNT1 A 5
+        KSPC VW 1
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_PlayWeaponSound("sword/reflect")
         TNT1 A 0 A_FireCustomMissile("RazorWind2",0,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-2,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",2,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-4,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",4,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2",-3,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2",3,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",-6,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",6,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-8,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",8,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-10,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",10,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2",-9,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2",9,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",-12,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",12,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-14,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",14,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-16,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",16,0,0,0,0,0)
-        KATN GHIJ 1
+        TNT1 A 0 A_FireCustomMissile("RazorWind2",-15,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2",15,0,0,0,0,0)
+        KSPC XYZ 1
         TNT1 AA 1
         goto SpecialAttackFinish
 

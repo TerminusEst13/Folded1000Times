@@ -184,7 +184,7 @@ sword/shieldlower         SHIELDDW // Taken from the Oblivion Combat Sound Repla
 
 sword/spinattack          SPINATCK
 sword/beam3               SRDBEEM3
-sword/block               SRDBLOCK
+sword/block               SRDBLOCK // Taken from Super Smash Bros. Brawl
 sword/reflect             SRDRFLCT
 
 

@@ -38,6 +38,7 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "Kubiuti", 1.425 // 2.1375
     DamageFactor "KubiSpinAttack", 1.325
     DamageFactor "KubiLungeAttack", 1.325
+    DamageFactor "KubiRangeAttack", 1.325
 }
 
 actor ComboDamageLevel3 : PowerDamage
@@ -53,6 +54,7 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "Kubiuti", 1.35 // 2.885625
     DamageFactor "KubiSpinAttack", 1.25
     DamageFactor "KubiLungeAttack", 1.25
+    DamageFactor "KubiRangeAttack", 1.25
 }
 
 actor ComboDamageLevel4 : PowerDamage
@@ -68,6 +70,7 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "Kubiuti", 1.275 // 3.679171875
     DamageFactor "KubiSpinAttack", 1.175
     DamageFactor "KubiLungeAttack", 1.175
+    DamageFactor "KubiRangeAttack", 1.175
 }
 
 actor ComboDamageLevel5 : PowerDamage
@@ -83,6 +86,7 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "Kubiuti", 1.2 // 4.41500625
     DamageFactor "KubiSpinAttack", 1.1
     DamageFactor "KubiLungeAttack", 1.1
+    DamageFactor "KubiRangeAttack", 1.1
 }
 
 actor ComboDamageLevel6 : PowerDamage
@@ -98,6 +102,7 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "Kubiuti", 1.15 // 5.0772571875
     DamageFactor "KubiSpinAttack", 1.05
     DamageFactor "KubiLungeAttack", 1.05
+    DamageFactor "KubiRangeAttack", 1.05
 }
 
 actor DodgeGhostOn : CustomInventory
