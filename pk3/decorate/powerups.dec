@@ -23,6 +23,7 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "Kubiuti", 1.5
     DamageFactor "KubiSpinAttack", 1.4
     DamageFactor "KubiLungeAttack", 1.4
+    DamageFactor "KubiRangeAttack", 1.4
 }
 
 actor ComboDamageLevel2 : PowerDamage
