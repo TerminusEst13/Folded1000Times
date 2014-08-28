@@ -1,6 +1,5 @@
 TO DO in no particular order:
 1b: Implement found headshot dead sprites--imps/zombies/shotgunners will be finished!
-4: Make pickup sprites for the weapons
 8: Berserk pickup sprite/sound
 9: Cvar to remove recoil/vertical movement off dodging for semi-purist play.
 13: Forward, Left, right, and both attack buttons activates Iron Maiden mode
@@ -53,7 +52,7 @@ DONE:
 1a: Code Mike's new deaths
 2: Make aura placeholders for Zael's Slayer of Light
 3: Hammer overcharge crashes online play--due to HammerLightningLonger sucking up all the bandwidth. Find alternative?
-4b: Find names for the weapons, make pickup sounds
+4: Find names for the weapons, make pickup sounds and sprites
 5: Convert custominventory weapon pickups from Inventory.PickupSound to A_PlaySoundEx, currently don't activate with sv_weaponstay
 6: More destructable environmental stuff
 7: Figure out what armor pickups should be

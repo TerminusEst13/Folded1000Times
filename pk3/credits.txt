@@ -26,7 +26,7 @@ GRAPHICS:
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)
 - Captain J (The Sabbath large ammo pack)
-- Duke Nukem 64 (The Sabbath's pickup graphics)
+- Duke Nukem 64 (The base for the Sabbath pickup sprite, the Exodus' sprites)
 - Shadow Warrior (The Exodus grenade sprites)
 - Aeons of Death (The Exodus explosion graphics)
 - Ettingrinder (The Candelabra)
