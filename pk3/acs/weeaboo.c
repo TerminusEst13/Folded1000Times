@@ -160,7 +160,7 @@ script WEEB_DECORATE (int burrshet)
         TakeInventory("Armor",0x7FFFFFFF);
         TakeInventory("KamenRangerHenshin",1);
         GiveInventory("Kharon + Acacia A-22",1);
-        SetActorProperty(0, APROP_GRAVITY, 0.85);
+        SetActorProperty(0,APROP_JUMPZ,9.0);
         if (CheckInventory("GotShotgun") == 1) { GiveInventory("Kharon + Testament",1); }
         if (CheckInventory("GotUzi") == 1) { GiveInventory("Kharon + Sabbath",1); }
         if (CheckInventory("GotCarronade") == 1) { GiveInventory("Kharon + Exodus",1); }
@@ -385,7 +385,7 @@ script WEEB_ENTER ENTER
         if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
         {
             ActivatorSound("ghost/jump", 127);
-            ThrustThingZ(0, 36, 0, 0);
+            if (CheckInventory("InIronMaiden") == 0 ) { ThrustThingZ(0,36,0,0); } else { ThrustThingZ(0,42,0,0); }
             GiveInventory("AcesHigh", 1);
         }
         // Remove AcesHigh when we're back on the ground
@@ -397,39 +397,33 @@ script WEEB_ENTER ENTER
         // Dodging
         if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0 && !CheckInventory("CantStopTheBlock"))
         { if (buttons & BT_SPEED && buttons & BT_FORWARD)
-              { ThrustThing(KurtAngle+0,45,0,0);
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+0,45,0,0); } else { ThrustThing(KurtAngle+0,75,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVELEFT)
-              { ThrustThing(KurtAngle+64,45,0,0);
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+64,45,0,0); } else { ThrustThing(KurtAngle+64,75,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_BACK)
-              { ThrustThing(KurtAngle+128,45,0,0);
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+128,45,0,0); } else { ThrustThing(KurtAngle+128,75,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVERIGHT)
-              { ThrustThing(KurtAngle+192,45,0,0);
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+192,45,0,0); } else { ThrustThing(KurtAngle+192,75,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          /*if (buttons & BT_SPEED && buttons & BT_JUMP && CheckInventory("SuperMeterCounter") >= 5)
-              { if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,120,0,0); } else { ThrustThingZ(0,52,0,0); } // Bleh, doesn't work. I'll need to think of a way to get a higher jump while on the ground.
-              ActivatorSound("ghost/jump",127);
-              GiveInventory("GhostStepDone",1);
-              TakeInventory("SuperMeterCounter",5);
-              GiveInventory("GhostStepCooldown",35); }*/
         }
 
         // SUPER SAIYAN HNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
@@ -458,7 +452,7 @@ script WEEB_ENTER ENTER
         {
           if (CheckInventory("SuperMeterCounter") > 0)
           {
-            SetActorProperty(0,APROP_GRAVITY,0.7);
+            SetActorProperty(0,APROP_JUMPZ,10.0);
 
             if (buttons & BT_BACK && buttons & BT_MOVELEFT && buttons & BT_MOVERIGHT && buttons & BT_ATTACK && buttons & BT_ALTATTACK)
             {
@@ -470,19 +464,19 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (IronArmor >= 10)
+            if (IronArmor >= 7)
             {
-              TakeInventory("SuperMeterCounter",1);
               GiveInventory("IronMaidenArmor",1);
               IronArmor = 0;
             }
 
-            /*if (MarchOfTheImmortal >= 11)
+            if (MarchOfTheImmortal >= 13)
             {
+              TakeInventory("SuperMeterCounter",1);
               MarchOfTheImmortal = 0;
-            }*/
+            }
 
-            //MarchOfTheImmortal++;
+            MarchOfTheImmortal++;
             IronArmor++;
           }
           else
