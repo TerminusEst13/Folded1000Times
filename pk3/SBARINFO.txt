@@ -110,6 +110,8 @@ InInventory ContraArmorToken, 4 { drawimage "HLTHSHLD", 40, 168; }
 InInventory ContraArmorToken, 5 { drawimage "HLTHSHLD", 50, 168; }
 InInventory ContraArmorToken, 6 { drawimage "HLTHSHLD", 60, 168; }
 
+DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 10, 179;
+
     gamemode cooperative, singleplayer
     {
         InInventory BlueCard, 1 { drawimage "STKEYS0", 295, 181; }

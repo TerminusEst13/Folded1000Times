@@ -4,6 +4,12 @@ actor PowerShieldProtection : PowerProtection
     +NORADIUSDMG
 }
 
+ACTOR IronMaidenSpeed : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.2
+}
+
 actor CantStopTheBlock : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF

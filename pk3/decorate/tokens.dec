@@ -39,6 +39,8 @@ actor CRank : Boolean {}
 actor BRank : Boolean {}
 actor ARank : Boolean {}
 actor SRank : Boolean {}
+actor KamenRangerHenshin : Boolean {}
+actor InIronMaiden : Boolean {}
 
 actor GotShotgun : Boolean {}
 actor GotCarronade : Boolean {}
@@ -50,6 +52,7 @@ actor GotHammer : Boolean {}
 actor WaitingTooLong : Counter { Inventory.MaxAmount 525 }
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }
+actor HenshinCooldown : Counter { Inventory.MaxAmount 35 }
 actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
 actor GhostStepCooldown : Counter { Inventory.MaxAmount 35 }
 actor DoubleTapReadyRight : Counter { Inventory.MaxAmount 8 }

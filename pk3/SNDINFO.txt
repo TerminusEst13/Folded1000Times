@@ -287,6 +287,17 @@ ironswing2                IRNSWNG2
 ironswing3                IRNSWNG3
 holyshot/fire             IRNBLAST // A dramatically-souped-up Quake III sound
 holyshot/hit              IRNBLHIT // A dramatically-souped-up Quake III sound
+iron/armorhit             IRNMPAIN // Taken from Mega Man X6
+
+henshin/foley             IRNHFOLY // Taken from Smash Bros. Brawl
+henshin/call              IRNHNSHN // Taken from Kamen Rider Gaim
+henshin/donarmor          IRNHNSH2 // Taken from Kamen Rider Kabuto
+henshin/click             IRNHCLCK // Taken from Kamen Rider W
+henshin/ready             IRNHREDY // Taken from Kamen Rider Faiz
+henshin/complete          IRNHCOMP // Taken from Kamen Rider Faiz
+henshin/completedismiss   IRNHCOM2 // Taken from Kamen Rider Faiz
+henshin/timeout           IRNHTOUT // Taken from Kamen Rider Faiz
+henshin/timeoutdismiss    IRNHTOU2 // Taken from Kamen Rider Fourze
 
 
 

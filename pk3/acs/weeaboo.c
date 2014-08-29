@@ -86,7 +86,6 @@ script WEEB_DECORATE (int burrshet)
         break;
 
     case WEEB_DEC_UNFREEZE:
-        
         if (GameType() == GAME_NET_DEATHMATCH) { SetActorProperty(0,APROP_Species,"DMPlayer"); }
         else { SetActorProperty(0,APROP_Species,"Player"); }
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
@@ -152,6 +151,25 @@ script WEEB_DECORATE (int burrshet)
     case WEEB_DEC_UNFREEZE2:
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
         break;
+
+    case WEEB_DEC_REMOVEKEBAB:
+        FadeRange(255,255,255,1.00,0,0,0,0,1.50);
+        TakeInventory("InIronMaiden",1);
+        TakeInventory("Iron Fist",1);
+        TakeInventory("IronMaidenSpeed",1);
+        TakeInventory("Armor",0x7FFFFFFF);
+        TakeInventory("KamenRangerHenshin",1);
+        GiveInventory("Kharon + Acacia A-22",1);
+        SetActorProperty(0, APROP_GRAVITY, 0.85);
+        if (CheckInventory("GotShotgun") == 1) { GiveInventory("Kharon + Testament",1); }
+        if (CheckInventory("GotUzi") == 1) { GiveInventory("Kharon + Sabbath",1); }
+        if (CheckInventory("GotCarronade") == 1) { GiveInventory("Kharon + Exodus",1); }
+        if (CheckInventory("GotHammer") == 1) { GiveInventory("Kharon + Omen",1); }
+        SetWeapon("Kharon + Acacia A-22");
+        delay(1);
+        TakeInventory("IronMaidenArmor",0x7FFFFFFF);
+        TakeInventory("IronMaidenArmor2",0x7FFFFFFF);
+        break;
     }
 }
 
@@ -200,6 +218,10 @@ script WEEB_ENTER ENTER
     int IsBrutal = 0;
     int mytid;
     int i, j, k, ang;
+    int MarchOfTheImmortal;
+    int IronArmor;
+    int armor;
+    int oarmor;
     i = unusedTID(37000, 47000);
 
     if (CheckInventory("ImAlive") == 0)
@@ -270,6 +292,7 @@ script WEEB_ENTER ENTER
         TakeInventory("DoubleTapReadyLeft",1);
         TakeInventory("DoubleTapReadyBack",1);
         TakeInventory("MidCombat",1);
+        TakeInventory("HenshinCooldown",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
         // If the player still has life left, they get full health.
@@ -408,6 +431,71 @@ script WEEB_ENTER ENTER
               TakeInventory("SuperMeterCounter",5);
               GiveInventory("GhostStepCooldown",35); }*/
         }
+
+        // SUPER SAIYAN HNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
+        // HHHHHHHNNNNNNNNNNGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+        // HHHHHHHHHHHHHHHHHHNNNNNNNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGHHHHHHHH
+
+        oarmor = armor;
+        armor = CheckInventory("Armor");
+
+        if (oarmor > armor && CheckInventory("InIronMaiden") == 1)
+        {
+          ActivatorSound("iron/armorhit", 127);
+          FadeRange(255,255,0,min(0.5,(oarmor-armor)*0.015),0,0,0,0.0,min(35.0,1.5*(oarmor-armor))/35); 
+        }
+
+        if (CheckInventory("InIronMaiden") == 0)
+        {
+          if (CheckInventory("SuperMeterCounter") >= 100 && CheckInventory("HenshinCooldown") == 0)
+          {
+            if (buttons & BT_FORWARD && buttons & BT_MOVELEFT && buttons & BT_MOVERIGHT && buttons & BT_ATTACK && buttons & BT_ALTATTACK)
+            { GiveInventory("KamenRangerHenshin",1); }
+            else { TakeInventory("KamenRangerHenshin",1); }
+          }
+        }
+        else
+        {
+          if (CheckInventory("SuperMeterCounter") > 0)
+          {
+            SetActorProperty(0,APROP_GRAVITY,0.7);
+
+            if (buttons & BT_BACK && buttons & BT_MOVELEFT && buttons & BT_MOVERIGHT && buttons & BT_ATTACK && buttons & BT_ALTATTACK)
+            {
+              GiveInventory("HenshinCooldown",35);
+              LocalAmbientSound("henshin/complete",127);
+              ActivatorSound("henshin/completedismiss",127);
+              ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_REMOVEKEBAB,0,0);
+              MarchOfTheImmortal = 0;
+              IronArmor = 0;
+            }
+
+            if (IronArmor >= 10)
+            {
+              TakeInventory("SuperMeterCounter",1);
+              GiveInventory("IronMaidenArmor",1);
+              IronArmor = 0;
+            }
+
+            /*if (MarchOfTheImmortal >= 11)
+            {
+              MarchOfTheImmortal = 0;
+            }*/
+
+            //MarchOfTheImmortal++;
+            IronArmor++;
+          }
+          else
+          {
+            GiveInventory("HenshinCooldown",35);
+            LocalAmbientSound("henshin/timeout",127);
+            ActivatorSound("henshin/timeoutdismiss",127);
+            ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_REMOVEKEBAB,0,0);
+            MarchOfTheImmortal = 0;
+            IronArmor = 0;
+          }
+        }
+        
 
         // Brutal Doom compatibility provided by ijon tichy!
         if (isbrutal)
