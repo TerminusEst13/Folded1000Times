@@ -20,7 +20,7 @@ actor "Iron Fist" : Weapon
     Weapon.AmmoGive 0
     Weapon.AmmoType ""
     Weapon.AmmoType2 ""
-    Weapon.UpSound "weapon/switch"
+    Weapon.UpSound "henshin/ready"
     Weapon.SlotNumber 0
     +NOALERT
     +NOAUTOFIRE
