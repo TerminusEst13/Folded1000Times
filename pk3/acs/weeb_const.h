@@ -12,6 +12,8 @@
 #define WEEB_CLIENTDECORATE                  275
 #define WEEB_DEATH                           276
 #define WEEB_OPEN_CLIENT                     277
+#define WEEB_ENTER_CLIENT                    278
+#define WEEB_PUKE                            279
 
 // Definitions
 

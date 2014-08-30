@@ -9,14 +9,17 @@ int ClientEnterLocks[PLAYERMAX];
 int dodgeitem;
 int IsServer;
 
+int array_recoilrules[PLAYERMAX];
+
 int GotShotgun;
 int GotCarronade;
 int GotUzi;
 int GotHam; // HAM
+
 int IronMaidenMusic[IRONMUS] = 
-{
-   "D_IRONM1","D_IRONM2","D_IRONM3","D_IRONM4","D_IRONM5","D_IRONM6","D_IRONM7"
-};
+{ "D_IRONM1","D_IRONM2","D_IRONM3","D_IRONM4","D_IRONM5","D_IRONM6","D_IRONM7" };
+
+
 
 script WEEB_RESPAWN respawn
 {
@@ -47,6 +50,7 @@ script WEEB_OPEN_CLIENT OPEN clientside
     if (GetCvar("ds_runninginzdoom") == 0)
     {
         if (!GetCvar("ds_cl_nomusic")) { ConsoleCommand("set ds_cl_nomusic 0"); ConsoleCommand("archivecvar ds_cl_nomusic"); }
+        if (!GetCvar("ds_cl_norecoil")) { ConsoleCommand("set ds_cl_norecoil 0"); ConsoleCommand("archivecvar ds_cl_norecoil"); }
     }
 }
 
@@ -243,6 +247,7 @@ script WEEB_ENTER ENTER
     int IronArmor;
     int armor;
     int oarmor;
+    int pln = PlayerNumber();
     i = unusedTID(37000, 47000);
 
     if (CheckInventory("ImAlive") == 0)
@@ -536,6 +541,9 @@ script WEEB_ENTER ENTER
             Thing_ChangeTID(k, 0);
         }
 
+        if (array_recoilrules[pln]) { GiveInventory("IAmASillyPersonWhoDoesntLikeRecoil", 1); }
+        else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
+
         Delay(1);
         if (isDead(0)) { terminate; }
     }
@@ -599,26 +607,23 @@ script WEEB_UNLOADING UNLOADING
 
 script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
 
-/*
+//int array_custmischarg[PLAYERMAX];
+//int array_doomHealth[PLAYERMAX];
+//int array_metpick[PLAYERMAX];
+//int array_hitindic[PLAYERMAX];
 
-int array_custmischarg[PLAYERMAX];
-int array_runrunruu[PLAYERMAX];
-int array_doomHealth[PLAYERMAX];
-int array_metpick[PLAYERMAX];
-int array_hitindic[PLAYERMAX];
-
-function int MetroidClientVars(void)
+function int WeebClientVars(void)
 {
-    int custmischarg      = !!GetCVar("metroid_cl_custommissilecharge");
-    int hitindic          = !!GetCVar("metroid_cl_hitindicator");
-    int metpick           = !!GetCVar("metroid_cl_nometroidpickups");
-    int doomHealth        = !!GetCVar("metroid_cl_doomhealth");
-    int runrunruu         = !!GetCVar("cl_run");
+    //int custmischarg      = !!GetCVar("metroid_cl_custommissilecharge");
+    //int hitindic          = !!GetCVar("metroid_cl_hitindicator");
+    //int metpick           = !!GetCVar("metroid_cl_nometroidpickups");
+    //int doomHealth        = !!GetCVar("metroid_cl_doomhealth");
+    int recoilrules         = !!GetCVar("ds_cl_norecoil");
 
-    return (custmischarg << 4) + (hitindic << 3) + (metpick << 2) + (doomHealth << 1) + runrunruu;
+    return /*(custmischarg << 4) + (hitindic << 3) + (metpick << 2) + (doomHealth << 1) +*/ recoilrules;
 }
 
-script METROID_ENTER_CLIENTSIDE ENTER clientside
+script WEEB_ENTER_CLIENT ENTER clientside
 {
     int execInt, oExecInt, execStr;
     int pln = PlayerNumber();
@@ -628,18 +633,18 @@ script METROID_ENTER_CLIENTSIDE ENTER clientside
         if (ConsolePlayerNumber() != PlayerNumber()) { Delay(1); continue; }
 
         oExecInt = execInt;
-        execInt = MetroidClientVars();
+        execInt = WeebClientVars();
 
         if (execInt != oExecInt)
         {
             if (!IsServer)
             {
-                execStr = StrParam(s:"puke -", d:METROID_PUKE, s:" ", d:execInt, s:" ", d:pln);
+                execStr = StrParam(s:"puke -", d:WEEB_PUKE, s:" ", d:execInt, s:" ", d:pln);
                 ConsoleCommand(execStr);
             }
             else
             {
-                ACS_ExecuteWithResult(METROID_PUKE, execInt, pln);
+                ACS_ExecuteWithResult(WEEB_PUKE, execInt, pln);
             }
         }
 
@@ -647,25 +652,22 @@ script METROID_ENTER_CLIENTSIDE ENTER clientside
     }
 }
 
-script METROID_PUKE (int values) net
+script WEEB_PUKE (int values) net
 {
     int pln = PlayerNumber();
 
-    array_runrunruu[pln]     = values & 1;
-    array_doomHealth[pln]    = values & 2;
+    array_recoilrules[pln]     = values & 1;
+    /*array_doomHealth[pln]    = values & 2;
     array_metpick[pln]       = values & 4;
     array_hitindic[pln]      = values & 8;
-    array_custmischarg[pln]  = values & 16;
+    array_custmischarg[pln]  = values & 16;*/
 }
 
-        if (array_custmischarg[pln]) { GiveInventory("CustomMissileCharge", 1); }
+/*        if (array_custmischarg[pln]) { GiveInventory("CustomMissileCharge", 1); }
         else { TakeInventory("CustomMissileCharge", 0x7FFFFFFF); }
 
         if (array_doomHealth[pln]) { GiveInventory("DoomHealthCounter", 1); }
         else { TakeInventory("DoomHealthCounter", 0x7FFFFFFF); }
-        
-        if (array_runrunruu[pln]) { GiveInventory("AlwaysRunIsOn", 1); }
-        else { TakeInventory("AlwaysRunIsOn", 0x7FFFFFFF); }
         
         if (array_metpick[pln]) { GiveInventory("NoMetroidPickupSystem", 1); }
         else { TakeInventory("NoMetroidPickupSystem", 0x7FFFFFFF); }

@@ -5,4 +5,5 @@
 server int ds_runninginzdoom = 1;
 
 // Clientside cvars
-server int ds_cl_nomusic = 0;
+user int ds_cl_nomusic = 0;
+user int ds_cl_norecoil = 0;

@@ -362,8 +362,8 @@ actor "Kharon + Omen" : HwandoBase //replaces SuperShotgun
     HitLight:
         TNT1 A 0 A_SetAngle(angle+(random(-400,400)/1000.000))
         TNT1 A 0 A_Recoil(0.5)
-        CMC1 G 1 A_SetPitch(pitch+(random(50,150)/100.00))
-        CMC1 H 1 A_SetPitch(pitch-(random(150,300)/100.00))
+        CMC1 G 1 A_SetPitch(pitch+(150)/100.00)
+        CMC1 H 1 A_SetPitch(pitch-(150)/100.00)
         TNT1 A 0 A_TakeInventory("HammerHit",1)
         TNT1 A 10 A_WeaponReady(WRF_NOSECONDARY)
         TNT1 A 60 A_WeaponReady
@@ -524,7 +524,7 @@ actor "Kharon + Omen" : HwandoBase //replaces SuperShotgun
         TNT1 A 0 A_TakeInventory("Kharon + Omen",1)
         TNT1 A 0 A_TakeInventory("Kharon + Acacia A-22",1)
         TNT1 A 0 A_TakeInventory("KamenRangerHenshin",1)
-        TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",30)
         TNT1 A 0 A_GiveInventory("IronMaidenArmor2",100)
         TNT1 A 0 A_GiveInventory("InIronMaiden",1)
         TNT1 A 0 A_GiveInventory("IronMaidenSpeed",1)
