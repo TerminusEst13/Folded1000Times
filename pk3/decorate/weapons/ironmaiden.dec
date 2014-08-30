@@ -2,14 +2,14 @@ actor IronMaidenArmor : ArmorBonus
 {
     Armor.SavePercent 100
     Armor.MaxSaveAmount 100
-    DamageFactor "Normal", 0.85
+    DamageFactor "Normal", 0.5
 }
 
 actor IronMaidenArmor2 : BasicArmorPickup
 {
     Armor.SavePercent 100
     Armor.SaveAmount 100
-    DamageFactor "Normal", 0.85
+    DamageFactor "Normal", 0.5
 }
 
 ACTOR IronMaidenRepel
