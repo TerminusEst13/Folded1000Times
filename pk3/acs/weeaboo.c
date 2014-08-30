@@ -13,8 +13,10 @@ int GotShotgun;
 int GotCarronade;
 int GotUzi;
 int GotHam; // HAM
-
-//#include "weeb_doubletap.h"
+int IronMaidenMusic[IRONMUS] = 
+{
+   "D_IRONM1","D_IRONM2","D_IRONM3","D_IRONM4","D_IRONM5","D_IRONM6","D_IRONM7"
+};
 
 script WEEB_RESPAWN respawn
 {
@@ -36,6 +38,15 @@ script WEEB_OPEN OPEN
     {
         if (GetCvar("ds_runninginzdoom") == 0) { if (!GetCvar("compat_clientssendfullbuttoninfo")) { ConsoleCommand("set compat_clientssendfullbuttoninfo 1"); } }
         delay(1);
+    }
+}
+
+script WEEB_OPEN_CLIENT OPEN clientside
+{
+    delay(1);
+    if (GetCvar("ds_runninginzdoom") == 0)
+    {
+        if (!GetCvar("ds_cl_nomusic")) { ConsoleCommand("set ds_cl_nomusic 0"); ConsoleCommand("archivecvar ds_cl_nomusic"); }
     }
 }
 
@@ -166,6 +177,7 @@ script WEEB_DECORATE (int burrshet)
         if (CheckInventory("GotCarronade") == 1) { GiveInventory("Kharon + Exodus",1); }
         if (CheckInventory("GotHammer") == 1) { GiveInventory("Kharon + Omen",1); }
         SetWeapon("Kharon + Acacia A-22");
+        ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUSBACK,0,0);
         delay(1);
         TakeInventory("IronMaidenArmor",0x7FFFFFFF);
         TakeInventory("IronMaidenArmor2",0x7FFFFFFF);
@@ -198,6 +210,15 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
           Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it...");
           break;
         }
+        break;
+
+    case WEEB_DEC_CHANGEMUS:
+	    int i = random(0, IRONMUS-1);
+	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic(IronMaidenMusic[i],0); }
+        break;
+
+    case WEEB_DEC_CHANGEMUSBACK:
+	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
         break;
     }
 }
@@ -249,6 +270,7 @@ script WEEB_ENTER ENTER
     SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
     GiveInventory("NewLevelStatReset",1);
     if (CheckInventory("HammerCharge") > 100) { SetAmmoCapacity("HammerCharge",100); SetInventory("HammerCharge",80); }
+    if (CheckInventory("InIronMaiden") == 1) { ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0); }
     
     while (1)
     {
@@ -385,7 +407,7 @@ script WEEB_ENTER ENTER
         if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
         {
             ActivatorSound("ghost/jump", 127);
-            if (CheckInventory("InIronMaiden") == 0 ) { ThrustThingZ(0,36,0,0); } else { ThrustThingZ(0,42,0,0); }
+            if (CheckInventory("InIronMaiden") == 0 ) { ThrustThingZ(0,36,0,0); } else { ThrustThingZ(0,48,0,0); }
             GiveInventory("AcesHigh", 1);
         }
         // Remove AcesHigh when we're back on the ground
@@ -395,30 +417,30 @@ script WEEB_ENTER ENTER
     // You may now applaud his genius.
 
         // Dodging
-        if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0 && !CheckInventory("CantStopTheBlock"))
+        if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
         { if (buttons & BT_SPEED && buttons & BT_FORWARD)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+0,45,0,0); } else { ThrustThing(KurtAngle+0,75,0,0); }
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+0,45,0,0); } else { ThrustThing(KurtAngle+0,90,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVELEFT)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+64,45,0,0); } else { ThrustThing(KurtAngle+64,75,0,0); }
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+64,45,0,0); } else { ThrustThing(KurtAngle+64,90,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_BACK)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+128,45,0,0); } else { ThrustThing(KurtAngle+128,75,0,0); }
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+128,45,0,0); } else { ThrustThing(KurtAngle+128,90,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
           if (buttons & BT_SPEED && buttons & BT_MOVERIGHT)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+192,45,0,0); } else { ThrustThing(KurtAngle+192,75,0,0); }
+              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+192,45,0,0); } else { ThrustThing(KurtAngle+192,90,0,0); }
               if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
@@ -470,7 +492,7 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (MarchOfTheImmortal >= 13)
+            if (MarchOfTheImmortal >= 16)
             {
               TakeInventory("SuperMeterCounter",1);
               MarchOfTheImmortal = 0;

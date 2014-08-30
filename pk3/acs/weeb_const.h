@@ -11,8 +11,11 @@
 #define WEEB_OPEN                            274
 #define WEEB_CLIENTDECORATE                  275
 #define WEEB_DEATH                           276
+#define WEEB_OPEN_CLIENT                     277
 
 // Definitions
+
+#define IRONMUS 7
 
 #define WB_DODGE         0
 #define WD_FORWARD       0
@@ -52,4 +55,6 @@
 #define WEEB_DEC_UNFREEZE2    14
 #define WEEB_DEC_REMOVEKEBAB  15
 
-#define WEEB_DEC_GETMESSAGES  0
+#define WEEB_DEC_GETMESSAGES    0
+#define WEEB_DEC_CHANGEMUS      1
+#define WEEB_DEC_CHANGEMUSBACK  2

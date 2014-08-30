@@ -1,3 +1,8 @@
 // Boy, this is gonna be odd if Zandro ever catches up with ZDoom.
 // Talk about not futureproof.
+
+// Server cvars
 server int ds_runninginzdoom = 1;
+
+// Clientside cvars
+server int ds_cl_nomusic = 0;

@@ -12,6 +12,25 @@ actor IronMaidenArmor2 : BasicArmorPickup
     DamageFactor "Normal", 0.5
 }
 
+ACTOR IronMaidenRepel
+{
+    Radius 1
+    Height 1
+    Speed 0
+    +NOCLIP
+    +FORCERADIUSDMG
+    -SOLID
+    DamageType "ExodusJump"
+    Obituary "%k shouldn't have killed %o with this."
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_Explode(374,374,0)
+        Stop
+    }
+}
+
 actor "Iron Fist" : Weapon
 {
     Weapon.KickBack 75

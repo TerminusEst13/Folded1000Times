@@ -50,7 +50,9 @@ const int WEEB_DEC_HAMAMMO3    = 12;
 const int WEEB_DEC_FREEZE2     = 13;
 const int WEEB_DEC_UNFREEZE2   = 14;
 
-const int WEEB_DEC_GETMESSAGES = 0;
+const int WEEB_DEC_GETMESSAGES   = 0;
+const int WEEB_DEC_CHANGEMUS     = 1;
+const int WEEB_DEC_CHANGEMUSBACK = 2;
 
 #include "decorate/tokens.dec"
 #include "decorate/items.dec"

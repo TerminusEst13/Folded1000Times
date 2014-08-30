@@ -352,6 +352,8 @@ actor "Kharon + Acacia A-22" : HwandoBase
         HNSN D 2 A_SetBlend("Red",1.0,70)
         TNT1 A 0 A_GiveInventory("Iron Fist",1)
         TNT1 A 0 A_SelectWeapon("Iron Fist")
+        TNT1 A 0 A_SpawnItemEx("IronMaidenRepel",0,0,0,0,0,0,0,48)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0)
         TNT1 A 0 A_TakeInventory("AlreadyInLevel",1)
         TNT1 A 0 A_TakeInventory("Kharon + Testament",1)
         TNT1 A 0 A_TakeInventory("Kharon + Sabbath",1)
