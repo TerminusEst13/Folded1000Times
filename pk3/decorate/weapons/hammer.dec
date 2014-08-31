@@ -533,7 +533,7 @@ actor "Kharon + Omen" : HwandoBase //replaces SuperShotgun
     }
 }
 
-actor HammerAttackBase
+actor HammerAttackBase : FastProjectile
 {
     Radius 8
     Height 6
