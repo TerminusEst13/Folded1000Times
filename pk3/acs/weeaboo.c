@@ -423,30 +423,26 @@ script WEEB_ENTER ENTER
 
         // Dodging
         if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
-        { if (buttons & BT_SPEED && buttons & BT_FORWARD)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+0,45,0,0); } else { ThrustThing(KurtAngle+0,90,0,0); }
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
+        { if (buttons & BT_SPEED && buttons & BT_FORWARD) {
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+0,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+0,25,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          if (buttons & BT_SPEED && buttons & BT_MOVELEFT)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+64,45,0,0); } else { ThrustThing(KurtAngle+64,90,0,0); }
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
+          if (buttons & BT_SPEED && buttons & BT_MOVELEFT) {
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+64,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+64,25,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          if (buttons & BT_SPEED && buttons & BT_BACK)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+128,45,0,0); } else { ThrustThing(KurtAngle+128,90,0,0); }
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
+          if (buttons & BT_SPEED && buttons & BT_BACK) {
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+128,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+128,25,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          if (buttons & BT_SPEED && buttons & BT_MOVERIGHT)
-              { if (CheckInventory("InIronMaiden") == 0 ) { ThrustThing(KurtAngle+192,45,0,0); } else { ThrustThing(KurtAngle+192,90,0,0); }
-              if (CheckInventory("OnTheGround") == 1) { ThrustThingZ(0,85,1,1); } else { ThrustThingZ(0,20,0,0); }
+          if (buttons & BT_SPEED && buttons & BT_MOVERIGHT) {
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+192,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+192,25,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
@@ -497,7 +493,7 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (MarchOfTheImmortal >= 16)
+            if (MarchOfTheImmortal >= 14)
             {
               TakeInventory("SuperMeterCounter",1);
               MarchOfTheImmortal = 0;
