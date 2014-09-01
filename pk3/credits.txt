@@ -51,6 +51,7 @@ GRAPHICS:
 - Tormentor667/Z86 (The pretty effects for the Imp/Hell Noble balls, taken from UTNT/Particle Fire Enhancer)
 - Jimmy91 (The fonts used, Gargoyle Wing for BIGFONT and Apostacy for SMALLFONT)
 - Brothers of Metal (Font used for the main menu options)
+- Blood (The graphics for the Black Soul)
 
 CODE:
 =========

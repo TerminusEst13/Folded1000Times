@@ -327,8 +327,6 @@ steelbeast/attackhit      STLBHIT  // Taken from Left 4 Dead 2
 steelbeast/attackmiss     STLBMISS // Taken from Left 4 Dead 2
 steelbeast/explode        STLBXPLD // Taken from Quake III Arena
 
-
-
 $random wizard/see { wizsee1 wizsee2 wizsee3 wizsee4 } // All of these are taken from Painkiller
 wizsee1                   WZRDSEE1
 wizsee2                   WZRDSEE2
@@ -343,6 +341,39 @@ wizard/shothit            WZRDSHIT // The only non-Painkiller sound! Taken from 
 wizard/pain               WZRDPAIN // Taken from Plumculler
 wizard/death              WZRDDETH // Taken from Poolkonger
 
+$random blackened/laugh { dlaf1 dlaf2 dlaf3 dlaf4 dlaf5 } // Recorded by John Archer
+dlaf1                   DARKLAF1
+dlaf2                   DARKLAF2
+dlaf3                   DARKLAF3
+dlaf4                   DARKLAF4
+dlaf5                   DARKLAF5
+
+$random blackened/pain { dsqul1 dsqul2 dsqul3 dsqul4 dsqul5 dsqul6 } // Recorded by John Archer
+dsqul1                  DARKHNK1
+dsqul2                  DARKHNK2
+dsqul3                  DARKHNK3
+dsqul4                  DARKHNK4
+dsqul5                  DARKHNK5
+dsqul6                  DARKHNK6
+
+$random blackened/whisper { dwhis1 dwhis2 dwhis3 dwhis4 dwhis5 dwhis6 }
+dwhis1                  DARKWHS1
+dwhis2                  DARKWHS2
+dwhis3                  DARKWHS3
+dwhis4                  DARKWHS4
+dwhis5                  DARKWHS5
+dwhis6                  DARKWHS6
+
+$random blackened/scream { ghostscream1 ghostscream2 ghostscream3 ghostscream4 } // Taken from freqman from FreeSound.org, modified
+ghostscream1            DARKSCR1
+ghostscream2            DARKSCR2
+ghostscream3            DARKSCR3
+ghostscream4            DARKSCR4
+
+blacksoul/pain          BLKSPAIN // Unknown source
+blacksoul/death         BLKSDETH // Taken from Hexen
+blacksoul/active        BLKSACTV // Unknown source
+blacksoul/attack        BLKSATCK // Unknown source
 
 
 
