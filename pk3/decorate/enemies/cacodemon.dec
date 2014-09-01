@@ -68,7 +68,7 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
     Pain.KubiRangeAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
+        goto Pain
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
