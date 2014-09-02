@@ -308,6 +308,7 @@ trooper/gunready          ENREAD1 // Taken from Smash Bros. Melee
 sergeant/gunready         ENREAD2 // Taken from Smash Bros. Brawl
 chngnner/gunready         ENREAD3 // Taken from Smash Bros. Brawl
 cyberdemn/gunready        ENREAD4 // Taken from Smash Bros. Brawl with an Unreal 2 sound at the end
+revenant/gunready         ENREAD5 // Taken from Unreal 2
 trooper/fire              ENSHOT1 
 sergeant/fire             ENSHOT2
 chngnner/fire             ENSHOT3
