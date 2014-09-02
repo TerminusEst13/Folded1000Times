@@ -129,7 +129,7 @@ ACTOR BlackSoul
 
 ACTOR Blackened replaces PainElemental
 {
-    Health 400
+    Health 300
     Radius 26
     Height 52
     Mass 300
@@ -144,6 +144,9 @@ ACTOR Blackened replaces PainElemental
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
+    DamageFactor "KubiRangeAttack", 2.0
+    DamageFactor "KubiSpinAttack", 2.0
+    DamageFactor "KubiLungeAttack", 2.0
     MinMissileChance 5
     Monster
     +FLOAT
