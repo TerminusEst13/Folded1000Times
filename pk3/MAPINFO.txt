@@ -1,4 +1,4 @@
-map MAPFINAL "...And Into the Flame"
+map MAPFINAL "...And Into the Flames"
 {
     next = "MAP01"
     music = "D_FINAL1" // Finntroll - Haterop
@@ -28,7 +28,7 @@ skill normal
 {
 	ACSReturn = 2
 	SpawnFilter = Hard
-	Name = "Point of No Return" // Lords of Decadence
+	Name = "Take No Prisoners" // Megadeth
 	MustConfirm = "$CONFIRM_NORMAL"
     TextColor = white
 	//DefaultSkill
@@ -38,7 +38,7 @@ skill hard
 {
 	ACSReturn = 3
 	SpawnFilter = Hard
-	Name = "Thrash 'Till Death" // Destruction
+	Name = "Facing Hell" // Ozzy Osbourne
 	MustConfirm = "$CONFIRM_HARD"
     TextColor = white
 }
@@ -48,7 +48,7 @@ skill nightmare
 	ACSReturn = 4
 	FastMonsters
 	SpawnFilter = Nightmare
-	Name = "Set the World Afire" // Megadeth
+	Name = "Killing Machine" // Judas Priest
 	MustConfirm = "$CONFIRM_NIGHTMARE"
     TextColor = white
 	Aggressiveness = 0.55
@@ -60,7 +60,7 @@ skill ohgodhelpme
 	FastMonsters
 	DisableCheats
 	SpawnFilter = Nightmare
-	Name = "   "
+	Name = "Angel of Death" // Slayer
 	MustConfirm = "$CONFIRM_OHGODHELPME"
     TextColor = white
 	Aggressiveness = 0.95

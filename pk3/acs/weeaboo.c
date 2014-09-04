@@ -63,6 +63,8 @@ script WEEB_DECORATE (int burrshet)
         int delaytimer = delaytotal;
         int delaytime = 10;
         int delaycount = 0;
+
+        if (CheckInventory("PowerShieldProtection") == 1) { terminate; }
         
         if (CheckInventory("ContraArmorToken") >= 1)
             { TakeInventory("ContraArmorToken",1); TakeInventory("HyperComboCounter",25); }
@@ -128,12 +130,12 @@ script WEEB_DECORATE (int burrshet)
         break;
 
     case WEEB_DEC_MEGASPHERE:
-        if (GameSkill () == 0) { SetInventory("ContraLifeToken",10); SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",4); }
-        if (GameSkill () == 1) { SetInventory("ContraLifeToken",8);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",4); }
-        if (GameSkill () == 2) { SetInventory("ContraLifeToken",6);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",3); }
-        if (GameSkill () == 3) { SetInventory("ContraLifeToken",4);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",3); }
-        if (GameSkill () == 4) { SetInventory("ContraLifeToken",2);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",2); }
-        if (GameSkill () == 5) { SetInventory("ContraLifeToken",0);  SetInventory("ContraArmorToken",5); SetInventory("OverLifeToken",1); }
+        if (GameSkill () == 0) { SetInventory("ContraLifeToken",10); SetInventory("ContraArmorToken",4); SetInventory("OverLifeToken",4); }
+        if (GameSkill () == 1) { SetInventory("ContraLifeToken",8);  SetInventory("ContraArmorToken",4); SetInventory("OverLifeToken",4); }
+        if (GameSkill () == 2) { SetInventory("ContraLifeToken",6);  SetInventory("ContraArmorToken",4); SetInventory("OverLifeToken",3); }
+        if (GameSkill () == 3) { SetInventory("ContraLifeToken",4);  SetInventory("ContraArmorToken",4); SetInventory("OverLifeToken",3); }
+        if (GameSkill () == 4) { SetInventory("ContraLifeToken",2);  SetInventory("ContraArmorToken",4); SetInventory("OverLifeToken",2); }
+        if (GameSkill () == 5) { SetInventory("ContraLifeToken",0);  SetInventory("ContraArmorToken",4); SetInventory("OverLifeToken",1); }
         break;
 
     case WEEB_DEC_WEPSTAY:

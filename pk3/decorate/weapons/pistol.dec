@@ -30,14 +30,54 @@ actor "Kharon + Acacia A-22" : HwandoBase
         loop
     IdleAnimation:
         WEPA ABCD 2 A_WeaponReady
-        IDLE ABC 2 A_WeaponReady
-        IDLE C 15 A_WeaponReady
-        IDLE DEFG 2 A_WeaponReady
-        IDLE G 15 A_WeaponReady
-        IDLE HIJKLMNOPQRSTUV 2 A_WeaponReady
-        IDLE V 15 A_WeaponReady
-        IDLE WXY 2 A_WeaponReady
+    IdleDecide:
+        TNT1 A 0 A_Jump(16,"Idle0")
+        TNT1 A 0 A_Jump(255,"Idle1","Idle2")
+        TNT1 A 1
+        loop
+    Idle0:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("idle/raise")
+        IDL0 ABCDEF 2 A_WeaponReady
+        IDL0 F 5 A_WeaponReady
+        TNT1 A 0 A_PlaySound("misc/keytry")
+        IDL0 F 10 A_WeaponReady
+        IDL0 GHI 1 A_WeaponReady
+        IDL0 J 10 A_WeaponReady
+        IDL0 JKLMNOP 2 A_WeaponReady
         TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    Idle1:
+        IDL1 ABC 2 A_WeaponReady
+        IDL1 C 15 A_WeaponReady
+        IDL1 DEFG 2 A_WeaponReady
+        IDL1 G 15 A_WeaponReady
+        IDL1 HIJKLMNOPQRSTUV 2 A_WeaponReady
+        IDL1 V 15 A_WeaponReady
+        IDL1 WXY 2 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    Idle2:
+        IDL2 ABCCDDEEE 1 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/spray")
+        IDL2 FGHH 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/spray")
+        IDL2 FGHH 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/spray")
+        IDL2 FGHH 2 A_WeaponReady
+        IDL2 HHLLMNOPPQQ 1 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUT 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUT 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUT 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUTT 2 A_WeaponReady
+        IDL2 WWWXXYYZ 1 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    IdleFinish:
         WEPA DCBA 2 A_WeaponReady
         TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
         goto Ready
@@ -333,6 +373,7 @@ actor "Kharon + Acacia A-22" : HwandoBase
         HNSH F 15 A_PlaySoundEx("henshin/call","soundslot6",0,0)
         TNT1 A 0 A_PlayWeaponSound("henshin/foley")
         HNSH FGHIIJJKKLL 1
+        TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
         TNT1 A 0 A_PlayWeaponSound("henshin/foley")
         HNSH MNOOPP 1
         TNT1 A 0 A_PlayWeaponSound("henshin/foley")

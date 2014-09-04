@@ -49,6 +49,7 @@ actor PickupBase : CustomInventory
 
 actor ShotgunPickup : PickupBase replaces SuperShotgun
 {
+    Scale 0.9
     Inventory.PickupMessage ""
     Inventory.PickupSound "ThereOnceWasAManInNantucket"
     States
@@ -89,7 +90,7 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 A 1 A_SetTranslucent(1,0)
     Spawn2:
-        SGN2 A -1
+        MSHT Z -1
         stop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("GotShotgun",1,"PickupFail")

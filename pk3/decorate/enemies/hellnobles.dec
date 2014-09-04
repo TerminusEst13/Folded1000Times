@@ -64,10 +64,17 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
 
     Death.Bloody2:
         BOS2 H 2 A_NoBlocking
-        XDI3 A 0 A_PlaySound("S_Cutdead")
-        XDI3 AAAAA 2 A_ThrowGrenade ("BloodSplashGus1c",4,5+random(0,7),8)
-        XDI3 AAABBCC 2 A_SpawnDebris("BloodShowerC2")
-        XDI3 D -1
+        TNT1 A 0 A_PlaySound("S_Cutdead")
+        TNT1 A 0 A_Jump(128,"Death.Bloody2b")
+        KXD1 AAABBB 2 A_ThrowGrenade ("BloodSplashGus1c",4,5+random(0,7),8)
+        KXD1 CCCDDEEFG 2 A_SpawnDebris("BloodShowerC2")
+        KXD1 H -1
+        Stop
+    Death.Bloody2b:
+        TNT1 A 0
+        KXD1 IIIJJJ 2 A_ThrowGrenade ("BloodSplashGus1c",4,5+random(0,7),8)
+        KXD1 KKKLLMMNO 2 A_SpawnDebris("BloodShowerC2")
+        KXD1 H -1
         Stop
 
     death.Bloody:

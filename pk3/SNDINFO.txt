@@ -69,6 +69,12 @@ $random destroy/barrel { dbxpl1 dbxpl2 dbxpl3 } // Taken from Halo: Reach
 dbxpl1                    BARLXPL1
 dbxpl2                    BARLXPL2
 dbxpl3                    BARLXPL3
+$random bounce/barrel { dbnce1 dbnce2 dbnce3 } // Taken from Painkiller
+dbnce1                    BARLBNC1
+dbnce2                    BARLBNC2
+dbnce3                    BARLBNC3
+$volume bounce/barrel 0.6
+$limit bounce/barrel 0
 
 // Pickups
 
@@ -187,6 +193,10 @@ sword/beam3               SRDBEEM3
 sword/block               SRDBLOCK // Taken from Super Smash Bros. Brawl
 sword/reflect             SRDRFLCT
 
+idle/spray                IDLSPRAY
+idle/rub                  IDLRUBBR
+idle/raise                IDLSWARR
+
 
 $random sword/shielddefense { block1 block2 block3 } // Taken from the Oblivion Combat Sound Replacement
 block1                    SHLDBLK1
@@ -227,7 +237,7 @@ pistol/dry                HPISDRY // Taken from Killing Floor
 
 shotgun/fire              SHOTFIRE
 shotgun/reload            SHOTCOCK
-shotgun/dry               SHOTDRY // Taken from Killing Floor
+shotgun/dry               SHOTDRY // Taken from Killing Floor, edited slightly
 
 // Uzi sounds
 

@@ -11,7 +11,7 @@ SPECIAL THANKS TO:
 
 GRAPHICS:
 =========
-- Mike12/DrDoctor/David G/Vader (Custom deaths)
+- Mike12/DrDoctor/David G/Vader/Eriance/Minigunner/Funktasm (Custom deaths)
   ^ All custom deaths have been sorted in folders according to the artist
 - Creation's End (Titlescreen: A New Beginning)
 - Mike12
@@ -21,6 +21,7 @@ GRAPHICS:
   ^ The Acacia A-22 hunting pistol
   ^ The Kharon
   ^ The widescreen Duke Nukem 64 grenade launcher for the Exodus
+  ^ The polished Marathon shotgun for the Testament
 - Sgt. Shivers
   ^ The idle animation
   ^ The henshin animation
@@ -55,7 +56,7 @@ GRAPHICS:
 
 CODE:
 =========
-- Ijon Tichy 
+- Ijon Tichy
   ^ The double-tap code (taken from Parkmore)
   ^ The shockwave from the spin attack
   ^ The trail for the zombie lasers/razor wind
