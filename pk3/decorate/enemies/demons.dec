@@ -3,6 +3,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     Speed 10
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
@@ -40,6 +41,10 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         goto Pain
+    Pain.SabbathDamage:
+        SARG H 5 A_Recoil(2)
+        SARG H 5 A_Pain
+        Goto See
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
@@ -212,7 +217,9 @@ ACTOR WeeabooClink replaces Spectre
     ActiveSound "steelbeast/idle"
     Obituary "%o was bisected by a steel beast."
     Species "Body"
+    PainChance 64
     PainChance "kubiuti", 255
+    PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
@@ -260,6 +267,10 @@ ACTOR WeeabooClink replaces Spectre
     Pain:
         CLNK H 3
         CLNK H 3 A_Pain
+        Goto See
+    Pain.SabbathDamage:
+        CLNK H 5 A_Recoil(2)
+        CLNK H 5 A_Pain
         Goto See
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:

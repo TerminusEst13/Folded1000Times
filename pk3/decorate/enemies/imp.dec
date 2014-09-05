@@ -5,6 +5,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiRangeAttack", 255
@@ -43,6 +44,10 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Pain
+    Pain.SabbathDamage:
+        TROO H 5 A_Recoil(2)
+        TROO H 5 A_Pain
+        Goto See
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:

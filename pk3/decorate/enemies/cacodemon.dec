@@ -7,6 +7,7 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
     Mass 400
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
@@ -77,6 +78,10 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
         //TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death//.kubiuti+2
+    Pain.SabbathDamage:
+        WZRD C 5 A_Recoil(1)
+        WZRD C 5 A_Pain
+        Goto See
     Pain:
         WZRD C 3
         WZRD C 3 A_Pain

@@ -16,7 +16,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "KubiSpinAttack", 10.0
     DamageFactor "KubiRangeAttack", 10.0
     DamageFactor "KubiLungeAttack", 10.0
-    DamageFactor "AcaciaDamage", 5.0
+    DamageFactor "AcaciaDamage", 3.0
     DamageFactor "TestamentDamage", 5.0
     DamageFactor "SabbathDamage", 5.0
     DamageFactor "ExodusDamage", 5.0
@@ -377,7 +377,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "KubiSpinAttack", 6.6
     DamageFactor "KubiRangeAttack", 6.6
     DamageFactor "KubiLungeAttack", 6.6
-    DamageFactor "AcaciaDamage", 3.3
+    DamageFactor "AcaciaDamage", 2.5
     DamageFactor "TestamentDamage", 3.3
     DamageFactor "SabbathDamage", 3.3
     DamageFactor "ExodusDamage", 3.3
@@ -713,7 +713,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "KubiSpinAttack", 3.0
     DamageFactor "KubiRangeAttack", 3.0
     DamageFactor "KubiLungeAttack", 3.0
-    DamageFactor "AcaciaDamage", 1.5
+    DamageFactor "AcaciaDamage", 1.25
     DamageFactor "TestamentDamage", 1.5
     DamageFactor "SabbathDamage", 1.5
     DamageFactor "ExodusDamage", 1.5

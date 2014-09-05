@@ -288,11 +288,11 @@ actor BulletBaseNoCombo : BulletBase
     }
 }
 
-actor HuntingPistolBullet : BulletBase { Damage (15) DamageType "AcaciaDamage" }
+actor HuntingPistolBullet : BulletBase { Damage (30) DamageType "AcaciaDamage" }
 actor ShotgunBullet1 : BulletBase { Damage (13) DamageType "TestamentDamage" }
 actor ShotgunBullet2 : BulletBaseNoCombo { Damage (13) DamageType "TestamentDamage" }
-actor UziBullet1 : BulletBase { Damage (12) DamageType "SabbathDamage" }
-actor UziBullet2 : BulletBaseNoCombo { Damage (12) DamageType "SabbathDamage" }
+actor UziBullet1 : BulletBase { Damage (20) DamageType "SabbathDamage" }
+actor UziBullet2 : BulletBaseNoCombo { Damage (20) DamageType "SabbathDamage" }
 
 ACTOR WeebBulletPuff
 {
