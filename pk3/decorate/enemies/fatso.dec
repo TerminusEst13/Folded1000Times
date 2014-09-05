@@ -85,7 +85,7 @@ actor WeeabooFatty : Fatso replaces Fatso
         TNT1 AAAAA 0 A_CustomMissile("BloodShower2",32,0,random(0,360),2,random(0,360))
         TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
         TNT1 AAAAAAAAAA 0 A_CustomMissile("EnemySplashGus1",random(24,48),0,random(0,360),2,random(0,360))
-        TNT1 AAA 0 A_SpawnItem("BSPIKubiuted",0)
+        //TNT1 AAA 0 A_SpawnItem("BSPIKubiuted",0)
         FATT VVVVVVWWWWWW 1 A_SpawnDebris("BloodShower2")
         FATT XYZ 5 A_SpawnDebris("BloodShower2")
         FATT [ 5 A_SpawnDebris("BloodShower2")

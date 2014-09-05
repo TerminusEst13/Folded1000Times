@@ -11,7 +11,7 @@ SPECIAL THANKS TO:
 
 GRAPHICS:
 =========
-- Mike12/DrDoctor/David G/Vader/Eriance/Minigunner/Funktasm/Sgt. Mark 4 (Custom deaths)
+- Mike12/DrDoctor/David G/Vader/Eriance/Minigunner/Funktasm/Neoworm/Sgt. Mark IV (Custom deaths)
   ^ All custom deaths have been sorted in folders according to the artist
 - Creation's End (Titlescreen: A New Beginning)
 - Mike12
@@ -36,7 +36,13 @@ GRAPHICS:
 - Ettingrinder (The Candelabra)
 - NeuralStunner (The Omen's pickup sprite)
 - Rogue Software (All the lightning effects and the keycard bases, from Strife)
-- Raven Software (The skull keys edited from Hexen, the Steel Beast edited from the Heretic Sabreclaw, the Wizard edited from the Hexen Bishop)
+- Raven Software
+  ^ The skull keys edited from Hexen
+  ^ The Steel Beast edited from the Heretic Sabreclaw
+  ^ The Wizard edited from the Hexen Bishop
+  ^ The Blackened edited from the Hexen Reiver
+  ^ The Priest edited from Hexen's Parias and the Heretic Iron Lich
+  ^ The Priest's fire effects nicked from Hexen
 - Id Software (The laser shots from the zombies)
 - Ravage/rf' (The red/blue/green torches)
 - CastleVania: Dawn of Sorrow/Order of Ecclesia/Portrait of Ruin (Bits and pieces of the HUD)

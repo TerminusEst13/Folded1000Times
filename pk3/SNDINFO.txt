@@ -386,6 +386,19 @@ blacksoul/death         BLKSDETH // Taken from Hexen
 blacksoul/active        BLKSACTV // Unknown source
 blacksoul/attack        BLKSATCK // Unknown source
 
+$random priest/see { psee1 psee2 psee3 } // Taken from Painkiller: Overdose
+psee1                   PRSTSEE1
+psee2                   PRSTSEE2
+psee3                   PRSTSEE3
+$random priest/idle { pidl1 pidl2 pidl3 } // Taken from Painkiller: Overdosee
+pidl1                   PRSTIDL1
+pidl2                   PRSTIDL2
+pidl3                   PRSTIDL3
+priest/pain             PRSTPAIN // Taken from Painkiller: Overdose
+priest/death            PRSTDETH // Taken from Painkiller: Overdose
+priest/shot             PRSTFIRE // Taken from RPG Maker VX Ace
+priest/shothit          PRSTFIHT // Taken from Doom 3
+
 
 
 
