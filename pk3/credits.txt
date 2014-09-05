@@ -11,7 +11,7 @@ SPECIAL THANKS TO:
 
 GRAPHICS:
 =========
-- Mike12/DrDoctor/David G/Vader/Eriance/Minigunner/Funktasm (Custom deaths)
+- Mike12/DrDoctor/David G/Vader/Eriance/Minigunner/Funktasm/Sgt. Mark 4 (Custom deaths)
   ^ All custom deaths have been sorted in folders according to the artist
 - Creation's End (Titlescreen: A New Beginning)
 - Mike12
