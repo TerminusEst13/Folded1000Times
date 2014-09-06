@@ -57,6 +57,12 @@ $limit world/lavasizzle       1
 $limit world/lavsiz2          1
 $limit world/lavasizzlesmall  2
 
+$random misc/gibbed { bsplatter1 bsplatter2 bsplatter3 bsplatter4 }
+bsplatter1                   BRTSPLT1
+bsplatter2                   BRTSPLT2
+bsplatter3                   BRTSPLT3
+bsplatter4                   BRTSPLT4
+
 // Destructable decorations
 
 destroy/candelabra        CNDLCUT

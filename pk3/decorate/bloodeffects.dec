@@ -24,6 +24,246 @@ ACTOR CuttingBlood : AxeBlood replaces AxeBlood
     }
 }
 
+actor GenericGoreActor
+{
+    +CANNOTPUSH
+    +DONTSPLASH
+    +NOTELEPORT
+    +NOBLOCKMAP
+    +MOVEWITHSECTOR
+    -NOGRAVITY
+    -SOLID
+    +CLIENTSIDEONLY
+    +FORCEXYBILLBOARD
+}
+
+actor TinyBouncyBone : GenericGoreActor
+{
+    Radius 1
+    Height 1
+    Mass 1
+    Scale 0.75
+    BounceFactor 0.45
+    BounceCount 4
+    +MISSILE
+    +DOOMBOUNCE
+    States
+    {
+    Spawn:
+        JNKQ ABC 3
+        loop
+    Death:
+        TNT1 A 0 A_Jump(255,"Death1","Death2","Death3","Death4","Death5","Death6")
+    Death1:
+        JNKQ D 2100
+        JNKQ DDDDDDDDDD 1 A_FadeOut(0.1)
+        stop
+    Death2:
+        JNKQ E 2100
+        JNKQ EEEEEEEEEE 1 A_FadeOut(0.1)
+        stop
+    Death3:
+        JNKQ F 2100
+        JNKQ FFFFFFFFFF 1 A_FadeOut(0.1)
+        stop
+    Death4:
+        JNKQ G 2100
+        JNKQ GGGGGGGGGG 1 A_FadeOut(0.1)
+        stop
+    Death5:
+        JNKQ H 2100
+        JNKQ HHHHHHHHHH 1 A_FadeOut(0.1)
+        stop
+    Death6:
+        JNKQ I 2100
+        JNKQ IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor TinyBone : GenericGoreActor
+{
+    Radius 1
+    Height 1
+    Mass 1
+    Scale 0.7
+    +MISSILE
+    States
+    {
+    Spawn:
+        JNKQ PQRS 2
+        loop
+    Death:
+        TNT1 A 0 A_Jump(255,"Death1","Death2","Death3","Death4","Death5")
+    Death1:
+        JNKQ K 2100
+        JNKQ KKKKKKKKKK 1 A_FadeOut(0.1)
+        stop
+    Death2:
+        JNKQ L 2100
+        JNKQ LLLLLLLLLL 1 A_FadeOut(0.1)
+        stop
+    Death3:
+        JNKQ M 2100
+        JNKQ MMMMMMMMMM 1 A_FadeOut(0.1)
+        stop
+    Death4:
+        JNKQ N 2100
+        JNKQ NNNNNNNNNN 1 A_FadeOut(0.1)
+        stop
+    Death5:
+        JNKQ O 2100
+        JNKQ OOOOOOOOOO 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor GoreGibBase : GenericGoreActor
+{
+    Health 1
+    Radius 8
+    Height 8
+    Mass 1
+    Scale 0.75
+    +MISSILE
+}
+
+actor Gore_Gib0 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB0 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB0 IJK 1
+        GIB0 L 2100
+        GIB0 LLLLLLLLLL 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib1 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB1 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB1 I 2100
+        GIB1 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib2 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB2 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB2 I 2100
+        GIB2 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib3 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB3 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB3 I 2100
+        GIB3 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib4 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB4 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB4 I 2100
+        GIB4 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib5 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB5 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB5 I 2100
+        GIB5 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib6 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB6 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB6 I 2100
+        GIB6 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib7 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB7 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB7 I 2100
+        GIB7 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Gore_Gib8 : GoreGibBase
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GIB8 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
+        loop
+    Death:
+        GIB8 I 2100
+        GIB8 IIIIIIIIII 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
 // Everything below here was coded by Doom667Shogun for dr6zn_beta3b.pk3, not me.
 // Incredible work, man!
 
@@ -113,6 +353,7 @@ actor BloodShower : Blood //replaces Blood
 {
 health    2
 +DONTSPLASH+LOWGRAVITY
++FLOORCLIP
 +CLIENTSIDEONLY
 states
 {
@@ -132,7 +373,7 @@ actor BloodShower2 : Blood
 {
 +MISSILE+CORPSE
 +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST //-NOBLOOD
-+DONTSPLASH
++FLOORCLIP
 +CLIENTSIDEONLY
 scale    0.7
 health    1
@@ -197,7 +438,8 @@ BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
 actor BloodShower3 : Blood
 {
 +LOWGRAVITY+CORPSE+NOTELEPORT+NOBLOCKMAP
-+NOBLOCKMONST+DONTSPLASH
++NOBLOCKMONST
++FLOORCLIP
 +CLIENTSIDEONLY
 scale    0.7
 mass    1
@@ -217,13 +459,12 @@ BEF2 D 4
 actor BloodShower4 : Blood 
 {
 +CORPSE+NOTELEPORT-NOBLOCKMAP
-+NOBLOCKMONST+DONTSPLASH
++NOBLOCKMONST
++FLOORCLIP
 +CLIENTSIDEONLY
 radius    8
 height    2
 mass    1
-RenderStyle    Translucent
-alpha    0.5
 states
 {
 Spawn:
@@ -231,15 +472,19 @@ BEF3 AA 1 A_PlaySound("S_Blodf") //S_Bloed
 BEF3 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
     Stop
 Spawn1:
+BEF3 A 2100
 BEF3 AAAAAAAAAA 100 A_FadeOut
     Stop
 Spawn2:
+BEF3 B 2100
 BEF3 BBBBBBBBBB 100 A_FadeOut
     Stop
 Spawn3:
+BEF3 C 2100
 BEF3 CCCCCCCCCC 100 A_FadeOut
     Stop
 Spawn4:
+BEF3 D 2100
 BEF3 DDDDDDDDDD 100 A_FadeOut
     Stop
 }
@@ -271,6 +516,7 @@ actor BloodShower5 : Blood
 {
 +MISSILE+CORPSE +LOWGRAVITY
 +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST
++FLOORCLIP
 +CLIENTSIDEONLY
 health    1
 radius    8
@@ -295,7 +541,8 @@ BFE4 A 0 A_SpawnItem("BloodShower5b",0,0,0,1)
 actor BloodShower5b
 {
 //+SHOOTABLE//+NOBLOCKMAP
-+NOTELEPORT+NOBLOCKMONST+DONTSPLASH
++NOTELEPORT+NOBLOCKMONST
++FLOORCLIP
 +CLIENTSIDEONLY
 health    10
 radius    4
@@ -405,6 +652,7 @@ actor EfectPrj
 {
 +NOBLOOD+NOBLOCKMAP+NOBLOCKMONST+NOTELEPORT+NOGRAVITY
 +ALLOWPARTICLES+FORCEXYBILLBOARD
++FLOORCLIP
 +CLIENTSIDEONLY
 health    2
 }
@@ -439,6 +687,7 @@ actor EnemySplashGus1
 {
 +NOBLOCKMAP+NOBLOCKMONST+NOTELEPORT+NOGRAVITY
 +ALLOWPARTICLES+FORCEXYBILLBOARD
++FLOORCLIP
 +CLIENTSIDEONLY
 Radius        8
 Height        8
