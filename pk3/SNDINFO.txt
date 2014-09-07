@@ -92,6 +92,7 @@ ammo/rocket1              AMMGRND1 // From Left 4 Dead 2
 ammo/rocket2              AMMGRND2 // From Left 4 Dead 2
 ammo/cell1                AMMSMGA1 // From Killing Floor
 ammo/cell2                AMMSMGA2 // From Left 4 Dead 2
+ammo/knapsack             BACKPGET // From World of Warcraft
 
 armor/silver              ARMRGET1 // Taken from Devil May Cry 3
 armor/gold                ARMRGET2 // Taken from Devil May Cry 3

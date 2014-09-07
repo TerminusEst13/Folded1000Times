@@ -137,3 +137,16 @@ actor WeebCellPack : WeebCell replaces CellPack
         Stop
     }
 }
+
+actor MagicKnapsack : Backpack replaces Backpack
+{
+    Inventory.PickupMessage "Picked up a bag of holding."
+    Inventory.PickupSound "ammo/knapsack"
+    Scale 0.85
+    States
+    {
+    Spawn:
+        BKPK A -1
+        Stop
+    }
+}

@@ -61,6 +61,7 @@ GRAPHICS:
 - Jimmy91 (The fonts used, Gargoyle Wing for BIGFONT and Apostacy for SMALLFONT)
 - Brothers of Metal (Font used for the main menu options)
 - Blood (The graphics for the Black Soul)
+- Diavolo no Daibouken (The base for the bag of holding)
 
 CODE:
 =========
