@@ -9,10 +9,16 @@ TO DO in no particular order:
 32: <TerminusEst13> ...I wonder if there's a way I can choke how much [combo meter] is given at once.
     <ijon> store the amount you have right when you start the attack
     <ijon> have ACS or custominventory or something check that and only give you more if it'd place you no more than X above that count
-37: Pretty up all non-laser enemy attacks, like the fireballs.
+37: Pretty up all non-laser enemy attacks.
+  ^ Revenant
+  ^ Baron of Hell/Hell Knight
+  ^ Archvile
+  ^ Cyberdemon
+  ^ Mancubus
 43: GLDEFS
 44: Expand on final map
 48: Convert .wav files to .ogg for size compression.
+49: Replacement for Wolfenstein SS
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
@@ -77,6 +83,8 @@ DONE:
 33: Make all enemy projectiles go A_UnsetShootable on death.
 34: Replace explosive barrels with something of neater substance.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
+37: Pretty up all non-laser enemy attacks.
+  ^ Imp
 39: Replace graphics on main menu options.
 40: Lightning sparks from hammer overcharge need to +DONTSPLASH
 41: Why do the Hell Nobles/Cacos not have colored blood wall decals? // Zandro bug - http://forum.zdoom.org/viewtopic.php?f=7&t=20507

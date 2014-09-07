@@ -28,7 +28,11 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     {
     Melee:
     Missile:
-        TROO EF 8 A_FaceTarget
+        TROO E 1 A_FaceTarget
+        TNT1 A 0 A_PlaySound("imp/preparefire")
+        TNT1 A 0 A_SpawnItemEx("WeeabooImpBallPrepare",2,28,32,0,0,0,0,160)
+        TROO EEEF 8 A_FaceTarget
+        TNT1 A 0 A_PlayWeaponSound("imp/shootfire")
         TROO G 5 A_CustomMissile("WeeabooImpBall")//A_TroopAttack
         TNT1 A 0 A_Jump(192,"See")
         TNT1 A 0 A_SpidRefire
@@ -242,12 +246,31 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     }
 }
 
-actor WeeabooImpBall : DoomImpBall replaces DoomImpBall
+actor WeeabooImpBallPrepare
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.5
+    Renderstyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        CFFX ABCDEFGHIJKLM 2 Bright
+        stop
+    }
+}
+
+actor WeeabooImpBall
 {
     Radius 8
     Height 10
     Health 5
-    Speed 12
+    Speed 10
+    Damage 3
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.9
     Species "EnemyShot"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
@@ -264,6 +287,9 @@ actor WeeabooImpBall : DoomImpBall replaces DoomImpBall
     DamageFactor "Kubiuti", 0.0
     DamageFactor "IronFistExplode", 0.0
     DamageFactor "HaltHammerzeitImpact", 0.0
+    DeathSound "priest/shothit"
+    Projectile
+    +RANDOMIZE
     +THRUSPECIES
     +THRUGHOST
     +SHOOTABLE
@@ -271,10 +297,33 @@ actor WeeabooImpBall : DoomImpBall replaces DoomImpBall
     +NOBLOOD
     States
     {
+    Spawn:
+        TNT1 AA 0 A_SpawnItemEx("WeebImpFireTrail",random(-50,50)/100.00,random(-50,50)/100.00,random(-50,50)/100.00,random(-150,150)/80.00,random(-150,150)/80.00,random(-150,150)/80.00,0,160)
+        CFFX N 1 Bright A_SpawnItemEx("WeebImpFireTrail",0,0,0,0,0,0,0,160)
+        Loop
     Death:
         TNT1 A 0 A_UnsetShootable
         TNT1 A 0 A_SpawnItemEx("EnemyImpBallInfight",0,0,0,0,0,0,0,32)
-        goto Super::Death
+        CFCF QRSTUVWXYZ 1 Bright
+        stop
+    }
+}
+
+actor WeebImpFireTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Alpha 0.75
+    Scale 0.8
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        TNT1 A 2
+    Spawn2:
+        CFFX O 4 BRIGHT A_FadeOut(0.125)
+        CFFX P 4 BRIGHT A_FadeOut(0.125)
+        stop
     }
 }
 

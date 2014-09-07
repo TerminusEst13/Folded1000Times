@@ -329,6 +329,9 @@ trooper/fire              ENSHOT1
 sergeant/fire             ENSHOT2
 chngnner/fire             ENSHOT3
 
+imp/preparefire           IMPFWOSH // Taken from Doom 3, sped up
+imp/shootfire             IMPSHOOT
+
 enemy/shothit             ENSHOTHT
 enemy/bisected            ENBISECT // Taken from Splatterhouse
 

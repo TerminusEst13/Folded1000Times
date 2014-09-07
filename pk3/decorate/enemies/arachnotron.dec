@@ -117,10 +117,12 @@ ACTOR Priest replaces Arachnotron
 
     Death:
         TNT1 A 0
+        TNT1 A 0 A_NoBlocking
         PRST H 2 A_Scream
         TNT1 AAAAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(4,32),0,random(0,360),2,random(0,360))
         PRST I 3 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
-        PRST J 3 A_NoBlocking
+        PRST J 3 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
         PRST KLMN 4 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
         PRST O -1 A_BossDeath
         stop

@@ -31,6 +31,7 @@ GRAPHICS:
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)
 - Captain J (The Sabbath large ammo pack)
 - Bloax (The broken bone sprites)
+- DonaldDuck (The Priest's sprites)
 - Duke Nukem 64 (The base for the Sabbath pickup sprite, the Exodus' sprites)
 - Shadow Warrior (The Exodus grenade sprites)
 - Aeons of Death (The Exodus explosion graphics)
@@ -43,7 +44,7 @@ GRAPHICS:
   ^ The Wizard edited from the Hexen Bishop
   ^ The Blackened edited from the Hexen Reiver
   ^ The Priest edited from Hexen's Parias and the Heretic Iron Lich
-  ^ The Priest's fire effects nicked from Hexen
+  ^ The Priest/Imp's fire effects nicked from Hexen
 - Id Software (The laser shots from the zombies)
 - Ravage/rf' (The red/blue/green torches)
 - CastleVania: Dawn of Sorrow/Order of Ecclesia/Portrait of Ruin (Bits and pieces of the HUD)
