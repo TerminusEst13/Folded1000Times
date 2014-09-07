@@ -29,6 +29,8 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
         TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
         TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
+        TNT1 A 1
+        fail
     BabyPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverBabyPickup")
     BabyFailCheck:
@@ -101,9 +103,15 @@ actor HealPackSmall1 : HealPackSmall
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         SODA A 1 BRIGHT
         SODA A 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -112,9 +120,15 @@ actor HealPackSmall2 : HealPackSmall
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         SODA B 1 BRIGHT
         SODA B 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -123,9 +137,15 @@ actor HealPackSmall3 : HealPackSmall
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         SODA C 1 BRIGHT
         SODA C 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -134,9 +154,15 @@ actor HealPackSmall4 : HealPackSmall
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         SODA D 1 BRIGHT
         SODA D 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -146,9 +172,15 @@ actor HealPackSmall5 : HealPackSmall
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         SODA E 1 BRIGHT
         SODA E 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -177,7 +209,8 @@ actor HealPackMedium: CustomInventory
         TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
         TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
         TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
-        stop
+        TNT1 A 1
+        fail
     BabyPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverBabyPickup")
     BabyFailCheck:
@@ -280,9 +313,15 @@ actor HealPackMedium1 : HealPackMedium
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         APPL A 1 BRIGHT
         APPL A 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -291,9 +330,15 @@ actor HealPackMedium2 : HealPackMedium
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         APPL B 1 BRIGHT
         APPL B 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -302,9 +347,15 @@ actor HealPackMedium3 : HealPackMedium
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         APPL C 1 BRIGHT
         APPL C 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -313,9 +364,15 @@ actor HealPackMedium4 : HealPackMedium
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
         APPL D 1 BRIGHT
         APPL D 30
         loop
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -530,6 +587,7 @@ actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
     Pickup: // That strange sensation when you realize your health system has gotten
             // so complex that it's actually easier to do in ACS than in Decorate.
         //TNT1 A 0 A_JumpIfInventory("ContraArmorToken",4,"Pickup2")
+        TNT1 A 1
         TNT1 A 0 A_SetBlend("Blue",0.6,15)
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_MEGASPHERE,0,0)
         TNT1 A 1

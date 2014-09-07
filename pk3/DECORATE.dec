@@ -49,6 +49,8 @@ const int WEEB_DEC_HAMAMMO2    = 11;
 const int WEEB_DEC_HAMAMMO3    = 12;
 const int WEEB_DEC_FREEZE2     = 13;
 const int WEEB_DEC_UNFREEZE2   = 14;
+const int WEEB_DEC_REMOVEKEBAB = 15;
+const int WEEB_DEC_DIFFCHECK   = 16;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
