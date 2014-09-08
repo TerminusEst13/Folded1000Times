@@ -93,6 +93,10 @@ ammo/rocket2              AMMGRND2 // From Left 4 Dead 2
 ammo/cell1                AMMSMGA1 // From Killing Floor
 ammo/cell2                AMMSMGA2 // From Left 4 Dead 2
 ammo/knapsack             BACKPGET // From World of Warcraft
+ammo/soul                 SOULGET
+ammo/soulstone            SOLSTNGT // From Doom 3
+
+$volume ammo/soul 0.75
 
 armor/silver              ARMRGET1 // Taken from Devil May Cry 3
 armor/gold                ARMRGET2 // Taken from Devil May Cry 3

@@ -69,7 +69,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         XDD2 J -1
         Stop
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
+        TNT1 AA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",2)
     XDeath:
         SARG P 0 A_SpawnItem("SARXKubiuted",0,40,0)
         SARG PPPPP 0 A_CustomMissile("BloodSplashGus1",random(0,32),0,random(0,360),2,random(0,360))
@@ -88,7 +88,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         goto death.kubiuti+4
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
+        TNT1 AA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",2)
         XDC1 A 0 A_Jump(128,"Death.Bloody","Death.Hunter","CleaveThrough","CleaveThrough2")
         XDD1 A 0 A_PlaySound("enemy/bisected")
         XDD1 A 0 A_Jump(96,"kubiuti2")
@@ -282,7 +282,7 @@ ACTOR WeeabooClink replaces Spectre
         goto Death
     Death.Kubiuti:
         TNT1 A 0 A_PlaySoundEx("steelbeast/hwandohit","soundslot6",0,0)
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
+        TNT1 AA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",2)
     Death:
         TNT1 A 0 A_Scream
         CLNK IJ 6
@@ -314,7 +314,7 @@ ACTOR WeeabooClink replaces Spectre
         CLNK O -1
         Stop
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)
+        TNT1 AA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",2)
         goto Death
     }
 }

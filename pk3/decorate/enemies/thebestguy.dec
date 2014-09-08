@@ -58,7 +58,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
         goto death.kubiuti+2
 
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",4)
+        TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
     death.Bloody:
         SKEL RRR 2 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
         SKEL S 0 A_Scream
@@ -71,7 +71,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
         Stop   
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",4)
+        TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
         XDF1 A 0 A_PlaySound("enemy/bisected")
         XDF1 A 0 A_Fall
         XDF1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))

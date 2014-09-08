@@ -68,7 +68,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         goto death.kubiuti+2
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Jump(64,"Decapitation2","Decapitation3")
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_Jump(228,"TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4","ArmGone","ArmGone2","LegGone","LegGone2")
@@ -190,7 +190,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
 
 
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Jump(255,"FistedXDeath","HeadExplode1","HeadExplode2","BodyExplode1","BodyExplode2")
         TNT1 A 1
         loop
@@ -486,7 +486,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0
         TNT1 A 0 A_Jump(64,"Decapitation2","Decapitation3")
         TNT1 A 0 A_PlaySound("enemy/bisected")
@@ -625,7 +625,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 
 
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Jump(255,"FistedXDeath","FistedXDeath","HeadExplode1","HeadExplode2","BodyExplode1","BodyExplode2")
         TNT1 A 1
         loop
@@ -887,7 +887,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         goto death.kubiuti+4
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Jump(96,"Death","Death.Bloody","Death2") 
         CPOS H 0 A_PlaySound("enemy/bisected")
         CPOS H 0 A_SpawnItem("CPOXKubiuted",0,40,0)
@@ -905,7 +905,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         XDB6 F -1
         Stop  
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
     xdeath:
         CPOS O 5 A_Jump(96,"xdeath2")
         CPOS PPPPP 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
@@ -1055,7 +1055,7 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::XDeath
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         goto Super::XDeath
     }
 }

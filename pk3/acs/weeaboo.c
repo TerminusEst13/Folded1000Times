@@ -8,7 +8,6 @@ int playerTimers[PLAYERMAX][TIMER_COUNT];
 int ClientEnterLocks[PLAYERMAX];
 int dodgeitem;
 int IsServer;
-
 int array_recoilrules[PLAYERMAX];
 
 int GotShotgun;

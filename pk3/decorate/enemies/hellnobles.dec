@@ -60,7 +60,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         BOS2 O -1
         Stop
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
+        TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
     XDeath:
         BOS2 PPPPP 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
         TNT1 Q 0 A_Scream
@@ -132,7 +132,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         Stop
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",3)
+        TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
         BOS2 H 1
         TNT1 A 0 A_Jump(128,"Death.Hunter","Death.Bloody","Death.Bloody2","XDeath")    
         XDI3 E 0 A_PlaySound("enemy/bisected")
@@ -234,7 +234,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         goto death.kubiuti+2
 
     Death.IronFistDamage:
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",5)
+        TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",5)
     death.Bloody:
         BOSS P 8
         BOSS Q 0 A_Scream
@@ -278,7 +278,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         stop
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",5)
+        TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",5)
         BOSS I 1
         TNT1 A 0 A_Jump(128,"Death.Bloody","Death.Hunter")
         BOSS I 0 A_Fall
