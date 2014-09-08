@@ -6,7 +6,7 @@
 splash Water
 {
 	smallclass		WaterSplashBase
-	smallclip		12
+	smallclip		6
 	smallsound		world/watersplashsmall
 
 	baseclass		WaterSplashBase
@@ -22,7 +22,7 @@ splash Water
 splash Blood
 {
 	smallclass		BloodSplash
-	smallclip		10
+	smallclip		4
 	smallsound		world/sludgegloopsmall
 
 	baseclass		BloodSplash
@@ -38,7 +38,7 @@ splash Blood
 splash Nukage
 {
 	smallclass		SludgeSplash
-	smallclip		6
+	smallclip		4
 	smallsound		world/lavasizzlesmall
 
 	baseclass		SludgeSplash
@@ -54,7 +54,7 @@ splash Nukage
 splash Lava
 {
 	smallclass		LavaSplash
-	smallclip		12
+	smallclip		6
 	smallsound		world/lavasizzlesmall
 
 	baseclass		LavaSplash
@@ -94,14 +94,14 @@ splash Hot
 terrain Water
 {
     splash          Water
-    footclip        12
+    footclip        6
     liquid
 }
 
 terrain Lava
 {
     splash          Lava
-    footclip        12
+    footclip        6
     damagetype      Fire
     liquid
 }
@@ -109,7 +109,7 @@ terrain Lava
 terrain Blood
 {
     splash          Blood
-    footclip        12
+    footclip        6
     damagetype      Slime
     liquid
 }
@@ -117,7 +117,7 @@ terrain Blood
 terrain Nukage
 {
     splash          Nukage
-    footclip        8
+    footclip        4
     damagetype      Slime
     liquid
 }
@@ -125,7 +125,7 @@ terrain Nukage
 terrain Slime
 {
     splash          Slime
-    footclip        8
+    footclip        4
     damagetype      Slime
     liquid
 }
