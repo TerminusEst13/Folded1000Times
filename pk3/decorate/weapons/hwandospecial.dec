@@ -5,6 +5,7 @@ actor RazorWind
     Radius 2
     Height 1
     Speed 60
+    ReactionTime 7
     Damage (0) //(30)
     Scale 0.85
     Projectile
@@ -32,8 +33,7 @@ actor RazorWind
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (22*momx)/-30.0, -(22*momy)/-30.0, 2+(22*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (24*momx)/-30.0, -(24*momy)/-30.0, 2+(24*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (26*momx)/-30.0, -(26*momy)/-30.0, 2+(26*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_JumpIfInventory("RazorLife",7,"Death")
-        TNT1 A 0 A_GiveInventory("RazorLife",1)
+        TNT1 A 0 A_CountDown
         loop
     Death:
         TNT1 A 1
