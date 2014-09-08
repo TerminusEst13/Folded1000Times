@@ -79,7 +79,7 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death//.kubiuti+2
     Pain.SabbathDamage:
-        WZRD C 5 A_Recoil(1)
+        WZRD C 5 //A_Recoil(1)
         WZRD C 5 A_Pain
         Goto See
     Pain:

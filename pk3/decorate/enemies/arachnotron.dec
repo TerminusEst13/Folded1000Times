@@ -92,7 +92,7 @@ ACTOR Priest replaces Arachnotron
         PRST E 3 A_Pain
         Goto See
     Pain.SabbathDamage:
-        PRST E 5 A_Recoil(2)
+        PRST E 5 //A_Recoil(2)
         PRST E 5 A_Pain
         Goto See
 

@@ -205,7 +205,7 @@ ACTOR Blackened replaces PainElemental
         TNT1 A 0 A_Pain
         goto MoveAround
     Pain.SabbathDamage:        
-        TNT1 A 0 A_Recoil(1)
+        TNT1 A 0 //A_Recoil(1)
         TNT1 AAAAA 1 A_SpawnItemEx("DarkAfterimageE",random(-125,-20)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),32)
         TNT1 A 0 A_Pain
         TNT1 AAAAA 1 A_SpawnItemEx("DarkAfterimageE",random(-125,-20)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),32)

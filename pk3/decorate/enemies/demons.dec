@@ -42,7 +42,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         goto Pain
     Pain.SabbathDamage:
-        SARG H 5 A_Recoil(2)
+        SARG H 5 //A_Recoil(2)
         SARG H 5 A_Pain
         Goto See
     Death.KubiRangeAttack:
