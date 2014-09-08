@@ -2,8 +2,10 @@
 // Talk about not futureproof.
 
 // Server cvars
-server int ds_runninginzdoom = 1;
+server int ds_runninginzdoom    = 1;
+server int ds_noshotgunlimiter  = 0;
+server int ds_noshotgun         = 0;
 
 // Clientside cvars
-user int ds_cl_nomusic = 0;
-user int ds_cl_norecoil = 0;
+user int ds_cl_nomusic          = 0;
+user int ds_cl_norecoil         = 0;

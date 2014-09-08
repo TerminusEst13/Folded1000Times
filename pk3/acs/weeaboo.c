@@ -36,10 +36,18 @@ script WEEB_OPEN OPEN
 {
     IsServer = 1;
 
-    while (1)
+    if (GetCvar("ds_runninginzdoom") == 0)
     {
-        if (GetCvar("ds_runninginzdoom") == 0) { if (!GetCvar("compat_clientssendfullbuttoninfo")) { ConsoleCommand("set compat_clientssendfullbuttoninfo 1"); } }
-        delay(1);
+        if (!GetCvar("compat_clientssendfullbuttoninfo"))
+            { ConsoleCommand("set compat_clientssendfullbuttoninfo 1"); }
+
+        if (!GetCvar("ds_noshotgunlimiter"))
+            { ConsoleCommand("set ds_noshotgunlimiter 0");
+              ConsoleCommand("archivecvar ds_noshotgunlimiter 0"); }
+
+        if (!GetCvar("ds_noshotgun"))
+            { ConsoleCommand("set ds_noshotgun 0");
+              ConsoleCommand("archivecvar ds_noshotgun 0"); }
     }
 }
 
@@ -48,8 +56,13 @@ script WEEB_OPEN_CLIENT OPEN clientside
     delay(1);
     if (GetCvar("ds_runninginzdoom") == 0)
     {
-        if (!GetCvar("ds_cl_nomusic")) { ConsoleCommand("set ds_cl_nomusic 0"); ConsoleCommand("archivecvar ds_cl_nomusic"); }
-        if (!GetCvar("ds_cl_norecoil")) { ConsoleCommand("set ds_cl_norecoil 0"); ConsoleCommand("archivecvar ds_cl_norecoil"); }
+        if (!GetCvar("ds_cl_nomusic"))
+            { ConsoleCommand("set ds_cl_nomusic 0");
+              ConsoleCommand("archivecvar ds_cl_nomusic"); }
+
+        if (!GetCvar("ds_cl_norecoil"))
+            { ConsoleCommand("set ds_cl_norecoil 0");
+              ConsoleCommand("archivecvar ds_cl_norecoil"); }
     }
 }
 
@@ -252,6 +265,11 @@ script WEEB_DECORATE (int burrshet)
         if (GameSkill () == 5) { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
+
+    case WEEB_DEC_ONLINECHECK:
+        if (GameType () != GAME_SINGLE_PLAYER || GetCvar("ds_noshotgun") == 1) { SetResultValue(1); }
+        else { SetResultValue(0); }
+        break;
     }
 }
 
@@ -316,6 +334,8 @@ script WEEB_ENTER ENTER
     int pln = PlayerNumber();
     i = unusedTID(37000, 47000);
 
+    TakeInventory("ShotgunLevelLimiter",1);
+
     if (CheckInventory("ImAlive") == 0)
     {
         if (GameSkill () == 0) { GiveInventory("BabyMarker",1); GiveInventory("ContraLifeToken",10); }
@@ -324,6 +344,7 @@ script WEEB_ENTER ENTER
         if (GameSkill () == 3) { GiveInventory("HardMarker",1); GiveInventory("ContraLifeToken",4); }
         if (GameSkill () == 4) { GiveInventory("NightmareMarker",1); GiveInventory("ContraLifeToken",2); }
         FadeRange(0,0,0,1.00,0,0,0,0,3.50);
+        if (GetCvar("ds_noshotgunlimiter") == 0) { GiveInventory("ShotgunLevelLimiter",1); }
         LocalAmbientSound("level/intro",127);
         GiveInventory("ImAlive",1);
     }

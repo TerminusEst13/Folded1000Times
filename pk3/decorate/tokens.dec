@@ -23,6 +23,7 @@ actor FistSwung : Boolean {}
 actor FistHit : Boolean {}
 
 actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
+actor ShotgunLevelLimiter : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}
