@@ -328,7 +328,7 @@ script WEEB_ENTER ENTER
         GiveInventory("ImAlive",1);
     }
 
-    if (Spawn("Brutal_Blood", GetActorX(0), GetActorY(0), GetActorZ(0), i))
+    if (Spawn("Brutal_Blood", GetActorX(0), GetActorY(0), GetActorZ(0), i) || Spawn("BrutalPistol", GetActorX(0), GetActorY(0), GetActorZ(0), i))
     {
         Thing_Remove(i);
         isbrutal = 1;
