@@ -62,7 +62,6 @@ actor DoubleTapReadyForward : Counter { Inventory.MaxAmount 8 }
 actor DoubleTapReadyBack : Counter { Inventory.MaxAmount 8 }
 actor DoubleTapReadyLeft : Counter { Inventory.MaxAmount 8 }
 actor DoubleTapCooldown : Counter { Inventory.MaxAmount 20 }
-actor RazorLife : Counter {}
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
 actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
 actor ContraArmorToken : Counter { Inventory.MaxAmount 4 }
@@ -70,12 +69,13 @@ actor OverLifeToken : Counter { Inventory.MaxAmount 3 }
 actor EnviroDamageCount : Counter { Inventory.MaxAmount 3 }
 actor EnviroDamageCooldown : Counter { Inventory.MaxAmount 75 }
 actor MidCombat : Counter { Inventory.MaxAmount 60 }
-actor SuperMeterCounter : Counter { Inventory.MaxAmount 300 }
+actor SuperMeterCounter : Counter { Inventory.MaxAmount 400 }
 actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
 actor UziSequence : Counter { Inventory.MaxAmount 60 }
 actor SuperCounter1 : Counter { Inventory.MaxAmount 100 }
 actor SuperCounter2 : Counter { Inventory.MaxAmount 100 }
 actor SuperCounter3 : Counter { Inventory.MaxAmount 100 }
+actor SuperCounter4 : Counter { Inventory.MaxAmount 100 }
 actor ComboCounter1 : Counter { Inventory.MaxAmount 50 }
 actor ComboCounter2 : Counter { Inventory.MaxAmount 50 }
 actor ComboCounter3 : Counter { Inventory.MaxAmount 50 }

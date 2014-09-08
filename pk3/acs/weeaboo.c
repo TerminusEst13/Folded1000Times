@@ -403,6 +403,8 @@ script WEEB_ENTER ENTER
             else { TakeInventory("SuperCounter2",0x7FFFFFFF); }
         if (CheckInventory("SuperMeterCounter") > 200) { TakeInventory("SuperCounter3",0x7FFFFFFF); GiveInventory("SuperCounter3", SuperCount - 200); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
             else { TakeInventory("SuperCounter3",0x7FFFFFFF); }
+        if (CheckInventory("SuperMeterCounter") > 300) { TakeInventory("SuperCounter4",0x7FFFFFFF); GiveInventory("SuperCounter4", SuperCount - 300); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+            else { TakeInventory("SuperCounter4",0x7FFFFFFF); }
 
         // 666 COMBO! SUPER SWEET STYLISH!
         ComboCount = CheckInventory("HyperComboCounter");
