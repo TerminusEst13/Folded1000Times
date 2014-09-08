@@ -3,7 +3,7 @@ actor DecorationSpawner
     States
     {
     Spawn:
-        TNT1 A 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
+        TNT1 A 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell","SpawnSoul","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
         TNT1 A 1
         loop
     SpawnStimpack:
@@ -30,6 +30,10 @@ actor DecorationSpawner
         TNT1 A 0
         TNT1 A 0 A_SpawnItemEx("WeebCell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
         stop
+    SpawnSoul:
+        TNT1 A 0 // I wonder if it's too mean that there's still a chance to spawn nothing.
+        TNT1 A 0 A_SpawnItemEx("SoulStoneSpawner1",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        stop
     Nothing:
         TNT1 A 0
         stop
@@ -49,6 +53,7 @@ ACTOR DestructableDecorationBase
     +RANDOMIZE
     +NOBLOOD
     +DONTGIB
+    +FLOORCLIP
     BloodType "BlankPuff"
     RadiusDamageFactor 0.0
     DamageFactor "Normal", 0.0
