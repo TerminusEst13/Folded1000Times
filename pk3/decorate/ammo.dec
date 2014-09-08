@@ -27,6 +27,7 @@ actor WeebClip : Ammo replaces Clip
     Ammo.BackpackAmount 5
     Ammo.BackpackMaxAmount 200
     Inventory.Icon "ABULC0"
+    +FLOORCLIP
     States
     {
     Spawn:
@@ -57,6 +58,7 @@ actor WeebShell : Ammo replaces Shell
     Ammo.BackpackAmount 4
     Ammo.BackpackMaxAmount 80
     Inventory.Icon "ASHLC0"
+    +FLOORCLIP
     States
     {
     Spawn:
@@ -87,6 +89,7 @@ actor WeebRocket : Ammo replaces RocketAmmo
     Ammo.BackpackAmount 2
     Ammo.BackpackMaxAmount 40
     Inventory.Icon "AGRNA0"
+    +FLOORCLIP
     States
     {
     Spawn:
@@ -117,6 +120,7 @@ actor WeebCell : Ammo replaces Cell
     Ammo.BackpackAmount 20
     Ammo.BackpackMaxAmount 500
     Inventory.Icon "ASMGA0"
+    +FLOORCLIP
     States
     {
     Spawn:
@@ -143,6 +147,7 @@ actor MagicKnapsack : Backpack replaces Backpack
     Inventory.PickupMessage "Picked up a bag of holding."
     Inventory.PickupSound "ammo/knapsack"
     Scale 0.85
+    +FLOORCLIP
     States
     {
     Spawn:

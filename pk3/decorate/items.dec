@@ -12,7 +12,8 @@ actor TinyMeterPickup : CustomInventory
 {
     Inventory.PickupMessage "Picked up a soul fragment."
     Inventory.PickupSound "ammo/soulstone"
-    Scale 0.45
+    Scale 0.5
+    +FLOORCLIP
     States
     {
     Spawn:
@@ -143,7 +144,7 @@ actor TinyMeterPickup7 : TinyMeterPickup
 
 actor SoulStoneEcho
 {
-    Scale 0.4
+    Scale 0.45
     Alpha 0.5
     Renderstyle Translucent
     +NOINTERACTION
@@ -248,14 +249,12 @@ actor SoulStoneSpawner1 : RandomSpawner replaces ArmorBonus
 
 actor SoulStoneSpawner2 : SoulStoneSpawner1 replaces HealthBonus {}
 
-actor ShotgunShitAll : ShitAll replaces Shotgun {}
-actor ChaingunShitAll : ShitAll replaces Chaingun {}
-
 actor HealPackSmall: CustomInventory //replaces StimPack
 {
     Inventory.PickupMessage "Picked up 1 Life Token."
     Inventory.PickupSound "health/soda"
     Scale 0.9
+    +FLOORCLIP
     States
     {
     Spawn:
@@ -436,6 +435,7 @@ actor HealPackMedium: CustomInventory
     Inventory.PickupMessage "Picked up 2 Life Tokens."
     Inventory.PickupSound "health/apple"
     Scale 0.85
+    +FLOORCLIP
     States
     {
     Spawn:
@@ -646,6 +646,7 @@ actor OverHealPack : CustomInventory
     Inventory.PickupMessage "Picked up some Over-Life Tokens."
     Inventory.PickupSound "health/burger"
     Scale 0.75
+    +FLOORCLIP
     States
     {
     Spawn:
