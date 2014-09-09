@@ -66,7 +66,6 @@ actor ShotgunPickup2 : PickupBase replaces Shotgun
         goto Spawn
     See2:
         TNT1 A 0
-        TNT1 A 0 A_JumpIfInTargetInventory("ShotgunLevelLimiter",1,"Nope")
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
         goto See
     Reveal:
