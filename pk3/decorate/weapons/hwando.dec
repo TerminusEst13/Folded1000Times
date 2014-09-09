@@ -284,12 +284,12 @@ ACTOR HwandoBase : Weapon
 
 
 
-actor KharonGuard
+actor KharonGuard : FastProjectile
 {
     Radius 16
     Height 16
     Health 2
-    Speed 32
+    Speed 64
     Damage (10)
     DamageType "GuardMove"
     DamageFactor "kubiuti", 0.0
