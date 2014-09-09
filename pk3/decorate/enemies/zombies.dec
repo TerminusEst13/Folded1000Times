@@ -22,7 +22,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "SabbathDamage", 5.0
     DamageFactor "ExodusDamage", 5.0
     DamageFactor "IronMaidenShot", 5.0
-    DropItem "BlankPuff"
+    DropItem "ShitAll"
     States
     {
     See: // Apparently changing their speed gets them blocked on each other?
@@ -446,7 +446,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "SabbathDamage", 3.3
     DamageFactor "ExodusDamage", 3.3
     DamageFactor "IronMaidenShot", 3.3
-    DropItem "BlankPuff"
+    DropItem "ShitAll"
     States
     {
     See:
