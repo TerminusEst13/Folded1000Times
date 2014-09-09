@@ -198,6 +198,7 @@ sword/reflect             SRDRFLCT
 idle/spray                IDLSPRAY
 idle/rub                  IDLRUBBR
 idle/raise                IDLSWARR
+idle/shing                IDLSHING // Taken from the General Series 6000, with extra reverb/echo!
 
 $random sword/shielddefense { block1 block2 block3 } // Taken from the Oblivion Combat Sound Replacement
 block1                    SHLDBLK1
@@ -298,6 +299,7 @@ henshin/complete          IRNHCOMP // Taken from Kamen Rider Faiz
 henshin/completedismiss   IRNHCOM2 // Taken from Kamen Rider Faiz
 henshin/timeout           IRNHTOUT // Taken from Kamen Rider Faiz
 henshin/timeoutdismiss    IRNHTOU2 // Taken from Kamen Rider Fourze
+henshin/error             IRNERROR // Taken from Kamen Rider Faiz
 
 
 

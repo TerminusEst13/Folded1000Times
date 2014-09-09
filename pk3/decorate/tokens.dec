@@ -1,5 +1,6 @@
 actor KharonSwung : Boolean {}
-actor SequenceFireActivated : Boolean {}
+actor HenshinActivated : Boolean {}
+actor HenshinDeactivation : Boolean {}
 actor SlashingLikeAGaijin : Boolean {}
 actor ShootingLikeABaka : Boolean {}
 actor AlreadyInLevel : Boolean {}
@@ -7,6 +8,7 @@ actor OnTheGround : Boolean {}
 actor GhostStepDone : Boolean {}
 actor AcesHigh : Boolean {}
 actor ReadyToDoubleJump : Boolean {}
+actor InIronMaiden : Boolean {}
 
 actor UziLikeAGuzzi : Boolean {}
 actor UziFrame1 : Boolean {}
@@ -41,8 +43,6 @@ actor CRank : Boolean {}
 actor BRank : Boolean {}
 actor ARank : Boolean {}
 actor SRank : Boolean {}
-actor KamenRangerHenshin : Boolean {}
-actor InIronMaiden : Boolean {}
 
 actor GotShotgun : Boolean {}
 actor GotCarronade : Boolean {}

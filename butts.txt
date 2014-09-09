@@ -19,6 +19,10 @@ TO DO in no particular order:
 44: Expand on final map
 48: Convert .wav files to .ogg for size compression.
 49: Replacement for Wolfenstein SS
+50: Bisected enemies somehow get caught in the ceiling
+51: Player sprites for Jung Hae-Lin and Iron Maiden
+52: Special charge-up laser-hadouken for Iron Maiden
+53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter

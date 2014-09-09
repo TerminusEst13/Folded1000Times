@@ -52,7 +52,6 @@ actor "Iron Fist" : Weapon
         CMCP A -1
         Stop
     Ready:
-        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         IRNF A 1 A_WeaponReady
         Loop
     Select:
@@ -72,21 +71,6 @@ actor "Iron Fist" : Weapon
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
         Loop
-    IdleAnimation:
-        IRNF ABCD 2 A_WeaponReady
-        IDLE ABC 2 A_WeaponReady
-        IDLE C 15 A_WeaponReady
-        IDLE DEFG 2 A_WeaponReady
-        IDLE G 15 A_WeaponReady
-        IDLE HIJKLMNOPQRSTUV 2 A_WeaponReady
-        IDLE V 15 A_WeaponReady
-        IDLE WXY 2 A_WeaponReady
-        TNT1 A 5 A_WeaponReady
-        IRNF DCBA 2 A_WeaponReady
-        TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
-        goto Ready
-
-
 
     Fire:
         //TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
@@ -223,6 +207,7 @@ actor "Iron Fist" : Weapon
 
     Hold:
         TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"Unhenshin")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
@@ -231,6 +216,11 @@ actor "Iron Fist" : Weapon
         TNT1 A 1
         TNT1 A 0 A_ClearRefire
         goto Fired2
+    Unhenshin:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("HenshinDeactivation",1)
+        TNT1 A 35
+        goto Ready
 
     Fired:
         TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
@@ -475,7 +465,7 @@ ACTOR IronFistExplosion
     }
 }
 
-actor IronFistGuard : KharonGuard { +REFLECTIVE }
+actor IronFistGuard : KharonGuard {}
 
 actor IronMaidenImpactSmoke
 {

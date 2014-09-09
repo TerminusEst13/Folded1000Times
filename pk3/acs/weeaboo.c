@@ -246,11 +246,12 @@ script WEEB_DECORATE (int burrshet)
 
     case WEEB_DEC_REMOVEKEBAB:
         FadeRange(255,255,255,1.00,0,0,0,0,1.50);
+        TakeInventory("HenshinDeactivation",1);
         TakeInventory("InIronMaiden",1);
         TakeInventory("Iron Fist",1);
         TakeInventory("IronMaidenSpeed",1);
         TakeInventory("Armor",0x7FFFFFFF);
-        TakeInventory("KamenRangerHenshin",1);
+        TakeInventory("HenshinActivated",1);
         GiveInventory("Kharon + Acacia A-22",1);
         SetActorProperty(0,APROP_JUMPZ,9.0);
         if (CheckInventory("GotShotgun") == 1) { GiveInventory("Kharon + Testament",1); }
@@ -272,6 +273,11 @@ script WEEB_DECORATE (int burrshet)
     case WEEB_DEC_ONLINECHECK:
         if ( (GetCvar("ds_noshotgunlimiter") == 0 && LevelCount < 2) || GetCvar("ds_noshotgun") == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
+        break;
+
+    case WEEB_DEC_HENSHIN:
+        delay(10);
+        TakeInventory("HenshinActivated",1);
         break;
     }
 }
@@ -551,22 +557,13 @@ script WEEB_ENTER ENTER
           FadeRange(255,255,0,min(0.5,(oarmor-armor)*0.015),0,0,0,0.0,min(35.0,1.5*(oarmor-armor))/35); 
         }
 
-        if (CheckInventory("InIronMaiden") == 0)
-        {
-          if (CheckInventory("SuperMeterCounter") >= 100 && CheckInventory("HenshinCooldown") == 0)
-          {
-            if (buttons & BT_FORWARD && buttons & BT_MOVELEFT && buttons & BT_MOVERIGHT && buttons & BT_ATTACK && buttons & BT_ALTATTACK)
-            { GiveInventory("KamenRangerHenshin",1); }
-            else { TakeInventory("KamenRangerHenshin",1); }
-          }
-        }
-        else
+        if (CheckInventory("InIronMaiden") == 1)
         {
           if (CheckInventory("SuperMeterCounter") > 0)
           {
             SetActorProperty(0,APROP_JUMPZ,10.0);
 
-            if (buttons & BT_BACK && buttons & BT_MOVELEFT && buttons & BT_MOVERIGHT && buttons & BT_ATTACK && buttons & BT_ALTATTACK)
+            if (CheckInventory("HenshinDeactivation") == 1)
             {
               GiveInventory("HenshinCooldown",35);
               LocalAmbientSound("henshin/complete",127);

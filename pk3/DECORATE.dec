@@ -52,6 +52,7 @@ const int WEEB_DEC_UNFREEZE2   = 14;
 const int WEEB_DEC_REMOVEKEBAB = 15;
 const int WEEB_DEC_DIFFCHECK   = 16;
 const int WEEB_DEC_ONLINECHECK = 17;
+const int WEEB_DEC_HENSHIN     = 18;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
