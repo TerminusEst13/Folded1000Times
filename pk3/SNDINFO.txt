@@ -225,7 +225,7 @@ $random sword/swingsmall { smswing1 smswing2 smswing3 } // Taken from the Oblivi
 smswing1                  SWINGSM1
 smswing2                  SWINGSM2
 smswing3                  SWINGSM3
-$random sword/wallpuff { swordpuff1 swordpuff2 swordpuff3 swordpuff4 } // Taken from World of Warcraft
+$random sword/wallpuff { swordpuff1 swordpuff2 swordpuff3 swordpuff4 }
 swordpuff1                SWRDPUF1
 swordpuff2                SWRDPUF2
 swordpuff3                SWRDPUF3
