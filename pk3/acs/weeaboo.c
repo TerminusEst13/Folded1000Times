@@ -395,7 +395,7 @@ script WEEB_ENTER ENTER
            else if (CheckInventory("HammerCharge") >= 0)
                { if (RideTheLightning >= 5)  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
         }
-        else { if (RideTheLightning >= 40)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
+        else { if (RideTheLightning >= 40 && CheckInventory("HammerCharge") >= 30)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
         RideTheLightning++;
 
         TakeInventory("GhostStepCooldown",1);
