@@ -289,7 +289,7 @@ actor KharonGuard : FastProjectile
     Radius 16
     Height 16
     Health 2
-    Speed 64
+    Speed 48
     Damage (10)
     DamageType "GuardMove"
     DamageFactor "kubiuti", 0.0
@@ -310,8 +310,8 @@ actor KharonGuard : FastProjectile
         TNT1 A 2
         Stop
     Death:
+        TNT1 A 0
         TNT1 A 1
-        TNT1 A 0 A_GiveToTarget("SuperMeterCounter",1)
         Stop
     }
 }
