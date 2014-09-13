@@ -646,6 +646,7 @@ actor OverHealPack : CustomInventory
     Inventory.PickupMessage "Picked up some Over-Life Tokens."
     Inventory.PickupSound "health/burger"
     Scale 0.75
+    +INVENTORY.ALWAYSPICKUP
     +FLOORCLIP
     States
     {
@@ -835,6 +836,8 @@ actor ArmorHealthMegaPack: CustomInventory replaces Megasphere
 {
     Inventory.PickupMessage "Full recharge!"
     Inventory.PickupSound "health/ramen"
+    +INVENTORY.ALWAYSPICKUP
+    +FLOORCLIP
     Scale 0.8
     states
     {
