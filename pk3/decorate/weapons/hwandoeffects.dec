@@ -20,52 +20,18 @@ actor RazorWindTrail
     }
 }
 
-ACTOR SwordPuff : BulletPuff
+ACTOR SwordPuff
 {
-    DamageType "kubiuti"
-    Species "Player"
-    +PUFFONACTORS
-    +NOEXTREMEDEATH
-    +PUFFGETSOWNER
-    +THRUSPECIES
-    RenderStyle Add
-    VSpeed 0.4
-    Scale 0.5
+    +NOINTERACTION
+    +CLIENTSIDEONLY
     States
     {
-    //Crash:
     Spawn:
         TNT1 A 0
         TNT1 A 0 A_PlayWeaponSound("sword/wallpuff")
-        FHFX S 1
-        TNT1 AAA 0 A_SpawnItemEx("SwordPuff2",random(-100,100)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-100,400)/100.00,random(-180,180),160)
-        TNT1 AAA 0 A_SpawnItemEx("SlugShard",random(-100,100)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(-100,800)/100.00,random(-180,180),160)
-    //Spawn:
-        FHFX S 3
-        FHFX TUVW 3
-        Stop
-    /*Melee:
         TNT1 A 1
-        TNT1 A 0 A_PlaySound("sword/hit")
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
+        TNT1 AAA 0 A_SpawnItemEx("SlugShard",random(-100,100)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(-100,800)/100.00,random(-180,180),160,96)
         TNT1 A 1
-        stop*/
-    }
-}
-
-ACTOR SwordPuff2
-{
-    +CLIENTSIDEONLY
-    RenderStyle Add
-    +NOINTERACTION
-    +RANDOMIZE
-    Scale 0.15
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        FHFX STUVW 1
         Stop
     }
 }

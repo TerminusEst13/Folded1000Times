@@ -303,7 +303,6 @@ actor KharonGuard : FastProjectile
     +DONTSPLASH
     +NOCLIP
     -NOBLOCKMAP
-    DeathSound "sword/shielddefense"//"sword/shieldpuff"
     States
     {
     Spawn:
@@ -311,6 +310,12 @@ actor KharonGuard : FastProjectile
         Stop
     Death:
         TNT1 A 0
+        TNT1 A 1
+        Stop
+    XDeath:
+    Crash:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("sword/shielddefense")
         TNT1 A 1
         Stop
     }
@@ -351,6 +356,7 @@ ACTOR KharonAttack1 : FastProjectile
         Stop
     XDeath: // When hitting a bleeding actor.
         TNT1 A 0
+        TNT1 A 1
         TNT1 A 0 A_PlaySound("sword/hit")
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
@@ -359,11 +365,14 @@ ACTOR KharonAttack1 : FastProjectile
         stop
     Death: // When hitting a wall.
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("SwordPuff",0,0,0,0,0,0.4,0,32)
+        TNT1 A 1
+        TNT1 AAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 A 0 A_SpawnItemEx("SwordPuff",0,0,0,0,0,0,0,32)
         TNT1 A 1
         Stop
     Crash: // When hitting a +NOBLOOD actor.
         TNT1 A 0
+        TNT1 A 1
         TNT1 A 0 A_PlaySound("sword/shielddefense")
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
