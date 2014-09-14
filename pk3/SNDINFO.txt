@@ -262,18 +262,17 @@ bullhit2                  BULLHIT2
 bullhit3                  BULLHIT3
 bullhit4                  BULLHIT4
 
-$volume bullet/hit 0.5
+$volume bullet/hit 0.75
+$rolloff bullet/hit 100 400
 
-$random bullet/miss { bullmis1 bullmis2 bullmis3 bullmis4 bullmis5 bullmis6 bullmis7 } // Taken from Halo: Reach
+$random bullet/miss { bullmis1 bullmis2 bullmis3 bullmis4 }
 bullmis1                  BULLMIS1
 bullmis2                  BULLMIS2
 bullmis3                  BULLMIS3
 bullmis4                  BULLMIS4
-bullmis5                  BULLMIS5
-bullmis6                  BULLMIS6
-bullmis7                  BULLMIS7
 
-$volume bullet/miss 0.5
+$volume bullet/miss 0.75
+$rolloff bullet/miss 100 400
 
 // Iron Maiden
 

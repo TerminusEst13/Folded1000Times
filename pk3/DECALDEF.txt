@@ -160,3 +160,24 @@ Decalgroup WallCrack
     WallCrack1 1
     WallCrack2 1
 }
+
+DECAL Demon_BulletChipLower1
+{
+    Pic Scorch1
+    Shade "00 00 00"
+    X-scale 0.06
+    Y-scale 0.06
+    RandomFlipx
+    RandomFlipy
+}
+
+DECAL Demon_BulletChip
+{
+    Pic BPSPA0
+    Add 1.0
+    FullBright
+    Animator GoAway
+    X-scale 0.04
+    Y-scale 0.04
+    LowerDecal Demon_BulletChipLower1
+}
