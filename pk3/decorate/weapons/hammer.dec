@@ -325,7 +325,6 @@ actor "Kharon + Omen" : HwandoBase //replaces SuperShotgun
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_TakeInventory("CantStopTheBlock",1)
         TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
@@ -610,6 +609,7 @@ actor HammerAttackBase : FastProjectile
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("HammerHit",1)
         TNT1 A 0 A_PlaySound("hammer/wall")
+        TNT1 AAAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,random(-75,75)/100.00,random(-75,75)/100.00,random(-75,75)/100.00,0,160)
         TNT1 AAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
         FHFX SS 1  
         FHFX TU 2
@@ -625,10 +625,10 @@ actor HammerAttackBase : FastProjectile
 
 actor HammerSmoke
 {
-    +NOINTERACTION
     RenderStyle Add
     Alpha 0.4
-    Scale 0.45
+    Scale 0.4
+    +NOINTERACTION
     States
     {
     Spawn:

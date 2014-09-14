@@ -321,7 +321,6 @@ actor "Kharon + Sabbath" : HwandoBase //replaces PlasmaRifle
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_TakeInventory("CantStopTheBlock",1)
         TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
@@ -354,8 +353,8 @@ actor "Kharon + Sabbath" : HwandoBase //replaces PlasmaRifle
     AltFinish:
         TNT1 A 0 A_Recoil(0.1)
         TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoil")
-        TNT1 A 0 A_SetAngle(angle+(random(-350,350)/1000.000))
-        TNT1 A 0 A_SetPitch(pitch-(random(200,550)/1000.000))
+        TNT1 A 0 A_SetAngle(angle+(random(-300,300)/1000.000))
+        TNT1 A 0 A_SetPitch(pitch-(random(200,450)/1000.000))
     NoRecoil:
         TNT1 A 0 A_Jump(255,"UziFinish1","UziFinish2","UziFinish3","UziFinish4","UziFinish5","UziFinish6")
         // Oh man, this is unbelievable.

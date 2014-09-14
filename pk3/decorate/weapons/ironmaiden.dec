@@ -341,7 +341,6 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_TakeInventory("CantStopTheBlock",1)
         TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)

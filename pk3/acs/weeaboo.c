@@ -668,7 +668,6 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
     TakeInventory("ShootingLikeABaka",1);
-    TakeInventory("CantStopTheBlock",1);
     TakeInventory("DoubleTapForward",1);
     TakeInventory("DoubleTapBack",1);
     TakeInventory("DoubleTapLeft",1);
