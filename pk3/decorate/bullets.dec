@@ -267,7 +267,7 @@ actor BulletBase : FastProjectile
     Death:
         TNT1 A 0
         TNT1 A 0 A_PlaySound("bullet/miss")
-        TNT1 A 1 A_SpawnItem("WeebBulletPuff")
+        TNT1 A 1 A_SpawnItemEx("WeebBulletPuff",0,0,0,0,0,0,0,160)
         stop
     XDeath:
         TNT1 A 0
@@ -312,9 +312,8 @@ ACTOR WeebBulletPuff
         TNT1 A 0
         TNT1 A 1
         TNT1 AAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
-        TNT1 AAAAAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
+        TNT1 AAAAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
         TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
-        TNT1 A 1
     Spawn1:
         //BPFF A 1 Bright
         BPFF A 1 Bright //A_SetTranslucent(.75,1)
@@ -346,14 +345,14 @@ actor BulletSmoke
 {
     Scale 0.09
     Alpha 0.35
-    RenderStyle add
-    +FORCEXYBILLBOARD
+    RenderStyle Add
     +NOINTERACTION
     +CLIENTSIDEONLY
     States
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 1
         TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7","Spawn8")
     Spawn1:
         SMOK A 2 A_Fadeout(0.015)
@@ -388,7 +387,6 @@ ACTOR BulletSpark
     Height 1
     Speed 0.1
     Mass 2
-    Gravity 0.85
     BounceCount 7
     BounceFactor 0.6
     RenderStyle Add
