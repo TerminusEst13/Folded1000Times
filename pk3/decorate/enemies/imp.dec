@@ -32,7 +32,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         TROO E 1 A_FaceTarget
         TNT1 A 0 A_PlaySound("imp/preparefire")
         TNT1 A 0 A_SpawnItemEx("WeeabooImpBallPrepare",2,28,32,0,0,0,0,160)
-        TROO EEEF 8 A_FaceTarget
+        TROO EEEF 6 A_FaceTarget
         TNT1 A 0 A_PlayWeaponSound("imp/shootfire")
         TROO G 5 A_CustomMissile("WeeabooImpBall")//A_TroopAttack
         TNT1 A 0 A_Jump(192,"See")
