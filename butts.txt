@@ -17,12 +17,10 @@ TO DO in no particular order:
   ^ Mancubus
 43: GLDEFS
 44: Expand on final map
-48: Convert .wav files to .ogg for size compression.
 49: Replacement for Wolfenstein SS
 50: Bisected enemies somehow get caught in the ceiling
 51: Player sprites for Jung Hae-Lin and Iron Maiden
 52: Special charge-up laser-hadouken for Iron Maiden
-53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
@@ -49,6 +47,7 @@ Another style is retro SNES-style beat-'em-up combos where landed hits go into o
 Another style is single strikes, where holding down fire charges up a more powerful strike.
 And the final style...ummm. Hm.
 29: SASS RAINBOW: you should make berserk give free combos for 20 seconds // Berserk will be replaced by Brackish Tarot
+53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 
 
 DONE:
@@ -94,6 +93,7 @@ DONE:
 45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 46: HammerCharge needs a smaller/new ammo icon.
 47: Gun impact sounds on flesh and walls
+48: Convert .wav files to .ogg for size compression.
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
