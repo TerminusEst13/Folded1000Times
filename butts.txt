@@ -20,6 +20,11 @@ TO DO in no particular order:
 50: Bisected enemies somehow get caught in the ceiling
 51: Player sprites for Jung Hae-Lin and Iron Maiden
 52: Special charge-up laser-hadouken for Iron Maiden
+53: Iron Maiden polishing
+  ^ Design
+  ^ Pickup sprite/sound replacing BFG9000
+  ^ New HUD signifying you're in armor
+  ^ Kick/chop sprites/sounds replacing the special moves
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
