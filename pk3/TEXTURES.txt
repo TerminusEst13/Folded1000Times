@@ -1,0 +1,74 @@
+graphic demntip0, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_1fctf, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_coop, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_ctf, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_dm, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_duel, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_inv, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_lms, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_poss, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_scp, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_st, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_tdm, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_term, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_tlms, 640, 400
+{
+    patch f1help2b, 0, 0
+}
+
+graphic f1_tposs, 640, 400
+{
+    patch f1help2b, 0, 0
+}

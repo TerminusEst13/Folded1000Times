@@ -1,5 +1,4 @@
 TO DO in no particular order:
-8: Berserk pickup sprite/sound
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
 22: Randomized muzzleflashes for the pistol.
 23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
@@ -59,6 +58,7 @@ DONE:
 5: Convert custominventory weapon pickups from Inventory.PickupSound to A_PlaySoundEx, currently don't activate with sv_weaponstay
 6: More destructable environmental stuff
 7: Figure out what armor pickups should be
+8: Berserk pickup sprite/sound
 9: Cvar to remove recoil for semi-purist play.
 10: Port in Mike's pistol sprites
 11: More dramatic sound/effect for dodging

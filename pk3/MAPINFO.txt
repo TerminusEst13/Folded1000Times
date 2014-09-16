@@ -1,3 +1,8 @@
+gameinfo
+{
+	infopage = "DEMNTIP0", "CREDIT"
+}
+
 map MAPFINAL "...And Into the Flames"
 {
     next = "MAP01"

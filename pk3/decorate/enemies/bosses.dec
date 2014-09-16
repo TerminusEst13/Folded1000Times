@@ -30,7 +30,7 @@ ACTOR WeeabooMastermind : SpiderMastermind replaces SpiderMastermind
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain
     Pain.SabbathDamage:
-        SPID I 5 A_Recoil(2)
+        SPID I 5
         SPID I 5 A_Pain
         Goto See
     Death.KubiRangeAttack:
@@ -43,6 +43,8 @@ ACTOR WeeabooMastermind : SpiderMastermind replaces SpiderMastermind
         goto Super::Death
     Death.IronFistDamage:
     Death.Kubiuti:
+        SPID I 1
+        TNT1 A 0 A_AlertMonsters
         TNT1 AAAAAAAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",10)
         goto Super::Death
     }
@@ -80,7 +82,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain
     Pain.SabbathDamage:
-        CYBR G 6 A_Recoil(2)
+        CYBR G 6
         CYBR G 6 A_Pain
         Goto See
     Death.KubiRangeAttack:
@@ -93,6 +95,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
         goto Super::Death
     Death.IronFistDamage:
     Death.Kubiuti:
+        CYBR G 1
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAAAAAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",10)
         goto Super::Death
