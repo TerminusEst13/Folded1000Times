@@ -19,6 +19,7 @@ ACTOR IronMaidenRepel
     Speed 0
     +NOCLIP
     +FORCERADIUSDMG
+    +BLOODLESSIMPACT
     -SOLID
     DamageType "ExodusJump"
     Obituary "%k shouldn't have killed %o with this."
@@ -239,19 +240,19 @@ actor "Iron Fist" : Weapon
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
-        TNT1 A 0 A_PlayWeaponSound("sword/spinattack")
+        TNT1 A 0 A_PlayWeaponSound("iron/spinattack")
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
         TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_CheckFloor("SpinAttackLeftContinue")
         TNT1 A 0 ThrustThingZ(0,24,0,0)
     SpinAttackLeftContinue:
-        KSPC G 1 A_SetAngle(angle+45)
-        KSPC H 1 A_SetAngle(angle+50)
-        KSPC I 1 A_SetAngle(angle+55)
-        KSPC J 1 A_SetAngle(angle+55)
-        KSPC K 1 A_SetAngle(angle+50)
-        KSPC L 1 A_SetAngle(angle+45)
+        IRSP G 1 A_SetAngle(angle+45)
+        IRSP H 1 A_SetAngle(angle+50)
+        IRSP I 1 A_SetAngle(angle+55)
+        IRSP J 1 A_SetAngle(angle+55)
+        IRSP K 1 A_SetAngle(angle+50)
+        IRSP L 1 A_SetAngle(angle+45)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 1 A_SetAngle(angle+11.25)
         goto SpecialAttackFinish
@@ -260,19 +261,19 @@ actor "Iron Fist" : Weapon
         TNT1 A 1 A_SetAngle(angle-11.25)
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
-        TNT1 A 0 A_PlayWeaponSound("sword/spinattack")
+        TNT1 A 0 A_PlayWeaponSound("iron/spinattack")
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
         TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_CheckFloor("SpinAttackRightContinue")
         TNT1 A 0 ThrustThingZ(0,28,0,0)
     SpinAttackRightContinue:
-        KSPC M 1 A_SetAngle(angle-45)
-        KSPC N 1 A_SetAngle(angle-50)
-        KSPC O 1 A_SetAngle(angle-55)
-        KSPC P 1 A_SetAngle(angle-55)
-        KSPC Q 1 A_SetAngle(angle-50)
-        KSPC R 1 A_SetAngle(angle-45)
+        IRSP M 1 A_SetAngle(angle-45)
+        IRSP N 1 A_SetAngle(angle-50)
+        IRSP O 1 A_SetAngle(angle-55)
+        IRSP P 1 A_SetAngle(angle-55)
+        IRSP Q 1 A_SetAngle(angle-50)
+        IRSP R 1 A_SetAngle(angle-45)
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 1 A_SetAngle(angle-11.25)
         goto SpecialAttackFinish
@@ -287,7 +288,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE,0,0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 1
-        TNT1 A 0 A_PlayWeaponSound("sword/beam3")
+        TNT1 A 0 A_PlayWeaponSound("iron/lunge")
         TNT1 AA 0 A_SpawnItemEx("RazorWindExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,125,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,124,0,0,1,48)
@@ -300,7 +301,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,121,0,0,-4,48)
         TNT1 A 0 ThrustThing(angle*256/360,120,1,0)
     LungeAttackContinue:
-        KSPC ABCDEF 1
+        IRSP ABCDEF 1
         TNT1 A 1
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_Stop // You'd think this would be redundant.
@@ -315,13 +316,17 @@ actor "Iron Fist" : Weapon
         goto LungeAttackPrepare
 
     RepelWave:
-        KBLK ABCDEE 1
-        KBLK F 15 A_PlayWeaponSound("sword/block")
-        KSPC STU 1
+        TNT1 A 0
+        TNT1 A 0 A_PlayWeaponSound("iron/block")
+        IRSP STUVWW 1
+        IRSP X 15
+        IRSP YZ 1
+        IRSP [ 1
         TNT1 A 5
-        KSPC VW 1
+        IRS2 AB 1
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
-        TNT1 A 0 A_PlayWeaponSound("sword/reflect")
+        TNT1 A 0 A_PlayWeaponSound("iron/beam")
+        IRS2 C 1
         TNT1 A 0 A_FireCustomMissile("RazorWind2",0,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",-3,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",3,0,0,0,0,0)
@@ -333,7 +338,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_FireCustomMissile("RazorWind2",12,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",-15,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",15,0,0,0,0,0)
-        KSPC XYZ 1
+        IRS2 DEF 1
         TNT1 AA 1
         goto SpecialAttackFinish
 
@@ -503,7 +508,7 @@ actor HolyShot
     Height 8
     Radius 6
     Speed 50
-    Damage (60)
+    Damage (65)
     Renderstyle Add
     Alpha 0.9
     Scale 0.5
