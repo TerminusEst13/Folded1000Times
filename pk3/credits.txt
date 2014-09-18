@@ -11,9 +11,17 @@ SPECIAL THANKS TO:
 
 GRAPHICS:
 =========
-- Mike12/DrDoctor/David G/Vader/Eriance/Minigunner/Funktasm/Neoworm/Sgt. Mark IV (Custom deaths)
-  ^ All custom deaths have been sorted in folders according to the artist
-- Creation's End (Titlescreen: A New Beginning)
+- Numerous artists for custom deaths (All sorted in folders according to the artist)
+  ^ Mike12
+  ^ DrDoctor
+  ^ David G
+  ^ Vader
+  ^ Eriance
+  ^ Minigunner
+  ^ Funktasm
+  ^ Neoworm
+  ^ ojsclatchford
+  ^ Sgt. Shivers
 - Mike12
   ^ Numerous custom deaths (as mentioned)
   ^ The gore decals/graphics
@@ -58,6 +66,7 @@ GRAPHICS:
 - amv2k9 (The base for the Testament ammo pickups)
 - Eriance/JoeyTD (The base for the placeholder hands used for the Kharon)
 - Eriance
+  ^ Custom deaths (As mentioned)
   ^ The explosion used for the Steel Beast death
   ^ The balls used for the Wizard spell
   ^ The skull head used for the souls

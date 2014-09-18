@@ -503,7 +503,7 @@ actor HolyShot
     Height 8
     Radius 6
     Speed 50
-    Damage (50)
+    Damage (60)
     Renderstyle Add
     Alpha 0.9
     Scale 0.5

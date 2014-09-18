@@ -3,7 +3,7 @@ gameinfo
 	infopage = "DEMNTIP0", "CREDIT"
 }
 
-map MAPFINAL "...And Into the Flames"
+map MAPFINAL "Steel Meets Steel" // Hammerfall
 {
     next = "MAP01"
     music = "D_FINAL1" // Finntroll - Haterop

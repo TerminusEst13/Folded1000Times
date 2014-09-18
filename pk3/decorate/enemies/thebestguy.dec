@@ -57,9 +57,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+5
 
-    Death.IronFistDamage:
-        TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
-    death.Bloody:
+    Death.Bloody:
         SKEL RRR 2 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
         SKEL S 0 A_Scream
         SKEL SS 2 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
@@ -69,33 +67,57 @@ actor WeeabooRevenant : Revenant replaces Revenant
         SKEL YYYYY 2 A_SpawnDebris("BloodShower2",0)
         SKEL Y -1
         Stop   
-    death.kubiuti:
+    Death.Kubiuti:
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
-        XDF1 A 0 A_PlaySound("enemy/bisected")
-        XDF1 A 0 A_Fall
-        XDF1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))
-        XDF1 A 0 A_Jump(128,"kubiuti2","death.Bloody")
-        XDF1 A 0 A_SpawnItem("SKEXKubiuted",0,40,0)
-        XDF1 AAAAAAAAAA 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),40)    
-        XDF1 B 0 A_NoBlocking
-        XDF1 BBBCCC 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),40)    
-        XDF1 DDDDD 2 A_SpawnDebris("BloodShower2",0)
-        XDF1 D -1
+        TNT1 A 0 A_PlaySound("enemy/bisected")
+        TNT1 A 0 A_Fall
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_Jump(128,"kubiuti2","death.Bloody")
+        TNT1 A 0 A_SpawnItem("SKEXKubiuted",0,40,0)
+        XDR1 EEEEEEEEEE 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),40)    
+        TNT1 A 0 A_NoBlocking
+        XDR1 FFFGGG 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),40)    
+        XDR1 HHHII 2 A_SpawnDebris("BloodShower2",0)
+        XDR1 I -1
         Stop
-    kubiuti2:
-        XDF2 A 0 A_SpawnItem("SKEXKubiuted",0,40,0)
-        XDF2 A 0 A_Recoil(-1)
-        XDF2 A 0 A_Wander
-        XDF2 AA 3 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
-        XDF2 B 0 A_Recoil(-1)
-        XDF2 B 0 A_Wander
-        XDF2 BB 3 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
-        XDF2 B 0 A_Jump(32,1)
+    Kubiuti2:
+        TNT1 A 0 A_SpawnItem("SKEXKubiuted",0,40,0)
+        TNT1 A 0 A_Recoil(-1)
+        TNT1 A 0 A_Wander
+        XDR1 ABC 3 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
+        TNT1 A 0 A_Recoil(-1)
+        TNT1 A 0 A_Wander
+        XDR1 DCB 3 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
+        TNT1 A 0 A_Jump(32,1)
         goto kubiuti2+1
-        XDF2 CDEF 4 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
-        XDF2 G -1
+        XDR1 EFGH 4 A_ThrowGrenade ("BloodShower2",-2,5+random(0,7),5+random(0,7))
+        XDR1 I -1
         Stop
+
+    Death.IronFistDamage:
+        TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
+        TNT1 A 0
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower2",40,0,random(0,360),2,random(0,360))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(4,32),0,random(0,360),2,random(0,360))
+        TNT1 AAAAA 0 A_CustomMissile("BloodShower5",random(0,32),0,random(0,360),2,random(0,360))
+        SKEL L 2
+        TNT1 A 0 A_XScream
+        TNT1 AAAAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        TNT1 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
+        TNT1 AAAAAAAAAAAA 0 A_SpawnItemEx("TinyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAAAAAAAAAAA 0 A_SpawnItemEx("TinyBouncyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Gore_Gib4",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 AA 0 A_SpawnItemEx("Gore_Gib6",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 AA 0 A_SpawnItemEx("Gore_Gib7",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 AA 0 A_SpawnItemEx("Gore_Gib8",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 AAAAA 0 A_CustomMissile("BloodShower5",random(32,48),0,random(0,360),2,random(0,360))
+        TNT1 AAAAA 0 A_CustomMissile("BloodShower2",40,0,random(0,360),2,random(0,360))
+        XDR2 AA 1 A_SpawnDebris("BloodShower2",1)
+        TNT1 A 0 A_NoBlocking
+        XDR2 BBBCCCDDDEEEFFF 1 A_SpawnDebris("BloodShower2",1)
+        XDR2 F -1 A_BossDeath
+        stop
     }
 }
 
@@ -137,15 +159,15 @@ actor SKEXKubiuted : POSXKubiuted
     States
     {
     Spawn:
-        XDF1 E 0
-        XDF1 E 0 ThrustThing (random(0,255),random(1,4))
-        XDF1 E 0 ThrustThingZ(0,random(15,40),0,0)
+        TNT1 A 0
+        TNT1 A 0 ThrustThing (random(0,255),random(1,4))
+        TNT1 A 0 ThrustThingZ(0,random(15,40),0,0)
         XDF1 EEEEFFFFG 1 A_SpawnItem("BloodShower3",0)
-        XDF1 G 0 A_CheckFloor("Spawned")
+        TNT1 A 0 A_CheckFloor("Spawned")
         goto Spawn+11
     Spawned:
-        XDF1 H 0 A_PlaySound("S_Blodd")
-        XDF1 H 0 A_ChangeFlag("PUSHABLE",0)
+        TNT1 A 0 A_PlaySound("S_Blodd")
+        TNT1 A 0 A_ChangeFlag("PUSHABLE",0)
     Spawned2:    
         XDF1 H 3 A_Look
         goto Spawned2
@@ -154,15 +176,15 @@ actor SKEXKubiuted : POSXKubiuted
         loop
     Melee:
         XDF1 H 1 A_FaceTarget
-        XDF1 H 0 damageThing(1)
-        XDF1 H 0 A_ChangeFlag("PUSHABLE",1)
-        XDF1 H 0 ThrustThingZ(0,random(15,40),0,0)
-        XDF1 H 0 A_Recoil(2+random(0,8))
+        TNT1 A 0 DamageThing(1)
+        TNT1 A 0 A_ChangeFlag("PUSHABLE",1)
+        TNT1 A 0 ThrustThingZ(0,random(15,40),0,0)
+        TNT1 A 0 A_Recoil(2+random(0,8))
         goto Spawn+3
     Death:
-        BLD1 C 0 A_Fall
-        BLD1 C 0 A_Scream
-        BLD1 CCCCC 0 A_SpawnDebris("BloodShower2")
+        TNT1 A 0 A_Fall
+        TNT1 A 0 A_Scream
+        TNT1 AAAAA 0 A_SpawnDebris("BloodShower2")
         BLD1 CBA 1
         Stop
     }
