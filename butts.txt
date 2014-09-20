@@ -24,6 +24,7 @@ TO DO in no particular order:
   ^ Design
   ^ Pickup sprite/sound replacing BFG9000
   ^ New HUD signifying you're in armor
+54: Casing ejection/smoke effects on the guns.
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
