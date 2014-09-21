@@ -30,11 +30,11 @@ GRAPHICS:
   ^ The custom blood for the Kharon
   ^ The Acacia A-22 hunting pistol
   ^ The Kharon
-  ^ The widescreen Duke Nukem 64 grenade launcher for the Exodus
   ^ The polished Marathon shotgun for the Testament
 - Sgt. Shivers
   ^ All of the idle animations
   ^ The henshin animation
+  ^ Animating the Exodus
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us
   rotate the Kharon properly forcing us to rely on Photoshop's really ugly and
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA
@@ -42,7 +42,6 @@ GRAPHICS:
 - Captain J (The Sabbath large ammo pack)
 - Bloax (The broken bone sprites)
 - DonaldDuck (The Priest's sprites)
-- Duke Nukem 64 (The base for the Sabbath pickup sprite, the Exodus' sprites)
 - Shadow Warrior (The Exodus grenade sprites)
 - Aeons of Death (The Exodus explosion graphics)
 - Ettingrinder (The Candelabra)
