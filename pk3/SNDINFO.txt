@@ -213,7 +213,8 @@ swordpuff1                SWRDPUF1
 swordpuff2                SWRDPUF2
 swordpuff3                SWRDPUF3
 swordpuff4                SWRDPUF4
-$volume sword/wallpuff 0.85
+$limit sword/wallpuff 0
+$volume sword/wallpuff 0.75
 $random sword/hit { swordhit1 swordhit2 swordhit3 }
 swordhit1                 SORDHIT1
 swordhit2                 SORDHIT2
