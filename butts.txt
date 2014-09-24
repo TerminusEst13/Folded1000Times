@@ -1,8 +1,6 @@
 TO DO in no particular order:
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
 22: Randomized muzzleflashes for the pistol.
-23: Replace not-especially-demonic enemies with recolored/tweaked Heretic/Hexen enemies for more \m/ METAL \m/
-    SPIDER MASTERMIND: Emperor
 25: Respawning gives too much health
 30: Easy path to S--find group of enemies, sword-dash into them
 32: <TerminusEst13> ...I wonder if there's a way I can choke how much [combo meter] is given at once.
@@ -12,7 +10,6 @@ TO DO in no particular order:
   ^ Revenant
   ^ Baron of Hell/Hell Knight
   ^ Archvile
-  ^ Cyberdemon
   ^ Mancubus
 43: GLDEFS
 44: Expand on final map
@@ -81,6 +78,7 @@ DONE:
     CACODEMON: Wizard
     ARACHNOTRON: Priest
     PAIN ELEMENTAL: Blackened
+    SPIDER MASTERMIND: Emperor
 24: Include Shivers' idle animation
 26: In multiplayer people can cut each other up for combo
 27: sv_unblockplayers allows people to go through enemies.
@@ -91,6 +89,7 @@ DONE:
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
 37: Pretty up all non-laser enemy attacks.
   ^ Imp
+  ^ Cyberdemon
 39: Replace graphics on main menu options.
 40: Lightning sparks from hammer overcharge need to +DONTSPLASH
 41: Why do the Hell Nobles/Cacos not have colored blood wall decals? // Zandro bug - http://forum.zdoom.org/viewtopic.php?f=7&t=20507

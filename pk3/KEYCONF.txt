@@ -1,2 +1,4 @@
 clearplayerclasses
 addplayerclass MeleePlayer
+
+alias credits "puke -280 1"

@@ -744,6 +744,16 @@ script WEEB_PUKE (int values) net
     array_custmischarg[pln]  = values & 16;*/
 }
 
+script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE
+{
+    switch (changelogshit2)
+    {
+        case 1:
+        Log(s:DemonCredits);
+        break;
+    }
+}
+
 /*        if (array_custmischarg[pln]) { GiveInventory("CustomMissileCharge", 1); }
         else { TakeInventory("CustomMissileCharge", 0x7FFFFFFF); }
 

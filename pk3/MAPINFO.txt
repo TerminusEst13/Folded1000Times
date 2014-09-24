@@ -1,6 +1,6 @@
 gameinfo
 {
-	infopage = "DEMNTIP0", "CREDIT"
+	infopage = "DEMNTIP0", "CREDIT0"
 }
 
 map MAPFINAL "Steel Meets Steel" // Hammerfall

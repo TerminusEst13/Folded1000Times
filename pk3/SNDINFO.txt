@@ -319,6 +319,9 @@ revenant/gunready         ENREAD5 // Taken from Unreal 2
 trooper/fire              ENSHOT1 
 sergeant/fire             ENSHOT2
 chngnner/fire             ENSHOT3
+cyber/laserfire           ENSHOT4
+cyber/laserhit            CYSHOTHT
+cyber/rockethit           CYRCKEXP // Mixed the Doom explosion with a Doom 3 explosion
 
 imp/preparefire           IMPFWOSH // Taken from Doom 3, sped up
 imp/shootfire             IMPSHOOT
@@ -399,6 +402,45 @@ priest/death            PRSTDETH // Taken from Painkiller: Overdose
 priest/shot             PRSTFIRE // Taken from RPG Maker VX Ace
 priest/shothit          PRSTFIHT // Taken from Doom 3
 
+
+$random emperor/sight { empse1 empse2 empse3 empse4 empse5 empse6 empse7 empse8 } // Taken from Soulcalibur IV
+empse1                  EMPRSIT1
+empse2                  EMPRSIT2
+empse3                  EMPRSIT3
+empse4                  EMPRSIT4
+empse5                  EMPRSIT5
+empse6                  EMPRSIT6
+empse7                  EMPRSIT7
+empse8                  EMPRSIT8
+$random emperor/pain { empain1 empain2 empain3 empain4 } // Taken from Solecalibre 4
+empain1                 EMPRPAN1
+empain2                 EMPRPAN2
+empain3                 EMPRPAN3
+empain4                 EMPRPAN4
+$random emperor/idle { empidl1 empidl2 empidl3 empidl4 empidl5 empidl1 empidl2 empidl3 empidl4 empidl5 empidl6 } // Taken from Swole-calipur Fore
+empidl1                 EMPRIDL1
+empidl2                 EMPRIDL2
+empidl3                 EMPRIDL3
+empidl4                 EMPRIDL4
+empidl5                 EMPRIDL5
+empidl6                 EMPRIDL6
+$random emperor/attack { empatk1 empatk2 empatk3 empatk4 empatk5 empatk6 empatk7 } // Taken from Swell-call-me-now For You
+empatk1                 EMPRATK1
+empatk2                 EMPRATK2
+empatk3                 EMPRATK3
+empatk4                 EMPRATK4
+empatk5                 EMPRATK5
+empatk6                 EMPRATK6
+empatk7                 EMPRATK7
+$random emperor/charge { empch1 empch2 empch3 empch4 empch5 } // I can't think of another way to mutate "Soulcalibur IV".
+empch1                  EMPRCHR1
+empch2                  EMPRCHR2
+empch3                  EMPRCHR3
+empch4                  EMPRCHR4
+empch5                  EMPRCHR5
+$random emperor/death { empdie1 empdie2 } // Soulcalibur IV
+empdie1                 EMPRDTH1
+empdie2                 EMPRDTH2
 
 
 
