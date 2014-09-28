@@ -133,6 +133,7 @@ DrawImage "HUDBARX", 5, 193;
 DrawBar "HARMOR", "HEMPTY", SuperCounter1, Horizontal, 7, 195;
 DrawBar "HARMOR2", "HEMPTY", SuperCounter2, Horizontal, 7, 195;
 DrawBar "HARMOR3", "HEMPTY", SuperCounter3, Horizontal, 7, 195;
+DrawBar "HARMOR4", "HEMPTY", SuperCounter4, Horizontal, 7, 195;
 
 DrawImage "STYBARX", 263, 6;
 DrawBar "STYBAR1", "STYBAR0", ComboCounter1, Horizontal, 265, 8;
