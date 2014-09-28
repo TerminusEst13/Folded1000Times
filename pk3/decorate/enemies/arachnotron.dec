@@ -41,6 +41,7 @@ ACTOR Priest replaces Arachnotron
         PRST DD 2 A_FastChase
         Loop
     Missile:
+        PRST F 10 A_FaceTarget
         TNT1 A 0 A_Jump(32,"Missile3")
         TNT1 A 0 A_Jump(64,"Missile2")
         PRST F 4 A_FaceTarget
@@ -167,8 +168,6 @@ ACTOR PriestFire
     Health 5
     Speed 20
     Damage 5
-    Projectile
-    +RANDOMIZE
     RenderStyle Add 
     Alpha 0.95
     Scale 0.9
@@ -189,6 +188,8 @@ ACTOR PriestFire
     DamageFactor "Kubiuti", 0.0
     DamageFactor "IronFistExplode", 0.0
     DamageFactor "HaltHammerzeitImpact", 0.0
+    Projectile
+    +RANDOMIZE
     +THRUSPECIES
     +SHOOTABLE
     +THRUGHOST
