@@ -9,6 +9,10 @@ actor GhostStepDone : Boolean {}
 actor AcesHigh : Boolean {}
 actor ReadyToDoubleJump : Boolean {}
 actor InIronMaiden : Boolean {}
+actor BlindGuardianWaitForAnAnswer : Boolean {}
+actor BlindGuardianShieldUp : Boolean {}
+actor BlindGuardianShieldActive : Boolean {}
+actor BlindGuardianShieldHeal : Boolean {}
 
 actor UziLikeAGuzzi : Boolean {}
 actor UziFrame1 : Boolean {}

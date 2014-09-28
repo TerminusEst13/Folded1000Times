@@ -37,8 +37,8 @@ script WEEB_RESPAWN respawn
 script WEEB_OPEN OPEN
 {
     IsServer = 1;
-    LevelCount++;
 
+    if (GameType() != GAME_TITLE_MAP) { LevelCount++; }
     if (GetCvar("ds_runninginzdoom") == 0)
     {
         if (!GetCvar("compat_clientssendfullbuttoninfo"))
@@ -341,9 +341,14 @@ script WEEB_ENTER ENTER
     int armor;
     int oarmor;
     int pln = PlayerNumber();
+    int ZDum;
+    int Angel;
+    int velx, vely, velz;
+    int nx, ny, nz;
+    int ShieldTID;
     i = unusedTID(37000, 47000);
 
-    if (CheckInventory("ImAlive") == 0)
+    if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     {
         if (GameSkill () == 0) { GiveInventory("BabyMarker",1); GiveInventory("ContraLifeToken",10); }
         if (GameSkill () == 1) { GiveInventory("EasyMarker",1); GiveInventory("ContraLifeToken",8);  }
@@ -380,8 +385,70 @@ script WEEB_ENTER ENTER
         Ys2   = Ys;
         XMen  = GetActorX(0);
         Ys    = GetActorY(0);
+        ZDum  = GetActorZ(mytid) + 24.0;
+        Angel = GetActorAngle(mytid);
+        velx  = GetActorVelX(mytid); // I can't think of any witty names for these.
+        vely  = GetActorVelY(mytid);
+        velz  = GetActorVelZ(mytid);
 
-        if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); } else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
+        if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); }
+        else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
+
+        // BUTTSHIELD
+        ShieldTID = 12000 + pln;
+        if (CheckInventory("BlindGuardianShieldUp") == 1)
+        {
+            if (CheckInventory("BlindGuardianShieldActive") == 0)
+            {
+                Spawn("BlindGuardian",XMen,Ys,ZDum,ShieldTID,Angel);
+                GiveInventory("BlindGuardianShieldActive",1);
+            }
+            else
+            {
+                // WOOP WOOP PULL OVER DAT ASS TOO FAT
+                // (angle's factored in; pitch isn't)
+                int xOffset = 0, yOffset = 0, zOffset = 0;
+
+                nx = XMen + FixedMul(xOffset, cos(Angel)) + FixedMul(yOffset, sin(Angel));
+                ny = Ys + FixedMul(xOffset, sin(Angel)) - FixedMul(yOffset, cos(Angel));
+                nz = ZDum + zOffset;
+
+                if (pln != ConsolePlayerNumber())
+                {
+                    // HOLD ON BACK THAT BUTT SHIELD ON UP
+                    nx -= velx; ny -= vely; nz -= velz;
+                }
+                else
+                {
+                    // NOT FAR ENOUGH, KEEP BACKIN IT UP
+                    // (players have weird camera interpolation re. Z movement)
+                    nx -= velx; ny -= vely; nz -= 2*velz;
+                }
+
+                SetActorAngle(ShieldTID, Angel);
+                SetActorPosition(ShieldTID,nx - FixedMul(24.0,cos(Angel)),ny - FixedMul(24.0,sin(Angel)),nz,0);
+                SetActorVelocity(ShieldTID,velx,vely,velz,0,0);
+
+                if (CheckInventory("BlindGuardianShieldHeal") == 1)
+                {
+                    GiveActorInventory(ShieldTID,"BlindGuardianHealth",1000);
+                    TakeInventory("BlindGuardianShieldHeal",1);
+                }
+
+                if (CheckActorInventory(ShieldTID,"BlindGuardianWaitForAnAnswer"))
+                {
+                    // BUTT SHIELD'S DOWN, WHAT THE HELL
+                    Thing_Remove(ShieldTID);
+                    // PREPARE YOUR ANUS FOR MOURNING
+                    ShieldTID = 0;
+                    // RIP BUTT SHIELD ;_;7
+                    TakeInventory("BlindGuardianShieldUp",1);
+                    // YOU DIED AS YOU LIVED
+                    TakeInventory("BlindGuardianShieldActive",1);
+                    // THE OPPOSITE SIDE OF A PENIS
+                }
+            }
+        }
 
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
         if (CheckInventory("HammerUp") == 1)
@@ -579,7 +646,7 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (MarchOfTheImmortal >= 14)
+            if (MarchOfTheImmortal >= 15)
             {
               TakeInventory("SuperMeterCounter",1);
               MarchOfTheImmortal = 0;
@@ -627,7 +694,14 @@ script WEEB_ENTER ENTER
         else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
 
         Delay(1);
-        if (isDead(0)) { terminate; }
+        if (isDead(0))
+        {
+            Thing_Remove(ShieldTID);
+            ShieldTID = 0;
+            TakeInventory("BlindGuardianShieldUp",1);
+            TakeInventory("BlindGuardianShieldActive",1);
+            terminate;
+        }
     }
 }
 
@@ -664,6 +738,8 @@ script WEEB_COMBOREMOVAL ENTER
 
 script WEEB_UNLOADING UNLOADING
 {
+    TakeInventory("BlindGuardianShieldUp",1);
+    TakeInventory("BlindGuardianShieldActive",1);
     TakeInventory("AlreadyInLevel",1);
     TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);

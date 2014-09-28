@@ -9,6 +9,7 @@ SPECIAL THANKS TO:
   droppingly astounding artistic work.
 - Special thanks to Doom667Shogun for allowing me to use Doom Radys assets for
   kickstarting DemonSteele with, letting me have a headstart on everything.
+- /vr/, as always, for being an incredible source of support and ideas.
 
 
 GRAPHICS:
@@ -80,6 +81,7 @@ GRAPHICS:
 - Arx (One of the apples)
 - Final Fight (One of the burgers)
 - Knights of the Round (One of the Apples)
+- Grand Knights History (The Blind Guardian shield)
 
 CODE:
 =========

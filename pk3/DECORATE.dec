@@ -75,6 +75,7 @@ const int WEEB_DEC_CHANGEMUSBACK = 2;
 #include "decorate/player.dec"
 #include "decorate/powerups.dec"
 #include "decorate/decorations.dec"
+#include "decorate/shield.dec"
 
 #include "decorate/bloodeffects.dec"
 

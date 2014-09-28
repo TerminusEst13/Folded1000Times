@@ -1,0 +1,94 @@
+ACTOR BlindGuardianHealth : Health
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 1000
+}
+
+actor BlindGuardian
+{
+    Health 800
+    Radius 16
+    Height 32
+    Speed 0
+    PainChance 255
+    RenderStyle Add
+    Alpha 0.65
+    Scale 0.775
+    Mass 0x7FFFFFFF
+    DamageFactor "kubiuti", 0.0
+    DamageFactor "kubispinattack", 0.0
+    DamageFactor "kubilungeattack", 0.0
+    DamageFactor "kubirangeattack", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
+    DamageFactor "HaltHammerzeit", 0.0
+    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "IronFistExplosion", 0.0
+    DamageFactor "AcaciaDamage", 0.0
+    DamageFactor "SabbathDamage", 0.0
+    DamageFactor "ExodusDamage", 0.0
+    DamageFactor "ExodusJump", 0.0
+    DamageFactor "TestamentDamage", 0.0
+    RadiusDamageFactor 0.0
+    Species "Player"
+    +NOTARGET
+    +NOINFIGHTING
+    +SOLID
+    +NOGRAVITY
+    +THRUSPECIES
+    +SHOOTABLE
+    +NOBLOOD
+    +DONTSPLASH
+    +NOCLIP
+    //+REFLECTIVE
+    +PUSHABLE
+    +MOVEWITHSECTOR
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_JumpIfHealthLower(101,"Spawn4")
+        TNT1 A 0 A_JumpIfHealthLower(301,"Spawn3")
+        TNT1 A 0 A_JumpIfHealthLower(601,"Spawn2")
+        SHLD A 1
+        loop
+    Spawn2:
+        TNT1 A 0 A_JumpIfHealthLower(101,"Spawn4")
+        TNT1 A 0 A_JumpIfHealthLower(301,"Spawn3")
+        SHLD B 1
+        loop
+    Spawn3:
+        TNT1 A 0 A_JumpIfHealthLower(101,"Spawn4")
+        SHLD C 1
+        loop
+    Spawn4:
+        SHLD D 1
+        loop
+    Pain:
+        TNT1 A 0 A_JumpIfHealthLower(101,"Pain4")
+        TNT1 A 0 A_JumpIfHealthLower(301,"Pain3")
+        TNT1 A 0 A_JumpIfHealthLower(601,"Pain2")
+        TNT1 A 0
+        SHLD A 1 A_PlaySoundEx("shield/hurt1","soundslot6",0,0)
+        goto Spawn
+    Pain2:
+        TNT1 A 0 A_JumpIfHealthLower(101,"Pain4")
+        TNT1 A 0 A_JumpIfHealthLower(301,"Pain3")
+        TNT1 A 0
+        SHLD B 1 A_PlaySoundEx("shield/hurt2","soundslot6",0,0)
+        goto Spawn2
+    Pain3:
+        TNT1 A 0 A_JumpIfHealthLower(101,"Pain4")
+        TNT1 A 0
+        SHLD C 1 A_PlaySoundEx("shield/hurt3","soundslot6",0,0)
+        goto Spawn3
+    Pain4:
+        TNT1 A 0
+        SHLD D 1 A_PlaySoundEx("shield/hurt4","soundslot6",0,0)
+        goto Spawn4
+    Death:
+        SHLD D 1 A_PlaySoundEx("shield/dead","soundslot6",0,0)
+        SHLD DDDDDDDDDD 1 A_FadeOut(0.05)
+        TNT1 A 0 A_GiveInventory("BlindGuardianWaitForAnAnswer",1)
+        TNT1 A 10
+        stop
+    }
+}

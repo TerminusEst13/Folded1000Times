@@ -112,6 +112,13 @@ weapon/carronade          GETCARND // I was lazy and just inserted an Unreal Cha
 weapon/uzi                GETUZI
 weapon/hammer             GETHAMMR
 
+shield/hurt1              SHLDHRT1 // Taken from Painkiller
+shield/hurt2              SHLDHRT2 // Ditto
+shield/hurt3              SHLDHRT3 // Ditto
+shield/hurt4              SHLDHRT4 // Ditto
+shield/dead               SHLDDEAD // Ditto
+shield/pickup             SHLDPKUP // Taken from Fatal/Fake
+
 // Player
 
 armor/hit                 ARMRHIT
