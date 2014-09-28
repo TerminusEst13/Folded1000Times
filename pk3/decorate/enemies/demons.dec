@@ -14,7 +14,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     DamageFactor "ExodusJump", 0.0
     States
     {
-    See: // Apparently increasing the speed gets the critter stuck on some parts of the environment.
+    See: // Apparently increasing the speed gets the critter stuck on some parts of the environment. Weird!
         SARG A 2 A_Chase
         SARG AA 1 A_Chase
         SARG B 2 A_Chase
