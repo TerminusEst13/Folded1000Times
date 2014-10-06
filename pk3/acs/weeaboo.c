@@ -16,6 +16,7 @@ int GotShotgun;
 int GotCarronade;
 int GotUzi;
 int GotHam; // HAM
+int GotIronMaiden;
 
 int IronMaidenMusic[IRONMUS] = 
 { "D_IRONM1","D_IRONM2","D_IRONM3","D_IRONM4","D_IRONM5","D_IRONM6","D_IRONM7" };
@@ -79,6 +80,8 @@ script WEEB_DECORATE (int burrshet)
         int delaytime = 10;
         int delaycount = 0;
 
+        SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
+
         if (CheckInventory("PowerShieldProtection") == 1) { terminate; }
         
         if (CheckInventory("ContraArmorToken") >= 1)
@@ -110,7 +113,7 @@ script WEEB_DECORATE (int burrshet)
         
         SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
         SetActorProperty(0,APROP_INVULNERABLE,0);
-    break;
+        break;
 
     case WEEB_DEC_FREEZE:
         SetActorProperty(0,APROP_Species,"Body");
@@ -250,6 +253,7 @@ script WEEB_DECORATE (int burrshet)
         TakeInventory("InIronMaiden",1);
         TakeInventory("Iron Fist",1);
         TakeInventory("IronMaidenSpeed",1);
+        TakeInventory("IronMaidenWarning",1);
         TakeInventory("Armor",0x7FFFFFFF);
         TakeInventory("HenshinActivated",1);
         GiveInventory("Kharon + Acacia A-22",1);
@@ -279,6 +283,11 @@ script WEEB_DECORATE (int burrshet)
         delay(10);
         TakeInventory("HenshinActivated",1);
         break;
+
+    case WEEB_DEC_ARMRCHECK:
+        if (isSinglePlayer() && GotIronMaiden == 1) { SetResultValue(1); }
+        else { SetResultValue(0); }
+        break;
     }
 }
 
@@ -305,6 +314,10 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
         case 3:
           Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it...");
+          break;
+
+        case 4:
+          Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Hold Fire + Use Inventory)");
           break;
         }
         break;
@@ -347,6 +360,7 @@ script WEEB_ENTER ENTER
     int nx, ny, nz;
     int ShieldTID;
     i = unusedTID(37000, 47000);
+    int IntroChance;
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     {
@@ -358,6 +372,11 @@ script WEEB_ENTER ENTER
         FadeRange(0,0,0,1.00,0,0,0,0,3.50);
         LocalAmbientSound("level/intro",127);
         GiveInventory("ImAlive",1);
+    }
+    else if (CheckInventory("ImAlive") == 1)
+    {
+        IntroChance = random(0,3);
+        if (IntroChance == 3) { LocalAmbientSound("haelin/intro",127); }
     }
 
     if (Spawn("Brutal_Blood", GetActorX(0), GetActorY(0), GetActorZ(0), i) || Spawn("BrutalPistol", GetActorX(0), GetActorY(0), GetActorZ(0), i))
@@ -426,7 +445,7 @@ script WEEB_ENTER ENTER
                 }
 
                 SetActorAngle(ShieldTID, Angel);
-                SetActorPosition(ShieldTID,nx - FixedMul(24.0,cos(Angel)),ny - FixedMul(24.0,sin(Angel)),nz,0);
+                SetActorPosition(ShieldTID,nx - FixedMul(32.0,cos(Angel)),ny - FixedMul(32.0,sin(Angel)),nz,0);
                 SetActorVelocity(ShieldTID,velx,vely,velz,0,0);
 
                 if (CheckInventory("BlindGuardianShieldHeal") == 1)
@@ -454,7 +473,7 @@ script WEEB_ENTER ENTER
         if (CheckInventory("HammerUp") == 1)
         {
            if (CheckInventory("HammerCharge") >= 90 && CheckInventory("HammerCharge") <= 100 )
-               { if (RideTheLightning >= 18) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 30) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") > 100)
                { if (RideTheLightning >= 8) { GiveInventory("HammerCharge",1); GiveInventory("ChargeScreenFlash",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 80)
@@ -531,6 +550,7 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotCarronade") == 1) { GotCarronade = 1; }
             if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
             if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
+            if (CheckInventory("GotIronMaiden") == 1) { GotIronMaiden = 1; } 
         }
 
         OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
@@ -622,6 +642,7 @@ script WEEB_ENTER ENTER
         {
           ActivatorSound("iron/armorhit", 127);
           FadeRange(255,255,0,min(0.5,(oarmor-armor)*0.015),0,0,0,0.0,min(35.0,1.5*(oarmor-armor))/35); 
+          GiveInventory("MidCombat",75);
         }
 
         if (CheckInventory("InIronMaiden") == 1)
@@ -629,6 +650,13 @@ script WEEB_ENTER ENTER
           if (CheckInventory("SuperMeterCounter") > 0)
           {
             SetActorProperty(0,APROP_JUMPZ,10.0);
+
+            if (CheckInventory("SuperMeterCounter") < 31 && CheckInventory("IronMaidenWarning") == 0)
+            {
+              GiveInventory("IronMaidenWarning",1);
+              FadeRange(255,255,255,0.50,0,0,0,0,0.5);
+              LocalAmbientSound("henshin/warning",127);
+            }
 
             if (CheckInventory("HenshinDeactivation") == 1)
             {
@@ -642,11 +670,12 @@ script WEEB_ENTER ENTER
 
             if (IronArmor >= 7)
             {
+              if (CheckInventory("Armor") < 40) { GiveInventory("IronMaidenArmor",1); }
               GiveInventory("IronMaidenArmor",1);
               IronArmor = 0;
             }
 
-            if (MarchOfTheImmortal >= 15)
+            if (MarchOfTheImmortal >= 21)
             {
               TakeInventory("SuperMeterCounter",1);
               MarchOfTheImmortal = 0;

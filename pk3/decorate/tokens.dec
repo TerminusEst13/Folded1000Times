@@ -9,6 +9,7 @@ actor GhostStepDone : Boolean {}
 actor AcesHigh : Boolean {}
 actor ReadyToDoubleJump : Boolean {}
 actor InIronMaiden : Boolean {}
+actor IronMaidenWarning : Boolean {}
 actor BlindGuardianWaitForAnAnswer : Boolean {}
 actor BlindGuardianShieldUp : Boolean {}
 actor BlindGuardianShieldActive : Boolean {}
@@ -52,6 +53,7 @@ actor GotShotgun : Boolean {}
 actor GotCarronade : Boolean {}
 actor GotUzi : Boolean {}
 actor GotHammer : Boolean {}
+actor GotIronMaiden : Boolean {}
 
 
 

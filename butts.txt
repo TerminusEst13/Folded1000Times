@@ -18,9 +18,45 @@ TO DO in no particular order:
 52: Special charge-up laser-hadouken for Iron Maiden
 53: Iron Maiden polishing
   ^ Design
-  ^ Pickup sprite/sound replacing BFG9000
   ^ New HUD signifying you're in armor
+  ^ Non-placeholder sprites for fists/pickup
 54: Casing ejection/smoke effects on the guns.
+55: New teleport effect
+56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
+57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
+58: Attack when you let go of holding down fire.
+59: Less/no-effects cvar
+60: <torridGristle> Watersplashes aren't the same colour as the water.
+<torridGristle> Yeah, they're PNGs and aren't affected by the new playpal.
+<torridGristle> Converting them to Doom format using the Doom palette, not the DemonSteele palette, should fix that well enough.
+<torridGristle> Filesize actually decreases.
+<torridGristle> Might want to go ahead and convert all the splashes into Doom format, Doom palette, so it's changed to the same colours as everything else when the new palette is in use.
+61: 6000 ANGRY BEES: one small idea to toy with:
+6000 ANGRY BEES: subtle sound cues when you go up or down a combo level (fearless etc.)
+TerminusEst13: That's a good idea, actually.
+6000 ANGRY BEES: maybe layer additional sounds under the sword swing sound for each combo level, increasingly unsubtle
+6000 ANGRY BEES: so combo level 1 adds a slight whine to the sword slash, while max combo level is the quad damage sound
+TerminusEst13: That'd add some really visceral feedback, and it'd definitely encourage going even harder and faster--just so you can see those neat effects even more.
+TerminusEst13: Plus it'd make sense from an in-universe perspective, since the sword is eating souls in a stereotypical edgy 90s fashion.
+62: Emperor's teleport doesn't show up online.
+63: <PresidentPeople> TerminusEst13: You can interrupt the shotgun reload sound by jumping in Demonsteele
+64: [12:37:27 am] DRL 3.33: would be nice if torches had a chance to drop peppers
+65: Look into adapting Pres' wandering-soul system for others to pick up.
+66: [07:30:53 pm] kenny: what about the invulnerability sphere stack
+[07:31:02 pm] Jung Hae-Lin: Eh?
+[07:31:10 pm] Ethril: if you pick up invuln while you already got one going
+[07:31:13 pm] Ethril: it goes into your inventory
+[07:31:19 pm] Ethril: you can carry around a bunch of PowerShields
+67: The Blind Guardian, when damaged and then healed, stays in the damage state until pained.
+
+
+
+PVP WOES:
+- Invulnerability time needs to be much shorter
+- Don't get the sound/fade-in on respawn
+- Obituaries need to be tied to weapons/bullets.
+- Sword slashes go through players
+- Player skin REALLY does not help in identifying team members
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
@@ -36,6 +72,14 @@ TO DO in no particular order:
 <TerminusEst13> fug you i just put it back in
 <Roman6a> oh, good
 <PresidentPeople> >Wraithverge still isn't on it
+
+
+[04:31:35 pm] Badass adorkable: i want a bonerstorms caused by ironmeido mode kills to be a shotgun blasts
+[04:32:02 pm] TerminusEst13: That...actually sounds like a cool idea for a special move.
+[04:32:16 pm] TerminusEst13: Kill a dude so hard his bones rocket out and shred through other dudes.
+[04:32:35 pm] Badass adorkable: not as much shred as much as PAAAAAAIN
+[04:32:53 pm] Badass adorkable: kill a pinkie to stun pinkies behind it
+[04:33:30 pm] DRL 3.33: instead of gibing, they explode, damageing other monsters around them
 
 
 
@@ -100,6 +144,7 @@ DONE:
 48: Convert .wav files to .ogg for size compression.
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
+  ^ Pickup sprite/sound replacing BFG9000
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter

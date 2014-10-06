@@ -1,6 +1,3 @@
-actor NothingReplacer1 : BlankPuff replaces Shotgun {}
-actor NothingReplacer4 : BlankPuff replaces BFG9000 {}
-
 actor HammerCharge : Ammo
 {
     Inventory.PickupMessage "Don't think you should've gotten this."

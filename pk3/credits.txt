@@ -82,6 +82,7 @@ GRAPHICS:
 - Final Fight (One of the burgers)
 - Knights of the Round (One of the Apples)
 - Grand Knights History (The Blind Guardian shield)
+- PresidentPeople (Fixing the Blind Guardian's rotations so it had a proper front sprite)
 
 CODE:
 =========
@@ -121,4 +122,7 @@ MUSIC:
 
 SOUNDS:
 =========
+- Adoxographist (Going above and beyond the line of duty for Hae-Lin's voice!)
+- John Archer (The Blackened's voice)
+- torridGristle (The robotic voice of the Iron Maiden)
 - All sounds are credited to their respective owner in SNDINFO.

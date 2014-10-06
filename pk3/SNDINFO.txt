@@ -1,7 +1,109 @@
+// Jung Hae-Lin (Voiced by Adoxographist)
+
+$playeralias      Hae-Lin  male    *death          haelin/dead
+$playersounddup   Hae-Lin  male    *xdeath         *death
+$playersounddup   Hae-Lin  male    *burndeath      *death
+$playersounddup   Hae-Lin  male    *crazydeath     *death
+$playersounddup   Hae-Lin  male    *wimpydeath     *death
+$playersounddup   Hae-Lin  male    *gibbed         *death
+$playeralias      Hae-Lin  male    *pain100        haelin/hurt
+$playersounddup   Hae-Lin  male    *pain75         *pain100
+$playersounddup   Hae-Lin  male    *pain50         *pain100
+$playersounddup   Hae-Lin  male    *pain25         *pain100
+$playersound      Hae-Lin  male    *grunt          QUIET
+$playersound      Hae-Lin  male    *land           HLLAND // Taken from Quake 3
+$playeralias      Hae-Lin  male    *usefail        haelin/nope
+$playeralias      Hae-Lin  male    *taunt          haelin/laugh
+$playeralias      Hae-Lin  male    *jump           haelin/jump
+
+$random haelin/dead { haedead1 haedead2 }
+haedead1                HLDEATH1
+haedead2                HLDEATH2
+
+$random haelin/hurt { haehurt1 haehurt2 haehurt3 }
+haehurt1                HLPAIN1
+haehurt2                HLPAIN2
+haehurt3                HLPAIN3
+
+$random haelin/nope { haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haewhoops1 }
+haenope1                HLNOPE1
+haenope2                HLNOPE2
+haenope3                HLNOPE3
+haewhoops1              HLWOOPS1
+
+$random haelin/laugh { haelaff1 haelaff2 haelaff3 }
+haelaff1                HLLAFFO1
+haelaff2                HLLAFFO2
+haelaff3                HLLAFFO3
+
+$random haelin/jump { haejump1 haejump2 haejump3 }
+haejump1                HLJUMP1
+haejump2                HLJUMP2
+haejump3                HLJUMP3
+
+$random haelin/idle0 { haewang1 haewang2 }
+haewang1                HLSWARR1
+haewang2                HLSWARR2
+
+haelin/idle1_1          HLIDL1_1
+haelin/idle1_2          HLIDL1_2
+haelin/idle1_3          HLIDL1_3
+
+henshin/call            HLHENSHN
+
+$random haelin/intro { hntro1 hntro2 hntro3 hntro4 hntro5 hntro6 hntro7 hntro8 hntro9 hntro10  hntro11 hntro12 hntro13 hntro14 hntro15 hntro16 hntro17 hntro18 hntro19 hntro20 hntro21 hntro22 hntro23 hntro24 hntro25 hntro26 hntro27 hntro28 hntro29 hntro30 hntro31 hntro32 hntro33 hntro34 hntro35 hntro36 hntro37 hntro38 }
+hntro1                  HLNTRO1
+hntro2                  HLNTRO2
+hntro3                  HLNTRO3
+hntro4                  HLNTRO5
+hntro5                  HLNTRO6
+hntro6                  HLNTRO7
+hntro7                  HLNTRO8
+hntro8                  HLNTRO9
+hntro9                  HLNTRO10
+hntro10                 HLNTRO11
+hntro11                 HLNTRO12
+hntro12                 HLNTRO13
+hntro13                 HLNTRO14
+hntro14                 HLNTRO15
+hntro15                 HLNTRO16
+hntro16                 HLNTRO17
+hntro17                 HLNTRO18
+hntro18                 HLNTRO19
+hntro19                 HLNTRO20
+hntro20                 HLNTRO21 // White Skull - Heavy Metal Axes
+hntro21                 HLNTRO22
+hntro22                 HLNTRO23
+hntro23                 HLNTRO25 // Iced Earth - Travel in Stygian (Minor rephrasing)
+hntro24                 HLNTRO26 // Dream Evil - In Flames You Burn
+hntro25                 HLNTRO27 // Annihilator - Denied
+hntro26                 HLNTRO28 // W.A.S.P. - Harder, Faster
+hntro27                 HLNTRO29 // Bon Jovi - Living on a Prayer
+hntro28                 HLNTRO30 // Megadeth - My Last Words
+hntro29                 HLNTRO31 // ACDC - Back in Black
+hntro30                 HLNTRO33 // Judas Priest - Painkiller (Minor rephrasing)
+hntro31                 HLNTRO35 // Iron Fire - Kill for Metal (Minor rephrasing)
+hntro32                 HLNTRO36 // Manowar - Ride the Dragon
+hntro33                 HLNTRO37 // Paladin - On Fire (Minor rephrasing)
+hntro34                 HLNTRO38 // Striker - Full Speed or No Speed
+hntro35                 HLNTRO39 // Testament - Down for Life
+hntro36                 HLNTRO40
+hntro37                 HLNTRO41 // Ozzy Osbourne - Crazy Train
+hntro38                 HLNTRO42
+
+$random haelin/attack { hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk2 hatk3 hatk4 hatk5 hatk6 hatk7 hatk8 }
+hatk1                   HLATCK1a
+hatk2                   HLATCK2a
+hatk3                   HLATCK2b
+hatk4                   HLATCK3a
+hatk5                   HLATCK4a
+hatk6                   HLATCK4b
+hatk7                   HLATCK5a
+hatk8                   HLATCK6a
+
 // System
 
 $random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 }
-
 intro1                    INTRO1
 intro2                    INTRO2
 intro3                    INTRO3
@@ -94,6 +196,8 @@ ammo/cell2                AMMSMGA2 // From Left 4 Dead 2
 ammo/knapsack             BACKPGET // From World of Warcraft
 ammo/soul                 SOULGET
 ammo/soulstone            SOLSTNGT // From Doom 3
+ammo/soulgem              SOLGEMGT // From Painkiller
+ammo/soulgemloop          SOLGEMLP
 
 $volume ammo/soul 0.75
 
@@ -111,6 +215,10 @@ weapon/shotgun            GETSHTGN
 weapon/carronade          GETCARND // I was lazy and just inserted an Unreal Championship 2 sound in here and added reverb
 weapon/uzi                GETUZI
 weapon/hammer             GETHAMMR
+$random weapon/armor { armwep1 armwep2 armwep3 } // Clicky clacky sounds by Kamen Rider Kabuto, voice by torridGristle
+armwep1                   GETARMR1
+armwep2                   GETARMR2
+armwep3                   GETARMR3
 
 shield/hurt1              SHLDHRT1 // Taken from Painkiller
 shield/hurt2              SHLDHRT2 // Ditto
@@ -303,15 +411,16 @@ iron/block                IRNBLOCK // Taken from Halo: Reach
 iron/beam                 IRNBEEM
 
 henshin/foley             IRNHFOLY // Taken from Smash Bros. Brawl
-henshin/call              IRNHNSHN // Taken from Kamen Rider Gaim
 henshin/donarmor          IRNHNSH2 // Taken from Kamen Rider Kabuto
 henshin/click             IRNHCLCK // Taken from Kamen Rider W
-henshin/ready             IRNHREDY // Taken from Kamen Rider Faiz
-henshin/complete          IRNHCOMP // Taken from Kamen Rider Faiz
+henshin/ready             IRNHREDY // Made by torridGristle
+henshin/complete          IRNHCOMP // Made by torridGristle
 henshin/completedismiss   IRNHCOM2 // Taken from Kamen Rider Faiz
-henshin/timeout           IRNHTOUT // Taken from Kamen Rider Faiz
+henshin/timeout           IRNHTOUT // Made by torridGristle
 henshin/timeoutdismiss    IRNHTOU2 // Taken from Kamen Rider Fourze
-henshin/error             IRNERROR // Taken from Kamen Rider Faiz
+henshin/error             IRNERROR // Made by torridGristle
+henshin/error2            IRNNOPE  // Taken from RPG Maker VX
+henshin/warning           IRNWARNG // Made by torridGristle
 
 
 

@@ -1,0 +1,6 @@
+FROM 0.71b TO 0.72:
+=======================================
+- Kharon slashing animation time has been reduced by two tics--now people can slash again as soon as the animation is complete.
+- The animation for the upward slash has been spaced out slightly for more natural movement.
+- Thanks to PresidentPeople, the Blind Guardian now has a proper set of rotations.
+- The environment splash sprites now follow the same desaturated 90s palette.

@@ -60,6 +60,7 @@
 #define WEEB_DEC_DIFFCHECK    16
 #define WEEB_DEC_ONLINECHECK  17
 #define WEEB_DEC_HENSHIN      18
+#define WEEB_DEC_ARMRCHECK    19
 
 #define WEEB_DEC_GETMESSAGES    0
 #define WEEB_DEC_CHANGEMUS      1
@@ -140,6 +141,7 @@ GRAPHICS:\n\
 - Arx (One of the apples)\n\
 - Final Fight (One of the burgers)\n\
 - Knights of the Round (One of the Apples)\n\
+- Grand Knights History (The Blind Guardian shield)\n\
 \n\
 CODE:\n\
 =========\n\
@@ -179,4 +181,7 @@ MUSIC:\n\
 \n\
 SOUNDS:\n\
 =========\n\
+- Adoxographist (Going above and beyond the line of duty for Hae-Lin's voice!)\n\
+- John Archer (The Blackened's voice)\n\
+- torridGristle (The robotic voice of the Iron Maiden)\n\
 - All sounds are credited to their respective owner in SNDINFO.";

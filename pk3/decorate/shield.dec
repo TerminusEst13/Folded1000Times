@@ -1,13 +1,13 @@
 ACTOR BlindGuardianHealth : Health
 {
     Inventory.Amount 1
-    Inventory.MaxAmount 1000
+    Inventory.MaxAmount 800
 }
 
 actor BlindGuardian
 {
     Health 800
-    Radius 16
+    Radius 32
     Height 32
     Speed 0
     PainChance 255
@@ -30,18 +30,19 @@ actor BlindGuardian
     DamageFactor "TestamentDamage", 0.0
     RadiusDamageFactor 0.0
     Species "Player"
-    +NOTARGET
-    +NOINFIGHTING
-    +SOLID
+    //+NOTARGET
+    //+NOINFIGHTING
+    -SOLID
     +NOGRAVITY
     +THRUSPECIES
     +SHOOTABLE
     +NOBLOOD
     +DONTSPLASH
     +NOCLIP
-    //+REFLECTIVE
-    +PUSHABLE
-    +MOVEWITHSECTOR
+    +REFLECTIVE
+    +DEFLECT
+    //+PUSHABLE
+    //+MOVEWITHSECTOR
     States
     {
     Spawn:

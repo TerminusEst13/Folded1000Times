@@ -288,6 +288,7 @@ actor WeeabooBaronBall : BaronBall replaces BaronBall
     Speed 17
     FastSpeed 22
     Species "EnemyShot"
+    DamageType "HeavyEnemyDamage"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "EnemyInfightDamageArachnotron", 0.0

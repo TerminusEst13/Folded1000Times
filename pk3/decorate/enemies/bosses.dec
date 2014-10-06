@@ -240,6 +240,7 @@ actor CyberRocket : Rocket //replaces Rocket
     Health 5
     DeathSound "cyber/rockethit"
     Species "EnemyShot"
+    DamageType "HeavyEnemyDamage"
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "EnemyInfightDamageArachnotron", 0.0

@@ -3,6 +3,16 @@ actor IronMaidenArmor : ArmorBonus
     Armor.SavePercent 100
     Armor.MaxSaveAmount 100
     DamageFactor "Normal", 0.5
+    DamageFactor "ArchvileFire", 0.25
+    DamageFactor "HeavyEnemyDamage", 0.25
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "EnemyInfightDamageImp", 0.0
+    DamageFactor "EnemyInfightDamageArachnotron", 0.0
+    DamageFactor "EnemyInfightDamageNoble", 0.0
+    DamageFactor "EnemyInfightDamageRevenant", 0.0
+    DamageFactor "EnemyInfightDamageFatso", 0.0
+    DamageFactor "EnemyInfightDamageCaco", 0.0
+    DamageFactor "EnemyInfightDamageCyber", 0.0
 }
 
 actor IronMaidenArmor2 : BasicArmorPickup
@@ -10,6 +20,16 @@ actor IronMaidenArmor2 : BasicArmorPickup
     Armor.SavePercent 100
     Armor.SaveAmount 100
     DamageFactor "Normal", 0.5
+    DamageFactor "ArchvileFire", 0.25
+    DamageFactor "HeavyEnemyDamage", 0.25
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "EnemyInfightDamageImp", 0.0
+    DamageFactor "EnemyInfightDamageArachnotron", 0.0
+    DamageFactor "EnemyInfightDamageNoble", 0.0
+    DamageFactor "EnemyInfightDamageRevenant", 0.0
+    DamageFactor "EnemyInfightDamageFatso", 0.0
+    DamageFactor "EnemyInfightDamageCaco", 0.0
+    DamageFactor "EnemyInfightDamageCyber", 0.0
 }
 
 ACTOR IronMaidenRepel
@@ -83,7 +103,7 @@ actor "Iron Fist" : Weapon
 
     FireSequence1: // Right to left
         TNT1 A 0 A_JumpIfInventory("FistSwung",1,"FireSequence2")
-        TNT1 A 0 A_Jump(128,"FireSequence1B")
+        TNT1 A 0 A_Jump(255,"FireSequence1A","FireSequence1B")
         TNT1 A 0
         TNT1 A 1
         loop
@@ -147,7 +167,7 @@ actor "Iron Fist" : Weapon
         goto Fired
 
     FireSequence2: // Left to right
-        TNT1 A 0 A_Jump(128,"FireSequence2B")
+        TNT1 A 0 A_Jump(255,"FireSequence2A","FireSequence2B")
         TNT1 A 0
         TNT1 A 1
         loop
@@ -245,6 +265,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         TNT1 A 0 A_PlayWeaponSound("iron/spinattack")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
         TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
@@ -266,6 +287,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         TNT1 A 0 A_PlayWeaponSound("iron/spinattack")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
         TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
@@ -293,6 +315,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("iron/lunge")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 AA 0 A_SpawnItemEx("RazorWindExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,125,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,124,0,0,1,48)
@@ -330,6 +353,7 @@ actor "Iron Fist" : Weapon
         IRS2 AB 1
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         TNT1 A 0 A_PlayWeaponSound("iron/beam")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         IRS2 C 1
         TNT1 A 0 A_FireCustomMissile("RazorWind2",0,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",-3,0,0,0,0,0)

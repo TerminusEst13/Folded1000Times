@@ -21,6 +21,7 @@ ACTOR MeleePlayer : PlayerPawn
     Player.ForwardMove 2.4, 1.2
     Player.SideMove 2.3, 1.15
     Player.DisplayName "Hae-Lin"
+    Player.SoundClass "Hae-Lin"
     PainChance "EnemyInfightDamage", 0
     DamageFactor "Normal", 0.75
     DamageFactor "EnemyInfightDamage", 0.0
@@ -163,10 +164,15 @@ actor KamenRiderModeActivate : CustomInventory
     States
     {
     Use:
+        TNT1 A 0 A_JumpIfInventory("GotIronMaiden",1,"UseCheck")
+        TNT1 A 1
+        fail
+    UseCheck:
         TNT1 A 0 A_JumpifInventory("HenshinCooldown",1,"UseFail")
         TNT1 A 0 A_JumpifInventory("HenshinActivated",1,"UseFail") // Technically not needed, but I'd rather not spam the server with ACS.
         TNT1 A 0 A_GiveInventory("HenshinActivated",1)
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_HENSHIN,0,0)
+        TNT1 A 1
         fail
     UseFail:
         TNT1 A 0
