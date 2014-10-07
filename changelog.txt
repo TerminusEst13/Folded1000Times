@@ -4,3 +4,8 @@ FROM 0.71b TO 0.72:
 - The animation for the upward slash has been spaced out slightly for more natural movement.
 - Thanks to PresidentPeople, the Blind Guardian now has a proper set of rotations.
 - The environment splash sprites now follow the same desaturated 90s palette.
+- WHOOPS improved.
+- Soul is slightly more transparent so as to not confuse it with enemy shots.
+- When in Iron Maiden, Hae-Lin can now triple-jump, as opposed to simply double-jumping.
+- The Blind Guardian no longer keeps a damaged appearance when repaired.
+- Bullets online no longer spatter sparks on contact with enemies.

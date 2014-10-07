@@ -7,6 +7,7 @@ actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
 actor GhostStepDone : Boolean {}
 actor AcesHigh : Boolean {}
+actor VertIGo : Boolean {}
 actor ReadyToDoubleJump : Boolean {}
 actor InIronMaiden : Boolean {}
 actor IronMaidenWarning : Boolean {}
@@ -30,6 +31,7 @@ actor FistSwung : Boolean {}
 actor FistHit : Boolean {}
 
 actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
+actor IAmAnAwesomePersonWhoLikesCoolMusic : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}

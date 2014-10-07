@@ -26,11 +26,6 @@ TO DO in no particular order:
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
 58: Attack when you let go of holding down fire.
 59: Less/no-effects cvar
-60: <torridGristle> Watersplashes aren't the same colour as the water.
-<torridGristle> Yeah, they're PNGs and aren't affected by the new playpal.
-<torridGristle> Converting them to Doom format using the Doom palette, not the DemonSteele palette, should fix that well enough.
-<torridGristle> Filesize actually decreases.
-<torridGristle> Might want to go ahead and convert all the splashes into Doom format, Doom palette, so it's changed to the same colours as everything else when the new palette is in use.
 61: 6000 ANGRY BEES: one small idea to toy with:
 6000 ANGRY BEES: subtle sound cues when you go up or down a combo level (fearless etc.)
 TerminusEst13: That's a good idea, actually.
@@ -47,7 +42,7 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 [07:31:10 pm] Ethril: if you pick up invuln while you already got one going
 [07:31:13 pm] Ethril: it goes into your inventory
 [07:31:19 pm] Ethril: you can carry around a bunch of PowerShields
-67: The Blind Guardian, when damaged and then healed, stays in the damage state until pained.
+68: Draining the Iron Maiden's armor and then letting it recover seems to let damage bleed through to the player.
 
 
 
@@ -145,6 +140,13 @@ DONE:
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
+
+60: <torridGristle> Watersplashes aren't the same colour as the water.
+<torridGristle> Yeah, they're PNGs and aren't affected by the new playpal.
+<torridGristle> Converting them to Doom format using the Doom palette, not the DemonSteele palette, should fix that well enough.
+<torridGristle> Filesize actually decreases.
+<torridGristle> Might want to go ahead and convert all the splashes into Doom format, Doom palette, so it's changed to the same colours as everything else when the new palette is in use.
+67: The Blind Guardian, when damaged and then healed, stays in the damage state until pained.
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter

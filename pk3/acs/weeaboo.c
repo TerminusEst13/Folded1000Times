@@ -18,6 +18,8 @@ int GotUzi;
 int GotHam; // HAM
 int GotIronMaiden;
 
+int MusicRandomizerIsIncluded;
+
 int IronMaidenMusic[IRONMUS] = 
 { "D_IRONM1","D_IRONM2","D_IRONM3","D_IRONM4","D_IRONM5","D_IRONM6","D_IRONM7" };
 
@@ -323,11 +325,13 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         break;
 
     case WEEB_DEC_CHANGEMUS:
+        if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) { if (getcvar("norandommusic") == 0) { terminate; }}
 	    int i = random(0, IRONMUS-1);
 	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic(IronMaidenMusic[i],0); }
         break;
 
     case WEEB_DEC_CHANGEMUSBACK:
+        if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) { if (getcvar("norandommusic") == 0) { terminate; }}
 	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
         break;
     }
@@ -360,6 +364,7 @@ script WEEB_ENTER ENTER
     int nx, ny, nz;
     int ShieldTID;
     i = unusedTID(37000, 47000);
+    int u = unusedTID(37000, 47000);
     int IntroChance;
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
@@ -371,6 +376,14 @@ script WEEB_ENTER ENTER
         if (GameSkill () == 4) { GiveInventory("NightmareMarker",1); GiveInventory("ContraLifeToken",2); }
         FadeRange(0,0,0,1.00,0,0,0,0,3.50);
         LocalAmbientSound("level/intro",127);
+
+        if (Spawn("DemonSteeleIsSuperCoolAndYouShouldProbablyPlayIt", GetActorX(0), GetActorY(0), GetActorZ(0), u))
+        {
+            Thing_Remove(u);
+            MusicRandomizerIsIncluded = 1;
+            GiveInventory("IAmAnAwesomePersonWhoLikesCoolMusic",1);
+        }
+
         GiveInventory("ImAlive",1);
     }
     else if (CheckInventory("ImAlive") == 1)
@@ -451,6 +464,7 @@ script WEEB_ENTER ENTER
                 if (CheckInventory("BlindGuardianShieldHeal") == 1)
                 {
                     GiveActorInventory(ShieldTID,"BlindGuardianHealth",1000);
+                    SetActorState(ShieldTID,"Spawn");
                     TakeInventory("BlindGuardianShieldHeal",1);
                 }
 
@@ -587,6 +601,7 @@ script WEEB_ENTER ENTER
         {
               GiveInventory("OnTheGround", 1);
               TakeInventory("GhostStepDone",1); 
+              TakeInventory("VertIGo",1); 
         }
         else
             { TakeInventory("OnTheGround", 1); }
@@ -594,8 +609,17 @@ script WEEB_ENTER ENTER
         if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
         {
             ActivatorSound("ghost/jump", 127);
-            if (CheckInventory("InIronMaiden") == 0 ) { ThrustThingZ(0,36,0,0); } else { ThrustThingZ(0,48,0,0); }
-            GiveInventory("AcesHigh", 1);
+            if (CheckInventory("InIronMaiden") == 0 )
+            {
+                ThrustThingZ(0,36,0,0);
+                GiveInventory("AcesHigh", 1);
+            }
+            else
+            {
+                ThrustThingZ(0,42,0,0);
+                if (CheckInventory("VertIGo") == 1 ) { GiveInventory("AcesHigh",1); }
+                else { GiveInventory("VertIGo",1); }
+            }
         }
         // Remove AcesHigh when we're back on the ground
         if (CheckInventory("OnTheGround") && CheckInventory("AcesHigh"))
