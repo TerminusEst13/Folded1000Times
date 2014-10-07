@@ -9,3 +9,5 @@ FROM 0.71b TO 0.72:
 - When in Iron Maiden, Hae-Lin can now triple-jump, as opposed to simply double-jumping.
 - The Blind Guardian no longer keeps a damaged appearance when repaired.
 - Bullets online no longer spatter sparks on contact with enemies.
+- The Testament's reload sound can no longer be interrupted by jumping.
+- The Emperor's teleport effect properly works online, now.

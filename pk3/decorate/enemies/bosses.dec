@@ -65,8 +65,10 @@ ACTOR Emperor replaces SpiderMastermind
         TNT1 A 0 A_Jump(64,"Teleport")
         Loop
     Teleport:
+        EPRR A 1
         TNT1 A 0 A_SpawnItemEx("EmperorDummy",0,0,0,0,0,0,0,160)
         EPRR A 1
+        TNT1 A 1
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
         goto See
     Missile:
