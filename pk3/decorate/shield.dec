@@ -7,7 +7,7 @@ ACTOR BlindGuardianHealth : Health
 actor BlindGuardian
 {
     Health 800
-    Radius 32
+    Radius 16
     Height 32
     Speed 0
     PainChance 255
