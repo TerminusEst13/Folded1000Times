@@ -33,16 +33,11 @@ TerminusEst13: That's a good idea, actually.
 6000 ANGRY BEES: so combo level 1 adds a slight whine to the sword slash, while max combo level is the quad damage sound
 TerminusEst13: That'd add some really visceral feedback, and it'd definitely encourage going even harder and faster--just so you can see those neat effects even more.
 TerminusEst13: Plus it'd make sense from an in-universe perspective, since the sword is eating souls in a stereotypical edgy 90s fashion.
-62: Emperor's teleport doesn't show up online.
-63: <PresidentPeople> TerminusEst13: You can interrupt the shotgun reload sound by jumping in Demonsteele
 64: [12:37:27 am] DRL 3.33: would be nice if torches had a chance to drop peppers
 65: Look into adapting Pres' wandering-soul system for others to pick up.
-66: [07:30:53 pm] kenny: what about the invulnerability sphere stack
-[07:31:02 pm] Jung Hae-Lin: Eh?
-[07:31:10 pm] Ethril: if you pick up invuln while you already got one going
-[07:31:13 pm] Ethril: it goes into your inventory
-[07:31:19 pm] Ethril: you can carry around a bunch of PowerShields
 68: Draining the Iron Maiden's armor and then letting it recover seems to let damage bleed through to the player.
+69: Let the player know on the HUD what weapons they've already picked up.
+70: Some kind of "don't mash the button for more powerful strikes" system.
 
 
 
@@ -140,12 +135,18 @@ DONE:
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
-
 60: <torridGristle> Watersplashes aren't the same colour as the water.
 <torridGristle> Yeah, they're PNGs and aren't affected by the new playpal.
 <torridGristle> Converting them to Doom format using the Doom palette, not the DemonSteele palette, should fix that well enough.
 <torridGristle> Filesize actually decreases.
 <torridGristle> Might want to go ahead and convert all the splashes into Doom format, Doom palette, so it's changed to the same colours as everything else when the new palette is in use.
+62: Emperor's teleport doesn't show up online.
+63: <PresidentPeople> TerminusEst13: You can interrupt the shotgun reload sound by jumping in Demonsteele
+66: [07:30:53 pm] kenny: what about the invulnerability sphere stack
+[07:31:02 pm] Jung Hae-Lin: Eh?
+[07:31:10 pm] Ethril: if you pick up invuln while you already got one going
+[07:31:13 pm] Ethril: it goes into your inventory
+[07:31:19 pm] Ethril: you can carry around a bunch of PowerShields
 67: The Blind Guardian, when damaged and then healed, stays in the damage state until pained.
 
 

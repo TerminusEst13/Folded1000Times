@@ -87,7 +87,6 @@ GRAPHICS:
 CODE:
 =========
 - Ijon Tichy
-  ^ The double-tap code (taken from Parkmore)
   ^ The shockwave from the spin attack
   ^ The trail for the zombie lasers/razor wind
   ^ The second level spatter for the Omen

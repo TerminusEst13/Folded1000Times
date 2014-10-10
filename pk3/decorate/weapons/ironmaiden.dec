@@ -541,7 +541,7 @@ actor HolyShot
     Alpha 0.9
     Scale 0.5
     DeathSound "holyshot/hit"
-    Species "EnemyShot" // Heh.
+    Species "Player"
     DamageType "IronMaidenShot"
     Decal DoomImpScorch
     Projectile

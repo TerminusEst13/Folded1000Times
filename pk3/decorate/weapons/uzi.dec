@@ -356,6 +356,7 @@ actor "Kharon + Sabbath" : HwandoBase
         TNT1 A 0 A_Light1
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlayWeaponSound("uzi/fire")
+        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
         TNT1 A 0 A_JumpIfInventory("UziLikeAGuzzi",1,"AltNonComboBullet")
         TNT1 A 0 A_FireCustomMissile("UziBullet1",random(-425,425)/100.00,1,0,1,0,random(-300,300)/100.00)
         TNT1 A 0 A_GiveInventory("UziLikeAGuzzi",1)

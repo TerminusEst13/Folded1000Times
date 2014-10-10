@@ -89,6 +89,7 @@ splash Hot
     smallclip        0
 
     baseclass        LavaSmoke
+    NoAlert
 }
 
 terrain Water

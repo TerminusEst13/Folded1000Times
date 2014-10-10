@@ -65,14 +65,21 @@
 #define WEEB_DEC_GETMESSAGES    0
 #define WEEB_DEC_CHANGEMUS      1
 #define WEEB_DEC_CHANGEMUSBACK  2
+#define WEEB_DEC_TOASTER        3
 
 int DemonCredits =
 "SPECIAL THANKS TO:\n\
 =========\n\
-- Special thanks to Combine_Kegan and Shiga95, who respectively made GMOTA and Swan Fox, both of which were big inspirations for this.\n\
-- Special thanks to Flying Wild Hog and MAIET Entertainment, respectively for Shadow Warrior 2013 and GunZ, both also big inspirations for this.\n\
-- Special thanks to Mike12 for his incredible patience in dealing with my stubborn push of ideas and my flighty attention span, as well as his jaw-droppingly astounding artistic work.\n\
-- Special thanks to Doom667Shogun for allowing me to use Doom Radys assets for kickstarting DemonSteele with, letting me have a headstart on everything.\n\
+- Special thanks to Combine_Kegan and Shiga95, who respectively made GMOTA and\n\
+  Swan Fox, both of which were big inspirations for this.\n\
+- Special thanks to Flying Wild Hog and MAIET Entertainment, respectively for\n\
+  Shadow Warrior 2013 and GunZ, both also big inspirations for this.\n\
+- Special thanks to Mike12 for his incredible patience in dealing with my\n\
+  stubborn push of ideas and my flighty attention span, as well as his jaw-\n\
+  droppingly astounding artistic work.\n\
+- Special thanks to Doom667Shogun for allowing me to use Doom Radys assets for\n\
+  kickstarting DemonSteele with, letting me have a headstart on everything.\n\
+- /vr/, as always, for being an incredible source of support and ideas.\n\
 \n\
 GRAPHICS:\n\
 =========\n\
@@ -98,7 +105,9 @@ GRAPHICS:\n\
   ^ All of the idle animations\n\
   ^ The henshin animation\n\
   ^ Animating the Exodus\n\
-- Absolutely no thanks to Rottsprite for shitting out on us and not letting us rotate the Kharon properly forcing us to rely on Photoshop's really ugly and jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA\n\
+- Absolutely no thanks to Rottsprite for shitting out on us and not letting us\n\
+  rotate the Kharon properly forcing us to rely on Photoshop's really ugly and\n\
+  jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA\n\
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)\n\
 - Captain J (The Sabbath large ammo pack)\n\
 - Bloax (The broken bone sprites)\n\
@@ -142,11 +151,11 @@ GRAPHICS:\n\
 - Final Fight (One of the burgers)\n\
 - Knights of the Round (One of the Apples)\n\
 - Grand Knights History (The Blind Guardian shield)\n\
+- PresidentPeople (Fixing the Blind Guardian's rotations so it had a proper front sprite)\n\
 \n\
 CODE:\n\
 =========\n\
 - Ijon Tichy\n\
-  ^ The double-tap code (taken from Parkmore)\n\
   ^ The shockwave from the spin attack\n\
   ^ The trail for the zombie lasers/razor wind\n\
   ^ The second level spatter for the Omen\n\
@@ -185,3 +194,28 @@ SOUNDS:\n\
 - John Archer (The Blackened's voice)\n\
 - torridGristle (The robotic voice of the Iron Maiden)\n\
 - All sounds are credited to their respective owner in SNDINFO.";
+
+
+int DemonChangelog =
+"FROM 0.71b TO 0.72:\n\
+=======================================\n\
+- Kharon slashing animation time has been reduced by two tics--now people can slash again as soon as the animation is complete.\n\
+- The animation for the upward slash has been spaced out slightly for more natural movement.\n\
+- Thanks to PresidentPeople, the Blind Guardian now has a proper set of rotations.\n\
+- The environment splash sprites now follow the same desaturated 90s palette.\n\
+- WHOOPS improved.\n\
+- Soul is slightly more transparent so as to not confuse it with enemy shots.\n\
+- When in Iron Maiden, Hae-Lin can now triple-jump, as opposed to simply double-jumping.\n\
+- The Blind Guardian no longer keeps a damaged appearance when repaired.\n\
+- Bullets online no longer spatter sparks on contact with enemies.\n\
+- The Testament's reload sound can no longer be interrupted by jumping.\n\
+- The Emperor's teleport effect properly works online, now.\n\
+- The Blackened now has +VISIBILITYPULSE on his main body for no other reason than it looks cool.\n\
+- Revenant missiles now home in 100% of the time and home much more aggressively. Enjoy!\n\
+- The Archvile's flame pillars no longer wander so wide out and have lost their multi-flame spread attack, but in exchange fire much more aggressively and spew out constant streams of attacks.\n\
+- Long, long ago in the mod's development, I made enemy projectiles shootable so that the pistol could shoot them down as well. As development went on, this proved too OP for the Testament and Sabbath and the ability was removed. The behavior has been tweaked, removing all of the vestigial bullet stuff while keeping the sword capable of cutting down projectiles.\n\
+- Because of this, this frees up the bullets' species to be able to shoot through allied players in co-op.\n\
+- For rare instances where you're trapped behind a forcefield or projectile-blocking wall or something and you need to shoot a switch, each bullet-gun has been given a perfectly accurate damage-less hitscan.\n\
+- The back special is now much more effective in destroying enemy shots.\n\
+- An attempt at making a 'less effects' cvar was made and quickly resulted in frustration, screaming, and grey hair. To make up for it, the effects on the Exodus, Omen, the explosive barrel, and Cyberdemon's rockets have been toned down slightly.\n\
+- Picking up multiple invulnerability powerups in a row no longer results in them getting stuffed in your inventory.";

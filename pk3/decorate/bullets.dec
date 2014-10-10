@@ -1,36 +1,14 @@
 ACTOR EnemyBullet
 {
-    Health 5
-    Projectile
     Radius 8
     Height 6
     Speed 20
     Damage (random(1,5)*3)
     SeeSound None
     DeathSound None
-    Species "EnemyShot"
     Decal HImpScorch
-    DamageFactor "EnemyInfightDamage", 0.0
-    DamageFactor "EnemyInfightDamageImp", 0.0
-    DamageFactor "EnemyInfightDamageArachnotron", 0.0
-    DamageFactor "EnemyInfightDamageNoble", 0.0
-    DamageFactor "EnemyInfightDamageRevenant", 0.0
-    DamageFactor "EnemyInfightDamageFatso", 0.0
-    DamageFactor "EnemyInfightDamageCaco", 0.0
-    DamageFactor "EnemyInfightDamageCyber", 0.0
-    DamageFactor "ArchvileFire", 0.0
-    DamageFactor "ExodusJump", 0.0
-    DamageFactor "ExodusDamage", 0.0
-    DamageFactor "Kubiuti", 0.0
-    DamageFactor "IronFistExplode", 0.0
-    DamageFactor "HaltHammerzeitImpact", 0.0
-    +THRUSPECIES
-    +MISSILE
-    -NOCLIP
+    Projectile
     +THRUGHOST
-    +SHOOTABLE
-    -NOBLOCKMAP 
-    +NOBLOOD
     States
     {
     Spawn:
@@ -58,7 +36,7 @@ ACTOR EnemyBullet
         TNT1 A 0 A_SpawnItemEx("BulletBlasterTrail", (40*momx)/-35.0, -(40*momy)/-35.0, 2+(40*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         Loop
     Death:
-        TNT1 A 0 A_UnsetShootable
+        TNT1 A 0 //A_UnsetShootable
         TNT1 A 0 A_SpawnItemEx("EnemyBulletInfight",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_PlaySound("enemy/shothit")
         TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LaserHaze",0,0,0,random(-100,100)/150.0,random(-100,100)/150.0,random(-100,100)/150.0,0,32)
@@ -99,7 +77,7 @@ ACTOR EnemyBullet2 : EnemyBullet
         TNT1 A 0 A_SpawnItemEx("BulletBlasterTrail2", (40*momx)/-35.0, -(40*momy)/-35.0, 2+(40*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         Loop
     Death:
-        TNT1 A 0 A_UnsetShootable
+        TNT1 A 0 //A_UnsetShootable
         TNT1 A 0 A_SpawnItemEx("EnemyBulletInfight",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_PlaySound("cyber/laserhit")
         TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LaserHaze3",0,0,0,random(-100,100)/150.0,random(-100,100)/150.0,random(-100,100)/150.0,0,32)
@@ -338,7 +316,7 @@ actor BulletBase : FastProjectile
     Speed 320
     Projectile
     Renderstyle "Normal"
-    Species "EnemyShot" // Heh.
+    Species "Player"
     +BLOODSPLATTER
     +THRUGHOST
     +THRUSPECIES

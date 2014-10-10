@@ -350,7 +350,8 @@ actor "Kharon + Acacia A-22" : HwandoBase
         TNT1 A 0 A_Light1
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlayWeaponSound("pistol/fire")
-        TNT1 A 0 A_FireCustomMissile("HuntingPistolBullet",0,1,0,1)//A_FireBullets(1,1,-1,15,"HuntingPistolPuff", FBF_USEAMMO | FBF_NORANDOM)
+        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
+        TNT1 A 0 A_FireCustomMissile("HuntingPistolBullet",0,1,0,1)
         TNT1 A 0 A_Recoil(0.2)
         TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoil")
         TNT1 A 0 A_SetAngle(angle+(random(-400,400)/1000.000))

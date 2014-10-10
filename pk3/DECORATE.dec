@@ -58,6 +58,7 @@ const int WEEB_DEC_ARMRCHECK   = 19;
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
 const int WEEB_DEC_CHANGEMUSBACK = 2;
+const int WEEB_DEC_TOASTER       = 3;
 
 #include "decorate/tokens.dec"
 #include "decorate/items.dec"

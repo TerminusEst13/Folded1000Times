@@ -69,6 +69,10 @@ script WEEB_OPEN_CLIENT OPEN clientside
         if (!GetCvar("ds_cl_norecoil"))
             { ConsoleCommand("set ds_cl_norecoil 0");
               ConsoleCommand("archivecvar ds_cl_norecoil"); }
+
+        if (!GetCvar("ds_cl_toaster"))
+            { ConsoleCommand("set ds_cl_toaster 0");
+              ConsoleCommand("archivecvar ds_cl_toaster"); }
     }
 }
 
@@ -333,6 +337,12 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
     case WEEB_DEC_CHANGEMUSBACK:
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) { if (getcvar("norandommusic") == 0) { terminate; }}
 	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
+        break;
+
+    case WEEB_DEC_TOASTER:
+        if(GetCvar("ds_cl_toaster") == 1) { SetActorState(0,"LessEffects"); }
+        //SetResultValue(getCvar("ds_cl_toaster")); //{ SetResultValue(1); }
+        //else { SetResultValue(0); }
         break;
     }
 }
@@ -877,8 +887,12 @@ script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE
 {
     switch (changelogshit2)
     {
-        case 1:
+    case 1:
         Log(s:DemonCredits);
+        break;
+
+    case 2:
+        Log(s:DemonChangelog);
         break;
     }
 }

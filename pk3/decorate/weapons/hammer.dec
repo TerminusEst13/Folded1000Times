@@ -756,7 +756,7 @@ ACTOR HammerAttackMedium : HammerAttackBase
         TNT1 A 0 A_PlaySoundEx("hammer/shooter","soundslot7",0,0)
         TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
         TNT1 A 0 A_SpawnItemEx("ElectricExplosion",0,0,0,0,0,0,0,48)
-        TNT1 A 0 A_CustomMissile("HammerLightningMedium",32,0,0,5)
+        TNT1 A 0 A_CustomMissile("HammerLightningMedium",0,0,0,5)
         TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
@@ -769,6 +769,9 @@ ACTOR HammerAttackMedium : HammerAttackBase
 
 ACTOR HammerAttackHeavy : HammerAttackBase
 {
+    RenderStyle Add
+    Alpha 0.9
+    Scale 0.8
     Damage (120)
     States
     {
@@ -780,13 +783,13 @@ ACTOR HammerAttackHeavy : HammerAttackBase
         TNT1 A 0 A_PlaySound("hammer/hit")
         TNT1 A 0 A_PlaySoundEx("hammer/fullcharge","soundslot7",0,0)
         TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
-        TNT1 A 0 A_CustomMissile("HammerLightningLonger",32,0,0,5)
-        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
+        TNT1 A 0 A_CustomMissile("HammerLightningLonger",0,0,0,5)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",3,0,random(-128,128),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPellet2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAA 0 A_CustomMissile("ShockPellet",3,0,random(-128,128),CMF_AIMDIRECTION,random(-32,8))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+		TNT1 AAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
         TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
         TNT1 A 0 A_SpawnItemEx("ElectricExplosionForce",0,0,0,0,0,0,0,48,0)
         TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,0,48,0)
@@ -807,14 +810,49 @@ ACTOR HammerAttackHeavy : HammerAttackBase
         TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AAAA 0 A_SpawnItemEx("HammerLightningX",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
-        FAXE RSTU 2 BRIGHT
-        FAXE VWX 3 BRIGHT
+
+        TNT1 A 0 A_ClearTarget
+		ZAP7 AB 2 Bright
+		ZAP7 CCDDEE 1 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+		
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)		
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+		ZAP7 ABCDEABCDE 2 Bright
+		ZAP7 ABCDEABCDE 2 Bright
+		ZAP7 ABCDEABCDE 2 Bright
+
+		ZAP7 ABCDE 2 Bright
+
         stop
     }
 }
 
 ACTOR HammerAttackOvercharge : HammerAttackBase
 {
+    RenderStyle Add
+    Alpha 0.9
+    Scale 0.8
     Damage (4000)
     States
     {
@@ -831,12 +869,12 @@ ACTOR HammerAttackOvercharge : HammerAttackBase
         TNT1 A 0 A_SpawnItemEx("HammerLightningLonger",256,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("HammerLightningLonger",256,0,0,0,0,0,120,48)
         TNT1 A 0 A_SpawnItemEx("HammerLightningLonger",256,0,0,0,0,0,240,48)
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ShockPellet",32,0,random(-128,128),5,random(-32,32))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPelletHeavy",3,0,random(-128,128),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPelletHeavy",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPelletHeavy2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAA 0 A_CustomMissile("ShockPellet",3,0,random(-128,128),CMF_AIMDIRECTION,random(-32,8))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+		TNT1 AAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
         TNT1 A 0 A_GiveToTarget("ScreenFlashWhite2")
         TNT1 A 0 A_SpawnItemEx("LightningStarter",64,0,9999,0,0,0,0,48,0)
         TNT1 A 0 A_SpawnItemEx("HammerShockwave",0,0,20,0,0,0,0,128,0)
@@ -868,8 +906,44 @@ ACTOR HammerAttackOvercharge : HammerAttackBase
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HammerLightningX",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
-        FAXE RSTU 2 BRIGHT
-        FAXE VWX 3 BRIGHT
+
+        TNT1 A 0 A_ClearTarget
+		ZAP7 AB 2 Bright
+		ZAP7 CCDDEE 1 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+		
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)		
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAA 0 A_CustomMissile("ShockPellet2",3,0,random(-180,180),CMF_AIMDIRECTION,random(-8,32))
+        TNT1 AAAAAAA 0 A_CustomMissile("ShockPelletShooter",3,0,random(-180,180),CMF_AIMDIRECTION,0)
+
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+		ZAP7 ABCDEABCDE 2 Bright A_SpawnItemEx("ShockScatterNoisy",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+
+		ZAP7 ABCDEABCDE 2 Bright
+		ZAP7 ABCDEABCDE 2 Bright
+		ZAP7 ABCDEABCDE 2 Bright
+
+		ZAP7 ABCDEABCDE 2 Bright
+		ZAP7 ABCDEABCDE 2 Bright
+		ZAP7 ABCDEABCDE 2 Bright
+
+		ZAP7 ABCDE 2 Bright
+
         stop
     }
 }
@@ -934,10 +1008,10 @@ actor HammerLightningMedium
     Radius 4
     Height 4
     Projectile
-    Speed 20
+    Speed 0
     RenderStyle Add
     Alpha 0.5
-    Scale 0.55
+    Scale 0.4
     States
     {
     Spawn:
@@ -948,21 +1022,21 @@ actor HammerLightningMedium
         TNT1 A 0 A_Jump(198,"Spawn2")
         TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
     Spawn2:
-        DPLE B 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE B 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE B 2 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE B 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE B 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE B 2 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
         TNT1 AA 0 A_SpawnItemEx("ElecSpark",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AA 0 A_SpawnItemEx("ElecSpark2",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 A 0 A_SpawnItemEx("ElecSpark3",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
-        DPLE C 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE C 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE C 2 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE C 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE C 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE C 2 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
         TNT1 AA 0 A_SpawnItemEx("ElecSpark",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AA 0 A_SpawnItemEx("ElecSpark2",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 A 0 A_SpawnItemEx("ElecSpark3",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
-        DPLE D 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE D 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE D 2 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE D 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE D 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE D 2 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
         TNT1 A 0 A_JumpIfInventory("Counter",15,"Nope")
         TNT1 A 0 A_GiveInventory("Counter")
         goto Spawn
@@ -984,21 +1058,21 @@ actor HammerLightningLonger : HammerLightningMedium
         TNT1 A 0 A_Jump(198,"Spawn2")
         TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
     Spawn2:
-        DPLE B 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE B 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE B 2 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE B 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE B 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE B 2 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
         TNT1 AA 0 A_SpawnItemEx("ElecSpark",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AA 0 A_SpawnItemEx("ElecSpark2",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 A 0 A_SpawnItemEx("ElecSpark3",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
-        DPLE C 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE C 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE C 2 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE C 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE C 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE C 2 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
         TNT1 AA 0 A_SpawnItemEx("ElecSpark",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 AA 0 A_SpawnItemEx("ElecSpark2",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
         TNT1 A 0 A_SpawnItemEx("ElecSpark3",random(-32,32),random(-32,32),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
-        DPLE D 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE D 0 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
-        DPLE D 2 bright A_CustomMissile("ElecShot", 0,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE D 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE D 0 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+        DPLE D 2 bright A_CustomMissile("ElecShot", -6,0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
         TNT1 A 0 A_JumpIfInventory("Counter",30,"Nope")
         TNT1 A 0 A_GiveInventory("Counter")
         goto Spawn
@@ -1020,7 +1094,7 @@ actor ElecShot
       Death:
         TNT1 B 0
         TNT1 B 0 A_Stop
-        TNT1 B 0 A_CustomMissile("ElecBeam", 4,0,0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
+        TNT1 B 0 A_CustomMissile("ElecBeam", 0,0,0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
         goto Beam
       Beam:
         TNT1 B 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 16, 1)
@@ -1059,7 +1133,7 @@ actor ElecTrail: BulletPuff
     +DONTSPLASH
     +NOPAIN
     VSpeed 0
-    Scale 0.35
+    Scale 0.3
     RenderStyle Add
     Alpha 0.4
     States
@@ -1132,58 +1206,159 @@ actor ShockPellet : FastProjectile
   Height 2
   Speed 64
   Projectile
-  Scale 0.1
-  Renderstyle "Normal"
   -SOLID
   +THRUACTORS
-  +BLOODSPLATTER
   +NOTIMEFREEZE
   +NODAMAGETHRUST
   +RANDOMIZE
   +DONTSPLASH
   +CLIENTSIDEONLY
-  Alpha 1.0
-  //Decal ShockScorchPirate
   States
   {
   Spawn:
-    DPLE B 1
-    TNT1 A 0 A_Jump(128,"Spawn")
-    TNT1 A 0 A_Die
-    goto Death
+	TNT1 A 1
+	loop
   Death:
     TNT1 A 0
-    DPLE B 1 Bright
-    DPLE C 1 Bright
-    DPLE D 1 Bright
-    DPLE E 1 Bright
-    TNT1 A 0 A_ClearTarget
-    //TNT1 A 0 A_PlaySound("hammer/snap",0)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 2
-    stop
-  XDeath:
     TNT1 A 0
-    DPLE B 1 Bright
-    DPLE C 1 Bright
-    DPLE D 1 Bright
-    DPLE E 1 Bright
+    TNT1 A 0
+	TNT1 A 0
+    TNT1 A 0 A_ClearTarget
+    //TNT1 A 0 A_PlaySound("hammer/snap",0)
+    //TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+	TNT1 A 2
+    stop
+    }
+}
+
+actor ShockPellet2 : ShockPellet
+{
+  Speed 40
+  States
+  {
+  Spawn:
+	TNT1 A 0
+	TNT1 A 0
+	TNT1 A 1
+    TNT1 A 0 A_GiveInventory("ShockCanDie",1)
+	loop
+  Death:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIfInventory("ShockCanDie",1,"Die")
+    TNT1 A 1
+    Stop
+  Die:
+    TNT1 A 0
+    TNT1 A 0
+    TNT1 A 0
+	TNT1 A 0
+    TNT1 A 0 A_ClearTarget
+    //TNT1 A 0 A_PlaySound("hammer/snap",0)
+    //TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+	TNT1 A 2
+    stop
+    }
+}
+
+actor ShockPelletHeavy : ShockPellet
+{
+  States
+  {
+  Death:
+    TNT1 A 0
+    TNT1 A 0
+    TNT1 A 0
+	TNT1 A 0
+    TNT1 A 0 A_ClearTarget
+    //TNT1 A 0 A_PlaySound("hammer/snap",0)
+    //TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+	TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+	TNT1 A 2
+    stop
+    }
+}
+
+actor ShockPelletHeavy2 : ShockPelletHeavy
+{
+  Speed 40
+  States
+  {
+  Spawn:
+	TNT1 A 0
+	TNT1 A 0
+	TNT1 A 1
+    TNT1 A 0 A_GiveInventory("ShockCanDie",1)
+	loop
+  Death:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIfInventory("ShockCanDie",1,"Die")
+    TNT1 A 1
+    Stop
+  Die:
+    TNT1 A 0
+    TNT1 A 0
+    TNT1 A 0
+	TNT1 A 0
+    TNT1 A 0 A_ClearTarget
+    //TNT1 A 0 A_PlaySound("hammer/snap",0)
+    //TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+	TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
+	TNT1 A 2
+    stop
+    }
+}
+
+actor ShockPelletShooter
+{
+  Damage (0)
+  Radius 2
+  Height 2
+  Speed 5
+  Projectile
+  -SOLID
+  +THRUACTORS
+  +NOTIMEFREEZE
+  +NODAMAGETHRUST
+  +DONTSPLASH
+  +CLIENTSIDEONLY
+  States
+  {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0
+    TNT1 A 0
+	TNT1 A 0
+	TNT1 A 5
+	TNT1 A 0 A_GiveInventory("ShockCanDie",1)
+	TNT1 A 0 A_Jump(128,"Shoot")
+	Loop
+  Shoot:
+	TNT1 A 0
+	TNT1 A 0 A_Jump(128,"Shoot2")
+	TNT1 A 0 A_CustomMissile("ShockPellet",0,0,random(-180,180),2,random(85,90))
+	Goto Spawn
+  Shoot2:
+	TNT1 A 0
+	TNT1 A 0 A_CustomMissile("ShockPellet",0,0,random(-180,180),2,random(-85,-90))
+	Goto Spawn
+  Death:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIfInventory("ShockCanDie",1,"Die")
+    TNT1 A 1
+    Stop
+  Die:
+    TNT1 A 0
+    TNT1 A 0
+    TNT1 A 0
+	TNT1 A 0
     TNT1 A 0 A_ClearTarget
     //TNT1 A 0 A_PlaySound("hammer/snap",0)
     TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_SpawnItemEx("ShockScatter",0,0,0,random(-1,1),random(-1,1),random(-1,1),random(-180, 180),SXF_NOCHECKPOSITION)
-    TNT1 A 2
+	TNT1 A 1
     stop
     }
 }
@@ -1196,7 +1371,7 @@ actor ShockScatter
   Speed 0
   Scale 0.4
   Renderstyle "Add"
-  Alpha 0.99
+  Alpha 1.0
   Decal Scorch
   +MISSILE
   -BLOODSPLATTER
@@ -1224,7 +1399,7 @@ actor ShockScatter
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     
@@ -1233,108 +1408,219 @@ actor ShockScatter
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+	
+	//5 tics
+	
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
 
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //15 tics
 
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
-    TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
 
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //25 tics
 
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
-    TNT1 A 1 A_SpawnItemEx("ShockScatterArcDummy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
     TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
     TNT1 A 0 A_ScaleVelocity(0.9)
     TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
-    TNT1 A 0 A_Jump(64,"Die")
-    loop//Stop
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //35 tics
+	
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //45 tics
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //55 tics
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //65 tics
+	
+    Stop
   Death:
     TNT1 A 0
     TNT1 A 0 A_JumpIfInventory("ShockCanDie",1,"Die")
@@ -1344,72 +1630,192 @@ actor ShockScatter
     TNT1 A 0
     TNT1 A 0 A_GiveInventory("ShockArcDie",1)
     //TNT1 A 0 A_PlaySound("hammer/snap",0)
-    DPLE BCDE 1 Bright //Light("ShockShellArcLight")
+    DPLE BCDE 1 Bright
     TNT1 A 3
     Stop
     }
 }
 
-
-
-actor ShockScatterArc
+actor ShockScatterNoisy : ShockScatter
 {
-  Damage (1)
-  Radius 3
-  Height 3
-  Speed 0
-  Scale 0.7
-  Decal Bulletchip
-  Projectile
-  Alpha 0.75
-  Renderstyle "Add"
-  DamageType "HaltHammerzeit"
-  -BLOODSPLATTER
-  +BLOODLESSIMPACT
-  +NOTIMEFREEZE
-  +NOCLIP
-  +NOBLOCKMAP
-  +NOGRAVITY
-  +DONTSPLASH
-  //+FORCEPAIN
-  -RANDOMIZE
   States
   {
   Spawn:
     TNT1 A 0
     TNT1 A 0
-    TNT1 A 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 A 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+    TNT1 A 0 A_SpawnItemEx("ShockScatterArcEnd",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    
+    TNT1 A 0 A_GiveInventory("ShockCanDie",1)
+    
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+	
+	//5 tics
+	
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //15 tics
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //25 tics
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //35 tics
+	
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+    TNT1 A 0 A_ChangeVelocity (random(-1,1), random(-1,1), random(-1,1), 0)
+    TNT1 A 0 A_ScaleVelocity(0.9)
+    TNT1 A 1 A_SpawnItemEx("ShockScatterArc",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_SETMASTER)
+
+    //45 tics
+	
     Stop
+
   Die:
-    SARC A 0
-    SARC A 0 
-    //SARC A 0 A_Jump("Die2",127)
-    SARC A 0 A_ChangeFlag("NOCLIP", 0)
-    SARC A 0 A_ChangeFlag("RIPPER", 1)
-    SARC A 2 Bright //Light("ShockShellArcLight")
-    Stop
-  Die2:
-    SARC A 0
-    SARC A 0 
-    SARC A 1 Bright
-    SARC A 0 A_ChangeFlag("NOCLIP", 0)
-    SARC A 0 A_ChangeFlag("RIPPER", 1)
-    SARC A 1 Bright
-    Stop
-  Death:
-    PUFF A 0
-    TNT1 A 1
+    TNT1 A 0
+    TNT1 A 0 A_GiveInventory("ShockArcDie",1)
+	TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
+    DPLE BCDE 1 Bright
+    TNT1 A 3
     Stop
     }
 }
 
-actor ShockScatterArcDummy
+actor ShockScatterArc
 {
   Damage 0
   Radius 1
@@ -1427,46 +1833,35 @@ actor ShockScatterArcDummy
   +THRUACTORS
   +NOBLOCKMAP
   +NOGRAVITY
-  //+CLIENTSIDEONLY
+  +CLIENTSIDEONLY //Try removing this flag if something got fugged up
   +NOINTERACTION
-  //+FORCEPAIN
   -RANDOMIZE
   States
   {
   Spawn:
-    TNT1 A 0
-    TNT1 A 0
-    TNT1 A 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 A 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
-    Stop
+	TNT1 A 0
+	TNT1 A 0
+	TNT1 A 0
+	TNT1 AAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+	TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+	TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+	TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+	TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+	TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+	TNT1 AAAAAAAAAA 1 A_JumpIfInTargetInventory("ShockArcDie",1,"Die")
+	Stop
   Die:
-    SARC A 0
-    SARC A 0 
-    //SARC A 0 A_Jump("Die2",127)
-    //SARC A 0 A_ChangeFlag("NOCLIP", 0)
-    //SARC A 0 A_ChangeFlag("RIPPER", 1)
-    SARC A 2 Bright //Light("ShockShellArcLight")
-    Stop
-  Die2:
-    SARC A 0
-    SARC A 0 
-    SARC A 1 Bright
-    //SARC A 0 A_ChangeFlag("NOCLIP", 0)
-    //SARC A 0 A_ChangeFlag("RIPPER", 1)
-    SARC A 1 Bright
-    Stop
+	TNT1 A 0
+	TNT1 A 0
+	SARC A 2 Bright
+	Stop
   Death:
-    TNT1 A 0
-    Stop
+	TNT1 A 0
+	Stop
     }
 }
 
-actor ShockScatterArcEnd : ShockScatterArcDummy
+actor ShockScatterArcEnd : ShockScatterArc
 {
   Scale 0.4
   Renderstyle  "Normal"
@@ -1475,12 +1870,10 @@ actor ShockScatterArcEnd : ShockScatterArcDummy
   States
   {
   Die:
-    SARC A 0
-    SARC A 0 
-    SARC A 0 A_ChangeFlag("NOCLIP", 0)
-    SARC A 0 A_ChangeFlag("RIPPER", 1)
-    DPLE BCDE 1 Bright //Light("ShockShellArcLight")
-    Stop
+    TNT1 A 0
+	TNT1 A 0 
+	PLSE BCDE 1 Bright
+	Stop
     }
 }
 

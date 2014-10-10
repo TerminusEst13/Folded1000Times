@@ -933,6 +933,7 @@ actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
     Powerup.Type "ShieldProtection"
     Powerup.Duration -30
     Powerup.Color blue2 0.10
+    Inventory.MaxAmount 0
     +INVENTORY.AUTOACTIVATE
     States
     {

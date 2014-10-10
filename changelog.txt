@@ -1,3 +1,10 @@
+FROM 0.72 TO 0.73:
+=======================================
+- Hot splashes no longer alert enemies.
+- Thanks to Scroton, the lightning of the hammer has been polished, optimized, and improved.
+
+
+
 FROM 0.71b TO 0.72:
 =======================================
 - Kharon slashing animation time has been reduced by two tics--now people can slash again as soon as the animation is complete.
@@ -11,3 +18,12 @@ FROM 0.71b TO 0.72:
 - Bullets online no longer spatter sparks on contact with enemies.
 - The Testament's reload sound can no longer be interrupted by jumping.
 - The Emperor's teleport effect properly works online, now.
+- The Blackened now has +VISIBILITYPULSE on his main body for no other reason than it looks cool.
+- Revenant missiles now home in 100% of the time and home much more aggressively. Enjoy!
+- The Archvile's flame pillars no longer wander so wide out and have lost their multi-flame spread attack, but in exchange fire much more aggressively and spew out constant streams of attacks.
+- Long, long ago in the mod's development, I made enemy projectiles shootable so that the pistol could shoot them down as well. As development went on, this proved too OP for the Testament and Sabbath and the ability was removed. The behavior has been tweaked, removing all of the vestigial bullet stuff while keeping the sword capable of cutting down projectiles.
+- Because of this, this frees up the bullets' species to be able to shoot through allied players in co-op.
+- For rare instances where you're trapped behind a forcefield or projectile-blocking wall or something and you need to shoot a switch, each bullet-gun has been given a perfectly accurate damage-less hitscan.
+- The back special is now much more effective in destroying enemy shots.
+- An attempt at making a 'less effects' cvar was made and quickly resulted in frustration, screaming, and grey hair. To make up for it, the effects on the Exodus, Omen, the explosive barrel, and Cyberdemon's rockets have been toned down slightly.
+- Picking up multiple invulnerability powerups in a row no longer results in them getting stuffed in your inventory.

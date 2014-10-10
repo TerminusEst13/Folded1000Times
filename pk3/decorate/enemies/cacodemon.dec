@@ -128,36 +128,15 @@ actor WizardSpell
 {
     Radius 6
     Height 8
-    Health 5
     Speed 10
     FastSpeed 20
     Damage 5
     RenderStyle Add
     Alpha 1
     Scale 0.75
-    Species "EnemyShot"
-    DamageFactor "EnemyInfightDamage", 0.0
-    DamageFactor "EnemyInfightDamageImp", 0.0
-    DamageFactor "EnemyInfightDamageArachnotron", 0.0
-    DamageFactor "EnemyInfightDamageNoble", 0.0
-    DamageFactor "EnemyInfightDamageRevenant", 0.0
-    DamageFactor "EnemyInfightDamageFatso", 0.0
-    DamageFactor "EnemyInfightDamageCaco", 0.0
-    DamageFactor "EnemyInfightDamageCyber", 0.0
-    DamageFactor "ArchvileFire", 0.0
-    DamageFactor "HaltHammerzeit", 0.0
-    DamageFactor "ExodusJump", 0.0
-    DamageFactor "ExodusDamage", 0.0
-    DamageFactor "Kubiuti", 0.0
-    DamageFactor "IronFistExplode", 0.0
-    DamageFactor "HaltHammerzeitImpact", 0.0
     DeathSound "wizard/shothit"
     Projectile
-    +THRUSPECIES
-    +SHOOTABLE
     +THRUGHOST
-    -NOBLOCKMAP 
-    +NOBLOOD
     States
     {
     Spawn:
@@ -172,7 +151,7 @@ actor WizardSpell
         SPZR D 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
         loop
     Death:
-        TNT1 A 0 A_UnsetShootable
+        TNT1 A 0
         TNT1 A 0 A_SpawnItemEx("EnemyCacoInfight",0,0,0,0,0,0,0,32)
         TNT1 AAAAAA 0 A_SpawnItemEx("WizardTrail1",0,0,0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,0,160)
         SPZR E 1 BRIGHT A_Scream
