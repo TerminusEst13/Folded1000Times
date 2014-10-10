@@ -1,0 +1,5 @@
+$random music/shift { musshft1 musshft2 musshft3 musshft4 } // Taken from the General Series 6000
+musshft1                       SNGSHFT1
+musshft2                       SNGSHFT2
+musshft3                       SNGSHFT3
+musshft4                       SNGSHFT4

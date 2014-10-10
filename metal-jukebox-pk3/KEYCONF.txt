@@ -1,0 +1,5 @@
+addkeysection "Now That's What I Call MIDI" jukebox_options
+
+addmenukey "Next song" nextsong
+
+alias nextsong "puke -348"

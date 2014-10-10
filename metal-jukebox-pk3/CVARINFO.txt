@@ -1,0 +1,1 @@
+server int mus_runninginzdoom    = 1;
