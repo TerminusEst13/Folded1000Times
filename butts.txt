@@ -41,12 +41,30 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 
 
 
-PVP WOES:
-- Invulnerability time needs to be much shorter
-- Don't get the sound/fade-in on respawn
-- Obituaries need to be tied to weapons/bullets.
-- Sword slashes go through players
-- Player skin REALLY does not help in identifying team members
+
+
+
+<torridGristle> I think an jumpng uppercut / upperslash would be cool in DemonSteele and provide a useful tool.
+<torridGristle> Send an enemy into the air for a little bit so they stop shooting.
+<torridGristle> Help with crowd control without resorting to something like the grenade launcher.
+<torridGristle> Maybe some sick air combos
+<TerminusEst13> Hmmm. Don't think I can do air combos, but an uppercut/upperslash would be good for releasing a hold if you don't double-tap a direction.
+<torridGristle> I was thinking it'd be a normal attack that you don't need to charge your meter for.
+<Eric> it'd be neat if attacking mid-air would let you stay up a bit longer
+<Eric> would help with flying jerkasses that just won't come down and let you cut them
+<torridGristle> Could dashes be made three-dimensional in the air?
+<TerminusEst13> torrid: Yeah, that's what I'm talking about. Instead of doing a special attack, you just cancel the thing. What I'm discovering is common behavior for players to strike, hold an attack, dodge through, and then finish an enemy off with a special attack. I think it'd be kind of lame to limit that to special attacks, so a non-soul-using attack that can be done might be good.
+<torridGristle> Need to be able to do it quickly.
+<torridGristle> Since I mean for it to be crowd control tech, dash into a bunch of zombies and send one or two flying each time and attack some while others are stunned.
+<TerminusEst13> Eric: I can try. Theoretically it'd be as simple as lowering the player's gravity if they're in mid-air, so the big question would be how to keep the player from flying off.
+<torridGristle> Can you add downward momentum over time?
+<Eric> i was thinking more along the lines of little boosts with each sword swing that would be just enough to keep you up, without letting you fly into the heavens
+<TerminusEst13> Aahhhh. Hmm. That'd just be a simple ThrustThingZ, then, I believe.
+<Eric> that might get ugly online, but in my opinion demonsteele isn't particularly good for that in the first place
+<torridGristle> Will ThrustThingZ only move you forward? In mid-air combat against flying enemies, being able to angle your thrusts up would be helpful.
+<torridGristle> No, Z is up isn't it
+<torridGristle> I'm thinking of Minecraft's xyz designation.
+<TerminusEst13> Z only bothers with up and down. For forward/backward it'd be either A_Recoil or ThrustThing.
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
@@ -73,15 +91,31 @@ PVP WOES:
 
 
 
+
+PVP-ONLY WOES: // Yes, some people actually tried PvP with this. Yes, these people have suggestions about fixing things.
+- Invulnerability time needs to be much shorter
+- You shouldn't get the sound/fade-in on respawn
+- Obituaries need to be tied to weapons/bullets.
+- Sword slashes go through players
+- Player skin REALLY does not help in identifying team members
+- Something needs to encourage using the sword over the guns
+- Too easy for players to just camp health items with the invulnerability. Maybe a health cap? Maybe remove larger health spawns?
+
+
+
+
 LATER, MAYBE:
 35: Replace generic blood with something of neater substance, like Psychic's or a smaller version of AtM's. // Nope, didn't work for some reason. I'll figure it out later.
+53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
+
+
+NOPE:
+29: SASS RAINBOW: you should make berserk give free combos for 20 seconds // Berserk was made into a pepper
 38: I can include different melee styles, each with their own focus. People have been constantly suggesting more DMC inspiration, so one thing I could do is borrow the four "styles" of play and do different melee modes around that.
 Like one style is to tap repeatedly for really fast strikes (what's currently in).
 Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
 Another style is single strikes, where holding down fire charges up a more powerful strike.
-And the final style...ummm. Hm.
-29: SASS RAINBOW: you should make berserk give free combos for 20 seconds // Berserk will be replaced by Brackish Tarot
-53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
+And the final style...ummm. Hm. // Kharon being wielded by itself will cover this.
 
 
 DONE:
