@@ -134,8 +134,29 @@ actor Gore_Gib0 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB0 H 1
+        Loop
+    Toaster0:
         GIB0 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB0 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB0 B 1
+        GIB0 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB0 D 1
+        GIB0 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB0 F 1
+        GIB0 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB0 H 1
+        Loop
+    Toaster2:
+        GIB0 ABCDEFGH 1 
+        Loop
     Death:
         GIB0 IJK 1
         GIB0 L 2100
@@ -150,8 +171,29 @@ actor Gore_Gib1 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB1 H 1
+        Loop
+    Toaster0:
         GIB1 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB1 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB1 B 1
+        GIB1 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB1 D 1
+        GIB1 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB1 F 1
+        GIB1 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB1 H 1
+        Loop
+    Toaster2:
+        GIB1 ABCDEFGH 1 
+        Loop
     Death:
         GIB1 I 2100
         GIB1 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -165,8 +207,29 @@ actor Gore_Gib2 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB2 H 1
+        Loop
+    Toaster0:
         GIB2 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB2 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB2 B 1
+        GIB2 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB2 D 1
+        GIB2 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB2 F 1
+        GIB2 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB2 H 1
+        Loop
+    Toaster2:
+        GIB2 ABCDEFGH 1 
+        Loop
     Death:
         GIB2 I 2100
         GIB2 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -180,8 +243,29 @@ actor Gore_Gib3 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB3 H 1
+        Loop
+    Toaster0:
         GIB3 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB3 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB3 B 1
+        GIB3 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB3 D 1
+        GIB3 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB3 F 1
+        GIB3 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB3 H 1
+        Loop
+    Toaster2:
+        GIB3 ABCDEFGH 1 
+        Loop
     Death:
         GIB3 I 2100
         GIB3 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -195,8 +279,29 @@ actor Gore_Gib4 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB4 H 1
+        Loop
+    Toaster0:
         GIB4 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB4 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB4 B 1
+        GIB4 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB4 D 1
+        GIB4 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB4 F 1
+        GIB4 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB4 H 1
+        Loop
+    Toaster2:
+        GIB4 ABCDEFGH 1 
+        Loop
     Death:
         GIB4 I 2100
         GIB4 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -210,8 +315,29 @@ actor Gore_Gib5 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB5 H 1
+        Loop
+    Toaster0:
         GIB5 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB5 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB5 B 1
+        GIB5 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB5 D 1
+        GIB5 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB5 F 1
+        GIB5 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB5 H 1
+        Loop
+    Toaster2:
+        GIB5 ABCDEFGH 1 
+        Loop
     Death:
         GIB5 I 2100
         GIB5 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -225,8 +351,29 @@ actor Gore_Gib6 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB6 H 1
+        Loop
+    Toaster0:
         GIB6 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB6 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB6 B 1
+        GIB6 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB6 D 1
+        GIB6 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB6 F 1
+        GIB6 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB6 H 1
+        Loop
+    Toaster2:
+        GIB6 ABCDEFGH 1 
+        Loop
     Death:
         GIB6 I 2100
         GIB6 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -240,8 +387,29 @@ actor Gore_Gib7 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB7 H 1
+        Loop
+    Toaster0:
         GIB7 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB7 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB7 B 1
+        GIB7 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB7 D 1
+        GIB7 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB7 F 1
+        GIB7 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB7 H 1
+        Loop
+    Toaster2:
+        GIB7 ABCDEFGH 1 
+        Loop
     Death:
         GIB7 I 2100
         GIB7 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -255,8 +423,29 @@ actor Gore_Gib8 : GoreGibBase
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB8 H 1
+        Loop
+    Toaster0:
         GIB8 ABCDEFGH 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("Switchable_FlyingBlood",1)
-        loop
+        Loop
+    Toaster1:
+        GIB8 A 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB8 B 1
+        GIB8 C 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB8 D 1
+        GIB8 E 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB8 F 1
+        GIB8 G 1 A_SpawnItemEx("BloodShower3",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        GIB8 H 1
+        Loop
+    Toaster2:
+        GIB8 ABCDEFGH 1 
+        Loop
     Death:
         GIB8 I 2100
         GIB8 IIIIIIIIII 1 A_FadeOut(0.1)
@@ -273,25 +462,45 @@ actor Gore_Gib8 : GoreGibBase
 
 ACTOR ExtreamCorpse
 {
-+NOTELEPORT
-+NOCLIP
-+DROPOFF
-+FLOORCLIP
-+CLIENTSIDEONLY
-Radius        16
-Height        32
-scale        1.0
-States
-{
-Spawn:
-BFE4 FFF 0 //A_SpawnItem("BSPIKubiuted",0)
-BFE4 FFFFF 0 A_CustomMissile("PlayerSplashGus1",16,0,random(0,360),2,random(0,360))
-BFE4 FFFFFFFFFF 0 A_SpawnDebris("BloodShower2")
-BFE4 FFFFFFFFFF 0 A_CustomMissile("BloodShower2",24,0,random(0,360),2,random(0,75))
-BFE4 FFFFFFFFFF 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
-BFE4 F 100 A_FadeOut
-    Wait
-}
+    +NOTELEPORT
+    +NOCLIP
+    +DROPOFF
+    +FLOORCLIP
+    +CLIENTSIDEONLY
+    Radius        16
+    Height        32
+    scale        1.0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BFE4 F 1
+        Loop
+    Toaster0:
+        BFE4 FFF 0 //A_SpawnItem("BSPIKubiuted",0)
+        BFE4 FFFFF 0 A_CustomMissile("PlayerSplashGus1",16,0,random(0,360),2,random(0,360))
+        BFE4 FFFFFFFFFF 0 A_SpawnDebris("BloodShower2")
+        BFE4 FFFFFFFFFF 0 A_CustomMissile("BloodShower2",24,0,random(0,360),2,random(0,75))
+        BFE4 FFFFFFFFFF 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        BFE4 F 100 A_FadeOut
+        Wait
+    Toaster1:
+        BFE4 FF 0 //A_SpawnItem("BSPIKubiuted",0)
+        BFE4 FFF 0 A_CustomMissile("PlayerSplashGus1",16,0,random(0,360),2,random(0,360))
+        BFE4 FFFFF 0 A_SpawnDebris("BloodShower2")
+        BFE4 FFFFF 0 A_CustomMissile("BloodShower2",24,0,random(0,360),2,random(0,75))
+        BFE4 FFFFF 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
+        BFE4 F 100 A_FadeOut
+        Wait
+    Toaster2:
+        BFE4 F 100 A_FadeOut
+        Wait
+    }
 }
 
 actor Bloodmeatprj1
@@ -332,16 +541,40 @@ BFE4 GH 10
 BFE4 I 50
 BFE4 I 100 A_FadeOut
     Wait
-Death.bloody:
-Death:
-BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
-BEF2 A 2 A_Scream
-BEF2 A 0 A_Fall
-BEF2 BB 1 A_SpawnDebris("BloodShower2")
-BEF1 EFG 2
-    stop
+    Death.bloody:
+        Goto Death
+    Death:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF2 A 1
+        Loop
+    Toaster0:
+        BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
+        BEF2 A 2 A_Scream
+        BEF2 A 0 A_Fall
+        BEF2 BB 1 A_SpawnDebris("BloodShower2")
+        BEF1 EFG 2
+        stop
+    Toaster1:
+        BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
+        BEF2 A 2 A_Scream
+        BEF2 A 0 A_Fall
+        BEF2 B 1 A_SpawnDebris("BloodShower2")
+        BEF2 B 1
+        BEF1 EFG 2
+        stop
+    Toaster2:
+        BEF2 A 2 A_Scream
+        BEF2 A 0 A_Fall
+        BEF1 BEFG 2
+        stop
+    }
 }
-}
+
 actor Bloodmeatprj2B : Bloodmeatprj2
 {
 scale    0.5
@@ -355,84 +588,196 @@ health    2
 +DONTSPLASH+LOWGRAVITY
 +FLOORCLIP
 +CLIENTSIDEONLY
-states
-{
-Spawn:
-BEF2 A 3
-BEF2 B 3 A_Jump(128,2)
-//BEF1 E 0 A_CustomMissile("BloodShower2",0,0,random(-10,10),2,random(-10,20))
-BEF1 E 0 A_SpawnDebris("BloodShower2",1)
-BEF1 E 4
-BEF1 F 4
-BEF1 G 4
-    stop
-}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        GIB8 H 1
+        Loop
+    Toaster0:
+        BEF2 A 3
+        BEF2 B 3 A_Jump(128,2)
+        BEF1 E 0 //A_CustomMissile("BloodShower2",0,0,random(-10,10),2,random(-10,20))
+        BEF1 E 0 A_SpawnDebris("BloodShower2",1)
+        BEF1 E 4
+        BEF1 F 4
+        BEF1 G 4
+        Stop
+    Toaster1:
+        Goto Toaster0
+    Toaster2:
+        BEF2 AB 3
+        BEF1 EFG 4
+        Stop
+    }
 }
 
 actor BloodShower2 : Blood
 {
-+MISSILE+CORPSE
-+NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST //-NOBLOOD
-+FLOORCLIP
-+CLIENTSIDEONLY
-scale    0.7
-health    1
-radius    8
-height    1
-mass    1
-speed    16
-RenderStyle    Translucent
-alpha    0.8
-states
-{
-Spawn:
-BEF1 A 0 
-See:
-BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
-    loop
-Death:
-BEF1 D 1 A_CheckFloor("Crash")
-    stop
-Crash:
-BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-    stop
-}
+    +MISSILE+CORPSE
+    +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST //-NOBLOOD
+    +FLOORCLIP
+    +CLIENTSIDEONLY
+    scale    0.7
+    health    1
+    radius    8
+    height    1
+    mass    1
+    speed    16
+    RenderStyle    Translucent
+    alpha    0.8
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        Goto See
+    See:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF1 A 1
+        Loop
+    Toaster0:
+        BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
+        Loop
+    Toaster1:
+        BEF1 ABCD 2 A_SpawnItem("BloodShower3",0,0,0,1)
+        Loop
+    Toaster2:
+        BEF1 ABCD 2
+        Loop
+    Death:
+        BEF1 D 1 A_CheckFloor("Crash")
+        Stop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
+        BEF1 A 1
+        Loop
+    CrashToaster0:
+        BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
+        Stop
+    CrashToaster1:
+        BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
+        Stop
+    CrashToaster2:
+        BEF1 A 1
+        Stop
+    }
 }
 
 actor BloodShowerB2 : BloodShower2
 {
-translation "176:191=195:207"
-BloodColor    "00 88 FF"
-states
-{
-Spawn:
-BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-    loop
-Crash:
-BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-    stop    
-}
+    translation "176:191=195:207"
+    BloodColor    "00 88 FF"  
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF1 A 1
+        Loop
+    Toaster0:
+        BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        Loop
+    Toaster1:
+        BEF1 AA 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 BB 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 CC 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 DD 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        Loop
+    Toaster2:
+        BEF1 ABCD 4
+        Loop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
+        BEF1 A 1
+        Loop
+    CrashToaster0:
+        BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
+        Stop
+    CrashToaster1:
+        BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
+        Stop
+    CrashToaster2:
+        BEF1 A 1
+        Stop
+    }
 }
 
 actor BloodShowerC2 : BloodShower2
 {
-translation "176:191=116:127"
-BloodColor "77 EE 00" 
-states
-{
-Spawn:
-BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-    loop
-Crash:
-BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-    stop    
-}
+    translation "176:191=116:127"
+    BloodColor "77 EE 00" 
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF1 A 1
+        Loop
+    Toaster0:
+        BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        Loop
+    Toaster1:
+        BEF1 AA 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 BB 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 CC 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 DD 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        Loop
+    Toaster2:
+        BEF1 ABCD 4
+        Loop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
+        BEF1 A 1
+        Loop
+    CrashToaster0:
+        BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
+        Stop
+    CrashToaster1:
+        BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
+        Stop
+    CrashToaster2:
+        BEF1 A 1
+        Stop
+    }
 }
 
 actor BloodShower3 : Blood
@@ -514,28 +859,58 @@ BloodColor "77 EE 00"
 
 actor BloodShower5 : Blood
 {
-+MISSILE+CORPSE +LOWGRAVITY
-+NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST
-+FLOORCLIP
-+CLIENTSIDEONLY
-health    1
-radius    8
-height    1
-mass    1
-speed    8
-scale    1
-states
-{
-Spawn:
-BFE4 BBCCDDEE 1 A_SpawnItem("BloodShower3",0,0,0,1)
-    loop
-Death:
-BFE4 D 1 A_CheckFloor("Crash")
-    stop
-Crash:
-BFE4 A 0 A_SpawnItem("BloodShower5b",0,0,0,1)
-    stop
-}
+    +MISSILE+CORPSE +LOWGRAVITY
+    +NOTELEPORT+NOBLOCKMAP+NOBLOCKMONST
+    +FLOORCLIP
+    +CLIENTSIDEONLY
+    health    1
+    radius    8
+    height    1
+    mass    1
+    speed    8
+    scale    1
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF4 B 1
+        Loop
+    Toaster0:
+        BFE4 BBCCDDEE 1 A_SpawnItem("BloodShower3",0,0,0,1)
+        Loop
+    Toaster1:
+        BFE4 BCDE 2 A_SpawnItem("BloodShower3",0,0,0,1)
+        Loop
+    Toaster2:
+        BFE4 BCDE 2
+        Loop
+    Death:
+        BFE4 D 1 A_CheckFloor("Crash")
+        Stop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
+        BEF4 A 1
+        Loop
+    CrashToaster0:
+        BFE4 A 1 A_SpawnItem("BloodShower5b",0,0,0,1)
+        Stop
+    CrashToaster1:
+        BFE4 A 1 A_SpawnItem("BloodShower5b",0,0,0,1)
+        Stop
+    CrashToaster2:
+        BEF4 A 1
+        Stop
+    }
 }
 
 actor BloodShower5b
@@ -558,94 +933,227 @@ Spawn:
 BFE4 A 100
 BFE4 A 100 A_FadeOut
     Wait
-Death.bloody:
-Death:
-BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
-BEF2 A 2 A_Scream
-BEF2 A 0 A_Fall
-BEF2 BB 1 A_SpawnDebris("BloodShower2")
-BEF1 EFG 2
-    stop
-}
+    Death.bloody:
+        Goto Death
+    Death:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF2 A 1
+        Loop
+    Toaster0:
+        BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
+        BEF2 A 2 A_Scream
+        BEF2 A 0 A_Fall
+        BEF2 BB 1 A_SpawnDebris("BloodShower2")
+        BEF1 EFG 2
+        stop
+    Toaster1:
+        BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
+        BEF2 A 2 A_Scream
+        BEF2 A 0 A_Fall
+        BEF2 B 1 A_SpawnDebris("BloodShower2")
+        BEF2 B 1
+        BEF1 EFG 2
+        stop
+    Toaster2:
+        BEF2 A 2 A_Scream
+        BEF2 A 0 A_Fall
+        BEF1 BEFG 2
+        stop
+    }
 }
 
 actor BloodSplashGus1 : BloodShower2
 {
-scale    0.7
-health    1
-radius    8
-height    1
-mass    1
-speed    16
-states
-{
-Spawn:
-BEF1 A 0 
-BEF1 A 0 A_SpawnItem("EnemySplashGus1",0,0,0,1)
-See:
-BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
-    loop
-Death:
-BEF1 D 1 A_CheckFloor("Crash")
-    stop
-Crash:
-BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-    stop
+    scale    0.7
+    health    1
+    radius    8
+    height    1
+    mass    1
+    speed    16
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        Goto See
+    See:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF1 A 1
+        Loop
+    Toaster0:
+        BEF1 A 0 A_SpawnItem("EnemySplashGus1",0,0,0,1)
+        Goto Toaster0A
+    Toaster0A:
+        BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
+        Loop
+    Toaster1:
+        BEF1 A 0 A_SpawnItem("EnemySplashGus1",0,0,0,1)
+        Goto Toaster1A
+    Toaster1A:
+        BEF1 ABCD 2 A_SpawnItem("BloodShower3",0,0,0,1)
+        Loop
+    Toaster2:
+        BEF1 ABCD 2
+        Loop
+    Death:
+        BEF1 D 1 A_CheckFloor("Crash")
+        Stop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
+        BEF1 A 1
+        Loop
+    CrashToaster0:
+        BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
+        Stop
+    CrashToaster1:
+        BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
+        Stop
+    CrashToaster2:
+        BEF1 A 1
+        Stop
+    }
 }
-}
+
+
 
 actor BloodSplashGus1b : BloodShower2
 {
-scale    0.7
-health    1
-radius    8
-height    1
-mass    1
-speed    16
-translation "176:191=195:207"
-BloodColor    "00 88 FF"
-states
-{
-Spawn:
-BEF1 A 0 
-BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
-See:
-BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-    loop
-Crash:
-BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-    stop
-}
+    scale    0.7
+    health    1
+    radius    8
+    height    1
+    mass    1
+    speed    16
+    translation "176:191=195:207"
+    BloodColor    "00 88 FF"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF1 A 1
+        Loop
+    Toaster0:
+        BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
+        Goto Toaster0A
+    Toaster0A:
+        BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        Loop
+    Toaster1:
+        BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
+        Goto Toaster1A
+    Toaster1A:
+        BEF1 AA 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 BB 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 CC 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 DD 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        Loop
+    Toaster2:
+        BEF1 ABCD 4
+        Loop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
+        BEF1 A 1
+        Loop
+    CrashToaster0:
+        BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
+        Stop
+    CrashToaster1:
+        BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
+        Stop
+    CrashToaster2:
+        BEF1 A 1
+        Stop
+    }
 }
 
 actor BloodSplashGus1c : BloodShower2
 {
-scale    0.7
-health    1
-radius    8
-height    1
-mass    1
-speed    16
-translation "176:191=112:127" //"176:191=116:127"
-BloodColor "77 EE 00" 
-states
-{
-Spawn:
-BEF1 A 0 
-//BEF1 A 0 A_SpawnItem("EnemySplashGus3",0,0,0,1)
-See:
-BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-    loop
-Crash:
-BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-    stop
-}
+    scale    0.7
+    health    1
+    radius    8
+    height    1
+    mass    1
+    speed    16
+    translation "176:191=112:127" //"176:191=116:127"
+    BloodColor "77 EE 00" 
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        BEF1 A 1
+        Loop
+    Toaster0:
+        //BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
+        //Goto Toaster0A
+    //Toaster0A:
+        BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        Loop
+    Toaster1:
+        //BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
+        //Goto Toaster1A
+    //Toaster1A:
+        BEF1 AA 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 BB 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 CC 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 DD 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        Loop
+    Toaster2:
+        BEF1 ABCD 4
+        Loop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
+        BEF1 A 1
+        Loop
+    CrashToaster0:
+        BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
+        Stop
+    CrashToaster1:
+        BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
+        Stop
+    CrashToaster2:
+        BEF1 A 1
+        Stop
+    }
 }
 
 actor EfectPrj
