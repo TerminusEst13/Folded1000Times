@@ -1610,36 +1610,35 @@ actor ElecShotSFX
     Projectile
     Speed 0
     +NOINTERACTION
-    +CLIENTSIDEONLY
+    -SOLID
+    //+CLIENTSIDEONLY
     States
     {
       Spawn:
-        Goto Death
-      Death:
         TNT1 A 0
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 16, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 24, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 32, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 40, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 48, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 56, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 64, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 72, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 80, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 88, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 96, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 104, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 112, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 120, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 128, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 136, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 144, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 152, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 160, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 168, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 176, 1)
-        TNT1 A 0 A_CustomBulletAttack(0, 0, 1, 0, "ElecTrail", 184, 1)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",16,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",24,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",32,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",40,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",48,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",56,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",64,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",72,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",80,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",88,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",96,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",104,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",112,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",120,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",128,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",136,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",144,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",152,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",160,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",168,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",176,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("ElecTrail",184,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
         TNT1 A 1 bright
         stop
     }
@@ -1650,7 +1649,8 @@ actor ElecTrail: BulletPuff
     +ALWAYSPUFF
     +BLOODLESSIMPACT
     +NOINTERACTION
-    +CLIENTSIDEONLY
+    //+CLIENTSIDEONLY
+    -ALLOWPARTICLES
     +DONTSPLASH
     +NOPAIN
     VSpeed 0
