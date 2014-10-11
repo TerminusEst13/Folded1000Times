@@ -1563,9 +1563,9 @@ actor ElecShot
     Speed 0
     States
     {
-      Spawn:
+    Spawn:
         Goto Death
-      Death:
+    Death:
         TNT1 A 0
         TNT1 A 0 A_Stop
         TNT1 A 0 A_CustomMissile("ElecBeam", 0,0,0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
@@ -1611,10 +1611,10 @@ actor ElecShotSFX
     Speed 0
     +NOINTERACTION
     -SOLID
-    //+CLIENTSIDEONLY
+    +CLIENTSIDEONLY
     States
     {
-      Spawn:
+    Spawn:
         TNT1 A 0
         TNT1 A 0 A_Stop
         TNT1 A 0 A_SpawnItemEx("ElecTrail",16,0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
