@@ -299,7 +299,8 @@ script WEEB_DECORATE (int burrshet)
 
 script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 {
-    if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } 
+	
+	if (boreshut < 98 && ConsolePlayerNumber() != PlayerNumber()) { terminate; } 
 
     switch (boreshut)
     {
@@ -339,10 +340,17 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
         break;
 
+	//cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
+	//if you want more cases that aren't subject to it, put them here in descending order
+	//and decrease the number in the check at the top of this script
+
     case WEEB_DEC_TOASTER:
-        if(GetCvar("ds_cl_toaster") == 1) { SetActorState(0,"LessEffects"); }
-        //SetResultValue(getCvar("ds_cl_toaster")); //{ SetResultValue(1); }
-        //else { SetResultValue(0); }
+        if(GetCvar("ds_cl_toaster") <= 0) { SetActorState(0,"Toaster0"); }
+		if(GetCvar("ds_cl_toaster") == 1) { SetActorState(0,"Toaster1"); }
+        if(GetCvar("ds_cl_toaster") >= 2) { SetActorState(0,"Toaster2"); }
+		break;   
+    case WEEB_DEC_TOASTER2:
+        SetResultValue(getCvar("ds_cl_toaster"));
         break;
     }
 }

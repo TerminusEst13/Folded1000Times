@@ -65,7 +65,10 @@
 #define WEEB_DEC_GETMESSAGES    0
 #define WEEB_DEC_CHANGEMUS      1
 #define WEEB_DEC_CHANGEMUSBACK  2
-#define WEEB_DEC_TOASTER        3
+
+//
+#define WEEB_DEC_TOASTER        98
+#define WEEB_DEC_TOASTER2       99
 
 int DemonCredits =
 "SPECIAL THANKS TO:\n\
