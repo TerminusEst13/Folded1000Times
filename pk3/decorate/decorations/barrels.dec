@@ -22,17 +22,17 @@ ACTOR XaserBarrel : ExplosiveBarrel replaces ExplosiveBarrel
     Death:
         TNT1 A 0 A_Pain
         TNT1 AA 0 A_SpawnItemEx("BloodShowerC2",0,0,16,random(-500,500)/100.00,random(-500,500)/100.00,random(300,1200)/100.00,random(-180,180),160)
-          BEXP ABA 3
+        BEXP ABA 3
         BEXP C 6 BRIGHT 
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_Explode
-          TNT1 A 0 A_SpawnItemEx("XaserBarrelDeathSFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("XaserBarrelDeathSFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
         TNT1 A 0 A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32,128)
         BEXP C 1 BRIGHT A_Scream
         BEXP RSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRSTRST 5 bright
         BEXP U 1 A_SpawnItem("BarrelRemains",1)
         BEXP U 690
-          BEXP U 5 A_BarrelDestroy
+        BEXP U 5 A_BarrelDestroy
         BEXP U 5 A_Respawn
         Wait
    }
@@ -41,9 +41,9 @@ ACTOR XaserBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 ACTOR XaserBarrelDeathSFX
 {
     +NOCLIP
-     +NOGRAVITY
-     +THRUACTORS
-     +NOINTERACTION
+    +NOGRAVITY
+    +THRUACTORS
+    +NOINTERACTION
     +CLIENTSIDEONLY
     Renderstyle None
     States
@@ -59,11 +59,11 @@ ACTOR XaserBarrelDeathSFX
         Loop
     Toaster0:
         TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
         TNT1 A 0 A_SpawnItem("ExploFogSpawner")
         TNT1 A 0 A_SpawnItem("BarrelExploFXSpawner",0,16)
         TNT1 A 0 A_SpawnItem("BigSlowSmoke")
@@ -72,18 +72,18 @@ ACTOR XaserBarrelDeathSFX
         TNT1 AAAAAAAAA 0 A_SpawnItemEx("BarrelJunky",0,0,0,random(-100,100)/25.0,random(-100,100)/25.0,random(600,1000)/100.0,random(-180,180),160)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("Firetrail",0,0,0,random(-100,100)/30.0,random(-100,100)/30.0,random(600,1000)/100.0,random(-180,180),160)
         TNT1 AAAAAAAAAA 0 A_SpawnItemEx("Firetrail",0,0,0,random(-100,100)/20.0,random(-100,100)/20.0,random(300,600)/100.0,random(-180,180),160)
-          TNT1 A 1
+        TNT1 A 1
         TNT1 A 0 A_SpawnItem("Boom")
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 5 A_SpawnItemEx("SlowSmoke",0,0,8,0.01*Random(-50,50),0.01*Random(-50,50),0.01*Random(40,100),0,0,136)
-          TNT1 A 1
-          Stop
+        TNT1 A 1
+        Stop
     Toaster1:
         TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
         //TNT1 A 0 A_SpawnItem("ExploFogSpawner")
         TNT1 A 0 A_SpawnItem("BarrelExploFXSpawner",0,16)
         TNT1 A 0 A_SpawnItem("BigSlowSmoke")
@@ -92,25 +92,25 @@ ACTOR XaserBarrelDeathSFX
         TNT1 AAAAA 0 A_SpawnItemEx("BarrelJunky",0,0,0,random(-100,100)/25.0,random(-100,100)/25.0,random(600,1000)/100.0,random(-180,180),160)
         TNT1 AAAAAA 0 A_SpawnItemEx("Firetrail",0,0,0,random(-100,100)/30.0,random(-100,100)/30.0,random(600,1000)/100.0,random(-180,180),160)
         TNT1 AAA 0 A_SpawnItemEx("Firetrail",0,0,0,random(-100,100)/20.0,random(-100,100)/20.0,random(300,600)/100.0,random(-180,180),160)
-          TNT1 A 1
+        TNT1 A 1
         TNT1 A 0 A_SpawnItem("Boom")
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 10 A_SpawnItemEx("SlowSmoke",0,0,8,0.01*Random(-50,50),0.01*Random(-50,50),0.01*Random(40,100),0,0,136)
-          TNT1 A 1
-          Stop
+        TNT1 A 1
+        Stop
     Toaster2:
         TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          TNT1 A 0
-          //TNT1 AAAA 0 A_SpawnItemEx("BarrelJunkyToaster",0,0,0,random(-100,100)/25.0,random(-100,100)/25.0,random(600,1000)/100.0,random(-180,180),160)
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        //TNT1 AAAA 0 A_SpawnItemEx("BarrelJunkyToaster",0,0,0,random(-100,100)/25.0,random(-100,100)/25.0,random(600,1000)/100.0,random(-180,180),160)
         TNT1 A 0 A_SpawnItem("BarrelExploFXSpawner",0,16)
         TNT1 A 0 A_SpawnItem("BigSlowSmoke")
-          TNT1 A 1
+        TNT1 A 1
         TNT1 A 0 A_SpawnItem("Boom")
-          TNT1 A 1
-          Stop
+        TNT1 A 1
+        Stop
    }
 }
 
