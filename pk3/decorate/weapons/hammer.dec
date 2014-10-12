@@ -928,7 +928,7 @@ actor HammerAttackBaseSFX
         TNT1 A 0
         TNT1 A 0 A_Stop
         TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"Toaster0")
         //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
         //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
         TNT1 A 1
@@ -1459,7 +1459,7 @@ actor HammerLightningMediumSFX
         TNT1 A 0
         TNT1 A 0 A_Stop
         TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"Toaster0")
         //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
         //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
         TNT1 A 1
@@ -1880,6 +1880,7 @@ actor ShockScatter
   +DONTSPLASH
   +NOTELEPORT
   +CLIENTSIDEONLY
+  +SKYEXPLODE
   States
   {
   Spawn:
