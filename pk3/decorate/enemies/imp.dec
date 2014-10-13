@@ -279,20 +279,8 @@ actor WeeabooImpBall
     States
     {
     Spawn:
-        TNT1 A 0
-        TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 1
-        Loop
-    Toaster0:
         TNT1 AA 0 A_SpawnItemEx("WeebImpFireTrail",random(-50,50)/100.00,random(-50,50)/100.00,random(-50,50)/100.00,random(-150,150)/80.00,random(-150,150)/80.00,random(-150,150)/80.00,0,160)
         CFFX N 1 Bright A_SpawnItemEx("WeebImpFireTrail",0,0,0,0,0,0,0,160)
-        Loop
-    Toaster1:
-        CFFX N 1 Bright A_SpawnItemEx("WeebImpFireTrail",0,0,0,0,0,0,0,160)
-        Loop
-    Toaster2:
-        CFFX N 1 Bright
         Loop
     Death:
         TNT1 A 0 //A_UnsetShootable
@@ -306,18 +294,40 @@ actor WeebImpFireTrail
 {
     +NOINTERACTION
     +CLIENTSIDEONLY
+    +THRUACTORS
+    +NOCLIP
     Alpha 0.75
     Scale 0.8
     RenderStyle Add
     States
     {
     Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
+        TNT1 A 1
+        Loop
+    Toaster0:
         TNT1 A 2
-    Spawn2:
+        Goto Toaster0A
+    Toaster0A:
         CFFX O 4 BRIGHT A_FadeOut(0.125)
         CFFX P 4 BRIGHT A_FadeOut(0.125)
-        stop
-    }
+        loop
+    Toaster1:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 A_Jump(170,"Toaster2")
+        TNT1 A 2
+        Goto Toaster0A
+    Toaster2:
+        TNT1 A 0
+        Stop
+   }
 }
 
 actor TROXKubiuted : POSXKubiuted
