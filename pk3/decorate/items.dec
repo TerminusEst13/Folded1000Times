@@ -463,12 +463,12 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         stop
 
     OverBabyPickup:
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"BabyFailCheck")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"BabyFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop
     OverEasyPickup: // Heh.
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"EasyFailCheck")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop
@@ -659,17 +659,17 @@ actor HealPackMedium: CustomInventory
         stop
 
     OverBabyPickup:
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"BabyFailCheck")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"BabyFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"BabyFailCheck2")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"BabyFailCheck2")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop
     OverEasyPickup: // Heh.
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"EasyFailCheck")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"EasyFailCheck2")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck2")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop
     OverNormalPickup:
@@ -819,25 +819,21 @@ actor OverHealPack : CustomInventory
         TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
         goto OhGodHelpMePickup
     BabyPickup:
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
-        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop
     EasyPickup:
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
-        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"PickupStop")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop
     NormalPickup:
@@ -1204,11 +1200,11 @@ actor PowerupPickup : CustomInventory replaces Berserk
         goto PickupFinish
 
     OverBabyPickup:
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"BabyFailCheck")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"BabyFailCheck")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         goto PickupFinish
     OverEasyPickup: // Heh.
-        TNT1 A 0 A_JumpIfInventory("OverLifeToken",4,"EasyFailCheck")
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         goto PickupFinish
     OverNormalPickup:
