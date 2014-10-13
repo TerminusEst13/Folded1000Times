@@ -26,7 +26,6 @@ TO DO in no particular order:
 56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
 58: Attack when you let go of holding down fire.
-59: Less/no-effects cvar
 61: 6000 ANGRY BEES: one small idea to toy with:
 6000 ANGRY BEES: subtle sound cues when you go up or down a combo level (fearless etc.)
 TerminusEst13: That's a good idea, actually.
@@ -173,6 +172,7 @@ DONE:
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
+59: Less/no-effects cvar
 60: <torridGristle> Watersplashes aren't the same colour as the water.
 <torridGristle> Yeah, they're PNGs and aren't affected by the new playpal.
 <torridGristle> Converting them to Doom format using the Doom palette, not the DemonSteele palette, should fix that well enough.
