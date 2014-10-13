@@ -1706,6 +1706,7 @@ actor ShockPellet : FastProjectile
   +RANDOMIZE
   +DONTSPLASH
   +CLIENTSIDEONLY
+  +SKYEXPLODE
   States
   {
   Spawn:
