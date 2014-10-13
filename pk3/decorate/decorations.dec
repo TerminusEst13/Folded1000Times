@@ -6,6 +6,8 @@ actor DecorationSpawner
     +ALWAYSFAST
     +LOOKALLAROUND
     +NODAMAGE
+    -COUNTKILL
+    -ISMONSTER
     Health 9999
     RenderStyle None
     States
@@ -108,6 +110,8 @@ ACTOR DestructableDecorationBase
     +FLOORCLIP
     +ALWAYSFAST
     +NODAMAGE
+    -COUNTKILL
+    -ISMONSTER
     Monster
     BloodType "BlankPuff"
     RadiusDamageFactor 0.0
@@ -240,6 +244,8 @@ actor DecorationShooterTurbo
     +THRUACTORS
     +ALWAYSFAST
     +LOOKALLAROUND
+    -COUNTKILL
+    -ISMONSTER
     Health -1
     RenderStyle None
     Speed 0
