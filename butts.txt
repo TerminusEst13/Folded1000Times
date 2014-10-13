@@ -20,6 +20,7 @@ TO DO in no particular order:
   ^ Design
   ^ New HUD signifying you're in armor
   ^ Non-placeholder sprites for fists/pickup
+53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 54: Casing ejection/smoke effects on the guns.
 55: New teleport effect
 56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
@@ -38,9 +39,8 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 68: Draining the Iron Maiden's armor and then letting it recover seems to let damage bleed through to the player.
 69: Let the player know on the HUD what weapons they've already picked up.
 70: Some kind of "don't mash the button for more powerful strikes" system.
-
-
-
+71: A cvar to let people swap between weapons when out of ammo.
+72: Skulltag weapon replacements?
 
 
 
@@ -104,9 +104,13 @@ PVP-ONLY WOES: // Yes, some people actually tried PvP with this. Yes, these peop
 
 
 
+
 LATER, MAYBE:
 35: Replace generic blood with something of neater substance, like Psychic's or a smaller version of AtM's. // Nope, didn't work for some reason. I'll figure it out later.
-53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
+
+
+
+
 
 
 NOPE:
