@@ -377,10 +377,31 @@ ACTOR WeebBulletPuff
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 1
+        Loop
+    Toaster0:
+        TNT1 A 0
         TNT1 A 1
         TNT1 AAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
         TNT1 AAAAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
         TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        goto Toaster0+10
+    Toaster1:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        goto Toaster1+7
+    Toaster2:
+        TNT1 A 1
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        loop
     Spawn1:
         //BPFF A 1 Bright
         BPFF A 1 Bright //A_SetTranslucent(.75,1)

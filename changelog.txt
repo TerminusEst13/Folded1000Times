@@ -2,6 +2,7 @@ FROM 0.72 TO 0.73:
 =======================================
 - Hot splashes no longer alert enemies.
 - Thanks to Scroton, the lightning of the hammer has been polished, optimized, and improved.
+- ds_cl_toaster has been included as a clientside effects toggle option. 0 is full effects, 1 is less effects, 2 is absolute minimal effects.
 
 
 
