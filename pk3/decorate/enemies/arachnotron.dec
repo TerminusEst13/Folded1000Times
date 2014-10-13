@@ -178,6 +178,12 @@ ACTOR PriestFire
     States
     {
     Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 1
+        Loop
+    Toaster0:
         TNT1 AA 0 A_SpawnItemEx("PriestFireTrail",random(-50,50)/100.00,random(-50,50)/100.00,random(-50,50)/100.00,random(-150,150)/80.00,random(-150,150)/80.00,random(-150,150)/80.00,0,160)
         DMFX A 1 Bright A_SpawnItemEx("PriestFireTrail",0,0,0,0,0,0,0,160)
         TNT1 AA 0 A_SpawnItemEx("PriestFireTrail",random(-50,50)/100.00,random(-50,50)/100.00,random(-50,50)/100.00,random(-150,150)/80.00,random(-150,150)/80.00,random(-150,150)/80.00,0,160)
@@ -185,6 +191,14 @@ ACTOR PriestFire
         TNT1 AA 0 A_SpawnItemEx("PriestFireTrail",random(-50,50)/100.00,random(-50,50)/100.00,random(-50,50)/100.00,random(-150,150)/80.00,random(-150,150)/80.00,random(-150,150)/80.00,0,160)
         DMFX C 1 Bright A_SpawnItemEx("PriestFireTrail",0,0,0,0,0,0,0,160)
         Loop
+    Toaster1:
+        DMFX A 1 Bright A_SpawnItemEx("PriestFireTrail",0,0,0,0,0,0,0,160)
+        DMFX B 1 Bright A_SpawnItemEx("PriestFireTrail",0,0,0,0,0,0,0,160)
+        DMFX C 1 Bright A_SpawnItemEx("PriestFireTrail",0,0,0,0,0,0,0,160)
+        Loop
+    Toaster2:
+        DMFX ABC 1 Bright
+        loop
     Death:
         TNT1 A 0
         TNT1 A 0 A_SpawnItemEx("EnemyArachnotronInfight",0,0,0,0,0,0,0,32)

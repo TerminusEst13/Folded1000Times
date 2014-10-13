@@ -279,8 +279,20 @@ actor WeeabooImpBall
     States
     {
     Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 1
+        Loop
+    Toaster0:
         TNT1 AA 0 A_SpawnItemEx("WeebImpFireTrail",random(-50,50)/100.00,random(-50,50)/100.00,random(-50,50)/100.00,random(-150,150)/80.00,random(-150,150)/80.00,random(-150,150)/80.00,0,160)
         CFFX N 1 Bright A_SpawnItemEx("WeebImpFireTrail",0,0,0,0,0,0,0,160)
+        Loop
+    Toaster1:
+        CFFX N 1 Bright A_SpawnItemEx("WeebImpFireTrail",0,0,0,0,0,0,0,160)
+        Loop
+    Toaster2:
+        CFFX N 1 Bright
         Loop
     Death:
         TNT1 A 0 //A_UnsetShootable

@@ -141,6 +141,12 @@ actor WizardSpell
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 1
+        Loop
+    Toaster0:
+        TNT1 A 0
         TNT1 A 0 A_SpawnItemEx("WizardTrail2",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
         SPZR A 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
         TNT1 A 0 A_SpawnItemEx("WizardTrail2",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
@@ -149,6 +155,17 @@ actor WizardSpell
         SPZR C 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
         TNT1 A 0 A_SpawnItemEx("WizardTrail2",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
         SPZR D 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        loop
+    Toaster1:
+        TNT1 A 0
+        SPZR A 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        SPZR B 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        SPZR C 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        SPZR D 1 BRIGHT A_CustomMissile("WizardTrail1",0,0,0)
+        loop
+    Toaster2:
+        TNT1 A 0
+        SPZR ABCD 1 BRIGHT
         loop
     Death:
         TNT1 A 0
