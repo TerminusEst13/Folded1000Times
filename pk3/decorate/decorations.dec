@@ -25,37 +25,37 @@ actor DecorationSpawner
     ShootStimpack:
         TNT1 A 0
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
         stop
     ShootMedikit:
         TNT1 A 0
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("Medikit",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("Medikit",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
         stop
     ShootBullets:
         TNT1 A 0
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("WeebClip",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("WeebClip",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
         stop
     ShootShells:
         TNT1 A 0
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("WeebShell",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("WeebShell",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
         stop
     ShootRockets:
         TNT1 A 0
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("WeebRocket",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("WeebRocket",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
         stop
     ShootCell:
         TNT1 A 0
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("WeebCell",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("WeebCell",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
         stop
     ShootSoul:
         TNT1 A 0
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
         stop
     Nothing:
         TNT1 A 0
@@ -66,71 +66,39 @@ actor DecorationSpawner
         loop
     SpawnStimpack:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
         stop
     SpawnMedikit:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("Medikit",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("Medikit",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
         stop
     SpawnBullets:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("WeebClip",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("WeebClip",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
         stop
     SpawnShells:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("WeebShell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("WeebShell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
         stop
     SpawnRockets:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("WeebRocket",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("WeebRocket",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
         stop
     SpawnCell:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("WeebCell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("WeebCell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
         stop
     SpawnSoul:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
         stop
     }
 }
-ACTOR DestructableDecorationBase
+
+ACTOR DestructableDecorationBaseStates
 {
-    Radius 1
-    Height 1
-    Health 0x7FFFFFFF
-    Mass 0x7FFFFFFF
-    ProjectilePassHeight -16
-    +SOLID
-    +SHOOTABLE
-    +NORADIUSDMG
-    +RANDOMIZE
-    +NOBLOOD
-    +DONTGIB
-    +FLOORCLIP
-    +ALWAYSFAST
-    +NODAMAGE
-    -ISMONSTER
-    -COUNTKILL
-    Monster
-    BloodType "BlankPuff"
-    RadiusDamageFactor 0.0
-    DamageFactor "Normal", 0.0
-    DamageFactor "Kubiuti", 1.0
-    DamageFactor "HaltHammerzeitImpact", 1.0
-    DamageFactor "IronFistDamage", 1.0
-    PainChance 0
-    PainChance "Kubiuti", 255
-    PainChance "HaltHammerzeitImpact", 255
-    PainChance "IronFistDamage", 255
     States
     {
-    Spawn:
-        "----" Z 0
-        "----" Z 0
-        "----" Z 0
-        "----" ZAAAAAAAAA 1 A_LookEx(0,0,500)
-        Goto DunSee
     See:
         "----" Z 1 A_Chase
         "----" Z 1 A_Chase
@@ -148,89 +116,128 @@ ACTOR DestructableDecorationBase
     ShootStimpack:
         "----" Z 0
         "----" Z 0 A_FaceTarget
-        "----" Z 0 A_SpawnItemEx("Stimpack",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("Stimpack",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     ShootMedikit:
         "----" Z 0
         "----" Z 0 A_FaceTarget
-        "----" Z 0 A_SpawnItemEx("Medikit",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("Medikit",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     ShootBullets:
         "----" Z 0
         "----" Z 0 A_FaceTarget
-        "----" Z 0 A_SpawnItemEx("WeebClip",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebClip",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     ShootShells:
         "----" Z 0
         "----" Z 0 A_FaceTarget
-        "----" Z 0 A_SpawnItemEx("WeebShell",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebShell",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     ShootRockets:
         "----" Z 0
         "----" Z 0 A_FaceTarget
-        "----" Z 0 A_SpawnItemEx("WeebRocket",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebRocket",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     ShootCell:
         "----" Z 0
         "----" Z 0 A_FaceTarget
-        "----" Z 0 A_SpawnItemEx("WeebCell",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebCell",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     ShootSoul:
         "----" Z 0
         "----" Z 0 A_FaceTarget
-        "----" Z 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,12,0,6,0,SXF_NOCHECKPOSITION)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,7,0,6,0,SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     Nothing:
         "----" Z 0
-        "----" Z -1
-        Stop
+        "----" Z 1
+        Goto DoneCheck
     DunSee:
         "----" Z 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell","SpawnSoul","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
         "----" Z 1
         Loop
     SpawnStimpack:
         "----" Z 0
-        "----" Z 0 A_SpawnItemEx("Stimpack",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("Stimpack",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     SpawnMedikit:
         "----" Z 0
-        "----" Z 0 A_SpawnItemEx("Medikit",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("Medikit",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     SpawnBullets:
         "----" Z 0
-        "----" Z 0 A_SpawnItemEx("WeebClip",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebClip",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     SpawnShells:
         "----" Z 0
-        "----" Z 0 A_SpawnItemEx("WeebShell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebShell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     SpawnRockets:
         "----" Z 0
-        "----" Z 0 A_SpawnItemEx("WeebRocket",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebRocket",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     SpawnCell:
         "----" Z 0
-        "----" Z 0 A_SpawnItemEx("WeebCell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
-        "----" Z -1
-        Stop
+        "----" Z 0 A_SpawnItemEx("WeebCell",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
     SpawnSoul:
         "----" Z 0
-        "----" Z 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),32)
+        "----" Z 0 A_SpawnItemEx("TinyMeterPickup7",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(200,600)/100.00,random(-180,180),SXF_NOCHECKPOSITION)
+        "----" Z 1
+        Goto DoneCheck
+    DoneCheck:
+        "----" Z 1 A_Jump(255,"Done")
+        "----" Z 1 A_Jump(255,"Done")
+        "----" Z 1 A_Jump(255,"Done")
+        "----" Z 1 A_Jump(255,"Done")
+        Goto Done
+    Done:
         "----" Z -1
         Stop
     }
+}
+
+ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
+{
+    Radius 1
+    Height 1
+    Health 0x7FFFFFFF
+    Mass 0x7FFFFFFF
+    ProjectilePassHeight -16
+    +SOLID
+    +SHOOTABLE
+    +NORADIUSDMG
+    +RANDOMIZE
+    +NOBLOOD
+    +DONTGIB
+    +FLOORCLIP
+    +ALWAYSFAST
+    +NODAMAGE
+    -ISMONSTER
+    -COUNTKILL
+    BloodType "BlankPuff"
+    RadiusDamageFactor 0.0
+    DamageFactor "Normal", 0.0
+    DamageFactor "Kubiuti", 1.0
+    DamageFactor "HaltHammerzeitImpact", 1.0
+    DamageFactor "IronFistDamage", 1.0
+    PainChance 0
+    PainChance "Kubiuti", 255
+    PainChance "HaltHammerzeitImpact", 255
+    PainChance "IronFistDamage", 255
 }
 
 #include "decorate/decorations/torches.dec"
