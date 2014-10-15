@@ -25,7 +25,7 @@ haehurt1                HLPAIN1
 haehurt2                HLPAIN2
 haehurt3                HLPAIN3
 
-$random haelin/nope { haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haewhoops1 }
+$random haelin/nope { haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haewhoops1 }
 haenope1                HLNOPE1
 haenope2                HLNOPE2
 haenope3                HLNOPE3
