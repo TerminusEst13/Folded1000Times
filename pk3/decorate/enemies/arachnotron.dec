@@ -224,7 +224,6 @@ actor PriestFireTrail
         loop
     Toaster1:
         TNT1 A 2
-    Toaster1A:
         DMFX A 1 BRIGHT A_FadeOut(0.125)
         DMFX B 1 BRIGHT A_FadeOut(0.125)
         DMFX C 1 BRIGHT A_FadeOut(0.125)
