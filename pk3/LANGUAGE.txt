@@ -34,6 +34,8 @@ STSTR_BEHOLDX  = "...so let me help ya."; // Sonata Arctica - The Gun
 STSTR_CHOPPERS = "Evil's going under deadly wheels."; // Judas Priest - Painkiller
 TXT_BUDDHAON   = "Living dead girl."; // Rob Zombie - Living Dead Girl
 TXT_BUDDHAOFF  = "I'm alive."; // Helloween - I'm Alive
+TXT_LIGHTER    = "Won't you spread your wings?"; // Running Wild - Angel of Mercy
+TXT_GRAVITY    = "Back on the streets."; // Helloween - Back on the Streets
 
 OB_SUICIDE     = "%o pulled the trigger and ended %p journey."; // Apostasy - Sulphur Injection
 OB_FALLING     = "%o ran into some high speed dirt."; // Megadeth - High Speed Dirt
