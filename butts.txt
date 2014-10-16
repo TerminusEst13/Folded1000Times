@@ -41,6 +41,9 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 71: A cvar to let people swap between weapons when out of ammo.
 72: Skulltag weapon replacements?
 73: hammo pickup
+74: Explosive dashing punch as the Iron Maiden's forward special
+75: Replacement sounds for other world objects, such as lifts, switches, and doors.
+76: Replacement sounds for the non-unique enemies, since at the moment the high-quality sounds contrast quite a bit.
 
 
 

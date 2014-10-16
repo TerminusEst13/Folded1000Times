@@ -86,6 +86,10 @@ GRAPHICS:
 
 CODE:
 =========
+- Scroton
+  ^ Pretty much the entirety of ds_cl_toaster
+  ^ Optimizing a lot of rough spots
+  ^ Rehauling the destructable decorations to throw their items at the players
 - Ijon Tichy
   ^ The shockwave from the spin attack
   ^ The trail for the zombie lasers/razor wind
@@ -121,7 +125,7 @@ MUSIC:
 
 SOUNDS:
 =========
-- Adoxographist (Going above and beyond the line of duty for Hae-Lin's voice!)
+- Adoxographist ( adoxtalks.tumblr.com - Going above and beyond the line of duty for Hae-Lin's voice!)
 - John Archer (The Blackened's voice)
 - torridGristle (The robotic voice of the Iron Maiden)
 - All sounds are credited to their respective owner in SNDINFO.
