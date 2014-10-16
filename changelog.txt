@@ -7,6 +7,8 @@ FROM 0.72 TO 0.73:
 - On lower difficulties, with full over-life tokens, it's no longer possible to start nomming everything in sight with no benefit. Watch your intake, kids!
 - There is now a Read This graphic for the Doom 1 menu.
 - WHOOPS is now actually 1/10 chance instead of 1/100 chance.
+- A few more attack sounds have been implemented.
+- Weapons are no longer droppable. Sorry!
 
 
 

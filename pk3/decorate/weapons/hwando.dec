@@ -16,6 +16,7 @@ ACTOR HwandoBase : Weapon
     +NOEXTREMEDEATH
     +ALT_AMMO_OPTIONAL
     +CHEATNOTWEAPON
+    +UNDROPPABLE
     States
     {
     Spawn:
