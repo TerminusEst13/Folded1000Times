@@ -1,5 +1,6 @@
-ACTOR HwandoBase : Weapon
+ACTOR Kharon : Weapon
 {
+    Weapon.SlotNumber 0
     Weapon.KickBack 50
     Weapon.AmmoUse 0
     Weapon.AmmoUse2 0
@@ -23,7 +24,7 @@ ACTOR HwandoBase : Weapon
         KATP A -1
         stop
     Ready:
-        SWRD A 1 A_WeaponReady
+        WEPK A 1 A_WeaponReady
         Loop
     Deselect:
         TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
@@ -37,26 +38,93 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_JumpIfInventory("AlreadyInLevel",1,"Select3")
         TNT1 AAAAAAA 0 A_Raise
         TNT1 AA 1 A_Raise
-        WAC1 C 0 A_PlayWeaponSound("sword/draw")
+        TNT1 A 0 A_PlayWeaponSound("sword/draw")
         TNT1 A 1 A_Raise
         KTUP ABCDE 1 A_Raise
         KTUP FG 1
         TNT1 A 12 A_GiveInventory("AlreadyInLevel",1)
-        SWRC GHIJ 1
+        WEPK DCBA 1
         Goto Ready
     Select2:
-        TNT1 A 0 A_Raise
-        SWRD AA 1 A_Raise
-        Loop
+        WEPK DCB 1 A_WeaponReady
+        goto Ready
     Select3:
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Raise
         TNT1 A 1 A_Raise
         loop
+    IdleAnimation:
+        WEPK ABCD 2 A_WeaponReady
+    IdleDecide:
+        TNT1 A 0 A_Jump(16,"Idle0")
+        TNT1 A 0 A_Jump(255,"Idle1","Idle2","Idle3")
+        TNT1 A 1
+        loop
+    Idle0:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("idle/raise")
+        IDL0 ABCDEF 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("haelin/idle0")
+        IDL0 F 5 A_WeaponReady
+        IDL0 F 10 A_WeaponReady
+        IDL0 GHI 1 A_WeaponReady
+        IDL0 J 10 A_WeaponReady
+        IDL0 JKLMNOP 2 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    Idle1:
+        IDL1 ABC 2 A_WeaponReady
+        IDL1 C 5 A_WeaponReady
+        TNT1 A 0 A_PlaySound("haelin/idle1_1")
+        IDL1 C 5 A_WeaponReady
+        IDL1 DEFG 2 A_WeaponReady
+        IDL1 G 30 A_WeaponReady
+        TNT1 A 0 A_PlaySound("haelin/idle1_2")
+        IDL1 HIJKLMNO 2 A_WeaponReady
+        IDL1 O 12 A_WeaponReady
+        TNT1 A 0 A_PlaySound("haelin/idle1_3")
+        IDL1 PQRSTUV 2 A_WeaponReady
+        IDL1 V 15 A_WeaponReady
+        IDL1 WXY 2 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    Idle2:
+        IDL2 ABCCDDEEE 1 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/spray")
+        IDL2 FGHH 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/spray")
+        IDL2 FGHH 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/spray")
+        IDL2 FGHH 2 A_WeaponReady
+        IDL2 HHLLMNOPPQQ 1 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUT 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUT 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUT 2 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/rub")
+        IDL2 TUVUTT 2 A_WeaponReady
+        IDL2 WWWXXYYZ 1 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    Idle3:
+        IDL3 ABCDDEE 1 A_WeaponReady
+        IDL3 F 10 A_WeaponReady
+        TNT1 A 0 A_PlaySound("idle/shing")
+        IDL3 FFGHIJK 1 A_WeaponReady
+        IDL3 L 20 A_WeaponReady
+        IDL3 MMNO 1 A_WeaponReady
+        TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    IdleFinish:
+        WEPK DCBA 2 A_WeaponReady
+        TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
+        goto Ready
 
     Fire:
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
-        WEPA BCD 1
+        WEPK BCD 1
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
     FirePrepare:
@@ -173,17 +241,14 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_ClearRefire
         Goto Select2
 
-    AltFire:
-        SWRC ACE 1
-    AltFireGun:
-        TNT1 A 4
-        goto Fired
+
 
     SpinAttackLeft:
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_PlayWeaponSound("sword/spinattack")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
         TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
@@ -205,6 +270,7 @@ ACTOR HwandoBase : Weapon
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_PlayWeaponSound("sword/spinattack")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
         TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
@@ -221,16 +287,6 @@ ACTOR HwandoBase : Weapon
         TNT1 A 1 A_SetAngle(angle-11.25)
         goto SpecialAttackFinish
 
-    SpecialAttackFinish:
-        TNT1 A 0 A_TakeInventory("KharonSwung",1)
-        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
-        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
-        TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
-        TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
-        TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
-        goto Fired2
-
     LungeAttack:
         TNT1 A 0 A_CheckFloor("LungeAttackRise")
     LungeAttackPrepare:
@@ -242,6 +298,7 @@ ACTOR HwandoBase : Weapon
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("sword/beam3")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 AA 0 A_SpawnItemEx("RazorWindExplosion",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,125,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,124,0,0,1,48)
@@ -276,6 +333,7 @@ ACTOR HwandoBase : Weapon
         KSPC VW 1
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_PlayWeaponSound("sword/reflect")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",0,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",-3,0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("RazorWind2",3,0,0,0,0,0)
@@ -290,6 +348,68 @@ ACTOR HwandoBase : Weapon
         KSPC XYZ 1
         TNT1 AA 1
         goto SpecialAttackFinish
+
+    SpecialAttackFinish:
+        TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
+        goto Fired2
+
+    HenshinCheck:
+        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",100,"Henshin")
+        TNT1 A 1
+        TNT1 A 0 A_PlaySoundEx("henshin/error2","soundslot5",0,0)
+        TNT1 A 0 A_PlaySoundEx("henshin/error","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("*pain","sounslot7",0,0)
+        TNT1 A 0 A_SetBlend("White",1.0,35)
+        TNT1 A 0 A_Recoil(10)
+        TNT1 A 0 A_ClearRefire
+        goto Fired2
+    Henshin:
+        TNT1 A 1
+        TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)
+        TNT1 A 4 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_PlayWeaponSound("henshin/foley")
+        HNSH AABBCDE 1
+        HNSH F 15 A_PlaySoundEx("henshin/call","soundslot6",0,0)
+        TNT1 A 0 A_PlayWeaponSound("henshin/foley")
+        HNSH FGHIIJJKKLL 1
+        TNT1 A 0 A_PlaySoundEx("hammer/spark","soundslot5",0,0)
+        TNT1 A 0 A_PlayWeaponSound("henshin/foley")
+        HNSH MNOOPP 1
+        TNT1 A 0 A_PlayWeaponSound("henshin/foley")
+        HNSH QRST 1
+        TNT1 A 0 A_PlaySoundEx("henshin/donarmor","soundslot6",0,0)
+        HNSH UVWX 2
+        HNSH Y 2 A_SetBlend("Red",0.1,3)
+        HNSH Z 2 A_SetBlend("Red",0.2,3)
+        HNSN A 2 A_SetBlend("Red",0.3,3)
+        HNSN B 2 A_SetBlend("Red",0.5,3)
+        HNSN C 2 A_SetBlend("Red",0.7,3)
+        HNSN D 2 A_SetBlend("Red",0.9,3)
+        HNSN D 2 A_SetBlend("Red",1.0,70)
+        TNT1 A 0 A_GiveInventory("Iron Fist",1)
+        TNT1 A 0 A_SelectWeapon("Iron Fist")
+        TNT1 A 0 A_SpawnItemEx("IronMaidenRepel",0,0,0,0,0,0,0,48)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0)
+        TNT1 A 0 A_TakeInventory("AlreadyInLevel",1)
+        TNT1 A 0 A_TakeInventory("Kharon + Testament",1)
+        TNT1 A 0 A_TakeInventory("Kharon + Sabbath",1)
+        TNT1 A 0 A_TakeInventory("Kharon + Exodus",1)
+        TNT1 A 0 A_TakeInventory("Kharon + Omen",1)
+        TNT1 A 0 A_TakeInventory("Kharon + Acacia A-22",1)
+        TNT1 A 0 A_TakeInventory("Kharon",1)
+        TNT1 A 0 A_TakeInventory("HenshinActivated",1)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",40)
+        TNT1 A 0 A_GiveInventory("IronMaidenArmor2",100)
+        TNT1 A 0 A_GiveInventory("InIronMaiden",1)
+        TNT1 A 0 A_GiveInventory("IronMaidenSpeed",1)
+        TNT1 A 1
+        goto Deselect
     }
 }
 

@@ -263,6 +263,7 @@ script WEEB_DECORATE (int burrshet)
         TakeInventory("Armor",0x7FFFFFFF);
         TakeInventory("HenshinActivated",1);
         GiveInventory("Kharon + Acacia A-22",1);
+        GiveInventory("Kharon",1);
         SetActorProperty(0,APROP_JUMPZ,9.0);
         if (CheckInventory("GotShotgun") == 1) { GiveInventory("Kharon + Testament",1); }
         if (CheckInventory("GotUzi") == 1) { GiveInventory("Kharon + Sabbath",1); }

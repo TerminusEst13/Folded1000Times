@@ -54,13 +54,12 @@ const int WEEB_DEC_DIFFCHECK   = 16;
 const int WEEB_DEC_ONLINECHECK = 17;
 const int WEEB_DEC_HENSHIN     = 18;
 const int WEEB_DEC_ARMRCHECK   = 19;
+const int WEEB_DEC_TOASTER     = 98;
+const int WEEB_DEC_TOASTER2    = 99;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
 const int WEEB_DEC_CHANGEMUSBACK = 2;
-
-const int WEEB_DEC_TOASTER       = 98;
-const int WEEB_DEC_TOASTER2      = 99;
 
 #include "decorate/tokens.dec"
 #include "decorate/items.dec"

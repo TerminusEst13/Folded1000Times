@@ -38,6 +38,7 @@ ACTOR MeleePlayer : PlayerPawn
     DamageFactor "Suicide", 2.00
     RadiusDamageFactor 0.5
     Player.StartItem "Kharon + Acacia A-22", 1
+    Player.StartItem "Kharon", 1
     Player.StartItem "KamenRiderModeActivate", 20
     Player.StartItem "SuperMeterCounter", 20
     Player.StartItem "WeebClip", 20
