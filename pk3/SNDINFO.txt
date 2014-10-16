@@ -567,7 +567,6 @@ empdie2                 EMPRDTH2
 // Taken from Radys that I haven't changed yet
 
 S_Cut            NGORE4
-S_Cutdead        NGORE5
 
 S_Blodf1        NBLODF1
 

@@ -11,6 +11,7 @@ FROM 0.72 TO 0.73:
 - Weapons are no longer droppable. Sorry!
 - Weapons now all have an addslotdefault entry in keyconf, in case there is a keyconf conflict when loaded with an older wad.
 - Thanks to Scroton, destructable torches and candelabras now throw their items directly at the player.
+- By request, all Kharon deaths now deliver the SPONG! Splatterhouse sound effect, for easy identification as to when an enemy has actually died.
 
 
 

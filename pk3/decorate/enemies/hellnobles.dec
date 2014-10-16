@@ -63,17 +63,16 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
     XDeath:
         BOS2 PPPPP 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
-        TNT1 Q 0 A_Scream
+        TNT1 Q 0 A_XScream
         BOS2 QQQQQ 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
         BOS2 RRRRR 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
         TNT1 A 0 A_NoBlocking
         BOS2 STUVW 5 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
-        BOS2 X -1 A_BossDeath   
+        BOS2 X -1   
         Stop    
 
     Death.Bloody2:
         BOS2 H 2 A_NoBlocking
-        TNT1 A 0 A_PlaySound("S_Cutdead")
         TNT1 A 0 A_Jump(128,"Death.Bloody2b")
         KXD1 AAABBB 2 A_ThrowGrenade ("BloodSplashGus1c",4,5+random(0,7),8)
         KXD1 CCCDDEEFG 2 A_SpawnDebris("BloodShowerC2")
@@ -104,13 +103,10 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         XDI3 TTTT 2 A_SpawnDebris("BloodShowerC2")
         XDI3 UUUU 2 A_SpawnDebris("BloodShowerC2")
         XDI3 VVVV 2 A_SpawnDebris("BloodShowerC2")
-        XDI3 V -1 A_BossDeath  
+        XDI3 V -1
         Stop
     death.hunter:
         BOS2 H 1
-        TNT1 A 0 A_PlaySound("enemy/bisected")
-        TNT1 A 0 A_Jump(128,1)
-        goto death.kubiuti+7
         TNT1 A 0 A_Fall
         TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus3",random(52,60),0,random(0,360),2,random(0,360))
         KXD2 A 1 A_SpawnItem("BOS2Kubiuted2",0,32,0)
@@ -134,8 +130,8 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_AlertMonsters
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
         BOS2 H 1
-        TNT1 A 0 A_Jump(128,"Death.Hunter","Death.Bloody","Death.Bloody2","XDeath")    
         TNT1 A 0 A_PlaySound("enemy/bisected")
+        TNT1 A 0 A_Jump(128,"Death.Hunter","Death.Bloody","Death.Bloody2")
         TNT1 A 0 A_Fall
         XDI3 EEEEEEEEEE 0 A_CustomMissile("EnemySplashGus3",random(52,60),0,random(0,360),2,random(0,360))
         XDI3 E 1 A_SpawnItem("BOS2Kubiuted",0,56,0)
@@ -235,46 +231,46 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
 
     Death.IronFistDamage:
         TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",5)
+        TNT1 A 0 A_XScream
     death.Bloody:
         BOSS P 8
-        BOSS Q 0 A_Scream
-        BOSS QQQQQ 0 A_CustomMissile("EnemySplashGus3",random(4,32),0,random(0,360),2,random(0,360))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus3",random(4,32),0,random(0,360),2,random(0,360))
         BOSS QQQQQQQQ 1 A_SpawnDebris("BloodSplashGus1c")
-        BOSS RRRRR 0 A_CustomMissile("EnemySplashGus3",random(4,32),0,random(0,360),2,random(0,360))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus3",random(4,32),0,random(0,360),2,random(0,360))
         BOSS RRRRRRRR 1 A_SpawnDebris("BloodSplashGus1c")
-        BOSS S 0 A_NoBlocking
+        TNT1 A 0 A_NoBlocking
         BOSS SSSSSSSS 1 A_SpawnDebris("BloodSplashGus1c")
         BOSS TU 8
         BOSS V -1 A_BossDeath   
         Stop
     Death.Hunter:
         BOSS I 1
-        BOSS I 0 A_Fall
-        XDI1 A 0 A_PlaySound("S_Cutdead")
-        XDI1 A 0 A_Jump(96,"DThunter2")
-        XDI1 A 0 A_SpawnItem("BOSSKubiuted",0,32,0)    
+        TNT1 A 0 A_Fall
+        TNT1 A 0 A_Jump(96,"DThunter2")
+        TNT1 A 0 A_SpawnItem("BOSSKubiuted",0,32,0)    
         XDI1 AAAAAAAAAA 1 A_ThrowGrenade ("BloodSplashGus1c",-2,5+random(0,7),8)    
-        goto death.kubiuti+10
+        goto death.kubiuti+11
     DThunter2:
         TNT1 A 0 A_SpawnItem("BOSSKubiuted2",0,32,0)    
         TNT1 AAAAAAAAAA 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
         BXD1 AAAAAAAAAA 1 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
     DTherp:
         BXD1 A 1 A_ThrowGrenade("BloodShowerC2",-8,5+random(0,7),8)    
-        TNT1 I 0 A_Jump(16,1)
+        TNT1 A 0 A_Jump(16,1)
         loop
         BXD1 BBBBBCCCCC 2 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)    
         BXD1 DDDDDDDDDD 2 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)    
-        BXD1 D -1
+        BXD1 D -1 A_BossDeath
         stop
     death.kubiuti:
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",5)
         BOSS I 1
+        TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_Jump(128,"Death.Bloody","Death.Hunter")
-        BOSS I 0 A_Fall
-        XDI1 A 0 A_SpawnItem("BOSSKubiuted",0,56,0)
-        XDI1 A 8 A_PlaySound("enemy/bisected")
+        TNT1 A 0 A_Fall
+        TNT1 A 0 A_SpawnItem("BOSSKubiuted",0,56,0)
+        XDI1 A 8
         XDI1 BC 8
         goto Death+3
     }
