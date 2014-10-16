@@ -91,8 +91,11 @@ hntro36                 HLNTRO40
 hntro37                 HLNTRO41 // Ozzy Osbourne - Crazy Train
 hntro38                 HLNTRO42
 
-$random haelin/attack { hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk1 hatk2 hatk3 hatk4 hatk5 hatk6 hatk7 hatk8 }
+$random haelin/attack { hatk1 hatk1b hatk1c hatk1d hatk1 hatk1b hatk1c hatk1d hatk1 hatk1 hatk2 hatk3 hatk4 hatk5 hatk6 hatk7 hatk8 }
 hatk1                   HLATCK1a
+hatk1b                  HLATCK1b
+hatk1c                  HLATCK1c
+hatk1d                  HLATCK1d
 hatk2                   HLATCK2a
 hatk3                   HLATCK2b
 hatk4                   HLATCK3a

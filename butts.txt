@@ -40,6 +40,7 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 70: Some kind of "don't mash the button for more powerful strikes" system.
 71: A cvar to let people swap between weapons when out of ammo.
 72: Skulltag weapon replacements?
+73: hammo pickup
 
 
 
