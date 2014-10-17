@@ -12,7 +12,8 @@ FROM 0.72 TO 0.73:
 - Weapons now all have an addslotdefault entry in keyconf, in case there is a keyconf conflict when loaded with an older wad.
 - Thanks to Scroton, destructable torches and candelabras now throw their items directly at the player.
 - By request, all Kharon deaths now deliver the SPONG! Splatterhouse sound effect, for easy identification as to when an enemy has actually died.
-
+- The Baron of Hell didn't trigger A_BossDeath on a few deaths. This has been fixed.
+- As per Marrub's request, the hammer now has an ammo pickup item--HammerAmmoSmall, with DoomEd number of 30241.
 
 
 FROM 0.71b TO 0.72:

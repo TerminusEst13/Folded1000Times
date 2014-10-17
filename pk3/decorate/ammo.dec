@@ -1,4 +1,4 @@
-actor HammerCharge : Ammo
+actor HammerCharge : Ammo 
 {
     Inventory.PickupMessage "Don't think you should've gotten this."
     Inventory.Amount 1
@@ -10,9 +10,19 @@ actor HammerCharge : Ammo
     States
     {
     Spawn:
-        PLSE D -1
-        Stop
+        ZOT3 ABCDE 1 BRIGHT
+        loop
     }
+}
+
+actor HammerAmmoSmall : HammerCharge 30241
+{
+    Inventory.PickupMessage "Picked up some charge for the Omen."
+    Inventory.PickupSound "hammer/snap"
+    Inventory.Amount 10
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.35
 }
 
 actor WeebClip : Ammo replaces Clip
