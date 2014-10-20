@@ -205,7 +205,6 @@ DESTRUCTABLE OBJECTS TO REPLACE:
 
 Column                  // Mini Tech Light
 BurningBarrel           // Barrel Fire
-ExplosiveBarrel         // Exploding Barrel(Doom)
 TechLamp                // Large Tech Lamp
 TechLamp2               // Small Tech Lamp
 TechPillar              // Tech Column

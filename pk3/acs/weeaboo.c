@@ -382,6 +382,7 @@ script WEEB_ENTER ENTER
     int velx, vely, velz;
     int nx, ny, nz;
     int ShieldTID;
+    int TheAngerInside;
     i = unusedTID(37000, 47000);
     int u = unusedTID(37000, 47000);
     int IntroChance;
@@ -445,12 +446,16 @@ script WEEB_ENTER ENTER
         if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); }
         else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
 
-        // BUTTSHIELD
+        // The Blind Guardian, AKA the BUTTSHIELD
+        // It is a shield for your butt, you see.
         ShieldTID = 12000 + pln;
         if (CheckInventory("BlindGuardianShieldUp") == 1)
         {
+            // OH NAW MAN DAT BOOTY UNPROTECTED
             if (CheckInventory("BlindGuardianShieldActive") == 0)
             {
+                // WEEOOOWEEOOOWEEEOOO
+                // DON'T WORRY, MA'AM, WE'RE PROFESSIONALS
                 Spawn("BlindGuardian",XMen,Ys,ZDum,ShieldTID,Angel);
                 GiveInventory("BlindGuardianShieldActive",1);
             }
@@ -458,6 +463,7 @@ script WEEB_ENTER ENTER
             {
                 // WOOP WOOP PULL OVER DAT ASS TOO FAT
                 // (angle's factored in; pitch isn't)
+                // (it'd be bad for an attack to slip through because the player's looking up/down)
                 int xOffset = 0, yOffset = 0, zOffset = 0;
 
                 nx = XMen + FixedMul(xOffset, cos(Angel)) + FixedMul(yOffset, sin(Angel));
@@ -545,34 +551,36 @@ script WEEB_ENTER ENTER
         //SetInventory("SuperCounter1",SuperCount); // Life would be so much easier if this worked online.
         TakeInventory("SuperCounter1", 0x7FFFFFFF);
         GiveInventory("SuperCounter1", SuperCount);
-        if (CheckInventory("SuperMeterCounter") > 100) { TakeInventory("SuperCounter2",0x7FFFFFFF); GiveInventory("SuperCounter2", SuperCount - 100); } //SetInventory("SuperCounter2",(SuperCount - 100)); }
+        if (SuperCount < 20) { if (TheAngerInside >= 280) { GiveInventory("SuperMeterCounter",1); TheAngerInside = 0; }}
+        if (SuperCount > 100) { TakeInventory("SuperCounter2",0x7FFFFFFF); GiveInventory("SuperCounter2", SuperCount - 100); } //SetInventory("SuperCounter2",(SuperCount - 100)); }
             else { TakeInventory("SuperCounter2",0x7FFFFFFF); }
-        if (CheckInventory("SuperMeterCounter") > 200) { TakeInventory("SuperCounter3",0x7FFFFFFF); GiveInventory("SuperCounter3", SuperCount - 200); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+        if (SuperCount > 200) { TakeInventory("SuperCounter3",0x7FFFFFFF); GiveInventory("SuperCounter3", SuperCount - 200); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
             else { TakeInventory("SuperCounter3",0x7FFFFFFF); }
-        if (CheckInventory("SuperMeterCounter") > 300) { TakeInventory("SuperCounter4",0x7FFFFFFF); GiveInventory("SuperCounter4", SuperCount - 300); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+        if (SuperCount > 300) { TakeInventory("SuperCounter4",0x7FFFFFFF); GiveInventory("SuperCounter4", SuperCount - 300); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
             else { TakeInventory("SuperCounter4",0x7FFFFFFF); }
+        TheAngerInside++;
 
         // 666 COMBO! SUPER SWEET STYLISH!
         ComboCount = CheckInventory("HyperComboCounter");
         TakeInventory("ComboCounter1",0x7FFFFFFF);
         GiveInventory("ComboCounter1",ComboCount);
-        if (CheckInventory("HyperComboCounter") <= 50) { TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
-        if (CheckInventory("HyperComboCounter") > 50)
+        if (ComboCount <= 50) { TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+        if (ComboCount > 50)
             { TakeInventory("ComboCounter2",0x7FFFFFFF); GiveInventory("ComboCounter2",(ComboCount - 50)); GiveInventory("ComboDamageLevel1",1);
               GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 100)
+        if (ComboCount > 100)
             { TakeInventory("ComboCounter3",0x7FFFFFFF); GiveInventory("ComboCounter3",(ComboCount - 100)); GiveInventory("ComboDamageLevel2",1);
               TakeInventory("FRank",1); GiveInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter3",0x7FFFFFFF); TakeInventory("ComboDamageLevel2",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 150)
+        if (ComboCount > 150)
             { TakeInventory("ComboCounter4",0x7FFFFFFF); GiveInventory("ComboCounter4",(ComboCount - 150)); GiveInventory("ComboDamageLevel3",1);
               TakeInventory("FRank",1); TakeInventory("DRank",1); GiveInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter4",0x7FFFFFFF); TakeInventory("ComboDamageLevel3",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 200)
+        if (ComboCount > 200)
             { TakeInventory("ComboCounter5",0x7FFFFFFF); GiveInventory("ComboCounter5",(ComboCount - 200)); GiveInventory("ComboDamageLevel4",1);
               TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 250)
+        if (ComboCount > 250)
             { TakeInventory("ComboCounter6",0x7FFFFFFF); GiveInventory("ComboCounter6",(ComboCount - 250)); GiveInventory("ComboDamageLevel5",1);
               TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
-        if (CheckInventory("HyperComboCounter") > 300)
+        if (ComboCount > 300)
             { TakeInventory("ComboCounter7",0x7FFFFFFF); GiveInventory("ComboCounter7",(ComboCount - 300)); GiveInventory("ComboDamageLevel6",1);
               TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); } else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
 
@@ -675,8 +683,8 @@ script WEEB_ENTER ENTER
         }
 
         // SUPER SAIYAN HNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
-        // HHHHHHHNNNNNNNNNNGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-        // HHHHHHHHHHHHHHHHHHNNNNNNNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGHHHHHHHH
+        // HHHHHHHHHHHHHNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
+        // HHHHHHHHHHHHHHHHHHNNNNNNNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGHHHHHHHH
 
         oarmor = armor;
         armor = CheckInventory("Armor");
