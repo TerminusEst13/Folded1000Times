@@ -551,6 +551,7 @@ ACTOR ExodusRocketDamage
     Speed 0
     +NOCLIP
     -SOLID
+    +DONTBLAST
     DamageType "ExodusDamage"
     Obituary "%k consumed %o in fire."
     States
@@ -572,16 +573,20 @@ ACTOR ExodusRocketJumpage
     +NOCLIP
     +FORCERADIUSDMG
     -SOLID
+    +DONTBLAST
     DamageType "ExodusJump"
     Obituary "%k shouldn't have killed %o with this."
     States
     {
       Spawn:
         TNT1 A 0
+        TNT1 A 0 A_GiveInventory("GrossHack",1)
         TNT1 A 1 A_Explode(160,192,1)
         Stop
     }
 }
+
+actor GrossHack : ArtiBlastRadius { +INVENTORY.AUTOACTIVATE }
 
 ACTOR ExodusRocketFlameSpawner
 {
@@ -595,6 +600,7 @@ ACTOR ExodusRocketFlameSpawner
     +NOTELEPORT
     +NOBLOCKMAP
     -FLOORCLIP
+    +DONTBLAST
     +CLIENTSIDEONLY
     States
     {
@@ -644,6 +650,7 @@ ACTOR ExodusRocketFlameSpawner2 : ExodusRocketFlameSpawner
 ACTOR ExodusRocketFlameTrail
 {
     PROJECTILE
+    +DONTBLAST
     Height 1
     Radius 1
     Scale 0.16
@@ -664,6 +671,7 @@ actor MissileExplosionSmall
     Scale 0.75
     +CLIENTSIDEONLY
     +NOINTERACTION
+    +DONTBLAST
     States
     {
     Spawn:
@@ -716,6 +724,7 @@ Actor FireTrail
     +NOTELEPORT
     +DOOMBOUNCE
     +CLIENTSIDEONLY
+    +DONTBLAST
     States
     {
     Spawn:

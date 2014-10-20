@@ -14,6 +14,7 @@ FROM 0.72 TO 0.73:
 - By request, all Kharon deaths now deliver the SPONG! Splatterhouse sound effect, for easy identification as to when an enemy has actually died.
 - The Baron of Hell didn't trigger A_BossDeath on a few deaths. This has been fixed.
 - As per Marrub's request, the hammer now has an ammo pickup item--HammerAmmoSmall, with DoomEd number of 30241.
+- The Exodus is now capable of reflecting away enemy fire again.
 
 
 FROM 0.71b TO 0.72:
