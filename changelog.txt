@@ -16,6 +16,7 @@ FROM 0.72 TO 0.73:
 - As per Marrub's request, the hammer now has an ammo pickup item--HammerAmmoSmall, with DoomEd number of 30241.
 - The Exodus is now capable of reflecting away enemy fire again.
 - When out of soul meter, the meter slowly regenerates back to two notches, so you frequently have at least one special attack ready to go. This takes at least two minutes to regenerate.
+- The Blind Guardian's sounds have had their bass reduced, treble amped, and volume amped by five decibels, which should make them sharper and much easier to notice.
 
 
 FROM 0.71b TO 0.72:
