@@ -17,6 +17,8 @@ FROM 0.72 TO 0.73:
 - The Exodus is now capable of reflecting away enemy fire again.
 - When out of soul meter, the meter slowly regenerates back to two notches, so you frequently have at least one special attack ready to go. This takes at least two minutes to regenerate.
 - The Blind Guardian's sounds have had their bass reduced, treble amped, and volume amped by five decibels, which should make them sharper and much easier to notice.
+- Numerous inventory checks in the ACS have been streamlined for more efficiency, which should (hopefully) reduce network traffic.
+- The Blind Guardian now has an indicator on the HUD when the player has it.
 
 
 FROM 0.71b TO 0.72:

@@ -38,6 +38,8 @@ InInventory BRank, 1 { DrawImage "STYLVL4", 265, 13; }
 InInventory ARank, 1 { DrawImage "STYLVL5", 264, 14; }
 InInventory SRank, 1 { DrawImage "STYLVL6", 271, 13; }
 
+InInventory BlindGuardianShieldActive, 1 { drawimage "SHLDACTV", 7, 165; }
+
 // I would kill for Else clauses about now.
       InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 10, 168; }
       InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 20, 168; }
@@ -128,6 +130,8 @@ statusbar fullscreen, forcescaled
 {
 drawimage ammoicon1, 258, 187, center;
 drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
+
+InInventory BlindGuardianShieldActive, 1 { drawimage "SHLDACTV", 6, 178; }
 
 DrawImage "HUDBARX", 5, 193;
 DrawBar "HARMOR", "HEMPTY", SuperCounter1, Horizontal, 7, 195;
