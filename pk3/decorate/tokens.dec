@@ -32,6 +32,7 @@ actor FistHit : Boolean {}
 
 actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
 actor IAmAnAwesomePersonWhoLikesCoolMusic : Boolean {}
+actor IAmAnOkayPersonWhoLikesToAutoSwitch : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}

@@ -443,6 +443,7 @@ actor "Kharon + Sabbath" : Kharon
     Nope:
         TNT1 A 0  A_PlaySoundEx("uzi/dry","soundslot7",0,0)
         SUZI A 10 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("IAmAnOkayPersonWhoLikesToAutoSwitch",1,"DeselectShit")
         SUZI A 35 A_Weaponready
         Goto AltFired
     AltFirePrepare:
@@ -509,6 +510,62 @@ actor "Kharon + Sabbath" : Kharon
         TNT1 A 0 A_GiveInventory("InIronMaiden",1)
         TNT1 A 0 A_GiveInventory("IronMaidenSpeed",1)
         TNT1 A 1
+        goto Deselect
+
+
+
+    DeselectShit:
+        TNT1 A 0 A_JumpIfInventory("GotCarronade",1,"ConsiderExodus")
+    Consider3:
+        TNT1 A 0 A_JumpIfInventory("GotUzi",1,"ConsiderSabbath")
+    Consider2:
+        TNT1 A 0 A_JumpIfInventory("GotShotgun",1,"ConsiderTestament")
+    Consider1:
+        TNT1 A 0 A_JumpIfInventory("GotHammer",1,"ConsiderOmen")
+    Consider0:
+        TNT1 A 0 A_JumpIfInventory("WeebClip",1,"SelectAcacia")
+        TNT1 A 0 A_SelectWeapon("Kharon")
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        TNT1 A 1 A_Lower
+        goto Deselect
+        
+    ConsiderExodus:
+        TNT1 A 0 A_JumpIfInventory("WeebRocket",1,"SelectExodus")
+        goto Consider3
+    ConsiderSabbath:
+        TNT1 A 0 A_JumpIfInventory("WeebCell",1,"SelectSabbath")
+        goto Consider2
+    ConsiderTestament:
+        TNT1 A 0 A_JumpIfInventory("WeebShell",1,"SelectTestament")
+        goto Consider1
+    ConsiderOmen:
+        TNT1 A 0 A_JumpIfInventory("HammerCharge",50,"SelectOmen")
+        goto Consider0
+
+    SelectExodus:
+        TNT1 A 0 A_SelectWeapon("Kharon + Exodus")
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        TNT1 A 1 A_Lower
+        goto Deselect
+    SelectSabbath:
+        TNT1 A 0 A_SelectWeapon("Kharon + Sabbath")
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        TNT1 A 1 A_Lower
+        goto Deselect
+    SelectTestament:
+        TNT1 A 0 A_SelectWeapon("Kharon + Testament")
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        TNT1 A 1 A_Lower
+        goto Deselect
+    SelectOmen:
+        TNT1 A 0 A_SelectWeapon("Kharon + Omen")
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        TNT1 A 1 A_Lower
+        goto Deselect
+    SelectAcacia:
+        TNT1 A 0 A_SelectWeapon("Kharon + Acacia A-22")
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        TNT1 A 1 A_Lower
         goto Deselect
     }
 }

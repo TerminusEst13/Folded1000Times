@@ -11,6 +11,7 @@ int ClientEnterLocks[PLAYERMAX];
 int dodgeitem;
 int IsServer;
 int array_recoilrules[PLAYERMAX];
+int array_autoswitch[PLAYERMAX];
 
 int GotShotgun;
 int GotCarronade;
@@ -73,6 +74,10 @@ script WEEB_OPEN_CLIENT OPEN clientside
         if (!GetCvar("ds_cl_toaster"))
             { ConsoleCommand("set ds_cl_toaster 0");
               ConsoleCommand("archivecvar ds_cl_toaster"); }
+
+        if (!GetCvar("ds_cl_autoswitch"))
+            { ConsoleCommand("set ds_cl_autoswitch 0");
+              ConsoleCommand("archivecvar ds_cl_autoswitch"); }
     }
 }
 
@@ -772,6 +777,8 @@ script WEEB_ENTER ENTER
 
         if (array_recoilrules[pln]) { GiveInventory("IAmASillyPersonWhoDoesntLikeRecoil", 1); }
         else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
+        if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
+        else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
 
         Delay(1);
         if (isDead(0))
@@ -845,7 +852,6 @@ script WEEB_UNLOADING UNLOADING
 script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
 
 //int array_custmischarg[PLAYERMAX];
-//int array_doomHealth[PLAYERMAX];
 //int array_metpick[PLAYERMAX];
 //int array_hitindic[PLAYERMAX];
 
@@ -854,10 +860,10 @@ function int WeebClientVars(void)
     //int custmischarg      = !!GetCVar("metroid_cl_custommissilecharge");
     //int hitindic          = !!GetCVar("metroid_cl_hitindicator");
     //int metpick           = !!GetCVar("metroid_cl_nometroidpickups");
-    //int doomHealth        = !!GetCVar("metroid_cl_doomhealth");
+    int autoswitch          = !!GetCVar("ds_cl_autoswitch");
     int recoilrules         = !!GetCVar("ds_cl_norecoil");
 
-    return /*(custmischarg << 4) + (hitindic << 3) + (metpick << 2) + (doomHealth << 1) +*/ recoilrules;
+    return /*(custmischarg << 4) + (hitindic << 3) + (metpick << 2) +*/ (autoswitch << 1) + recoilrules;
 }
 
 script WEEB_ENTER_CLIENT ENTER clientside
@@ -894,8 +900,8 @@ script WEEB_PUKE (int values) net
     int pln = PlayerNumber();
 
     array_recoilrules[pln]     = values & 1;
-    /*array_doomHealth[pln]    = values & 2;
-    array_metpick[pln]       = values & 4;
+    array_autoswitch[pln]      = values & 2;
+    /*array_metpick[pln]       = values & 4;
     array_hitindic[pln]      = values & 8;
     array_custmischarg[pln]  = values & 16;*/
 }
