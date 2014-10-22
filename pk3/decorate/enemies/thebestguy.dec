@@ -51,6 +51,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
+    Death.Knife:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         //TNT1 A 0 A_GiveToTarget("SuperMeterCounter",2)

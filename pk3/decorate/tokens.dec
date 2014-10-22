@@ -57,9 +57,12 @@ actor GotCarronade : Boolean {}
 actor GotUzi : Boolean {}
 actor GotHammer : Boolean {}
 actor GotIronMaiden : Boolean {}
+actor GotLegion : Boolean {}
 
 
 
+actor LegionCounter : Counter { Inventory.MaxAmount 35 }
+actor LegionStacked : Counter { Inventory.MaxAmount 9 }
 actor WaitingTooLong : Counter { Inventory.MaxAmount 525 }
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }

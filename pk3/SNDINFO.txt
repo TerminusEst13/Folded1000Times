@@ -106,6 +106,8 @@ hatk8                   HLATCK6a
 
 // System
 
+silence                   QUIET
+
 $random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 }
 intro1                    INTRO1
 intro2                    INTRO2
@@ -424,6 +426,19 @@ henshin/timeoutdismiss    IRNHTOU2 // Taken from Kamen Rider Fourze
 henshin/error             IRNERROR // Made by torridGristle
 henshin/error2            IRNNOPE  // Taken from RPG Maker VX
 henshin/warning           IRNWARNG // Made by torridGristle
+
+// Knives
+
+boomerang/fly             BOOMFLY  // Taken from General Series 6000
+$volume boomerang/fly 0.7
+boomerang/bounce          BOOMBNCE
+$random boomerang/throw   { boomthr1 boomthr2 }
+boomthr1                  BOOMTOS1
+boomthr2                  BOOMTOS2
+boomerang/throwbunch      BOOMTOS3
+boomerang/stack           BOOMSTCK
+boomerang/get             BOOMGET1
+$volume boomerang/get 0.3
 
 
 

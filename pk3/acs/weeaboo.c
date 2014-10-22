@@ -270,6 +270,7 @@ script WEEB_DECORATE (int burrshet)
         GiveInventory("Kharon + Acacia A-22",1);
         GiveInventory("Kharon",1);
         SetActorProperty(0,APROP_JUMPZ,9.0);
+        if (CheckInventory("GotLegion") == 1) { GiveInventory("Kharon + Legion",1); }
         if (CheckInventory("GotShotgun") == 1) { GiveInventory("Kharon + Testament",1); }
         if (CheckInventory("GotUzi") == 1) { GiveInventory("Kharon + Sabbath",1); }
         if (CheckInventory("GotCarronade") == 1) { GiveInventory("Kharon + Exodus",1); }
@@ -847,6 +848,8 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("GhostStepCooldown",0x7FFFFFFF);
     TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
     TakeInventory("MidCombat",0x7FFFFFFF);
+    TakeInventory("LegionCounter",0x7FFFFFFF);
+    TakeInventory("LegionStacked",0x7FFFFFFF);
 }
 
 script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
