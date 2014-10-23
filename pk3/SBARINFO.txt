@@ -251,6 +251,18 @@ DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 10, 188;
         InInventory YellowSkull, 1 { drawimage "STKEYS4", 299, 187; }
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
+
+    // Spinny Sentinel and Blind Guardian active icons
+    InInventory SentinelUp
+    {
+        DrawImage "SENTH1", 0, 24, centerbottom;
+        DrawNumber 3, smallfont, green, GlobalArray(61), alignment(center), interpolate(100), -2, 24;
+    }
+    InInventory BlindGuardianShieldUp
+    {
+        DrawImage "SHLDA5", 48, 24, centerbottom, 24, 24;
+        DrawNumber 3, smallfont, lightblue, GlobalArray(60), alignment(center), interpolate(100), 46, 24;
+    }
 }
 
 statusbar automap, forcescaled
