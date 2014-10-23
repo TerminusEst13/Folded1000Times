@@ -1032,3 +1032,28 @@ actor PowerupPickup : CustomInventory replaces Berserk
         stop
     }
 }
+
+actor SentinelPickup : CustomInventory replaces AllMap
+{
+    Inventory.PickupMessage "Picked up a Sentinel."
+    Inventory.PickupSound "sentinel/pickup"
+    Scale 0.4
+    +FLOATBOB
+    states
+    {
+    Spawn:
+        SENT Z 1 Bright
+        SENT Z 30
+        loop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("SentinelUp",1,"PickupHeal")
+        TNT1 A 0 A_SetBlend("White",0.45,10)
+        TNT1 A 0 A_GiveInventory("SentinelUp",1)
+        stop
+    PickupHeal:
+        TNT1 A 0
+        TNT1 A 0 A_SetBlend("White",0.45,10)
+        TNT1 A 0 A_GiveInventory("SentinelDissidentAggressor",1)
+        stop
+    }
+}

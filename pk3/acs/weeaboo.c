@@ -385,9 +385,13 @@ script WEEB_ENTER ENTER
     int pln = PlayerNumber();
     int ZDum;
     int Angel;
+    int xOffset, yOffset, zOffset;
+    int xOffset2, yOffset2, zOffset2;
     int velx, vely, velz;
     int nx, ny, nz;
+    int nx2, ny2, nz2;
     int ShieldTID;
+    int SentTID;
     int TheAngerInside;
     i = unusedTID(37000, 47000);
     int u = unusedTID(37000, 47000);
@@ -470,7 +474,9 @@ script WEEB_ENTER ENTER
                 // WOOP WOOP PULL OVER DAT ASS TOO FAT
                 // (angle's factored in; pitch isn't)
                 // (it'd be bad for an attack to slip through because the player's looking up/down)
-                int xOffset = 0, yOffset = 0, zOffset = 0;
+                xOffset = 0;
+                yOffset = 0;
+                zOffset = 0;
 
                 nx = XMen + FixedMul(xOffset, cos(Angel)) + FixedMul(yOffset, sin(Angel));
                 ny = Ys + FixedMul(xOffset, sin(Angel)) - FixedMul(yOffset, cos(Angel));
@@ -510,6 +516,58 @@ script WEEB_ENTER ENTER
                     // YOU DIED AS YOU LIVED
                     TakeInventory("BlindGuardianShieldActive",1);
                     // THE OPPOSITE SIDE OF A PENIS
+                }
+            }
+        }
+
+        // The Sentinel, AKA the FACEGUN
+        // It is a gun for your face, you see.
+        SentTID = 13000 + pln;
+        if (CheckInventory("SentinelUp") == 1)
+        {
+            // Eh, that's not as funny as buttshield.
+            if (CheckInventory("SentinelActive") == 0)
+            {
+                Spawn("AllFearTheSentinel",XMen,Ys,ZDum,SentTID,Angel);
+                GiveInventory("SentinelActive",1);
+            }
+            else
+            // Yeah, this code is all basically copy/pasted from the buttshield.
+            {
+                xOffset2 = 0;
+                yOffset2 = 0;
+                zOffset2 = 0;
+
+                nx2 = XMen + FixedMul(xOffset2, cos(Angel)) + FixedMul(yOffset2, sin(Angel));
+                ny2 = Ys + FixedMul(xOffset2, sin(Angel)) - FixedMul(yOffset2, cos(Angel));
+                nz2 = ZDum + zOffset2;
+
+                if (pln != ConsolePlayerNumber())
+                {
+                    nx2 -= velx; ny2 -= vely; nz2 -= velz;
+                }
+                else
+                {
+                    nx2 -= velx; ny2 -= vely; nz2 -= 2*velz;
+                }
+
+                // What can I say? I'm lazy.
+                if (CheckActorInventory(SentTID,"SentinelIdle")) { SetActorAngle(SentTID, Angel); }
+                SetActorPosition(SentTID,nx2,ny2,nz2+24.0,0);
+                SetActorVelocity(SentTID,velx,vely,velz,0,0);
+
+                if (CheckInventory("SentinelDissidentAggressor") == 1)
+                {
+                    GiveActorInventory(SentTID,"SentinelHealth",200);
+                    TakeInventory("SentinelDissidentAggressor",1);
+                }
+
+                if (CheckActorInventory(SentTID,"SentinelBeyondTheRealmsOfDeath"))
+                {
+                    Thing_Remove(SentTID);
+                    SentTID = 0;
+                    TakeInventory("SentinelUp",1);
+                    TakeInventory("SentinelActive",1);
                 }
             }
         }
@@ -826,6 +884,8 @@ script WEEB_COMBOREMOVAL ENTER
 
 script WEEB_UNLOADING UNLOADING
 {
+    TakeInventory("SentinelUp",1);
+    TakeInventory("SentinelActive",1);
     TakeInventory("BlindGuardianShieldUp",1);
     TakeInventory("BlindGuardianShieldActive",1);
     TakeInventory("AlreadyInLevel",1);

@@ -232,6 +232,38 @@ shield/hurt4              SHLDHRT4 // Ditto
 shield/dead               SHLDDEAD // Ditto
 shield/pickup             SHLDPKUP // Taken from Fatal/Fake
 
+sentinel/fire             SENTFIRE
+sentinel/load             SENTLOAD // Taken from Killing Floor
+sentinel/unload           SENTDOWN // Taken from Killing Floor
+sentinel/pickup           SENTPKUP // Unreal 2 soun with an AbodaX sound at the end
+sentinel/see              SENTSEE // Taken from Mega Man 3
+sentinel/pain             SENTHURT // Taken from AbodaX
+sentinel/dead             SENTDEAD // Taken from AbodaX
+$random sentinel/idle { sentidle1 sentidle2 sentidle3 sentidle4 sentidle5 sentidle6 sentidle7 sentidle8 sentidle9 sentidle10 }
+// All of these sounds were made via BFXR
+sentidle1                 SENTIDL1
+sentidle2                 SENTIDL2
+sentidle3                 SENTIDL3
+sentidle4                 SENTIDL4
+sentidle5                 SENTIDL5
+sentidle6                 SENTIDL6
+sentidle7                 SENTIDL7
+sentidle8                 SENTIDL8
+sentidle9                 SENTIDL9
+sentidle10                SENTIDL0
+$random sentinel/nope { sentnope1 sentnope2 sentnope3 sentnope4 sentnope5 sentnope6 sentnope7 sentnope8 sentnope9 sentnope10 }
+// These came from BFXR too
+sentnope1                 SENTNOP1
+sentnope2                 SENTNOP2
+sentnope3                 SENTNOP3
+sentnope4                 SENTNOP4
+sentnope5                 SENTNOP5
+sentnope6                 SENTNOP6
+sentnope7                 SENTNOP7
+sentnope8                 SENTNOP8
+sentnope9                 SENTNOP9
+sentnope10                SENTNOP0
+
 // Player
 
 armor/hit                 ARMRHIT

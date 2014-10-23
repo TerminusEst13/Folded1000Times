@@ -27,6 +27,7 @@ actor BlindGuardian
     DamageFactor "SabbathDamage", 0.0
     DamageFactor "ExodusDamage", 0.0
     DamageFactor "ExodusJump", 0.0
+    DamageFactor "Knife", 0.0
     DamageFactor "TestamentDamage", 0.0
     RadiusDamageFactor 0.0
     Species "Player"

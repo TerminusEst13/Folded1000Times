@@ -360,6 +360,7 @@ actor ShotgunBullet1 : BulletBase { Damage (13) DamageType "TestamentDamage" }
 actor ShotgunBullet2 : BulletBaseNoCombo { Damage (13) DamageType "TestamentDamage" }
 actor UziBullet1 : BulletBase { Damage (20) DamageType "SabbathDamage" }
 actor UziBullet2 : BulletBaseNoCombo { Damage (20) DamageType "SabbathDamage" }
+actor SentinelBullet : BulletBaseNoCombo { Damage (2) DamageType "SentinelDamage" }
 
 ACTOR WeebBulletPuff
 {

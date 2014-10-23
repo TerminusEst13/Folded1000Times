@@ -15,6 +15,12 @@ actor BlindGuardianWaitForAnAnswer : Boolean {}
 actor BlindGuardianShieldUp : Boolean {}
 actor BlindGuardianShieldActive : Boolean {}
 actor BlindGuardianShieldHeal : Boolean {}
+actor SentinelActive : Boolean {}
+actor SentinelUp : Boolean {}
+actor SentinelBeyondTheRealmsOfDeath : Boolean {}
+actor SentinelIdle : Boolean {}
+actor SentinelMidCombat : Boolean {}
+actor SentinelDissidentAggressor : Boolean {}
 
 actor UziLikeAGuzzi : Boolean {}
 actor UziFrame1 : Boolean {}
@@ -62,6 +68,7 @@ actor GotLegion : Boolean {}
 
 
 actor LegionCounter : Counter { Inventory.MaxAmount 35 }
+actor SentinelIdleCounter : Counter { Inventory.MaxAmount 70 }
 actor LegionStacked : Counter { Inventory.MaxAmount 9 }
 actor WaitingTooLong : Counter { Inventory.MaxAmount 525 }
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
