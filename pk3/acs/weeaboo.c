@@ -5,6 +5,8 @@
 #include "weeb_const.h"
 
 global int 58:LevelCount;
+global int 60:ShieldHP[];
+global int 61:SentinelHP[];
 
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int ClientEnterLocks[PLAYERMAX];
@@ -455,7 +457,7 @@ script WEEB_ENTER ENTER
 
         if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); }
         else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
-
+        
         // The Blind Guardian, AKA the BUTTSHIELD
         // It is a shield for your butt, you see.
         ShieldTID = 12000 + pln;
@@ -839,6 +841,10 @@ script WEEB_ENTER ENTER
         if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
         else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
 
+        // [Kyle873] Assign the current player's Guardian Shield and Sentinel HP to the glboal var so it can be read by SBARINFO
+        ShieldHP[PlayerNumber()] = GetActorProperty(ShieldTID, APROP_HEALTH);
+        SentinelHP[PlayerNumber()] = GetActorProperty(SentTID, APROP_HEALTH);
+        
         Delay(1);
         if (isDead(0))
         {
