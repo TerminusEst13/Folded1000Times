@@ -83,6 +83,7 @@ GRAPHICS:
 - Knights of the Round (One of the Apples)
 - Grand Knights History (The Blind Guardian shield)
 - PresidentPeople (Fixing the Blind Guardian's rotations so it had a proper front sprite)
+- MartyKirra (The very sexy sprites for the Omen)
 
 CODE:
 =========

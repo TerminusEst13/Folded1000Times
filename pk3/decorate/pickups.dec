@@ -271,7 +271,6 @@ actor UziPickup : PickupBase replaces PlasmaRifle
 
 actor HammerPickup : PickupBase replaces Chainsaw
 {
-    Scale 0.9
     Inventory.PickupMessage ""
     Inventory.PickupSound "BecauseHeHadntTheMettleToRemoveTheMetal"
     States

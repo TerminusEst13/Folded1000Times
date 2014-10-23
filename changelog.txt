@@ -22,6 +22,7 @@ FROM 0.72 TO 0.73:
 - The ammo being handled and fired from alt-fire has made the default auto-switching-when-out-of-ammo system a little finnicky. For those who really want a traditional system, though, ds_cl_autoswitch now lets people automatically switch weapons when out of ammo.
 - There is now a very, very slim (1/255) chance for destructable decorations to drop peppers.
 - The Allmap has been replaced with the Sentinel, an automatic sentient turret to gun enemies down for you.
+- The Omen now has an incredibly sexy set of sprites, thanks to MartyKirra!
 
 
 FROM 0.71b TO 0.72:
