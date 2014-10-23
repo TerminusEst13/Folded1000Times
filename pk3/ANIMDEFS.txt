@@ -10,6 +10,16 @@ pic 2 tics 6
 pic 3 tics 6
 pic 4 tics 6
 
+texture SENTH1
+pic SENTH1 tics 4
+pic SENTH2 tics 4
+pic SENTH3 tics 4
+pic SENTH4 tics 4
+pic SENTH5 tics 4
+pic SENTH6 tics 4
+pic SENTH7 tics 4
+pic SENTH8 tics 4
+
 Warp Texture NUKAGE1
 Warp Texture NUKAGE2
 Warp Texture NUKAGE3
