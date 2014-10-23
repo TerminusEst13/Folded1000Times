@@ -23,6 +23,7 @@ FROM 0.72 TO 0.73:
 - There is now a very, very slim (1/255) chance for destructable decorations to drop peppers.
 - The Allmap has been replaced with the Sentinel, an automatic sentient turret to gun enemies down for you.
 - The Omen now has an incredibly sexy set of sprites, thanks to MartyKirra!
+- The Blind Guardian's health has been increased to 1000.
 
 
 FROM 0.71b TO 0.72:
