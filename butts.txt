@@ -23,7 +23,6 @@ TO DO in no particular order:
 53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 54: Casing ejection/smoke effects on the guns.
 55: New teleport effect
-56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
 58: Attack when you let go of holding down fire.
 61: 6000 ANGRY BEES: one small idea to toy with:
@@ -69,9 +68,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <torridGristle> No, Z is up isn't it
 <torridGristle> I'm thinking of Minecraft's xyz designation.
 <TerminusEst13> Z only bothers with up and down. For forward/backward it'd be either A_Recoil or ThrustThing.
-
-
-<PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
 
 
 <PresidentPeople> TerminusEst13: Wraithverge needs to be in butts.txt
@@ -177,6 +173,7 @@ DONE:
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
+56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
 59: Less/no-effects cvar
 60: <torridGristle> Watersplashes aren't the same colour as the water.
 <torridGristle> Yeah, they're PNGs and aren't affected by the new playpal.
@@ -198,10 +195,11 @@ DONE:
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
 
-
 <Mystical> spinning skull for the menu screen selection cursor
 <Mystical> skull with a  pointer for mouse
 
+
+<PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
 
 
 

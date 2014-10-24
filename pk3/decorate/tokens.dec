@@ -67,30 +67,36 @@ actor GotLegion : Boolean {}
 
 
 
-actor LegionCounter : Counter { Inventory.MaxAmount 35 }
-actor SentinelIdleCounter : Counter { Inventory.MaxAmount 70 }
-actor LegionStacked : Counter { Inventory.MaxAmount 9 }
-actor WaitingTooLong : Counter { Inventory.MaxAmount 525 }
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }
-actor HenshinCooldown : Counter { Inventory.MaxAmount 35 }
-actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
-actor GhostStepCooldown : Counter { Inventory.MaxAmount 35 }
-actor DoubleTapReadyRight : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapReadyForward : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapReadyBack : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapReadyLeft : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapCooldown : Counter { Inventory.MaxAmount 20 }
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
+
+actor SentinelIdleCounter : Counter { Inventory.MaxAmount 70 }
+actor SentinelLifeCounter : Counter { Inventory.MaxAmount 200 }
+actor BlindGuardianLifeCounter : Counter { Inventory.MaxAmount 1000 }
+actor LegionCounter : Counter { Inventory.MaxAmount 35 }
+actor LegionStacked : Counter { Inventory.MaxAmount 9 }
+actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
+actor UziSequence : Counter { Inventory.MaxAmount 60 }
+
 actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
 actor ContraArmorToken : Counter { Inventory.MaxAmount 4 }
 actor OverLifeToken : Counter { Inventory.MaxAmount 3 }
 actor EnviroDamageCount : Counter { Inventory.MaxAmount 3 }
 actor EnviroDamageCooldown : Counter { Inventory.MaxAmount 75 }
+actor GhostStepCooldown : Counter { Inventory.MaxAmount 35 }
 actor MidCombat : Counter { Inventory.MaxAmount 60 }
 actor SuperMeterCounter : Counter { Inventory.MaxAmount 400 }
 actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
-actor UziSequence : Counter { Inventory.MaxAmount 60 }
+actor WaitingTooLong : Counter { Inventory.MaxAmount 525 }
+actor HenshinCooldown : Counter { Inventory.MaxAmount 35 }
+
+actor DoubleTapReadyRight : Counter { Inventory.MaxAmount 8 }
+actor DoubleTapReadyForward : Counter { Inventory.MaxAmount 8 }
+actor DoubleTapReadyBack : Counter { Inventory.MaxAmount 8 }
+actor DoubleTapReadyLeft : Counter { Inventory.MaxAmount 8 }
+actor DoubleTapCooldown : Counter { Inventory.MaxAmount 20 }
+
 actor SuperCounter1 : Counter { Inventory.MaxAmount 100 }
 actor SuperCounter2 : Counter { Inventory.MaxAmount 100 }
 actor SuperCounter3 : Counter { Inventory.MaxAmount 100 }

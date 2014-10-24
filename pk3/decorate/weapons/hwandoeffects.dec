@@ -20,6 +20,46 @@ actor RazorWindTrail
     }
 }
 
+actor SwordSmoke
+{
+    Scale 0.05
+    Alpha 0.175
+    RenderStyle Translucent
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7","Spawn8")
+    Spawn1:
+        SMOK A 2 A_Fadeout(0.01)
+        loop
+    Spawn2:
+        SMOK B 2 A_Fadeout(0.01)
+        loop
+    Spawn3:
+        SMOK C 2 A_Fadeout(0.01)
+        loop
+    Spawn4:
+        SMOK D 2 A_Fadeout(0.01)
+        loop
+    Spawn5:
+        SMOK E 2 A_Fadeout(0.01)
+        loop
+    Spawn6:
+        SMOK F 2 A_Fadeout(0.01)
+        loop
+    Spawn7:
+        SMOK G 2 A_Fadeout(0.01)
+        loop
+    Spawn8:
+        SMOK H 2 A_Fadeout(0.01)
+        loop
+    }
+}
+
 ACTOR SwordPuff
 {
     +NOINTERACTION
@@ -40,7 +80,7 @@ ACTOR SlugShard
 {
     Radius 3
     Height 6
-    Scale 0.2
+    Scale 0.1
     Mass 0
     BounceFactor 0.55
     WallBounceFactor 1.1

@@ -125,10 +125,10 @@ actor "Kharon + Legion" : Kharon
         KATN F 1
         KATN G 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack3",0,0)
         KATN H 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack3b",0,0)
         KATN I 1 A_GiveInventory("KharonSwung",1)
         KATN J 1
         TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
@@ -137,10 +137,10 @@ actor "Kharon + Legion" : Kharon
         KATN K 1
         KATN L 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack2",0,0)
         KATN M 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack2b",0,0)
         KATN N 1 A_GiveInventory("KharonSwung",1)
         KATN O 1
         KATN P 1 A_WeaponReady(WRF_NOSWITCH)
@@ -152,7 +152,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
         KATN X 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack1b",0,0)
         KATN Y 1 A_GiveInventory("KharonSwung",1)
         KATN Z 1
         TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
@@ -170,7 +170,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
         KATN C 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack1b",0,0)
         KATN D 1 A_TakeInventory("KharonSwung",1)
         KATN E 1
         TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
@@ -179,10 +179,10 @@ actor "Kharon + Legion" : Kharon
         KTUP A 1
         KTUP B 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack2",0,0)
         KTUP C 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack2b",0,0)
         KTUP D 1 A_TakeInventory("KharonSwung",1)
         KTUP E 1
         KTUP F 1 A_WeaponReady(WRF_NOSWITCH)
@@ -191,10 +191,10 @@ actor "Kharon + Legion" : Kharon
         KATN Q 1
         KATN R 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack3",0,0)
         KATN S 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0) 
-        TNT1 A 0 A_FireCustomMissile("KharonAttack1",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttack3b",0,0)
         KATN T 1 A_TakeInventory("KharonSwung",1)
         KATN U 1
         TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
