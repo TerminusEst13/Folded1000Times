@@ -26,6 +26,7 @@ FROM 0.72 TO 0.73:
 - The Blind Guardian's health has been increased to 1000.
 - Explosive barrels have their damage increased and now have a much easier time downing mook enemies.
 - Omen has been nerfed. Charging takes slightly longer, hitting an enemy with heavier attacks no longer allows you to follow up with an attack right afterwards, and the 100% charge attack now takes 40 charge instead of 20.
+- The Hell Knight's torso no longer acts like it's from the Matrix.
 
 
 FROM 0.71b TO 0.72:
