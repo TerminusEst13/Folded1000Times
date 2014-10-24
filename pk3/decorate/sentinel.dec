@@ -48,6 +48,7 @@ actor AllFearTheSentinel
     DamageFactor "ExodusJump", 0.0
     DamageFactor "Knife", 0.0
     DamageFactor "TestamentDamage", 0.0
+    DamageFactor "ChemiKill", 0.0
     RadiusDamageFactor 0.0
     States
     {

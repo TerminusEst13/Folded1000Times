@@ -24,6 +24,7 @@ FROM 0.72 TO 0.73:
 - The Allmap has been replaced with the Sentinel, an automatic sentient turret to gun enemies down for you.
 - The Omen now has an incredibly sexy set of sprites, thanks to MartyKirra!
 - The Blind Guardian's health has been increased to 1000.
+- Explosive barrels have their damage increased and now have a much easier time downing mook enemies.
 
 
 FROM 0.71b TO 0.72:
