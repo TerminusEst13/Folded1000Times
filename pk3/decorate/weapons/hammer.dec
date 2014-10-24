@@ -110,11 +110,11 @@ actor "Kharon + Omen" : Kharon
     Fire:
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
-        WEPA BCD 1
+        WEPO BCD 1
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
     FirePrepare:
-        WEPA IH 1 A_TakeInventory("ShootingLikeABaka")
+        WEPO IH 1 A_TakeInventory("ShootingLikeABaka")
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
 
