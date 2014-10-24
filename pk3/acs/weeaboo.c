@@ -848,8 +848,12 @@ script WEEB_ENTER ENTER
         Delay(1);
         if (isDead(0))
         {
+            Thing_Remove(SentTID);
+            SentTID = 0;
             Thing_Remove(ShieldTID);
             ShieldTID = 0;
+            TakeInventory("SentinelUp",1);
+            TakeInventory("SentinelActive",1);
             TakeInventory("BlindGuardianShieldUp",1);
             TakeInventory("BlindGuardianShieldActive",1);
             terminate;
