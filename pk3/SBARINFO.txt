@@ -1,3 +1,6 @@
+base Doom;
+height 0;
+
 statusbar normal, forcescaled
 {
 drawimage "AMMBOX", 308, 182, center;
@@ -129,12 +132,12 @@ DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 10, 179;
     InInventory SentinelUp
     {
         DrawImage "SENTH1", 0, 24, centerbottom;
-        DrawNumber 3, smallfont, green, GlobalArray 61, -2, 24;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, -2, 24;
     }
     InInventory BlindGuardianShieldUp
     {
         DrawImage "SHLDA5", 48, 24, centerbottom;
-        DrawNumber 4, smallfont, lightblue, GlobalArray 60, 46, 24;
+        DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 46, 24;
     }
 }
 

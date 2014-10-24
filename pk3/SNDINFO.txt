@@ -240,29 +240,27 @@ sentinel/see              SENTSEE // Taken from Mega Man 3
 sentinel/pain             SENTHURT // Taken from AbodaX
 sentinel/dead             SENTDEAD // Taken from AbodaX
 $random sentinel/idle { sentidle1 sentidle2 sentidle3 sentidle4 sentidle5 sentidle6 sentidle7 sentidle8 sentidle9 sentidle10 }
-// All of these sounds were made via BFXR
-sentidle1                 SENTIDL1
-sentidle2                 SENTIDL2
-sentidle3                 SENTIDL3
-sentidle4                 SENTIDL4
-sentidle5                 SENTIDL5
-sentidle6                 SENTIDL6
-sentidle7                 SENTIDL7
-sentidle8                 SENTIDL8
-sentidle9                 SENTIDL9
-sentidle10                SENTIDL0
+sentidle1                 SENTIDL1 // From Jackie Chan's Action Kung Fu
+sentidle2                 SENTIDL2 // From Jackie Chan's Action Kung Fu
+sentidle3                 SENTIDL3 // From Jackie Chan's Action Kung Fu
+sentidle4                 SENTIDL4 // From Ninja Gaiden
+sentidle5                 SENTIDL5 // From Ninja Gaiden
+sentidle6                 SENTIDL6 // From Pinball NES
+sentidle7                 SENTIDL7 // From Pinball NES
+sentidle8                 SENTIDL8 // From Wrecking Crew
+sentidle9                 SENTIDL9 // From Wrecking Crew
+sentidle10                SENTIDL0 // From Clu Clu Land
 $random sentinel/nope { sentnope1 sentnope2 sentnope3 sentnope4 sentnope5 sentnope6 sentnope7 sentnope8 sentnope9 sentnope10 }
-// These came from BFXR too
-sentnope1                 SENTNOP1
-sentnope2                 SENTNOP2
-sentnope3                 SENTNOP3
-sentnope4                 SENTNOP4
-sentnope5                 SENTNOP5
-sentnope6                 SENTNOP6
-sentnope7                 SENTNOP7
-sentnope8                 SENTNOP8
-sentnope9                 SENTNOP9
-sentnope10                SENTNOP0
+sentnope1                 SENTNOP1 // From Gradius
+sentnope2                 SENTNOP2 // From Gradius
+sentnope3                 SENTNOP3 // From Gradius
+sentnope4                 SENTNOP4 // From Gyromite
+sentnope5                 SENTNOP5 // From Jacking Chan's Action Kung Fu
+sentnope6                 SENTNOP6 // From Mega Man 3
+sentnope7                 SENTNOP7 // From Ninja Gaiden
+sentnope8                 SENTNOP8 // From Pinball NES
+sentnope9                 SENTNOP9 // From Pinball NES
+sentnope10                SENTNOP0 // From 1943
 
 // Player
 
