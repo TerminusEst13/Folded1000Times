@@ -41,6 +41,10 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 74: Explosive dashing punch as the Iron Maiden's forward special
 75: Replacement sounds for other world objects, such as lifts, switches, exploding barrels, and doors.
 76: Replacement sounds for the non-unique enemies, since at the moment the high-quality sounds contrast quite a bit.
+77: <skroton> also put in butts.txt
+<skroton> [for explosive barrels] get rid of a_barrelrespawn and put a check to the sv_barrelrespawncvar
+<skroton> or just have it default to on
+<skroton> so that people don't have to use alwaysapplydmflags
 
 
 
