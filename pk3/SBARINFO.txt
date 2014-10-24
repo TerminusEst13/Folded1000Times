@@ -129,12 +129,12 @@ DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 10, 179;
     InInventory SentinelUp
     {
         DrawImage "SENTH1", 0, 24, centerbottom;
-        DrawNumber 3, smallfont, green, GlobalArray(61), alignment(center), interpolate(100), -2, 24;
+        DrawNumber 3, smallfont, green, GlobalArray 61, -2, 24;
     }
     InInventory BlindGuardianShieldUp
     {
-        DrawImage "SHLDA5", 48, 24, centerbottom, 24, 24;
-        DrawNumber 3, smallfont, lightblue, GlobalArray(60), alignment(center), interpolate(100), 46, 24;
+        DrawImage "SHLDA5", 48, 24, centerbottom;
+        DrawNumber 4, smallfont, lightblue, GlobalArray 60, 46, 24;
     }
 }
 
@@ -256,12 +256,12 @@ DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 10, 188;
     InInventory SentinelUp
     {
         DrawImage "SENTH1", 0, 24, centerbottom;
-        DrawNumber 3, smallfont, green, GlobalArray(61), alignment(center), interpolate(100), -2, 24;
+        DrawNumber 3, smallfont, green, GlobalArray 61, -2, 24;
     }
     InInventory BlindGuardianShieldUp
     {
-        DrawImage "SHLDA5", 48, 24, centerbottom, 24, 24;
-        DrawNumber 3, smallfont, lightblue, GlobalArray(60), alignment(center), interpolate(100), 46, 24;
+        DrawImage "SHLDA5", 48, 24, centerbottom;
+        DrawNumber 4, smallfont, lightblue, GlobalArray 60, 46, 24;
     }
 }
 
