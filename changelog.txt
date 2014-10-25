@@ -28,6 +28,7 @@ FROM 0.72 TO 0.73:
 - Omen has been nerfed. Charging takes slightly longer, hitting an enemy with heavier attacks no longer allows you to follow up with an attack right afterwards, and the 100% charge attack now takes 40 charge instead of 20.
 - The Hell Knight's torso no longer acts like it's from the Matrix.
 - The Kharon's decals are now slashes.
+- The Pinky now has a decapitation death, thanks to Sgt. Shivers.
 
 
 FROM 0.71b TO 0.72:
