@@ -749,6 +749,7 @@ actor HammerLightningX
 ACTOR HammerAttackMedium : HammerAttackBase
 {
     Damage (80)
+    +EXTREMEDEATH
     States
     {
     XDeath:
@@ -779,6 +780,7 @@ ACTOR HammerAttackHeavy : HammerAttackBase
     Alpha 0.9
     Scale 0.8
     Damage (120)
+    +EXTREMEDEATH
     States
     {
     XDeath:
@@ -843,6 +845,7 @@ ACTOR HammerAttackOvercharge : HammerAttackBase
     Alpha 0.9
     Scale 0.8
     Damage (4000)
+    +EXTREMEDEATH
     States
     {
     XDeath:

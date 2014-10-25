@@ -29,6 +29,8 @@ FROM 0.72 TO 0.73:
 - The Hell Knight's torso no longer acts like it's from the Matrix.
 - The Kharon's decals are now slashes.
 - The Pinky now has a decapitation death, thanks to Sgt. Shivers.
+- Higher-tier attacks of the hammer now always gib enemies on death.
+- Explosive barrels now respect sv_barrelrespawn.
 
 
 FROM 0.71b TO 0.72:
