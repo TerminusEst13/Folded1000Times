@@ -238,6 +238,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     +FLOORCLIP
     +ALWAYSFAST
     +NODAMAGE
+    +QUICKTORETALIATE
     -ISMONSTER
     -COUNTKILL
     BloodType "BlankPuff"

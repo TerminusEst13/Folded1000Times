@@ -18,6 +18,7 @@ ACTOR XaserBarrel : DestructableDecorationBaseStates replaces ExplosiveBarrel
     +FLOORCLIP
     -DONTSPLASH
     +ALWAYSFAST
+    +QUICKTORETALIATE
     -ISMONSTER
     -COUNTKILL
     PainChance 255
