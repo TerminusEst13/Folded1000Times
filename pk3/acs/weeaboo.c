@@ -303,6 +303,10 @@ script WEEB_DECORATE (int burrshet)
         if (isSinglePlayer() && GotIronMaiden == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
+		
+    case WEEB_DEC_BARRELSPAWN:
+        SetResultValue(GetCVar("sv_barrelrespawn"));
+        break;
     }
 }
 
