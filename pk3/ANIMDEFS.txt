@@ -10,6 +10,14 @@ pic 2 tics 6
 pic 3 tics 6
 pic 4 tics 6
 
+texture IRONGEM1
+pic 1 tics 5
+pic 2 tics 5
+pic 3 tics 5
+pic 4 tics 5
+pic 3 tics 5
+pic 2 tics 5
+
 texture SENTH1
 pic SENTH1 tics 4
 pic SENTH2 tics 4

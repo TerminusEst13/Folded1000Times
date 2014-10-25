@@ -1,3 +1,24 @@
+Decal KharonSlash1
+{
+    pic SCRATCHA
+    x-scale 0.25
+    y-scale 0.25
+}
+
+Decal KharonSlash2
+{
+    pic SCRATCHB
+    x-scale 0.25
+    y-scale 0.25
+}
+
+Decal KharonSlash3
+{
+    pic SCRATCHC
+    x-scale 0.25
+    y-scale 0.25
+}
+
 Stretcher BloodDrencherA
 {
     GoalY 1.5

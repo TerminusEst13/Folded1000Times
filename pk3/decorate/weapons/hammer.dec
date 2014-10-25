@@ -660,7 +660,7 @@ actor HammerSmoke
 
 ACTOR HammerAttackNormal : HammerAttackBase
 {
-    Damage (40)
+    Damage (60)
     States
     {
     XDeath:
@@ -678,7 +678,7 @@ ACTOR HammerAttackNormal : HammerAttackBase
 
 ACTOR HammerAttackLight : HammerAttackBase
 {
-    Damage (60)
+    Damage (90)
     States
     {
     XDeath:
@@ -748,7 +748,7 @@ actor HammerLightningX
 
 ACTOR HammerAttackMedium : HammerAttackBase
 {
-    Damage (80)
+    Damage (120)
     +EXTREMEDEATH
     States
     {
@@ -779,7 +779,7 @@ ACTOR HammerAttackHeavy : HammerAttackBase
     RenderStyle Add
     Alpha 0.9
     Scale 0.8
-    Damage (120)
+    Damage (180)
     +EXTREMEDEATH
     States
     {
@@ -844,7 +844,7 @@ ACTOR HammerAttackOvercharge : HammerAttackBase
     RenderStyle Add
     Alpha 0.9
     Scale 0.8
-    Damage (4000)
+    Damage (1000000) // That's six zeroes, bitches!
     +EXTREMEDEATH
     States
     {
@@ -875,18 +875,30 @@ ACTOR HammerAttackOvercharge : HammerAttackBase
         TNT1 A 0 A_SpawnItemEx("LightningShockwaveSpawner",0,0,16,0,0,0,0,128,0)
 
         TNT1 A 0 A_SpawnItemEx("ElectricExplosionForce",0,0,0,0,0,0,0,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,0,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,30,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,60,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,90,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,120,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,150,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,180,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,210,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,240,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,270,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,300,48,0)
-        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",192,0,0,0,0,0,330,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,0,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,30,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,60,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,90,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,120,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,150,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,180,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,210,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,240,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,270,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,300,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosionStrong",192,0,0,0,0,0,330,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,0,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,30,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,60,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,90,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,120,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,150,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,180,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,210,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,240,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,270,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,300,48,0)
+        TNT1 A 0 A_SpawnItemEx("ElectricExplosion",384,0,0,0,0,0,330,48,0)
 
         ZAP7 ABCDEABCDE 2 Bright
         ZAP7 ABCDEABCDE 2 Bright
@@ -1165,7 +1177,6 @@ ACTOR HammerAttackOverchargeSFX : HammerAttackBaseSFX
     RenderStyle Add
     Alpha 0.9
     Scale 0.8
-    Damage (4000)
     States
     {
     Toaster0:
