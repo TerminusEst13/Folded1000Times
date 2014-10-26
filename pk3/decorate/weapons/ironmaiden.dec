@@ -407,9 +407,10 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_Recoil(1)
         TNT1 A 0 A_SetAngle(angle+(random(-400,400)/1500.000))
         TNT1 A 0 A_SetPitch(pitch-(random(200,700)/1500.000))
+        TNT1 A 0 A_GiveInventory("FistSwung",1)
         IRNB D 1 BRIGHT A_ZoomFactor(0.975,ZOOM_INSTANT)
         IRNB E 1 BRIGHT A_ZoomFactor(1.0,ZOOM_INSTANT)
-        IRNB F 1 A_GiveInventory("FistSwung",1)
+        IRNB F 1 A_WeaponReady(WRF_NOSWITCH)
         goto AltFired
     AltFireSequence2:
         IRNB GH 1
@@ -418,9 +419,10 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_Recoil(1)
         TNT1 A 0 A_SetAngle(angle+(random(-400,400)/1500.000))
         TNT1 A 0 A_SetPitch(pitch-(random(200,700)/1500.000))
+        TNT1 A 0 A_TakeInventory("FistSwung",1)
         IRNB J 1 BRIGHT A_ZoomFactor(0.975,ZOOM_INSTANT)
         IRNB K 1 BRIGHT A_ZoomFactor(1.0,ZOOM_INSTANT)
-        IRNB L 1 A_TakeInventory("FistSwung",1)
+        IRNB L 1 A_WeaponReady(WRF_NOSWITCH)
         goto AltFired
 
     AltFired:
@@ -434,7 +436,7 @@ actor "Iron Fist" : Weapon
 
     AltHold:
         TNT1 A 1
-        TNT1 A 0 A_JumpIfInventory("IronChargeCounter",35,"IronChargeUp")
+        TNT1 A 0 A_JumpIfInventory("IronChargeCounter",25,"IronChargeUp")
         TNT1 A 0 A_GiveInventory("IronChargeCounter",1)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
@@ -613,7 +615,7 @@ actor HolyRocket : HolyShot
     Radius 8
     Speed 40
     Scale 0.8
-    Damage (80)
+    Damage (60)
     DeathSound "holyrocket/hit"
     Decal Scorch
     -NOEXTREMEDEATH
@@ -719,7 +721,7 @@ actor HolyRocketExplosion2
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 0 A_Jump(255, 1,2,3,4)
+        TNT1 A 0 A_Jump(255,1,2,3,4)
         EXR2 ABCDEFGHIJKL 3 bright A_FadeOut(0.05)
         stop
     }
