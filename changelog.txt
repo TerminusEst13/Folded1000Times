@@ -38,6 +38,7 @@ FROM 0.72 TO 0.73:
 - The Iron Maiden now has a charge-up blast if alt-fire is held, which provides a rocket explosion for either AoE coverage or rocket-jumping.
 - The Iron Maiden armor is now immune to environmental damage.
 - Iron Maiden blasts now can be fired slightly faster, for more rapid ATATATATATATATATATATATA.
+- The Iron Maiden now has a not-Kamehameha.
 
 
 FROM 0.71b TO 0.72:
