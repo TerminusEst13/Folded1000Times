@@ -268,9 +268,12 @@ script WEEB_DECORATE (int burrshet)
         TakeInventory("InIronMaiden",1);
         TakeInventory("Iron Fist",1);
         TakeInventory("IronMaidenSpeed",1);
+        TakeInventory("IronMaidenSlowness",1);
+        TakeInventory("IronMaidenSlowness2",1);
         TakeInventory("IronMaidenWarning",1);
         TakeInventory("Armor",0x7FFFFFFF);
         TakeInventory("HenshinActivated",1);
+        GiveInventory("IronMaidenVisionReset",1);
         GiveInventory("Kharon + Acacia A-22",1);
         GiveInventory("Kharon",1);
         SetActorProperty(0,APROP_JUMPZ,9.0);
@@ -802,6 +805,8 @@ script WEEB_ENTER ENTER
               MarchOfTheImmortal = 0;
               IronArmor = 0;
             }
+
+            if (buttons & BT_ALTATTACK) { GiveInventory("SynthAltFire",1); } else { TakeInventory("SynthAltFire",1); }
 
             if (IronArmor >= 7)
             {

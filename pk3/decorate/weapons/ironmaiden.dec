@@ -60,6 +60,21 @@ ACTOR IronMaidenRepel
     }
 }
 
+actor IronMaidenVisionReset : CustomInventory
+{
+    -INVBAR
+    +AUTOACTIVATE
+    States
+    {
+    Pickup:
+    Use:
+        TNT1 A 0
+        TNT1 A 0 //A_ZoomFactor(1.0,ZOOM_INSTANT)
+        TNT1 A 1
+        stop
+    }
+}
+
 actor "Iron Fist" : Weapon
 {
     Weapon.KickBack 75
@@ -240,6 +255,7 @@ actor "Iron Fist" : Weapon
 
     Hold:
         TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"AltSpecial")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"Unhenshin")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
@@ -453,7 +469,7 @@ actor "Iron Fist" : Weapon
     AltFireCharged:
         IRNB MN 1
         TNT1 A 0 A_SetBlend("white",0.25,15)
-        TNT1 A 0 A_PlayWeaponSound("holyRocket/fire")
+        TNT1 A 0 A_PlayWeaponSound("holyrocket/fire")
         TNT1 A 0 A_FireCustomMissile("HolyRocket",0,random(-50,50)/500.00,6,0,0,random(-50,50)/500.00)
         TNT1 A 0 A_Recoil(5)
         TNT1 A 0 A_SetAngle(angle+(random(-500,500)/1000.000))
@@ -464,6 +480,293 @@ actor "Iron Fist" : Weapon
         IRNB R 2 A_TakeInventory("IronCharged",1)
         IRNB S 1 A_ClearRefire
         goto AltFired
+
+     AltSpecial:
+        TNT1 A 0 A_GiveInventory("IronMaidenSlowness",1)
+        TNT1 A 0 A_PlaySoundEx("holybeam/charge","SoundSlot7",0,2)
+        TNT1 AAAAAAA 0 bright A_FireCustomMissile("UltimaSparkSpawner",0,0,0,0)
+        IRCH AAABBBCCCCCCCCCCC 1 bright A_FireCustomMissile("UltimaParticleSpawner",0,0,0,0)
+        IRCH CCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJ 1 bright A_FireCustomMissile("UltimaParticleSpawner",0,0,0,0)
+        IRCH JCCDDEEFFGGHHIIJJCDEFGHIJCDEFGHIJKK 1 bright A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 A 0 A_SetBlend("White",0.85,50)
+        TNT1 A 0 A_Recoil(10)
+        TNT1 A 0 A_ZoomFactor(0.875,ZOOM_INSTANT)
+        TNT1 A 0 A_GiveInventory("IronMaidenSlowness2",1)
+        TNT1 A 0 A_PlaySoundEx("holybeam/fire","SoundSlot6",0,2)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00) // 10
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00) // 20
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00) // 30
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00) // 40
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00) // 50
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        TNT1 A 0 A_TakeInventory("IronMaidenSlowness2",1)
+        TNT1 A 0 A_ZoomFactor(0.925,ZOOM_INSTANT)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 AAA 0 A_FireCustomMissile("UltimaBeamDecalSpam",random(-600,600)/100.00,0,6,0,0,random(-400,400)/100.00)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00) // 60
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
+        TNT1 A 0 A_ZoomFactor(0.95,ZOOM_INSTANT)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_ZoomFactor(0.975,ZOOM_INSTANT)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH L 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH M 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH N 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_ZoomFactor(0.999,ZOOM_INSTANT)
+        IRCH O 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH P 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00) // 70
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        IRCH Q 1 bright A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
+        IRCH L 1 A_FireCustomMissile("UltimaBeam",random(-400,400)/100.00,0,6,0,0,random(-250,250)/100.00)
+        TNT1 A 0 A_TakeInventory("IronMaidenSlowness",1)
+        IRCH UURRST 2 A_ClearRefire
+        TNT1 A 35
+        Goto Fired2
     }
 }
 
@@ -542,36 +845,6 @@ ACTOR IronFistExplosion
 
 actor IronFistGuard : KharonGuard {}
 
-actor IronMaidenImpactSmoke
-{
-    Scale 0.25
-    Alpha 0.45
-    Renderstyle Add
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-    Spawn:
-        SMOK ABCDEFGHIJKLMNOPQ 1
-        Stop
-    }
-}
-
-ACTOR HolyShotDeath
-{
-    Renderstyle Add
-    Alpha 0.99
-    Scale 0.2
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-    Spawn:
-        BSEX AAAAAAAAAAAAAAAAAAAAAAA 1 BRIGHT A_FadeOut(0.075)
-        Stop
-    }
-}
-
 actor HolyShot
 {
     Height 8
@@ -640,93 +913,6 @@ actor HolyRocket : HolyShot
     }
 }
 
-actor HolyExplosionSpawner
-{
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 1 BRIGHT 
-        Loop
-    Toaster0:
-        TNT1 A 0 
-        TNT1 AAAAA 0 A_SpawnItemEx("HolyRocketExplosion2", 0,0,0, random(200,400)/200.00,0,random(0,200)/200.00, random(0, 360))
-        TNT1 AAAAAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(300,800)/200.00,0,random(300,800)/200.00, random(0,360))
-        TNT1 AAAAAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(1500,2500)/200.00,0,random(100,400)/200.00, random(0,360))
-        TNT1 A 8
-        stop
-    Toaster1:
-        TNT1 A 0 
-        TNT1 AAA 0 A_SpawnItemEx("HolyRocketExplosion2", 0,0,0, random(200,400)/200.00,0,random(0,200)/200.00, random(0, 360))
-        TNT1 AAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(300,800)/200.00,0,random(300,800)/200.00, random(0,360))
-        TNT1 AAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(1500,2500)/200.00,0,random(100,400)/200.00, random(0,360))
-        TNT1 A 8
-        stop
-    Toaster2:
-        TNT1 A 0 
-        TNT1 AA 0 A_SpawnItemEx("HolyRocketExplosion2", 0,0,0, random(200,400)/200.00,0,random(0,200)/200.00, random(0, 360))
-        TNT1 AAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(300,800)/200.00,0,random(300,800)/200.00, random(0,360))
-        TNT1 AAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(1500,2500)/200.00,0,random(100,400)/200.00, random(0,360))
-        TNT1 A 8
-        stop
-    }
-}
-
-actor HolyRocketExpTrail
-{
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    Alpha 0.2
-    Scale 0.625
-    RenderStyle Add
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_Jump(255,1,2,3,4,5,6,7,8,9)
-        EXR3 ABCDEFGHIJKLMNOP 1 bright
-        stop
-    }
-}
-
-actor HolyRocketExplosion
-{
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    Alpha 0.5
-    Scale 1.125
-    RenderStyle Add
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_Jump(255,1,2,3,4,5,6,7,8,9)
-        EXR1 ABCDEFGHIJKLMNOPQRSTUVW 1 bright A_SpawnItemEx("HolyRocketExpTrail", 0,0,0, random(-20, 20)/10.0, random(-20, 20)/10.0, random(-20, 20)/10.0)
-        stop
-    }
-}
-
-actor HolyRocketExplosion2
-{
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    Alpha 0.55
-    Scale 0.75
-    RenderStyle Add
-    States
-    {
-      Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_Jump(255,1,2,3,4)
-        EXR2 ABCDEFGHIJKL 3 bright A_FadeOut(0.05)
-        stop
-    }
-}
-
 ACTOR HolyShotExplode
 {
     Radius 1
@@ -767,61 +953,55 @@ ACTOR HolyRocketJumpage
     }
 }
 
-actor HolyTrail
+actor UltimaBeam : FastProjectile
 {
-    Renderstyle Add
-    Alpha 0.5
-    Scale 0.4
-    +NOINTERACTION
-    +CLIENTSIDEONLY
+    Projectile
+    +DONTREFLECT
+    +FORCERADIUSDMG
+    +THRUACTORS
+    +BLOODLESSIMPACT
+    +FOILINVUL
+    +DONTBLAST
+    Speed 100
+    Radius 2
+    Height 2
+    Decal BigScorch
+    DamageType "UltimaBeam"
+    Obituary "%k consumed %o in light."
     States
     {
     Spawn:
-        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
-        SPKW A 1 BRIGHT A_FadeOut(0.075)
-        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
-        SPKW B 1 BRIGHT A_FadeOut(0.075)
-        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
-        SPKW C 1 BRIGHT A_FadeOut(0.075)
-        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
-        SPKW D 1 BRIGHT A_FadeOut(0.075)
-        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
-        SPKW E 1 BRIGHT A_FadeOut(0.075)
-        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
-        SPKW F 1 BRIGHT A_FadeOut(0.075)
+        TNT1 A 1 A_SpawnItemEx("UltimaTrailSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_Explode(96,256,0)
         Loop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("UltimaBeamDamage",96,0,0,0,0,0,0,48)
+        TNT1 A 0 A_SpawnItemEx("UltimaBeamDamage",96,0,0,0,0,0,90,48)
+        TNT1 A 0 A_SpawnItemEx("UltimaBeamDamage",96,0,0,0,0,0,180,48)
+        TNT1 A 0 A_SpawnItemEx("UltimaBeamDamage",96,0,0,0,0,0,270,48)
+        TNT1 A 0 A_Explode(96,256,0)
+        TNT1 AAAAA 0 A_SpawnItemEx("UltimaExplosion",0,0,0,random(6,-6)/(2*1.05),random(6,-6)/(2*1.05),random(6,-6)/(2*1.05),0,32)
+        TNT1 A 35 Radius_Quake(5,35,0,100,0)
+        Stop
     }
 }
 
-actor HolyTrail2 : HolyTrail { Scale 0.7 }
-
-actor HolyShotPuffs
+ACTOR UltimaBeamDamage
 {
-    RenderStyle Add
-    Scale 0.35
-    Alpha 0.5
-    +NOINTERACTION
-    +CLIENTSIDEONLY
+    Radius 1
+    Height 1
+    Speed 0
+    +NOCLIP
+    -SOLID
+    +DONTBLAST
+    DamageType "UltimaBeam"
+    Obituary "%k consumed %o in light."
     States
     {
-    Spawn:
+      Spawn:
         TNT1 A 0
-        LBSS AAAAABBBBB 2 bright A_FadeOut(random(1,3)/100.0)
-        loop
-    }
-}
-
-actor HolyShotPuffs2 : HolyShotPuffs { Scale 0.25 }
-
-actor HolyShotPuffs3 : HolyShotPuffs
-{
-    Scale 0.15
-    Alpha 0.275
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        LBSS AAAAABBBBB 1 bright A_FadeOut(random(1,3)/100.0)
-        loop
+        TNT1 A 1 A_Explode(96,192,0)
+        Stop
     }
 }

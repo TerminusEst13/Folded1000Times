@@ -11,6 +11,8 @@ actor VertIGo : Boolean {}
 actor ReadyToDoubleJump : Boolean {}
 actor InIronMaiden : Boolean {}
 actor IronMaidenWarning : Boolean {}
+actor Wounded : Boolean {}
+
 actor BlindGuardianWaitForAnAnswer : Boolean {}
 actor BlindGuardianShieldUp : Boolean {}
 actor BlindGuardianShieldActive : Boolean {}
@@ -35,6 +37,8 @@ actor ShockCanDie : Boolean {}
 actor ShockArcDie : Boolean {}
 actor FistSwung : Boolean {}
 actor FistHit : Boolean {}
+actor IronCharged : Boolean {}
+actor SynthAltFire : Boolean {}
 
 actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
 actor IAmAnAwesomePersonWhoLikesCoolMusic : Boolean {}
@@ -78,6 +82,7 @@ actor LegionCounter : Counter { Inventory.MaxAmount 35 }
 actor LegionStacked : Counter { Inventory.MaxAmount 9 }
 actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
 actor UziSequence : Counter { Inventory.MaxAmount 60 }
+actor IronChargeCounter : Counter { Inventory.MaxAmount 35 }
 
 actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
 actor ContraArmorToken : Counter { Inventory.MaxAmount 4 }

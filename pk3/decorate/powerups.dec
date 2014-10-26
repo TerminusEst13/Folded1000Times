@@ -10,6 +10,18 @@ ACTOR IronMaidenSpeed : PowerSpeed
     Speed 1.2
 }
 
+ACTOR IronMaidenSlowness : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.35
+}
+
+ACTOR IronMaidenSlowness2 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.05
+}
+
 actor ComboDamageLevel1 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF

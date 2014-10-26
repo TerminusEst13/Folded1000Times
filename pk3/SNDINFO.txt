@@ -442,6 +442,8 @@ iron/armorhit             IRNMPAIN // Taken from Mega Man X6
 holyrocket/fire           IRNROCKT
 holyrocket/hit            IRNROCKX
 holyrocket/ready          IRNSHUCK // Taken from Unreal 2
+holybeam/charge           IRNCHARG // Taken from Mechwarrior Online
+holybeam/fire             IRNCHSHT
 
 iron/spinattack           IRNSPINN
 iron/lunge                IRNLUNGE

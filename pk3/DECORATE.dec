@@ -76,6 +76,7 @@ const int WEEB_DEC_CHANGEMUSBACK = 2;
 #include "decorate/weapons/uzi.dec"
 #include "decorate/weapons/hammer.dec"
 #include "decorate/weapons/ironmaiden.dec"
+#include "decorate/weapons/ironeffects.dec"
 #include "decorate/weapons/boomerang.dec"
 #include "decorate/player.dec"
 #include "decorate/powerups.dec"

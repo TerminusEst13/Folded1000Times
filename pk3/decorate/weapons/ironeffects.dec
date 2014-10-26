@@ -1,0 +1,357 @@
+
+
+actor IronMaidenImpactSmoke
+{
+    Scale 0.25
+    Alpha 0.45
+    Renderstyle Add
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        SMOK ABCDEFGHIJKLMNOPQ 1
+        Stop
+    }
+}
+
+ACTOR HolyShotDeath
+{
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.2
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        BSEX AAAAAAAAAAAAAAAAAAAAAAA 1 BRIGHT A_FadeOut(0.075)
+        Stop
+    }
+}
+
+actor HolyExplosionSpawner
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 1 BRIGHT 
+        Loop
+    Toaster0:
+        TNT1 A 0 
+        TNT1 AAAAA 0 A_SpawnItemEx("HolyRocketExplosion2", 0,0,0, random(200,400)/200.00,0,random(0,200)/200.00, random(0, 360))
+        TNT1 AAAAAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(300,800)/200.00,0,random(300,800)/200.00, random(0,360))
+        TNT1 AAAAAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(1500,2500)/200.00,0,random(100,400)/200.00, random(0,360))
+        TNT1 A 8
+        stop
+    Toaster1:
+        TNT1 A 0 
+        TNT1 AAA 0 A_SpawnItemEx("HolyRocketExplosion2", 0,0,0, random(200,400)/200.00,0,random(0,200)/200.00, random(0, 360))
+        TNT1 AAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(300,800)/200.00,0,random(300,800)/200.00, random(0,360))
+        TNT1 AAAAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(1500,2500)/200.00,0,random(100,400)/200.00, random(0,360))
+        TNT1 A 8
+        stop
+    Toaster2:
+        TNT1 A 0 
+        TNT1 AA 0 A_SpawnItemEx("HolyRocketExplosion2", 0,0,0, random(200,400)/200.00,0,random(0,200)/200.00, random(0, 360))
+        TNT1 AAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(300,800)/200.00,0,random(300,800)/200.00, random(0,360))
+        TNT1 AAA 0 A_SpawnItemEx("HolyRocketExplosion", 0,0,0, random(1500,2500)/200.00,0,random(100,400)/200.00, random(0,360))
+        TNT1 A 8
+        stop
+    }
+}
+
+actor HolyRocketExpTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Alpha 0.2
+    Scale 0.625
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,1,2,3,4,5,6,7,8,9)
+        EXR3 ABCDEFGHIJKLMNOP 1 bright
+        stop
+    }
+}
+
+actor HolyRocketExplosion
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Alpha 0.5
+    Scale 1.125
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,1,2,3,4,5,6,7,8,9)
+        EXR1 ABCDEFGHIJKLMNOPQRSTUVW 1 bright A_SpawnItemEx("HolyRocketExpTrail", 0,0,0, random(-20, 20)/10.0, random(-20, 20)/10.0, random(-20, 20)/10.0)
+        stop
+    }
+}
+
+actor HolyRocketExplosion2
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Alpha 0.55
+    Scale 0.75
+    RenderStyle Add
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,1,2,3,4)
+        EXR2 ABCDEFGHIJKL 3 bright A_FadeOut(0.05)
+        stop
+    }
+}
+
+actor HolyTrail
+{
+    Renderstyle Add
+    Alpha 0.5
+    Scale 0.4
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
+        SPKW A 1 BRIGHT A_FadeOut(0.075)
+        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
+        SPKW B 1 BRIGHT A_FadeOut(0.075)
+        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
+        SPKW C 1 BRIGHT A_FadeOut(0.075)
+        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
+        SPKW D 1 BRIGHT A_FadeOut(0.075)
+        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
+        SPKW E 1 BRIGHT A_FadeOut(0.075)
+        TNT1 A 0 A_SpawnItemEx("HolyShotPuffs3",0,0,0,random(-100,100)/40.0,random(-100,100)/40.0,random(-100,100)/40.0,0,32)
+        SPKW F 1 BRIGHT A_FadeOut(0.075)
+        Loop
+    }
+}
+
+actor HolyTrail2 : HolyTrail { Scale 0.7 }
+
+actor HolyShotPuffs
+{
+    RenderStyle Add
+    Scale 0.35
+    Alpha 0.5
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        LBSS AAAAABBBBB 2 bright A_FadeOut(random(1,3)/100.0)
+        loop
+    }
+}
+
+actor HolyShotPuffs2 : HolyShotPuffs { Scale 0.25 }
+
+actor HolyShotPuffs3 : HolyShotPuffs
+{
+    Scale 0.15
+    Alpha 0.275
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        LBSS AAAAABBBBB 1 bright A_FadeOut(random(1,3)/100.0)
+        loop
+    }
+}
+        
+Actor UltimaParticleSpawner
+{
+    Projectile
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Speed 10
+    Scale 0.25
+    RenderStyle Add
+    Alpha 0.1
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_SpawnItemEx("UltimaParticle",20,0,0,random(-15,15),random(-15,15),random(-15,15),0,32)
+        Stop
+    }
+}
+
+actor UltimaSparkSpawner
+{
+    PROJECTILE
+    +NOCLIP
+    +CLIENTSIDEONLY
+    Speed 0
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_CustomMissile("UltimaSpark",0,0,random(90,-90),2,random(80,-80))
+        stop
+    }
+}
+
+actor UltimaSpark
+{
+    PROJECTILE
+    +NOCLIP
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Speed 20
+    Scale 0.02
+    States
+    {
+    Spawn:
+        X099 A 2 A_FadeOut(0.05)
+        Wait
+    }
+}
+    
+
+Actor UltimaSwirl
+{
+    Projectile
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.4
+    Alpha 0.1
+    Speed 10
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        X013 BB 0 bright A_SpawnItemEx("UltimaParticle",20,0,0,random(-15,15),random(-15,15),random(-15,15),0,32)
+        X013 BCDEFGHIJKLMNOPQRSTUVWXY 1 bright
+        Stop
+    }
+}
+
+Actor UltimaParticle
+{
+    Projectile
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.03
+    Alpha 0.0
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        TNT1 A 1 A_ChangeVelocity(0+random(10,80),0,0,3)
+        TNT1 A 0 A_ScaleVelocity(0.20)
+        X099 AAAAAAAAAA 1 A_FadeIn(0.05)
+        X099 A 2 A_ScaleVelocity(-1.0)
+        X099 AAAA 2 A_ScaleVelocity(1.25)
+        Stop
+    }
+}
+
+
+Actor UltimaExplosion
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Alpha 0.7
+    Speed 6
+    Scale 1.5
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        X003 ABCDE 2 Bright A_FadeOut(0.03)
+        TNT1 A 0 A_ScaleVelocity(0.9)
+        X003 FGHIJ 2 Bright A_FadeOut(0.03)
+        TNT1 A 0 A_ScaleVelocity(0.75)
+        X003 KLMNO 2 Bright A_FadeOut(0.03)
+        TNT1 A 0 A_ScaleVelocity(0.6)
+        X003 PQRST 2 Bright A_FadeOut(0.03)
+        TNT1 A 0 A_ScaleVelocity(0.5)
+        X003 UVWXYZ 2 Bright A_FadeOut(0.03)
+        Stop
+    }
+}
+
+actor UltimaTrailSpawner
+{
+    PROJECTILE
+    +NOCLIP
+    -SOLID
+    +THRUACTORS
+    +CLIENTSIDEONLY
+    Speed 30
+    States
+    {
+    Spawn:
+        TNT1 AAAAAAAAAA 2 A_CustomMissile("UltimaTrail",0,random(-5,5),random(0,360),2,random(80,-80))
+        stop
+    }
+}
+    
+Actor UltimaTrail
+{
+    Projectile
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Alpha 0.35
+    Speed 10
+    Scale 2
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        X032 A 0
+        X032 ABCDEFGHIJKLMNO 2 A_FadeOut(0.05)
+        Goto Spawn+1
+    Death:
+        TNT1 A 0
+        Stop
+    }
+}
+
+actor UltimaBeamDecalSpam : FastProjectile
+{
+    Projectile
+    +DONTREFLECT
+    +FORCERADIUSDMG
+    +THRUACTORS
+    +BLOODLESSIMPACT
+    +FOILINVUL
+    +DONTBLAST
+    +CLIENTSIDEONLY
+    Speed 100
+    Radius 2
+    Height 2
+    Decal BigScorch
+    Damage 0
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        loop
+    Death:
+        TNT1 A 1
+        stop
+    }
+}

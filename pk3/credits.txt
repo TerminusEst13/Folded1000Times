@@ -108,6 +108,7 @@ CODE:
 - IvanDobrovski (Fixing the eternally-looping imp blood fountain)
 - Xaser/Tormentor667/Z86 (The explosive barrel, nicked from the Particle Fire Enhancer Mod)
 - TiberiumSoul (The code for the bulletpuffs based off of his neat little effects)
+- Zael (For the Ultima Cannon, which I shamelessly ripped off for the not-Kamehameha. May your mass never go inert)
 
 MUSIC:
 =========
