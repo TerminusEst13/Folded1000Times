@@ -35,6 +35,8 @@ FROM 0.72 TO 0.73:
 - The HUD now properly informs you as to what weapons you have picked up, as well as when you can use Iron Maiden.
 - Revenants no longer have +ALWAYSFAST on them, and their missile-homing systems have been made slightly laggier, but the missiles themselves are now 1.5x faster.
 - Cyberdemons can no longer infight with each other.
+- The Iron Maiden now has a charge-up blast if alt-fire is held, which provides a rocket explosion for either AoE coverage or rocket-jumping.
+- The Iron Maiden armor is now immune to environmental damage.
 
 
 FROM 0.71b TO 0.72:

@@ -101,6 +101,8 @@ script WEEB_DECORATE (int burrshet)
             { TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",50); }
         else if (CheckInventory("ContraLifeToken") >= 1)
             { TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",50); }
+
+        GiveInventory("Wounded",1);
         
         SetActorProperty(0,APROP_INVULNERABLE,1);
         
@@ -121,6 +123,8 @@ script WEEB_DECORATE (int burrshet)
             
             Delay(delaytime);
         }
+
+        TakeInventory("Wounded",1);
         
         SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
         SetActorProperty(0,APROP_INVULNERABLE,0);
@@ -802,13 +806,14 @@ script WEEB_ENTER ENTER
             if (IronArmor >= 7)
             {
               if (CheckInventory("Armor") < 40) { GiveInventory("IronMaidenArmor",1); }
+              if (CheckInventory("Wounded") == 1) { GiveInventory("IronMaidenArmor",1); }
               GiveInventory("IronMaidenArmor",1);
               IronArmor = 0;
             }
 
             if (CheckInventory("MidCombat") > 1)
             {
-              if (MarchOfTheImmortal >= 35)
+              if (MarchOfTheImmortal >= 30)
               {
                 TakeInventory("SuperMeterCounter",1);
                 MarchOfTheImmortal = 0;
@@ -929,6 +934,7 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapBack",1);
     TakeInventory("DoubleTapLeft",1);
     TakeInventory("DoubleTapRight",1);
+    TakeInventory("Wounded",1);
     TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);

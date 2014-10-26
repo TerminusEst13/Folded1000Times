@@ -439,6 +439,9 @@ ironswing3                IRNSWNG3
 holyshot/fire             IRNBLAST // A dramatically-souped-up Quake III sound
 holyshot/hit              IRNBLHIT // A dramatically-souped-up Quake III sound
 iron/armorhit             IRNMPAIN // Taken from Mega Man X6
+holyrocket/fire           IRNROCKT
+holyrocket/hit            IRNROCKX
+holyrocket/ready          IRNSHUCK // Taken from Unreal 2
 
 iron/spinattack           IRNSPINN
 iron/lunge                IRNLUNGE
