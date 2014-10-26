@@ -34,6 +34,7 @@ FROM 0.72 TO 0.73:
 - The hammer's overcharged impact damage has been increased from 4000 to one million. This is functionally useless, as there isn't an enemy above 4000 HP anyway, but higher numbers sound cooler.
 - The HUD now properly informs you as to what weapons you have picked up, as well as when you can use Iron Maiden.
 - Revenants no longer have +ALWAYSFAST on them, and their missile-homing systems have been made slightly laggier, but the missiles themselves are now 1.5x faster.
+- Cyberdemons can no longer infight with each other.
 
 
 FROM 0.71b TO 0.72:
