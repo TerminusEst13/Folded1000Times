@@ -116,7 +116,6 @@ actor WeeabooArchvile : Archvile replaces Archvile
         AXD1 H -1
         stop
     Death.UltimaBeam:
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         VILE QQQQQQQQ 2 A_FadeOut(0.1)

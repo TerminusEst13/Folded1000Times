@@ -131,7 +131,6 @@ actor WeeabooRevenant : Revenant replaces Revenant
         XDR2 F -1 A_BossDeath
         stop
     Death.UltimaBeam:
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         SKEL LLLLLLLL 2 A_FadeOut(0.1)

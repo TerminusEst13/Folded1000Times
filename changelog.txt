@@ -39,6 +39,7 @@ FROM 0.72 TO 0.73:
 - The Iron Maiden armor is now immune to environmental damage.
 - Iron Maiden blasts now can be fired slightly faster, for more rapid ATATATATATATATATATATATA.
 - The Iron Maiden now has a not-Kamehameha.
+- ds_infinitesouls is now a cvar for the many people that requested a way to have, well, infinite soul meter.
 
 
 FROM 0.71b TO 0.72:

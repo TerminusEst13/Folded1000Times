@@ -55,6 +55,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_noshotgun"))
             { ConsoleCommand("set ds_noshotgun 0");
               ConsoleCommand("archivecvar ds_noshotgun 0"); }
+
+        if (!GetCvar("ds_infinitesouls"))
+            { ConsoleCommand("set ds_infinitesouls 0");
+              ConsoleCommand("archivecvar ds_infinitesouls 0"); }
     }
 }
 
@@ -468,6 +472,8 @@ script WEEB_ENTER ENTER
 
         if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); }
         else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
+
+        if (GetCvar("ds_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
         
         // The Blind Guardian, AKA the BUTTSHIELD
         // It is a shield for your butt, you see.

@@ -418,6 +418,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 0
     AltFireSequence1A:
         IRNB AB 1
+        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlayWeaponSound("holyshot/fire")
         TNT1 A 0 A_FireCustomMissile("HolyShot",0,random(-100,100)/300.00,-8,0,0,random(-100,100)/300.00)
         TNT1 A 0 A_Recoil(1)
@@ -430,6 +431,7 @@ actor "Iron Fist" : Weapon
         goto AltFired
     AltFireSequence2:
         IRNB GH 1
+        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlayWeaponSound("holyshot/fire")
         TNT1 A 0 A_FireCustomMissile("HolyShot",0,random(-100,100)/300.00,8,0,0,random(-100,100)/300.00)
         TNT1 A 0 A_Recoil(1)
@@ -468,6 +470,7 @@ actor "Iron Fist" : Weapon
         goto AltHold
     AltFireCharged:
         IRNB MN 1
+        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_SetBlend("white",0.25,15)
         TNT1 A 0 A_PlayWeaponSound("holyrocket/fire")
         TNT1 A 0 A_FireCustomMissile("HolyRocket",0,random(-50,50)/500.00,6,0,0,random(-50,50)/500.00)
@@ -485,6 +488,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_GiveInventory("IronMaidenSlowness",1)
         TNT1 A 0 A_PlaySoundEx("holybeam/charge","SoundSlot7",0,2)
         TNT1 AAAAAAA 0 A_FireCustomMissile("UltimaSparkSpawner",0,0,0,0)
+        TNT1 A 0 A_AlertMonsters
         IRCH AAABBBCCCCCCCCCCC 1 A_FireCustomMissile("UltimaParticleSpawner",0,0,0,0)
         IRCH CCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJ 1 A_FireCustomMissile("UltimaParticleSpawner",0,0,0,0)
         IRCH JCCDDEEFFGGHHIIJJCDEFGHIJCDEFGHIJKK 1 A_FireCustomMissile("UltimaSwirl",0,0,0,0)
@@ -962,6 +966,7 @@ actor UltimaBeam : FastProjectile
     +BLOODLESSIMPACT
     +FOILINVUL
     +DONTBLAST
+    +NODAMAGETHRUST
     Speed 100
     Radius 2
     Height 2
