@@ -60,8 +60,6 @@ InInventory BRank, 1 { DrawImage "STYLVL4", 265, 13; }
 InInventory ARank, 1 { DrawImage "STYLVL5", 264, 14; }
 InInventory SRank, 1 { DrawImage "STYLVL6", 271, 13; }
 
-InInventory BlindGuardianShieldActive, 1 { drawimage "SHLDACTV", 7, 165; }
-
 // I would kill for Else clauses about now.
       InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 10, 168; }
       InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 20, 168; }
@@ -146,17 +144,45 @@ DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 10, 179;
         InInventory YellowSkull, 1 { drawimage "STKEYS4", 299, 187; }
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
-    
-    // Spinny Sentinel and Blind Guardian active icons
+
     InInventory SentinelUp
     {
-        DrawImage "SENTH1", 0, 24, centerbottom;
-        DrawNumber 3, smallfont, green, SentinelLifeCounter, -2, 24;
+        AspectRatio "4:3"
+        {
+        DrawImage "SENTACTV", 1, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, 45, 24;
+        }
+        AspectRatio "16:10"
+        {
+        DrawImage "SENTACTV", -31, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, 13, 24;
+        }
+        AspectRatio "16:9"
+        {
+        DrawImage "SENTACTV", -52, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, -8, 24;
+        }
     }
     InInventory BlindGuardianShieldUp
     {
-        DrawImage "SHLDA5", 48, 24, centerbottom;
-        DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 46, 24;
+        AspectRatio "4:3"
+        {
+        DrawImage "SHLDACTV", 1, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 54, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 45, 6; }
+        }
+        AspectRatio "16:10"
+        {
+        DrawImage "SHLDACTV", -31, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 22, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 13, 6; }
+        }
+        AspectRatio "16:9"
+        {
+        DrawImage "SHLDACTV", -52, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
+        }
     }
 }
 
@@ -178,8 +204,6 @@ isselected "Kharon + Exodus" { drawimage "GOTE1", 285, 174, center; }
 ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 256, 174, center;
 ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 256, 174, center; }
 ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}
-
-InInventory BlindGuardianShieldActive, 1 { drawimage "SHLDACTV", 6, 178; }
 
 DrawImage "HUDBARX", 5, 193;
 DrawBar "HARMOR", "HEMPTY", SuperCounter1, Horizontal, 7, 195;
@@ -288,16 +312,44 @@ DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 10, 188;
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
 
-    // Spinny Sentinel and Blind Guardian active icons
     InInventory SentinelUp
     {
-        DrawImage "SENTH1", 0, 24, centerbottom;
-        DrawNumber 3, smallfont, green, GlobalArray 61, -2, 24;
+        AspectRatio "4:3"
+        {
+        DrawImage "SENTACTV", 1, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, 45, 24;
+        }
+        AspectRatio "16:10"
+        {
+        DrawImage "SENTACTV", -31, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, 13, 24;
+        }
+        AspectRatio "16:9"
+        {
+        DrawImage "SENTACTV", -52, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, -8, 24;
+        }
     }
     InInventory BlindGuardianShieldUp
     {
-        DrawImage "SHLDA5", 48, 24, centerbottom;
-        DrawNumber 4, smallfont, lightblue, GlobalArray 60, 46, 24;
+        AspectRatio "4:3"
+        {
+        DrawImage "SHLDACTV", 1, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 54, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 45, 6; }
+        }
+        AspectRatio "16:10"
+        {
+        DrawImage "SHLDACTV", -31, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 22, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 13, 6; }
+        }
+        AspectRatio "16:9"
+        {
+        DrawImage "SHLDACTV", -52, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
+        }
     }
 }
 

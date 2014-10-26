@@ -5,8 +5,6 @@
 #include "weeb_const.h"
 
 global int 58:LevelCount;
-global int 60:ShieldHP[];
-global int 61:SentinelHP[];
 
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int ClientEnterLocks[PLAYERMAX];
@@ -402,6 +400,8 @@ script WEEB_ENTER ENTER
     i = unusedTID(37000, 47000);
     int u = unusedTID(37000, 47000);
     int IntroChance;
+    int ShieldHP;
+    int SentinelHP;
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     {
@@ -504,6 +504,10 @@ script WEEB_ENTER ENTER
                 SetActorPosition(ShieldTID,nx - FixedMul(32.0,cos(Angel)),ny - FixedMul(32.0,sin(Angel)),nz,0);
                 SetActorVelocity(ShieldTID,velx,vely,velz,0,0);
 
+                ShieldHP = GetActorProperty(ShieldTID, APROP_HEALTH);
+                TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
+                GiveInventory("BlindGuardianLifeCounter",ShieldHP);
+
                 if (CheckInventory("BlindGuardianShieldHeal") == 1)
                 {
                     GiveActorInventory(ShieldTID,"BlindGuardianHealth",1000);
@@ -522,6 +526,7 @@ script WEEB_ENTER ENTER
                     // YOU DIED AS YOU LIVED
                     TakeInventory("BlindGuardianShieldActive",1);
                     // THE OPPOSITE SIDE OF A PENIS
+                    TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
                 }
             }
         }
@@ -562,6 +567,10 @@ script WEEB_ENTER ENTER
                 SetActorPosition(SentTID,nx2,ny2,nz2+24.0,0);
                 SetActorVelocity(SentTID,velx,vely,velz,0,0);
 
+                SentinelHP = GetActorProperty(SentTID, APROP_HEALTH);
+                TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
+                GiveInventory("SentinelLifeCounter",SentinelHP);
+
                 if (CheckInventory("SentinelDissidentAggressor") == 1)
                 {
                     GiveActorInventory(SentTID,"SentinelHealth",200);
@@ -574,6 +583,7 @@ script WEEB_ENTER ENTER
                     SentTID = 0;
                     TakeInventory("SentinelUp",1);
                     TakeInventory("SentinelActive",1);
+                    TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
                 }
             }
         }
@@ -796,10 +806,21 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (MarchOfTheImmortal >= 21)
+            if (CheckInventory("MidCombat") > 1)
             {
-              TakeInventory("SuperMeterCounter",1);
-              MarchOfTheImmortal = 0;
+              if (MarchOfTheImmortal >= 35)
+              {
+                TakeInventory("SuperMeterCounter",1);
+                MarchOfTheImmortal = 0;
+              }
+            }
+            else
+            {
+              if (MarchOfTheImmortal >= 21)
+              {
+                TakeInventory("SuperMeterCounter",1);
+                MarchOfTheImmortal = 0;
+              }
             }
 
             MarchOfTheImmortal++;
@@ -844,10 +865,6 @@ script WEEB_ENTER ENTER
         else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
         if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
         else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
-
-        // [Kyle873] Assign the current player's Guardian Shield and Sentinel HP to the glboal var so it can be read by SBARINFO
-        ShieldHP[PlayerNumber()] = GetActorProperty(ShieldTID, APROP_HEALTH);
-        SentinelHP[PlayerNumber()] = GetActorProperty(SentTID, APROP_HEALTH);
         
         Delay(1);
         if (isDead(0))
@@ -860,6 +877,8 @@ script WEEB_ENTER ENTER
             TakeInventory("SentinelActive",1);
             TakeInventory("BlindGuardianShieldUp",1);
             TakeInventory("BlindGuardianShieldActive",1);
+            TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
+            TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
             terminate;
         }
     }
@@ -924,6 +943,8 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("MidCombat",0x7FFFFFFF);
     TakeInventory("LegionCounter",0x7FFFFFFF);
     TakeInventory("LegionStacked",0x7FFFFFFF);
+    TakeInventory("SentinelLifeCounter",0x7FFFFFFF); // Already done in the Enter script.
+    TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF); // But just in case.
 }
 
 script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
