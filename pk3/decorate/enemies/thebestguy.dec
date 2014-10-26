@@ -3,6 +3,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
     +MISSILEMORE
     +MISSILEEVENMORE
     -LONGMELEERANGE
+    +DONTBLAST
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "SabbathDamage", 192

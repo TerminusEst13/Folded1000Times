@@ -54,6 +54,7 @@ ACTOR Emperor replaces SpiderMastermind
     +MISSILEEVENMORE
     +BOSSDEATH
     +DONTRIP
+    +DONTBLAST
     Obituary "%o was sent towards the pantheons by an Emperor."
     States 
     { 

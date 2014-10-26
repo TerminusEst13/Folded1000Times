@@ -160,6 +160,7 @@ ACTOR Blackened replaces PainElemental
     +MISSILEEVENMORE
     +VISIBILITYPULSE
     +NOINFIGHTING
+    +DONTBLAST
     SeeSound "blackened/laugh"
     ActiveSound "blackened/whisper"
     PainSound "blackened/pain"

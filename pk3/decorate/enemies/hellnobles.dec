@@ -14,6 +14,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     DamageFactor "ExodusJump", 0.0
     BloodColor DarkOliveGreen
     +MISSILEMORE
+    +DONTBLAST
     States
     {
     Melee:
@@ -165,6 +166,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     BloodColor DarkOliveGreen
     +MISSILEMORE
     +MISSILEEVENMORE
+    +DONTBLAST
     States
     {
     See:

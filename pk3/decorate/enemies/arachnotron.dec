@@ -23,6 +23,7 @@ ACTOR Priest replaces Arachnotron
     +MISSILEMORE
     +MISSILEEVENMORE
     +BOSSDEATH
+    +DONTBLAST
     SeeSound "priest/see"
     PainSound "priest/pain"
     DeathSound "priest/death"
