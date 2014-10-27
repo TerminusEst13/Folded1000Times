@@ -161,6 +161,7 @@ ACTOR Blackened replaces PainElemental
     +VISIBILITYPULSE
     +NOINFIGHTING
     +DONTBLAST
+    +FORCEYBILLBOARD
     SeeSound "blackened/laugh"
     ActiveSound "blackened/whisper"
     PainSound "blackened/pain"
@@ -265,6 +266,7 @@ ACTOR DarkAfterimageA
     Alpha 0.65
     +CLIENTSIDEONLY
     +NOINTERACTION
+    +FORCEYBILLBOARD
     Scale 0.975
     States
     {
