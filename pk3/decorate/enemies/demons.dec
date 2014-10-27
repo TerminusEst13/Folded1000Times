@@ -269,6 +269,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         SARG HHHHHHHH 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
     }
@@ -398,6 +399,7 @@ ACTOR WeeabooClink replaces Spectre
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         CLNK HHHHHHHH 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
     }

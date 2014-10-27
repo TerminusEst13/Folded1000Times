@@ -290,6 +290,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         POSS GGGGGGGG 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
     }
@@ -729,6 +730,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         SPOS GGGGGGGG 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
     }
@@ -955,6 +957,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         CPOS GGGGGGGG 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
     }
@@ -1084,7 +1087,8 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
     Death.UltimaBeam:
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
-        SSWV HHHHHHHH 2 A_FadeOut(0.1)
+        SSWV HHHHHHHH 2 A_FadeOut(0.1
+        TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
     }

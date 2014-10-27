@@ -175,6 +175,7 @@ ACTOR Emperor replaces SpiderMastermind
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         EPRR GGGGGGGG 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
         NONE A -1 A_BossDeath
         stop
     } 
@@ -245,6 +246,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         CYBR GGGGGGGG 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
         NONE A -1 A_BossDeath
         stop
     }
