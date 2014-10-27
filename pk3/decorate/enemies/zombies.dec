@@ -1087,7 +1087,7 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
     Death.UltimaBeam:
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
-        SSWV HHHHHHHH 2 A_FadeOut(0.1
+        SSWV HHHHHHHH 2 A_FadeOut(0.1)
         TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
