@@ -84,6 +84,7 @@ GRAPHICS:
 - Grand Knights History (The Blind Guardian shield)
 - PresidentPeople (Fixing the Blind Guardian's rotations so it had a proper front sprite)
 - MartyKirra (The very sexy sprites for the Omen)
+- Scuba Steve/Mike12/torridGristle (The sheathe for the Kharon, heavily edited from Action Doom 2)
 
 CODE:
 =========
