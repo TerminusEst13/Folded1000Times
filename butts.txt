@@ -87,7 +87,16 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 [04:32:16 pm] TerminusEst13: Kill a dude so hard his bones rocket out and shred through other dudes.
 [04:32:35 pm] Badass adorkable: not as much shred as much as PAAAAAAIN
 [04:32:53 pm] Badass adorkable: kill a pinkie to stun pinkies behind it
-[04:33:30 pm] DRL 3.33: instead of gibing, they explode, damageing other monsters around them
+[04:33:30 pm] DRL 3.33: instead of gibing, they explode, damageing other monsters around them\
+
+
+
+
+<PresidentPeople> TerminusEst13: Has this been fixed yet?  http://puu.sh/cs47P/9f763e0207.png
+<TerminusEst13> Pres: Not yet. I forgot how to fix it.
+<PresidentPeople> Give the eye sprites the same dimensions as the shadow sprites
+<PresidentPeople> Just an empty box with the eyes placed where the head would be
+<TerminusEst13> Brb putting that on butts.
 
 
 
