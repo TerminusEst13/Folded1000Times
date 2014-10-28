@@ -40,6 +40,7 @@ FROM 0.72 TO 0.73:
 - Iron Maiden blasts now can be fired slightly faster, for more rapid ATATATATATATATATATATATA.
 - The Iron Maiden now has a not-Kamehameha.
 - ds_infinitesouls is now a cvar for the many people that requested a way to have, well, infinite soul meter.
+- All of the more network-intensive deaths that spawn extra interactable actors have had their chance reduced for easier latency handling.
 
 
 FROM 0.71b TO 0.72:

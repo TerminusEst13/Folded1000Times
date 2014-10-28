@@ -86,9 +86,9 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_AlertMonsters
         TNT1 AA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",2)
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        TNT1 A 0 A_Jump(16,"Decapitation1","Decapitation2")
+        TNT1 A 0 A_Jump(16,"Decapitation1","Decapitation2","kubiuti3")
         TNT1 A 0 A_Jump(128,"Death.Bloody","CleaveThrough","CleaveThrough2")
-        TNT1 A 0 A_Jump(128,"kubiuti2","kubiuti3","kubiuti4","kubiuti5","kubiuti6","kubiuti7")
+        TNT1 A 0 A_Jump(128,"kubiuti2","kubiuti4","kubiuti5","kubiuti6","kubiuti7")
         XDP4 A 1 A_SpawnDebris("BloodShower2",0)
         TNT1 A 0 A_NoBlocking
         TNT1 AAAAAA 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))

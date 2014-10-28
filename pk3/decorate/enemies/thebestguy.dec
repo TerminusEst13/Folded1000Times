@@ -162,8 +162,13 @@ actor RevenantTracer2 : RevenantTracer replaces RevenantTracer
     }
 }
 
-actor SKEXKubiuted : POSXKubiuted
+actor SKEXKubiuted// : POSXKubiuted
 {
+    -SOLID
+    +CLIENTSIDEONLY
+    Radius 8
+    Height 8
+    Mass 500
     States
     {
     Spawn:
@@ -175,25 +180,8 @@ actor SKEXKubiuted : POSXKubiuted
         goto Spawn+11
     Spawned:
         TNT1 A 0 A_PlaySound("S_Blodd")
-        TNT1 A 0 A_ChangeFlag("PUSHABLE",0)
-    Spawned2:    
-        XDF1 H 3 A_Look
-        goto Spawned2
-    See:    
-        XDF1 H 3 A_Chase
-        loop
-    Melee:
-        XDF1 H 1 A_FaceTarget
-        TNT1 A 0 DamageThing(1)
-        TNT1 A 0 A_ChangeFlag("PUSHABLE",1)
-        TNT1 A 0 ThrustThingZ(0,random(15,40),0,0)
-        TNT1 A 0 A_Recoil(2+random(0,8))
-        goto Spawn+3
-    Death:
-        TNT1 A 0 A_Fall
-        TNT1 A 0 A_Scream
-        TNT1 AAAAA 0 A_SpawnDebris("BloodShower2")
-        BLD1 CBA 1
-        Stop
+        XDF1 H 1    
+        XDF1 H -1
+        stop
     }
 }
