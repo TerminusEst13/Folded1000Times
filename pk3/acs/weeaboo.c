@@ -59,6 +59,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_infinitesouls"))
             { ConsoleCommand("set ds_infinitesouls 0");
               ConsoleCommand("archivecvar ds_infinitesouls 0"); }
+
+        if (!GetCvar("ds_nospecials"))
+            { ConsoleCommand("set ds_nospecials 0");
+              ConsoleCommand("archivecvar ds_nospecials 0"); }
     }
 }
 
@@ -584,12 +588,15 @@ script WEEB_ENTER ENTER
                 TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
                 GiveInventory("SentinelLifeCounter",SentinelHP);
 
+                // It's probably not exactly very efficient, but honestly I don't care.
+                // As long as code works and doesn't crash, I think it's fine.
                 if (CheckInventory("SentinelDissidentAggressor") == 1)
                 {
                     GiveActorInventory(SentTID,"SentinelHealth",200);
                     TakeInventory("SentinelDissidentAggressor",1);
                 }
 
+                // I don't have a lot of programmer friends.
                 if (CheckActorInventory(SentTID,"SentinelBeyondTheRealmsOfDeath"))
                 {
                     Thing_Remove(SentTID);
@@ -691,6 +698,8 @@ script WEEB_ENTER ENTER
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
 
+        if (GetCvar("ds_nospecials") == 0)
+        {
         if (keypressed(BT_MOVERIGHT))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
@@ -707,6 +716,7 @@ script WEEB_ENTER ENTER
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
                       else { GiveInventory("DoubleTapReadyBack",8); }}}
+        }
 
     // This block of code was done by Kyle873.
     // He wishes me to inform you that ACS is a pile of cocks that owes him money.
@@ -817,7 +827,7 @@ script WEEB_ENTER ENTER
             if (IronArmor >= 7)
             {
               if (CheckInventory("Armor") < 40) { GiveInventory("IronMaidenArmor",1); }
-              if (CheckInventory("Wounded") == 1) { GiveInventory("IronMaidenArmor",1); }
+              //if (CheckInventory("Wounded") == 1) { GiveInventory("IronMaidenArmor",1); }
               GiveInventory("IronMaidenArmor",1);
               IronArmor = 0;
             }
