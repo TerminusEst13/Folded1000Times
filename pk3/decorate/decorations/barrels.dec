@@ -33,7 +33,7 @@ ACTOR XaserBarrel : DestructableDecorationBaseStates replaces ExplosiveBarrel
     Spawn:
         BAR1 AB 6
         Loop
-    Pain:
+    Pain2:
         TNT1 A 0
         TNT1 A 0
         TNT1 A 0 //A_JumpIfHealthLower(1000000001,"Death2")
