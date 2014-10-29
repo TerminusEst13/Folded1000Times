@@ -12,6 +12,7 @@ actor ReadyToDoubleJump : Boolean {}
 actor InIronMaiden : Boolean {}
 actor IronMaidenWarning : Boolean {}
 actor Wounded : Boolean {}
+actor CheckYourPrivilege : Boolean {}
 
 actor BlindGuardianWaitForAnAnswer : Boolean {}
 actor BlindGuardianShieldUp : Boolean {}
@@ -83,6 +84,8 @@ actor LegionStacked : Counter { Inventory.MaxAmount 9 }
 actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
 actor UziSequence : Counter { Inventory.MaxAmount 60 }
 actor IronChargeCounter : Counter { Inventory.MaxAmount 35 }
+actor KharonChargedCounter : Counter { Inventory.MaxAmount 35 }
+actor KharonChargedStacked : Counter { Inventory.MaxAmount 6 }
 
 actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
 actor ContraArmorToken : Counter { Inventory.MaxAmount 4 }

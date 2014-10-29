@@ -107,18 +107,29 @@ actor ShotgunPickup2 : PickupBase replaces Shotgun
     States
     {
     Spawn:
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_ONLINECHECK,0,0) == 1,"Nope")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
+        TNT1 A 5 // Momentary delay in case the map loads too fast for the weapon.
+                 // Sounds crazy, but it's happened before.
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_ONLINECHECK,0,0) == 1,"Nope") // Is the game online?
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope") // Does the player already have the shotgun?
+    Spawn2:
         TNT1 AAAA 1 A_Look
         loop
     See:
+        TNT1 A 1 // One tic buffer to prevent infinite loops.
+        // Check first to see if the player already has it in singleplayer.
+        // If the check's already been done, skip it.
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
         TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
-        goto Spawn
+    See1: // Then do a see loop.
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
     See2:
         TNT1 A 0
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
-        goto See
+        goto See1
     Reveal:
         TNT1 A 0
         TNT1 A 1
@@ -150,17 +161,25 @@ actor ShotgunPickup : PickupBase replaces SuperShotgun
     States
     {
     Spawn:
+        TNT1 A 5
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
+    Spawn2:
         TNT1 AAAA 1 A_Look
         loop
     See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
         TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
-        goto Spawn
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
     See2:
         TNT1 A 0
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
-        goto See
+        goto See1
     Reveal:
         TNT1 A 0
         TNT1 A 1
@@ -192,17 +211,25 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
     States
     {
     Spawn:
+        TNT1 A 5
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
+    Spawn2:
         TNT1 AAAA 1 A_Look
         loop
     See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
         TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
-        goto Spawn
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
     See2:
         TNT1 A 0
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
-        goto See
+        goto See1
     Reveal:
         TNT1 A 0
         TNT1 A 1
@@ -234,17 +261,25 @@ actor UziPickup : PickupBase replaces PlasmaRifle
     States
     {
     Spawn:
+        TNT1 A 5
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
+    Spawn2:
         TNT1 AAAA 1 A_Look
         loop
     See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
         TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
-        goto Spawn
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
     See2:
         TNT1 A 0
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
-        goto See
+        goto See1
     Reveal:
         TNT1 A 0
         TNT1 A 1
@@ -276,17 +311,25 @@ actor HammerPickup : PickupBase replaces Chainsaw
     States
     {
     Spawn:
+        TNT1 A 5
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope") // Yum.
+    Spawn2:
         TNT1 AAAA 1 A_Look
         loop
     See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
         TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
-        goto Spawn
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
     See2:
         TNT1 A 0
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
-        goto See
+        goto See1
     Reveal:
         TNT1 A 0
         TNT1 A 1
@@ -318,17 +361,25 @@ actor IronSaviorPickup : PickupBase replaces BFG9000
     States
     {
     Spawn:
+        TNT1 A 5
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_ARMRCHECK,0,0) == 1,"Nope")
+    Spawn2:
         TNT1 AAAA 1 A_Look
         loop
     See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
         TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_ARMRCHECK,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIfTargetInLos("See2",360)
-        goto Spawn
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
     See2:
         TNT1 A 0
         TNT1 A 0 A_JumpIfCloser(512,"Reveal")
-        goto See
+        goto See1
     Reveal:
         TNT1 A 0
         TNT1 A 1
