@@ -591,26 +591,6 @@ health    2
     States
     {
     Spawn:
-        TNT1 A 0
-        TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        GIB8 H 1
-        Loop
-    Toaster0:
-        BEF2 A 3
-        BEF2 B 3 A_Jump(128,2)
-        BEF1 E 0 //A_CustomMissile("BloodShower2",0,0,random(-10,10),2,random(-10,20))
-        BEF1 E 0 A_SpawnDebris("BloodShower2",1)
-        BEF1 E 4
-        BEF1 F 4
-        BEF1 G 4
-        Stop
-    Toaster1:
-        Goto Toaster0
-    Toaster2:
         BEF2 AB 3
         BEF1 EFG 4
         Stop
@@ -638,42 +618,14 @@ actor BloodShower2 : Blood
         Goto See
     See:
         TNT1 A 0
-        TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        BEF1 A 1
-        Loop
-    Toaster0:
-        BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
-        Loop
-    Toaster1:
         BEF1 ABCD 2 A_SpawnItem("BloodShower3",0,0,0,1)
-        Loop
-    Toaster2:
-        BEF1 ABCD 2
         Loop
     Death:
         BEF1 D 1 A_CheckFloor("Crash")
         Stop
     Crash:
         TNT1 A 0
-        TNT1 A 0
-        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
-        BEF1 A 1
-        Loop
-    CrashToaster0:
         BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-        Stop
-    CrashToaster1:
-        BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-        Stop
-    CrashToaster2:
-        BEF1 A 1
         Stop
     }
 }
@@ -687,44 +639,15 @@ actor BloodShowerB2 : BloodShower2
     Spawn:
         TNT1 A 0
         TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        BEF1 A 1
-        Loop
-    Toaster0:
-        BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        Loop
-    Toaster1:
-        BEF1 AA 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 BB 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 CC 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 DD 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        Loop
-    Toaster2:
-        BEF1 ABCD 4
+        BEF1 AA 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 BB 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 CC 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 DD 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
         Loop
     Crash:
         TNT1 A 0
         TNT1 A 0
-        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
-        BEF1 A 1
-        Loop
-    CrashToaster0:
         BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-        Stop
-    CrashToaster1:
-        BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-        Stop
-    CrashToaster2:
-        BEF1 A 1
         Stop
     }
 }
@@ -738,44 +661,15 @@ actor BloodShowerC2 : BloodShower2
     Spawn:
         TNT1 A 0
         TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        BEF1 A 1
-        Loop
-    Toaster0:
-        BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        Loop
-    Toaster1:
-        BEF1 AA 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 BB 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 CC 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 DD 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        Loop
-    Toaster2:
-        BEF1 ABCD 4
+        BEF1 AA 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 BB 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 CC 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 DD 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
         Loop
     Crash:
         TNT1 A 0
         TNT1 A 0
-        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
-        BEF1 A 1
-        Loop
-    CrashToaster0:
         BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-        Stop
-    CrashToaster1:
-        BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-        Stop
-    CrashToaster2:
-        BEF1 A 1
         Stop
     }
 }
@@ -979,30 +873,10 @@ actor BloodSplashGus1 : BloodShower2
     {
     Spawn:
         TNT1 A 0
-        Goto See
-    See:
         TNT1 A 0
-        TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        BEF1 A 1
-        Loop
-    Toaster0:
         BEF1 A 0 A_SpawnItem("EnemySplashGus1",0,0,0,1)
-        Goto Toaster0A
-    Toaster0A:
-        BEF1 AABBCCDD 1 A_SpawnItem("BloodShower3",0,0,0,1)
-        Loop
-    Toaster1:
-        BEF1 A 0 A_SpawnItem("EnemySplashGus1",0,0,0,1)
-        Goto Toaster1A
-    Toaster1A:
-        BEF1 ABCD 2 A_SpawnItem("BloodShower3",0,0,0,1)
-        Loop
-    Toaster2:
-        BEF1 ABCD 2
+    Spawn1:
+        BEF1 ABCD 3 A_SpawnItem("BloodShower3",0,0,0,1)
         Loop
     Death:
         BEF1 D 1 A_CheckFloor("Crash")
@@ -1010,20 +884,8 @@ actor BloodSplashGus1 : BloodShower2
     Crash:
         TNT1 A 0
         TNT1 A 0
-        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
-        BEF1 A 1
-        Loop
-    CrashToaster0:
-        BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-        Stop
     CrashToaster1:
         BEF1 A 1 A_SpawnItem("BloodShower4",0,0,0,1)
-        Stop
-    CrashToaster2:
-        BEF1 A 1
         Stop
     }
 }
@@ -1045,50 +907,17 @@ actor BloodSplashGus1b : BloodShower2
     Spawn:
         TNT1 A 0
         TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        BEF1 A 1
-        Loop
-    Toaster0:
         BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
-        Goto Toaster0A
-    Toaster0A:
-        BEF1 AAAA 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 BBBB 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 CCCC 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 DDDD 1 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        Loop
-    Toaster1:
-        BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
-        Goto Toaster1A
-    Toaster1A:
-        BEF1 AA 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 BB 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 CC 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        BEF1 DD 2 A_SpawnItem("BloodShowerB3",0,0,0,1)
-        Loop
-    Toaster2:
-        BEF1 ABCD 4
+    Spawn1:
+        BEF1 AA 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 BB 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 CC 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
+        BEF1 DD 3 A_SpawnItem("BloodShowerB3",0,0,0,1)
         Loop
     Crash:
         TNT1 A 0
         TNT1 A 0
-        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
-        BEF1 A 1
-        Loop
-    CrashToaster0:
         BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-        Stop
-    CrashToaster1:
-        BEF1 A 1 A_SpawnItem("BloodShowerB4",0,0,0,1)
-        Stop
-    CrashToaster2:
-        BEF1 A 1
         Stop
     }
 }
@@ -1108,50 +937,15 @@ actor BloodSplashGus1c : BloodShower2
     Spawn:
         TNT1 A 0
         TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        BEF1 A 1
-        Loop
-    Toaster0:
-        //BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
-        //Goto Toaster0A
-    //Toaster0A:
-        BEF1 AAAA 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 BBBB 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 CCCC 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 DDDD 1 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        Loop
-    Toaster1:
-        //BEF1 A 0 A_SpawnItem("EnemySplashGus2",0,0,0,1)
-        //Goto Toaster1A
-    //Toaster1A:
-        BEF1 AA 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 BB 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 CC 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        BEF1 DD 2 A_SpawnItem("BloodShowerC3",0,0,0,1)
-        Loop
-    Toaster2:
-        BEF1 ABCD 4
+        BEF1 AA 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 BB 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 CC 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
+        BEF1 DD 3 A_SpawnItem("BloodShowerC3",0,0,0,1)
         Loop
     Crash:
         TNT1 A 0
         TNT1 A 0
-        //TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 0,"CrashToaster0")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"CrashToaster1")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"CrashToaster2")
-        BEF1 A 1
-        Loop
-    CrashToaster0:
         BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-        Stop
-    CrashToaster1:
-        BEF1 A 1 A_SpawnItem("BloodShowerC4",0,0,0,1)
-        Stop
-    CrashToaster2:
-        BEF1 A 1
         Stop
     }
 }
