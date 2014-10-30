@@ -20,7 +20,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     DamageFactor "KubiRangeAttack", 2.25
     DamageFactor "KubiLungeAttack", 2.25
     DamageFactor "AcaciaDamage", 1.65
-    DamageFactor "KharonSheathe", 1.65
+    DamageFactor "KharonSheathe", 1.25
     DamageFactor "ChemiKill", 1.65
     DamageFactor "HaltHammerzeitImpact", 1.65
     DamageFactor "TestamentDamage", 1.65
