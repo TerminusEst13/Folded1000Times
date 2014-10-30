@@ -30,4 +30,6 @@ FROM V1c TO V2:
   ^- Graveworm is now Melodic Black Metal.
   ^- Hexen is now Thrash Metal.
   ^- Lamb of God is now metalcore.
-  ^- Refuse/Resist was on Chaos A.D.
+  ^- Refuse/Resist was on Chaos A.D., not Confuse A.D.
+  ^- Reviewers have identified Celtic Frost's To Mega Therion (not Thyrion)
+     album as Death Metal.
