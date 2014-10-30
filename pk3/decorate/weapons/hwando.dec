@@ -445,6 +445,11 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_PlayWeaponSound("sheathe/swing")
         TNT1 A 0 A_JumpIfInventory("SheatheSwung",1,"AltAttack2")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltAttack1")
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH A 1
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
@@ -469,7 +474,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFired2")
     AltFired:
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 30 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 35 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("SheatheSwung",1)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
@@ -478,7 +483,7 @@ ACTOR Kharon : Weapon
         TNT1 A 1
         Goto Select4
     AltFired2:
-        TNT1 A 30 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 35 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("SheatheSwung",1)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
@@ -488,6 +493,11 @@ ACTOR Kharon : Weapon
         Goto Select2
     AltAttack1:
         TNT1 A 0 A_PlayWeaponSound("sheathe/swing")
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH E 1
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
@@ -512,6 +522,11 @@ ACTOR Kharon : Weapon
         goto AltFired2
     AltAttack2:
         TNT1 A 0 A_PlayWeaponSound("sheathe/swing")
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH J 1
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
