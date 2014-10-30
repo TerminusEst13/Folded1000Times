@@ -1,0 +1,33 @@
+CREDITS TO:
+Bloax
+TheToxicAvenger
+Mike12
+CookieJar
+
+
+
+FROM V1c TO V2:
+===========================
+- 100 more songs!
+- Removed and replaced Rammstein's Engel with Feuer Frei, due to Engel messing up
+  in-game and playing ring tones instead.
+- Added a "default song" button to play the level's standard music.
+- Moved all song info to LANGUAGE, for people to edit at their leisure if they
+  replace the music.
+- Messages now no longer overlap and will replace each other.
+- Necroticism - Descanting the Insalubrious had an unreadable symbol that was
+  refusing to be read properly.
+- Corrected some mistaken song information:
+  ^- A Succubus In Rapture was not by set_abominae, it was by Dimmu Borgir.
+  ^- Rammstein has identified as Neue Deutsche Harte.
+  ^- Annihilator has never identified their genre as groove metal.
+  ^- Biohazard has identified as Hardcore.
+  ^- Ea, Lord of the Depths was on the album Burzum.
+  ^- Alice in Chains is decisively Grunge.
+  ^- The Midnight Carnival is Speed, not Power.
+  ^- Children of Bodom's songs have been labeled Melodic Death.
+  ^- Fear Factory is Industrial Metal, not Death Metal.
+  ^- Graveworm is now Melodic Black Metal.
+  ^- Hexen is now Thrash Metal.
+  ^- Lamb of God is now metalcore.
+  ^- Refuse/Resist was on Chaos A.D.
