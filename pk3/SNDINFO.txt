@@ -346,6 +346,8 @@ sword/beam3               SRDBEEM3
 sword/block               SRDBLOCK // Taken from Super Smash Bros. Brawl
 sword/reflect             SRDRFLCT
 sheathe/lower             SHTHEDWN // Taken from the Oblivion Combat Sound Replacement
+sheathe/swing             SHTHSWNG // Taken from the General Series 6000
+sheathe/reflect           SHTHBLCK // Taken from the Oblivion Combat Sound Replacement
 
 idle/spray                IDLSPRAY
 idle/rub                  IDLRUBBR

@@ -2,6 +2,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
 {
     Speed 10
     Species "Body"
+    PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
@@ -42,6 +43,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         goto Super::Pain
     Pain.SabbathDamage:
+    Pain.KharonSheathe:
         SARG H 5 //A_Recoil(2)
         SARG H 5 A_Pain
         Goto See
@@ -294,6 +296,7 @@ ACTOR WeeabooClink replaces Spectre
     Obituary "%o was bisected by a steel beast."
     Species "Body"
     PainChance 64
+    PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
@@ -345,6 +348,7 @@ ACTOR WeeabooClink replaces Spectre
         CLNK H 3 A_Pain
         Goto See
     Pain.SabbathDamage:
+    Pain.KharonSheathe:
         CLNK H 5 A_Recoil(2)
         CLNK H 5 A_Pain
         Goto See

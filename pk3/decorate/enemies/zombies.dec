@@ -5,6 +5,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiRangeAttack", 255
@@ -18,6 +19,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "KubiLungeAttack", 10.0
     DamageFactor "AcaciaDamage", 3.0
     DamageFactor "ChemiKill", 5.0
+    DamageFactor "KharonSheathe", 5.0
     DamageFactor "HaltHammerzeitImpact", 5.0
     DamageFactor "TestamentDamage", 5.0
     DamageFactor "SabbathDamage", 5.0
@@ -437,6 +439,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiRangeAttack", 255
@@ -450,6 +453,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "KubiLungeAttack", 6.6
     DamageFactor "AcaciaDamage", 3.0
     DamageFactor "ChemiKill", 3.3
+    DamageFactor "KharonSheathe", 3.3
     DamageFactor "HaltHammerzeitImpact", 3.3
     DamageFactor "TestamentDamage", 3.3
     DamageFactor "SabbathDamage", 3.3
@@ -838,6 +842,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiRangeAttack", 255
     PainChance "KubiSpinAttack", 255
@@ -851,6 +856,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "KubiLungeAttack", 3.0
     DamageFactor "AcaciaDamage", 1.5
     DamageFactor "ChemiKill", 1.5
+    DamageFactor "KharonSheathe", 1.5
     DamageFactor "HaltHammerzeitImpact", 1.5
     DamageFactor "TestamentDamage", 1.5
     DamageFactor "SabbathDamage", 1.5
@@ -1037,6 +1043,7 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
     +MISSILEMORE
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiRangeAttack", 255

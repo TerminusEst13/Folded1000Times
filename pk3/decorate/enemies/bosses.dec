@@ -38,6 +38,7 @@ ACTOR Emperor replaces SpiderMastermind
     PainSound "emperor/pain" 
     DeathSound "emperor/death" 
     ActiveSound "emperor/idle"
+    PainChance "KharonSheathe", 128
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
@@ -147,6 +148,10 @@ ACTOR Emperor replaces SpiderMastermind
         EPRR G 2 
         EPRR G 2 A_Pain 
         Goto See
+    Pain.KharonSheathe:
+        EPRR G 4 
+        EPRR G 4 A_Pain 
+        Goto See
     Death.IronFistDamage:
     Death.Kubiuti:
         TNT1 A 0 A_AlertMonsters
@@ -187,6 +192,7 @@ actor EmperorHailSpell : EmperorShotSpell { -NOGRAVITY }
 actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
 {
     Scale 1.1
+    PainChance "KharonSheathe", 128
     PainChance "IronFistDamage", 255
     PainChance "SabbathDamage", 96
     DamageFactor "GuardMove", 0.0
@@ -225,6 +231,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain
     Pain.SabbathDamage:
+    Pain.KharonSheathe:
         CYBR G 6
         CYBR G 6 A_Pain
         Goto See

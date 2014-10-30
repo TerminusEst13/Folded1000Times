@@ -8,6 +8,7 @@ ACTOR Priest replaces Arachnotron
     Mass 600
     PainChance 192
     PainChance "kubiuti", 255
+    PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
@@ -94,6 +95,7 @@ ACTOR Priest replaces Arachnotron
         PRST E 3 A_Pain
         Goto See
     Pain.SabbathDamage:
+    Pain.KharonSheathe:
         PRST E 5 //A_Recoil(2)
         PRST E 5 A_Pain
         Goto See
