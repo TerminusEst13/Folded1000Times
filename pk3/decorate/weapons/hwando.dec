@@ -706,7 +706,7 @@ actor KharonSheatheSmack : FastProjectile
     Radius 18
     Height 18
     Speed 32
-    Damage (25)
+    Damage (20)
     DamageType "KharonSheathe"
     Species "Player"
     Projectile
@@ -743,7 +743,7 @@ actor KharonSheatheSmack : FastProjectile
 
 actor KharonSheatheSmack2 : KharonSheatheSmack
 {
-    Damage (50)
+    Damage (40)
     States
     {
     XDeath:
