@@ -19,6 +19,7 @@ actor PickupBase : CustomInventory
     -COUNTKILL
     -ISMONSTER
     -SOLID
+    -SHOOTABLE
     States
     {
     Spawn:
