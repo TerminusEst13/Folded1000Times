@@ -437,7 +437,7 @@ script WEEB_ENTER ENTER
 
         GiveInventory("ImAlive",1);
     }
-    else if (CheckInventory("ImAlive") == 1)
+    else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
     {
         IntroChance = random(0,3);
         if (IntroChance == 3) { LocalAmbientSound("haelin/intro",127); }

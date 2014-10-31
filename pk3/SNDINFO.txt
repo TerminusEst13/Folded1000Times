@@ -51,7 +51,7 @@ haelin/idle1_3          HLIDL1_3
 
 henshin/call            HLHENSHN
 
-$random haelin/intro { hntro1 hntro2 hntro3 hntro4 hntro5 hntro6 hntro7 hntro8 hntro9 hntro10  hntro11 hntro12 hntro13 hntro14 hntro15 hntro16 hntro17 hntro18 hntro19 hntro20 hntro21 hntro22 hntro23 hntro24 hntro25 hntro26 hntro27 hntro28 hntro29 hntro30 hntro31 hntro32 hntro33 hntro34 hntro35 hntro36 hntro37 hntro38 }
+$random haelin/intro { hntro1 hntro2 hntro3 hntro4 hntro5 hntro6 hntro7 hntro8 hntro9 hntro10  hntro11 hntro12 hntro13 hntro14 hntro15 hntro16 hntro17 hntro18 hntro19 hntro20 hntro21 hntro22 hntro23 hntro24 hntro25 hntro26 hntro27 hntro28 hntro29 hntro30 hntro31 hntro32 hntro33 hntro34 hntro35 hntro36 hntro37 hntro38 hntro39 }
 hntro1                  HLNTRO1
 hntro2                  HLNTRO2
 hntro3                  HLNTRO3
@@ -90,6 +90,7 @@ hntro35                 HLNTRO39 // Testament - Down for Life
 hntro36                 HLNTRO40
 hntro37                 HLNTRO41 // Ozzy Osbourne - Crazy Train
 hntro38                 HLNTRO42
+hntro39                 HLNTRO24
 
 $random haelin/attack { hatk1 hatk1b hatk1c hatk1d hatk1 hatk1b hatk1c hatk1d hatk1 hatk1 hatk2 hatk3 hatk4 hatk5 hatk6 hatk7 hatk8 }
 hatk1                   HLATCK1a
