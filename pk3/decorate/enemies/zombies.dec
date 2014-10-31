@@ -75,8 +75,8 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        TNT1 A 0 A_Jump(64,"Decapitation2","Decapitation3","TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4")
-        TNT1 A 0 A_Jump(228,"ArmGone","ArmGone2","LegGone","LegGone2")
+        TNT1 A 0 A_Jump(64,"Decapitation2","Decapitation3")
+        TNT1 A 0 A_Jump(228,"ArmGone","ArmGone2","LegGone","LegGone2","TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4")
         TNT1 A 0 A_SpawnItem("POSXKubiuted",0,40,0)
         TNT1 A 0 A_Jump(128,"kubiuti1B")
         ZXD0 AAAAAAAAAA 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),8)
@@ -388,6 +388,8 @@ actor POSXKubiuted
 actor BisectedZombiemanTorso : POSXKubiuted
 {
     Radius 12
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:
@@ -411,6 +413,8 @@ actor BisectedZombiemanTorso : POSXKubiuted
 actor BisectedZombiemanTorso2 : POSXKubiuted
 {
     Radius 12
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:
@@ -505,8 +509,8 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        TNT1 A 0 A_Jump(64,"Decapitation2","Decapitation3","TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4")
-        TNT1 A 0 A_Jump(228,"ArmGone","LegGone","ArmGone2","LegGone2")
+        TNT1 A 0 A_Jump(64,"Decapitation2","Decapitation3")
+        TNT1 A 0 A_Jump(228,"ArmGone","LegGone","ArmGone2","LegGone2","TorsoGone","TorsoGone2","TorsoGone3","TorsoGone4")
         TNT1 A 0 A_SpawnItem("SPOXKubiuted",0,40,0)
         SPOS VVVVVVVVVV 2 A_ThrowGrenade("BloodSplashGus1",0,5+random(0,7),4)
         TNT1 A 0 A_NoBlocking
@@ -743,6 +747,8 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 actor BisectedShotgunnerTorso : POSXKubiuted
 {
     Radius 12
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:
@@ -766,6 +772,8 @@ actor BisectedShotgunnerTorso : POSXKubiuted
 actor BisectedShotgunnerTorso2 : POSXKubiuted
 {
     Radius 12
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:

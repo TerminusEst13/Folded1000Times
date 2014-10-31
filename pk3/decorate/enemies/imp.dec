@@ -82,8 +82,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
-        TNT1 A 0 A_Jump(192,"Gutted","Gutted2","Death")
-        TNT1 A 0 A_Jump(128,"Bisected","Bisected2","TorsoGone","TorsoGone2")
+        TNT1 A 0 A_Jump(208,"Gutted","Gutted2","Death","Bisected","Bisected2","TorsoGone","TorsoGone2")
     Decapitation1:
         TNT1 A 0 A_Jump(128,"Decapitation3")
         IXD3 A 2 A_SpawnItem("TROXKubiuted",0,40,0)
@@ -415,6 +414,8 @@ actor TROXKubiuted : POSXKubiuted
 actor BisectedImpTorso : POSXKubiuted
 {
     Radius 12
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:
@@ -459,6 +460,8 @@ actor BisectedImpTorso : POSXKubiuted
 actor BisectedImpTorso2 : POSXKubiuted
 {
     Radius 12
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:

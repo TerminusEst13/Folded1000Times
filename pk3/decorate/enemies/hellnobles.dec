@@ -356,7 +356,9 @@ actor BOSSKubiuted : POSXKubiuted
 
 actor BOSSKubiuted2 : BOSSKubiuted
 {
-    BloodColor "77 EE 00" 
+    BloodColor "77 EE 00"
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:
@@ -423,6 +425,8 @@ actor BOS2Kubiuted : POSXKubiuted
 Actor BOS2Kubiuted2 : BOS2Kubiuted
 {
     BloodColor "77 EE 00" 
+    -SHOOTABLE
+    +CLIENTSIDEONLY
     States
     {
     Spawn:
