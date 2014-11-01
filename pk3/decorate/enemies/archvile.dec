@@ -191,6 +191,7 @@ actor SnappyArchieFire
         goto see
     Death:
         FIRE CDEFGH 1 bright
+        TNT1 A 0 A_NoBlocking
         TNT1 A 1
         stop
     }
