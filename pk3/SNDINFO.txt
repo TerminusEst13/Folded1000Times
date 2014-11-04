@@ -109,7 +109,7 @@ hatk8                   HLATCK6a
 
 silence                   QUIET
 
-$random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 }
+$random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 intro17 intro18 }
 intro1                    INTRO1
 intro2                    INTRO2
 intro3                    INTRO3
@@ -126,6 +126,8 @@ intro13                   INTRO13 // Taken from Quark III
 intro14                   INTRO14 // Taken from Quag Tres
 intro15                   INTRO15 // Taken from Quiche Trio
 intro16                   INTRO16 // Taken from Quad Damage
+intro17                   INTRO17 // Taken from Eternal Darkness
+intro18                   INTRO18 // Taken from Eternal Darkness
 
 menu/activate             MENUUP   // Bring up the main menu. - Sound taken from World of Warcraft
 menu/clear                MENUDOWN // Close main menu. - ORIGINAL SOUND PLEASE DON'T STEAL :(
