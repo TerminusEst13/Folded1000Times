@@ -15,7 +15,6 @@ TO DO in no particular order:
 49: Replacement for Wolfenstein SS
 50: Bisected enemies somehow get caught in the ceiling
 51: Player sprites for Jung Hae-Lin and Iron Maiden
-52: Special charge-up laser-hadouken for Iron Maiden
 53: Iron Maiden polishing
   ^ Design
   ^ New HUD signifying you're in armor
@@ -51,7 +50,7 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
   ^ Skulltag-specific items should be replaced as well
   ^ Picking up a Minigun/Grenade Launcher/Railgun/BFG10k wonks things.
-86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
+88: Unique graphic for invuln pickup.
 
 
 
@@ -189,7 +188,8 @@ DONE:
 45: Anon says: It feels like Demonsteele's sword need a tiny bit more range. Trying to hit Arachnotrons doesn't always work and it can't even touch a Mastermind(But that might be intentional)
 46: HammerCharge needs a smaller/new ammo icon.
 47: Gun impact sounds on flesh and walls
-48: Convert .wav files to .ogg for size compression.
+48: Convert .wav files to .ogg for size compression
+52: Special charge-up laser-hadouken for Iron Maiden.
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
@@ -215,6 +215,8 @@ DONE:
 <skroton> [for explosive barrels] get rid of a_barrelrespawn and put a check to the sv_barrelrespawncvar
 <skroton> or just have it default to on
 <skroton> so that people don't have to use alwaysapplydmflags
+86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
+87: Do all of the Vile deaths have A_KillChildren?
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
