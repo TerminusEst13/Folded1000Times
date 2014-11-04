@@ -47,10 +47,15 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 82: Online, hit wall with hammer, then swing at the air--hammer will still bounce off.
 83: Grenades should explode on the sky. Do they not have +SKYEXPLODE?
 84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.
+85: Skulltag support:
+  ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
+  ^ Skulltag-specific items should be replaced as well
+  ^ Picking up a Minigun/Grenade Launcher/Railgun/BFG10k wonks things.
+86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
+
 
 
 [08:48:30 pm] PresidentPeople: [Kamehameha] should be sustainable if you hold it down
-
 
 
 <torridGristle> I think an jumpng uppercut / upperslash would be cool in DemonSteele and provide a useful tool.
