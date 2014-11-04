@@ -4,6 +4,7 @@ FROM 0.73 TO 0.74:
 - All of the Archvile's death states now call A_KillChildren.
 - The Archvile's flame turrets now are no longer considered monsters and won't spam up the monster count or block things in Invasion.
 - There are two more "fade from black" sounds, thanks to torridGristle's rip of Eternal Darkness.
+- The Exodus grenades now explode on the sky, rather than simply vanish.
 
 FROM 0.72 TO 0.73:
 =======================================

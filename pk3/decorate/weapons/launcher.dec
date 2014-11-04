@@ -516,6 +516,7 @@ ACTOR ExodusRocket
     +RANDOMIZE
     +GRENADETRAIL
     -NOGRAVITY
+    +SKYEXPLODE
     Gravity 0.25
     Scale 0.4
     DeathSound "grenades/explode"
