@@ -50,6 +50,9 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
   ^ Skulltag-specific items should be replaced as well
   ^ Picking up a Minigun/Grenade Launcher/Railgun/BFG10k wonks things.
 88: Unique graphic for invuln pickup.
+89: Destroy corpse decorations, get their soul.
+90: Terminusest13: [watching Doomguy going down a dark corridor on stream] I should probably add a flashlight, just because Painkiller did.
+91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 
 
 
