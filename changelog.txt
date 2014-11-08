@@ -6,6 +6,7 @@ FROM 0.73 TO 0.74:
 - There are two more "fade from black" sounds, thanks to torridGristle's rip of Eternal Darkness.
 - The Exodus grenades now explode on the sky, rather than simply vanish.
 - The Icon of Sin now has its own custom sounds.
+- Hae-Lin's landing sound is now less crackly.
 
 FROM 0.72 TO 0.73:
 =======================================
