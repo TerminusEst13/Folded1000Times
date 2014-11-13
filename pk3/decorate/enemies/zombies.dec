@@ -1180,6 +1180,10 @@ ACTOR Yakuza replaces WolfensteinSS
         YKZA G 5 A_Pain
         YKZA G 5
         Goto See
+
+    Death.Kubiuti:
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
     Death:
         YKZA H 5
         YKZA I 5 A_Scream
