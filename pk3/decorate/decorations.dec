@@ -19,7 +19,7 @@ actor DecorationSpawner
         TNT1 AAAAAAAAAA 1 A_LookEx(0,0,500)
         Goto DunSee
     See:
-        TNT1 A 0 A_Jump(255,"ShootMedikit","ShootStimpack","ShootBullets","ShootShells","ShootRockets","ShootCell","ShootSoul","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
+        TNT1 A 0 A_Jump(255,"ShootMedikit","ShootStimpack","ShootBullets","ShootShells","ShootRockets","ShootCell","ShootSoul","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
         TNT1 A 1
         loop
     ShootStimpack:
