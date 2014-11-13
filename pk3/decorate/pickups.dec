@@ -2,22 +2,22 @@ actor NoChaingun : ShitAll replaces Chaingun {}
 
 actor PickupBase : CustomInventory
 {
-    Health 0x7FFFFFFF
+    //Health 0x7FFFFFFF
     Mass 0x7FFFFFFF
     DamageFactor "Normal", 0.0
     DamageFactor "Kubiuti", 0.0
-    MONSTER
-    +GHOST
+    //MONSTER
+    //+GHOST
     +NOTARGET
     +LOOKALLAROUND
     +NOTIMEFREEZE
     +INVULNERABLE
-    +NORADIUSDMG
-    +DONTGIB
-    +NOBLOOD
+    //+NORADIUSDMG
+    //+DONTGIB
+    //+NOBLOOD
     +FLOORCLIP
-    -COUNTKILL
-    -ISMONSTER
+    //-COUNTKILL
+    //-ISMONSTER
     -SOLID
     -SHOOTABLE
     States
