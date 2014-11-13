@@ -513,3 +513,100 @@ ACTOR BulletSpark
         Stop
     }
 }
+
+ACTOR YakuzaBullet
+{
+    Radius 2
+    Height 2
+    Speed 60
+    Damage (random(1,5)*3)
+    SeeSound None
+    DeathSound None
+    Decal BulletChip
+    Projectile
+    +THRUGHOST
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_SpawnItemEx("YakuzaBulletTrail", 0,               0,              2)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(0.5*momx)/-35.0,-(0.5*momy)/-35.0,2+(0.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (1 *momx)/-35.0, -(1 *momy)/-35.0, 2+(1 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(1.5*momx)/-35.0,-(1.5*momy)/-35.0,2+(1.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(2.5*momx)/-35.0,-(2.5*momy)/-35.0,2+(2.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (3 *momx)/-35.0, -(3 *momy)/-35.0, 2+(3 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(3.5*momx)/-35.0,-(3.5*momy)/-35.0,2+(3.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(4.5*momx)/-35.0,-(4.5*momy)/-35.0,2+(4.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (5 *momx)/-35.0, -(5 *momy)/-35.0, 2+(5 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(5.5*momx)/-35.0,-(5.5*momy)/-35.0,2+(5.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(6.5*momx)/-35.0,-(6.5*momy)/-35.0,2+(6.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (7 *momx)/-35.0, -(7 *momy)/-35.0, 2+(7 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(7.5*momx)/-35.0,-(7.5*momy)/-35.0,2+(7.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(8.5*momx)/-35.0,-(8.5*momy)/-35.0,2+(8.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (9 *momx)/-35.0, -(9 *momy)/-35.0, 2+(9 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail",(9.5*momx)/-35.0,-(9.5*momy)/-35.0,2+(9.5*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (11*momx)/-35.0, -(11*momy)/-35.0, 2+(11*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (13*momx)/-35.0, -(13*momy)/-35.0, 2+(13*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (15*momx)/-35.0, -(15*momy)/-35.0, 2+(15*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (17*momx)/-35.0, -(17*momy)/-35.0, 2+(17*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (18*momx)/-35.0, -(18*momy)/-35.0, 2+(18*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (19*momx)/-35.0, -(19*momy)/-35.0, 2+(19*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (20*momx)/-35.0, -(20*momy)/-35.0, 2+(20*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        //TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (21*momx)/-35.0, -(21*momy)/-35.0, 2+(21*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (22*momx)/-35.0, -(22*momy)/-35.0, 2+(22*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        //TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (23*momx)/-35.0, -(23*momy)/-35.0, 2+(23*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (24*momx)/-35.0, -(24*momy)/-35.0, 2+(24*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        //TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (25*momx)/-35.0, -(25*momy)/-35.0, 2+(25*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (26*momx)/-35.0, -(26*momy)/-35.0, 2+(26*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        //TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (27*momx)/-35.0, -(27*momy)/-35.0, 2+(27*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (28*momx)/-35.0, -(28*momy)/-35.0, 2+(28*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        //TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (29*momx)/-35.0, -(29*momy)/-35.0, 2+(29*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (30*momx)/-35.0, -(30*momy)/-35.0, 2+(30*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        /*TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (31*momx)/-35.0, -(31*momy)/-35.0, 2+(31*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (32*momx)/-35.0, -(32*momy)/-35.0, 2+(32*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (33*momx)/-35.0, -(33*momy)/-35.0, 2+(33*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (34*momx)/-35.0, -(34*momy)/-35.0, 2+(34*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (35*momx)/-35.0, -(35*momy)/-35.0, 2+(35*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (36*momx)/-35.0, -(36*momy)/-35.0, 2+(36*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (37*momx)/-35.0, -(37*momy)/-35.0, 2+(37*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (38*momx)/-35.0, -(38*momy)/-35.0, 2+(38*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (39*momx)/-35.0, -(39*momy)/-35.0, 2+(39*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("YakuzaBulletTrail", (40*momx)/-35.0, -(40*momy)/-35.0, 2+(40*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)*/
+        Loop
+    Death:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_PlaySound("bullet/miss")
+        TNT1 A 1 A_SpawnItemEx("WeebBulletPuff",0,0,0,0,0,0,0,160)
+        stop
+    XDeath:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("EnemyBulletInfight",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_PlaySound("bullet/hit")
+        stop
+    }
+}
+
+actor YakuzaBulletTrail
+{
+    Scale 0.07
+    RenderStyle Add
+    Alpha 0.9
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        BPSP A 2 BRIGHT
+        stop
+    }
+}

@@ -623,6 +623,32 @@ empdie2                 EMPRDTH2
 
 
 
+$random yakuza/see { yaksee1 yaksee2 yaksee3 yaksee4 yaksee5 yaksee6 yaksee7 yaksee8 } // Taken from Super Street Fighter IV
+yaksee1                 YKZASEE1
+yaksee2                 YKZASEE2
+yaksee3                 YKZASEE3
+yaksee4                 YKZASEE4
+yaksee5                 YKZASEE5
+yaksee6                 YKZASEE6
+yaksee7                 YKZASEE7
+yaksee8                 YKZASEE8
+$random yakuza/hurt { yakhurt1 yakhurt2 yakhurt3 } // Taken from Super Street Fighter IV
+yakhurt1                YKZAHRT1
+yakhurt2                YKZAHRT2
+yakhurt3                YKZAHRT3
+$random yakuza/die { yakdie1 yakdie2 yakdie3 yakdie4 } // Taken from Super Street Fighter IV
+yakdie1                 YKZADIE1
+yakdie2                 YKZADIE2
+yakdie3                 YKZADIE3
+yakdie4                 YKZADIE4
+yakuza/cock             YKZACOCK // Taken from Left 4 Dead 2
+yakuza/fire             YKZAFIRE // Taken from Halo: Reach
+
+$limit yakuza/fire 0
+
+
+
+
 // Taken from Radys that I haven't changed yet
 
 S_Cut            NGORE4

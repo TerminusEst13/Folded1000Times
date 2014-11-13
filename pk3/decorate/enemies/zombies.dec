@@ -1046,7 +1046,7 @@ actor CPOXKubiuted2 : POSXKubiuted
     }
 }
 
-ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
+ACTOR WeeabooNazi : WolfensteinSS //replaces WolfensteinSS
 {
     +MISSILEMORE
     Species "Body"
@@ -1103,6 +1103,127 @@ ACTOR WeeabooNazi : WolfensteinSS replaces WolfensteinSS
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         SSWV HHHHHHHH 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
+        NONE A -1
+        stop
+    }
+}
+
+ACTOR Yakuza replaces WolfensteinSS
+{
+    Health 100
+    Radius 20
+    Height 56
+    Speed 10
+    PainChance 200
+    Monster
+    +FLOORCLIP
+    +MISSILEMORE
+    Species "Body"
+    SeeSound "yakuza/see"
+    PainSound "yakuza/hurt"
+    DeathSound "yakuza/die"
+    PainChance "kubiuti", 255
+    PainChance "KharonSheathe", 255
+    PainChance "IronFistDamage", 255
+    PainChance "KubiSpinAttack", 255
+    PainChance "KubiRangeAttack", 255
+    PainChance "KubiLungeAttack", 255
+    PainChance "HaltHammerzeitImpact", 255
+    DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "GuardMove", 0.0
+    DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
+    DamageFactor "KubiSpinAttack", 2.0
+    DamageFactor "KubiLungeAttack", 2.0
+    DamageFactor "KubiRangeAttack", 2.0
+    Obituary "%o was assassinated by the Yakuza." // "%o was killed by a zombieman."
+    DropItem "WeebClip"
+    States
+    {
+    Spawn:
+        YKZA A 10 A_Look
+        Loop
+    See:
+        TNT1 A 0 A_JumpIfCloser(256,"See2")
+        YKZA AABBCCDD 3 A_FastChase
+        Loop
+    See2:
+        YKZA AABBCCDD 3 A_Chase
+        goto See
+    Idle:
+        TNT1 A 0 A_Look
+        YKZA AABBCCDD 3 A_Wander
+        loop
+    Missile:
+        YKZA E 3 A_FaceTarget
+        TNT1 A 0 A_PlaySound("yakuza/cock")
+        YKZA E 20 A_FaceTarget
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_PlaySound("yakuza/fire")
+        YKZA F 4 bright A_CustomMissile("YakuzaBullet",32,10,random(-200,200)/100.00)
+        YKZA E 4 A_FaceTarget
+        TNT1 A 0 A_PlaySound("yakuza/fire")
+        YKZA F 4 bright A_CustomMissile("YakuzaBullet",32,10,random(-200,200)/100.00)
+        YKZA E 4 A_FaceTarget
+        TNT1 A 0 A_PlaySound("yakuza/fire")
+        YKZA F 4 bright A_CustomMissile("YakuzaBullet",32,10,random(-200,200)/100.00)
+        YKZA E 4 A_FaceTarget
+        TNT1 A 0 A_PlaySound("yakuza/fire")
+        YKZA F 4 bright A_CustomMissile("YakuzaBullet",32,10,random(-200,200)/100.00)
+        YKZA E 4 A_FaceTarget
+        TNT1 A 0 A_PlaySound("yakuza/fire")
+        YKZA F 4 bright A_CustomMissile("YakuzaBullet",32,10,random(-200,200)/100.00)
+        YKZA E 4 A_Jump(64,"Missile")
+        goto See
+    Pain:
+        YKZA G 5 A_Pain
+        YKZA G 5
+        Goto See
+    Death:
+        YKZA H 5
+        YKZA I 5 A_Scream
+        YKZA J 5 A_NoBlocking
+        YKZA K 5
+        YKZA L -1
+        Stop
+    XDeath:
+        YKZA M 5
+        YKZA N 5 A_XScream
+        YKZA O 5 A_NoBlocking
+        YKZA PQRST 5
+        YKZA U -1
+        Stop
+    Raise:
+        YKZA K 5
+        YKZA JIH 5
+        Goto See
+
+    Pain.KubiLungeAttack:
+    Pain.KubiSpinAttack:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Pain
+    Pain.KubiRangeAttack:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Pain
+    Death.KubiRangeAttack:
+    Death.KubiLungeAttack:
+    Death.KubiSpinAttack:
+    Death.Knife:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Death
+    Death.IronFistDamage:
+        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
+        goto XDeath
+    Death.UltimaBeam:
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_Scream
+        YKZA GGGGGGGG 2 A_FadeOut(0.1)
         TNT1 A 0 A_NoBlocking
         NONE A -1
         stop
