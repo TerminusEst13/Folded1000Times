@@ -643,6 +643,11 @@ yakdie3                 YKZADIE3
 yakdie4                 YKZADIE4
 yakuza/cock             YKZACOCK // Taken from Left 4 Dead 2
 yakuza/fire             YKZAFIRE // Taken from Halo: Reach
+$random yakuza/gib { yakgib1 yakgib2 yakgib3 yakgib4 } // Taken from Painkiller
+yakgib1                 YKZAGIB1
+yakgib2                 YKZAGIB2
+yakgib3                 YKZAGIB3
+yakgib4                 YKZAGIB4
 
 $limit yakuza/fire 0
 

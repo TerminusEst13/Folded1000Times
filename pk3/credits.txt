@@ -43,7 +43,7 @@ GRAPHICS:
 - Captain J (The Sabbath large ammo pack)
 - Bloax (The broken bone sprites)
 - DonaldDuck (The Priest's sprites)
-- Shadow Warrior (The Exodus grenade sprites)
+- Shadow Warrior (The Exodus grenade sprites, the Yakuza enemy sprites)
 - Aeons of Death (The Exodus explosion graphics)
 - Ettingrinder (The Candelabra)
 - NeuralStunner (The Omen's pickup sprite)
@@ -85,7 +85,6 @@ GRAPHICS:
 - PresidentPeople (Fixing the Blind Guardian's rotations so it had a proper front sprite)
 - MartyKirra (The very sexy sprites for the Omen)
 - Scuba Steve/Mike12/torridGristle (The sheathe for the Kharon, heavily edited from Action Doom 2)
-- Scalliano (The Yakuza sprites, used from the Scott skin and recolored)
 
 CODE:
 =========
