@@ -11,6 +11,7 @@ FROM 0.73 TO 0.74:
 - The initial swing of the Kharon's sheathe can now be refired one tic faster. Whoo.
 - The Wolfenstein SS now has a replacement.
 - Decorations now have a slightly higher chance to spew out items.
+- In lieu of the Kamehameha, the Exodus no longer needs to go through walls. The explosion is now simply a 256-radius explosive, rather than four explosives with 192 radius.
 
 FROM 0.72 TO 0.73:
 =======================================

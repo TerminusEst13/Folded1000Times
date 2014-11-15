@@ -529,10 +529,8 @@ ACTOR ExodusRocket
     Death:
         TNT1 A 0 A_Scream
 		TNT1 A 0 A_SpawnItemEx("ExodusRocketDeathSFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
-        TNT1 A 0 A_SpawnItemEx("ExodusRocketDamage",96,0,0,0,0,0,0,48)
-        TNT1 A 0 A_SpawnItemEx("ExodusRocketDamage2",96,0,0,0,0,0,90,48)
-        TNT1 A 0 A_SpawnItemEx("ExodusRocketDamage",96,0,0,0,0,0,180,48)
-        TNT1 A 0 A_SpawnItemEx("ExodusRocketDamage2",96,0,0,0,0,0,270,48)
+        TNT1 A 0 A_SpawnItemEx("ExodusRocketDamage",0,0,0,0,0,0,0,48)
+        TNT1 A 0 A_SpawnItemEx("ExodusRocketDamage2",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ExodusRocketJumpage",0,0,0,0,0,0,0,48)
         TNT1 A 0 Radius_Quake(5,3,0,8,0)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
@@ -617,7 +615,7 @@ ACTOR ExodusRocketDamage
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(64,192,0)
+        TNT1 A 1 A_Explode(96,256,0)
         Stop
     }
 }
