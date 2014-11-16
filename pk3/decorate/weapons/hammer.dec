@@ -12,6 +12,7 @@ actor "Kharon + Omen" : Kharon
         Stop
     Ready:
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
+        TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         WEPO A 1 A_WeaponReady
         Loop
     Select:
@@ -206,7 +207,6 @@ actor "Kharon + Omen" : Kharon
 
     Hold:
         TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
@@ -553,9 +553,11 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 A_PlaySoundEx("*pain","sounslot7",0,0)
         TNT1 A 0 A_SetBlend("White",1.0,35)
         TNT1 A 0 A_Recoil(10)
+        TNT1 A 0 A_TakeInventory("HenshinActivated",1)
         TNT1 A 0 A_ClearRefire
         goto Fired2
     Henshin:
+        WEPO BCD 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)
         TNT1 A 4 A_TakeInventory("KharonSwung",1)

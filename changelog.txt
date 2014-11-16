@@ -12,6 +12,9 @@ FROM 0.73 TO 0.74:
 - The Wolfenstein SS now has a replacement.
 - Decorations now have a slightly higher chance to spew out items.
 - In lieu of the Kamehameha, the Exodus no longer needs to go through walls. The explosion is now simply a 256-radius explosive, rather than four explosives with 192 radius.
+- The Kharon by itself now has idle animations. Oops.
+- Transformation has been streamlined and no longer requires "hold fire"--just hit Use Inventory and it'll activate.
+- Online, people were occaisionally getting weapon desynchs, where they were in Iron Maiden but using the Kharon. This has been fixed.
 
 FROM 0.72 TO 0.73:
 =======================================

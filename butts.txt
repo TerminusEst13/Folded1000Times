@@ -44,7 +44,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 80: People are occaisionally hitting things with the hammer and not being able to do anything until idle animation, hammer stuck held high.
 81: Make BEEEEEEEAM have more of a cost. Maybe drain during the start-up as well?
 82: Online, hit wall with hammer, then swing at the air--hammer will still bounce off.
-84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.
 85: Skulltag support:
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
   ^ Skulltag-specific items should be replaced as well
@@ -227,6 +226,7 @@ DONE:
 <skroton> or just have it default to on
 <skroton> so that people don't have to use alwaysapplydmflags
 83: Grenades should explode on the sky. Do they not have +SKYEXPLODE?
+84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.
 86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
 87: Do all of the Vile deaths have A_KillChildren?
 

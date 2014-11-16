@@ -350,7 +350,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
           break;
 
         case 4:
-          Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Hold Fire + Use Inventory)");
+          Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Use Inventory to activate)");
           break;
         }
         break;

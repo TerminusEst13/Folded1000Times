@@ -96,6 +96,7 @@ actor "Iron Fist" : Weapon
         CMCP A -1
         Stop
     Ready:
+        TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"Unhenshin")
         IRNF A 1 A_WeaponReady
         Loop
     Select:
@@ -256,7 +257,6 @@ actor "Iron Fist" : Weapon
     Hold:
         TNT1 A 1
         TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"AltSpecial")
-        TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"Unhenshin")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
