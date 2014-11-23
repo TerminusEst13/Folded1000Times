@@ -3,7 +3,7 @@ FROM 0.73 TO 0.74:
 - The Archvile's flame turrets now have A_NoBlocking in their death state.
 - All of the Archvile's death states now call A_KillChildren.
 - The Archvile's flame turrets now are no longer considered monsters and won't spam up the monster count or block things in Invasion.
-- There are two more "fade from black" sounds, thanks to torridGristle's rip of Eternal Darkness.
+- There are three more "fade from black" sounds, thanks to torridGristle's rip of Eternal Darkness and thanks to MAGIX Soundpool DVDs.
 - The Exodus grenades now explode on the sky, rather than simply vanish.
 - The Icon of Sin now has its own custom sounds.
 - Hae-Lin's landing sound is now less crackly.
