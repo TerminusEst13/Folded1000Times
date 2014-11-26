@@ -16,6 +16,7 @@ FROM 0.73 TO 0.74:
 - Transformation has been streamlined and no longer requires "hold fire"--just hit Use Inventory and it'll activate.
 - Online, people were occaisionally getting weapon desynchs, where they were in Iron Maiden but using the Kharon. This has been fixed.
 - A new idle animation has been implemented.
+- Hammering the ground will now allow Hae-Lin to jump higher, because reasons. The higher the charge, the higher the jump.
 
 FROM 0.72 TO 0.73:
 =======================================
