@@ -48,6 +48,7 @@ haewang2                HLSWARR2
 haelin/idle1_1          HLIDL1_1
 haelin/idle1_2          HLIDL1_2
 haelin/idle1_3          HLIDL1_3
+haelin/idleknux         HLKNUX   // Taken from huluvu42 on FreeSound.org
 
 henshin/call            HLHENSHN
 

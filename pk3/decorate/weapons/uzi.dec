@@ -38,7 +38,7 @@ actor "Kharon + Sabbath" : Kharon
         WEPS ABCD 2 A_WeaponReady
     IdleDecide:
         TNT1 A 0 A_Jump(16,"Idle0")
-        TNT1 A 0 A_Jump(255,"Idle1","Idle2","Idle3")
+        TNT1 A 0 A_Jump(255,"Idle1","Idle2","Idle3","Idle4")
         TNT1 A 1
         loop
     Idle0:

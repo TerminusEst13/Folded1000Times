@@ -15,6 +15,7 @@ FROM 0.73 TO 0.74:
 - The Kharon by itself now has idle animations. Oops.
 - Transformation has been streamlined and no longer requires "hold fire"--just hit Use Inventory and it'll activate.
 - Online, people were occaisionally getting weapon desynchs, where they were in Iron Maiden but using the Kharon. This has been fixed.
+- A new idle animation has been implemented.
 
 FROM 0.72 TO 0.73:
 =======================================

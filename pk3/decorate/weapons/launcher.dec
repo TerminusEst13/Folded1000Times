@@ -38,7 +38,7 @@ actor "Kharon + Exodus" : Kharon
         WEPE ABCD 2 A_WeaponReady
     IdleDecide:
         TNT1 A 0 A_Jump(16,"Idle0")
-        TNT1 A 0 A_Jump(255,"Idle1","Idle2","Idle3")
+        TNT1 A 0 A_Jump(255,"Idle1","Idle2","Idle3","Idle4")
         TNT1 A 1
         loop
     Idle0:
@@ -97,6 +97,18 @@ actor "Kharon + Exodus" : Kharon
         IDL3 L 20 A_WeaponReady
         IDL3 MMNO 1 A_WeaponReady
         TNT1 A 5 A_WeaponReady
+        goto IdleFinish
+    Idle4:
+        TNT1 A 2 A_WeaponReady
+        IDL4 ABCDDEEFFGG 1 A_WeaponReady
+        TNT1 A 0 A_PlaySound("haelin/idleknux")
+        IDL4 H 7 A_WeaponReady
+        IDL4 IIJJKKLMNOPQRRSSTT 1 A_WeaponReady
+        TNT1 A 0 A_PlaySound("haelin/idleknux")
+        IDL4 U 7 A_WeaponReady
+        IDL4 VVWWXYZ 1 A_WeaponReady
+        IDL4 [ 1 A_WeaponReady
+        TNT1 A 2 A_WeaponReady
         goto IdleFinish
     IdleFinish:
         WEPE DCBA 2 A_WeaponReady
