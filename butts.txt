@@ -42,7 +42,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 78: Wider range of sound on the Kamehameha's shot and explosion.
 79: Enemies killed by the Beeeeeeeeeam should do a TNT1 A 0 amount of A_FadeIn to get their normal translucency back before NOPE A -1, in case of archvile Raise.
 80: People are occaisionally hitting things with the hammer and not being able to do anything until idle animation, hammer stuck held high.
-81: Make BEEEEEEEAM have more of a cost. Maybe drain during the start-up as well?
 82: Online, hit wall with hammer, then swing at the air--hammer will still bounce off.
 85: Skulltag support:
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
@@ -54,7 +53,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 92: Burning barrels should be replaced as well.
 93: Replace the bossbrain head with something more appropriate, like Metrood. Maybe Ozzy Osbourne's head?
-94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 95: Change Soul Prison into something that needs to be destroyed--destroying it launches out all the souls into the person.
 96: <Dewce> Maybe increase the amount of souls you get from kill based on your rank
 <Dewce> It's easy to get the ranking up, but it can take awhile to get the soul meter up
@@ -225,10 +223,12 @@ DONE:
 <skroton> [for explosive barrels] get rid of a_barrelrespawn and put a check to the sv_barrelrespawncvar
 <skroton> or just have it default to on
 <skroton> so that people don't have to use alwaysapplydmflags
+81: Make BEEEEEEEAM have more of a cost. Maybe drain during the start-up as well?
 83: Grenades should explode on the sky. Do they not have +SKYEXPLODE?
 84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.
 86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
 87: Do all of the Vile deaths have A_KillChildren?
+94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
