@@ -279,6 +279,13 @@ script WEEB_DECORATE (int burrshet)
         TakeInventory("IronMaidenSlowness",1);
         TakeInventory("IronMaidenSlowness2",1);
         TakeInventory("IronMaidenWarning",1);
+        TakeInventory("IronMaidenProtection",1);
+        TakeInventory("IronMaidenProtectionF",1);
+        TakeInventory("IronMaidenProtectionD",1);
+        TakeInventory("IronMaidenProtectionC",1);
+        TakeInventory("IronMaidenProtectionB",1);
+        TakeInventory("IronMaidenProtectionA",1);
+        TakeInventory("IronMaidenProtectionS",1);
         TakeInventory("Armor",0x7FFFFFFF);
         TakeInventory("HenshinActivated",1);
         GiveInventory("IronMaidenVisionReset",1);
@@ -801,6 +808,22 @@ script WEEB_ENTER ENTER
 
         if (CheckInventory("InIronMaiden") == 1)
         {
+
+        GiveInventory("IronMaidenProtection",1);
+        if (ComboCount <= 50) { TakeInventory("IronMaidenProtectionF",1); TakeInventory("IronMaidenProtectionD",1); TakeInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
+        if (ComboCount > 50)
+            { GiveInventory("IronMaidenProtectionF",1); TakeInventory("IronMaidenProtectionD",1); TakeInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
+        if (ComboCount > 100)
+            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); TakeInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
+        if (ComboCount > 150)
+            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
+        if (ComboCount > 200)
+            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); GiveInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
+        if (ComboCount > 250)
+            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); GiveInventory("IronMaidenProtectionB",1); GiveInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
+        if (ComboCount > 300)
+            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); GiveInventory("IronMaidenProtectionB",1); GiveInventory("IronMaidenProtectionA",1); GiveInventory("IronMaidenProtectionS",1); }
+
           if (CheckInventory("SuperMeterCounter") > 0)
           {
             SetActorProperty(0,APROP_JUMPZ,10.0);
@@ -822,12 +845,14 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (buttons & BT_ALTATTACK) { GiveInventory("SynthAltFire",1); } else { TakeInventory("SynthAltFire",1); }
+            if (buttons & BT_ALTATTACK)
+              { GiveInventory("SynthAltFire",1); }
+            else
+              { TakeInventory("SynthAltFire",1); }
 
             if (IronArmor >= 7)
             {
               if (CheckInventory("Armor") < 40) { GiveInventory("IronMaidenArmor",1); }
-              //if (CheckInventory("Wounded") == 1) { GiveInventory("IronMaidenArmor",1); }
               GiveInventory("IronMaidenArmor",1);
               IronArmor = 0;
             }

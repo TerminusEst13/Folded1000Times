@@ -264,6 +264,7 @@ actor CyberRocket : Rocket //replaces Rocket
     DeathSound "cyber/rockethit"
     +THRUGHOST
     -FIREDAMAGE
+    Damage (80)
     DamageType "EnemyInfightDamageCyber"
     States
     {

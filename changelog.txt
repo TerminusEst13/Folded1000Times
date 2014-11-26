@@ -17,6 +17,8 @@ FROM 0.73 TO 0.74:
 - Online, people were occaisionally getting weapon desynchs, where they were in Iron Maiden but using the Kharon. This has been fixed.
 - A new idle animation has been implemented.
 - Hammering the ground will now allow Hae-Lin to jump higher, because reasons. The higher the charge, the higher the jump.
+- The Iron Maiden's armor will become more effective depending on your rank--at S Rank, you can no-sell practically everything.
+- The not-Kamehameha now takes a little over 1.5x as much soul energy but now each explosion does 128 damage instead of 96.
 
 FROM 0.72 TO 0.73:
 =======================================

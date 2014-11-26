@@ -1114,10 +1114,10 @@ ACTOR Yakuza replaces WolfensteinSS
     Health 100
     Radius 20
     Height 56
-    Speed 10
+    Speed 15
     PainChance 200
     XScale 0.6
-    YScale 0.55
+    YScale 0.525
     Monster
     +FLOORCLIP
     +MISSILEMORE
