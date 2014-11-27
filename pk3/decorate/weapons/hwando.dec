@@ -10,7 +10,6 @@ ACTOR Kharon : Weapon
     Obituary "%k tore %o apart."
     DamageType "kubiuti"
     Weapon.UpSound "weapon/switch"
-    Decal BulletChip
     +AXEBLOOD
     +NOALERT
     +NOAUTOFIRE
