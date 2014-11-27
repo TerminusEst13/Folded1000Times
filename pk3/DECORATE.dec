@@ -14,6 +14,7 @@ actor Counter: Inventory
 
 actor BlankPuff
 {
+    +DONTSPLASH
     States
     {
     Spawn:
