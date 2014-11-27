@@ -670,11 +670,3 @@ $limit S_Blodd    1
 
 
 wp/kickh1        NSWA014
-
-
-
-
-// hmmmm
-special/fire           SPCLFIRE
-special/unload         SPCLUNLD // Taken from Killing Floor
-special/load           SPCLRELD // Taken from Killing Floor
