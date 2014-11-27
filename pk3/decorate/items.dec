@@ -915,17 +915,42 @@ ACTOR RamenSmoke
 
 actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
 {
-    Inventory.PickupMessage "Invulnerability!"
+    Inventory.PickupMessage "Picked up a Majestic Vanguard!"
+    Inventory.PickupSound "armor/invuln"
     Powerup.Type "ShieldProtection"
     Powerup.Duration -30
     Powerup.Color blue2 0.10
     Inventory.MaxAmount 0
+    Scale 0.5
+    +FLOATBOB
     +INVENTORY.AUTOACTIVATE
     States
     {
     Spawn:
-        PINV ABCD 6 Bright
-        Loop
+        ARMR C 1 Bright A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR CCCCC 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR CCCCC 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        ARMR CCCCC 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        loop
+    }
+}
+
+actor PowerBoots : PowerupGiver replaces RadSuit
+{
+    Inventory.PickupMessage "Picked up a Boots of Protection!"
+    Inventory.PickupSound "armor/radsuit"
+    Powerup.Type "IronFeet"
+    Powerup.Duration -60
+    Powerup.Color green 0.1
+    Inventory.MaxAmount 0
+    +FLOATBOB
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        RDBT A 1 Bright
+        RDBT A 30
+        loop
     }
 }
 
@@ -950,8 +975,8 @@ ACTOR SilverPowerLine
 }
 
 actor GoldPowerLine : SilverPowerLine { Translation "80:111=160:167", "5:5=167:167" }
-
 actor RedPowerLine : SilverPowerLine { Translation "80:111=168:190", "5:5=191:191" }
+actor BluePowerLine : SilverPowerLine { Translation "80:111=192:207", "5:5=242:242" }
 
 actor PowerupPickup : CustomInventory replaces Berserk
 {

@@ -47,7 +47,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
   ^ Skulltag-specific items should be replaced as well
   ^ Picking up a Minigun/Grenade Launcher/Railgun/BFG10k wonks things.
-88: Unique graphic for invuln pickup and radsuit.
 89: Destroy corpse decorations, get their soul.
 90: Terminusest13: [watching Doomguy going down a dark corridor on stream] I should probably add a flashlight, just because Painkiller did.
 91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
@@ -228,6 +227,7 @@ DONE:
 84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.
 86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
 87: Do all of the Vile deaths have A_KillChildren?
+88: Unique graphic for invuln pickup and radsuit.
 94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 
 

@@ -88,6 +88,8 @@ GRAPHICS:
 - PresidentPeople (Fixing the Blind Guardian's rotations so it had a proper front sprite)
 - MartyKirra (The very sexy sprites for the Omen)
 - Scuba Steve/Mike12/torridGristle (The sheathe for the Kharon, heavily edited from Action Doom 2)
+- The Guided Fate Paradox (The halo for the Majestic Vanguard)
+- SoloSpaghetti (The Boots of Protection, modified from the Doom Roguelike Arsenal boots)
 
 CODE:
 =========

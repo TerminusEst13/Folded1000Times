@@ -213,6 +213,8 @@ $volume ammo/soul 0.75
 
 armor/silver              ARMRGET1 // Taken from Devil May Cry 3
 armor/gold                ARMRGET2 // Taken from Devil May Cry 3
+armor/invuln              ARMRGET3 // Taken from Devil May Cry 3
+armor/radsuit             GETPBOOT // Taken from Doom 3 with a STALKER sound mixed in.
 
 misc/k_pkup               KEYPKUP  // From Painkiller
 

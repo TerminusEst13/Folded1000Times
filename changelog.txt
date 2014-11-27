@@ -21,6 +21,7 @@ FROM 0.73 TO 0.74:
 - The not-Kamehameha now takes a little over 1.5x as much soul energy but now each explosion does 128 damage instead of 96.
 - There are no longer double decals for the bullet weapons.
 - The switch-hitting no-damage bulletpuff no longer splashes on liquids.
+- The Invulnerability Sphere and RadSuit now have their own respective appropriate replacements.
 
 FROM 0.72 TO 0.73:
 =======================================
