@@ -12,7 +12,6 @@ TO DO in no particular order:
   ^ Mancubus
 43: GLDEFS
 44: Expand on final map
-49: Replacement for Wolfenstein SS
 50: Bisected enemies somehow get caught in the ceiling
 51: Player sprites for Jung Hae-Lin and Iron Maiden
 53: Iron Maiden polishing
@@ -33,13 +32,11 @@ TerminusEst13: That'd add some really visceral feedback, and it'd definitely enc
 TerminusEst13: Plus it'd make sense from an in-universe perspective, since the sword is eating souls in a stereotypical edgy 90s fashion.
 65: Look into adapting Pres' wandering-soul system for others to pick up.
 68: Draining the Iron Maiden's armor and then letting it recover seems to let damage bleed through to the player.
-69: Let the player know on the HUD what weapons they've already picked up.
 70: Some kind of "don't mash the button for more powerful strikes" system.
 72: Skulltag weapon replacements?
 74: Explosive dashing punch as the Iron Maiden's forward special
 75: Replacement sounds for other world objects, such as lifts, switches, exploding barrels, and doors.
 76: Replacement sounds for the non-unique enemies, since at the moment the high-quality sounds contrast quite a bit.
-78: Wider range of sound on the Kamehameha's shot and explosion.
 79: Enemies killed by the Beeeeeeeeeam should do a TNT1 A 0 amount of A_FadeIn to get their normal translucency back before NOPE A -1, in case of archvile Raise.
 80: People are occaisionally hitting things with the hammer and not being able to do anything until idle animation, hammer stuck held high.
 82: Online, hit wall with hammer, then swing at the air--hammer will still bounce off.
@@ -196,6 +193,7 @@ DONE:
 46: HammerCharge needs a smaller/new ammo icon.
 47: Gun impact sounds on flesh and walls
 48: Convert .wav files to .ogg for size compression
+49: Replacement for Wolfenstein SS
 52: Special charge-up laser-hadouken for Iron Maiden.
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
@@ -216,12 +214,14 @@ DONE:
 [07:31:13 pm] Ethril: it goes into your inventory
 [07:31:19 pm] Ethril: you can carry around a bunch of PowerShields
 67: The Blind Guardian, when damaged and then healed, stays in the damage state until pained.
+69: Let the player know on the HUD what weapons they've already picked up.
 71: A cvar to let people swap between weapons when out of ammo.
 73: hammo pickup
 77: <skroton> also put in butts.txt
 <skroton> [for explosive barrels] get rid of a_barrelrespawn and put a check to the sv_barrelrespawncvar
 <skroton> or just have it default to on
 <skroton> so that people don't have to use alwaysapplydmflags
+78: Wider range of sound on the Kamehameha's shot and explosion.
 81: Make BEEEEEEEAM have more of a cost. Maybe drain during the start-up as well?
 83: Grenades should explode on the sky. Do they not have +SKYEXPLODE?
 84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.

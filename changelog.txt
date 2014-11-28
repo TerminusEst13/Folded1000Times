@@ -22,6 +22,7 @@ FROM 0.73 TO 0.74:
 - There are no longer double decals for the bullet weapons.
 - The switch-hitting no-damage bulletpuff no longer splashes on liquids.
 - The Invulnerability Sphere and RadSuit now have their own respective appropriate replacements.
+- The sound range on the not-Kamehameha has been tripled.
 
 FROM 0.72 TO 0.73:
 =======================================
