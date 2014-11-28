@@ -463,6 +463,7 @@ script WEEB_ENTER ENTER
     else { SetActorProperty(0,APROP_Species,"Player"); }
     SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
     GiveInventory("NewLevelStatReset",1);
+    GiveInventory("FlashlightStopper",1);
     if (CheckInventory("HammerCharge") > 100) { SetAmmoCapacity("HammerCharge",100); SetInventory("HammerCharge",80); }
     if (CheckInventory("InIronMaiden") == 1) { ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0); }
     
@@ -1080,6 +1081,7 @@ script WEEB_PUKE2 (void) NET // I can't believe I'm dedicating an entire script 
     if (flashlightOn[PlayerNumber()])
     {
         flashlightOn[PlayerNumber()] = 0;
+        GiveInventory("FlashlightStopper",1);
         ActivatorSound("flashlight/off", 127);
     }
     else

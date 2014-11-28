@@ -3,31 +3,43 @@ ACTOR FlashlightSpawner : CustomInventory
 	States
 	{
 	Pickup:
-		TNT1 A 0 A_CustomMissile("FlashLightBeam0", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam1", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam2", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam3", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam4", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam5", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam6", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam7", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam8", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam9", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam10", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam11", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam12", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam13", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam14", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam15", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam16", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam17", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam18", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam19", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam20", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam21", 24, 0, 0, 2, (sin(pitch)*-63)+2)
-		TNT1 A 0 A_CustomMissile("FlashLightBeam22", 24, 0, 0, 2, (sin(pitch)*-63)+2)
+        TNT1 A 0 A_Light2 // Does diddly-shit in OGL, but lights up things a bit in Software.
+		TNT1 A 0 A_CustomMissile("FlashLightBeam0",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam1",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam2",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam3",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam4",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam5",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam6",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam7",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam8",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam9",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam10",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam11",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam12",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam13",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam14",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam15",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam16",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam17",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam18",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam19",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam20",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam21",24,0,0,2,(sin(pitch)*-63)+2)
+		TNT1 A 0 A_CustomMissile("FlashLightBeam22",24,0,0,2,(sin(pitch)*-63)+2)
 		Stop
 	}
+}
+
+actor FlashlightStopper : CustomInventory
+{
+    States
+    {
+    Pickup:
+        TNT1 A 0 A_Light0
+        TNT1 A 0 A_Light0
+        stop
+    }
 }
 
 ACTOR FlashLightBeam : FastProjectile
