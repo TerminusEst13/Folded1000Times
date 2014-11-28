@@ -293,7 +293,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_Scream
         POSS GGGGGGGG 2 A_FadeOut(0.1)
         TNT1 A 0 A_NoBlocking
-        NONE A -1
+        NONE A 1
         stop
     }
 }
@@ -739,7 +739,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_Scream
         SPOS GGGGGGGG 2 A_FadeOut(0.1)
         TNT1 A 0 A_NoBlocking
-        NONE A -1
+        NONE A 1
         stop
     }
 }
@@ -972,7 +972,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_Scream
         CPOS GGGGGGGG 2 A_FadeOut(0.1)
         TNT1 A 0 A_NoBlocking
-        NONE A -1
+        NONE A 1
         stop
     }
 }
@@ -1043,69 +1043,6 @@ actor CPOXKubiuted2 : POSXKubiuted
         XDB5 VVWWWW 2 A_SpawnItem("BloodShower3",0)
         XDB6 W 1
         wait
-    }
-}
-
-ACTOR WeeabooNazi : WolfensteinSS //replaces WolfensteinSS
-{
-    +MISSILEMORE
-    Species "Body"
-    PainChance "kubiuti", 255
-    PainChance "KharonSheathe", 255
-    PainChance "IronFistDamage", 255
-    PainChance "KubiSpinAttack", 255
-    PainChance "KubiRangeAttack", 255
-    PainChance "KubiLungeAttack", 255
-    PainChance "HaltHammerzeitImpact", 255
-    DamageFactor "GuardMove", 0.0
-    DamageFactor "ArchvileFire", 0.0
-    DamageFactor "ExodusJump", 0.0
-    DamageFactor "KubiSpinAttack", 2.0
-    DamageFactor "KubiLungeAttack", 2.0
-    DamageFactor "KubiRangeAttack", 2.0
-    DropItem "BlankPuff"
-    Speed 10
-    States
-    {
-    Missile:
-        SSWV E 5 A_FaceTarget
-        SSWV F 5 A_FaceTarget
-        TNT1 A 0 bright A_PlaySound("wolfss/attack")
-        SSWV G 4 Bright A_CustomMissile("EnemyBullet",30,0,random(-300,300)/100.00)
-        SSWV F 6 A_FaceTarget
-        TNT1 A 0 bright A_PlaySound("wolfss/attack")
-        SSWV G 4 Bright A_CustomMissile("EnemyBullet",30,0,random(-300,300)/100.00)
-        SSWV F 1 A_CPosRefire
-        Goto Missile+1
-
-    Pain.KubiLungeAttack:
-    Pain.KubiSpinAttack:
-        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
-    Pain.KubiRangeAttack:
-        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
-    Death.KubiRangeAttack:
-    Death.KubiLungeAttack:
-    Death.KubiSpinAttack:
-    Death.Knife:
-        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::XDeath
-    Death.IronFistDamage:
-        TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
-        goto Super::XDeath
-    Death.UltimaBeam:
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        TNT1 A 0 A_Scream
-        SSWV HHHHHHHH 2 A_FadeOut(0.1)
-        TNT1 A 0 A_NoBlocking
-        NONE A -1
-        stop
     }
 }
 
@@ -1242,7 +1179,7 @@ ACTOR Yakuza replaces WolfensteinSS
         TNT1 A 0 A_Scream
         YKZA GGGGGGGG 2 A_FadeOut(0.1)
         TNT1 A 0 A_NoBlocking
-        NONE A -1
+        NONE A 1
         stop
     }
 }
