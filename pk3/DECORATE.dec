@@ -80,6 +80,7 @@ const int WEEB_DEC_CHANGEMUSBACK = 2;
 #include "decorate/weapons/ironeffects.dec"
 #include "decorate/weapons/boomerang.dec"
 #include "decorate/player.dec"
+#include "decorate/flashlight.dec"
 #include "decorate/powerups.dec"
 #include "decorate/decorations.dec"
 #include "decorate/shield.dec"

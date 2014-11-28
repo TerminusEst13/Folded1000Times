@@ -12,6 +12,7 @@ int dodgeitem;
 int IsServer;
 int array_recoilrules[PLAYERMAX];
 int array_autoswitch[PLAYERMAX];
+int flashlightOn[PLAYERMAX];
 
 int GotShotgun;
 int GotCarronade;
@@ -323,7 +324,7 @@ script WEEB_DECORATE (int burrshet)
         if (isSinglePlayer() && GotIronMaiden == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
-		
+        
     case WEEB_DEC_BARRELSPAWN:
         SetResultValue(GetCVar("sv_barrelrespawn"));
         break;
@@ -332,8 +333,8 @@ script WEEB_DECORATE (int burrshet)
 
 script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 {
-	
-	if (boreshut < 98 && ConsolePlayerNumber() != PlayerNumber()) { terminate; } 
+    
+    if (boreshut < 98 && ConsolePlayerNumber() != PlayerNumber()) { terminate; } 
 
     switch (boreshut)
     {
@@ -364,24 +365,24 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
     case WEEB_DEC_CHANGEMUS:
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) { if (getcvar("norandommusic") == 0) { terminate; }}
-	    int i = random(0, IRONMUS-1);
-	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic(IronMaidenMusic[i],0); }
+        int i = random(0, IRONMUS-1);
+        if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic(IronMaidenMusic[i],0); }
         break;
 
     case WEEB_DEC_CHANGEMUSBACK:
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) { if (getcvar("norandommusic") == 0) { terminate; }}
-	    if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
+        if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
         break;
 
-	//cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
-	//if you want more cases that aren't subject to it, put them here in descending order
-	//and decrease the number in the check at the top of this script
+    //cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
+    //if you want more cases that aren't subject to it, put them here in descending order
+    //and decrease the number in the check at the top of this script
 
     case WEEB_DEC_TOASTER:
         if(GetCvar("ds_cl_toaster") <= 0) { SetActorState(0,"Toaster0"); }
-		if(GetCvar("ds_cl_toaster") == 1) { SetActorState(0,"Toaster1"); }
+        if(GetCvar("ds_cl_toaster") == 1) { SetActorState(0,"Toaster1"); }
         if(GetCvar("ds_cl_toaster") >= 2) { SetActorState(0,"Toaster2"); }
-		break;   
+        break;   
     case WEEB_DEC_TOASTER2:
         SetResultValue(getCvar("ds_cl_toaster"));
         break;
@@ -916,6 +917,9 @@ script WEEB_ENTER ENTER
         else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
         if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
         else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
+
+        if (flashlightOn[pln])
+            { GiveInventory("FlashlightSpawner", 1); }
         
         Delay(1);
         if (isDead(0))
@@ -924,6 +928,7 @@ script WEEB_ENTER ENTER
             SentTID = 0;
             Thing_Remove(ShieldTID);
             ShieldTID = 0;
+            flashlightOn[pln] = 0;
             TakeInventory("SentinelUp",1);
             TakeInventory("SentinelActive",1);
             TakeInventory("BlindGuardianShieldUp",1);
@@ -1067,6 +1072,20 @@ script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE
     case 2:
         Log(s:DemonChangelog);
         break;
+    }
+}
+
+script WEEB_PUKE2 (void) NET // I can't believe I'm dedicating an entire script to this one instance.
+{
+    if (flashlightOn[PlayerNumber()])
+    {
+        flashlightOn[PlayerNumber()] = 0;
+        ActivatorSound("flashlight/off", 127);
+    }
+    else
+    {
+        flashlightOn[PlayerNumber()] = 1;
+        ActivatorSound("flashlight/on", 127);
     }
 }
 

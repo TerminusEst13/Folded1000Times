@@ -12,3 +12,7 @@ addslotdefault 5 "Kharon + Exodus"
 addslotdefault 6 "Kharon + Legion"
 addslotdefault 0 "Kharon"
 addslotdefault 0 "Iron Fist"
+
+AddKeySection "DemonSteele - Optional Keys" "demonsteeleoptional"
+AddMenuKey "Flashlight" "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis"
+Alias "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis" "Puke -281"

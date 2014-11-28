@@ -24,6 +24,7 @@ FROM 0.73 TO 0.74:
 - The Invulnerability Sphere and RadSuit now have their own respective appropriate replacements.
 - The sound range on the not-Kamehameha has been tripled.
 - Enemies killed with the not-Kamehameha are now no longer resurrectable.
+- Meleeing enemies in pitch dark is a pain in the ass. For users who play with lower visibility settings and/or on dark maps, a flashlight has been provided. At the moment, it's an optional customizable key, but in the future (when Zandronum supports it) then it'll use the Reload key.
 
 FROM 0.72 TO 0.73:
 =======================================

@@ -15,6 +15,7 @@
 #define WEEB_ENTER_CLIENT                    278
 #define WEEB_PUKE                            279
 #define WEEB_CREDITS                         280
+#define WEEB_PUKE2                           281
 
 // Definitions
 

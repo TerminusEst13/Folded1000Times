@@ -109,6 +109,8 @@ hatk8                   HLATCK6a
 // System
 
 silence                   QUIET
+flashlight/on             FLASHON
+flashlight/off            FLASHOFF
 
 $random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 intro17 intro18 intro19 }
 intro1                    INTRO1
