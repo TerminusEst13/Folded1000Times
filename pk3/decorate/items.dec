@@ -71,6 +71,17 @@ actor TinyMeterPickup1 : TinyMeterPickup
     }
 }
 
+actor TinyMeterPickupAlways : RandomSpawner 30240
+{
+    DropItem "TinyMeterPickup1"
+    DropItem "TinyMeterPickup2"
+    DropItem "TinyMeterPickup3"
+    DropItem "TinyMeterPickup4"
+    DropItem "TinyMeterPickup5"
+    DropItem "TinyMeterPickup6"
+    DropItem "TinyMeterPickup7"
+}
+
 actor TinyMeterPickup2 : TinyMeterPickup
 {
     States

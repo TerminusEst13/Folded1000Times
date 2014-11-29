@@ -1,0 +1,5 @@
+I've had a few people offer to map for me and asked me for actor definition numbers.
+For the sake of reference (and my incessant memory issues), here are all of them in one place:
+
+30240 - Soul Fragment
+30241 - Hammer Ammo Small
