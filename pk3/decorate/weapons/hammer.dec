@@ -11,6 +11,7 @@ actor "Kharon + Omen" : Kharon
         CMCP A -1
         Stop
     Ready:
+        TNT1 A 0 A_TakeInventory("HammerHit",1)
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         WEPO A 1 A_WeaponReady
@@ -376,7 +377,9 @@ actor "Kharon + Omen" : Kharon
         CMC1 D 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight")
         CMC1 E 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight") // Multiple separate checks...
         CMC1 F 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight") // ...for when online play lags.
         TNT1 A 1
         TNT1 A 70 A_WeaponReady
         Goto AltFired
@@ -388,7 +391,9 @@ actor "Kharon + Omen" : Kharon
         CMC1 D 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight")
         CMC1 E 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight")
         CMC1 F 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight")
         TNT1 A 1
         TNT1 A 70 A_WeaponReady
         Goto AltFired
@@ -401,7 +406,9 @@ actor "Kharon + Omen" : Kharon
         CMC2 E 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitMedium")
         CMC2 F 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitMedium")
         CMC2 G 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitMedium")
         CMC2 H 1
         TNT1 A 70 A_WeaponReady
         Goto AltFired
@@ -415,10 +422,13 @@ actor "Kharon + Omen" : Kharon
         CMC3 F 1
         CMC3 G 1 A_FireCustomMissile("HammerAttackHeavy",0,0,0,0,0,0)
         CMC3 H 1
-        TNT1 A 0 a_JumpIfInventory("HammerHit",1,"HitHeavy")
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         CMC3 I 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         CMC3 J 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         CMC3 K 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         TNT1 A 1
         TNT1 A 70 A_WeaponReady
         Goto AltFired
@@ -503,10 +513,13 @@ actor "Kharon + Omen" : Kharon
         CMC3 F 1
         CMC3 G 1 A_FireCustomMissile("HammerAttackHeavy",0,0,0,0,0,0)
         CMC3 H 1
-        TNT1 A 0 a_JumpIfInventory("HammerHit",1,"HitHeavy")
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         CMC3 I 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         CMC3 J 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         CMC3 K 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         TNT1 A 1
         TNT1 A 70 A_WeaponReady
         Goto Fired
@@ -522,10 +535,13 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 Radius_Quake(3,4,0,16,0)
         CMC3 G 1 A_FireCustomMissile("HammerAttackOvercharge",0,0,0,0,0,0)
         CMC3 H 1 Radius_Quake(5,5,0,16,0)
-        TNT1 A 0 a_JumpIfInventory("HammerHit",1,"HitFinal")
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitFinal")
         CMC3 I 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitFinal")
         CMC3 J 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitFinal")
         CMC3 K 1
+        TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitFinal")
         TNT1 A 1
         TNT1 A 70 A_WeaponReady
         Goto Fired
@@ -533,9 +549,9 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE2,0,0)
         TNT1 A 0 A_Stop
         CMC3 HO 1 Radius_Quake(15,70,0,64,0)
-        CMC3 O 3
-        CMC3 L 1 A_Recoil(20)
+        CMC3 O 3 A_ClearRefire
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE2,0,0)
+        CMC3 L 1 A_Recoil(20)
         CMC3 M 1
         CMC3 N 1
         TNT1 A 0 A_TakeInventory("HammerHit",1)

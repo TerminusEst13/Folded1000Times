@@ -190,6 +190,7 @@ actor NewLevelStatReset : CustomInventory
     {
     Pickup:
     Use:
+        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE2,0,0)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",0)
         TNT1 A 0 A_ChangeFlag("GHOST",0)
