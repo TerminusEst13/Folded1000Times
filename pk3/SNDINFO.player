@@ -1,0 +1,202 @@
+// Jung Hae-Lin (Voiced by Adoxographist)
+
+$playeralias      Hae-Lin  male    *death          haelin/dead
+$playersounddup   Hae-Lin  male    *xdeath         *death
+$playersounddup   Hae-Lin  male    *burndeath      *death
+$playersounddup   Hae-Lin  male    *crazydeath     *death
+$playersounddup   Hae-Lin  male    *wimpydeath     *death
+$playersounddup   Hae-Lin  male    *gibbed         *death
+$playeralias      Hae-Lin  male    *pain100        haelin/hurt
+$playersounddup   Hae-Lin  male    *pain75         *pain100
+$playersounddup   Hae-Lin  male    *pain50         *pain100
+$playersounddup   Hae-Lin  male    *pain25         *pain100
+$playersound      Hae-Lin  male    *grunt          QUIET
+$playersound      Hae-Lin  male    *land           HLLAND // Taken from Quake 3
+$playeralias      Hae-Lin  male    *usefail        haelin/nope
+$playeralias      Hae-Lin  male    *taunt          haelin/laugh
+$playeralias      Hae-Lin  male    *jump           haelin/jump
+
+$random haelin/dead { haedead1 haedead2 }
+haedead1                HLDEATH1
+haedead2                HLDEATH2
+
+$random haelin/hurt { haehurt1 haehurt2 haehurt3 }
+haehurt1                HLPAIN1
+haehurt2                HLPAIN2
+haehurt3                HLPAIN3
+
+$random haelin/nope { haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haenope1 haenope2 haenope3 haewhoops1 }
+haenope1                HLNOPE1
+haenope2                HLNOPE2
+haenope3                HLNOPE3
+haewhoops1              HLWOOPS1
+
+$random haelin/laugh { haelaff1 haelaff2 haelaff3 }
+haelaff1                HLLAFFO1
+haelaff2                HLLAFFO2
+haelaff3                HLLAFFO3
+
+$random haelin/jump { haejump1 haejump2 haejump3 }
+haejump1                HLJUMP1
+haejump2                HLJUMP2
+haejump3                HLJUMP3
+
+$random haelin/idle0 { haewang1 haewang2 }
+haewang1                HLSWARR1
+haewang2                HLSWARR2
+
+haelin/idle1_1          HLIDL1_1
+haelin/idle1_2          HLIDL1_2
+haelin/idle1_3          HLIDL1_3
+haelin/idleknux         HLKNUX   // Taken from huluvu42 on FreeSound.org
+
+henshin/call            HLHENSHN
+
+$random haelin/intro { hntro1 hntro2 hntro3 hntro4 hntro5 hntro6 hntro7 hntro8 hntro9 hntro10  hntro11 hntro12 hntro13 hntro14 hntro15 hntro16 hntro17 hntro18 hntro19 hntro20 hntro21 hntro22 hntro23 hntro24 hntro25 hntro26 hntro27 hntro28 hntro29 hntro30 hntro31 hntro32 hntro33 hntro34 hntro35 hntro36 hntro37 hntro38 hntro39 }
+hntro1                  HLNTRO1
+hntro2                  HLNTRO2
+hntro3                  HLNTRO3
+hntro4                  HLNTRO5
+hntro5                  HLNTRO6
+hntro6                  HLNTRO7
+hntro7                  HLNTRO8
+hntro8                  HLNTRO9
+hntro9                  HLNTRO10
+hntro10                 HLNTRO11
+hntro11                 HLNTRO12
+hntro12                 HLNTRO13
+hntro13                 HLNTRO14
+hntro14                 HLNTRO15
+hntro15                 HLNTRO16
+hntro16                 HLNTRO17
+hntro17                 HLNTRO18
+hntro18                 HLNTRO19
+hntro19                 HLNTRO20
+hntro20                 HLNTRO21 // White Skull - Heavy Metal Axes
+hntro21                 HLNTRO22
+hntro22                 HLNTRO23
+hntro23                 HLNTRO25 // Iced Earth - Travel in Stygian (Minor rephrasing)
+hntro24                 HLNTRO26 // Dream Evil - In Flames You Burn
+hntro25                 HLNTRO27 // Annihilator - Denied
+hntro26                 HLNTRO28 // W.A.S.P. - Harder, Faster
+hntro27                 HLNTRO29 // Bon Jovi - Living on a Prayer
+hntro28                 HLNTRO30 // Megadeth - My Last Words
+hntro29                 HLNTRO31 // ACDC - Back in Black
+hntro30                 HLNTRO33 // Judas Priest - Painkiller (Minor rephrasing)
+hntro31                 HLNTRO35 // Iron Fire - Kill for Metal (Minor rephrasing)
+hntro32                 HLNTRO36 // Manowar - Ride the Dragon
+hntro33                 HLNTRO37 // Paladin - On Fire (Minor rephrasing)
+hntro34                 HLNTRO38 // Striker - Full Speed or No Speed
+hntro35                 HLNTRO39 // Testament - Down for Life
+hntro36                 HLNTRO40
+hntro37                 HLNTRO41 // Ozzy Osbourne - Crazy Train
+hntro38                 HLNTRO42
+hntro39                 HLNTRO24
+
+$random haelin/attack { hatk1 hatk1b hatk1c hatk1d hatk1 hatk1b hatk1c hatk1d hatk1 hatk1 hatk2 hatk3 hatk4 hatk5 hatk6 hatk7 hatk8 }
+hatk1                   HLATCK1a
+hatk1b                  HLATCK1b
+hatk1c                  HLATCK1c
+hatk1d                  HLATCK1d
+hatk2                   HLATCK2a
+hatk3                   HLATCK2b
+hatk4                   HLATCK3a
+hatk5                   HLATCK4a
+hatk6                   HLATCK4b
+hatk7                   HLATCK5a
+hatk8                   HLATCK6a
+
+// System
+
+silence                   QUIET
+world/quake               QUIET
+flashlight/on             FLASHON
+flashlight/off            FLASHOFF
+
+$random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 intro17 intro18 intro19 }
+intro1                    INTRO1
+intro2                    INTRO2
+intro3                    INTRO3
+intro4                    INTRO4  // Taken from Doom 3
+intro5                    INTRO5  // Also taken from Doom 3
+intro6                    INTRO6  // Ditto
+intro7                    INTRO7  // Double ditto
+intro8                    INTRO8  // Triple ditto
+intro9                    INTRO9  // M-M-M-MONSTER DITTO
+intro10                   INTRO10 // Taken from Painkiller
+intro11                   INTRO11 // Taken from Quake 3
+intro12                   INTRO12 // Taken from Quack 3
+intro13                   INTRO13 // Taken from Quark III
+intro14                   INTRO14 // Taken from Quag Tres
+intro15                   INTRO15 // Taken from Quiche Trio
+intro16                   INTRO16 // Taken from Quad Damage
+intro17                   INTRO17 // Taken from Eternal Darkness
+intro18                   INTRO18 // Taken from Eternal Darkness
+intro19                   INTRO19 // Taken from MAGIX Soundpool
+
+menu/activate             MENUUP   // Bring up the main menu. - Sound taken from World of Warcraft
+menu/clear                MENUDOWN // Close main menu. - ORIGINAL SOUND PLEASE DON'T STEAL :(
+menu/choose               MENUYES  // Choose an item on the menu. - Sound taken from Painkiller
+menu/backup               MENUNO   // Go back to previous menu. - Sound taken from Painkiller
+menu/cursor               MENUSCRL // Move cursor up/down. - Sound taken from Zelda: Twilight Princess
+menu/change               MENUCHNG // Changing options around. - Sound taken from World of Warcraft
+menu/prompt               MENUQUIT // Are you sure you want to quit? - Sound taken from Painkiller
+menu/dismiss              MENUDSMS // Dismiss a prompt. - Sound taken from Painkiller
+menu/invalid              MENUFAIL // Menu not available. - Sound taken from World of Warcraft
+
+misc/secret               DSSECRET // Taken from Quake III Arena
+weapon/summon             LITNGHIT // Taken from Marathon
+weapon/pickup             WEAPGET  // Taken from Devil May Cry 3
+weapon/switch             WEPSWTCH
+
+$rolloff weapon/summon 800 5200
+
+world/drip                dsdrip
+world/drip1               dsdrip1
+world/watersplash         dssplash
+world/watersplashsmall    dssplsml
+world/sludgegloop         dsploosh
+world/sludgegloopsmall    dsplosml
+world/lavasizzle          dslvsiz
+world/lavsiz2             dslvsiz2
+world/lavasizzlesmall     dslavsml
+world/thunder             dsthun
+
+$limit world/drip             1
+$limit world/watersplash      1
+$limit world/watersplashsmall 2
+$limit world/sludgegloop      1
+$limit world/sludgegloopsmall 2
+$limit world/lavasizzle       1
+$limit world/lavsiz2          1
+$limit world/lavasizzlesmall  2
+
+$random misc/gibbed { bsplatter1 bsplatter2 bsplatter3 bsplatter4 }
+bsplatter1                   BRTSPLT1
+bsplatter2                   BRTSPLT2
+bsplatter3                   BRTSPLT3
+bsplatter4                   BRTSPLT4
+
+// Player
+
+armor/hit                 ARMRHIT
+ghost/step                NINJDODG
+ghost/jump                NINJJUMP
+
+
+
+
+// Taken from Radys that I haven't changed yet
+
+S_Cut            NGORE4
+
+S_Blodf1        NBLODF1
+
+S_Blodd1        NBLODd1
+S_Blodd2        NBLODd2
+S_Blodd3        NBLODd3
+$random    S_Blodd    { S_Blodd1 S_Blodd2 S_Blodd3 }
+$limit S_Blodd    1
+
+
+wp/kickh1        NSWA014

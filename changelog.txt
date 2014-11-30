@@ -32,6 +32,7 @@ FROM 0.73 TO 0.74:
 - The Blackened's children now have a different appearance, to prevent confusion with Lost Souls.
 - Lost Souls now drop souls when killed.
 - The Blackened now has a sound when summoning its children, to prevent confusion of when a child is attacking or being summoned.
+- Quakes no longer cause sounds.
 
 FROM 0.72 TO 0.73:
 =======================================
