@@ -425,6 +425,8 @@ script WEEB_ENTER ENTER
     int IntroChance;
     int ShieldHP;
     int SentinelHP;
+    int NewShieldHP;
+    int NewSentinelHP;
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     {
@@ -449,6 +451,19 @@ script WEEB_ENTER ENTER
     {
         IntroChance = random(0,3);
         if (IntroChance == 3) { LocalAmbientSound("haelin/intro",127); }
+    }
+
+    if (CheckInventory("SentinelUp") == 1)
+    {
+        NewSentinelHP = CheckInventory("SentinelLifeCounter");
+        TakeInventory("SentinelActive",1);
+        GiveInventory("SentinelFromPreviousLevel",1);
+    }
+    if (CheckInventory("BlindGuardianShieldUp") == 1)
+    {
+        NewShieldHP = CheckInventory("BlindGuardianLifeCounter");
+        TakeInventory("BlindGuardianShieldActive",1);
+        GiveInventory("BlindGuardianFromPreviousLevel",1);
     }
 
     if (Spawn("Brutal_Blood", GetActorX(0), GetActorY(0), GetActorZ(0), i) || Spawn("BrutalPistol", GetActorX(0), GetActorY(0), GetActorZ(0), i))
@@ -500,6 +515,11 @@ script WEEB_ENTER ENTER
                 // DON'T WORRY, MA'AM, WE'RE PROFESSIONALS
                 Spawn("BlindGuardian",XMen,Ys,ZDum,ShieldTID,Angel);
                 GiveInventory("BlindGuardianShieldActive",1);
+                if (CheckInventory("BlindGuardianFromPreviousLevel") == 1)
+                {
+                    SetActorProperty(ShieldTID,APROP_Health,NewShieldHP);
+                    TakeInventory("BlindGuardianFromPreviousLevel",1);
+                }
             }
             else
             {
@@ -567,6 +587,11 @@ script WEEB_ENTER ENTER
             {
                 Spawn("AllFearTheSentinel",XMen,Ys,ZDum,SentTID,Angel);
                 GiveInventory("SentinelActive",1);
+                if (CheckInventory("SentinelFromPreviousLevel") == 1)
+                {
+                    SetActorProperty(SentTID,APROP_Health,NewSentinelHP);
+                    TakeInventory("SentinelFromPreviousLevel",1);
+                }
             }
             else
             // Yeah, this code is all basically copy/pasted from the buttshield.
@@ -974,10 +999,10 @@ script WEEB_COMBOREMOVAL ENTER
 
 script WEEB_UNLOADING UNLOADING
 {
-    TakeInventory("SentinelUp",1);
-    TakeInventory("SentinelActive",1);
-    TakeInventory("BlindGuardianShieldUp",1);
-    TakeInventory("BlindGuardianShieldActive",1);
+    //TakeInventory("SentinelUp",1);
+    //TakeInventory("SentinelActive",1);
+    //TakeInventory("BlindGuardianShieldUp",1);
+    //TakeInventory("BlindGuardianShieldActive",1);
     TakeInventory("AlreadyInLevel",1);
     TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
@@ -1001,8 +1026,8 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("MidCombat",0x7FFFFFFF);
     TakeInventory("LegionCounter",0x7FFFFFFF);
     TakeInventory("LegionStacked",0x7FFFFFFF);
-    TakeInventory("SentinelLifeCounter",0x7FFFFFFF); // Already done in the Enter script.
-    TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF); // But just in case.
+    //TakeInventory("SentinelLifeCounter",0x7FFFFFFF); // Already done in the Enter script.
+    //TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF); // But just in case.
 }
 
 script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }

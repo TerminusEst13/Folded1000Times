@@ -25,6 +25,8 @@ actor SentinelBeyondTheRealmsOfDeath : Boolean {}
 actor SentinelIdle : Boolean {}
 actor SentinelMidCombat : Boolean {}
 actor SentinelDissidentAggressor : Boolean {}
+actor SentinelFromPreviousLevel : Boolean {}
+actor BlindGuardianFromPreviousLevel : Boolean {}
 
 actor UziLikeAGuzzi : Boolean {}
 actor UziFrame1 : Boolean {}

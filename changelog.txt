@@ -26,6 +26,8 @@ FROM 0.73 TO 0.74:
 - Enemies killed with the not-Kamehameha are now no longer resurrectable.
 - Meleeing enemies in pitch dark is a pain in the ass. For users who play with lower visibility settings and/or on dark maps, a flashlight has been provided. At the moment, it's an optional customizable key, but in the future (when Zandronum supports it) then it'll use the Reload key.
 - Hammer is more responsive online and now has multiple checks for if the player has hit something with it. This should polish up all inconsistencies in hitting and should also reduce the amount of times people hit something and then get stuck in place.
+- The Sentinel and the Blind Guardian can now be carried from level to level.
+- The Infrared Visor has been replaced with a Sentinel pickup as well, which should make it slightly more common than just the allmap.
 
 FROM 0.72 TO 0.73:
 =======================================

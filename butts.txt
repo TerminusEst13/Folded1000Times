@@ -49,7 +49,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <Dewce> And it'd be a way to reward keeping your rank as high as possible
 <Dewce> I know your damage goes up
 <Dewce> So just a thought
-97: Now that the Infrared is rendered completely useless, something should replace it.
 
 
 
@@ -230,6 +229,7 @@ DONE:
 90: Terminusest13: [watching Doomguy going down a dark corridor on stream] I should probably add a flashlight, just because Painkiller did.
 93: Replace the bossbrain head with something more appropriate, like Metrood. Maybe Ozzy Osbourne's head?
 94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
+97: Now that the Infrared is rendered completely useless, something should replace it.
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter

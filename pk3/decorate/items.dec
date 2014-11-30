@@ -1093,3 +1093,5 @@ actor SentinelPickup : CustomInventory replaces AllMap
         stop
     }
 }
+
+actor SentinelPickupB : SentinelPickup replaces Infrared {}
