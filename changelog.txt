@@ -29,6 +29,9 @@ FROM 0.73 TO 0.74:
 - The Sentinel and the Blind Guardian can now be carried from level to level.
 - The Infrared Visor has been replaced with a Sentinel pickup as well, which should make it slightly more common than just the allmap.
 - The Archvile has +MISSILEEVENMORE removed.
+- The Blackened's children now have a different appearance, to prevent confusion with Lost Souls.
+- Lost Souls now drop souls when killed.
+- The Blackened now has a sound when summoning its children, to prevent confusion of when a child is attacking or being summoned.
 
 FROM 0.72 TO 0.73:
 =======================================

@@ -539,121 +539,123 @@ wizard/shothit            WZRDSHIT // The only non-Painkiller sound! Taken from 
 wizard/pain               WZRDPAIN // Taken from Plumculler
 wizard/death              WZRDDETH // Taken from Poolkonger
 
+blackened/attack          DARKATCK // Taken from Heretic, I believe?
+
 $random blackened/laugh { dlaf1 dlaf2 dlaf3 dlaf4 dlaf5 } // Recorded by John Archer
-dlaf1                   DARKLAF1
-dlaf2                   DARKLAF2
-dlaf3                   DARKLAF3
-dlaf4                   DARKLAF4
-dlaf5                   DARKLAF5
+dlaf1                     DARKLAF1
+dlaf2                     DARKLAF2
+dlaf3                     DARKLAF3
+dlaf4                     DARKLAF4
+dlaf5                     DARKLAF5
 
 $random blackened/pain { dsqul1 dsqul2 dsqul3 dsqul4 dsqul5 dsqul6 } // Recorded by John Archer
-dsqul1                  DARKHNK1
-dsqul2                  DARKHNK2
-dsqul3                  DARKHNK3
-dsqul4                  DARKHNK4
-dsqul5                  DARKHNK5
-dsqul6                  DARKHNK6
+dsqul1                    DARKHNK1
+dsqul2                    DARKHNK2
+dsqul3                    DARKHNK3
+dsqul4                    DARKHNK4
+dsqul5                    DARKHNK5
+dsqul6                    DARKHNK6
 
 $random blackened/whisper { dwhis1 dwhis2 dwhis3 dwhis4 dwhis5 dwhis6 }
-dwhis1                  DARKWHS1
-dwhis2                  DARKWHS2
-dwhis3                  DARKWHS3
-dwhis4                  DARKWHS4
-dwhis5                  DARKWHS5
-dwhis6                  DARKWHS6
+dwhis1                    DARKWHS1
+dwhis2                    DARKWHS2
+dwhis3                    DARKWHS3
+dwhis4                    DARKWHS4
+dwhis5                    DARKWHS5
+dwhis6                    DARKWHS6
 
 $random blackened/scream { ghostscream1 ghostscream2 ghostscream3 ghostscream4 } // Taken from freqman from FreeSound.org, modified
-ghostscream1            DARKSCR1
-ghostscream2            DARKSCR2
-ghostscream3            DARKSCR3
-ghostscream4            DARKSCR4
+ghostscream1              DARKSCR1
+ghostscream2              DARKSCR2
+ghostscream3              DARKSCR3
+ghostscream4              DARKSCR4
 
-blacksoul/pain          BLKSPAIN // Unknown source
-blacksoul/death         BLKSDETH // Taken from Hexen
-blacksoul/active        BLKSACTV // Unknown source
-blacksoul/attack        BLKSATCK // Unknown source
+blacksoul/pain            BLKSPAIN // Unknown source
+blacksoul/death           BLKSDETH // Taken from Hexen
+blacksoul/active          BLKSACTV // Unknown source
+blacksoul/attack          BLKSATCK // Unknown source
 
 $random priest/see { psee1 psee2 psee3 } // Taken from Painkiller: Overdose
-psee1                   PRSTSEE1
-psee2                   PRSTSEE2
-psee3                   PRSTSEE3
+psee1                     PRSTSEE1
+psee2                     PRSTSEE2
+psee3                     PRSTSEE3
 $random priest/idle { pidl1 pidl2 pidl3 } // Taken from Painkiller: Overdosee
-pidl1                   PRSTIDL1
-pidl2                   PRSTIDL2
-pidl3                   PRSTIDL3
-priest/pain             PRSTPAIN // Taken from Painkiller: Overdose
-priest/death            PRSTDETH // Taken from Painkiller: Overdose
-priest/shot             PRSTFIRE // Taken from RPG Maker VX Ace
-priest/shothit          PRSTFIHT // Taken from Doom 3
+pidl1                     PRSTIDL1
+pidl2                     PRSTIDL2
+pidl3                     PRSTIDL3
+priest/pain               PRSTPAIN // Taken from Painkiller: Overdose
+priest/death              PRSTDETH // Taken from Painkiller: Overdose
+priest/shot               PRSTFIRE // Taken from RPG Maker VX Ace
+priest/shothit            PRSTFIHT // Taken from Doom 3
 
 
 $random emperor/sight { empse1 empse2 empse3 empse4 empse5 empse6 empse7 empse8 } // Taken from Soulcalibur IV
-empse1                  EMPRSIT1
-empse2                  EMPRSIT2
-empse3                  EMPRSIT3
-empse4                  EMPRSIT4
-empse5                  EMPRSIT5
-empse6                  EMPRSIT6
-empse7                  EMPRSIT7
-empse8                  EMPRSIT8
+empse1                    EMPRSIT1
+empse2                    EMPRSIT2
+empse3                    EMPRSIT3
+empse4                    EMPRSIT4
+empse5                    EMPRSIT5
+empse6                    EMPRSIT6
+empse7                    EMPRSIT7
+empse8                    EMPRSIT8
 $random emperor/pain { empain1 empain2 empain3 empain4 } // Taken from Solecalibre 4
-empain1                 EMPRPAN1
-empain2                 EMPRPAN2
-empain3                 EMPRPAN3
-empain4                 EMPRPAN4
+empain1                   EMPRPAN1
+empain2                   EMPRPAN2
+empain3                   EMPRPAN3
+empain4                   EMPRPAN4
 $random emperor/idle { empidl1 empidl2 empidl3 empidl4 empidl5 empidl1 empidl2 empidl3 empidl4 empidl5 empidl6 } // Taken from Swole-calipur Fore
-empidl1                 EMPRIDL1
-empidl2                 EMPRIDL2
-empidl3                 EMPRIDL3
-empidl4                 EMPRIDL4
-empidl5                 EMPRIDL5
-empidl6                 EMPRIDL6
+empidl1                   EMPRIDL1
+empidl2                   EMPRIDL2
+empidl3                   EMPRIDL3
+empidl4                   EMPRIDL4
+empidl5                   EMPRIDL5
+empidl6                   EMPRIDL6
 $random emperor/attack { empatk1 empatk2 empatk3 empatk4 empatk5 empatk6 empatk7 } // Taken from Swell-call-me-now For You
-empatk1                 EMPRATK1
-empatk2                 EMPRATK2
-empatk3                 EMPRATK3
-empatk4                 EMPRATK4
-empatk5                 EMPRATK5
-empatk6                 EMPRATK6
-empatk7                 EMPRATK7
+empatk1                   EMPRATK1
+empatk2                   EMPRATK2
+empatk3                   EMPRATK3
+empatk4                   EMPRATK4
+empatk5                   EMPRATK5
+empatk6                   EMPRATK6
+empatk7                   EMPRATK7
 $random emperor/charge { empch1 empch2 empch3 empch4 empch5 } // I can't think of another way to mutate "Soulcalibur IV".
-empch1                  EMPRCHR1
-empch2                  EMPRCHR2
-empch3                  EMPRCHR3
-empch4                  EMPRCHR4
-empch5                  EMPRCHR5
+empch1                    EMPRCHR1
+empch2                    EMPRCHR2
+empch3                    EMPRCHR3
+empch4                    EMPRCHR4
+empch5                    EMPRCHR5
 $random emperor/death { empdie1 empdie2 } // Soulcalibur IV
-empdie1                 EMPRDTH1
-empdie2                 EMPRDTH2
+empdie1                   EMPRDTH1
+empdie2                   EMPRDTH2
 
 
 
 
 $random yakuza/see { yaksee1 yaksee2 yaksee3 yaksee4 yaksee5 yaksee6 yaksee7 yaksee8 } // Taken from Super Street Fighter IV
-yaksee1                 YKZASEE1
-yaksee2                 YKZASEE2
-yaksee3                 YKZASEE3
-yaksee4                 YKZASEE4
-yaksee5                 YKZASEE5
-yaksee6                 YKZASEE6
-yaksee7                 YKZASEE7
-yaksee8                 YKZASEE8
+yaksee1                   YKZASEE1
+yaksee2                   YKZASEE2
+yaksee3                   YKZASEE3
+yaksee4                   YKZASEE4
+yaksee5                   YKZASEE5
+yaksee6                   YKZASEE6
+yaksee7                   YKZASEE7
+yaksee8                   YKZASEE8
 $random yakuza/hurt { yakhurt1 yakhurt2 yakhurt3 } // Taken from Super Street Fighter IV
-yakhurt1                YKZAHRT1
-yakhurt2                YKZAHRT2
-yakhurt3                YKZAHRT3
+yakhurt1                  YKZAHRT1
+yakhurt2                  YKZAHRT2
+yakhurt3                  YKZAHRT3
 $random yakuza/die { yakdie1 yakdie2 yakdie3 yakdie4 } // Taken from Super Street Fighter IV
-yakdie1                 YKZADIE1
-yakdie2                 YKZADIE2
-yakdie3                 YKZADIE3
-yakdie4                 YKZADIE4
-yakuza/cock             YKZACOCK // Taken from Left 4 Dead 2
-yakuza/fire             YKZAFIRE // Taken from Halo: Reach
+yakdie1                   YKZADIE1
+yakdie2                   YKZADIE2
+yakdie3                   YKZADIE3
+yakdie4                   YKZADIE4
+yakuza/cock               YKZACOCK // Taken from Left 4 Dead 2
+yakuza/fire               YKZAFIRE // Taken from Halo: Reach
 $random yakuza/gib { yakgib1 yakgib2 yakgib3 yakgib4 } // Taken from Painkiller
-yakgib1                 YKZAGIB1
-yakgib2                 YKZAGIB2
-yakgib3                 YKZAGIB3
-yakgib4                 YKZAGIB4
+yakgib1                   YKZAGIB1
+yakgib2                   YKZAGIB2
+yakgib3                   YKZAGIB3
+yakgib4                   YKZAGIB4
 
 $limit yakuza/fire 0
 

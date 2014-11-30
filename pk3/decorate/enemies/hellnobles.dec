@@ -1,5 +1,6 @@
 ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
 {
+    Scale 0.9
     Species "Body"
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
@@ -160,6 +161,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
 
 ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
 {
+    Scale 1.1
     Speed 12
     Species "Body"
     PainChance "kubiuti", 64
