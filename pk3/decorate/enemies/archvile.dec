@@ -13,7 +13,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
     +MISSILEMORE
-    +MISSILEEVENMORE
+    //+MISSILEEVENMORE
     +DONTBLAST
     States
     {

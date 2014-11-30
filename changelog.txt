@@ -28,6 +28,7 @@ FROM 0.73 TO 0.74:
 - Hammer is more responsive online and now has multiple checks for if the player has hit something with it. This should polish up all inconsistencies in hitting and should also reduce the amount of times people hit something and then get stuck in place.
 - The Sentinel and the Blind Guardian can now be carried from level to level.
 - The Infrared Visor has been replaced with a Sentinel pickup as well, which should make it slightly more common than just the allmap.
+- The Archvile has +MISSILEEVENMORE removed.
 
 FROM 0.72 TO 0.73:
 =======================================
