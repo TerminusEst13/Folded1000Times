@@ -17,6 +17,10 @@ actor WeeabooRevenant : Revenant replaces Revenant
     DamageFactor "EnemyInfightDamageRevenant", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
+    SeeSound "revenant/see"
+    PainSound "revenant/pain"
+    ActiveSound "revenant/idle"
+    DeathSound "revenant/death"
     States
     {
     See:

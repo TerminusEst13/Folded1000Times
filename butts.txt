@@ -49,6 +49,8 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <Dewce> And it'd be a way to reward keeping your rank as high as possible
 <Dewce> I know your damage goes up
 <Dewce> So just a thought
+98: Commander Keen replacement.
+99: Cvar for turning off jumping for Priests/Emperor.
 
 
 

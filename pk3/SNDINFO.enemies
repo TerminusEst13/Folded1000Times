@@ -1,5 +1,8 @@
 // Enemy sounds
 
+enemy/shothit             ENSHOTHT
+enemy/bisected            ENBISECT // Taken from Splatterhouse
+
 trooper/gunready          ENREAD1 // Taken from Smash Bros. Melee
 sergeant/gunready         ENREAD2 // Taken from Smash Bros. Brawl
 chngnner/gunready         ENREAD3 // Taken from Smash Bros. Brawl
@@ -15,8 +18,118 @@ cyber/rockethit           CYRCKEXP // Mixed the Doom explosion with a Doom 3 exp
 imp/preparefire           IMPFWOSH // Taken from Doom 3, sped up
 imp/shootfire             IMPSHOOT
 
-enemy/shothit             ENSHOTHT
-enemy/bisected            ENBISECT // Taken from Splatterhouse
+
+
+$random lost/idle { lostidle1 lostidle2 lostidle3 } // Taken from Painkiller
+lostidle1                 LOSTIDL1
+lostidle2                 LOSTIDL2
+lostidle3                 LOSTIDL3
+
+$random lost/see { lostsee1 lostsee2 lostsee3 } // Taken from Painkiller
+lostsee1                  LOSTSEE1
+lostsee2                  LOSTSEE2
+lostsee3                  LOSTSEE3
+
+$random lost/pain { lostpain1 lostpain2 } // Taken from Painkiller
+lostpain1                 LOSTPAN1
+lostpain2                 LOSTPAN2
+
+lost/death                LOSTDETH // Taken from Painkiller
+lost/attack               LOSTATCK // Taken from Painkiller
+
+$random zombie/see { zomsee1 zomsee2 zomsee3 zomsee4 zomsee5 } // Taken from Left 4 Dead 2
+zomsee1                   ZOMSITE1
+zomsee2                   ZOMSITE2
+zomsee3                   ZOMSITE3
+zomsee4                   ZOMSITE4
+zomsee5                   ZOMSITE5
+
+$random zombie/pain { zompain1 zompain2 zompain3 zompain4 } // Taken from Left 4 Dead 2
+zompain1                  ZOMPAIN1
+zompain2                  ZOMPAIN2
+zompain3                  ZOMPAIN3
+zompain4                  ZOMPAIN4
+
+$random zombie/idle { zomidle1 zomidle2 zomidle3 zomidle4 } // Taken from Left 4 Dead 2
+zomidle1                  ZOMIDLE1
+zomidle2                  ZOMIDLE2
+zomidle3                  ZOMIDLE3
+zomidle4                  ZOMIDLE4
+
+$random zombie/death { zomdeth1 zomdeth2 zomdeth3 zomdeth4 zomdeth5 zomdeth6 } // Taken from Left 4 Dead 2
+zomdeth1                  ZOMDETH1
+zomdeth2                  ZOMDETH2
+zomdeth3                  ZOMDETH3
+zomdeth4                  ZOMDETH4
+zomdeth5                  ZOMDETH5
+zomdeth6                  ZOMDETH6
+
+$random imp/see { impsee1 impsee2 impsee3 } // Taken from Doom 3
+impsee1                   IMPSITE1
+impsee2                   IMPSITE2
+impsee3                   IMPSITE3
+
+$random imp/pain { imppain1 imppain2 } // Taken from Doom 3
+imppain1                  IMPPAIN1
+imppain2                  IMPPAIN2
+
+$random imp/idle { impidle1 impidle2 impidle3 } // Taken from Doom 3
+impidle1                  IMPIDLE1
+impidle2                  IMPIDLE2
+impidle3                  IMPIDLE3
+
+$random imp/death { impdeath1 impdeath2 impdeath3 } // Taken from Doom 3
+impdeath1                 IMPDETH1
+impdeath2                 IMPDETH2
+impdeath3                 IMPDETH3
+
+pinky/see                 PINKSITE // Taken from World of Warcraft
+pinky/pain                PINKPAIN // Taken from World of Warcraft
+pinky/death               PINKDETH // Taken from World of Warcraft
+
+$random pinky/idle { pinkidl1 pinkidl2 } // Taken from World of Warcraft
+pinkidl1                  PINKIDL1
+pinkidl2                  PINKIDL2
+
+$random pinky/attack { pinkbite1 pinkbite2 pinkbite3 } // Taken from World of Warcraft
+pinkbite1                 PINKATK1
+pinkbite2                 PINKATK2
+pinkbite3                 PINKATK3
+
+$random pinky/step { pinkstep1 pinkstep2 pinkstep3 }
+pinkstep1                 PINKSTP1
+pinkstep2                 PINKSTP2
+pinkstep3                 PINKSTP3
+$limit pinky/step 0
+$volume pinky/step 0.75
+
+baron/idle                BARNIDLE // Taken from World of Warcraft
+$random baron/ready { barnatk1 barnatk2 } // Taken from World of Warcraft
+barnatk1                  BARNATK1
+barnatk2                  BARNATK2
+
+baron/death               BARNDETH // Taken from World of Warcraft, minor editing
+baron/pain                BARNPAIN // Taken from World of Warcraft
+baron/see                 BARNSITE // Taken from World of Warcraft
+
+$random baron/step { barstep1 barstep2 barstep3 }
+barstep1                  BARNSTP1
+barstep2                  BARNSTP2
+barstep3                  BARNSTP3
+$limit baron/step 0
+$volume baron/step 0.75
+
+knight/idle               KNGTIDLE // Taken from World of Warcraft
+knight/death              KNGTDETH // Taken from World of Warcraft
+knight/pain               KNGTPAIN // Taken from World of Warcraft
+knight/see                KNGTSITE // Taken from World of Warcraft
+
+$random knight/step { knightstep1 knightstep2 knightstep3 }
+knightstep1               KNGTSTP1 // kniggit
+knightstep2               KNGTSTP2
+knightstep3               KNGTSTP3
+$limit knight/step 0
+$volume knight/step 0.75
 
 steelbeast/attack         STLBATCK // Taken from Painkiller
 steelbeast/death          STLBDETH // Taken from Painkiller
@@ -132,6 +245,94 @@ empch5                    EMPRCHR5
 $random emperor/death { empdie1 empdie2 } // Soulcalibur IV
 empdie1                   EMPRDTH1
 empdie2                   EMPRDTH2
+
+$random revenant/death { revdeath1 revdeath2 } // Taken from STALKER: Shadow of Chernobyl
+revdeath1                 REVDETH1
+revdeath2                 REVDETH2
+
+$random revenant/idle { revidle1 revidle2 revidle3 revidle4 } // Taken from STALKER: Shadow of Chernobyl
+revidle1                  REVIDLE1
+revidle2                  REVIDLE2
+revidle3                  REVIDLE3
+revidle4                  REVIDLE4
+
+revenant/pain             REVPAIN
+
+$random revenant/see { revsee1 revsee2 revsee3 } // Taken from STALKER: Shadow of Chernobyl
+revsee1                   REVSITE1
+revsee2                   REVSITE2
+revsee3                   REVSITE3
+
+$random vile/death { viledeath1 viledeath2 viledeath3 viledeath4 } // Taken from Killer7
+viledeath1                VILDETH1
+viledeath2                VILDETH2
+viledeath3                VILDETH3
+viledeath4                VILDETH4
+
+$random vile/idle { vileidle1 vileidle2 vileidle3 vileidle4 vileidle5 vileidle6 vileidle7 } // Taken from Killer7
+viledeath1                VILDETH1
+viledeath2                VILDETH2
+viledeath3                VILDETH3
+viledeath4                VILDETH4
+viledeath5                VILDETH5
+viledeath6                VILDETH6
+viledeath7                VILDETH7
+
+$random vile/pain { vilepain1 vilepain2 vilepain3 } // Taken from Killer7
+vilepain1                 VILPAIN1
+vilepain2                 VILPAIN2
+vilepain3                 VILPAIN3
+
+$random vile/resurrect { vileres1 vileres2 } // Taken from Killer7
+vileres1                  VILRESS1
+vileres2                  VILRESS2
+
+$random vile/raise { vileraise1 vileraise2 vileraise3 } // Taken from Killer7
+vileraise1                VILRVIV1
+vileraise2                VILRVIV2
+vileraise3                VILRVIV3
+
+$random vile/see { vilesee1 vilesee2 vilesee3 vilesee4 } // Taken from Killer7
+vilesee1                  VILSITE1
+vilesee2                  VILSITE2
+vilesee3                  VILSITE3
+vilesee4                  VILSITE4
+
+$random mancubus/idle { mancidle1 mancidle2 mancidle3 mancidle4 mancidle5 } // Taken from Gears of War
+mancidle1                 MANIDLE1
+mancidle2                 MANIDLE2
+mancidle3                 MANIDLE3
+mancidle4                 MANIDLE4
+mancidle5                 MANIDLE5
+
+$random mancubus/see { mancsee1 mancsee2 mancsee3 mancsee4 } // Taken from Gears of War
+mancsee1                  MANSITE1
+mancsee2                  MANSITE2
+mancsee3                  MANSITE3
+mancsee4                  MANSITE4
+
+$random mancubus/death { mancdeath1 mancdeath2 mancdeath3 } // Taken from Gears of War
+mancdeath1                MANDETH1
+mancdeath2                MANDETH2
+mancdeath3                MANDETH3
+
+$random fatso/raiseguns { mancready1 mancready2 } // Taken from Gears of War
+mancready1                MANREDY1
+mancready2                MANREDY2
+
+$random mancubus/step { mancstep1 mancstep2 } // Taken from Gears of War
+mancstep1                 MANSTEP1
+mancstep2                 MANSTEP2
+
+$random mancubus/pain { mancpain1 mancpain2 } // Taken from Gears of War
+mancpain1                 MANPAIN1
+mancpain2                 MANPAIN2
+
+fatso/attack              MANSHFIR // Taken from Gears of War
+$limit fatso/attack 0
+fatso/shotx               MANSHHIT // Taken from Gears of War
+$volume fatso/shotx 0.9
+$limit fatso/shotx 0
 
 
 

@@ -14,11 +14,22 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     DamageFactor "EnemyInfightDamageNoble", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
+    ActiveSound "knight/idle"
+    SeeSound "knight/see"
+    PainSound "knight/pain"
+    DeathSound "knight/death"
     BloodColor DarkOliveGreen
     +MISSILEMORE
     +DONTBLAST
     States
     {
+    See:
+        BOS2 AABB 3 A_Chase
+        TNT1 A 0 A_PlaySound("knight/step")
+        BOS2 CCDD 3 A_Chase
+        TNT1 A 0 A_PlaySound("knight/step")
+        Loop
+
     Melee:
     Missile:
         BOS2 EF 9 A_FaceTarget
@@ -32,19 +43,19 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
+        goto Pain
     Pain.KubiRangeAttack:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
-    Pain.KubiRangeAttack:
-        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
+        goto Pain
     Pain.SabbathDamage:
     Pain.KharonSheathe:
         BOS2 H 5 //A_Recoil(2)
         BOS2 H 5 A_Pain
+        Goto See
+    Pain:
+        BOS2 H 2
+        BOS2 H 2 A_Pain
         Goto See
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
@@ -176,6 +187,10 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     DamageFactor "EnemyInfightDamageNoble", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
+    ActiveSound "baron/idle"
+    SeeSound "baron/see"
+    PainSound "baron/pain"
+    DeathSound "baron/death"
     BloodColor DarkOliveGreen
     +MISSILEMORE
     +MISSILEEVENMORE
@@ -183,7 +198,10 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     States
     {
     See:
-        BOSS AABBCCDD 2 A_Chase
+        BOSS AABB 2 A_Chase
+        TNT1 A 0 A_PlaySound("baron/step")
+        BOSS CCDD 2 A_Chase
+        TNT1 A 0 A_PlaySound("baron/step")
         Loop
     Melee:
     Missile:
@@ -196,6 +214,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         BOSS G 8//A_BruisAttack
         Goto See
     Missile2:
+        TNT1 A 0 A_PlaySound("baron/ready")
         BOSS E 25 A_FaceTarget
         BOSS EF 4 A_FaceTarget
         TNT1 A 0 A_CustomMissile("WeeabooBaronBall",32,0,0)

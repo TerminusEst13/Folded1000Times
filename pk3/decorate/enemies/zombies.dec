@@ -25,6 +25,10 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "SabbathDamage", 5.0
     DamageFactor "ExodusDamage", 5.0
     DamageFactor "IronMaidenShot", 5.0
+    SeeSound "zombie/see"
+    PainSound "zombie/pain"
+    ActiveSound "zombie/idle"
+    DeathSound "zombie/death"
     DropItem "ShitAll"
     States
     {
@@ -463,6 +467,10 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "SabbathDamage", 3.3
     DamageFactor "ExodusDamage", 3.3
     DamageFactor "IronMaidenShot", 3.3
+    SeeSound "zombie/see"
+    PainSound "zombie/pain"
+    ActiveSound "zombie/idle"
+    DeathSound "zombie/death"
     DropItem "ShitAll"
     States
     {
@@ -870,7 +878,11 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "SabbathDamage", 1.5
     DamageFactor "ExodusDamage", 1.5
     DamageFactor "IronMaidenShot", 1.5
-    DropItem "BlankPuff"
+    SeeSound "zombie/see"
+    PainSound "zombie/pain"
+    ActiveSound "zombie/idle"
+    DeathSound "zombie/death"
+    DropItem "ShitAll"
     States
     {
     See:

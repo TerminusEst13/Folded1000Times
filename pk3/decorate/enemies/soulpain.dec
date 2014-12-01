@@ -14,6 +14,11 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     DamageFactor "KubiRangeAttack", 2.0
     DamageFactor "KubiSpinAttack", 2.0
     DamageFactor "KubiLungeAttack", 2.0
+    SeeSound "lost/see"
+    AttackSound "lost/attack"
+    PainSound "lost/pain"
+    DeathSound "lost/death"
+    ActiveSound "lost/idle"
     States
     {
     Pain.KubiLungeAttack:

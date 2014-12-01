@@ -27,6 +27,10 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     DamageFactor "SabbathDamage", 1.65
     DamageFactor "ExodusDamage", 1.65
     DamageFactor "IronMaidenShot", 1.65
+    SeeSound "imp/see"
+    ActiveSound "imp/idle"
+    PainSound "imp/pain"
+    DeathSound "imp/death"
     Speed 12
     States
     {

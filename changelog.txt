@@ -33,6 +33,7 @@ FROM 0.73 TO 0.74:
 - Lost Souls now drop souls when killed.
 - The Blackened now has a sound when summoning its children, to prevent confusion of when a child is attacking or being summoned.
 - Quakes no longer cause sounds.
+- All enemies now have their own custom sound set. Whew! That was a lot of work.
 
 FROM 0.72 TO 0.73:
 =======================================
