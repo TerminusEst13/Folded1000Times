@@ -263,11 +263,9 @@ revsee1                   REVSITE1
 revsee2                   REVSITE2
 revsee3                   REVSITE3
 
-$random vile/death { viledeath1 viledeath2 viledeath3 viledeath4 } // Taken from Killer7
+$random vile/death { viledeath1 viledeath2 } // Taken from Killer7
 viledeath1                VILDETH1
 viledeath2                VILDETH2
-viledeath3                VILDETH3
-viledeath4                VILDETH4
 
 $random vile/idle { vileidle1 vileidle2 vileidle3 vileidle4 vileidle5 vileidle6 vileidle7 } // Taken from Killer7
 viledeath1                VILDETH1
