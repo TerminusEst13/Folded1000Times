@@ -37,6 +37,7 @@ FROM 0.73 TO 0.74:
 - A few people's ears had trouble with the Kharon's sheathe, so the sheathing sound effect has been slightly softened, its pitch lowered, and its bass reduced.
 - There is now an options menu for handling cvars and DemonSteele-specific settings, in ZDoom.
 - New teleport effect. Neat!
+- Hae-Lin now has lines for the not-Kamehameha. I can't think of a name for it, so neither can she.
 
 FROM 0.72 TO 0.73:
 =======================================

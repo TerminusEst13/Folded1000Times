@@ -106,6 +106,18 @@ hatk6                   HLATCK4b
 hatk7                   HLATCK5a
 hatk8                   HLATCK6a
 
+$random holybeam/callout { habeam1 habeam2 habeam3 habeam4 habeam5 habeam6 habeam7 habeam11 habeam13 habeam14 habeam14 habeam14 habeam14 habeam14 }
+habeam1                 HLBECH01
+habeam2                 HLBECH02
+habeam3                 HLBECH03
+habeam4                 HLBECH04
+habeam5                 HLBECH05 // Sanctuary - Arise and Purify
+habeam6                 HLBECH06 // Metallica - Ride the Lightning
+habeam7                 HLBECH07 // Rhapsody - Rain of a Thousand Flames
+habeam11                HLBECH11 // Vicious Circle - Fist of God
+habeam13                HLBECH13
+habeam14                HLBECH14
+
 // Player
 
 armor/hit                 ARMRHIT
