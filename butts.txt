@@ -20,7 +20,6 @@ TO DO in no particular order:
   ^ Non-placeholder sprites for fists/pickup
 53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 54: Casing ejection/smoke effects on the guns.
-55: New teleport effect
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
 58: Attack when you let go of holding down fire.
 61: 6000 ANGRY BEES: one small idea to toy with:
@@ -194,6 +193,7 @@ DONE:
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
+55: New teleport effect
 56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
 59: Less/no-effects cvar
 60: <torridGristle> Watersplashes aren't the same colour as the water.

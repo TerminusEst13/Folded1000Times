@@ -1,0 +1,45 @@
+
+    OptionMenu "OptionsMenu"
+    {
+            Title "OPTIONS"
+            Submenu "Customize Controls",                   "CustomizeControls"
+            Submenu "Mouse options",                        "MouseOptions"
+            Submenu "Joystick options",                     "JoystickOptions"
+            StaticText " "
+            Submenu "DemonSteele Options",                  "Changes-TurnThePage"
+            StaticText " "
+            Submenu "Player Setup",                         "PlayerMenu"
+            Submenu "Gameplay Options",                     "GameplayOptions"
+            Submenu "Compatibility Options",                "CompatibilityOptions"
+            Submenu "Automap Options",                      "AutomapOptions"
+            Submenu "HUD Options",                          "HUDOptions"
+            Submenu "Miscellaneous Options",                "MiscOptions"
+            Submenu "Sound Options",                        "SoundOptions"
+            Submenu "Display Options",                      "VideoOptions"
+            Submenu "Set video mode",                       "VideoModeMenu"
+            StaticText " "
+            SafeCommand "Reset to defaults",                "reset2defaults"
+            SafeCommand "Reset to last saved",              "reset2saved"
+            Command "Go to console",                        "menuconsole"
+    }
+     
+    OptionMenu "Changes-TurnThePage"
+    {
+    Title "DEMONSTEELE - OPTIONS"
+            StaticText      ""
+            StaticText      "General Options", 1
+            Option "Infinite soul meter",            "ds_infinitesouls", "OnOff"
+            Option "Testament only spawns on SSG",   "ds_noshotgun", "OnOff"
+            Option "No gun recoil",                  "ds_cl_norecoil", "OnOff"
+            Option "Switch when out of ammo",        "ds_cl_autoswitch", "OnOff"
+            Option "Disable special moves",          "ds_nospecials", "OnOff"
+            Option "No Iron Maiden music",           "ds_cl_nomusic", "OnOff"
+            Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
+    }
+     
+    OptionValue ToasterOptions
+    {
+            0, "All effects"
+            1, "Less effects"
+            2, "Minimal effects"
+    }

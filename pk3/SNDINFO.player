@@ -106,12 +106,23 @@ hatk6                   HLATCK4b
 hatk7                   HLATCK5a
 hatk8                   HLATCK6a
 
+// Player
+
+armor/hit                 ARMRHIT
+ghost/step                NINJDODG
+ghost/jump                NINJJUMP
+flashlight/on             FLASHON
+flashlight/off            FLASHOFF
+weapon/pickup             WEAPGET  // Taken from Devil May Cry 3
+weapon/switch             WEPSWTCH
+
 // System
 
 silence                   QUIET
 world/quake               QUIET
-flashlight/on             FLASHON
-flashlight/off            FLASHOFF
+misc/teleport             TELEPROT
+misc/spawn                ITEMSPWN
+$volume misc/spawn 0.75
 
 $random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 intro17 intro18 intro19 }
 intro1                    INTRO1
@@ -146,8 +157,6 @@ menu/invalid              MENUFAIL // Menu not available. - Sound taken from Wor
 
 misc/secret               DSSECRET // Taken from Quake III Arena
 weapon/summon             LITNGHIT // Taken from Marathon
-weapon/pickup             WEAPGET  // Taken from Devil May Cry 3
-weapon/switch             WEPSWTCH
 
 $rolloff weapon/summon 800 5200
 
@@ -176,12 +185,6 @@ bsplatter1                   BRTSPLT1
 bsplatter2                   BRTSPLT2
 bsplatter3                   BRTSPLT3
 bsplatter4                   BRTSPLT4
-
-// Player
-
-armor/hit                 ARMRHIT
-ghost/step                NINJDODG
-ghost/jump                NINJJUMP
 
 
 

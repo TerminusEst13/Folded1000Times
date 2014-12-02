@@ -25,7 +25,7 @@ FROM 0.73 TO 0.74:
 - The sound range on the not-Kamehameha has been tripled.
 - Enemies killed with the not-Kamehameha are now no longer resurrectable.
 - Meleeing enemies in pitch dark is a pain in the ass. For users who play with lower visibility settings and/or on dark maps, a flashlight has been provided. At the moment, it's an optional customizable key, but in the future (when Zandronum supports it) then it'll use the Reload key.
-- Hammer is more responsive online and now has multiple checks for if the player has hit something with it. This should polish up all inconsistencies in hitting and should also reduce the amount of times people hit something and then get stuck in place.
+- The Omen and Iron Maiden are more responsive online and now has multiple checks for if the player has hit something with it. This should polish up all inconsistencies in hitting and should also reduce the amount of times people hit something and then get stuck in place.
 - The Sentinel and the Blind Guardian can now be carried from level to level.
 - The Infrared Visor has been replaced with a Sentinel pickup as well, which should make it slightly more common than just the allmap.
 - The Archvile has +MISSILEEVENMORE removed.
@@ -34,6 +34,9 @@ FROM 0.73 TO 0.74:
 - The Blackened now has a sound when summoning its children, to prevent confusion of when a child is attacking or being summoned.
 - Quakes no longer cause sounds.
 - All enemies now have their own custom sound set. Whew! That was a lot of work.
+- A few people's ears had trouble with the Kharon's sheathe, so the sheathing sound effect has been slightly softened, its pitch lowered, and its bass reduced.
+- There is now an options menu for handling cvars and DemonSteele-specific settings, in ZDoom.
+- New teleport effect. Neat!
 
 FROM 0.72 TO 0.73:
 =======================================

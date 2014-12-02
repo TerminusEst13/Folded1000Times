@@ -86,7 +86,7 @@ const int WEEB_DEC_CHANGEMUSBACK = 2;
 #include "decorate/shield.dec"
 #include "decorate/sentinel.dec"
 
-#include "decorate/bloodeffects.dec"
+#include "decorate/effects.dec"
 
 #include "decorate/enemies/zombies.dec"
 #include "decorate/enemies/imp.dec"

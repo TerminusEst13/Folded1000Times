@@ -447,7 +447,7 @@ ACTOR Kharon : Weapon
         WEPK HIJ 1
         goto AltHold
     AltFirePrepare:
-        TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        //TNT1 A 0 A_TakeInventory("KharonSwung",1)
         //TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
         //TNT1 A 0 A_PlayWeaponSound("sheathe/lower")
@@ -484,6 +484,11 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH D 1
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFired2")
     AltFired:
@@ -532,6 +537,11 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH H 1 A_GiveInventory("SheatheSwung",1)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH I 1
         goto AltFired2
     AltAttack2:
@@ -561,6 +571,11 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH M 1 A_TakeInventory("SheatheSwung",1)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",20,0,20)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH N 1
         goto AltFired2
     /*KharonSpecialSlash:
