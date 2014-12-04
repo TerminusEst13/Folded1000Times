@@ -42,6 +42,7 @@ FROM 0.73 TO 0.74:
 - In the chance a player picks up a new weapon DemonSteele doesn't replace, the ammo HUD will now show the ammo for it.
 - ZDoom stealth monsters are now supported. Due to the gameplay style of DemonSteele, the monsters no longer flicker in and out of visibility, but are now a constant and flat 0.4 visibility.
 - People tended to lose track of exactly how much health they had and would die accidentally. In true retro game style, now there is a beeping warning when low on health. This can be disabled with "ds_cl_nobeeping".
+- Skulltag items and monsters now have a proper replacement. Skulltag monsters occaisionally recieve strange colors when killed, but for now this is a great step forward.
 
 FROM 0.72 TO 0.73:
 =======================================

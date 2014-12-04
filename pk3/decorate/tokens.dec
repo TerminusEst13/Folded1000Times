@@ -47,6 +47,7 @@ actor SynthAltFire : Boolean {}
 actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
 actor IAmAnAwesomePersonWhoLikesCoolMusic : Boolean {}
 actor IAmAnOkayPersonWhoLikesToAutoSwitch : Boolean {}
+actor IAmADumbPersonWhoWillProbablyAccidentallyDie : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}
