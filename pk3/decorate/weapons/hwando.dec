@@ -714,7 +714,7 @@ ACTOR KharonAttack1 : FastProjectile
     Species "Player"
     Projectile
     +BLOODSPLATTER
-    +THRUGHOST
+    //+THRUGHOST
     +THRUSPECIES
     +NOTIMEFREEZE
     +NOEXTREMEDEATH
@@ -767,7 +767,7 @@ actor KharonSheatheSmack : FastProjectile
     Species "Player"
     Projectile
     +THRUSPECIES
-    +THRUGHOST
+    //+THRUGHOST
     +NOTIMEFREEZE
     //+SHOOTABLE
     //+REFLECTIVE
@@ -820,7 +820,7 @@ ACTOR KharonRipAttack : FastProjectile
     Species "Player"
     Projectile
     +BLOODSPLATTER
-    +THRUGHOST
+    //+THRUGHOST
     +THRUSPECIES
     +NOTIMEFREEZE
     +NOEXTREMEDEATH
