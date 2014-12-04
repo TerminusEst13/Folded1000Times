@@ -167,6 +167,7 @@ $rolloff hammer/overcharge 1200 5600
 
 sword/draw                SWORDUP // Taken from...somewhere. I can't recall, sorry!
 sword/sheathe             SWORDDWN // Taken from the Oblivion Combat Sound Replacement
+$volume sword/sheathe 0.9
 sword/swingheavy          SWINGHEV // Taken from the Oblivion Combat Sound Replacement
 sword/spinattack          SPINATCK
 sword/beam3               SRDBEEM3
