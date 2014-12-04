@@ -34,10 +34,8 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 72: Skulltag weapon replacements?
 74: Explosive dashing punch as the Iron Maiden's forward special
 75: Replacement sounds for other world objects, such as lifts, switches, exploding barrels, and doors.
-76: Replacement sounds for the non-unique enemies, since at the moment the high-quality sounds contrast quite a bit.
 85: Skulltag support:
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
-  ^ Skulltag-specific items should be replaced as well
   ^ Picking up a Minigun/Grenade Launcher/Railgun/BFG10k wonks things.
 89: Destroy corpse decorations, get their soul.
 91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
@@ -50,6 +48,8 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <Dewce> So just a thought
 98: Commander Keen replacement.
 99: Cvar for turning off jumping for Priests/Emperor.
+100: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
+101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
 
 
 
@@ -91,14 +91,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <PresidentPeople> >Wraithverge still isn't on it
 
 
-[04:31:35 pm] Badass adorkable: i want a bonerstorms caused by ironmeido mode kills to be a shotgun blasts
-[04:32:02 pm] TerminusEst13: That...actually sounds like a cool idea for a special move.
-[04:32:16 pm] TerminusEst13: Kill a dude so hard his bones rocket out and shred through other dudes.
-[04:32:35 pm] Badass adorkable: not as much shred as much as PAAAAAAIN
-[04:32:53 pm] Badass adorkable: kill a pinkie to stun pinkies behind it
-[04:33:30 pm] DRL 3.33: instead of gibing, they explode, damageing other monsters around them\
-
-
 
 
 <PresidentPeople> TerminusEst13: Has this been fixed yet?  http://puu.sh/cs47P/9f763e0207.png
@@ -138,6 +130,13 @@ Like one style is to tap repeatedly for really fast strikes (what's currently in
 Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
 Another style is single strikes, where holding down fire charges up a more powerful strike.
 And the final style...ummm. Hm. // Kharon being wielded by itself will cover this.
+- 
+[04:31:35 pm] Badass adorkable: i want a bonerstorms caused by ironmeido mode kills to be a shotgun blasts
+[04:32:02 pm] TerminusEst13: That...actually sounds like a cool idea for a special move.
+[04:32:16 pm] TerminusEst13: Kill a dude so hard his bones rocket out and shred through other dudes.
+[04:32:35 pm] Badass adorkable: not as much shred as much as PAAAAAAIN
+[04:32:53 pm] Badass adorkable: kill a pinkie to stun pinkies behind it
+[04:33:30 pm] DRL 3.33: instead of gibing, they explode, damageing other monsters around them // Too complicated for something technically already in.
 
 
 DONE:
@@ -214,6 +213,7 @@ DONE:
 69: Let the player know on the HUD what weapons they've already picked up.
 71: A cvar to let people swap between weapons when out of ammo.
 73: hammo pickup
+76: Replacement sounds for the non-unique enemies, since at the moment the high-quality sounds contrast quite a bit.
 77: <skroton> also put in butts.txt
 <skroton> [for explosive barrels] get rid of a_barrelrespawn and put a check to the sv_barrelrespawncvar
 <skroton> or just have it default to on
@@ -225,6 +225,8 @@ DONE:
 82: Online, hit wall with hammer, then swing at the air--hammer will still bounce off.
 83: Grenades should explode on the sky. Do they not have +SKYEXPLODE?
 84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.
+85: Skulltag support:
+  ^ Skulltag-specific items should be replaced as well
 86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
 87: Do all of the Vile deaths have A_KillChildren?
 88: Unique graphic for invuln pickup and radsuit.
