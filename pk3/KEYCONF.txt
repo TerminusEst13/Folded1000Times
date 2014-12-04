@@ -15,4 +15,7 @@ addslotdefault 0 "Iron Fist"
 
 AddKeySection "DemonSteele - Optional Keys" "demonsteeleoptional"
 AddMenuKey "Flashlight" "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis"
+AddMenuKey "ZDoom: Taunt" zdoomtaunt
+
 Alias "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis" "Puke -281"
+Alias zdoomtaunt "use ZDoomTauntButton"

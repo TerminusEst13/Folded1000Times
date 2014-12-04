@@ -43,6 +43,7 @@ ACTOR MeleePlayer : PlayerPawn
     Player.StartItem "KamenRiderModeActivate", 20
     Player.StartItem "SuperMeterCounter", 20
     Player.StartItem "WeebClip", 20
+    Player.StartItem "ZDoomTauntButton", 20
     Player.ColorRange 112, 127
     Player.AttackZOffset 16
     States
@@ -309,5 +310,23 @@ actor HaeLinFoodRamenComment : CustomInventory
     PickupComment:
         TNT1 A 0 A_PlaySoundEx("haelin/foodramen", 7)
         stop
+    }
+}
+
+actor ZDoomTauntButton : CustomInventory
+{
+    -INVBAR
+    +UNDROPPABLE
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    states
+    {
+    Use:
+        TNT1 A 0 A_JumpIfInventory("NoTauntAllowed",1,"UseFail")
+        TNT1 A 0 A_PlaySound("*taunt", CHAN_VOICE)
+        fail
+    UseFail:
+        TNT1 A 0
+        fail
     }
 }

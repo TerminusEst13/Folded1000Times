@@ -14,6 +14,7 @@ actor InIronMaiden : Boolean {}
 actor IronMaidenWarning : Boolean {}
 actor Wounded : Boolean {}
 actor CheckYourPrivilege : Boolean {}
+actor NoTauntAllowed : Boolean {}
 
 actor BlindGuardianWaitForAnAnswer : Boolean {}
 actor BlindGuardianShieldUp : Boolean {}

@@ -508,6 +508,8 @@ script WEEB_ENTER ENTER
         else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
 
         if (GetCvar("ds_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
+        if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
+           else { TakeInventory("NoTauntAllowed",1); }
         
         // The Blind Guardian, AKA the BUTTSHIELD
         // It is a shield for your butt, you see.
