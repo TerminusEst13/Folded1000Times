@@ -48,6 +48,9 @@ actor BlindGuardian
     States
     {
     Spawn:
+        SHLD A 1
+        TNT1 A 0 A_GiveInventory("ImTheBlindGuardianYouDumbass",1)
+    Spawn1:
         TNT1 A 0 A_JumpIfHealthLower(101,"Spawn4")
         TNT1 A 0 A_JumpIfHealthLower(301,"Spawn3")
         TNT1 A 0 A_JumpIfHealthLower(601,"Spawn2")
@@ -71,7 +74,7 @@ actor BlindGuardian
         TNT1 A 0 A_JumpIfHealthLower(601,"Pain2")
         TNT1 A 0
         SHLD A 1 A_PlaySoundEx("shield/hurt1","soundslot6",0,0)
-        goto Spawn
+        goto Spawn1
     Pain2:
         TNT1 A 0 A_JumpIfHealthLower(101,"Pain4")
         TNT1 A 0 A_JumpIfHealthLower(301,"Pain3")

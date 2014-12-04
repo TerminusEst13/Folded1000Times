@@ -20,6 +20,7 @@ actor BlindGuardianWaitForAnAnswer : Boolean {}
 actor BlindGuardianShieldUp : Boolean {}
 actor BlindGuardianShieldActive : Boolean {}
 actor BlindGuardianShieldHeal : Boolean {}
+actor ImTheBlindGuardianYouDumbass : Boolean {}
 actor SentinelActive : Boolean {}
 actor SentinelUp : Boolean {}
 actor SentinelBeyondTheRealmsOfDeath : Boolean {}
