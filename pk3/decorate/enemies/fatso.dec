@@ -24,8 +24,10 @@ actor WeeabooFatty : Fatso replaces Fatso
     {
     See:
         FATT AABBCC 4 A_Chase
+        TNT1 A 0 Radius_Quake(1,2,0,16,0)
         TNT1 A 0 A_PlaySound("mancubus/step")
         FATT DDEEFF 4 A_Chase
+        TNT1 A 0 Radius_Quake(1,2,0,16,0)
         TNT1 A 0 A_PlaySound("mancubus/step")
         Loop
     Missile:

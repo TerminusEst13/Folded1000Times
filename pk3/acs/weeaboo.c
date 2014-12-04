@@ -12,6 +12,7 @@ int dodgeitem;
 int IsServer;
 int array_recoilrules[PLAYERMAX];
 int array_autoswitch[PLAYERMAX];
+int array_beepbeepbeep[PLAYERMAX];
 int flashlightOn[PLAYERMAX];
 
 int GotShotgun;
@@ -87,6 +88,10 @@ script WEEB_OPEN_CLIENT OPEN clientside
         if (!GetCvar("ds_cl_autoswitch"))
             { ConsoleCommand("set ds_cl_autoswitch 0");
               ConsoleCommand("archivecvar ds_cl_autoswitch"); }
+
+        if (!GetCvar("ds_cl_nobeeping"))
+            { ConsoleCommand("set ds_cl_nobeeping 0");
+              ConsoleCommand("archivecvar ds_cl_nobeeping"); }
     }
 }
 
@@ -427,6 +432,7 @@ script WEEB_ENTER ENTER
     int SentinelHP;
     int NewShieldHP;
     int NewSentinelHP;
+    int GetSomeHealthAlready;
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     {
@@ -943,9 +949,22 @@ script WEEB_ENTER ENTER
         else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
         if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
         else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
+        if (array_beepbeepbeep[pln]) { GiveInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie",1); }
+        else { TakeInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie", 0x7FFFFFFF); }
 
         if (flashlightOn[pln])
             { GiveInventory("FlashlightSpawner", 1); }
+
+        if (CheckInventory("ContraLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
+        {
+          if (GetSomeHealthAlready >= 60)
+          {
+            FadeRange(255,0,0,0.25,0,0,0,0,1.00);
+            LocalAmbientSound("health/low",127);
+            GetSomeHealthAlready = 0;
+          }
+        GetSomeHealthAlready++;
+        }
         
         Delay(1);
         if (isDead(0))
@@ -1033,18 +1052,17 @@ script WEEB_UNLOADING UNLOADING
 script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
 
 //int array_custmischarg[PLAYERMAX];
-//int array_metpick[PLAYERMAX];
 //int array_hitindic[PLAYERMAX];
 
 function int WeebClientVars(void)
 {
     //int custmischarg      = !!GetCVar("metroid_cl_custommissilecharge");
     //int hitindic          = !!GetCVar("metroid_cl_hitindicator");
-    //int metpick           = !!GetCVar("metroid_cl_nometroidpickups");
+    int beepbeepbeep        = !!GetCVar("ds_cl_nobeeping");
     int autoswitch          = !!GetCVar("ds_cl_autoswitch");
     int recoilrules         = !!GetCVar("ds_cl_norecoil");
 
-    return /*(custmischarg << 4) + (hitindic << 3) + (metpick << 2) +*/ (autoswitch << 1) + recoilrules;
+    return /*(custmischarg << 4) + (hitindic << 3) +*/ (beepbeepbeep << 2) + (autoswitch << 1) + recoilrules;
 }
 
 script WEEB_ENTER_CLIENT ENTER clientside
@@ -1082,8 +1100,8 @@ script WEEB_PUKE (int values) net
 
     array_recoilrules[pln]     = values & 1;
     array_autoswitch[pln]      = values & 2;
-    /*array_metpick[pln]       = values & 4;
-    array_hitindic[pln]      = values & 8;
+    array_beepbeepbeep[pln]    = values & 4;
+    /*array_hitindic[pln]      = values & 8;
     array_custmischarg[pln]  = values & 16;*/
 }
 

@@ -99,3 +99,5 @@ const int WEEB_DEC_CHANGEMUSBACK = 2;
 #include "decorate/enemies/thebestguy.dec"
 #include "decorate/enemies/archvile.dec"
 #include "decorate/enemies/soulpain.dec"
+#include "decorate/enemies/stealth.dec"
+#include "decorate/skulltag.dec"

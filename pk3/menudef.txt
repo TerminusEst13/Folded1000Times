@@ -34,6 +34,7 @@
             Option "Switch when out of ammo",        "ds_cl_autoswitch", "OnOff"
             Option "Disable special moves",          "ds_nospecials", "OnOff"
             Option "No Iron Maiden music",           "ds_cl_nomusic", "OnOff"
+            Option "No Low Health Warning",          "ds_cl_nobeeping", "OnOff"
             Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
     }
      

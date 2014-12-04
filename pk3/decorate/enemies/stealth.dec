@@ -1,0 +1,72 @@
+// Stealth monsters!
+actor StealthPriest : Priest replaces StealthArachnotron
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthWeebvile : WeeabooArchvile replaces StealthArchvile
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthBaron2 : WeeabooBaronOfHell replaces StealthBaron
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthHellKnight2 : WeeabooHellKnight replaces StealthHellKnight
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthWizard : WeeabooWizard replaces StealthCacodemon
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthDemon2 : WeeabooDemon replaces StealthDemon
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthChaingunGuy2 : WeeabooChaingunner replaces StealthChaingunGuy
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthDoomImp2 : WeeabooImp replaces StealthDoomImp
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthFatso2 : WeeabooFatty replaces StealthFatso
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthRevenant2 : WeeabooRevenant replaces StealthRevenant
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthShotgunGuy2 : WeeabooShotgunner replaces StealthShotgunGuy
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}
+
+actor StealthZombieman2 : WeeabooZombie replaces StealthZombieman
+{
+    RenderStyle Translucent
+    Alpha 0.4
+}

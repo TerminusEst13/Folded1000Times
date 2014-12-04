@@ -19,6 +19,16 @@ isselected "Kharon + Exodus" { InInventory WeebRocket, 10 { drawnumber 2, DNDHUD
 isselected "Kharon + Sabbath" { InInventory WeebCell, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
                                InInventory not WeebCell, 100 { InInventory WeebCell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not WeebCell, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
+isselected not "Kharon + Omen" {
+  isselected not "Kharon + Acacia A-22" {
+    isselected not "Kharon + Testament" {
+      isselected not "Kharon + Exodus" {
+        isselected not "Kharon + Sabbath" {
+          isselected not "Kharon + Legion" {
+            isselected not "Kharon" {
+              isselected not "Iron Fist" {
+
+                   drawnumber 3, DNDHUDF, untranslated, ammo1, fillzeros, drawshadow, 293, 179; }}}}}}}}
 
 ininventory GotHammer, 1 { drawimage "GOTO2", 262, 171, center; }
 drawimage "GOTA2", 267, 171, center;

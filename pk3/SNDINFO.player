@@ -118,6 +118,19 @@ habeam11                HLBECH11 // Vicious Circle - Fist of God
 habeam13                HLBECH13
 habeam14                HLBECH14
 
+$random haelin/foodsmall { haenom1 haenom2 haenom3 haenom5 }
+$random haelin/foodlarge { haenom1 haenom3 haenom4 haenom5 haenom7 haenom8 }
+$random haelin/foodramen { haenom2 haenom3 haenom4 haenom6 haenom7 haenom8 haenom9 }
+haenom1                 HLFOOD01
+haenom2                 HLFOOD02
+haenom3                 HLFOOD03
+haenom4                 HLFOOD04
+haenom5                 HLFOOD05
+haenom6                 HLFOOD06
+haenom7                 HLFOOD07
+haenom8                 HLFOOD08
+haenom9                 HLFOOD09
+
 // Player
 
 armor/hit                 ARMRHIT
@@ -135,6 +148,7 @@ world/quake               QUIET
 misc/teleport             TELEPROT
 misc/spawn                ITEMSPWN
 $volume misc/spawn 0.75
+health/low                LOWHEALF // Taken from Legend of Zelda: A Link to the Past
 
 $random level/intro { intro1 intro2 intro3 intro4 intro5 intro6 intro7 intro8 intro9 intro10 intro11 intro12 intro13 intro14 intro15 intro16 intro17 intro18 intro19 }
 intro1                    INTRO1
