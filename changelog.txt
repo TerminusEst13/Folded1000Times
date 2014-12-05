@@ -47,6 +47,7 @@ FROM 0.73 TO 0.74:
 - The Blind Guardian will no longer trigger the Sentinel and send it into a Tumblr fit. In the off chance it does, the Sentinel will check its privilege and reassert itself.
 - The Kharon's attacks no longer pass harmlessly through ghosts.
 - The Keen now has a unique replacement.
+- The techlamps are now destructable items, like the torches, and will now provide item drops.
 
 FROM 0.72 TO 0.73:
 =======================================

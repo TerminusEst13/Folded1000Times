@@ -1,0 +1,261 @@
+ACTOR TechLamp3 : DestructableDecorationBase replaces TechLamp
+{
+    Radius 16
+    Height 80
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        TCLP ABCB 5 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/lamp")
+        TNT1 A 0 //A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AAAA 0 A_SpawnItemEx("BulletSmoke",0,0,32,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("LampSpark",0,0,32,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/50.00,random(-180,180),160,96)
+        TNT1 AA 0 A_SpawnItemEx("TechLampDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TCLP Z 1
+        Goto See
+    }
+}
+
+actor TechLampDestroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Gravity 0.85
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        TCLP IJKL 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        TCLP I 3500
+        TCLP IIIII 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        TCLP K 3500
+        TCLP KKKKK 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+ACTOR TechLamp4 : DestructableDecorationBase replaces TechLamp2
+{
+    Radius 16
+    Height 60
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        TCLP EFGF 5 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/lamp")
+        TNT1 A 0 //A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("LampRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AAAA 0 A_SpawnItemEx("BulletSmoke",0,0,32,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("LampSpark",0,0,32,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/50.00,random(-180,180),160,96)
+        TNT1 A 0 A_SpawnItemEx("TechLamp2Destroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        TCL2 Z 1
+        Goto See
+    }
+}
+
+actor TechLamp2Destroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Gravity 0.85
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        TCLP MNOP 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        TCLP N 3500
+        TCLP NNNNN 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        TCLP P 3500
+        TCLP PPPPP 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+Actor LampRemains1
+{
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Scale 0.75
+    Gravity 0.85
+    BounceFactor 0.4
+    BounceCount 4
+    States
+    {
+    Spawn:
+        LPC1 ABCD 2
+        loop
+    Death:
+        LPC1 B 3500
+        LPC1 BBBBB 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor LampRemains2 : LampRemains1
+{
+    States
+    {
+    Spawn:
+        LPC2 ABCD 2
+        loop
+    Death:
+        LPC2 B 3500
+        LPC2 BBBBB 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor LampRemains3 : LampRemains1
+{
+    States
+    {
+    Spawn:
+        LPC3 ABCD 2
+        loop
+    Death:
+        LPC3 A 3500
+        LPC3 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor LampRemains4 : LampRemains1
+{
+    States
+    {
+    Spawn:
+        LPC4 ABCD 2
+        loop
+    Death:
+        LPC4 C 3500
+        LPC4 CCCCC 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor GlassRemains1
+{
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Scale 0.75
+    RenderStyle Translucent
+    Alpha 0.4
+    Gravity 0.85
+    BounceFactor 0.4
+    BounceCount 4
+    States
+    {
+    Spawn:
+        GLS1 ABCD 2
+        loop
+    Death:
+        GLS1 B 3500
+        GLS1 BBBBB 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor GlassRemains2 : GlassRemains1
+{
+    States
+    {
+    Spawn:
+        GLS2 ABCD 2
+        loop
+    Death:
+        GLS2 B 3500
+        GLS2 BBBBB 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor GlassRemains3 : GlassRemains1
+{
+    States
+    {
+    Spawn:
+        GLS3 ABCD 2
+        loop
+    Death:
+        GLS3 A 3500
+        GLS3 AAAAA 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+Actor GlassRemains4 : GlassRemains1
+{
+    States
+    {
+    Spawn:
+        GLS4 ABCD 2
+        loop
+    Death:
+        GLS4 C 3500
+        GLS4 CCCCC 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+
+actor LampSpark : BulletSpark { Scale 0.05 }

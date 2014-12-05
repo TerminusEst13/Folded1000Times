@@ -239,8 +239,10 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     +ALWAYSFAST
     +NODAMAGE
     +QUICKTORETALIATE
+    //+MTHRUSPECIES - Don't. It's more accurate to vanilla Doom behavior...
     -ISMONSTER
     -COUNTKILL
+    //Species "Player" - ...but means they can't be cut down.
     BloodType "BlankPuff"
     RadiusDamageFactor 0.0
     DamageFactor "Normal", 0.0
@@ -255,6 +257,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
 
 #include "decorate/decorations/torches.dec"
 #include "decorate/decorations/barrels.dec"
+#include "decorate/decorations/lamps.dec"
 
 
 actor DecorationShooterTurbo
