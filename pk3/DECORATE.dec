@@ -56,6 +56,7 @@ const int WEEB_DEC_ONLINECHECK = 17;
 const int WEEB_DEC_HENSHIN     = 18;
 const int WEEB_DEC_ARMRCHECK   = 19;
 const int WEEB_DEC_BARRELSPAWN = 20;
+const int WEEB_DEC_LEGIONCHECK = 21;
 const int WEEB_DEC_TOASTER     = 98;
 const int WEEB_DEC_TOASTER2    = 99;
 
@@ -99,5 +100,6 @@ const int WEEB_DEC_CHANGEMUSBACK = 2;
 #include "decorate/enemies/thebestguy.dec"
 #include "decorate/enemies/archvile.dec"
 #include "decorate/enemies/soulpain.dec"
+#include "decorate/enemies/keen.dec"
 #include "decorate/enemies/stealth.dec"
 #include "decorate/skulltag.dec"

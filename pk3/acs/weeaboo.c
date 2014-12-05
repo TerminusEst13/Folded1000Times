@@ -20,6 +20,7 @@ int GotCarronade;
 int GotUzi;
 int GotHam; // HAM
 int GotIronMaiden;
+int GotLegion;
 
 int MusicRandomizerIsIncluded;
 
@@ -333,6 +334,11 @@ script WEEB_DECORATE (int burrshet)
     case WEEB_DEC_BARRELSPAWN:
         SetResultValue(GetCVar("sv_barrelrespawn"));
         break;
+
+    case WEEB_DEC_LEGIONCHECK:
+        if (isSinglePlayer() && GotLegion == 1) { SetResultValue(1); }
+        else { SetResultValue(0); }
+        break;
     }
 }
 
@@ -364,6 +370,14 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
         case 4:
           Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Use Inventory to activate)");
+          break;
+
+        case 5:
+          Log(s:"\ckThe \cbMaw of the Legion\ck. Tempt not my hand...");
+          break;
+
+        case 6:
+          Log(s:"\ckThe \cbFrosthammer of Cocytus\ck. Tempt not my hand...");
           break;
         }
         break;
@@ -734,6 +748,7 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
             if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
             if (CheckInventory("GotIronMaiden") == 1) { GotIronMaiden = 1; } 
+            if (CheckInventory("GotLegion") == 1) { GotLegion = 1; } 
         }
 
         OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
