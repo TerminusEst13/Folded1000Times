@@ -46,7 +46,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <Dewce> And it'd be a way to reward keeping your rank as high as possible
 <Dewce> I know your damage goes up
 <Dewce> So just a thought
-98: Commander Keen replacement.
 99: Cvar for turning off jumping for Priests/Emperor.
 100: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
 101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
@@ -234,6 +233,7 @@ DONE:
 93: Replace the bossbrain head with something more appropriate, like Metrood. Maybe Ozzy Osbourne's head?
 94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 97: Now that the Infrared is rendered completely useless, something should replace it.
+98: Commander Keen replacement.
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
@@ -248,10 +248,7 @@ DONE:
 
 DESTRUCTABLE OBJECTS TO REPLACE:
 
-Column                  // Mini Tech Light
 BurningBarrel           // Barrel Fire
-TechLamp                // Large Tech Lamp
-TechLamp2               // Small Tech Lamp
 TechPillar              // Tech Column
 
 BigTree                 // Big Scorched Tree

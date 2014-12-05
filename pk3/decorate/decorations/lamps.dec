@@ -124,6 +124,34 @@ actor TechLamp2Destroyed
     }
 }
 
+ACTOR Column2 : DestructableDecorationBase replaces Column
+{
+    Radius 16
+    Height 48
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        CLM2 ABCB 5 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/lamp")
+        TNT1 A 0 //A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("GlassRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AAAA 0 A_SpawnItemEx("BulletSmoke",0,0,32,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("LampSpark",0,0,32,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/50.00,random(-180,180),160,96)
+        CLM2 Z 1
+        Goto See
+    }
+}
+
 Actor LampRemains1
 {
     Projectile

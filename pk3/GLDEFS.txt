@@ -1,3 +1,5 @@
+// Flats
+
 Glow
 {
     Flats
@@ -31,6 +33,7 @@ Glow
     }
 }
 
+// Flashlight
 
 PointLight FLASHLIGHT1
 {
@@ -178,8 +181,6 @@ PointLight FLASHLIGHT21
     Size 125
     Offset 0 0 0
 }
-
-// Objects
 
 Object FlashLightBeam0
 {
@@ -340,4 +341,82 @@ Object FlashLightBeam22
     Frame TNT1A { Light FLASHLIGHT20}
     Frame TNT1B { Light FLASHLIGHT21}
     Frame TNT1B { Light FLASHLIGHT22}
+}
+
+// Decorative objects
+
+object Candelabra2
+{
+    frame CBR2A { light CANDELABRA }
+    frame CBR2B { light CANDELABRA }
+    frame CBR2C { light CANDELABRA }
+}
+
+object BlueTorch2
+{
+    frame TRC2A { light BIGBLUETORCH }
+    frame TRC2B { light BIGBLUETORCH }
+    frame TRC2C { light BIGBLUETORCH }
+    frame TRC2D { light BIGBLUETORCH }
+}
+
+object RedTorch2
+{
+    frame TRC2E { light BIGREDTORCH }
+    frame TRC2F { light BIGREDTORCH }
+    frame TRC2G { light BIGREDTORCH }
+    frame TRC2H { light BIGREDTORCH }
+}
+
+object GreenTorch2
+{
+    frame TRC2I { light BIGGREENTORCH }
+    frame TRC2J { light BIGGREENTORCH }
+    frame TRC2K { light BIGGREENTORCH }
+    frame TRC2L { light BIGGREENTORCH }
+}
+
+object ShortBlueTorch2
+{
+    frame TRC3A { light SMALLBLUETORCH }
+    frame TRC3B { light SMALLBLUETORCH }
+    frame TRC3C { light SMALLBLUETORCH }
+    frame TRC3D { light SMALLBLUETORCH }
+}
+
+object ShortRedTorch2
+{
+    frame TRC3E { light SMALLREDTORCH }
+    frame TRC3F { light SMALLREDTORCH }
+    frame TRC3G { light SMALLREDTORCH }
+    frame TRC3H { light SMALLREDTORCH }
+}
+
+object ShortGreenTorch2
+{
+    frame TRC3I { light SMALLGREENTORCH }
+    frame TRC3J { light SMALLGREENTORCH }
+    frame TRC3K { light SMALLGREENTORCH }
+    frame TRC3L { light SMALLGREENTORCH }
+}
+
+object TechLamp3
+{
+    frame TCLPA { light BIGLAMP }
+    frame TCLPB { light BIGLAMP }
+    frame TCLPC { light BIGLAMP }
+}
+
+object TechLamp4
+{
+    frame TCLPE { light SMALLLAMP }
+    frame TCLPF { light SMALLLAMP }
+    frame TCLPG { light SMALLLAMP }
+}
+
+object Column2
+{
+    frame CLM2A { light LAMP }
+    frame CLM2B { light LAMP }
+    frame CLM2C { light LAMP }
 }
