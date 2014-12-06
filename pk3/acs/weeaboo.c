@@ -66,6 +66,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_nospecials"))
             { ConsoleCommand("set ds_nospecials 0");
               ConsoleCommand("archivecvar ds_nospecials 0"); }
+
+        if (!GetCvar("ds_arrogantweapons"))
+            { ConsoleCommand("set ds_arrogantweapons 0");
+              ConsoleCommand("archivecvar ds_arrogantweapons 0"); }
     }
 }
 
@@ -96,7 +100,7 @@ script WEEB_OPEN_CLIENT OPEN clientside
     }
 }
 
-script WEEB_DECORATE (int burrshet)
+script WEEB_DECORATE (int burrshet, int ballshat)
 {
     switch (burrshet)
     {
@@ -338,6 +342,20 @@ script WEEB_DECORATE (int burrshet)
     case WEEB_DEC_LEGIONCHECK:
         if (isSinglePlayer() && GotLegion == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
+        break;
+
+    case WEEB_DEC_STWEAPCHECK:
+        if (GetCvar("ds_arrogantweapons") == 1) { SetResultValue(1); }
+        else if (GetCvar("ds_arrogantweapons") == 2) { SetResultValue(2); }
+        /*switch (ballshat)
+        {
+        case 0:
+          if (GetCvar("ds_arrogantweapons") == 2)
+             { SetActorState(0,"SpawnTestament"); }
+          else
+             { SetActorState(0,"SpawnLegion"); }
+          break;
+        }*/
         break;
     }
 }
@@ -1062,8 +1080,9 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("MidCombat",0x7FFFFFFF);
     TakeInventory("LegionCounter",0x7FFFFFFF);
     TakeInventory("LegionStacked",0x7FFFFFFF);
-    //TakeInventory("SentinelLifeCounter",0x7FFFFFFF); // Already done in the Enter script.
-    //TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF); // But just in case.
+    TakeInventory("SwordAttack",0x7FFFFFFF);
+    //TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
+    //TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
 }
 
 script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
@@ -1136,7 +1155,7 @@ script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE
     }
 }
 
-script WEEB_PUKE2 (void) NET // I can't believe I'm dedicating an entire script to this one instance.
+script WEEB_PUKE2 (void) NET CLIENTSIDE // I can't believe I'm dedicating an entire script to this one instance.
 {
     if (flashlightOn[PlayerNumber()])
     {
