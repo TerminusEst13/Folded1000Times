@@ -1,4 +1,146 @@
+// Technically this should be in skulltag.dec, but I'm too lazy to rearrange.
+actor Minigun : Chaingun 5014
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 214
+}
+
+actor GrenadeLauncher : RocketLauncher 5011
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 163
+}
+
+actor Railgun : PlasmaRifle 5012
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 164
+}
+
+actor BFG10k : BFG9000 5013
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 165
+}
+
 actor NoChaingun : ShitAll replaces Chaingun {}
+
+actor SSGReplacement : CustomInventory replaces SuperShotgun
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0,0) == 2,"SpawnTestamentLegion")//ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0)
+        TNT1 A 1//0
+        //stop
+    SpawnTestament:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("TestamentAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnTestamentLegion:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("TestamentLegionSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor MinigunReplacement : CustomInventory replaces Minigun
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnLegion")//ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0)
+        TNT1 A 1
+    SpawnTestament:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("TestamentAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnLegion:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("LegionAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor GLReplacement : CustomInventory replaces GrenadeLauncher
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnUnknown")
+        TNT1 A 1
+    SpawnExodus:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("ExodusAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnUnknown:
+        TNT1 A 0
+        //TNT1 A 0 A_SpawnItemEx("UnknownAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor RailgunReplacement : CustomInventory replaces Railgun
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnFrosthammer")
+        TNT1 A 1
+    SpawnSabbath:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("SabbathAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnFrosthammer:
+        TNT1 A 0
+        //TNT1 A 0 A_SpawnItemEx("FrosthammerAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor LegionAlwaysSpawner : RandomSpawner
+{
+    DropItem "LegionPickup"
+}
+
+actor TestamentAlwaysSpawner : RandomSpawner
+{
+    DropItem "ShotgunPickup"
+}
+
+actor ExodusAlwaysSpawner : RandomSpawner
+{
+    DropItem "CarronadePickup"
+}
+
+actor SabbathAlwaysSpawner : RandomSpawner
+{
+    DropItem "UziPickup"
+}
+
+actor TestamentLegionSpawner : RandomSpawner
+{
+    DropItem "ShotgunPickup"
+    DropItem "ShotgunPickup"
+    DropItem "ShotgunPickup"
+    DropItem "LegionPickup"
+}
 
 actor PickupBase : CustomInventory
 {
@@ -154,7 +296,7 @@ actor ShotgunPickup2 : PickupBase replaces Shotgun
     }
 }
 
-actor ShotgunPickup : PickupBase replaces SuperShotgun
+actor ShotgunPickup : PickupBase //replaces SuperShotgun
 {
     Scale 0.9
     Inventory.PickupMessage ""

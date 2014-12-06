@@ -183,8 +183,10 @@ menu/invalid              MENUFAIL // Menu not available. - Sound taken from Wor
 
 misc/secret               DSSECRET // Taken from Quake III Arena
 weapon/summon             LITNGHIT // Taken from Marathon
+weapon2/summon            ARGNTHIT
 
-$rolloff weapon/summon 800 5200
+$rolloff weapon/summon    800 5200
+$rolloff weapon2/summon   800 5200
 
 world/drip                dsdrip
 world/drip1               dsdrip1

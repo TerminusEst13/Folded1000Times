@@ -34,8 +34,9 @@
             Option "Switch when out of ammo",        "ds_cl_autoswitch", "OnOff"
             Option "Disable special moves",          "ds_nospecials", "OnOff"
             Option "No Iron Maiden music",           "ds_cl_nomusic", "OnOff"
-            Option "No Low Health Warning",          "ds_cl_nobeeping", "OnOff"
+            Option "No low health warning",          "ds_cl_nobeeping", "OnOff"
             Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
+            Option "Spawn Arrogant weapons",         "ds_arrogantweapons", "ArrogantOptions"
     }
      
     OptionValue ToasterOptions
@@ -43,4 +44,11 @@
             0, "All effects"
             1, "Less effects"
             2, "Minimal effects"
+    }
+     
+    OptionValue ArrogantOptions
+    {
+            0, "No"
+            1, "Replaces Skulltag Weapons"
+            2, "Randomized Appearances"
     }

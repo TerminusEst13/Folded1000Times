@@ -1,0 +1,190 @@
+actor LegionPickup : PickupBase replaces Minigun
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "PieIsTerrible"
+    States
+    {
+    Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_LEGIONCHECK,0,0) == 1,"Nope")
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_LEGIONCHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_PlaySound("weapon2/summon")
+        TNT1 AAAAAAAA 0 A_SpawnItemEx("ArrogantSummonSmokeNormal",0,0,0,random(-40,40)/100.00,random(-40,40)/100.00,random(40,100)/100.00,random(0,180),160)
+        //TNT1 AAAAAAAA 0 A_SpawnItemEx("ArrogantSummonSmokeDark",0,0,0,random(-30,30)/100.00,random(-30,30)/100.00,random(30,75)/100.00,random(0,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ArrogantSummonSmokeAdditive",0,0,0,random(-40,40)/100.00,random(-40,40)/100.00,random(40,100)/100.00,random(0,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ArrogantSummonSmokeAdditive",0,0,0,random(-40,40)/50.00,random(-40,40)/50.00,random(40,100)/50.00,random(0,180),160)
+        //TNT1 A 0 A_SpawnItemEx("ArrogantSummonBlackPatch",0,0,0,random(-30,30)/100.00,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 A 0 A_CustomMissile("PentaLine3",0,0,-72,2)
+        TNT1 A 0 A_CustomMissile("PentaLine3",0,0,-144,2)
+        TNT1 A 0 A_CustomMissile("PentaLine3",0,0,-216,2)
+        TNT1 A 0 A_CustomMissile("PentaLine3",0,0,-288,2)
+        TNT1 A 0 A_CustomMissile("PentaLine3",0,0,0,2)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashPurple")
+        TNT1 A 1 A_SetTranslucent(1,0)
+        BMRG Z -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotLegion",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotLegion",1)
+        //TNT1 A 0 A_SetBlend("99 2c 2c",0.65,45)
+        TNT1 A 0 A_SetBlend("d8 00 ff",0.65,45)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,5,0)
+        TNT1 A 0 A_PlaySound("weapon/legion", CHAN_ITEM)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
+        TNT1 A 0 A_GiveInventory("SkulltagWeaponsAcquired",1)
+        TNT1 A 0 A_GiveInventory("Kharon + Legion",1)
+        goto CheckStay
+    Nope:
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("SoulStoneSpawner1",0,0,0,random(-3,3),random(-3,3),random(1,3),random(-180,180),32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor ArrogantSummonSmokeNormal
+{
+    Scale 0.6
+    Alpha 0.55
+    RenderStyle Translucent
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7","Spawn8")
+    Spawn1:
+        VSMK A 2 A_Fadeout(0.015)
+        loop
+    Spawn2:
+        VSMK B 2 A_Fadeout(0.015)
+        loop
+    Spawn3:
+        VSMK C 2 A_Fadeout(0.015)
+        loop
+    Spawn4:
+        VSMK D 2 A_Fadeout(0.015)
+        loop
+    Spawn5:
+        VSMK E 2 A_Fadeout(0.015)
+        loop
+    Spawn6:
+        VSMK F 2 A_Fadeout(0.015)
+        loop
+    Spawn7:
+        VSMK G 2 A_Fadeout(0.015)
+        loop
+    Spawn8:
+        VSMK H 2 A_Fadeout(0.015)
+        loop
+    }
+}
+
+//actor ArrogantSummonSmokeDark : ArrogantSummonSmokeNormal { RenderStyle Fuzzy }
+actor ArrogantSummonSmokeAdditive : ArrogantSummonSmokeNormal { RenderStyle Add }
+
+actor ScreenFlashPurple : CustomInventory
+{
+    Inventory.MaxAmount 0
+    +AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        stop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_SetBlend("e866ff",0.5,45)
+        stop
+    UseStop:
+        TNT1 A 0
+        stop
+    }
+}
+
+ACTOR PentaLine3
+{
+    Radius 0
+    Height 32
+    Speed 200
+    RenderStyle NONE
+    Alpha 0.85
+    PROJECTILE
+    //+FLOORHUGGER
+    +NOGRAVITY
+    +NOCLIP
+    SeeSound "weapons/diasht"
+    states
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_CustomMissile("PentaLine4",0,0,-198,2)
+        TNT1 A 0 A_CustomMissile("PentaLine4",0,0,198,2)
+        stop
+    }
+}
+
+ACTOR PentaLine4
+{
+    Radius 0
+    Height 32
+    Speed 16
+    RenderStyle NONE
+    Alpha 0.85
+    PROJECTILE
+    //+FLOORHUGGER
+    +NOGRAVITY
+    +NOCLIP
+    +CLIENTSIDEONLY
+    states
+    {
+    Spawn:
+        TNT1 AAAAAAAAAAAAAAAA 1 A_SpawnItem("PentaFire2",0,0)
+        stop
+    }
+}
+
+ACTOR PentaFire2
+{
+    Radius 0
+    Height 32
+    Speed 0
+    RenderStyle Add
+    Alpha 0.85
+    ReactionTime 3
+    PROJECTILE
+    //+FLOORHUGGER
+    +NOGRAVITY
+    +CLIENTSIDEONLY
+    +DONTSPLASH
+    states
+    {
+    Spawn:
+        CFCF ABCDEFGHIJKLM 3 Bright
+        CFCF A 0 Bright A_CountDown
+        loop
+    Death:
+        CFCF NOP 3 Bright
+        stop
+    }
+}

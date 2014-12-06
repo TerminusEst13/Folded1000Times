@@ -49,6 +49,7 @@ FROM 0.73 TO 0.74:
 - The Keen now has a unique replacement.
 - The techlamps are now destructable items, like the torches, and will now provide item drops.
 - Techlamps and torches now have their original gldef lights back.
+- Skulltag weapons now spawn their ordinary equivalents.
 
 FROM 0.72 TO 0.73:
 =======================================

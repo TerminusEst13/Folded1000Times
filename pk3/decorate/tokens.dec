@@ -75,6 +75,7 @@ actor GotUzi : Boolean {}
 actor GotHammer : Boolean {}
 actor GotIronMaiden : Boolean {}
 actor GotLegion : Boolean {}
+actor SkulltagWeaponsAcquired : Boolean {}
 
 
 

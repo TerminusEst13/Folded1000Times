@@ -36,7 +36,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 75: Replacement sounds for other world objects, such as lifts, switches, exploding barrels, and doors.
 85: Skulltag support:
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
-  ^ Picking up a Minigun/Grenade Launcher/Railgun/BFG10k wonks things.
 89: Destroy corpse decorations, get their soul.
 91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 92: Burning barrels should be replaced as well.
@@ -226,6 +225,7 @@ DONE:
 84: Since the kamehameha now goes through walls, revert grenades back to one single explosion with 256 radius.
 85: Skulltag support:
   ^ Skulltag-specific items should be replaced as well
+  ^ Picking up a Minigun/Grenade Launcher/Railgun/BFG10k wonks things.
 86: Archvile flame turrets should have -COUNTKILL and -ISMONSTER, it's a huge pain to hunt them down in Invasion.
 87: Do all of the Vile deaths have A_KillChildren?
 88: Unique graphic for invuln pickup and radsuit.
