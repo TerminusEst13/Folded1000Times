@@ -154,6 +154,7 @@ ACTOR Emperor replaces SpiderMastermind
         Goto See
     Death.IronFistDamage:
     Death.Kubiuti:
+    Death.KubiutiUpper:
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAAAAAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))
         goto Death
@@ -245,6 +246,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
         goto Super::Death
     Death.IronFistDamage:
     Death.Kubiuti:
+    Death.KubiutiUpper:
         CYBR G 1
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAAAAAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",10)

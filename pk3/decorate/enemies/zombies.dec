@@ -123,6 +123,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+2
     death.kubiuti:
+    Death.KubiutiUpper:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
@@ -610,6 +611,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         goto Super::Death
 
     death.kubiuti:
+    Death.KubiutiUpper:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
@@ -1066,6 +1068,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         goto Super::Death
 
     death.kubiuti:
+    Death.KubiutiUpper:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
@@ -1329,6 +1332,7 @@ ACTOR Yakuza replaces WolfensteinSS
         Goto EnemyHang2
 
     Death.Kubiuti:
+    Death.KubiutiUpper:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
     SliceDeath:
