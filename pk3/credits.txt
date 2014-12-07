@@ -28,6 +28,7 @@ GRAPHICS:
   ^ Neoworm
   ^ ojsclatchford
   ^ Sgt. Shivers
+  ^ Xim
 - Mike12
   ^ Numerous custom deaths (as mentioned)
   ^ The gore decals/graphics
@@ -39,7 +40,7 @@ GRAPHICS:
   ^ All of the idle animations
   ^ The henshin animation
   ^ Animating the Exodus
-  ^ The graphics for the dakimakura.
+  ^ The graphics for the dakimakura
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us
   rotate the Kharon properly forcing us to rely on Photoshop's really ugly and
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA
@@ -116,6 +117,7 @@ CODE:
 - Xaser/Tormentor667/Z86 (The explosive barrel, nicked from the Particle Fire Enhancer Mod)
 - TiberiumSoul (The code for the bulletpuffs based off of his neat little effects)
 - Zael (For the Ultima Cannon, which I shamelessly ripped off for the not-Kamehameha. May your mass never go inert)
+- amv2k9 (The launching system, adapted from his old Devil May Cry mod)
 
 MUSIC:
 =========

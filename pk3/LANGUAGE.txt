@@ -53,3 +53,102 @@ OB_FRIENDLY1   = "%k made Vikernes proud."; // Varg Vikernes of Mayhem murdered 
 OB_FRIENDLY2   = "%k decided to break the band up.";
 OB_FRIENDLY3   = "%k heard the call and buried them all."; // DevilDriver - I Dreamed I Died
 OB_FRIENDLY4   = "%k has another thing comin'."; // Judas Priest - Another Thing Coming
+
+C1TEXT = // Map07
+    "*RING RING, RING RING*\n"
+    "\n"
+    "Hello, God? It's me, Jung Hae-Lin.\n"
+    "Just wanted to give you a status update.\n"
+    "\n"
+    "I haven't been having a whole lot of\n"
+    "issues so far, but these guys are definitely\n"
+    "stubborn. I don't think I've met a lot more\n"
+    "than scouts and troopers, but they're bad\n"
+    "business all the same.\n"
+    "\n"
+    "Yeah. I've still got a ways to go. Uh-huh.\n"
+    "\n"
+    "I'll keep you updated. Promise.\n"
+    "Bye, God.";
+
+C2TEXT = // Map12
+    "*RING RING, RING RING*\n"
+    "\n"
+    "Ah, hello, sir. It's me, Hae-Lin. Just\n"
+    "reporting in again.\n"
+    "\n"
+    "I think this area is mostly evacuated now.\n"
+    "I've been seeing errant people every now\n"
+    "then between zones and helping them out\n"
+    "to shelter, but now I haven't really found\n"
+    "anyone else.\n"
+    "Yeah, I think it's just me and the demons.\n"
+    "Well, there's also the howling souls of the\n"
+    "damned, I guess.\n"
+    "...Anyway. I'm gonna get back to work now.\n"
+    "I'll call you back later, God.";
+
+C3TEXT = // Map21
+    "*RING RING, RING RING*\n"
+    "\n"
+    "Hello, sir. Just giving another update.\n"
+    "\n"
+    "I'm in really deep now. There's not really\n"
+    "a lot of Earth left here, everything's\n"
+    "been completely overtaken and corrupted.\n"
+    "They're sending out all they've got at\n"
+    "me, too. I'm seeing tons of hordes.\n"
+    "\n"
+    "No, I can't really say I had a plan.\n"
+    "Well, bisecting them seems to have worked\n"
+    "so far. I'll probably stick with that."
+    "\n"
+    "Yes, sir. I'll be careful. Bye.";
+    
+C4TEXT = // Killed the Icon of Sin
+    "*RING RING, RING RING*\n"
+    "\n"
+    "Phew. Hi, God.\n"
+    "I think I just killed a big superdemon.\n"
+    "Like, massive. It's flailing about and I'm\n"
+    "still not sure I can see all of it.\n"
+    "Yeah, it's dead. The invasion's stopped.\n"
+    "Well, here, at least. There's still a ton of\n"
+    "other invasion hot spots to shut down.\n"
+    "Just...ugh, so sore. I don't wanna tackle\n"
+    "them right now. I'll take a short break.\n"
+    "\n"
+    "Yes...I know, but... Ergh... God dammit.\n"
+    "Er, sorry. No offense.\n"
+    "Yes, sir. I'll get on it right away.";
+
+// Doom 2 Bonus Level Texts    
+    
+C5TEXT = // Map31
+    "*RING RING, RING RING*\n"
+    "\n"
+    "Hello, God?\n"
+    "\n"
+    "Er. Sorry, I think I have a wrong number.\n"
+    "Who is this?\n"
+    "\n"
+    "Oh, sorry to have bothered you, Mr. Demon.\n"
+    "\n"
+    "Yes, actually, I'm just outside your door.\n"
+    "\n"
+    "Well, if you guys run, I won't shoot you.\n"
+    "Is that all right?\n"
+    "No? Well, okay. I'm coming inside, then.";
+
+C6TEXT = // Map32
+    "*RING RING, RING RING*\n"
+    "\n"
+    "Uh, yes. South of Heaven Pizzeria? I'd like\n"
+    "to order the number 213, please. Yeah,\n"
+    "the special. For carry-out, please.\n"
+    "\n"
+    "Ah, no beer, thanks. I'm actually on duty\n"
+    "now. Yeah, again.\n"
+    "\n"
+    "All right, $7.31? I'll be there shortly.\n"
+    "Thanks, bye!";
