@@ -224,6 +224,7 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
         TNT1 A 0 A_JumpIfInventory("DoubleTapRight",1,"SpinAttackRight")
+        TNT1 A 0 A_GiveInventory("SwordAttack",1)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
         TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
@@ -233,12 +234,38 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_ReFire
     Fired2:
+        TNT1 A 0 A_JumpIfInventory("SwordAttack",20,"HoldAttack")
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
         TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
         Goto Select2
+    HoldAttack:
+        TNT1 A 0 A_Recoil(-2)
+        TNT1 A 0 A_SetPitch(pitch-0.5)
+        TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
+        KATH A 1
+        TNT1 A 0 A_SetPitch(pitch-1)
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFF)
+        KATH B 1
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+        TNT1 A 0 A_FireCustomMissile("KharonAttackHeavy",0,0)
+        KATH C 1
+        TNT1 A 0 A_SetPitch(pitch-2)
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+        //TNT1 A 0 A_FireCustomMissile("KharonAttackHeavyB",0,0)
+        KATH D 1 A_TakeInventory("KharonSwung",1)
+        KATH E 1
+        TNT1 A 2
+        TNT1 A 0 A_SetPitch(pitch+2)
+        TNT1 A 2
+        TNT1 A 0 A_SetPitch(pitch+1)
+        TNT1 A 1
+        TNT1 A 0 A_SetPitch(pitch+0.5)
+        TNT1 A 5 A_WeaponReady(WRF_NOPRIMARY | WRF_NOSWITCH)
+        goto Fired2
 
 
 
@@ -349,6 +376,7 @@ actor "Kharon + Omen" : Kharon
         goto SpecialAttackFinish
 
     SpecialAttackFinish:
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)

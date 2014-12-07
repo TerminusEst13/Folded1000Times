@@ -50,6 +50,7 @@ FROM 0.73 TO 0.74:
 - The techlamps are now destructable items, like the torches, and will now provide item drops.
 - Techlamps and torches now have their original gldef lights back.
 - Skulltag weapons now spawn their ordinary equivalents.
+- Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.
 
 FROM 0.72 TO 0.73:
 =======================================

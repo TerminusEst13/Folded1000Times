@@ -3,6 +3,7 @@ actor WeeabooFatty : Fatso replaces Fatso
     Species "Body"
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
+    PainChance "KubiutiUpper", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255

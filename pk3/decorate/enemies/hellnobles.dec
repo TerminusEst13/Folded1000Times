@@ -4,6 +4,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     Species "Body"
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
+    PainChance "KubiutiUpper", 255
     PainChance "Sabbathamage", 192
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
@@ -38,22 +39,61 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_SpidRefire
         Goto See
 
+    Pain.KubiutiUpper:
+        TNT1 A 0 A_Pain
+        TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
+        TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
+    EnemyLaunch:
+        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_SetInvulnerable
+        BOS2 IJK 1
+    EnemyHang:      
+        TNT1 A 0 A_UnSetInvulnerable
+        //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
+        TNT1 A 0 A_LowGravity
+    EnemyHang2:
+        BOS2 K 2 A_CheckFloor("EnemyDrop")
+        loop
+    ForceDrop:
+        TNT1 A 0 A_GiveInventory("CannotLaunchAgain",1)
+    EnemyDrop:
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("LaunchDamageCounter",10)
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+        BOS2 KJI 1
+        Goto See
+    LaunchedPainKubiuti:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+    LaunchedPain:
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        BOS2 J 1 ThrustThingZ(0,8,0,0)
+        TNT1 A 0 A_GiveInventory("LaunchDamageCounter",1)
+        TNT1 A 0 A_JumpIfInventory("LaunchDamageCounter",10,"ForceDrop")
+        BOS2 J 3 A_Pain
+        Goto EnemyHang2
+
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPainKubiuti")
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain
     Pain.KubiRangeAttack:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPainKubiuti")
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain
     Pain.SabbathDamage:
     Pain.KharonSheathe:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPain")
         BOS2 H 5 //A_Recoil(2)
         BOS2 H 5 A_Pain
         Goto See
     Pain:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPain")
         BOS2 H 2
         BOS2 H 2 A_Pain
         Goto See
@@ -68,16 +108,22 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         goto death.kubiuti+4
 
     Death:
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         BOS2 I 8
-        BOS2 J  8 A_Scream
-        BOS2 K  8
-        BOS2 L  8 A_NoBlocking
+        BOS2 J 8 A_Scream
+        BOS2 K 8
+        BOS2 L 8 A_NoBlocking
         BOS2 MN 8
         BOS2 O -1
         Stop
     Death.IronFistDamage:
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
     XDeath:
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         BOS2 PPPPP 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
         TNT1 Q 0 A_XScream
         BOS2 QQQQQ 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
@@ -146,6 +192,9 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_AlertMonsters
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
         BOS2 H 1
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_Jump(16,"Death.Hunter")
         TNT1 A 0 A_Jump(128,"Death.Bloody","Death.Bloody2")
@@ -176,6 +225,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     Speed 12
     Species "Body"
     PainChance "kubiuti", 64
+    PainChance "KubiutiUpper", 64
     PainChance "KharonSheathe", 255
     PainChance "SabbathDamage", 128
     PainChance "IronFistDamage", 255
@@ -236,16 +286,54 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         BOSS G 3
         goto See
 
+    Pain.KubiutiUpper:
+        TNT1 A 0 A_Pain
+        TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance2",1)
+        TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
+    EnemyLaunch:
+        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_SetInvulnerable
+        BOSS IJK 1
+    EnemyHang:      
+        TNT1 A 0 A_UnSetInvulnerable
+        //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
+        TNT1 A 0 A_LowGravity
+    EnemyHang2:
+        BOSS K 2 A_CheckFloor("EnemyDrop")
+        loop
+    ForceDrop:
+        TNT1 A 0 A_GiveInventory("CannotLaunchAgain",1)
+    EnemyDrop:
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("LaunchDamageCounter",10)
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+        BOSS KJI 1
+        Goto See
+    LaunchedPainKubiuti:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+    LaunchedPain:
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        BOSS J 1 ThrustThingZ(0,8,0,0)
+        TNT1 A 0 A_GiveInventory("LaunchDamageCounter",1)
+        TNT1 A 0 A_JumpIfInventory("LaunchDamageCounter",10,"ForceDrop")
+        BOSS J 3 A_Pain
+        Goto EnemyHang2
+
     Pain.KubiRangeAttack:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPainKubiuti")
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain2
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPainKubiuti")
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
     Pain:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPain")
         BOSS H 1 A_Recoil(15)
     Pain2:
         BOSS H 1
@@ -253,6 +341,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         Goto See
     Pain.SabbathDamage:
     Pain.KharonSheathe:
+        TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPain")
         BOSS H 5 //A_Recoil(2)
         BOSS H 5 A_Pain
         Goto See
@@ -266,9 +355,18 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+6
 
+    Death:
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+        goto Super::Death
+
     Death.IronFistDamage:
         TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",5)
         TNT1 A 0 A_XScream
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
     death.Bloody:
         BOSS P 8
         TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus3",random(4,32),0,random(0,360),2,random(0,360))
@@ -303,6 +401,9 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",5)
         BOSS I 1
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_Jump(16,"Death.Hunter")
         TNT1 A 0 A_Jump(128,"Death.Bloody")

@@ -21,7 +21,6 @@ TO DO in no particular order:
 53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 54: Casing ejection/smoke effects on the guns.
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
-58: Attack when you let go of holding down fire.
 61: 6000 ANGRY BEES: one small idea to toy with:
 6000 ANGRY BEES: subtle sound cues when you go up or down a combo level (fearless etc.)
 TerminusEst13: That's a good idea, actually.
@@ -52,29 +51,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 
 
 [08:48:30 pm] PresidentPeople: [Kamehameha] should be sustainable if you hold it down
-
-
-<torridGristle> I think an jumpng uppercut / upperslash would be cool in DemonSteele and provide a useful tool.
-<torridGristle> Send an enemy into the air for a little bit so they stop shooting.
-<torridGristle> Help with crowd control without resorting to something like the grenade launcher.
-<torridGristle> Maybe some sick air combos
-<TerminusEst13> Hmmm. Don't think I can do air combos, but an uppercut/upperslash would be good for releasing a hold if you don't double-tap a direction.
-<torridGristle> I was thinking it'd be a normal attack that you don't need to charge your meter for.
-<Eric> it'd be neat if attacking mid-air would let you stay up a bit longer
-<Eric> would help with flying jerkasses that just won't come down and let you cut them
-<torridGristle> Could dashes be made three-dimensional in the air?
-<TerminusEst13> torrid: Yeah, that's what I'm talking about. Instead of doing a special attack, you just cancel the thing. What I'm discovering is common behavior for players to strike, hold an attack, dodge through, and then finish an enemy off with a special attack. I think it'd be kind of lame to limit that to special attacks, so a non-soul-using attack that can be done might be good.
-<torridGristle> Need to be able to do it quickly.
-<torridGristle> Since I mean for it to be crowd control tech, dash into a bunch of zombies and send one or two flying each time and attack some while others are stunned.
-<TerminusEst13> Eric: I can try. Theoretically it'd be as simple as lowering the player's gravity if they're in mid-air, so the big question would be how to keep the player from flying off.
-<torridGristle> Can you add downward momentum over time?
-<Eric> i was thinking more along the lines of little boosts with each sword swing that would be just enough to keep you up, without letting you fly into the heavens
-<TerminusEst13> Aahhhh. Hmm. That'd just be a simple ThrustThingZ, then, I believe.
-<Eric> that might get ugly online, but in my opinion demonsteele isn't particularly good for that in the first place
-<torridGristle> Will ThrustThingZ only move you forward? In mid-air combat against flying enemies, being able to angle your thrusts up would be helpful.
-<torridGristle> No, Z is up isn't it
-<torridGristle> I'm thinking of Minecraft's xyz designation.
-<TerminusEst13> Z only bothers with up and down. For forward/backward it'd be either A_Recoil or ThrustThing.
 
 
 <PresidentPeople> TerminusEst13: Wraithverge needs to be in butts.txt
@@ -192,6 +168,7 @@ DONE:
   ^ Pickup sprite/sound replacing BFG9000
 55: New teleport effect
 56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
+58: Attack when you let go of holding down fire.
 59: Less/no-effects cvar
 60: <torridGristle> Watersplashes aren't the same colour as the water.
 <torridGristle> Yeah, they're PNGs and aren't affected by the new playpal.
@@ -243,6 +220,30 @@ DONE:
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
+
+
+
+<torridGristle> I think an jumpng uppercut / upperslash would be cool in DemonSteele and provide a useful tool.
+<torridGristle> Send an enemy into the air for a little bit so they stop shooting.
+<torridGristle> Help with crowd control without resorting to something like the grenade launcher.
+<torridGristle> Maybe some sick air combos
+<TerminusEst13> Hmmm. Don't think I can do air combos, but an uppercut/upperslash would be good for releasing a hold if you don't double-tap a direction.
+<torridGristle> I was thinking it'd be a normal attack that you don't need to charge your meter for.
+<Eric> it'd be neat if attacking mid-air would let you stay up a bit longer
+<Eric> would help with flying jerkasses that just won't come down and let you cut them
+<torridGristle> Could dashes be made three-dimensional in the air?
+<TerminusEst13> torrid: Yeah, that's what I'm talking about. Instead of doing a special attack, you just cancel the thing. What I'm discovering is common behavior for players to strike, hold an attack, dodge through, and then finish an enemy off with a special attack. I think it'd be kind of lame to limit that to special attacks, so a non-soul-using attack that can be done might be good.
+<torridGristle> Need to be able to do it quickly.
+<torridGristle> Since I mean for it to be crowd control tech, dash into a bunch of zombies and send one or two flying each time and attack some while others are stunned.
+<TerminusEst13> Eric: I can try. Theoretically it'd be as simple as lowering the player's gravity if they're in mid-air, so the big question would be how to keep the player from flying off.
+<torridGristle> Can you add downward momentum over time?
+<Eric> i was thinking more along the lines of little boosts with each sword swing that would be just enough to keep you up, without letting you fly into the heavens
+<TerminusEst13> Aahhhh. Hmm. That'd just be a simple ThrustThingZ, then, I believe.
+<Eric> that might get ugly online, but in my opinion demonsteele isn't particularly good for that in the first place
+<torridGristle> Will ThrustThingZ only move you forward? In mid-air combat against flying enemies, being able to angle your thrusts up would be helpful.
+<torridGristle> No, Z is up isn't it
+<torridGristle> I'm thinking of Minecraft's xyz designation.
+<TerminusEst13> Z only bothers with up and down. For forward/backward it'd be either A_Recoil or ThrustThing.
 
 
 

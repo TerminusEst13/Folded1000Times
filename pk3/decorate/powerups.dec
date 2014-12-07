@@ -4,6 +4,24 @@ actor PowerShieldProtection : PowerProtection
     +NORADIUSDMG
 }
 
+actor EnemyLaunchedResistance : PowerProtection
+{
+    DamageFactor "Normal", 0.2
+    Powerup.Duration 0x7FFFFFFF
+}
+
+actor EnemyLaunchedResistance2 : PowerProtection
+{
+    DamageFactor "Normal", 0.5
+    Powerup.Duration 0x7FFFFFFF
+}
+
+actor CannotLaunchAgain : PowerProtection
+{
+    DamageFactor "KubiutiUpper", 0.0
+    Powerup.Duration -30
+}
+
 ACTOR IronMaidenSpeed : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF
@@ -30,6 +48,7 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "TestamentDamage", 1.0
     DamageFactor "SabbathDamage", 1.0
     DamageFactor "ExodusDamage", 1.0
+    DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.5
     DamageFactor "IronFistDamage", 1.5
     DamageFactor "IronFistExplode", 1.5
@@ -47,6 +66,7 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "TestamentDamage", 1.0
     DamageFactor "SabbathDamage", 1.0
     DamageFactor "ExodusDamage", 1.0
+    DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.425
     DamageFactor "IronFistDamage", 1.425
     DamageFactor "IronFistExplode", 1.425
@@ -64,6 +84,7 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "TestamentDamage", 1.0
     DamageFactor "SabbathDamage", 1.0
     DamageFactor "ExodusDamage", 1.0
+    DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.35
     DamageFactor "IronFistDamage", 1.35
     DamageFactor "IronFistExplode", 1.35
@@ -81,6 +102,7 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "TestamentDamage", 1.0
     DamageFactor "SabbathDamage", 1.0
     DamageFactor "ExodusDamage", 1.0
+    DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.275
     DamageFactor "IronFistDamage", 1.275
     DamageFactor "IronFistExplode", 1.275
@@ -98,6 +120,7 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "TestamentDamage", 1.0
     DamageFactor "SabbathDamage", 1.0
     DamageFactor "ExodusDamage", 1.0
+    DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.2
     DamageFactor "IronFistDamage", 1.2
     DamageFactor "IronFistExplode", 1.2
@@ -115,6 +138,7 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "TestamentDamage", 1.0
     DamageFactor "SabbathDamage", 1.0
     DamageFactor "ExodusDamage", 1.0
+    DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.15
     DamageFactor "IronFistDamage", 1.15
     DamageFactor "IronFistExplode", 1.15
