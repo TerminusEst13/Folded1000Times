@@ -49,7 +49,7 @@ FROM 0.73 TO 0.74:
 - The Keen now has a unique replacement.
 - The techlamps are now destructable items, like the torches, and will now provide item drops.
 - Techlamps and torches now have their original gldef lights back.
-- Skulltag weapons now spawn their ordinary equivalents.
+- A new cvar has been implemented to handle Skulltag weapon replacements--ds_arrogantweapons. 0 spawns the normal weapons, 1 spawns new for-fun weapons in place of Skulltag weapons, and 2 spawns the new weapons randomly in place of the original weapons.
 - Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.
 - There are now intermission text replacements for vanilla levels.
 

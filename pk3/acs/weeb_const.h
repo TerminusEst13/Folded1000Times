@@ -82,6 +82,9 @@ int DemonCredits =
 - Special thanks to Mike12 for his incredible patience in dealing with my\n\
   stubborn push of ideas and my flighty attention span, as well as his jaw-\n\
   droppingly astounding artistic work.\n\
+- Special thanks to Sgt. Shivers for his numerous, numerous contributions to\n\
+  animation, idea-polishing, and custom graphics, as well as his insane amount\n\
+  of patience in dealing with my extreme forgetfulness and absent-minded-ness.\n\
 - Special thanks to Doom667Shogun for allowing me to use Doom Radys assets for\n\
   kickstarting DemonSteele with, letting me have a headstart on everything.\n\
 - /vr/, as always, for being an incredible source of support and ideas.\n\
@@ -99,6 +102,7 @@ GRAPHICS:\n\
   ^ Neoworm\n\
   ^ ojsclatchford\n\
   ^ Sgt. Shivers\n\
+  ^ Xim\n\
 - Mike12\n\
   ^ Numerous custom deaths (as mentioned)\n\
   ^ The gore decals/graphics\n\
@@ -110,14 +114,16 @@ GRAPHICS:\n\
   ^ All of the idle animations\n\
   ^ The henshin animation\n\
   ^ Animating the Exodus\n\
+  ^ The pillow for the dakimakura\n\
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us\n\
   rotate the Kharon properly forcing us to rely on Photoshop's really ugly and\n\
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA\n\
+- Shiga95/Angel_Neko-X (The Swan Fox image used for the dakimakura)\n\
 - Captain J/Cortlong50 (The base of the Sabbath, dramatically rehauled by Mike12)\n\
 - Captain J (The Sabbath large ammo pack)\n\
 - Bloax (The broken bone sprites)\n\
 - DonaldDuck (The Priest's sprites)\n\
-- Shadow Warrior (The Exodus grenade sprites)\n\
+- Shadow Warrior (The Exodus grenade sprites, the Yakuza enemy sprites)\n\
 - Aeons of Death (The Exodus explosion graphics)\n\
 - Ettingrinder (The Candelabra)\n\
 - NeuralStunner (The Omen's pickup sprite)\n\
@@ -157,9 +163,17 @@ GRAPHICS:\n\
 - Knights of the Round (One of the Apples)\n\
 - Grand Knights History (The Blind Guardian shield)\n\
 - PresidentPeople (Fixing the Blind Guardian's rotations so it had a proper front sprite)\n\
+- MartyKirra (The very sexy sprites for the Omen)\n\
+- Scuba Steve/Mike12/torridGristle (The sheathe for the Kharon, heavily edited from Action Doom 2)\n\
+- The Guided Fate Paradox (The halo for the Majestic Vanguard)\n\
+- SoloSpaghetti (The Boots of Protection, modified from the Doom Roguelike Arsenal boots)\n\
 \n\
 CODE:\n\
 =========\n\
+- Scroton\n\
+  ^ Pretty much the entirety of ds_cl_toaster\n\
+  ^ Optimizing a lot of rough spots\n\
+  ^ Rehauling the destructable decorations to throw their items at the players\n\
 - Ijon Tichy\n\
   ^ The shockwave from the spin attack\n\
   ^ The trail for the zombie lasers/razor wind\n\
@@ -177,6 +191,8 @@ CODE:\n\
 - IvanDobrovski (Fixing the eternally-looping imp blood fountain)\n\
 - Xaser/Tormentor667/Z86 (The explosive barrel, nicked from the Particle Fire Enhancer Mod)\n\
 - TiberiumSoul (The code for the bulletpuffs based off of his neat little effects)\n\
+- Zael (For the Ultima Cannon, which I shamelessly ripped off for the not-Kamehameha. May your mass never go inert)\n\
+- amv2k9 (The launching system, adapted from his old Devil May Cry mod)\n\
 \n\
 MUSIC:\n\
 =========\n\
@@ -195,32 +211,65 @@ MUSIC:\n\
 \n\
 SOUNDS:\n\
 =========\n\
-- Adoxographist (Going above and beyond the line of duty for Hae-Lin's voice!)\n\
+- Adoxographist ( adoxtalks.tumblr.com - Going above and beyond the line of duty for Hae-Lin's voice!)\n\
 - John Archer (The Blackened's voice)\n\
 - torridGristle (The robotic voice of the Iron Maiden)\n\
+- Combine_Kegan (Ripping and gathering all of the Sentinel's sound bytes)\n\
 - All sounds are credited to their respective owner in SNDINFO.";
 
 
 int DemonChangelog =
-"FROM 0.71b TO 0.72:\n\
+"FROM 0.73 TO 0.74:\n\
 =======================================\n\
-- Kharon slashing animation time has been reduced by two tics--now people can slash again as soon as the animation is complete.\n\
-- The animation for the upward slash has been spaced out slightly for more natural movement.\n\
-- Thanks to PresidentPeople, the Blind Guardian now has a proper set of rotations.\n\
-- The environment splash sprites now follow the same desaturated 90s palette.\n\
-- WHOOPS improved.\n\
-- Soul is slightly more transparent so as to not confuse it with enemy shots.\n\
-- When in Iron Maiden, Hae-Lin can now triple-jump, as opposed to simply double-jumping.\n\
-- The Blind Guardian no longer keeps a damaged appearance when repaired.\n\
-- Bullets online no longer spatter sparks on contact with enemies.\n\
-- The Testament's reload sound can no longer be interrupted by jumping.\n\
-- The Emperor's teleport effect properly works online, now.\n\
-- The Blackened now has +VISIBILITYPULSE on his main body for no other reason than it looks cool.\n\
-- Revenant missiles now home in 100% of the time and home much more aggressively. Enjoy!\n\
-- The Archvile's flame pillars no longer wander so wide out and have lost their multi-flame spread attack, but in exchange fire much more aggressively and spew out constant streams of attacks.\n\
-- Long, long ago in the mod's development, I made enemy projectiles shootable so that the pistol could shoot them down as well. As development went on, this proved too OP for the Testament and Sabbath and the ability was removed. The behavior has been tweaked, removing all of the vestigial bullet stuff while keeping the sword capable of cutting down projectiles.\n\
-- Because of this, this frees up the bullets' species to be able to shoot through allied players in co-op.\n\
-- For rare instances where you're trapped behind a forcefield or projectile-blocking wall or something and you need to shoot a switch, each bullet-gun has been given a perfectly accurate damage-less hitscan.\n\
-- The back special is now much more effective in destroying enemy shots.\n\
-- An attempt at making a 'less effects' cvar was made and quickly resulted in frustration, screaming, and grey hair. To make up for it, the effects on the Exodus, Omen, the explosive barrel, and Cyberdemon's rockets have been toned down slightly.\n\
-- Picking up multiple invulnerability powerups in a row no longer results in them getting stuffed in your inventory.";
+- The Archvile's flame turrets now have A_NoBlocking in their death state.\n\
+- All of the Archvile's death states now call A_KillChildren.\n\
+- The Archvile's flame turrets now are no longer considered monsters and won't spam up the monster count or block things in Invasion.\n\
+- There are three more 'fade from black' sounds, thanks to torridGristle's rip of Eternal Darkness and thanks to MAGIX Soundpool DVDs.\n\
+- The Exodus grenades now explode on the sky, rather than simply vanish.\n\
+- The Icon of Sin now has its own custom sounds.\n\
+- Hae-Lin's landing sound is now less crackly.\n\
+- Pickups are now no longer considered monsters and will no longer bork things up in survival invasion.\n\
+- The initial swing of the Kharon's sheathe can now be refired one tic faster. Whoo.\n\
+- The Wolfenstein SS now has a replacement.\n\
+- Decorations now have a slightly higher chance to spew out items.\n\
+- In lieu of the Kamehameha, the Exodus no longer needs to go through walls. The explosion is now simply a 256-radius explosive, rather than four explosives with 192 radius.\n\
+- The Kharon by itself now has idle animations. Oops.\n\
+- Transformation has been streamlined and no longer requires 'hold fire'--just hit Use Inventory and it'll activate.\n\
+- Online, people were occaisionally getting weapon desynchs, where they were in Iron Maiden but using the Kharon. This has been fixed.\n\
+- A new idle animation has been implemented.\n\
+- Hammering the ground will now allow Hae-Lin to jump higher, because reasons. The higher the charge, the higher the jump.\n\
+- The Iron Maiden's armor will become more effective depending on your rank--at S Rank, you can no-sell practically everything.\n\
+- The not-Kamehameha now takes a little over 1.5x as much soul energy but now each explosion does 128 damage instead of 96.\n\
+- There are no longer double decals for the bullet weapons.\n\
+- The switch-hitting no-damage bulletpuff no longer splashes on liquids.\n\
+- The Invulnerability Sphere and RadSuit now have their own respective appropriate replacements.\n\
+- The sound range on the not-Kamehameha has been tripled.\n\
+- Enemies killed with the not-Kamehameha are now no longer resurrectable.\n\
+- Meleeing enemies in pitch dark is a pain in the ass. For users who play with lower visibility settings and/or on dark maps, a flashlight has been provided. At the moment, it's an optional customizable key, but in the future (when Zandronum supports it) then it'll use the Reload key.\n\
+- The Omen and Iron Maiden are more responsive online and now has multiple checks for if the player has hit something with it. This should polish up all inconsistencies in hitting and should also reduce the amount of times people hit something and then get stuck in place.\n\
+- The Sentinel and the Blind Guardian can now be carried from level to level.\n\
+- The Infrared Visor has been replaced with a Sentinel pickup as well, which should make it slightly more common than just the allmap.\n\
+- The Archvile has +MISSILEEVENMORE removed.\n\
+- The Blackened's children now have a different appearance, to prevent confusion with Lost Souls.\n\
+- Lost Souls now drop souls when killed.\n\
+- The Blackened now has a sound when summoning its children, to prevent confusion of when a child is attacking or being summoned.\n\
+- Quakes no longer cause sounds.\n\
+- All enemies now have their own custom sound set. Whew! That was a lot of work.\n\
+- A few people's ears had trouble with the Kharon's sheathe, so the sheathing sound effect has been slightly softened, its pitch lowered, and its bass reduced.\n\
+- There is now an options menu for handling cvars and DemonSteele-specific settings, in ZDoom.\n\
+- New teleport effect. Neat!\n\
+- Hae-Lin now has lines for the not-Kamehameha. I can't think of a name for it, so neither can she.\n\
+- Hae-Lin now has lines for picking up food.\n\
+- In the chance a player picks up a new weapon DemonSteele doesn't replace, the ammo HUD will now show the ammo for it.\n\
+- ZDoom stealth monsters are now supported. Due to the gameplay style of DemonSteele, the monsters no longer flicker in and out of visibility, but are now a constant and flat 0.4 visibility.\n\
+- People tended to lose track of exactly how much health they had and would die accidentally. In true retro game style, now there is a beeping warning when low on health. This can be disabled with 'ds_cl_nobeeping'.\n\
+- Skulltag items and monsters now have a proper replacement. Skulltag monsters occaisionally recieve strange colors when killed, but for now this is a great step forward.\n\
+- Some people wanted to be able to taunt in ZDoom. Weird. There is now a ZDoom-specific key for doing the Zandronum taunt in ZDoom.\n\
+- The Blind Guardian will no longer trigger the Sentinel and send it into a Tumblr fit. In the off chance it does, the Sentinel will check its privilege and reassert itself.\n\
+- The Kharon's attacks no longer pass harmlessly through ghosts.\n\
+- The Keen now has a unique replacement.\n\
+- The techlamps are now destructable items, like the torches, and will now provide item drops.\n\
+- Techlamps and torches now have their original gldef lights back.\n\
+- A new cvar has been implemented to handle Skulltag weapon replacements--ds_arrogantweapons. 0 spawns the normal weapons, 1 spawns new for-fun weapons in place of Skulltag weapons, and 2 spawns the new weapons randomly in place of the original weapons.\n\
+- Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.\n\
+- There are now intermission text replacements for vanilla levels.";

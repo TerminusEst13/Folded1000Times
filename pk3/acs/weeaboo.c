@@ -391,11 +391,11 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
           break;
 
         case 5:
-          Log(s:"\ckThe \cbMaw of the Legion\ck. Tempt not my hand...");
+          Log(s:"\ckThe \cbMaw of the Legion\ck. It screams for blood...");
           break;
 
         case 6:
-          Log(s:"\ckThe \cbFrosthammer of Cocytus\ck. Tempt not my hand...");
+          Log(s:"\ckThe \cbFrosthammer of Cocytus\ck. It screams for blood...");
           break;
         }
         break;
