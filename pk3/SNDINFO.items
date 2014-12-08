@@ -320,6 +320,11 @@ frost/fire                FRSTFIR1
 frost/firecharged         FRSTFIR2
 frost/hit                 FRSTHIT1
 frost/hitcharged          FRSTHIT2
+$random frost/freeze { ifreeze1 ifreeze2 ifreeze3 } // Taken from Painkiller
+ifreeze1                  IBEAMFR1
+ifreeze2                  IBEAMFR2
+ifreeze3                  IBEAMFR3
+frost/break               FRSTBREK
 $limit frost/hit 0
 $limit frost/hitcharged 0
 pbeam/charge              PBEAMCHR // Taken from Metroid Prime

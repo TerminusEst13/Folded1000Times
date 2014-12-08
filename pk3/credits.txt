@@ -140,6 +140,7 @@ SOUNDS:
 =========
 - Adoxographist ( adoxtalks.tumblr.com - Going above and beyond the line of duty for Hae-Lin's voice!)
 - John Archer (The Blackened's voice)
-- torridGristle (The robotic voice of the Iron Maiden)
+- torridGristle (The robotic voice of the Iron Maiden, ripping numerous sound effects)
 - Combine_Kegan (Ripping and gathering all of the Sentinel's sound bytes)
+- Marrub (Ripping the Killing Floor sound effects)
 - All sounds are credited to their respective owner in SNDINFO.

@@ -1128,7 +1128,8 @@ actor FortuneCookie : CustomInventory 30242
 {
     Inventory.PickupMessage "Picked up 1 Life Token."
     Inventory.PickupSound "health/cookie"
-    Scale 0.2
+    YScale 0.4
+    XScale 0.5
     +FLOORCLIP
     States
     {

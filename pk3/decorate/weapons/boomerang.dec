@@ -1,3 +1,8 @@
+// This Arrogant Weapon is designed as a "thank you" to Combine-Kegan, a close
+// friend who helped out a ton with DemonSteele design and development, and
+// inspiring me to get working on it with the awesome GMOTA.
+// He requested infinite throwing knives. So here it is!
+
 actor "Kharon + Legion" : Kharon
 {
     +CHEATNOTWEAPON

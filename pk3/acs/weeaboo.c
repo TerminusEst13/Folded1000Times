@@ -374,6 +374,10 @@ int i;
         LocalAmbientSound("health/cookieriff",127);
         HudMessage(s:CookieQuote[i];HUDMSG_FADEINOUT,0,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
         break;
+
+    case WEEB_DEC_SLOWDOWN:
+        SetActorProperty(0,APROP_SPEED,(GetActorProperty(0,APROP_SPEED)*1/2)); // 50% of the current monster's speed. Stackable.
+        break;
     }
 }
 

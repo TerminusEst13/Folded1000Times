@@ -73,12 +73,13 @@
 #define WEEB_DEC_STWEAPCHECK  22
 #define WEEB_DEC_FROSTCHECK   23
 #define WEEB_DEC_COOKIEQUOTE  24
-#define WEEB_DEC_TOASTER      98
-#define WEEB_DEC_TOASTER2     99
+#define WEEB_DEC_SLOWDOWN     25
 
 #define WEEB_DEC_GETMESSAGES    0
 #define WEEB_DEC_CHANGEMUS      1
 #define WEEB_DEC_CHANGEMUSBACK  2
+#define WEEB_DEC_TOASTER        98
+#define WEEB_DEC_TOASTER2       99
 
 int DemonCredits =
 "SPECIAL THANKS TO:\n\
@@ -283,7 +284,7 @@ int DemonChangelog =
 - Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.\n\
 - There are now intermission text replacements for vanilla levels.";
 
-int CookieQuote[QUOTECOUNT] = 
+int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie and Hostile V for helping me with these!
 {
 "If you want to blow someone's mind, consider hollow-point .45s.",
 "Consider the horse. No, seriously. Weird damn animals.",
@@ -311,7 +312,7 @@ int CookieQuote[QUOTECOUNT] =
 "You're probably thinking, 'Geeze, I could write better fortunes than that', right? Well, screw you, I have like a hundred to write.",
 "I have become circus2.wad, destroyer of servers.",
 "Is it wrong to fap to your ex?",
-"Life sucks, wear a bikini and show off.",
+"Life sucks, unless you wear a bikini and show off.",
 "It's a shame to see someone like you boarding the jelly train.",
 "Your opinions are fucking shit and they are also wrong.",
 "A lot of people say money doesn't lead to happiness, but I haven't seen them give their money away.",
@@ -339,22 +340,22 @@ int CookieQuote[QUOTECOUNT] =
 "If you're hungry, eat it. If it's cute, fuck it. If it's a problem, whip it.",
 "Chicks dig swole pythons. Feed your pet snakes way too much!",
 "You not Lo Wang. You No Wang.",
-"Look behind you.",
+"When Navi speaks, use (^) to listen well to her words of wisdom...",
 "Orange you glad this isn't a Soulsphere?",
 "You can make your own happiness. In a meth lab.",
 "Face facts with dignity and also a sword and a plethora of heaven-blessed firearms.",
 "Adversity is the parent of virtue. Insisting on UV-ing Hell Revealed is the parent of stupidity.",
 "Sometimes the best part of the journey is not the destination, but laying waste to the Cyberdemon waiting at the destination.",
-"SEND HELP! I'M TRAPPED IN A GAMEPLAY MOD FACTORY!",
+"Watashi no hobakurafuto wa unagi de ippai desu.",
 "Let your deeds speak for themselves. Your flashy special combo moves can do the bragging.",
 "You will always be surrounded by your true friends. Yes, the guys shooting at you. They're your friends now.",
 "Phew! About goddamn time I got out of that cookie.",
-"Whatever you do, don't order the chicken.",
+"IT'S A SECRET TO EVERYBODY.",
 "You will take a pleasant journey to a place far away, just as soon as you can find the secret exit.",
 "You believe in the goodness of mankind... but you have an internet connection?!",
 "You will live long and enjoy life. Unless you get shot by demons. But what are the odds of that?",
 "Someday, you'll look back on this and laugh nervously before changing the topic.",
-"Just wait until you get home.",
+"Mama-say mama-sah ma-ma-coo-sah.",
 "Your skeleton lurks inside of you, waiting patiently.",
 "Seven days.",
 "I know what you did last summer.",
@@ -362,10 +363,10 @@ int CookieQuote[QUOTECOUNT] =
 "Love will lead the way. So will IDDT.",
 "Look to La Luna!",
 "Buy Major Stryker.",
-"Seeing is believing, unless your sanity stat is 0.",
+"Seeing is believing, unless your SAN stat is 0.",
 "You'll get your own sprite set someday.",
 "The best is yet to come. Unless you cheated and got the best from the start, in which case, welp.",
-"Protip: To kill the Cyberdemon, stab it until it dies.",
+"Protip: To defeat the Cyberdemon, stab it until it dies.",
 "Believe in yourself. The rest of us think you're an idiot.",
 "Pain may be weakness leaving the body, but you've got so much to give.",
 "Fighting for peace may be an oxymoron, but it's more fun than the alternative.",
