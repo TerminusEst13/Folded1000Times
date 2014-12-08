@@ -3,3 +3,4 @@ For the sake of reference (and my incessant memory issues), here are all of them
 
 30240 - Soul Fragment
 30241 - Hammer Ammo Small
+30242 - Fortune Cookie

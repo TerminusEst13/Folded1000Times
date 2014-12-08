@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-
+#define QUOTECOUNT 100
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -72,6 +72,7 @@
 #define WEEB_DEC_LEGIONCHECK  21
 #define WEEB_DEC_STWEAPCHECK  22
 #define WEEB_DEC_FROSTCHECK   23
+#define WEEB_DEC_COOKIEQUOTE  24
 #define WEEB_DEC_TOASTER      98
 #define WEEB_DEC_TOASTER2     99
 
@@ -281,3 +282,107 @@ int DemonChangelog =
 - A new cvar has been implemented to handle Skulltag weapon replacements--ds_arrogantweapons. 0 spawns the normal weapons, 1 spawns new for-fun weapons in place of Skulltag weapons, and 2 spawns the new weapons randomly in place of the original weapons.\n\
 - Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.\n\
 - There are now intermission text replacements for vanilla levels.";
+
+int CookieQuote[QUOTECOUNT] = 
+{
+"If you want to blow someone's mind, consider hollow-point .45s.",
+"Consider the horse. No, seriously. Weird damn animals.",
+"Don't fry bacon in the nude.",
+"The world may be your oyster, but you'll probably never get its pearl. Sorry.",
+"When life gives you lemons, that means you have more than one lemon. It's plural, you see. It's an X+1 amount of lemons. It was probably a gift.",
+"When you squeeze an orange, orange juice comes out. Because that's what's inside. Duh.",
+"I don't know. Ask your mom.",
+"Great misfortune will befall you. Blame it on lag.",
+"Constant grinding can turn an iron rod into a needle, or you might just be dry-humping.",
+"Shit happens when you party naked.",
+"You are not illiterate.",
+"What the fuck did you just fucking say about me, you little bitch?",
+"You should kill all business associates.",
+"Roses are red, violets are blue, I was written in black ink.",
+"Life is like a car that won't slow down. Them's the brakes.",
+"A good bullet is like an easy copier. Hitscan.",
+"Fortune cookies aren't actually Chinese. They're a take on the Japanese 'o-mikuji senbei', a sweet cracker with a little slip of paper tucked in. Japanese-American immigrants in the 19th century sold them to Chinese restaurants.",
+"Only listen to the fortune cookie. We are your friends. Everyone else lies to you.",
+"Never give up. Unless defeat arouses that one girl in accounting.",
+"Some fortune cookies contain no fortune.",
+"Today is a huge improvement over yesterday. Probably.",
+"You will recieve a fortune sometime in your future.",
+"You will be hungry again in one hour.",
+"You're probably thinking, 'Geeze, I could write better fortunes than that', right? Well, screw you, I have like a hundred to write.",
+"I have become circus2.wad, destroyer of servers.",
+"Is it wrong to fap to your ex?",
+"Life sucks, wear a bikini and show off.",
+"It's a shame to see someone like you boarding the jelly train.",
+"Your opinions are fucking shit and they are also wrong.",
+"A lot of people say money doesn't lead to happiness, but I haven't seen them give their money away.",
+"It takes only a word to turn away wrath. For best results, try screaming it in anger.",
+"It takes many nails to build a crib, but only one screw to fill it.",
+"Confuscius say: Think for your own damn self.",
+"Do not despise the racketeer. Instead, despise his sport.",
+"The only acceptable place to take cover is behind a wall of bullets.",
+"Reloading is just foreplay for your gun.",
+"Taking credit for other people's work is the cool way to get ahead.",
+"They call it a bloodbath but you really can't clean anything with it.",
+"Opening up people is like finding secret doors. Approach casually and UNF until it works.",
+"Cut a demon in half? Whoa there, tough guy. Better put that on your resume.",
+"Words left unspoken lead to regret and self doubt. Try posting angrily about it online.",
+"Your erotic attack is successful. Roll 6d9s.",
+"Why was six afraid of seven? It wasn't. They're symbols representing established numerical values. They don't feel fear.",
+"What's brown and sticky? A stick.",
+"OH NO DON'T LOOK I'M NAKED",
+"I'd say red is your color, but in Korea red is the color of masculinity.",
+"This is my sword, this is my gun. One is for killing, the other is for...well, also for killing, I guess.",
+"You don't need a parachute to skydive. You need a parachute to skydive twice.",
+"You will be attacked by demons.",
+"No one ever died of a broken heart. But a sword shoved straight into it? Not gonna lie. That's killed a couple people.",
+"It's not drowning, it's just putting breathing on Hard Mode.",
+"If you're hungry, eat it. If it's cute, fuck it. If it's a problem, whip it.",
+"Chicks dig swole pythons. Feed your pet snakes way too much!",
+"You not Lo Wang. You No Wang.",
+"Look behind you.",
+"Orange you glad this isn't a Soulsphere?",
+"You can make your own happiness. In a meth lab.",
+"Face facts with dignity and also a sword and a plethora of heaven-blessed firearms.",
+"Adversity is the parent of virtue. Insisting on UV-ing Hell Revealed is the parent of stupidity.",
+"Sometimes the best part of the journey is not the destination, but laying waste to the Cyberdemon waiting at the destination.",
+"SEND HELP! I'M TRAPPED IN A GAMEPLAY MOD FACTORY!",
+"Let your deeds speak for themselves. Your flashy special combo moves can do the bragging.",
+"You will always be surrounded by your true friends. Yes, the guys shooting at you. They're your friends now.",
+"Phew! About goddamn time I got out of that cookie.",
+"Whatever you do, don't order the chicken.",
+"You will take a pleasant journey to a place far away, just as soon as you can find the secret exit.",
+"You believe in the goodness of mankind... but you have an internet connection?!",
+"You will live long and enjoy life. Unless you get shot by demons. But what are the odds of that?",
+"Someday, you'll look back on this and laugh nervously before changing the topic.",
+"Just wait until you get home.",
+"Your skeleton lurks inside of you, waiting patiently.",
+"Seven days.",
+"I know what you did last summer.",
+"Caleb is never going to be added to Samsara.",
+"Love will lead the way. So will IDDT.",
+"Look to La Luna!",
+"Buy Major Stryker.",
+"Seeing is believing, unless your sanity stat is 0.",
+"You'll get your own sprite set someday.",
+"The best is yet to come. Unless you cheated and got the best from the start, in which case, welp.",
+"Protip: To kill the Cyberdemon, stab it until it dies.",
+"Believe in yourself. The rest of us think you're an idiot.",
+"Pain may be weakness leaving the body, but you've got so much to give.",
+"Fighting for peace may be an oxymoron, but it's more fun than the alternative.",
+"A wise man once said, it is not enough to settle for mediocrity. You must git gud, scrub.",
+"404: Fortune not found. Try again later.",
+"I refuse to do anything productive today.",
+"Axes take skill.",
+"Everything's more fun when you're drunk.",
+"Study finds OP still sucking cock on a regular basis.",
+"99 glitches in the code on the wall, 99 glitches in the code. Take one down, patch it around, 142 glitches in the code on the wall.",
+"Justice fears no skelly!",
+"When tempted to fight fire with fire, remember that the Fire Department usually uses water.",
+"If what you don't know can't hurt you, you're invulnerable.",
+"Patience and a kind word can take care of most situations, but so can a bullet.",
+"One of these days, the enemies will learn how to respawn. Then we'll all be fucked.",
+"In the time it took for DemonSteele to start, enter alpha/beta, get a full weaponset, tons of new sprites, a full quote roster, and be released, Space Pirate still has not updated.",
+"I should not be spending thirty goddamn minutes thinking up one single message.",
+"How is eating fried chicken like being in Hell? Thigh flesh consumed.",
+"This is just like one of my Korean manhwas!"
+};

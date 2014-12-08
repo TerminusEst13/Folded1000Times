@@ -1123,3 +1123,110 @@ actor SentinelPickup : CustomInventory replaces AllMap
 }
 
 actor SentinelPickupB : SentinelPickup replaces Infrared {}
+
+actor FortuneCookie : CustomInventory 30242
+{
+    Inventory.PickupMessage "Picked up 1 Life Token."
+    Inventory.PickupSound "health/cookie"
+    Scale 0.2
+    +FLOORCLIP
+    States
+    {
+    Spawn:
+        COOK I 1 BRIGHT
+        COOK I 30
+        loop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
+        TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
+        TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
+        TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
+        TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
+        TNT1 A 1
+        fail
+    BabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverBabyPickup")
+    BabyFailCheck:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+    EasyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverEasyPickup")
+    EasyFailCheck:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+    NormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNormalPickup")
+    NormalFailCheck:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+    HardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverHardPickup")
+    HardFailCheck:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+    NightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNightmarePickup")
+    NightmareFailCheck:
+        TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        stop
+
+    OverBabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"BabyFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverEasyPickup: // Heh.
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverNormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"NormalFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverHardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"HardFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    OverNightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"NightmareFailCheck")
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
+    }
+}

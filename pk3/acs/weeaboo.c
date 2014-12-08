@@ -104,6 +104,8 @@ script WEEB_OPEN_CLIENT OPEN clientside
 
 script WEEB_DECORATE (int burrshet, int ballshat)
 {
+int i;
+
     switch (burrshet)
     {
     case WEEB_DEC_DAMAGE:
@@ -364,6 +366,13 @@ script WEEB_DECORATE (int burrshet, int ballshat)
     case WEEB_DEC_FROSTCHECK:
         if (isSinglePlayer() && GotFrosthammer == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
+        break;
+
+    case WEEB_DEC_COOKIEQUOTE:
+        i = random(0, QUOTECOUNT-1);
+        delay(35);
+        LocalAmbientSound("health/cookieriff",127);
+        HudMessage(s:CookieQuote[i];HUDMSG_FADEINOUT,0,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
         break;
     }
 }
