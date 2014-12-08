@@ -11,7 +11,7 @@ ininventory not SkulltagWeaponsAcquired, 1
 ininventory SkulltagWeaponsAcquired, 1
 {
     ininventory not GotIronMaiden, 1 { drawimage "AMMBOXb", 308, 182, center; }
-    ininventory GotIronMaiden, 1 { drawimage "AMMBOXb2", 308, 182, center; }
+    ininventory GotIronMaiden, 1 { drawimage "AMMBOX2b", 308, 182, center; }
 }
 drawimage ammoicon1, 258, 187, center;
 isselected "Kharon + Omen" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
