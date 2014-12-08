@@ -53,6 +53,7 @@ weapon/carronade          GETCARND // I was lazy and just inserted an Unreal Cha
 weapon/uzi                GETUZI
 weapon/hammer             GETHAMMR
 weapon/legion             GETLEJUN
+weapon/frost              GETFROST
 $random weapon/armor { armwep1 armwep2 armwep3 } // Clicky clacky sounds by Kamen Rider Kabuto, voice by torridGristle
 armwep1                   GETARMR1
 armwep2                   GETARMR2

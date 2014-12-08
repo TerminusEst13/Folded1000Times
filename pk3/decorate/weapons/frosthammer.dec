@@ -9,124 +9,124 @@ actor "Kharon + Frosthammer" : Kharon
     Ready:
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM AA 1 A_WeaponReady
+        W2PF AA 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM BB 1 A_WeaponReady
+        W2PF BB 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM CC 1 A_WeaponReady
+        W2PF CC 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM DD 1 A_WeaponReady
+        W2PF DD 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM EE 1 A_WeaponReady
+        W2PF EE 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM FF 1 A_WeaponReady
+        W2PF FF 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM GG 1 A_WeaponReady
+        W2PF GG 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM HH 1 A_WeaponReady
+        W2PF HH 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM II 1 A_WeaponReady
+        W2PF II 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM JJ 1 A_WeaponReady
+        W2PF JJ 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM KK 1 A_WeaponReady
+        W2PF KK 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM LL 1 A_WeaponReady
+        W2PF LL 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM MM 1 A_WeaponReady
+        W2PF MM 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM NN 1 A_WeaponReady
+        W2PF NN 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM OO 1 A_WeaponReady
+        W2PF OO 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM PP 1 A_WeaponReady
+        W2PF PP 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM AA 1 A_WeaponReady
+        W2PF AA 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM BB 1 A_WeaponReady
+        W2PF BB 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM CC 1 A_WeaponReady
+        W2PF CC 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM DD 1 A_WeaponReady
+        W2PF DD 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM EE 1 A_WeaponReady
+        W2PF EE 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM FF 1 A_WeaponReady
+        W2PF FF 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM AA 1 A_WeaponReady
+        W2PF AA 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM BB 1 A_WeaponReady
+        W2PF BB 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM CC 1 A_WeaponReady
+        W2PF CC 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM DD 1 A_WeaponReady
+        W2PF DD 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM EE 1 A_WeaponReady
+        W2PF EE 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM FF 1 A_WeaponReady
+        W2PF FF 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM AA 1 A_WeaponReady
+        W2PF AA 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM BB 1 A_WeaponReady
+        W2PF BB 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM CC 1 A_WeaponReady
+        W2PF CC 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM DD 1 A_WeaponReady
+        W2PF DD 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM EE 1 A_WeaponReady
+        W2PF EE 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM FF 1 A_WeaponReady
+        W2PF FF 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM AA 1 A_WeaponReady
+        W2PF AA 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM BB 1 A_WeaponReady
+        W2PF BB 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM CC 1 A_WeaponReady
+        W2PF CC 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM DD 1 A_WeaponReady
+        W2PF DD 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM EE 1 A_WeaponReady
+        W2PF EE 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        FRHM FF 1 A_WeaponReady
+        W2PF FF 1 A_WeaponReady
         Loop
     Select:
         TNT1 A 0 A_JumpIfInventory("AlreadyInLevel",1,"Select3")
@@ -137,17 +137,17 @@ actor "Kharon + Frosthammer" : Kharon
         KTUP ABCDE 1 A_Raise
         KTUP FG 1
         TNT1 A 12 A_GiveInventory("AlreadyInLevel",1)
-        WEPA DCBA 1
+        WEPF DCBA 1
         Goto Ready
     Select2:
-        WEPA DCB 1 A_WeaponReady
+        WEPF DCB 1 A_WeaponReady
         goto Ready
     Select3:
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Raise
         TNT1 A 1 A_Raise
         loop
     IdleAnimation:
-        WEPA ABCD 2 A_WeaponReady
+        WEPF ABCD 2 A_WeaponReady
     IdleDecide:
         TNT1 A 0 A_Jump(16,"Idle0")
         TNT1 A 0 A_Jump(255,"Idle1","Idle2","Idle3","Idle4")
@@ -223,7 +223,7 @@ actor "Kharon + Frosthammer" : Kharon
         TNT1 A 2 A_WeaponReady
         goto IdleFinish
     IdleFinish:
-        WEPA DCBA 2 A_WeaponReady
+        WEPF DCBA 2 A_WeaponReady
         TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
         goto Ready
 
@@ -232,11 +232,11 @@ actor "Kharon + Frosthammer" : Kharon
     Fire:
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
-        WEPA BCD 1
+        WEPF BCD 1
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
     FirePrepare:
-        WEPA IH 1 A_TakeInventory("ShootingLikeABaka")
+        WEPF IH 1 A_TakeInventory("ShootingLikeABaka")
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
 
@@ -499,7 +499,7 @@ actor "Kharon + Frosthammer" : Kharon
     AltFire:
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
-        WEPA EFG 1
+        WEPF EFG 1
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
     AltFireGun:
         TNT1 A 0 A_PlayWeaponSound("frost/fire")
@@ -521,20 +521,20 @@ actor "Kharon + Frosthammer" : Kharon
         FRFR G 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRHM A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Refire
-        FRHM A 68 A_WeaponReady
+        FRHM ABCDEFABCDEFABCDEFABCDEFGHIJKLMNOP 2 A_WeaponReady
         Goto AltFired
     AltFirePrepare:
-        WEPA H 1 A_TakeInventory("KharonSwung",1)
+        WEPF H 1 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        WEPA I 1
+        WEPF I 1
         goto AltFireGun
     AltFired:
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        WEPA GFE 1
+        WEPF GFE 1
         Goto Ready
 
     AltHold:
@@ -576,7 +576,7 @@ actor "Kharon + Frosthammer" : Kharon
         FRFR CCDDEEFFF 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRFR G 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRHM A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        FRHM A 68 A_WeaponReady
+        FRHM ABCDEFABCDEFABCDEFABCDEFGHIJKLMNOP 2 A_WeaponReady
         Goto AltFired
 
     Hold3:
@@ -652,7 +652,7 @@ actor "Kharon + Frosthammer" : Kharon
         FRFR CCDDEEFFF 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRFR G 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRHM A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        FRHM A 68 A_WeaponReady
+        FRHM ABCDEFABCDEFABCDEFABCDEFGHIJKLMNOP 2 A_WeaponReady
         Goto AltFired
 
     HoldFinal3:
@@ -673,7 +673,7 @@ actor "Kharon + Frosthammer" : Kharon
         TNT1 A 0 A_ClearRefire
         goto Fired2
     Henshin:
-        WEPA BCD 1
+        WEPF BCD 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)
         TNT1 A 4 A_TakeInventory("KharonSwung",1)
