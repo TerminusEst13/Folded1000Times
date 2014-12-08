@@ -51,6 +51,28 @@ actor SSGReplacement : CustomInventory replaces SuperShotgun
     }
 }
 
+actor PRReplacement : CustomInventory replaces PlasmaRifle
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0,0) == 2,"SpawnSabbathFrosthammer")//ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0)
+        TNT1 A 1//0
+        //stop
+    SpawnSabbath:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("SabbathAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnSabbathFrosthammer:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("SabbathFrosthammerSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
 actor MinigunReplacement : CustomInventory replaces Minigun
 {
     States
@@ -99,7 +121,7 @@ actor RailgunReplacement : CustomInventory replaces Railgun
     {
     Spawn:
         TNT1 A 1
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnFrosthammer")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnFrosthammer")
         TNT1 A 1
     SpawnSabbath:
         TNT1 A 0
@@ -108,7 +130,7 @@ actor RailgunReplacement : CustomInventory replaces Railgun
         stop
     SpawnFrosthammer:
         TNT1 A 0
-        //TNT1 A 0 A_SpawnItemEx("FrosthammerAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("FrosthammerAlwaysSpawner",0,0,0,0,0,0,0,32)
         TNT1 A 1
         stop
     }
@@ -134,12 +156,25 @@ actor SabbathAlwaysSpawner : RandomSpawner
     DropItem "UziPickup"
 }
 
+actor FrosthammerAlwaysSpawner : RandomSpawner
+{
+    DropItem "FrosthammerPickup"
+}
+
 actor TestamentLegionSpawner : RandomSpawner
 {
     DropItem "ShotgunPickup"
     DropItem "ShotgunPickup"
     DropItem "ShotgunPickup"
     DropItem "LegionPickup"
+}
+
+actor SabbathFrosthammerSpawner : RandomSpawner
+{
+    DropItem "UziPickup"
+    DropItem "UziPickup"
+    DropItem "UziPickup"
+    DropItem "FrosthammerPickup"
 }
 
 actor PickupBase : CustomInventory
@@ -397,7 +432,7 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
     }
 }
 
-actor UziPickup : PickupBase replaces PlasmaRifle
+actor UziPickup : PickupBase //replaces PlasmaRifle
 {
     Inventory.PickupMessage ""
     Inventory.PickupSound "HeWouldTugAndTryThenSitDownAndCry"

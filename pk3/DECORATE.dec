@@ -58,6 +58,7 @@ const int WEEB_DEC_ARMRCHECK   = 19;
 const int WEEB_DEC_BARRELSPAWN = 20;
 const int WEEB_DEC_LEGIONCHECK = 21;
 const int WEEB_DEC_STWEAPCHECK = 22;
+const int WEEB_DEC_FROSTCHECK  = 23;
 const int WEEB_DEC_TOASTER     = 98;
 const int WEEB_DEC_TOASTER2    = 99;
 
@@ -81,6 +82,7 @@ const int WEEB_DEC_CHANGEMUSBACK = 2;
 #include "decorate/weapons/ironmaiden.dec"
 #include "decorate/weapons/ironeffects.dec"
 #include "decorate/weapons/boomerang.dec"
+#include "decorate/weapons/frosthammer.dec"
 #include "decorate/player.dec"
 #include "decorate/flashlight.dec"
 #include "decorate/powerups.dec"

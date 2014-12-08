@@ -298,7 +298,7 @@ henshin/error             IRNERROR // Made by torridGristle
 henshin/error2            IRNNOPE  // Taken from RPG Maker VX
 henshin/warning           IRNWARNG // Made by torridGristle
 
-// Knives
+// Legion
 
 boomerang/fly             BOOMFLY  // Taken from General Series 6000
 $volume boomerang/fly 0.7
@@ -310,3 +310,14 @@ boomerang/throwbunch      BOOMTOS3
 boomerang/stack           BOOMSTCK
 boomerang/get             BOOMGET1
 $volume boomerang/get 0.3
+
+// Frosthammer
+
+frost/fire                FRSTFIR1
+frost/firecharged         FRSTFIR2
+frost/hit                 FRSTHIT1
+frost/hitcharged          FRSTHIT2
+$limit frost/hit 0
+$limit frost/hitcharged 0
+pbeam/charge              PBEAMCHR // Taken from Metroid Prime
+pbeam/idle                PBEAMIDL // Taken from Metroid Prime

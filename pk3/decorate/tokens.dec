@@ -47,6 +47,8 @@ actor FistHit : Boolean {}
 actor IronCharged : Boolean {}
 actor SynthAltFire : Boolean {}
 
+actor PowerBeamCharged : Boolean {}
+
 actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
 actor IAmAnAwesomePersonWhoLikesCoolMusic : Boolean {}
 actor IAmAnOkayPersonWhoLikesToAutoSwitch : Boolean {}
@@ -76,6 +78,7 @@ actor GotUzi : Boolean {}
 actor GotHammer : Boolean {}
 actor GotIronMaiden : Boolean {}
 actor GotLegion : Boolean {}
+actor GotFrosthammer : Boolean {}
 actor SkulltagWeaponsAcquired : Boolean {}
 
 
@@ -95,6 +98,8 @@ actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
 actor UziSequence : Counter { Inventory.MaxAmount 60 }
 actor IronChargeCounter : Counter { Inventory.MaxAmount 35 }
 actor KharonChargedCounter : Counter { Inventory.MaxAmount 10 }
+actor PowerBeamChargeLevel : Counter { Inventory.MaxAmount 31 }
+actor PowerBeamIdle : Counter { Inventory.MaxAmount 26 }
 
 actor ContraLifeToken : Counter { Inventory.MaxAmount 10 }
 actor ContraArmorToken : Counter { Inventory.MaxAmount 4 }

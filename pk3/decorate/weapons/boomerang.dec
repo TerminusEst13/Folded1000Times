@@ -1,6 +1,6 @@
 actor "Kharon + Legion" : Kharon
 {
-    -CHEATNOTWEAPON
+    +CHEATNOTWEAPON
     Weapon.AmmoUse2 0
     Weapon.AmmoType2 ""
     Weapon.SlotNumber 6

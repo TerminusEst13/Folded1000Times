@@ -16,8 +16,14 @@
 #define WEEB_PUKE                            279
 #define WEEB_CREDITS                         280
 #define WEEB_PUKE2                           281
+#define WEEB_FROST_XYZ                       282
+#define WEEB_FROST_BURST                     283
+#define WEEB_FROST_TRAIL                     284
+#define WEEB_FROST_COORDSHIT                 285
 
 // Definitions
+
+#define TRAILCOUNT 3
 
 #define IRONMUS 7
 
@@ -65,6 +71,7 @@
 #define WEEB_DEC_BARRELSPAWN  20
 #define WEEB_DEC_LEGIONCHECK  21
 #define WEEB_DEC_STWEAPCHECK  22
+#define WEEB_DEC_FROSTCHECK   23
 #define WEEB_DEC_TOASTER      98
 #define WEEB_DEC_TOASTER2     99
 
@@ -115,6 +122,7 @@ GRAPHICS:\n\
   ^ The henshin animation\n\
   ^ Animating the Exodus\n\
   ^ The pillow for the dakimakura\n\
+  ^ The Frosthammer cryo railgun\n\
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us\n\
   rotate the Kharon properly forcing us to rely on Photoshop's really ugly and\n\
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA\n\

@@ -3,6 +3,7 @@
 
 #include "commonfuncs.h"
 #include "weeb_const.h"
+#include "weeb_frosthammer.h"
 
 global int 58:LevelCount;
 
@@ -21,6 +22,7 @@ int GotUzi;
 int GotHam; // HAM
 int GotIronMaiden;
 int GotLegion;
+int GotFrosthammer;
 
 int MusicRandomizerIsIncluded;
 
@@ -334,7 +336,7 @@ script WEEB_DECORATE (int burrshet, int ballshat)
         if (isSinglePlayer() && GotIronMaiden == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
-        
+
     case WEEB_DEC_BARRELSPAWN:
         SetResultValue(GetCVar("sv_barrelrespawn"));
         break;
@@ -357,12 +359,16 @@ script WEEB_DECORATE (int burrshet, int ballshat)
           break;
         }*/
         break;
+
+    case WEEB_DEC_FROSTCHECK:
+        if (isSinglePlayer() && GotFrosthammer == 1) { SetResultValue(1); }
+        else { SetResultValue(0); }
+        break;
     }
 }
 
 script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 {
-    
     if (boreshut < 98 && ConsolePlayerNumber() != PlayerNumber()) { terminate; } 
 
     switch (boreshut)
@@ -767,6 +773,7 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
             if (CheckInventory("GotIronMaiden") == 1) { GotIronMaiden = 1; } 
             if (CheckInventory("GotLegion") == 1) { GotLegion = 1; } 
+            if (CheckInventory("GotFrosthammer") == 1) { GotFrosthammer = 1; } 
         }
 
         OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
