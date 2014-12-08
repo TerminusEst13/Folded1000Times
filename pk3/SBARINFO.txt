@@ -3,8 +3,16 @@ height 0;
 
 statusbar normal, forcescaled
 {
-ininventory not GotIronMaiden, 1 { drawimage "AMMBOX", 308, 182, center; }
-ininventory GotIronMaiden, 1 { drawimage "AMMBOX2", 308, 182, center; }
+ininventory not SkulltagWeaponsAcquired, 1
+{
+    ininventory not GotIronMaiden, 1 { drawimage "AMMBOX", 308, 182, center; }
+    ininventory GotIronMaiden, 1 { drawimage "AMMBOX2", 308, 182, center; }
+}
+ininventory SkulltagWeaponsAcquired, 1
+{
+    ininventory not GotIronMaiden, 1 { drawimage "AMMBOXb", 308, 182, center; }
+    ininventory GotIronMaiden, 1 { drawimage "AMMBOXb2", 308, 182, center; }
+}
 drawimage ammoicon1, 258, 187, center;
 isselected "Kharon + Omen" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179; }
                                InInventory not HammerCharge, 100 { InInventory HammerCharge, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
@@ -25,24 +33,29 @@ isselected not "Kharon + Omen" {
       isselected not "Kharon + Exodus" {
         isselected not "Kharon + Sabbath" {
           isselected not "Kharon + Legion" {
-            isselected not "Kharon" {
-              isselected not "Iron Fist" {
+            isselected not "Kharon + Frosthammer" {
+              isselected not "Kharon" {
+                isselected not "Iron Fist" {
 
-                   drawnumber 3, DNDHUDF, untranslated, ammo1, fillzeros, drawshadow, 293, 179; }}}}}}}}
+                   drawnumber 3, DNDHUDF, untranslated, ammo1, fillzeros, drawshadow, 293, 179; }}}}}}}}}
 
 ininventory GotHammer, 1 { drawimage "GOTO2", 262, 171, center; }
 drawimage "GOTA2", 267, 171, center;
 ininventory GotShotgun, 1 { drawimage "GOTT2", 272, 171, center; }
 ininventory GotUzi, 1 { drawimage "GOTS2", 277, 171, center; }
 ininventory GotCarronade, 1 { drawimage "GOTE2", 282, 171, center; }
+ininventory GotLegion, 1 { drawimage "GOTL2", 291, 171, center; }
+ininventory GotFrosthammer, 1 { drawimage "GOTF2", 296, 171, center; }
 isselected "Kharon + Omen" { drawimage "GOTO1", 262, 171, center; }
 isselected "Kharon + Acacia A-22" { drawimage "GOTA1", 267, 171, center; }
 isselected "Kharon + Testament" { drawimage "GOTT1", 272, 171, center; }
 isselected "Kharon + Sabbath" { drawimage "GOTS1", 277, 171, center; }
 isselected "Kharon + Exodus" { drawimage "GOTE1", 282, 171, center; }
+isselected "Kharon + Legion" { drawimage "GOTL1", 291, 171, center; }
+isselected "Kharon + Frosthammer" { drawimage "GOTF1", 296, 171, center; }
 ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 253, 171, center;
-ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 253, 171, center; }
-ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 253, 171, center; }}
+    ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 253, 171, center; }
+    ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 253, 171, center; }}
 //ininventory GotLegion, 1 { drawimage "GOTL1", 290, 171, center; }
 //drawimage "GOTA1", 295, 171, center;
 //drawimage "GOTA1", 300, 171, center;
@@ -206,11 +219,15 @@ drawimage "GOTA2", 270, 174, center;
 ininventory GotShotgun, 1 { drawimage "GOTT2", 275, 174, center; }
 ininventory GotUzi, 1 { drawimage "GOTS2", 280, 174, center; }
 ininventory GotCarronade, 1 { drawimage "GOTE2", 285, 174, center; }
+ininventory GotLegion, 1 { drawimage "GOTL2", 290, 174, center; }
+ininventory GotFrosthammer, 1 { drawimage "GOTF2", 295, 174, center; }
 isselected "Kharon + Omen" { drawimage "GOTO1", 265, 174, center; }
 isselected "Kharon + Acacia A-22" { drawimage "GOTA1", 270, 174, center; }
 isselected "Kharon + Testament" { drawimage "GOTT1", 275, 174, center; }
 isselected "Kharon + Sabbath" { drawimage "GOTS1", 280, 174, center; }
 isselected "Kharon + Exodus" { drawimage "GOTE1", 285, 174, center; }
+isselected "Kharon + Legion" { drawimage "GOTL1", 290, 174, center; }
+isselected "Kharon + Frosthammer" { drawimage "GOTF1", 295, 174, center; }
 ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 256, 174, center;
 ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 256, 174, center; }
 ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}

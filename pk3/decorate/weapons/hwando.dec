@@ -455,6 +455,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0)
         TNT1 A 0 A_TakeInventory("AlreadyInLevel",1)
         TNT1 A 0 A_TakeInventory("Kharon + Legion",1)
+        TNT1 A 0 A_TakeInventory("Kharon + Frosthammer",1)
         TNT1 A 0 A_TakeInventory("Kharon + Testament",1)
         TNT1 A 0 A_TakeInventory("Kharon + Sabbath",1)
         TNT1 A 0 A_TakeInventory("Kharon + Exodus",1)

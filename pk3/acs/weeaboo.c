@@ -310,6 +310,7 @@ script WEEB_DECORATE (int burrshet, int ballshat)
         if (CheckInventory("GotUzi") == 1) { GiveInventory("Kharon + Sabbath",1); }
         if (CheckInventory("GotCarronade") == 1) { GiveInventory("Kharon + Exodus",1); }
         if (CheckInventory("GotHammer") == 1) { GiveInventory("Kharon + Omen",1); }
+        if (CheckInventory("GotFrosthammer") == 1) { GiveInventory("Kharon + Frosthammer",1); }
         SetWeapon("Kharon + Acacia A-22");
         ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUSBACK,0,0);
         delay(1);
