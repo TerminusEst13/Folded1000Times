@@ -341,7 +341,7 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie and Hostile V for helping me w
 "Chicks dig swole pythons. Feed your pet snakes way too much!",
 "You not Lo Wang. You No Wang.",
 "When Navi speaks, use (^) to listen well to her words of wisdom...",
-"Orange you glad this isn't a Soulsphere?",
+"Call Apogee, say Aardwolf.",
 "You can make your own happiness. In a meth lab.",
 "Face facts with dignity and also a sword and a plethora of heaven-blessed firearms.",
 "Adversity is the parent of virtue. Insisting on UV-ing Hell Revealed is the parent of stupidity.",
