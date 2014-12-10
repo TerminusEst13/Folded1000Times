@@ -1,3 +1,9 @@
+LEFT FOR HAE-LIN:
+1: Special moves for guns
+2: non-placeholder sprites for Iron Maiden (but Riet's working on that)
+3: one more Arrogant weapon (though Mike is working on that and I have a wonderful backup in case he doesn't deliver by the end of the year)
+4: and...yeah, player sprites.
+
 TO DO in no particular order:
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
 22: Randomized muzzleflashes for the pistol.
@@ -47,6 +53,17 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 99: Cvar for turning off jumping for Priests/Emperor.
 100: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
 101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
+ ^- One over-armor token if armor is full, replenishes one armor otherwise.
+102: Unique talking/connection sounds.
+103: Cooldown timer on Iron Maiden error to keep people from spamming it.
+ ^- Player slowdown as well.
+104: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
+105: Frosthammer can kill the Sentinel.
+106: Some enemies' special death states lead into the redefined Death, making goto Death or goto Kubiuti+X states to be wrongly aligned.
+107: For some people, holding alt-fire isn't charging the Frosthammer.
+108: The mancubi angles for the shots are pointing inwards, rather than outwards.
+109: Black Souls should be -SOLID
+110: [03:12:30 am] Jump target 'SpawnStimpack' not found in XaserBarrel
 
 
 
