@@ -1,20 +1,38 @@
-// This Arrogant Weapon is designed as a "thank you" to Combine-Kegan, a close
-// friend who helped out a ton with DemonSteele design and development, and
-// inspiring me to get working on it with the awesome GMOTA.
-// He requested infinite throwing knives. So here it is!
+// ACACIA A-22
+//   When Acacia Woodsmen Incorporated, a UK-based hunting gear manufacturer,
+// announced their plans to branch out into weapon development, they were met
+// with nothing but ridicule across the internet and the tabloids. Though they
+// had plenty of success developing and marketing sporting equipment, designing
+// hunting weapons was another thing entirely. Despite that, the company
+// persevered and eventually brought out the Assault Pistol Model 22, which
+// quickly took the hunting world by storm.
+//   With its incredible accuracy, extremely moddable frame, use of massive
+// .500 magnum rounds, and light weight, the A-22 in short order became the
+// sportsman's weapon of choice. Many critics were quickly converted to the
+// side of pistol hunting for large game, and it even enjoyed a temporary stint
+// of infamy when it was picked up for a few years by PMCs as a powerful backup
+// side-arm. Unfortunately, it wasn't too long before the biggest flaw of the
+// weapon started becoming very irritating: Because of the sheer size of the
+// rounds the magazine size had to be cut down in order to reduce overall
+// weight, leaving a five-shot pistol that (while carving an incredibly
+// persistent niche in the market) quickly fell out of favor of military
+// applications.
 
-actor "Kharon + Legion" : Kharon
+//   Thankfully for you, the blessings of Heaven have rendered this flaw
+// somewhat moot. Bullets just seem to automatically load themselves now,
+// somehow.
+
+actor "Kharon + Acacia A-22" : Kharon
 {
-    +CHEATNOTWEAPON
-    Weapon.AmmoUse2 0
-    Weapon.AmmoType2 ""
-    Weapon.SlotNumber 6
+    Weapon.AmmoUse2 1
+    Weapon.AmmoType2 "WeebClip"
+    Weapon.SlotNumber 2
     States
     {
     Ready:
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
-        WEPL A 1 A_WeaponReady
+        WEPA A 1 A_WeaponReady
         Loop
     Select:
         TNT1 A 0 A_JumpIfInventory("AlreadyInLevel",1,"Select3")
@@ -25,21 +43,17 @@ actor "Kharon + Legion" : Kharon
         KTUP ABCDE 1 A_Raise
         KTUP FG 1
         TNT1 A 12 A_GiveInventory("AlreadyInLevel",1)
-        WEPL DCBA 1
+        WEPA DCBA 1
         Goto Ready
     Select2:
-        WEPL DCB 1 A_WeaponReady
+        WEPA DCB 1 A_WeaponReady
         goto Ready
     Select3:
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Raise
         TNT1 A 1 A_Raise
         loop
-    Deselect:
-        TNT1 A 0 A_TakeInventory("LegionCounter",0x7FFFFFFF)
-        TNT1 A 0 A_TakeInventory("LegionStacked",0x7FFFFFFF)
-        goto "Super::DeSelect"
     IdleAnimation:
-        WEPL ABCD 2 A_WeaponReady
+        WEPA ABCD 2 A_WeaponReady
     IdleDecide:
         TNT1 A 0 A_Jump(16,"Idle0")
         TNT1 A 0 A_Jump(255,"Idle1","Idle2","Idle3","Idle4")
@@ -115,7 +129,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 2 A_WeaponReady
         goto IdleFinish
     IdleFinish:
-        WEPL DCBA 2 A_WeaponReady
+        WEPA DCBA 2 A_WeaponReady
         TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
         goto Ready
 
@@ -124,11 +138,11 @@ actor "Kharon + Legion" : Kharon
     Fire:
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
-        WEPL BCD 1
+        WEPA BCD 1
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
     FirePrepare:
-        TNT1 A 1 A_TakeInventory("ShootingLikeABaka")
+        WEPA IH 1 A_TakeInventory("ShootingLikeABaka")
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
 
@@ -391,160 +405,46 @@ actor "Kharon + Legion" : Kharon
     AltFire:
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
-        WEPL ABC 1
+        WEPA EFG 1
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
     AltFireGun:
-        BMRN A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throw")
-        BMRN B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_FireCustomMissile("ThrownKnife",0,1,0,0,2)
-        BMRN CD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        BMRN E 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
-        TNT1 A 1 A_Refire
-        Goto AltHold
+        HPIS A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        //TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_Light1
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_PlayWeaponSound("pistol/fire")
+        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
+        TNT1 A 0 A_FireCustomMissile("HuntingPistolBullet",0,1,0,1)
+        TNT1 A 0 A_Recoil(0.2)
+        TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoil")
+        TNT1 A 0 A_SetAngle(angle+(random(-400,400)/1000.000))
+        TNT1 A 0 A_SetPitch(pitch-(random(200,700)/1000.000))
+    NoRecoil:
+        HPIS BC 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light0
+        HPIS DEDDCCFF 1 A_WeaponReady(WRF_NOSWITCH)
+        HPIS A 70 A_WeaponReady
+        Goto AltFired
+    Nope:
+        TNT1 A 0 A_PlaySoundEx("pistol/dry","soundslot7",0,0)
+        HPIS A 10 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("IAmAnOkayPersonWhoLikesToAutoSwitch",1,"DeselectShit")
+        HPIS A 35 A_Weaponready
+        Goto AltFired
     AltFirePrepare:
-        TNT1 A 1 A_TakeInventory("KharonSwung",1)
+        WEPA H 1 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 1
+        WEPA I 1
         goto AltFireGun
     AltFired:
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        WEPL CBA 1
+        WEPA GFE 1
         Goto Ready
-    AltHold:
-        TNT1 A 1
-        TNT1 A 0 A_JumpIfInventory("LegionCounter",35,"FireBoomerangGoUp")
-        TNT1 A 0 A_GiveInventory("LegionCounter",1)
-        TNT1 A 0 A_Refire
-        TNT1 A 0 A_ClearRefire
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",9,"FireBoomerang10")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",8,"FireBoomerang9")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",7,"FireBoomerang8")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",6,"FireBoomerang7")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",5,"FireBoomerang6")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",4,"FireBoomerang5")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",3,"FireBoomerang4")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",2,"FireBoomerang3")
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",1,"FireBoomerang2")
-        TNT1 A 0 A_TakeInventory("LegionCounter",0x7FFFFFFF)
-        TNT1 A 0 A_TakeInventory("LegionStacked",0x7FFFFFFF)
-        TNT1 A 35 A_WeaponReady
-        goto AltFired
-    FireBoomerangGoUp:
-        TNT1 A 0 A_TakeInventory("LegionCounter",40)
-        TNT1 A 0 A_JumpIfInventory("LegionStacked",9,"AltHold")
-        TNT1 A 0 A_GiveInventory("LegionStacked",1)
-        TNT1 A 0 A_PlayWeaponSound("boomerang/stack")
-        goto AltHold
-	FireBoomerang2:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-4,0,0,0,2)
-        BMRN H 1 A_FireCustomMissile("ThrownKnife2",4,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang3:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-6,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",6,0,0,0,2)
-        BMRN H 1 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang4:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
-        BMRN H 1 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang5:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
-        BMRN H 1 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang6:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
-        BMRN H 1 A_FireCustomMissile("ThrownKnife2",13,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang7:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
-        BMRN H 1 A_FireCustomMissile("ThrownKnife2",15,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang8:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
-        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",13,0,0,0,2)
-	    BMRN H 1 A_FireCustomMissile("ThrownKnife2",18,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang9:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-20,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
-        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",15,0,0,0,2)
-	    BMRN H 1 A_FireCustomMissile("ThrownKnife2",20,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang10:
-        BMRN FG 1
-        TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-23,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
-        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",18,0,0,0,2)
-	    BMRN H 1 A_FireCustomMissile("ThrownKnife2",23,0,0,0,2)
-        BMRN I 1
-		goto FireBoomerangFinish
-    FireBoomerangFinish:
-        BMRN J 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
-        TNT1 A 0 A_TakeInventory("LegionCounter",0x7FFFFFFF)
-        TNT1 A 0 A_TakeInventory("LegionStacked",0x7FFFFFFF)
-        TNT1 A 20
-        Goto AltFired
 
     HenshinCheck:
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",100,"Henshin")
@@ -558,7 +458,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_ClearRefire
         goto Fired2
     Henshin:
-        WEPL BCD 1
+        WEPA BCD 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)
         TNT1 A 4 A_TakeInventory("KharonSwung",1)
@@ -657,188 +557,5 @@ actor "Kharon + Legion" : Kharon
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
         goto Deselect
-    }
-}
-
-Actor ThrownKnife
-{
-    Radius 8
-    Height 4
-    Speed 50
-    Damage (45)
-    XScale 0.5
-    YScale 0.2
-    DamageType "Knife"
-    Species "Player"
-    SeeSound "boomerang/bounce"
-    BounceCount 7
-    BounceFactor 1.2
-    WallBounceFactor 1.0
-    Projectile
-    +BLOODSPLATTER
-    +HEXENBOUNCE
-    +BOUNCEONACTORS
-    +CANBOUNCEWATER
-    +NOEXTREMEDEATH
-    +SKYEXPLODE
-    +THRUSPECIES
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        goto Death
-    Death:
-        TNT1 A 0
-        TNT1 A 0 A_CustomMissile("KnifeReturn",0,0,0,4,0)
-        Stop
-    }
-}
-
-actor ThrownKnife2 : ThrownKnife
-{
-    BounceCount 10
-    Speed 60
-    Damage (15)
-    +RIPPER
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        BMRG ABCDABCD 1
-        goto Death
-    Death:
-        TNT1 A 0
-        TNT1 A 0 A_CustomMissile("KnifeReturn2",0,0,0,4,0)
-        Stop
-    }
-}
-
-actor KnifeReturn : ThrownKnife
-{
-    +NOINTERACTION
-    +NOCLIP
-    +THRUACTORS
-    Radius 0
-    Height 0
-    Speed 60
-    SeeSound ""
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG A 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG B 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG C 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG D 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG A 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG B 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG C 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(45,16,0)
-        BMRG D 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_CustomMissile("KnifeReturn",0,0,0,4,0)
-        stop
-    Gibe:
-        TNT1 A 0
-        TNT1 A 0 A_GiveToTarget("BoomerangReturnSound",1)
-        stop
-    }
-}
-
-actor KnifeReturn2 : KnifeReturn
-{
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_PlaySoundEx("boomerang/fly","body",0,0)
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG A 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG B 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG C 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG D 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG A 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG B 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG C 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Explode(15,16,0)
-        BMRG D 1 A_JumpIfCloser(70,"Gibe")
-        TNT1 A 0 A_CustomMissile("KnifeReturn2",0,0,0,4,0)
-        stop
-    }
-}
-
-actor BoomerangReturnSound: CustomInventory
-{
-    Inventory.MaxAmount 0
-    +AUTOACTIVATE
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        stop
-    Pickup:
-        TNT1 A 0
-        TNT1 A 0 A_PlaySoundEx("boomerang/get", 7)
-        stop
     }
 }

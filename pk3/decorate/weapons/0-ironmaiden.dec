@@ -1,3 +1,27 @@
+// IRON SAVIOR POWER ARMOR, MK. 7K
+//   Spoken only in whispers, the Iron Savior line of power armors are reserved
+// for only the archangels. Many lesser angels have never set eyes on it, and
+// when the demons see its familiar frame they quake in fear. For impregnable
+// fortresses and undefeatable armies, this is the battering ram to crack it
+// open.
+//   While its exact specifications are a mystery, the effects are undeniable.
+// With a strange fusion of biotechnology, divine magic, and soul power, the
+// armor straps itself onto the wielder and melds deep within their body,
+// rewriting their genetic make-up and remaking their body into a titan of
+// steel, circuitry, and holy might, with power surging through their veins.
+//   The rare few that have witnessed the archangels in action have very little
+// to say, but all of it is awe-inspiring. Power that can devastate entire
+// armies with one single punch. Mobility faster than comprehension and unable
+// to be tethered by gravity. Blasts of gamma rays and holy light that sear
+// flesh off of bones and melt enemies into vapors, to be thrown to the wind and
+// forgotten.
+
+// Being the new Angel of Death, of course, you are in line to inevitably
+// recieve the armor. Being a human, you might not be able to use the armor to
+// its full potential, but if the power is even a fraction of what the rumors
+// say... Seek and destroy.
+// Will you become the Iron Maiden?
+
 actor IronMaidenArmor : ArmorBonus
 {
     Armor.SavePercent 100

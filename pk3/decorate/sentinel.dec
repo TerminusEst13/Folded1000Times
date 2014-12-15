@@ -1,3 +1,27 @@
+// THE SENTINEL
+//   Hell has Imps. Heaven has Putti. Tiny, angelic souls that sing the praises
+// of the Lord daily, in modern media they have been depicted as tiny boys and
+// girls with cute faces and blushing, rosy cheeks.
+//   Not quite.
+//   The crux of all Heavenly armies, combat-ready Putti (nicknamed Sentinels)
+// act as basic security, scouts, and skirmishers, cannon fodder to support the
+// higher-ranking angels as best as they can. Wielding dual heavy machine guns
+// and an eternally-regenerating source of ammo integrated into their body, they
+// have the firepower and an itchy trigger finger, but unfortunately lack both
+// the durability and strategic intuition to be much more than a nuisance before
+// getting swatted aside by a higher-ranking demon.
+
+//   That's where you come in.
+//   Every now and then, perhaps through sheer luck, there remains a Sentinel
+// somehow still alive on the field of battle. Upon recognizing an ally needing
+// support, they will hang near and follow close, acting as a mobile turret and
+// promptly firing away at any enemy within sight and range. Naturally obedient
+// and eternally eager to serve, the Sentinel will follow any ally to its death,
+// supporting to the best of its ability.
+//   Though by itself it may be little more than mere cannon-fodder...with your
+// protection and guidance, even a lowly Putti can become a valuable ally
+// capable of striking a new fear into the armies of Hell.
+
 ACTOR SentinelHealth : Health
 {
     Inventory.Amount 1

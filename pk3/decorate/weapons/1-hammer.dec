@@ -1,3 +1,25 @@
+// OMEN
+//   For all of the guns that have been introduced into the holy armories,
+// blades, blunts, and other such instruments of destruction are (and always
+// have been) among an angel's main weapon of choice. It's just tradition.
+// Since the demons fell from the skies and dwelled in the pits, since the
+// garden of Eden was barricaded off with a blade of fire, since humanity
+// walked on the Earth and became the commodity to fight over, great weapons of
+// all kinds have been used by both sides.
+//   The Omen is one of the most ancient weapons to grace the halls of Heaven,
+// having been a regular since the years of Jericho. A large, bulky war maul
+// with a sturdy frame and a massive head, the power of judgement pulses in its
+// body--in addition to the sheer power of a mighty hunk of steel coming down
+// on a body, the might of its strikes is directly proportional to the amount
+// of sin and darkness contained in its target. The more judgement it contains
+// when it's swung, the harder the hammer strikes and the more an enemy is torn
+// apart under the force of the blow and the lightning of Heaven.
+
+//   For more trigger-happy angels, however, it is capable of being overcharged
+// once its judgement reaches full capacity for even more power--though when it
+// is sufficiently overcharged, even a righteous person is not free from the
+// wrath of the Omen...
+
 actor "Kharon + Omen" : Kharon
 {
     -CHEATNOTWEAPON
@@ -726,6 +748,7 @@ ACTOR HammerJumpageBase
     Speed 0
     +NOCLIP
     +FORCERADIUSDMG
+    +BLOODLESSIMPACT
     -SOLID
     +DONTBLAST
     DamageType "ExodusJump"

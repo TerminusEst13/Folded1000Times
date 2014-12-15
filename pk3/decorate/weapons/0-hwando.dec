@@ -1,3 +1,27 @@
+// KHARON
+//   The only infernal weapon in Hae-Lin's arsenal, and glistening with the 
+// blood of millions, the Kharon is an evil weapon filled with a history of
+// violence and anguish. Forged in hellish steel, the weapon shifts and changes
+// based upon the whims and feels of the user--Hae-Lin doesn't quite have the
+// mastery of the weapon in order to change it into different kinds, so it has
+// kindly changed itself into a culturally-appropriate hwando for her usage.
+//   34 inches in length and only weighing two pounds, the sword boasts both a
+// good reach and a light weight, capable of whipping around at incredibly fast
+// speeds while tearing apart targets at a decent distance. The nice curve of
+// the blade accentuates great power in slashing, and the strange make of the
+// material ensures durability for thousands of years of usage.
+
+//   Perhaps the most interesting facet comes from its demonic origin. Being a
+// weapon from the abyss, it was designed to reap souls--and so any enemies
+// slain with it get their souls drained straight into the blade. As the Kharon
+// has been in action for millenia, exactly how many souls the edge has devoured
+// is unknown.
+//   Regardless, they continue to hone the edge of the blade, ensuring its
+// sharpness no matter how many times it's used or battered, and allowing it the
+// ability to cut through nearly any material. It also allows the blade certain
+// special maneuvers, flinging out a carving beam of soul energy to cut through
+// enemies in a variety of different ways.
+
 ACTOR Kharon : Weapon
 {
     Weapon.SlotNumber 0
