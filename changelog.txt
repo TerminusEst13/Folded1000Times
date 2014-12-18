@@ -1,10 +1,12 @@
 FROM 0.74 TO 0.75:
 =======================================
 - Players are now able to rocketjump with the shotgun because reasons.
+- The accuracy and damage of the Testament has been tightened up slightly.
 - Some players had sensitive ears that were hurt by the low health beeping. It's been replaced with a more standard heartbeat.
 - Explosions assisting with jumping no longer cause blood splatters.
 - The charge-up rate for the Legion has gone from 35 tics to 25.
 - The weapon decorate files have been re-organized and renamed.
+- Barrels no longer have a SpawnStimpack error and now, well, spawn stimpacks properly.
 
 FROM 0.73 TO 0.74:
 =======================================
