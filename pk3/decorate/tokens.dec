@@ -82,7 +82,9 @@ actor GotFrosthammer : Boolean {}
 actor SkulltagWeaponsAcquired : Boolean {}
 
 
-
+actor GhostStepDone : Counter { Inventory.MaxAmount 5 }
+actor GhostStepMashTimer : Counter { Inventory.MaxAmount 99 }
+actor GhostStepExhaustTimer : Counter { Inventory.MaxAmount 99 }
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
