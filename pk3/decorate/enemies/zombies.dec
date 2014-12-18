@@ -94,13 +94,13 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
     EnemyLaunch:
-        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_ChangeVelocity(0,0,12,3)
         TNT1 A 0 A_SetInvulnerable
         POSS HIJ 1
     EnemyHang:      
         TNT1 A 0 A_UnSetInvulnerable
         //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
-        TNT1 A 0 A_LowGravity
+        ////TNT1 A 0 A_LowGravity
     EnemyHang2:
         POSS K 2 A_CheckFloor("EnemyDrop")
         loop
@@ -115,7 +115,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
     LaunchedPain:
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        POSS J 1 ThrustThingZ(0,8,0,0)
+        POSS J 1 ThrustThingZ(0,10,0,0)
         POSS J 3 A_Pain
         Goto EnemyHang2
 
@@ -602,13 +602,13 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
     EnemyLaunch:
-        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_ChangeVelocity(0,0,12,3)
         TNT1 A 0 A_SetInvulnerable
         SPOS HIJ 1
     EnemyHang:      
         TNT1 A 0 A_UnSetInvulnerable
         //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
-        TNT1 A 0 A_LowGravity
+        //TNT1 A 0 A_LowGravity
     EnemyHang2:
         SPOS K 2 A_CheckFloor("EnemyDrop")
         loop
@@ -623,7 +623,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
     LaunchedPain:
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        SPOS J 1 ThrustThingZ(0,8,0,0)
+        SPOS J 1 ThrustThingZ(0,10,0,0)
         SPOS J 3 A_Pain
         Goto EnemyHang2
 
@@ -1062,13 +1062,13 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
     EnemyLaunch:
-        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_ChangeVelocity(0,0,12,3)
         TNT1 A 0 A_SetInvulnerable
         CLNC ABC 1
     EnemyHang:      
         TNT1 A 0 A_UnSetInvulnerable
         //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
-        TNT1 A 0 A_LowGravity
+        //TNT1 A 0 A_LowGravity
     EnemyHang2:
         CLNC D 2 A_CheckFloor("EnemyDrop")
         loop
@@ -1083,7 +1083,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
     LaunchedPain:
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        CLNC C 1 ThrustThingZ(0,8,0,0)
+        CLNC C 1 ThrustThingZ(0,10,0,0)
         CLNC C 3 A_Pain
         Goto EnemyHang2
 
@@ -1384,13 +1384,13 @@ ACTOR Yakuza replaces WolfensteinSS
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
     EnemyLaunch:
-        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_ChangeVelocity(0,0,12,3)
         TNT1 A 0 A_SetInvulnerable
         YKZA HIJ 1
     EnemyHang:      
         TNT1 A 0 A_UnSetInvulnerable
         //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
-        TNT1 A 0 A_LowGravity
+        //TNT1 A 0 A_LowGravity
     EnemyHang2:
         YKZA K 2 A_CheckFloor("EnemyDrop")
         loop
@@ -1408,7 +1408,7 @@ ACTOR Yakuza replaces WolfensteinSS
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
     LaunchedPain:
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        YKZA J 1 ThrustThingZ(0,8,0,0)
+        YKZA J 1 ThrustThingZ(0,10,0,0)
         TNT1 A 0 A_GiveInventory("LaunchDamageCounter",1)
         TNT1 A 0 A_JumpIfInventory("LaunchDamageCounter",10,"ForceDrop")
         YKZA J 3 A_Pain

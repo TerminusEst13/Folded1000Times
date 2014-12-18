@@ -76,13 +76,13 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
     EnemyLaunch:
-        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_ChangeVelocity(0,0,12,3)
         TNT1 A 0 A_SetInvulnerable
         SARG IJK 1
     EnemyHang:      
         TNT1 A 0 A_UnSetInvulnerable
         //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
-        TNT1 A 0 A_LowGravity
+        //TNT1 A 0 A_LowGravity
     EnemyHang2:
         TNT1 A 0 A_GiveInventory("LaunchTimerCounter",1)
         TNT1 A 0 A_JumpIfInventory("LaunchTimerCounter",0,"ForceDrop")
@@ -103,7 +103,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
     LaunchedPain:
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        SARG J 1 ThrustThingZ(0,8,0,0)
+        SARG J 1 ThrustThingZ(0,10,0,0)
         TNT1 A 0 A_GiveInventory("LaunchDamageCounter",1)
         TNT1 A 0 A_JumpIfInventory("LaunchDamageCounter",10,"ForceDrop")
         SARG J 3 A_Pain
@@ -449,13 +449,13 @@ ACTOR WeeabooClink replaces Spectre
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
     EnemyLaunch:
-        TNT1 A 0 A_ChangeVelocity(-4,0,10,3)
+        TNT1 A 0 A_ChangeVelocity(0,0,12,3)
         TNT1 A 0 A_SetInvulnerable
         CLNK HHH 1
     EnemyHang:      
         TNT1 A 0 A_UnSetInvulnerable
         //TNT1 A 0 A_ChangeVelocity(0,0,0,3)
-        TNT1 A 0 A_LowGravity
+        //TNT1 A 0 A_LowGravity
     EnemyHang2:
         TNT1 A 0 A_GiveInventory("LaunchTimerCounter",1)
         TNT1 A 0 A_JumpIfInventory("LaunchTimerCounter",0,"ForceDrop")
@@ -477,7 +477,7 @@ ACTOR WeeabooClink replaces Spectre
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
     LaunchedPain:
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-        CLNK H 1 ThrustThingZ(0,8,0,0)
+        CLNK H 1 ThrustThingZ(0,10,0,0)
         TNT1 A 0 A_GiveInventory("LaunchDamageCounter",1)
         TNT1 A 0 A_JumpIfInventory("LaunchDamageCounter",10,"ForceDrop")
         CLNK H 3 A_Pain
