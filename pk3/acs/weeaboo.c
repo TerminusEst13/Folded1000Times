@@ -826,13 +826,47 @@ script WEEB_ENTER ENTER
         if (GetActorZ(0) - GetActorFloorZ(0) == 0)
         {
               GiveInventory("OnTheGround", 1);
-              TakeInventory("GhostStepDone",1); 
               TakeInventory("VertIGo",1); 
         }
         else
             { TakeInventory("OnTheGround", 1); }
+
+        // DMC Jump Maneuverability, by ShiftyAxel
+        if ( keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0 )
+        {
+			if( ( GetActorVelZ(0) > 0 && !CheckInventory("JumpManeuver") ) || ( GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") ) )
+			{
+				SetActorVelocity(0,0,0,GetActorVelZ(0),0,0);
+				
+				if( !CheckInventory("KharonLaunch") )
+				{
+					if (buttons & BT_FORWARD) {
+						ThrustThing(KurtAngle+0,10,0,0);
+					}
+					if (buttons & BT_MOVELEFT) {
+						ThrustThing(KurtAngle+64,10,0,0);
+					}
+					if (buttons & BT_BACK) {
+						ThrustThing(KurtAngle+128,10,0,0);
+					}
+					if (buttons & BT_MOVERIGHT) {
+						ThrustThing(KurtAngle+192,10,0,0);
+					}
+				}
+				
+				GiveInventory("JumpManeuver", 1);
+				TakeInventory("KharonLaunch", 1);
+			}
+        }
+		
+        if (CheckInventory("OnTheGround") && CheckInventory("JumpManeuver"))
+		{
+            TakeInventory("JumpManeuver", 1);
+		}
+		// End ShiftyAxel's code... for now
+		
         // Double Jump
-        if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
+        if (GetActorVelZ(0) <= 0 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
         {
             ActivatorSound("ghost/jump", 127);
             if (CheckInventory("InIronMaiden") == 0 )

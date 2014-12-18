@@ -246,6 +246,7 @@ actor "Kharon + Testament" : Kharon
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
         TNT1 A 0 A_JumpIfInventory("DoubleTapRight",1,"SpinAttackRight")
         TNT1 A 0 A_GiveInventory("SwordAttack",1)
+        TNT1 A 0 A_GiveInventory("KharonLaunch",1)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
         TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
@@ -259,6 +260,7 @@ actor "Kharon + Testament" : Kharon
         TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
         TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_TakeInventory("KharonLaunch",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
