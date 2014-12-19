@@ -16,6 +16,7 @@ addslotdefault 0 "Kharon"
 addslotdefault 0 "Iron Fist"
 
 AddKeySection "DemonSteele - Optional Keys" "demonsteeleoptional"
+AddMenuKey "Special Attack" +user1
 AddMenuKey "Flashlight" "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis"
 AddMenuKey "ZDoom: Taunt" zdoomtaunt
 
