@@ -793,25 +793,25 @@ script WEEB_ENTER ENTER
         OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
-
-        if (GetCvar("ds_nospecials") == 0)
+		
+        if (GetCvar("ds_nospecials") == 0 && keyDown(BT_USER1) && CheckInventory("SuperMeterCounter") >= 20)
         {
-        if (keypressed(BT_MOVERIGHT))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyRight",8); }}}
-        if (keypressed(BT_MOVELEFT))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyLeft",8); }}}
-        if (keypressed(BT_FORWARD))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyForward",8); }}}
-        if (keypressed(BT_BACK))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyBack",8); }}}
+			if (keyDown(BT_MOVERIGHT))
+			{
+				GiveInventory("DoubleTapRight",1);
+			}
+			if (keyDown(BT_MOVELEFT))
+			{
+				GiveInventory("DoubleTapLeft",1);
+			}
+			if (keyDown(BT_FORWARD))
+			{
+				GiveInventory("DoubleTapForward",1);
+			}
+			if (keyDown(BT_BACK))
+			{
+				GiveInventory("DoubleTapBack",1);
+			}
         }
 
     // This block of code was done by Kyle873.
@@ -826,13 +826,47 @@ script WEEB_ENTER ENTER
         if (GetActorZ(0) - GetActorFloorZ(0) == 0)
         {
               GiveInventory("OnTheGround", 1);
-              TakeInventory("GhostStepDone",1); 
               TakeInventory("VertIGo",1); 
         }
         else
             { TakeInventory("OnTheGround", 1); }
+
+        // DMC Jump Maneuverability, by ShiftyAxel
+        if ( keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0 )
+        {
+			if( ( GetActorVelZ(0) > 0 && !CheckInventory("JumpManeuver") ) || ( GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") ) )
+			{
+				SetActorVelocity(0,0,0,GetActorVelZ(0),0,0);
+				
+				if( !CheckInventory("KharonLaunch") )
+				{
+					if (buttons & BT_FORWARD) {
+						ThrustThing(KurtAngle+0,10,0,0);
+					}
+					if (buttons & BT_MOVELEFT) {
+						ThrustThing(KurtAngle+64,10,0,0);
+					}
+					if (buttons & BT_BACK) {
+						ThrustThing(KurtAngle+128,10,0,0);
+					}
+					if (buttons & BT_MOVERIGHT) {
+						ThrustThing(KurtAngle+192,10,0,0);
+					}
+				}
+				
+				GiveInventory("JumpManeuver", 1);
+				TakeInventory("KharonLaunch", 1);
+			}
+        }
+		
+        if (CheckInventory("OnTheGround") && CheckInventory("JumpManeuver"))
+		{
+            TakeInventory("JumpManeuver", 1);
+		}
+		// End ShiftyAxel's code... for now
+		
         // Double Jump
-        if (GetActorVelZ(0) <= 8 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
+        if (GetActorVelZ(0) <= 0 && !CheckInventory("OnTheGround") && !CheckInventory("AcesHigh") && keypressed(BT_JUMP) && GetCvar("sv_nojump") == 0)
         {
             ActivatorSound("ghost/jump", 127);
             if (CheckInventory("InIronMaiden") == 0 )
