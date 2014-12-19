@@ -75,6 +75,14 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 115: Tighten up spread on Shotgun slightly, reduce damage on GL.
 116: Remove colors on Iron Maiden shot impacts.
 117: "You need at least one full soul bar." message on Iron Maiden error.
+118: Remove extraneous ISHT sprites from github, they're conflicting with the soul trail sprites.
+119: Mumblemumble: I do want to mention something about the sheath, it seems that you cant change guns while using it until the sword is back in the sheath. This makes item juggling from guns to the sheath to block a giant pain.
+120: Optional key to lay the Sentinel in place.
+121: Add +DONTBLAST to all monsters, it's too easy to start infighting that never ends on monsters immune to each other's attacks.
+122: Remove barrels' dependency on sv_barrelrespawn, hopefully that fixes the ghost-barrel bugs.
+123: <WaTaKiD> https://www.dropbox.com/s/lec025lq2447rkd/Screenshot_Doom_20141217_192218.png?dl=0  before reconnecting
+<WaTaKiD> https://www.dropbox.com/s/a1p6ybfwukqgv41/Screenshot_Doom_20141217_192510.png?dl=0 after reconnecting
+<WaTaKiD> basically go to doom2 map22, kill some torches and reconnect
 
 
 
