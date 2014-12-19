@@ -6,7 +6,8 @@ Current status: Beta (a few placeholder graphics, plenty of features need polish
 HOW 2 INSTALL
 
 If you already have a source port: Download zip (handy link to the right), run _zip.bat
-If you don't know all this newfangled Doom terminology (hi, people from Neogaf!):
+
+If you don't know all this newfangled Doom terminology:
 - Acquire doom.wad and/or doom2.wad (Doom2.wad allows you to play more mapsets)
 - Acquire source port (I suggest Zandronum ( http://zandronum.com/ ) or ZDoom/GZDoom ( http://devbuilds.drdteam.org/zdoom/ || http://devbuilds.drdteam.org/gzdoom/ )
 - Click, drag and drop current DemonSteele .pk3 on top of Zandronum.exe or ZDoom.exe or GZDoom.exe.
