@@ -76,6 +76,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_gunsouls"))
             { ConsoleCommand("set ds_gunsouls 0");
               ConsoleCommand("archivecvar ds_gunsouls 0"); }
+			  
+        if (!GetCvar("ds_dropammo"))
+            { ConsoleCommand("set ds_dropammo 0");
+              ConsoleCommand("archivecvar ds_dropammo 0"); }
     }
 }
 
@@ -385,6 +389,10 @@ int i;
 
     case WEEB_DEC_GUNSOULS:
         SetResultValue(GetCVar("ds_gunsouls"));
+        break;
+		
+    case WEEB_DEC_DROPAMMO:
+        SetResultValue( GetCVar("ds_dropammo") );
         break;
     }
 }

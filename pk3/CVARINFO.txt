@@ -9,6 +9,7 @@ server int ds_nospecials        = 0;
 server int ds_infinitesouls     = 0;
 server int ds_arrogantweapons   = 0;
 server int ds_gunsouls          = 0;
+server int ds_dropammo          = 0;
 
 // Clientside cvars
 user int ds_cl_nomusic          = 0;

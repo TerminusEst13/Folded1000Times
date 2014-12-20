@@ -30,7 +30,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     PainSound "zombie/pain"
     ActiveSound "zombie/idle"
     DeathSound "zombie/death"
-    DropItem "ShitAll"
+    DropItem "MaybeClipDrop"
     States
     {
     See: // Apparently changing their speed gets them blocked on each other?
@@ -558,7 +558,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     PainSound "zombie/pain"
     ActiveSound "zombie/idle"
     DeathSound "zombie/death"
-    DropItem "ShitAll"
+    DropItem "MaybeShellDrop"
     States
     {
     See:
@@ -1052,7 +1052,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     PainSound "zombie/pain"
     ActiveSound "zombie/idle"
     DeathSound "zombie/death"
-    DropItem "ShitAll"
+    DropItem "MaybeBigClipDrop"
     States
     {
     See:
