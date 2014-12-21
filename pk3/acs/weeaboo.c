@@ -72,6 +72,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_arrogantweapons"))
             { ConsoleCommand("set ds_arrogantweapons 0");
               ConsoleCommand("archivecvar ds_arrogantweapons 0"); }
+
+        if (!GetCvar("ds_gunsouls"))
+            { ConsoleCommand("set ds_gunsouls 0");
+              ConsoleCommand("archivecvar ds_gunsouls 0"); }
     }
 }
 
@@ -255,7 +259,7 @@ int i;
         break;
 
     case WEEB_DEC_WEPSTAY:
-        SetResultValue(!!GetCVar("sv_weaponstay"));
+        SetResultValue(GetCVar("sv_weaponstay"));
         break;
 
     case WEEB_DEC_HAMCHECK: // HAAAAAM
@@ -377,6 +381,10 @@ int i;
 
     case WEEB_DEC_SLOWDOWN:
         SetActorProperty(0,APROP_SPEED,(GetActorProperty(0,APROP_SPEED)*1/2)); // 50% of the current monster's speed. Stackable.
+        break;
+
+    case WEEB_DEC_GUNSOULS:
+        SetResultValue(GetCVar("ds_gunsouls"));
         break;
     }
 }
