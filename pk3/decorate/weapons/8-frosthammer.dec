@@ -877,7 +877,7 @@ actor IceParticle
     {
     Spawn:
         IPRT AAAAAAAAAAAAAAAAAAA 1 Bright
-        ISHT AAAAAAAAAA 2 Bright A_FadeOut(0.1)
+        IPRT AAAAAAAAAA 2 Bright A_FadeOut(0.1)
         Stop
     }
 }

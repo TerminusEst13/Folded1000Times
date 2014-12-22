@@ -2,7 +2,7 @@ LEFT FOR HAE-LIN:
 1: Special moves for guns
 2: non-placeholder sprites for Iron Maiden (but Riet's working on that)
 3: one more Arrogant weapon (though Mike is working on that and I have a wonderful backup in case he doesn't deliver by the end of the year)
-4: and...yeah, player sprites.
+4: and...yeah, player sprites. (Gundere is working on that)
 
 TO DO in no particular order:
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
@@ -83,6 +83,8 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 123: <WaTaKiD> https://www.dropbox.com/s/lec025lq2447rkd/Screenshot_Doom_20141217_192218.png?dl=0  before reconnecting
 <WaTaKiD> https://www.dropbox.com/s/a1p6ybfwukqgv41/Screenshot_Doom_20141217_192510.png?dl=0 after reconnecting
 <WaTaKiD> basically go to doom2 map22, kill some torches and reconnect
+124: Skulltag armor/health bonuses aren't being replaced.
+125: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
 
 
 
