@@ -7,6 +7,8 @@ FROM 0.74 TO 0.75:
 - The charge-up rate for the Legion has gone from 35 tics to 25.
 - The weapon decorate files have been re-organized and renamed.
 - Barrels no longer have a SpawnStimpack error and now, well, spawn stimpacks properly.
+- Thanks to ShiftyAxel, there is now an option to be able to acquire souls from gun kills. ds_gunsouls will make the souls come to you on gun death as well.
+- Kharon's launcher attack is now easier to do, no longer throws you forward, and is quicker to recover from.
 
 FROM 0.73 TO 0.74:
 =======================================

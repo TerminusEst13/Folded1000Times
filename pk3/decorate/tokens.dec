@@ -53,6 +53,7 @@ actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
 actor IAmAnAwesomePersonWhoLikesCoolMusic : Boolean {}
 actor IAmAnOkayPersonWhoLikesToAutoSwitch : Boolean {}
 actor IAmADumbPersonWhoWillProbablyAccidentallyDie : Boolean {}
+actor IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}
