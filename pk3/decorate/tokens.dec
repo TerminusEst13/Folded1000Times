@@ -1,4 +1,5 @@
 actor KharonSwung : Boolean {}
+actor KharonLaunch : Boolean {}
 actor SheatheSwung : Boolean {}
 actor HenshinActivated : Boolean {}
 actor HenshinDeactivation : Boolean {}
@@ -6,7 +7,7 @@ actor SlashingLikeAGaijin : Boolean {}
 actor ShootingLikeABaka : Boolean {}
 actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
-actor GhostStepDone : Boolean {}
+actor JumpManeuver : Boolean {}
 actor AcesHigh : Boolean {}
 actor VertIGo : Boolean {}
 actor ReadyToDoubleJump : Boolean {}
