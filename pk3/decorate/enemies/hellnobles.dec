@@ -171,7 +171,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0
         KXD1 IIIJJJ 2 A_ThrowGrenade ("BloodSplashGus1c",4,5+random(0,7),8)
         KXD1 KKKLLMMNO 2 A_SpawnDebris("BloodShowerC2")
-        KXD1 H -1
+        KXD1 P -1
         Stop
 
     death.Bloody:
@@ -236,7 +236,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         XDI3 FFFFFFFFFF 1 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
         TNT1 A 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(60,90))
         XDI3 GGGG 2 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
-        goto death+3
+        goto super::death+3
     Death.UltimaBeam:
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
@@ -482,7 +482,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_SpawnItem("BOSSKubiuted",0,56,0)
         XDI1 A 8
         XDI1 BC 8
-        goto Death+3
+        goto super::Death+3
     Death.UltimaBeam:
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream

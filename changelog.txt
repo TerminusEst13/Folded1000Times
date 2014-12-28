@@ -13,6 +13,8 @@ FROM 0.74 TO 0.75:
 - Exodus can no longer cause infighting on enemies.
 - The "ghost barrel" bug has (hopefully) been fixed.
 - Exodus' explosive damage has been reduced from 192 to 160.
+- Chaingunners and Hell Knights no longer die multiple times on one death.
+- Hell Knights no longer suddenly switch directions when they collapse over.
 
 FROM 0.73 TO 0.74:
 =======================================

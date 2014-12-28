@@ -1188,7 +1188,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         XDB5 OOOOOO 0 A_CustomMissile("EnemySplashGus1",random(0,32),0,random(0,360),2,random(0,360))
         XDB5 P 0 A_NoBlocking
         XDB5 PPPQQQRRR 2 A_SpawnDebris("BloodShower",0,0,0)
-        goto death+4
+        goto super::death+4
     Death2:
         CXD1 A 6
         TNT1 AAAAA 0 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))

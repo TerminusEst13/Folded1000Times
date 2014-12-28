@@ -152,7 +152,7 @@ actor WeeabooFatty : Fatso replaces Fatso
         XDG2 H 6 A_NoBlocking
         XDG2 I 6
         XDG2 J -1 A_BossDeath
-        goto death+5
+        goto super::death+5
     BloodyC:
         FATT K 6
         XDG2 K 6 A_Scream
@@ -161,7 +161,7 @@ actor WeeabooFatty : Fatso replaces Fatso
         XDG2 R 6 A_NoBlocking
         XDG2 S 6
         XDG2 T -1 A_BossDeath
-        goto death+5
+        goto super::death+5
     death.kubiuti:
     Death.KubiutiUpper:
         TNT1 A 0 A_AlertMonsters
