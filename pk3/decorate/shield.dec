@@ -29,7 +29,11 @@ actor BlindGuardian
     DamageFactor "ExodusJump", 0.0
     DamageFactor "Knife", 0.0
     DamageFactor "TestamentDamage", 0.0
+    DamageFactor "Frosthammer", 0.0
+    DamageFactor "FrosthammerCharged", 0.0
+    DamageFactor "FrosthammerExplode", 0.0 // Isn't used, but just in case.
     DamageFactor "ChemiKill", 0.0
+    DamageFactor "Telefrag", 0.0
     RadiusDamageFactor 0.0
     Species "Player"
     //+NOTARGET
