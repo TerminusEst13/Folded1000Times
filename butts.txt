@@ -46,11 +46,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 92: Burning barrels should be replaced as well.
 95: Change Soul Prison into something that needs to be destroyed--destroying it launches out all the souls into the person.
-96: <Dewce> Maybe increase the amount of souls you get from kill based on your rank
-<Dewce> It's easy to get the ranking up, but it can take awhile to get the soul meter up
-<Dewce> And it'd be a way to reward keeping your rank as high as possible
-<Dewce> I know your damage goes up
-<Dewce> So just a thought
 99: Cvar for turning off jumping for Priests/Emperor.
 100: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
 101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
@@ -59,32 +54,27 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 103: Cooldown timer on Iron Maiden error to keep people from spamming it.
  ^- Player slowdown as well.
 104: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
-105: Frosthammer can kill the Sentinel.
 106: Some enemies' special death states lead into the redefined Death, making goto Death or goto Kubiuti+X states to be wrongly aligned.
  ^- Chainguy
  ^- Knight
 107: For some people, holding alt-fire isn't charging the Frosthammer.
 108: The mancubi angles for the shots are pointing inwards, rather than outwards.
 109: Black Souls should be -SOLID
-110: [03:12:30 am] Jump target 'SpawnStimpack' not found in XaserBarrel
 111: Some kind of indication for when in god mode.
 112: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
 113: Ice statues cut apart should drop souls.
 114: Banners for the fortune cookie lines instead of text?
-115: Tighten up spread on Shotgun slightly, reduce damage on GL.
 116: Remove colors on Iron Maiden shot impacts.
 117: "You need at least one full soul bar." message on Iron Maiden error.
-118: Remove extraneous ISHT sprites from github, they're conflicting with the soul trail sprites.
 119: Mumblemumble: I do want to mention something about the sheath, it seems that you cant change guns while using it until the sword is back in the sheath. This makes item juggling from guns to the sheath to block a giant pain.
 120: Optional key to lay the Sentinel in place.
-121: Add +DONTBLAST to all monsters, it's too easy to start infighting that never ends on monsters immune to each other's attacks.
-122: Remove barrels' dependency on sv_barrelrespawn, hopefully that fixes the ghost-barrel bugs.
 123: <WaTaKiD> https://www.dropbox.com/s/lec025lq2447rkd/Screenshot_Doom_20141217_192218.png?dl=0  before reconnecting
 <WaTaKiD> https://www.dropbox.com/s/a1p6ybfwukqgv41/Screenshot_Doom_20141217_192510.png?dl=0 after reconnecting
 <WaTaKiD> basically go to doom2 map22, kill some torches and reconnect
 124: Skulltag armor/health bonuses aren't being replaced.
 125: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
+126: Nick Chronoteeth's sprites for the techpillar, sounds for the lamps.
 
 
 
@@ -142,6 +132,11 @@ Like one style is to tap repeatedly for really fast strikes (what's currently in
 Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
 Another style is single strikes, where holding down fire charges up a more powerful strike.
 And the final style...ummm. Hm. // Kharon being wielded by itself will cover this.
+96: <Dewce> Maybe increase the amount of souls you get from kill based on your rank
+<Dewce> It's easy to get the ranking up, but it can take awhile to get the soul meter up
+<Dewce> And it'd be a way to reward keeping your rank as high as possible
+<Dewce> I know your damage goes up
+<Dewce> So just a thought // Not possible unless Zandro/ZDumb implements fractions for inventory or the system is rehauled to be in the thousands rather than tens.
 - 
 [04:31:35 pm] Badass adorkable: i want a bonerstorms caused by ironmeido mode kills to be a shotgun blasts
 [04:32:02 pm] TerminusEst13: That...actually sounds like a cool idea for a special move.
@@ -249,6 +244,12 @@ DONE:
 94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 97: Now that the Infrared is rendered completely useless, something should replace it.
 98: Commander Keen replacement.
+105: Frosthammer can kill the Sentinel.
+110: [03:12:30 am] Jump target 'SpawnStimpack' not found in XaserBarrel
+115: Tighten up spread on Shotgun slightly, reduce damage on GL.
+118: Remove extraneous ISHT sprites from github, they're conflicting with the soul trail sprites.
+121: Add +DONTBLAST to all monsters, it's too easy to start infighting that never ends on monsters immune to each other's attacks.
+122: Remove barrels' dependency on sv_barrelrespawn, hopefully that fixes the ghost-barrel bugs.
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter

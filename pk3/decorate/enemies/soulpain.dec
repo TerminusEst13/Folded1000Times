@@ -20,6 +20,7 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     PainSound "lost/pain"
     DeathSound "lost/death"
     ActiveSound "lost/idle"
+    +DONTBLAST
     States
     {
     Pain.KubiLungeAttack:
@@ -38,9 +39,17 @@ actor WeeabooSoul : LostSoul replaces LostSoul
         TNT1 AAAAAAAAAA 0 A_SpawnItemEx("IceFog2",random(-1,1),random(-1,1),random(16,46),random(-500,500)/100.00,random(-500,500)/100.00,random(-200,500)/100.00,random(-180,180),161)
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_SLOWDOWN,0,0)
         goto Super::Pain
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))
+        TNT1 A 0
         goto Super::Death
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
@@ -285,9 +294,16 @@ ACTOR Blackened replaces PainElemental
     Heal:
         BLCK FFFFFFFFFF 1 BRIGHT A_SpawnItemEx("DarkAfterimageC",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,0,0,0,0,32)
         Goto See
-    Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 5)
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
+    Death:
         TNT1 A 0
         TNT1 A 0 A_Scream
         TNT1 AAAAAAAA 0 A_SpawnItemEx("DarkAfterimageC",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-500,500)/100.00,random(-500,500)/100.00,random(-500,500)/100.00,random(-180,180),32)

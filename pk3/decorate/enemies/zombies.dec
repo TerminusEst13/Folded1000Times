@@ -2,6 +2,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
 {
     //+MISSILEMORE
     //+MISSILEEVENMORE
+    +DONTBLAST
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
@@ -45,9 +46,16 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS E 8
         goto See
 
+    XDeath.HaltHammerzeitImpact:
+    XDeath.HaltHammerzeit:
+    XDeath.IronFistExplosion:
+    XDeath.AcaciaDamage:
+    XDeath.TestamentDamage:
+    XDeath.SabbathDamage:
+    XDeath.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
@@ -62,9 +70,16 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS PQRST 5
         POSS U -1
         Stop
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
@@ -529,6 +544,7 @@ actor BisectedZombiemanTorso2 : POSXKubiuted
 ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 {
     +MISSILEMORE
+    +DONTBLAST
     //+MISSILEEVENMORE
     Health 100
     Species "Body"
@@ -641,9 +657,16 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+2
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
@@ -689,9 +712,16 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         PS22 KL 3
         PS22 M -1
         stop
+    XDeath.HaltHammerzeitImpact:
+    XDeath.HaltHammerzeit:
+    XDeath.IronFistExplosion:
+    XDeath.AcaciaDamage:
+    XDeath.TestamentDamage:
+    XDeath.SabbathDamage:
+    XDeath.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
@@ -1024,6 +1054,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
 {
     +MISSILEMORE
     +MISSILEEVENMORE
+    +DONTBLAST
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
@@ -1128,9 +1159,16 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+2
 
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
@@ -1175,11 +1213,19 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         CXD2 DEF 6
         CXD2 G -1
         Stop
+    XDeath.HaltHammerzeitImpact:
+    XDeath.HaltHammerzeit:
+    XDeath.IronFistExplosion:
+    XDeath.AcaciaDamage:
+    XDeath.TestamentDamage:
+    XDeath.SabbathDamage:
+    XDeath.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
+        goto XDeath
     Death.IronFistDamage:
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
     xdeath:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
@@ -1320,6 +1366,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Monster
     +FLOORCLIP
     +MISSILEMORE
+    +DONTBLAST
     Species "Body"
     SeeSound "yakuza/see"
     PainSound "yakuza/hurt"
@@ -1447,9 +1494,17 @@ ACTOR Yakuza replaces WolfensteinSS
         YKZA VVWWXXYY 2 A_SpawnDebris("BloodShower",0,0,0)
         YKZA Z -1
         Stop
+
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_FaceTarget
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
@@ -1467,9 +1522,16 @@ ACTOR Yakuza replaces WolfensteinSS
         YKZA JI 3
         Goto Idle
 
+    XDeath.HaltHammerzeitImpact:
+    XDeath.HaltHammerzeit:
+    XDeath.IronFistExplosion:
+    XDeath.AcaciaDamage:
+    XDeath.TestamentDamage:
+    XDeath.SabbathDamage:
+    XDeath.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 2)
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         YKZA I 3
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)

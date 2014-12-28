@@ -115,9 +115,16 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         goto death.kubiuti+4
 
-    Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 4)
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
+    Death:
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
@@ -130,9 +137,17 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         Stop
     Death.IronFistDamage:
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
-    XDeath:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 4)
+        goto XDeath
+    XDeath.HaltHammerzeitImpact:
+    XDeath.HaltHammerzeit:
+    XDeath.IronFistExplosion:
+    XDeath.AcaciaDamage:
+    XDeath.TestamentDamage:
+    XDeath.SabbathDamage:
+    XDeath.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
+    XDeath:
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
@@ -401,9 +416,16 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto death.kubiuti+6
 
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
     Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 4)
-        TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
@@ -620,7 +642,7 @@ actor BOS2Kubiuted : POSXKubiuted
 
 Actor BOS2Kubiuted2 : BOS2Kubiuted
 {
-    BloodColor "77 EE 00" 
+    BloodColor "77 EE 00"
     -SHOOTABLE
     +CLIENTSIDEONLY
     States

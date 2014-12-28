@@ -683,7 +683,7 @@ ACTOR ExodusRocketDamage
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(96,256,0)
+        TNT1 A 1 A_Explode(80,256,0)
         Stop
     }
 }

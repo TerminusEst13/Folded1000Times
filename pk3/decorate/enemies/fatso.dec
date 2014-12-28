@@ -95,9 +95,17 @@ actor WeeabooFatty : Fatso replaces Fatso
         FATT J 5 //A_Recoil(2)
         FATT J 5 A_Pain
         Goto See
-    Death:
-        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1, 4)
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
+    Death:
+        TNT1 A 0
         goto Super::Death
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
