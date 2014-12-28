@@ -76,6 +76,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_gunsouls"))
             { ConsoleCommand("set ds_gunsouls 0");
               ConsoleCommand("archivecvar ds_gunsouls 0"); }
+			  
+        if (!GetCvar("ds_doomhealth"))
+            { ConsoleCommand("set ds_doomhealth 0");
+              ConsoleCommand("archivecvar ds_doomhealth 0"); }
     }
 }
 
@@ -119,15 +123,18 @@ int i;
         int delaycount = 0;
 
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
-
+		
         if (CheckInventory("PowerShieldProtection") == 1) { terminate; }
         
-        if (CheckInventory("ContraArmorToken") >= 1)
-            { TakeInventory("ContraArmorToken",1); TakeInventory("HyperComboCounter",25); }
-        else if (CheckInventory("OverLifeToken") >= 1)
-            { TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",50); }
-        else if (CheckInventory("ContraLifeToken") >= 1)
-            { TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",50); }
+		if( GetCVar( "ds_doomhealth" ) == 0 )
+		{
+			if (CheckInventory("ContraArmorToken") >= 1)
+				{ TakeInventory("ContraArmorToken",1); TakeInventory("HyperComboCounter",25); }
+			else if (CheckInventory("OverLifeToken") >= 1)
+				{ TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",50); }
+			else if (CheckInventory("ContraLifeToken") >= 1)
+				{ TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",50); }
+		}
 
         GiveInventory("Wounded",1);
         
@@ -386,6 +393,10 @@ int i;
     case WEEB_DEC_GUNSOULS:
         SetResultValue(GetCVar("ds_gunsouls"));
         break;
+		
+    case WEEB_DEC_DOOMHEALTH:
+        SetResultValue( GetCVar( "ds_doomhealth" ) );
+        break;
     }
 }
 
@@ -550,7 +561,6 @@ script WEEB_ENTER ENTER
     
     while (1)
     {
-
         mytid = defaultTID(-1);
         //if (CheckInventory("ImAlive") == 1) { if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } }
 
@@ -570,8 +580,25 @@ script WEEB_ENTER ENTER
         if (GetCvar("ds_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
            else { TakeInventory("NoTauntAllowed",1); }
+		   
         if (GetCvar("ds_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
            else { TakeInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
+		
+		if( GetCVar( "ds_doomhealth" ) == 1 )
+		{
+			// If we're using ye olde doome health rules,
+			// set the player's inventory count for the health markers based off health
+			int health = GetActorProperty( 0, APROP_HEALTH );
+			
+			TakeInventory( "ContraLifeToken", 0x7FFFFFFF );
+			GiveInventory( "ContraLifeToken", ( health + 10 ) / 10 );
+			
+			TakeInventory( "OverLifeToken", 0x7FFFFFFF );
+			if( health > 100 )
+			{
+				GiveInventory( "OverLifeToken", ( health - 90 ) / 10 );
+			}
+		}
         
         // The Blind Guardian, AKA the BUTTSHIELD
         // It is a shield for your butt, you see.
@@ -745,11 +772,14 @@ script WEEB_ENTER ENTER
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
         // If the player still has life left, they get full health.
-        if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1 || CheckInventory("ContraArmorToken") >= 1)
-        { GiveInventory("999Health",999); }
-        else
-        { SetActorProperty(0,APROP_HEALTH,1); }
-
+		if( GetCVar( "ds_doomhealth" ) == 0 )
+		{
+			if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1 || CheckInventory("ContraArmorToken") >= 1)
+			{ GiveInventory("999Health",999); }
+			else
+			{ SetActorProperty(0,APROP_HEALTH,1); }
+		}
+		
         // Not the kind you lean on.
         SuperCount = CheckInventory("SuperMeterCounter");
         //SetInventory("SuperCounter1",SuperCount); // Life would be so much easier if this worked online.

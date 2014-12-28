@@ -142,6 +142,7 @@ const int WEEB_DEC_FROSTCHECK  = 23;
 const int WEEB_DEC_COOKIEQUOTE = 24;
 const int WEEB_DEC_SLOWDOWN    = 25;
 const int WEEB_DEC_GUNSOULS    = 26;
+const int WEEB_DEC_DOOMHEALTH  = 28;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;

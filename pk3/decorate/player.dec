@@ -24,7 +24,7 @@ ACTOR MeleePlayer : PlayerPawn
     Player.DisplayName "Hae-Lin"
     Player.SoundClass "Hae-Lin"
     PainChance "EnemyInfightDamage", 0
-    DamageFactor "Normal", 0.75
+    DamageFactor "Normal", 0.5
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "EnemyInfightDamageArachnotron", 0.0
