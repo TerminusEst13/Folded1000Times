@@ -157,6 +157,9 @@ actor "Kharon + Legion" : Kharon
 
 
     Fire:
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,10,0,0)
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         WEPL BCD 1
@@ -430,6 +433,9 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
     AltFireGun:
         BMRN A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throw")
         BMRN B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_FireCustomMissile("ThrownKnife",0,1,0,0,2)
@@ -477,6 +483,9 @@ actor "Kharon + Legion" : Kharon
         goto AltHold
 	FireBoomerang2:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-4,0,0,0,2)
         BMRN H 1 A_FireCustomMissile("ThrownKnife2",4,0,0,0,2)
@@ -484,6 +493,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang3:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-6,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",6,0,0,0,2)
@@ -492,6 +504,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang4:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
@@ -501,6 +516,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang5:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
@@ -511,6 +529,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang6:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
@@ -522,6 +543,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang7:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
@@ -534,6 +558,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang8:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
@@ -547,6 +574,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang9:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-20,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
@@ -561,6 +591,9 @@ actor "Kharon + Legion" : Kharon
 		goto FireBoomerangFinish
 	FireBoomerang10:
         BMRN FG 1
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,12,0,0)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-23,0,0,0,2)
 	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)

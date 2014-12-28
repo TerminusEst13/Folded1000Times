@@ -170,6 +170,9 @@ ACTOR Kharon : Weapon
         goto Ready2
 
     Fire:
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,10,0,0)
         //TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         TNT1 A 0
@@ -512,6 +515,9 @@ ACTOR Kharon : Weapon
         TNT1 A 1
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
+        TNT1 A 0 A_CheckFloor(3)
+		TNT1 A 0 A_ChangeVelocity(0,0,momz,3)
+        TNT1 A 0 ThrustThingZ(0,16,0,0)
         TNT1 A 0 A_PlayWeaponSound("sheathe/swing")
         TNT1 A 0 A_JumpIfInventory("SheatheSwung",1,"AltAttack2")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltAttack1")
