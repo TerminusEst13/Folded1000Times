@@ -52,11 +52,7 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
  ^- One over-armor token if armor is full, replenishes one armor otherwise.
 102: Unique talking/connection sounds.
 104: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
-106: Some enemies' special death states lead into the redefined Death, making goto Death or goto Kubiuti+X states to be wrongly aligned.
- ^- Chainguy
- ^- Knight
 107: For some people, holding alt-fire isn't charging the Frosthammer.
-108: The mancubi angles for the shots are pointing inwards, rather than outwards.
 109: Black Souls should be -SOLID
 111: Some kind of indication for when in god mode.
 112: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
@@ -244,6 +240,10 @@ DONE:
 103: Cooldown timer on Iron Maiden error to keep people from spamming it.
  ^- Player slowdown as well.
 105: Frosthammer can kill the Sentinel.
+106: Some enemies' special death states lead into the redefined Death, making goto Death or goto Kubiuti+X states to be wrongly aligned.
+ ^- Chainguy
+ ^- Knight
+108: The mancubi angles for the shots are pointing inwards, rather than outwards.
 110: [03:12:30 am] Jump target 'SpawnStimpack' not found in XaserBarrel
 115: Tighten up spread on Shotgun slightly, reduce damage on GL.
 117: "You need at least one full soul bar." message on Iron Maiden error.

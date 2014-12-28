@@ -15,6 +15,7 @@ FROM 0.74 TO 0.75:
 - Exodus' explosive damage has been reduced from 192 to 160.
 - Chaingunners and Hell Knights no longer die multiple times on one death.
 - Hell Knights no longer suddenly switch directions when they collapse over.
+- Mancubi second shots no longer fire inwards.
 
 FROM 0.73 TO 0.74:
 =======================================
