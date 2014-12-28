@@ -51,8 +51,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
  ^- One over-armor token if armor is full, replenishes one armor otherwise.
 102: Unique talking/connection sounds.
-103: Cooldown timer on Iron Maiden error to keep people from spamming it.
- ^- Player slowdown as well.
 104: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
 106: Some enemies' special death states lead into the redefined Death, making goto Death or goto Kubiuti+X states to be wrongly aligned.
  ^- Chainguy
@@ -66,7 +64,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 113: Ice statues cut apart should drop souls.
 114: Banners for the fortune cookie lines instead of text?
 116: Remove colors on Iron Maiden shot impacts.
-117: "You need at least one full soul bar." message on Iron Maiden error.
 119: Mumblemumble: I do want to mention something about the sheath, it seems that you cant change guns while using it until the sword is back in the sheath. This makes item juggling from guns to the sheath to block a giant pain.
 120: Optional key to lay the Sentinel in place.
 123: <WaTaKiD> https://www.dropbox.com/s/lec025lq2447rkd/Screenshot_Doom_20141217_192218.png?dl=0  before reconnecting
@@ -244,9 +241,12 @@ DONE:
 94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 97: Now that the Infrared is rendered completely useless, something should replace it.
 98: Commander Keen replacement.
+103: Cooldown timer on Iron Maiden error to keep people from spamming it.
+ ^- Player slowdown as well.
 105: Frosthammer can kill the Sentinel.
 110: [03:12:30 am] Jump target 'SpawnStimpack' not found in XaserBarrel
 115: Tighten up spread on Shotgun slightly, reduce damage on GL.
+117: "You need at least one full soul bar." message on Iron Maiden error.
 118: Remove extraneous ISHT sprites from github, they're conflicting with the soul trail sprites.
 121: Add +DONTBLAST to all monsters, it's too easy to start infighting that never ends on monsters immune to each other's attacks.
 122: Remove barrels' dependency on sv_barrelrespawn, hopefully that fixes the ghost-barrel bugs.
