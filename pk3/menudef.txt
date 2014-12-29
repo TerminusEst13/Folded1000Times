@@ -36,6 +36,7 @@
             Option "No Iron Maiden music",           "ds_cl_nomusic", "OnOff"
             Option "No low health warning",          "ds_cl_nobeeping", "OnOff"
             Option "Gun deaths give souls",          "ds_gunsouls", "OnOff"
+            Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
             Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
             Option "Spawn Arrogant weapons",         "ds_arrogantweapons", "ArrogantOptions"
     }

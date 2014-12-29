@@ -40,14 +40,13 @@ script WEEB_RESPAWN respawn
     if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
     
     ACS_ExecuteAlways(268,0,0,0);
-    //ACS_ExecuteAlways(269,0,0,0);
 }
 
 script WEEB_OPEN OPEN
 {
     IsServer = 1;
 
-    if (GameType() != GAME_TITLE_MAP) { LevelCount++; }
+    if (GameType() != GAME_TITLE_MAP) { LevelCount++; } // Titlemaps add to the global variable, irritatingly.
     if (GetCvar("ds_runninginzdoom") == 0)
     {
         if (!GetCvar("compat_clientssendfullbuttoninfo"))
@@ -134,7 +133,6 @@ int i;
 				{ TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",50); }
 			else if (CheckInventory("ContraLifeToken") >= 1)
 				{ TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",50); }
-		}
 
         GiveInventory("Wounded",1);
         
@@ -162,6 +160,9 @@ int i;
         
         SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
         SetActorProperty(0,APROP_INVULNERABLE,0);
+		}
+        else
+        { TakeInventory("HyperComboCounter",25); }
         break;
 
     case WEEB_DEC_FREEZE:
@@ -395,7 +396,7 @@ int i;
         break;
 		
     case WEEB_DEC_DOOMHEALTH:
-        SetResultValue( GetCVar( "ds_doomhealth" ) );
+        SetResultValue(GetCVar("ds_doomhealth"));
         break;
     }
 }
@@ -556,7 +557,11 @@ script WEEB_ENTER ENTER
     SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
     GiveInventory("NewLevelStatReset",1);
     GiveInventory("FlashlightStopper",1);
-    if (CheckInventory("HammerCharge") > 100) { SetAmmoCapacity("HammerCharge",100); SetInventory("HammerCharge",80); }
+    if (CheckInventory("HammerCharge") > 100)
+    {
+        TakeInventory("HammerCharge",100); // A bit brute-force, but they'll regain it back.
+        SetAmmoCapacity("HammerCharge",100);
+    }
     if (CheckInventory("InIronMaiden") == 1) { ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0); }
     
     while (1)
@@ -583,6 +588,9 @@ script WEEB_ENTER ENTER
 		   
         if (GetCvar("ds_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
            else { TakeInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
+
+        if (GetCvar("ds_doomhealth") == 1) { GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
+           else { TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
 		
 		if( GetCVar( "ds_doomhealth" ) == 1 )
 		{
@@ -981,8 +989,17 @@ script WEEB_ENTER ENTER
 
             if (IronArmor >= 7)
             {
-              if (CheckInventory("Armor") < 40) { GiveInventory("IronMaidenArmor",1); }
-              GiveInventory("IronMaidenArmor",1);
+              if (GetArmorType("IronMaidenArmor",PlayerNumber()) || GetArmorType("IronMaidenArmor2",PlayerNumber()))
+              {
+                  if (CheckInventory("Armor") < 40) { GiveInventory("IronMaidenArmor",1); }
+                  GiveInventory("IronMaidenArmor",1);
+              }
+              else // A failsafe just in case players have somehow managed to get their hands on some other kind of armor.
+              {
+                  TakeInventory("Armor",armor);
+                  GiveInventory("IronMaidenArmor",armor);
+                  GiveInventory("IronMaidenArmor",1);
+              }
               IronArmor = 0;
             }
 
@@ -1114,11 +1131,8 @@ script WEEB_COMBOREMOVAL ENTER
 
 script WEEB_UNLOADING UNLOADING
 {
-    //TakeInventory("SentinelUp",1);
-    //TakeInventory("SentinelActive",1);
-    //TakeInventory("BlindGuardianShieldUp",1);
-    //TakeInventory("BlindGuardianShieldActive",1);
     TakeInventory("AlreadyInLevel",1);
+
     TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
     TakeInventory("ShootingLikeABaka",1);
@@ -1142,11 +1156,34 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("LegionCounter",0x7FFFFFFF);
     TakeInventory("LegionStacked",0x7FFFFFFF);
     TakeInventory("SwordAttack",0x7FFFFFFF);
-    //TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
-    //TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
 }
 
-script WEEB_DEATH DEATH { ACS_ExecuteAlways(WEEB_UNLOADING,0,0,0,0); }
+script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
+{
+    TakeInventory("KharonSwung",1);
+    TakeInventory("SlashingLikeAGaijin",1);
+    TakeInventory("ShootingLikeABaka",1);
+    TakeInventory("DoubleTapForward",1);
+    TakeInventory("DoubleTapBack",1);
+    TakeInventory("DoubleTapLeft",1);
+    TakeInventory("DoubleTapRight",1);
+    TakeInventory("Wounded",1);
+    TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyBack",0x7FFFFFFF);
+    TakeInventory("HammerOverchargeLevel",0x7FFFFFFF);
+    TakeInventory("EnviroDamageCount",0x7FFFFFFF);
+    TakeInventory("EnviroDamageCooldown",0x7FFFFFFF);
+    TakeInventory("StopTheBlock",0x7FFFFFFF);
+    TakeInventory("BlockLife",0x7FFFFFFF);
+    TakeInventory("GhostStepCooldown",0x7FFFFFFF);
+    TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
+    TakeInventory("MidCombat",0x7FFFFFFF);
+    TakeInventory("LegionCounter",0x7FFFFFFF);
+    TakeInventory("LegionStacked",0x7FFFFFFF);
+    TakeInventory("SwordAttack",0x7FFFFFFF);
+}
 
 //int array_custmischarg[PLAYERMAX];
 //int array_hitindic[PLAYERMAX];
