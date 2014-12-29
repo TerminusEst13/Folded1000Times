@@ -393,7 +393,7 @@ ACTOR WeeabooClink replaces Spectre
     PainSound "steelbeast/hurt"
     DeathSound "steelbeast/death"
     ActiveSound "steelbeast/idle"
-    Obituary "%o was bisected by a steel beast."
+    Obituary "%o was bisected by a Steele Beast."
     Species "Body"
     PainChance 64
     PainChance "KharonSheathe", 255
