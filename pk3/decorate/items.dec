@@ -260,6 +260,7 @@ actor SoulStoneEcho7 : SoulStoneEcho
 
 actor SoulStoneSpawner1 : RandomSpawner replaces ArmorBonus
 {
+    -DROPPED 
     DropItem "TinyMeterPickup1"
     DropItem "TinyMeterPickup2"
     DropItem "TinyMeterPickup3"
@@ -283,7 +284,7 @@ actor SoulStoneSpawner1 : RandomSpawner replaces ArmorBonus
     DropItem "ShitAll"
 }
 
-actor DoomHealthBonus : HealthBonus {}
+actor DoomHealthBonus : HealthBonus { -DROPPED }
 
 actor MaybeHealthBonus replaces HealthBonus
 {
@@ -307,6 +308,7 @@ actor HealPackSmall: CustomInventory //replaces StimPack
     Inventory.PickupSound "health/soda"
     Scale 0.9
     +FLOORCLIP
+    -DROPPED
     States
     {
     Spawn:
@@ -483,7 +485,7 @@ actor HealPackSmall5 : HealPackSmall
     }
 }
 
-actor DoomStimpack : Stimpack {}
+actor DoomStimpack : Stimpack { -DROPPED }
 
 actor MaybeStimpack replaces Stimpack
 {
@@ -501,6 +503,7 @@ actor MaybeStimpack replaces Stimpack
 
 actor HealPackSmallSpawner : RandomSpawner
 {
+    -DROPPED
     DropItem "HealPackSmall1"
     DropItem "HealPackSmall2"
     DropItem "HealPackSmall3"
@@ -514,6 +517,7 @@ actor HealPackMedium: CustomInventory
     Inventory.PickupSound "health/apple"
     Scale 0.85
     +FLOORCLIP
+    -DROPPED
     States
     {
     Spawn:
@@ -720,7 +724,7 @@ actor HealPackMedium5 : HealPackMedium
     }
 }
 
-actor DoomMedikit : Medikit {}
+actor DoomMedikit : Medikit { -DROPPED }
 
 actor MaybeMedikit replaces Medikit
 {
@@ -738,6 +742,7 @@ actor MaybeMedikit replaces Medikit
 
 actor HealPackMediumSpawner : RandomSpawner
 {
+    -DROPPED
     DropItem "HealPackMedium1"
     DropItem "HealPackMedium2"
     DropItem "HealPackMedium3"
@@ -752,6 +757,7 @@ actor OverHealPack : CustomInventory
     Scale 0.75
     +INVENTORY.ALWAYSPICKUP
     +FLOORCLIP
+    -DROPPED
     States
     {
     Spawn:
@@ -871,7 +877,7 @@ actor OverHealPack4 : OverHealPack
     }
 }
 
-actor DoomSoulsphere : Soulsphere {}
+actor DoomSoulsphere : Soulsphere { -DROPPED }
 
 actor MaybeSoulsphere replaces Soulsphere
 {
@@ -889,13 +895,14 @@ actor MaybeSoulsphere replaces Soulsphere
 
 actor OverHealPackSpawner : RandomSpawner
 {
+    -DROPPED
     DropItem "OverHealPack1"
     DropItem "OverHealPack2"
     DropItem "OverHealPack3"
     DropItem "OverHealPack4"
 }
 
-actor DoomGreenArmor : GreenArmor {}
+actor DoomGreenArmor : GreenArmor { -DROPPED }
 
 actor MaybeGreenArmor replaces GreenArmor
 {
@@ -917,6 +924,7 @@ actor ArmorPackSmall: CustomInventory
     Inventory.PickupSound "armor/silver"
     Scale 0.9
     +FLOATBOB
+    -DROPPED
     states
     {
     Spawn:
@@ -941,7 +949,7 @@ actor ArmorPackSmall: CustomInventory
     }
 }
 
-actor DoomBlueArmor : BlueArmor {}
+actor DoomBlueArmor : BlueArmor { -DROPPED }
 
 actor MaybeBlueArmor replaces BlueArmor
 {
@@ -962,6 +970,7 @@ actor ArmorPackLarge: CustomInventory
     Inventory.PickupMessage "Picked up 4 Armor Tokens."
     Inventory.PickupSound "armor/gold"
     +FLOATBOB
+    -DROPPED
     states
     {
     Spawn:
