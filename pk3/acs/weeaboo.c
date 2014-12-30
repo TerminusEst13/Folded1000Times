@@ -192,8 +192,21 @@ int i;
         break;
 
     case 6:
+		// Triggered upon dash activation
+		// Give player the dodge iframe token and wait for 5 frames
         GiveInventory("DodgeGhostOn",1);
-        Delay(18);
+        Delay(5);
+		
+		// Queue up 5 frames of velocity damping to quickly slow the player
+		for( i = 0; i < 5; ++i )
+		{
+			int xv = GetActorVelX(0);
+			int yv = GetActorVelY(0);
+			SetActorVelocity(0, xv - (xv / 4), yv - (yv / 4), GetActorVelZ(0), 0, 0);
+			Delay(1);
+		}
+		
+		// Remove the dodge iframe token and break
         GiveInventory("DodgeGhostOff",1);
         break;
 
@@ -768,7 +781,20 @@ script WEEB_ENTER ENTER
         else { if (RideTheLightning >= 40 && CheckInventory("HammerCharge") >= 30)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
         RideTheLightning++;
 
-        TakeInventory("GhostStepCooldown",1);
+		TakeInventory("GhostStepCooldown",1);
+		TakeInventory("GhostStepMashTimer", 1);
+		TakeInventory("GhostStepExhaustTimer", 1);
+		
+		if( CheckInventory("GhostStepMashTimer") == 0 )
+		{
+			TakeInventory("GhostStepDone", 0x7FFFFFFF);
+		}
+		
+		if( CheckInventory("GhostStepDone") == 4 && CheckInventory("GhostStepExhaustTimer") == 0 )
+		{
+			TakeInventory("GhostStepDone", 0x7FFFFFFF);
+		}
+			
         TakeInventory("DoubleTapCooldown",1);
         TakeInventory("EnviroDamageCooldown",1);
         TakeInventory("DoubleTapReadyRight",1);
@@ -902,33 +928,69 @@ script WEEB_ENTER ENTER
     // You may now applaud his genius.
 
         // Dodging
-        if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
-        { if (buttons & BT_SPEED && buttons & BT_FORWARD) {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+0,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+0,25,0,0); ThrustThingZ(0,20,0,0); }
-              ActivatorSound("ghost/step",127);
-              GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35);
-              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          if (buttons & BT_SPEED && buttons & BT_MOVELEFT) {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+64,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+64,25,0,0); ThrustThingZ(0,20,0,0); }
-              ActivatorSound("ghost/step",127);
-              GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35); 
-              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          if (buttons & BT_SPEED && buttons & BT_BACK) {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+128,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+128,25,0,0); ThrustThingZ(0,20,0,0); }
-              ActivatorSound("ghost/step",127);
-              GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35); 
-              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
-          if (buttons & BT_SPEED && buttons & BT_MOVERIGHT) {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+192,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+192,25,0,0); ThrustThingZ(0,20,0,0); }
-              ActivatorSound("ghost/step",127);
-              GiveInventory("GhostStepDone",1);
-              GiveInventory("GhostStepCooldown",35); 
-              ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0); }
+		// Modified with character action flavour by ShiftyAxel
+        if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepExhaustTimer") == 0)
+        {
+			if (buttons & BT_SPEED) {
+				bool directionPressed = ( buttons & BT_FORWARD ) || ( buttons & BT_BACK ) || ( buttons & BT_MOVELEFT ) || ( buttons & BT_MOVERIGHT );
+				  ActivatorSound("ghost/step",127);
+				  GiveInventory("GhostStepDone",1);
+				  if( CheckInventory("GhostStepDone") < 4 )
+				  {
+					GiveInventory("GhostStepCooldown",16);
+					TakeInventory("GhostStepMashTimer", 0x7FFFFFFF);
+					GiveInventory("GhostStepMashTimer", 35);
+				  }
+				  else
+				  {
+					LocalAmbientSound("haelin/nope", 127);
+					GiveInventory("GhostStepExhaustTimer", 50);
+				  }
+				  ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0);
+				
+				if(buttons & BT_FORWARD || !directionPressed) {
+					if(CheckInventory("OnTheGround") == 1) {
+						ThrustThing(KurtAngle+0,35,1,0); ThrustThingZ(0,85,1,1);
+					}
+					else
+					{
+						ThrustThing(KurtAngle+0,25,0,0); ThrustThingZ(0,20,0,0);
+					}
+				}
+				if(buttons & BT_MOVELEFT) {
+					if (CheckInventory("OnTheGround") == 1)
+					{
+						ThrustThing(KurtAngle+64,35,1,0); ThrustThingZ(0,85,1,1);
+					}
+					else
+					{
+						ThrustThing(KurtAngle+64,25,0,0); ThrustThingZ(0,20,0,0);
+					}
+				}
+				if (buttons & BT_BACK)
+				{
+					if (CheckInventory("OnTheGround") == 1)
+					{
+						ThrustThing(KurtAngle+128,35,1,0); ThrustThingZ(0,85,1,1);
+					}
+					else
+					{
+						ThrustThing(KurtAngle+128,25,0,0); ThrustThingZ(0,20,0,0);
+					}
+				}
+				if (buttons & BT_MOVERIGHT) {
+					if(CheckInventory("OnTheGround") == 1)
+					{
+						ThrustThing(KurtAngle+192,35,1,0); ThrustThingZ(0,85,1,1);
+					}
+					else
+					{
+						ThrustThing(KurtAngle+192,25,0,0); ThrustThingZ(0,20,0,0);
+					}
+				}
+			}
         }
-
+	
         // SUPER SAIYAN HNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
         // HHHHHHHHHHHHHNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
         // HHHHHHHHHHHHHHHHHHNNNNNNNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGHHHHHHHH
