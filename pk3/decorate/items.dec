@@ -284,20 +284,31 @@ actor SoulStoneSpawner1 : RandomSpawner replaces ArmorBonus
     DropItem "ShitAll"
 }
 
+actor DoomHealthBonusSpawner : RandomSpawner { -DROPPED DropItem "DoomHealthBonus" }
 actor DoomHealthBonus : HealthBonus { -DROPPED }
+
+// If you're looking over this (my condolences), you're probably wondering why
+// a randomspawner spawns a single item. See, in online play, sv_itemrespawn
+// only respawns items that haven't been dropped--like, say, shotguns from the
+// shotgun zombies and chainguns from the chaingun zombies. When A_SpawnItemEx
+// is called to spawn an item, this treats the item as dropped, ergo it doesn't
+// respawn the item after time has passed. RandomSpawners, on the other hand,
+// always spawn their items and lets them respawn as normal.
+// So what I'm doing with this is a workaround by having the A_SpawnItemEx call
+// a randomspawner instead, which always respects sv_itemrespawn.
 
 actor MaybeHealthBonus replaces HealthBonus
 {
-	States
-	{
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
-			TNT1 A 0 A_SpawnItemEx ( "SoulStoneSpawner2" )
-			Stop
-			TNT1 A 0 A_SpawnItemEx ( "DoomHealthBonus" )
-			Stop
-	}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_SpawnItemEx("SoulStoneSpawner2",0,0,0,0,0,0,0,32)
+        Stop
+        TNT1 A 0 A_SpawnItemEx("DoomHealthBonusSpawner",0,0,0,0,0,0,0,32)
+        Stop
+    }
 }
 
 actor SoulStoneSpawner2 : SoulStoneSpawner1 {}
@@ -410,7 +421,7 @@ actor HealPackSmall1 : HealPackSmall
         SODA A 1 BRIGHT
         SODA A 30
         loop
-    PickupStop: // You'd think this would be redundant.
+    PickupStop: // You'd think this would be redundant, but it's not. Inheritence is funny.
         TNT1 A 0
         stop
     }
@@ -485,20 +496,21 @@ actor HealPackSmall5 : HealPackSmall
     }
 }
 
+actor DoomStimpackSpawner : RandomSpawner { -DROPPED DropItem "DoomStimpack" }
 actor DoomStimpack : Stimpack { -DROPPED }
 
 actor MaybeStimpack replaces Stimpack
 {
-	States
-	{
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
-			TNT1 A 0 A_SpawnItemEx( "HealPackSmallSpawner" )
-			Stop
-			TNT1 A 0 A_SpawnItem( "DoomStimpack" )
-			Stop
-	}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_SpawnItemEx("HealPackSmallSpawner",0,0,0,0,0,0,0,32)
+        Stop
+        TNT1 A 0 A_SpawnItem("DoomStimpackSpawner",0,0,0,0,0,0,0,32)
+        Stop
+    }
 }
 
 actor HealPackSmallSpawner : RandomSpawner
@@ -724,20 +736,21 @@ actor HealPackMedium5 : HealPackMedium
     }
 }
 
+actor DoomMedikitSpawner : RandomSpawner { -DROPPED DropItem "DoomMedikit" }
 actor DoomMedikit : Medikit { -DROPPED }
 
 actor MaybeMedikit replaces Medikit
 {
-	States
-	{
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
-			TNT1 A 0 A_SpawnItemEx ( "HealPackMediumSpawner" )
-			Stop
-			TNT1 A 0 A_SpawnItemEx ( "DoomMedikit" )
-			Stop
-	}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_SpawnItemEx("HealPackMediumSpawner",0,0,0,0,0,0,0,32)
+        Stop
+        TNT1 A 0 A_SpawnItemEx("DoomMedikit",0,0,0,0,0,0,0,32)
+        Stop
+    }
 }
 
 actor HealPackMediumSpawner : RandomSpawner
@@ -877,20 +890,21 @@ actor OverHealPack4 : OverHealPack
     }
 }
 
+actor DoomSoulsphereSpawner : RandomSpawner { -DROPPED DropItem "DoomSoulsphere" }
 actor DoomSoulsphere : Soulsphere { -DROPPED }
 
 actor MaybeSoulsphere replaces Soulsphere
 {
-	States
-	{
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
-			TNT1 A 0 A_SpawnItemEx ( "OverHealPackSpawner" )
-			Stop
-			TNT1 A 0 A_SpawnItemEx ( "DoomSoulsphere" )
-			Stop
-	}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_SpawnItemEx("OverHealPackSpawner",0,0,0,0,0,0,0,32)
+        Stop
+        TNT1 A 0 A_SpawnItemEx("DoomSoulsphereSpawner",0,0,0,0,0,0,0,32)
+        Stop
+    }
 }
 
 actor OverHealPackSpawner : RandomSpawner
@@ -902,21 +916,24 @@ actor OverHealPackSpawner : RandomSpawner
     DropItem "OverHealPack4"
 }
 
+actor DoomGreenArmorSpawner : RandomSpawner { -DROPPED DropItem "DoomGreenArmor" }
 actor DoomGreenArmor : GreenArmor { -DROPPED }
 
 actor MaybeGreenArmor replaces GreenArmor
 {
-	States
-	{
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
-			TNT1 A 0 A_SpawnItemEx ( "ArmorPackSmall" )
-			Stop
-			TNT1 A 0 A_SpawnItemEx ( "DoomGreenArmor" )
-			Stop
-	}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_SpawnItemEx("ArmorPackSmallSpawner",0,0,0,0,0,0,0,32)
+        Stop
+        TNT1 A 0 A_SpawnItemEx("DoomGreenArmorSpawner",0,0,0,0,0,0,0,32)
+        Stop
+    }
 }
+
+actor ArmorPackSmallSpawner : RandomSpawner { -DROPPED DropItem "ArmorPackSmall" }
 
 actor ArmorPackSmall: CustomInventory
 {
@@ -949,21 +966,24 @@ actor ArmorPackSmall: CustomInventory
     }
 }
 
+actor DoomBlueArmorSpawner : RandomSpawner { -DROPPED DropItem "DoomBlueArmor" }
 actor DoomBlueArmor : BlueArmor { -DROPPED }
 
 actor MaybeBlueArmor replaces BlueArmor
 {
-	States
-	{
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
-			TNT1 A 0 A_SpawnItemEx ( "ArmorPackLarge" )
-			Stop
-			TNT1 A 0 A_SpawnItemEx ( "DoomBlueArmor" )
-			Stop
-	}
+    States
+    {
+        Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_SpawnItemEx("ArmorPackLargeSpawner",0,0,0,0,0,0,0,32)
+        Stop
+        TNT1 A 0 A_SpawnItemEx("DoomBlueArmorSpawner",0,0,0,0,0,0,0,32)
+        Stop
+    }
 }
+
+actor ArmorPackLargeSpawner : RandomSpawner { -DROPPED DropItem "ArmorPackLarge" }
 
 actor ArmorPackLarge: CustomInventory
 {
@@ -1017,21 +1037,24 @@ actor BlindGuardianPickup : CustomInventory replaces Blursphere
     }
 }
 
+actor DoomMegasphereSpawner : RandomSpawner { -DROPPED DropItem "DoomMegasphere" }
 actor DoomMegasphere : Megasphere {}
 
 actor MaybeMegasphere replaces Megasphere
 {
-	States
-	{
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
-			TNT1 A 0 A_SpawnItemEx ( "ArmorHealthMegaPack" )
-			Stop
-			TNT1 A 0 A_SpawnItemEx ( "DoomMegasphere" )
-			Stop
-	}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_SpawnItemEx("ArmorHealthMegaPackSpawner",0,0,0,0,0,0,0,32)
+        Stop
+        TNT1 A 0 A_SpawnItemEx("DoomMegasphereSpawner",0,0,0,0,0,0,0,32)
+        Stop
+    }
 }
+
+actor ArmorHealthMegaPackSpawner : RandomSpawner { -DROPPED DropItem "ArmorHealthMegaPack" }
 
 actor ArmorHealthMegaPack: CustomInventory
 {
