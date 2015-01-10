@@ -2,6 +2,7 @@
 
 destroy/lamp              LAMPCUT
 destroy/candelabra        CNDLCUT
+destroy/pillar            PILRCUT
 $random damage/barrel { dbarl1 dbarl2 dbarl3 dbarl4 } // Taken from Painkiller
 dbarl1                    BARLHIT1
 dbarl2                    BARLHIT2

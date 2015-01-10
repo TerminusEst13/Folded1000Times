@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 100
+#define QUOTECOUNT 101
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -384,8 +384,9 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie and Hostile V for helping me w
 "If what you don't know can't hurt you, you're invulnerable.",
 "Patience and a kind word can take care of most situations, but so can a bullet.",
 "One of these days, the enemies will learn how to respawn. Then we'll all be fucked.",
-"In the time it took for DemonSteele to start, enter alpha/beta, get a full weaponset, tons of new sprites, a full quote roster, and be released, Space Pirate still has not updated.",
+"In the time it took for DemonSteele to start, enter alpha/beta, get a full weaponset, tons of new sprites, a full quote roster, be released, and win a Cacoward, Space Pirate still has not updated.",
 "I should not be spending thirty goddamn minutes thinking up one single message.",
 "How is eating fried chicken like being in Hell? Thigh flesh consumed.",
-"This is just like one of my Korean manhwas!"
+"This is just like one of my Korean manhwas!",
+"At some point, you will be the next person on Earth to die."
 };

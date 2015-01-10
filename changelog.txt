@@ -20,6 +20,8 @@ FROM 0.74 TO 0.75:
 - Dying or exiting a level with over 100% Hammer charge should no longer cause wonkiness.
 - Respawning no longer triggers one-liners. Like, for real this time.
 - The Blind Guardian, Sentinel, and Majestic Vanguard are now considered "big"/"super" powerups and require sv_respawnsuper to respawn.
+- TechPillars now have a destructable replacement.
+- All decorations now force Y billboarding.
 
 FROM 0.73 TO 0.74:
 =======================================

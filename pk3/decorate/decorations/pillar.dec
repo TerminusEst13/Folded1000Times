@@ -1,0 +1,51 @@
+ACTOR TechPillar2 : DestructableDecorationBase replaces TechPillar
+{
+    Radius 16
+    Height 128
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        GTEC A -1
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_PlaySound("destroy/pillar")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("PillarGlassShard",0,0,48,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
+        TNT1 AAAA 0 A_SpawnItemEx("PillarGlassShard",0,0,68,random(-2,2),random(-2,2),random(3,9),random(0,359),32)    
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("LampSpark",0,0,random(32,96),random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/50.00,random(-180,180),160,96)
+        GTEC Z 1
+        Goto See
+    }
+}
+
+ACTOR PillarGlassShard
+{
+    Radius 1
+    Height 1
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Gravity 0.9
+    RenderStyle Add
+    Alpha 0.6
+    BounceFactor 0.5
+    BounceCount 7
+    States
+    {
+    Spawn:
+        PGSD ABCD 2
+	    Loop	
+    Death:
+        PGSD E 3500
+        PGSD EEEEE 2 A_FadeOut(0.2)
+        Stop
+    }
+}
+

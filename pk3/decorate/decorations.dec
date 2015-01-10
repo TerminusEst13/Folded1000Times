@@ -244,6 +244,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     Health 0x7FFFFFFF
     Mass 0x7FFFFFFF
     ProjectilePassHeight -16
+    +FORCEYBILLBOARD
     +SOLID
     +SHOOTABLE
     +NORADIUSDMG
@@ -273,6 +274,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
 
 #include "decorate/decorations/torches.dec"
 #include "decorate/decorations/barrels.dec"
+#include "decorate/decorations/pillar.dec"
 #include "decorate/decorations/lamps.dec"
 
 
