@@ -67,7 +67,7 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <WaTaKiD> basically go to doom2 map22, kill some torches and reconnect
 124: Skulltag armor/health bonuses aren't being replaced.
 125: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
-126: Nick Chronoteeth's sprites for the techpillar, sounds for the lamps.
+126: Nick Chronoteeth's sprites for the techpillar, sounds for the lamps, nick Smooth Doom's candle.
 127: Nick _sink's tracers and spatters from cyberpunk shootdown.
 128: Give the Acacia pistol a slide already.
 129: Uzi_idiot: I wish there was a mod to add ambient sounds to all levels
