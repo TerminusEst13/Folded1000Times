@@ -92,11 +92,13 @@ actor AllFearTheSentinel
         SENT A 1 A_PlaySoundEx("sentinel/nope","soundslot7",0,0)
         goto Spawn
     See:
+        TNT1 A 0 A_JumpIfInTargetInventory("ImTheBlindGuardianYouDumbass",1,"ClearTarget")
         SENT A 2 A_Chase
         TNT1 A 0 A_GiveInventory("SentinelIdleCounter",1)
         TNT1 A 0 A_JumpIfInventory("SentinelIdleCounter",70,"ClearTarget")
         Loop
     Missile:
+        TNT1 A 0 A_JumpIfInTargetInventory("ImTheBlindGuardianYouDumbass",1,"ClearTarget")
         TNT1 A 0 A_JumpIfInventory("SentinelMidCombat",1,"Missile2")
         SENT A 12 A_PlaySound("sentinel/load")
         TNT1 A 0 A_SpidRefire

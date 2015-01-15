@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 101
+#define QUOTECOUNT 103
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -388,5 +388,7 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie and Hostile V for helping me w
 "I should not be spending thirty goddamn minutes thinking up one single message.",
 "How is eating fried chicken like being in Hell? Thigh flesh consumed.",
 "This is just like one of my Korean manhwas!",
-"At some point, you will be the next person on Earth to die."
+"At some point, you will be the next person on Earth to die.",
+"Wow, your browser history is kind of weird.",
+"Today's forecast: Not fucking going outside."
 };

@@ -255,7 +255,7 @@ actor "Kharon + Testament" : Kharon
         TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_ReFire
     Fired2:
-        TNT1 A 0 A_JumpIfInventory("SwordAttack",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("SwordAttack",6,"HoldAttack")
         TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
         TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
@@ -419,9 +419,9 @@ actor "Kharon + Testament" : Kharon
         TNT1 A 0 A_JumpIfNoAmmo("nope")
         //TNT1 A 0 A_FireBullets(12,8,16,9,"HuntingPistolPuff", FBF_USEAMMO | FBF_NORANDOM)
         TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
-        TNT1 AAAA 0 A_FireCustomMissile("ShotgunBullet1",random(-900,900)/100.00,0,0,1,0,random(-700,700)/100.00)
-        TNT1 AAAA 0 A_FireCustomMissile("ShotgunBullet1",random(-700,700)/100.00,0,0,1,0,random(-550,550)/100.00)
-        TNT1 AAA 0  A_FireCustomMissile("ShotgunBullet2",random(-500,500)/100.00,0,0,1,0,random(-400,400)/100.00)
+        TNT1 AAAA 0 A_FireCustomMissile("ShotgunBullet1",random(-800,800)/100.00,0,0,1,0,random(-700,700)/100.00)
+        TNT1 AAAA 0 A_FireCustomMissile("ShotgunBullet1",random(-600,600)/100.00,0,0,1,0,random(-450,450)/100.00)
+        TNT1 AAA 0  A_FireCustomMissile("ShotgunBullet2",random(-400,400)/100.00,0,0,1,0,random(-300,300)/100.00)
         TNT1 AA 0   A_FireCustomMissile("ShotgunBullet2",random(-300,300)/100.00,0,0,1,0,random(-200,200)/100.00)
         TNT1 AA 0   A_FireCustomMissile("ShotgunBullet2",random(-200,200)/100.00,0,0,1,0,random(-150,150)/100.00)
         TNT1 A 0    A_FireCustomMissile("ShotgunBullet1",random(-100,100)/100.00,1,0,1,0,random(-50,50)/100.00)

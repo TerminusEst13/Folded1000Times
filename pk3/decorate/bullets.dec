@@ -448,8 +448,8 @@ ACTOR WeebBulletPuff
 
 actor BulletSmoke
 {
-    Scale 0.075
-    Alpha 0.35
+    Scale 0.06
+    Alpha 0.3
     RenderStyle Add
     +NOINTERACTION
     +CLIENTSIDEONLY

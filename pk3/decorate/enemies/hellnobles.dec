@@ -537,6 +537,7 @@ actor WeeabooBaronBall : BaronBall replaces BaronBall
 
 actor BOSSKubiuted : POSXKubiuted
 {
+    Scale 1.1
     BloodColor "77 EE 00" 
     States
     {
@@ -574,6 +575,7 @@ actor BOSSKubiuted : POSXKubiuted
 
 actor BOSSKubiuted2 : BOSSKubiuted
 {
+    Scale 1.1
     BloodColor "77 EE 00"
     -SHOOTABLE
     +CLIENTSIDEONLY
@@ -605,6 +607,7 @@ actor BOSSKubiuted2 : BOSSKubiuted
 
 actor BOS2Kubiuted : POSXKubiuted
 {
+    Scale 0.9
     BloodColor "77 EE 00"
     States
     {
@@ -642,6 +645,7 @@ actor BOS2Kubiuted : POSXKubiuted
 
 Actor BOS2Kubiuted2 : BOS2Kubiuted
 {
+    Scale 0.9
     BloodColor "77 EE 00"
     -SHOOTABLE
     +CLIENTSIDEONLY
