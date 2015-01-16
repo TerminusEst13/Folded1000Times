@@ -30,6 +30,7 @@ FROM 0.74 TO 0.75:
 - The Sentinel now checks multiple times to see if its target is a Blind Guardian.
 - More Fortune Cookie quotes, because everyone likes those.
 - There were a few frames where the Kharon by itself mid-raise couldn't be used. This has been fixed.
+- It is now possible to "dash" down in mid-air, for the sake of more air control or lower-gravity maps. As like the usual dashing, hold Run and then hit Crouch.
 
 FROM 0.73 TO 0.74:
 =======================================

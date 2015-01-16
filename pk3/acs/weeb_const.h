@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 103
+#define QUOTECOUNT 106
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -390,5 +390,8 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie and Hostile V for helping me w
 "This is just like one of my Korean manhwas!",
 "At some point, you will be the next person on Earth to die.",
 "Wow, your browser history is kind of weird.",
-"Today's forecast: Not fucking going outside."
+"Today's forecast: Not fucking going outside.",
+"What do you do with an epileptic lettuce? Make a seizure salad.",
+"Never trust an acupuncturist. They're back-stabbers.",
+"system error 0xfded"
 };
