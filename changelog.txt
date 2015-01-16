@@ -23,11 +23,13 @@ FROM 0.74 TO 0.75:
 - TechPillars now have a destructable replacement.
 - All decorations now force Y billboarding.
 - The smoke off of bulletpuffs is now a little bit smaller and a little bit more transparent.
+- The Exodus now takes two tics longer to fire.
 - The first damage half of the Exodus' explosions now force gibbing.
 - Fortune Cookies now give an over-life token instead of a life token, and now are always picked up no matter what.
 - Hell Noble decapitations are now properly sized.
 - The Sentinel now checks multiple times to see if its target is a Blind Guardian.
 - More Fortune Cookie quotes, because everyone likes those.
+- There were a few frames where the Kharon by itself mid-raise couldn't be used. This has been fixed.
 
 FROM 0.73 TO 0.74:
 =======================================

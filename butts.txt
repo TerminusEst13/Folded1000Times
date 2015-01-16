@@ -42,6 +42,12 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 75: Replacement sounds for other world objects, such as lifts, switches, exploding barrels, and doors.
 85: Skulltag support:
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
+    ^ Regeneration: Soul regeneration
+    ^ Resistance:
+    ^ Prosperity: Double the souls?
+    ^ Reflection: Mirror Sword - Sword now reflects shots instead of blocking
+    ^ Drain:
+    ^ Rage:
 89: Destroy corpse decorations, get their soul.
 91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 92: Burning barrels should be replaced as well.
@@ -83,6 +89,10 @@ SgtShivers: haha yeah
 131: Sentinel bullets shouldn't trigger Baron retreats.
 132: Redone font on main menu options, restart New Game with "Rock n' Roll".
 133: Player classes split into "Manual" and "Automatic", with Manual firing/swording being much faster than Automatic.
+134: ds_omenstart and ds_backpack start
+135: Baron of Hell replacement--cyber baron with Satyr head
+136: [11:03:10 PM] Sgt. Shivers: hey term, you know what would be cool in demonsteele
+[11:12:13 PM] Sgt. Shivers: double tap crouch to stop midair and go straight down
 
 
 
