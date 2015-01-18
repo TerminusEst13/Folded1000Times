@@ -841,25 +841,25 @@ script WEEB_ENTER ENTER
         OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
-
-        if (GetCvar("ds_nospecials") == 0)
+		
+        if (GetCvar("ds_nospecials") == 0 && keyDown(BT_USER1) && CheckInventory("SuperMeterCounter") >= 20)
         {
-        if (keypressed(BT_MOVERIGHT))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyRight",8); }}}
-        if (keypressed(BT_MOVELEFT))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyLeft",8); }}}
-        if (keypressed(BT_FORWARD))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyForward",8); }}}
-        if (keypressed(BT_BACK))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyBack",8); }}}
+			if (keyDown(BT_MOVERIGHT))
+			{
+				GiveInventory("DoubleTapRight",1);
+			}
+			if (keyDown(BT_MOVELEFT))
+			{
+				GiveInventory("DoubleTapLeft",1);
+			}
+			if (keyDown(BT_FORWARD))
+			{
+				GiveInventory("DoubleTapForward",1);
+			}
+			if (keyDown(BT_BACK))
+			{
+				GiveInventory("DoubleTapBack",1);
+			}
         }
 
     // This block of code was done by Kyle873.

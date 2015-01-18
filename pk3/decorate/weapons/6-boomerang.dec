@@ -47,6 +47,10 @@ actor "Kharon + Legion" : Kharon
     States
     {
     Ready:
+        TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
+        TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
+        TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
+        TNT1 A 0 A_JumpIfInventory("DoubleTapRight",1,"SpinAttackRight")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         WEPL A 1 A_WeaponReady
