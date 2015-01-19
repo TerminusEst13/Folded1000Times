@@ -50,6 +50,7 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "ExodusDamage", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.5
+    DamageFactor "MessiahDamage", 1.5
     DamageFactor "IronFistDamage", 1.5
     DamageFactor "IronFistExplode", 1.5
     DamageFactor "Kubiuti", 1.5
@@ -68,6 +69,7 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "ExodusDamage", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.425
+    DamageFactor "MessiahDamage", 1.425
     DamageFactor "IronFistDamage", 1.425
     DamageFactor "IronFistExplode", 1.425
     DamageFactor "Kubiuti", 1.425 // 2.1375
@@ -86,6 +88,7 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "ExodusDamage", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.35
+    DamageFactor "MessiahDamage", 1.35
     DamageFactor "IronFistDamage", 1.35
     DamageFactor "IronFistExplode", 1.35
     DamageFactor "Kubiuti", 1.35 // 2.885625
@@ -104,6 +107,7 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "ExodusDamage", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.275
+    DamageFactor "MessiahDamage", 1.275
     DamageFactor "IronFistDamage", 1.275
     DamageFactor "IronFistExplode", 1.275
     DamageFactor "Kubiuti", 1.275 // 3.679171875
@@ -122,6 +126,7 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "ExodusDamage", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.2
+    DamageFactor "MessiahDamage", 1.2
     DamageFactor "IronFistDamage", 1.2
     DamageFactor "IronFistExplode", 1.2
     DamageFactor "Kubiuti", 1.2 // 4.41500625
@@ -140,6 +145,7 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "ExodusDamage", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeit", 1.15
+    DamageFactor "MessiahDamage", 1.15
     DamageFactor "IronFistDamage", 1.15
     DamageFactor "IronFistExplode", 1.15
     DamageFactor "Kubiuti", 1.15 // 5.0772571875

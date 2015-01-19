@@ -6,6 +6,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
@@ -549,6 +550,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
@@ -1058,6 +1060,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
@@ -1372,6 +1375,7 @@ ACTOR Yakuza replaces WolfensteinSS
     PainSound "yakuza/hurt"
     DeathSound "yakuza/die"
     PainChance "kubiuti", 255
+    PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255

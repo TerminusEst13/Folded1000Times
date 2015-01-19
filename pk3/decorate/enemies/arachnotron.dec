@@ -8,6 +8,7 @@ ACTOR Priest replaces Arachnotron
     Mass 600
     PainChance 192
     PainChance "kubiuti", 255
+    PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255

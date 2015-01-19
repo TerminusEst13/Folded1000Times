@@ -6,6 +6,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     Health 100
     Species "Body"
     PainChance "kubiuti", 255
+    PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "SabbathDamage", 192

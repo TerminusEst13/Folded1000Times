@@ -8,6 +8,7 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
     Species "Body"
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
+    PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255

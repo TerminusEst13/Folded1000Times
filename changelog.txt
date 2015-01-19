@@ -33,6 +33,10 @@ FROM 0.74 TO 0.75:
 - It is now possible to "dash" down in mid-air, for the sake of more air control or lower-gravity maps. As like the usual dashing, hold Run and then hit Crouch.
 - The Iron Maiden's holy blasts now all force extreme death, as does the punchsplosion.
 - A new cvar has been included, ds_2brutal, for those who want to be pursued by skeletons.
+- As the uppercut was not a vital move to include, but with an extremely clunky execution, it has been moved over to Optional Keys, for people to trigger at will.
+- Destructable objects can now be triggered by the uppercut.
+- Lost Souls are now slightly smaller graphically because reasons. Their hitbox remains the same.
+
 
 FROM 0.73 TO 0.74:
 =======================================
@@ -88,6 +92,7 @@ FROM 0.73 TO 0.74:
 - A new cvar has been implemented to handle Skulltag weapon replacements--ds_arrogantweapons. 0 spawns the normal weapons, 1 spawns new for-fun weapons in place of Skulltag weapons, and 2 spawns the new weapons randomly in place of the original weapons.
 - Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.
 - There are now intermission text replacements for vanilla levels.
+
 
 FROM 0.72 TO 0.73:
 =======================================
