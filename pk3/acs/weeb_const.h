@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 112
+#define QUOTECOUNT 117
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -362,6 +362,7 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Seven days.",
 "I know what you did last summer.",
 "Caleb is never going to be added to Samsara.",
+"Strifeguy is never going to be added to Samsara.",
 "Love will lead the way. So will IDDT.",
 "Look to La Luna!",
 "Buy Major Stryker.",
@@ -399,5 +400,9 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "I want to be inside you but nobody ever eats the paper. ;_;",
 "I'd ask you to be gentle with me but you seem to have already snapped me in half.",
 "I'm in Comic Sans and you can't do shit about it.",
-"Excuse me, do you have a moment free to talk about our lord and savior, Jesus Christ?"
+"Excuse me, do you have a moment free to talk about our lord and savior, Jesus Christ?",
+"I sure hope I'm not supposed to be guarding the Spear of Destiny right now.",
+"I bet the UAC did this.",
+"Does this run with Brutal Doom?",
+"I'm surprised you can read this, what with the firing and shooting and running around at 50 MPH."
 };
