@@ -79,6 +79,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_doomhealth"))
             { ConsoleCommand("set ds_doomhealth 0");
               ConsoleCommand("archivecvar ds_doomhealth 0"); }
+			  
+        if (!GetCvar("ds_2brutal"))
+            { ConsoleCommand("set ds_2brutal 0");
+              ConsoleCommand("archivecvar ds_2brutal 0"); }
     }
 }
 
@@ -544,7 +548,7 @@ script WEEB_ENTER ENTER
         GiveInventory("BlindGuardianFromPreviousLevel",1);
     }
 
-    if (Spawn("Brutal_Blood", GetActorX(0), GetActorY(0), GetActorZ(0), i) || Spawn("BrutalPistol", GetActorX(0), GetActorY(0), GetActorZ(0), i))
+    if (Spawn("Brutal_Blood",GetActorX(0),GetActorY(0),GetActorZ(0),i) || Spawn("BrutalPistol",GetActorX(0),GetActorY(0),GetActorZ(0),i) || GetCvar("ds_2brutal") == 1)
     {
         Thing_Remove(i);
         isbrutal = 1;
@@ -838,12 +842,18 @@ script WEEB_ENTER ENTER
             if (CheckInventory("GotFrosthammer") == 1) { GotFrosthammer = 1; } 
         }
 
+        // Special move bollocks
         OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
 
         if (GetCvar("ds_nospecials") == 0)
         {
+        if (buttons & BT_ALTATTACK && CheckInventory("SuperMeterCounter") >= 20)
+            { GiveInventory("SynthAltFire",1); }
+        else
+            { TakeInventory("SynthAltFire",1); }
+
         if (keypressed(BT_MOVERIGHT))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
@@ -999,11 +1009,6 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (buttons & BT_ALTATTACK)
-              { GiveInventory("SynthAltFire",1); }
-            else
-              { TakeInventory("SynthAltFire",1); }
-
             if (IronArmor >= 7)
             {
               if (GetArmorType("IronMaidenArmor",PlayerNumber()) || GetArmorType("IronMaidenArmor2",PlayerNumber()))
@@ -1050,29 +1055,16 @@ script WEEB_ENTER ENTER
             IronArmor = 0;
           }
         }
-        
 
-        // Brutal Doom compatibility provided by ijon tichy!
         if (isbrutal)
-        {
+        { // Yes, this mod is 100% compatible with Brutal Doom. Absolutely nothing bad will happen!
             k = unusedTID(23000, 33000);
+                
+            if (ThingCountName("GoldenBoner",0) < (20 * PlayerCount()))
+                { Spawn("GoldenBoner",GetActorX(0),GetActorY(0),GetActorZ(0),k); }
 
-            for (i = 0; i < 4; i++)
-            {
-                ang = random(0, 1.0);
-                j = 0;
-
-                while (!Spawn("GetThatShitOutOfHere", GetActorX(0) + (8192 * sin(ang)),
-                                                      GetActorY(0) + (8192 * cos(ang)),
-                                                      GetActorZ(0) + j, k)
-                    && (j < 256.0))
-                {
-                    j += 16.0;
-                }
-            }
-
-            Thing_Hate(k, mytid, 2);
-            Thing_ChangeTID(k, 0);
+            Thing_Hate(k,mytid,2);
+            Thing_ChangeTID(k,0);
         }
 
         if (array_recoilrules[pln]) { GiveInventory("IAmASillyPersonWhoDoesntLikeRecoil", 1); }

@@ -23,15 +23,76 @@ actor BlankPuff
     }
 }
 
-actor GetThatShitOutOfHere : Revenant
+actor GoldenBoner
 {
+    Health 0x7FFFFFFF
+    Radius 15
+    Height 42
+    Mass 0x7FFFFFFF
+    Speed 15
+    Scale 0.6
+    Monster
     +NODAMAGE
     +INVULNERABLE
     +NOCLIP
+    +LOOKALLAROUND
+    +NOTARGETSWITCH
     -SOLID
     -SHOOTABLE
     -COUNTKILL
     -ISMONSTER
+    ActiveSound "skeleton/sight"
+    PainSound "skeleton/pain"
+    States
+    {
+    Spawn:
+        TNT1 A 1 A_Look
+        loop
+    See:
+        TNT1 A 0
+        TNT1 A 0 A_SetTranslucent(0,0)
+        TNT1 AAAAAAAAAA 1 A_Wander
+        TNT1 AAAAAAAAAA 1 A_Wander
+        TNT1 AAAAAAAAAA 1 A_Wander
+        TNT1 AAAAAAAAAA 1 A_Wander
+        TNT1 AAAAAAAAAA 1 A_Wander
+        TNT1 AAAAAAAAAA 1 A_Wander
+        TNT1 AAAAAAAAAA 1 A_Wander
+        TNT1 A 70
+        TNT1 A 70
+        TNT1 A 70
+        TNT1 A 70 // Ten seconds.
+    See1:
+        TNT1 A 0 A_PlaySound("skeleton/sight")
+        GBNR JJJJJJJJJJ 7 A_FadeIn(0.1)
+        GBNR J 10
+    See2:
+        GBNR AABBCCDDEEFF 1 A_Chase
+        loop
+    Idle:
+        TNT1 A 0 A_SetTranslucent(1,0)
+        GBNR KK 5 A_Wander
+        TNT1 A 0 A_Look
+        GBNR LL 5 A_Wander
+        TNT1 A 0 A_Look
+        loop
+    Melee:
+        GBNR G 1 A_FaceTarget
+        GBNR G 4 A_SkelWhoosh
+        GBNR H 4 A_FaceTarget
+        GBNR I 4 A_SkelFist
+        Goto See2
+    Pain:
+        GBNR J 5
+        GBNR J 5 A_Pain
+        Goto See2
+    Death:
+        GBNR J 5
+        TNT1 A 0 HealThing(0x7FFFFFFF)
+        TNT1 A 0 A_PlaySound("skeleton/sight")
+        GBNR J 10
+        goto See2
+    }
 }
 
 actor FrozenDummy

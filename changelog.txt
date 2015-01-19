@@ -31,6 +31,8 @@ FROM 0.74 TO 0.75:
 - More Fortune Cookie quotes, because everyone likes those.
 - There were a few frames where the Kharon by itself mid-raise couldn't be used. This has been fixed.
 - It is now possible to "dash" down in mid-air, for the sake of more air control or lower-gravity maps. As like the usual dashing, hold Run and then hit Crouch.
+- The Iron Maiden's holy blasts now all force extreme death, as does the punchsplosion.
+- A new cvar has been included, ds_2brutal, for those who want to be pursued by skeletons.
 
 FROM 0.73 TO 0.74:
 =======================================

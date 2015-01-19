@@ -39,6 +39,8 @@
             Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
             Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
             Option "Spawn Arrogant weapons",         "ds_arrogantweapons", "ArrogantOptions"
+            StaticText      ""
+            Option "OH FUCK, SKELETONS!",            "ds_2brutal", "OnOff"
     }
      
     OptionValue ToasterOptions

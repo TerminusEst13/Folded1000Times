@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 106
+#define QUOTECOUNT 112
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -286,7 +286,7 @@ int DemonChangelog =
 - Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.\n\
 - There are now intermission text replacements for vanilla levels.";
 
-int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie and Hostile V for helping me with these!
+int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {
 "If you want to blow someone's mind, consider hollow-point .45s.",
 "Consider the horse. No, seriously. Weird damn animals.",
@@ -393,5 +393,11 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie and Hostile V for helping me w
 "Today's forecast: Not fucking going outside.",
 "What do you do with an epileptic lettuce? Make a seizure salad.",
 "Never trust an acupuncturist. They're back-stabbers.",
-"system error 0xfded"
+"system error 0xfded",
+"If you think food has all the answers, you must be fat as hell.",
+"Senpai noticed me!",
+"I want to be inside you but nobody ever eats the paper. ;_;",
+"I'd ask you to be gentle with me but you seem to have already snapped me in half.",
+"I'm in Comic Sans and you can't do shit about it.",
+"Excuse me, do you have a moment free to talk about our lord and savior, Jesus Christ?"
 };
