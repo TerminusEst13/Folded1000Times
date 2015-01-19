@@ -628,22 +628,22 @@ actor SoulBulletTrail
         TNT1 A 1
         loop
     Spawn1:
-        SOLT A 2 BRIGHT
+        SOLT A 1 BRIGHT
         stop
     Spawn2:
-        SOLT B 2 BRIGHT
+        SOLT B 1 BRIGHT
         stop
     Spawn3:
-        SOLT C 2 BRIGHT
+        SOLT C 1 BRIGHT
         stop
     Spawn4:
-        SOLT D 2 BRIGHT
+        SOLT D 1 BRIGHT
         stop
     Spawn5:
-        SOLT E 2 BRIGHT
+        SOLT E 1 BRIGHT
         stop
     Spawn6:
-        SOLT F 2 BRIGHT
+        SOLT F 1 BRIGHT
         stop
     }
 }
