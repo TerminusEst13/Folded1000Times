@@ -216,7 +216,9 @@ pistol/dry                HPISDRY // Taken from Killing Floor
 // Shotgun sounds
 
 shotgun/fire              SHOTFIRE
+shotgun/firespecial       SHOTFIR2
 shotgun/reload            SHOTCOCK
+shotgun/reload2           SHOTCOC2
 shotgun/dry               SHOTDRY // Taken from Killing Floor, edited slightly
 
 // Uzi sounds
