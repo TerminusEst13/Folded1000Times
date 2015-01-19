@@ -905,6 +905,7 @@ ACTOR IronFistExplosion
     Speed 0
     +NOCLIP
     +FORCERADIUSDMG
+    +EXTREMEDEATH
     -SOLID
     DamageType "IronFistExplode"
     Obituary "%k snapped %o with a brutal punch."
@@ -936,7 +937,7 @@ actor HolyShot
     +BLOODSPLATTER
     +THRUGHOST
     +THRUSPECIES
-    +NOEXTREMEDEATH
+    +EXTREMEDEATH
     States
     {
     Spawn:
@@ -965,7 +966,7 @@ actor HolyRocket : HolyShot
     Damage (60)
     DeathSound "holyrocket/hit"
     Decal Scorch
-    -NOEXTREMEDEATH
+    //-NOEXTREMEDEATH
     States
     {
     Spawn:
