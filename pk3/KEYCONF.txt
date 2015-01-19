@@ -12,12 +12,16 @@ addslotdefault 5 "Kharon + Exodus"
 addslotdefault 6 "Kharon + Legion"
 //addslotdefault 7 "Kharon + Unknown"
 addslotdefault 8 "Kharon + Frosthammer"
+addslotdefault 9 "Messiah"
 addslotdefault 0 "Kharon"
 addslotdefault 0 "Iron Fist"
 
 AddKeySection "DemonSteele - Optional Keys" "demonsteeleoptional"
 AddMenuKey "Flashlight" "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis"
 AddMenuKey "ZDoom: Taunt" zdoomtaunt
+AddMenuKey "Launch Attack" +launchoctopus
 
 Alias "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis" "Puke -281"
 Alias zdoomtaunt "use ZDoomTauntButton"
+Alias +launchoctopus "use UppercutTrigger"
+Alias -launchoctopus "use UppercutUntrigger"

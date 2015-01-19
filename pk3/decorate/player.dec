@@ -42,10 +42,13 @@ ACTOR MeleePlayer : PlayerPawn
     RadiusDamageFactor 0.5
     Player.StartItem "Kharon + Acacia A-22", 1
     Player.StartItem "Kharon", 1
-    Player.StartItem "KamenRiderModeActivate", 20
+    //Player.StartItem "Messiah", 1
+    Player.StartItem "KamenRiderModeActivate", 1
     Player.StartItem "SuperMeterCounter", 20
     Player.StartItem "WeebClip", 20
-    Player.StartItem "ZDoomTauntButton", 20
+    Player.StartItem "UppercutTrigger",1
+    Player.StartItem "UppercutUntrigger",1
+    Player.StartItem "ZDoomTauntButton", 1
     Player.ColorRange 112, 127
     Player.AttackZOffset 16
     States
@@ -417,5 +420,33 @@ actor ZDoomTauntButton : CustomInventory
     UseFail:
         TNT1 A 0
         fail
+    }
+}
+
+ACTOR UppercutTrigger : CustomInventory
+{
+    -INVBAR
+    +UNDROPPABLE
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    States
+    {
+    Use:
+        TNT1 A 0 A_GiveInventory("TimeToLaunchOctopus", 1)
+        Fail
+    }
+}
+
+ACTOR UppercutUntrigger : CustomInventory
+{
+    -INVBAR
+    +UNDROPPABLE
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    States
+    {
+    Use:
+        TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
+        Fail
     }
 }
