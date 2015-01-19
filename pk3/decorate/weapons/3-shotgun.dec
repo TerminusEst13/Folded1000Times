@@ -405,14 +405,13 @@ actor "Kharon + Testament" : Kharon
         TNT1 A 0 A_JumpIfInventory("WeebShell",8,1)
         goto SpecialAttackFinish
         TNT1 A 0
-        TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         MSH2 A 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH2 B 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH2 C 3 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH2 D 3 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH2 E 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("WeebShell",2)
-        TNT1 A 0 A_PlaySoundEx("shotgun/reload2","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("shotgun/reload2","soundslot5",0,0)
         MSH2 F 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH2 G 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH2 H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -420,7 +419,7 @@ actor "Kharon + Testament" : Kharon
         MSH2 J 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH3 E 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("WeebShell",2)
-        TNT1 A 0 A_PlaySoundEx("shotgun/reload2","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("shotgun/reload3","soundslot6",0,0)
         MSH3 F 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH3 G 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH3 H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -428,7 +427,7 @@ actor "Kharon + Testament" : Kharon
         MSH3 J 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH4 E 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("WeebShell",2)
-        TNT1 A 0 A_PlaySoundEx("shotgun/reload","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("shotgun/reload4","soundslot7",0,0)
         MSH4 F 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH4 G 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSH4 H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -440,6 +439,7 @@ actor "Kharon + Testament" : Kharon
         MSHT J 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_SetBlend("white",0.15,2)
         TNT1 A 0 A_TakeInventory("WeebShell",2)
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         TNT1 AAAAAAAA 0 A_FireCustomMissile("SoulShotgunBullet1",random(-1200,1200)/100.00,0,0,1,0,random(-800,800)/100.00)
         TNT1 AAAAAAAA 0 A_FireCustomMissile("SoulShotgunBullet1",random(-1000,1000)/100.00,0,0,1,0,random(-700,700)/100.00)
         TNT1 AAAAAAAA 0 A_FireCustomMissile("SoulShotgunBullet1",random(-900,900)/100.00,0,0,1,0,random(-650,650)/100.00)
@@ -452,6 +452,7 @@ actor "Kharon + Testament" : Kharon
         TNT1 AAAA 0     A_FireCustomMissile("SoulShotgunBullet2",random(-200,200)/100.00,0,0,1,0,random(-100,100)/100.00)
         TNT1 AA 0       A_FireCustomMissile("SoulShotgunBullet1",random(-100,100)/100.00,1,0,1,0,random(-50,50)/100.00)
         TNT1 AA 0       A_FireCustomMissile("SoulShotgunBullet1",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
+        TNT1 A 0    A_FireCustomMissile("ShotgunJumpageHeavy",0,0,0,1,0,0)
         TNT1 A 0 A_PlayWeaponSound("shotgun/firespecial")
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_Light2
@@ -695,6 +696,34 @@ ACTOR ShotgunJumpage : FastProjectile
         Stop
     Death:
         TNT1 A 0 A_Explode(112,128)
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR ShotgunJumpageHeavy : FastProjectile
+{
+    Speed 150
+    Damage (0)
+    Height 1
+    Radius 1
+    +FORCERADIUSDMG
+    +BLOODLESSIMPACT
+    -SOLID
+    +DONTBLAST
+    SeeSound ""
+    DamageType "ExodusJump"
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+    AirDeath:
+        TNT1 A 0
+        TNT1 A 1
+        Stop
+    Death:
+        TNT1 A 0 A_Explode(256,128)
         TNT1 A 1
         stop
     }

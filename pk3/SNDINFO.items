@@ -219,6 +219,8 @@ shotgun/fire              SHOTFIRE
 shotgun/firespecial       SHOTFIR2
 shotgun/reload            SHOTCOCK
 shotgun/reload2           SHOTCOC2
+shotgun/reload3           SHOTCOC3
+shotgun/reload4           SHOTCOC4
 shotgun/dry               SHOTDRY // Taken from Killing Floor, edited slightly
 
 // Uzi sounds
