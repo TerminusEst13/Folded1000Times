@@ -30,7 +30,9 @@ actor GoldenBoner
     Height 42
     Mass 0x7FFFFFFF
     Speed 15
-    Scale 0.6
+    Scale 0.5
+    RenderStyle Translucent
+    Alpha 1.0
     Monster
     +NODAMAGE
     +INVULNERABLE
@@ -41,8 +43,7 @@ actor GoldenBoner
     -SHOOTABLE
     -COUNTKILL
     -ISMONSTER
-    ActiveSound "skeleton/sight"
-    PainSound "skeleton/pain"
+    ActiveSound "boner/laugh"
     States
     {
     Spawn:
@@ -63,7 +64,7 @@ actor GoldenBoner
         TNT1 A 70
         TNT1 A 70 // Ten seconds.
     See1:
-        TNT1 A 0 A_PlaySound("skeleton/sight")
+        TNT1 A 0 A_PlaySound("boner/laugh")
         GBNR JJJJJJJJJJ 7 A_FadeIn(0.1)
         GBNR J 10
     See2:
@@ -71,11 +72,13 @@ actor GoldenBoner
         loop
     Idle:
         TNT1 A 0 A_SetTranslucent(1,0)
-        GBNR KK 5 A_Wander
-        TNT1 A 0 A_Look
-        GBNR LL 5 A_Wander
-        TNT1 A 0 A_Look
-        loop
+        TNT1 A 0 A_Jump(128,"Idle3")
+    Idle2:
+        GBNR K 4
+    Idle3:
+        GBNR L 4 A_Wander
+        TNT1 A 0 A_FadeOut(0.03)
+        goto Idle2
     Melee:
         GBNR G 1 A_FaceTarget
         GBNR G 4 A_SkelWhoosh
@@ -89,7 +92,7 @@ actor GoldenBoner
     Death:
         GBNR J 5
         TNT1 A 0 HealThing(0x7FFFFFFF)
-        TNT1 A 0 A_PlaySound("skeleton/sight")
+        TNT1 A 0 A_PlaySound("boner/laugh")
         GBNR J 10
         goto See2
     }
@@ -228,6 +231,7 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/weapons/0-ironeffects.dec"
 #include "decorate/weapons/6-boomerang.dec"
 #include "decorate/weapons/8-frosthammer.dec"
+#include "decorate/weapons/9-lyre.dec"
 #include "decorate/player.dec"
 #include "decorate/flashlight.dec"
 #include "decorate/powerups.dec"

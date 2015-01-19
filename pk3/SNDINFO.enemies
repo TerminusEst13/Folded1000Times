@@ -2,6 +2,7 @@
 
 enemy/shothit             ENSHOTHT
 enemy/bisected            ENBISECT // Taken from Splatterhouse
+boner/laugh               BONRLAFF
 
 trooper/gunready          ENREAD1 // Taken from Smash Bros. Melee
 sergeant/gunready         ENREAD2 // Taken from Smash Bros. Brawl
