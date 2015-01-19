@@ -223,6 +223,7 @@ shotgun/dry               SHOTDRY // Taken from Killing Floor, edited slightly
 
 uzi/fire                  UZIFIRE
 uzi/dry                   UZIDRY // Taken from Halo: Reach
+uzi/firespecial           UZIFIRES
 
 // Carronade sounds
 
@@ -262,6 +263,15 @@ bullmis4                  BULLMIS4
 
 $volume bullet/miss 0.75
 $rolloff bullet/miss 100 400
+
+$random soulbullet/miss { sobullmis1 sobullmis2 sobullmis3 sobullmis4 }
+sobullmis1                SOBUMIS1
+sobullmis2                SOBUMIS2
+sobullmis3                SOBUMIS3
+sobullmis4                SOBUMIS4
+
+$volume soulbullet/miss 0.75
+$rolloff soulbullet/miss 100 400
 
 // Iron Maiden
 
@@ -330,3 +340,41 @@ $limit frost/hit 0
 $limit frost/hitcharged 0
 pbeam/charge              PBEAMCHR // Taken from Metroid Prime
 pbeam/idle                PBEAMIDL // Taken from Metroid Prime
+
+// Messiah
+
+lyre/swing                LYRESWNG // Taken from Hexen
+lyre/hit                  LYREHIT  // Taken from Hexen
+$limit lyre/hit 0
+lyre/miss                 LYREMISS // Taken from Hexen
+$limit lyre/miss 0
+
+$random lyre/charge1 { lyrech1a lyrech1b lyrech1c lyrech1d lyrech1e lyrech1f lyrech1g lyrech1h } // Made by Marty Kirra
+lyrech1a                  LYRECH1A
+lyrech1b                  LYRECH1B
+lyrech1c                  LYRECH1C
+lyrech1d                  LYRECH1D
+lyrech1e                  LYRECH1E
+lyrech1f                  LYRECH1F
+lyrech1g                  LYRECH1G
+lyrech1h                  LYRECH1H
+$limit lyre/charge1 0
+
+$random lyre/charge2 { lyrech2a lyrech2b lyrech2c lyrech2d } // Made by Marty Kirra
+lyrech2a                  LYRECH2A
+lyrech2b                  LYRECH2B
+lyrech2c                  LYRECH2C
+lyrech2d                  LYRECH2D
+$limit lyre/charge2 0
+
+lyre/chargerelease        LYRECHG3 // Taken from the Sony Sound Series: Metal
+lyre/chargenope           LYRECHG4 // Made by Marty Kirra
+
+$random lyre/raise { lyreup1 lyreup2 lyreup3 }
+lyreup1                   LYREUP1 // Taken from the General Series 6000
+lyreup2                   LYREUP2 // Taken from the General Series 6000
+lyreup3                   LYREUP3 // Made by Marty Kirra
+
+lyre/shot                 LYRESHOT // Taken from Borderlands 2
+lyre/shothit              LYRESHIT // Taken from Halo: Reach
+$limit lyre/shothit 0
