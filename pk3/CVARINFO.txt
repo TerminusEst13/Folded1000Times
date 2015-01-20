@@ -11,6 +11,8 @@ server int ds_arrogantweapons   = 0;
 server int ds_gunsouls          = 0;
 server int ds_doomhealth        = 0;
 server int ds_2brutal           = 0;
+server int ds_backpackstart     = 0;
+server int ds_omenstart         = 0;
 
 // Clientside cvars
 user int ds_cl_nomusic          = 0;

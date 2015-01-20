@@ -63,7 +63,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 111: Some kind of indication for when in god mode.
 112: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
-113: Ice statues cut apart should drop souls.
 114: Banners for the fortune cookie lines instead of text?
 116: Remove colors on Iron Maiden shot impacts.
 119: Mumblemumble: I do want to mention something about the sheath, it seems that you cant change guns while using it until the sword is back in the sheath. This makes item juggling from guns to the sheath to block a giant pain.
@@ -86,13 +85,9 @@ Terminusest13: You could replace decorative items and have them constantly emit 
 Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some especially demonic decorative items, like, constantly whisper or something.
 130: DoomedSpacemarine: I think what needs to be added in Demonsteele more than anything is a PSHHHHHHHT blood spray sound
 SgtShivers: haha yeah
-131: Sentinel bullets shouldn't trigger Baron retreats.
 132: Redone font on main menu options, restart New Game with "Rock n' Roll".
 133: Player classes split into "Manual" and "Automatic", with Manual firing/swording being much faster than Automatic.
-134: ds_omenstart and ds_backpack start
 135: Baron of Hell replacement--cyber baron with Satyr head
-136: [11:03:10 PM] Sgt. Shivers: hey term, you know what would be cool in demonsteele
-[11:12:13 PM] Sgt. Shivers: double tap crouch to stop midair and go straight down
 
 
 
@@ -155,6 +150,7 @@ And the final style...ummm. Hm. // Kharon being wielded by itself will cover thi
 <Dewce> And it'd be a way to reward keeping your rank as high as possible
 <Dewce> I know your damage goes up
 <Dewce> So just a thought // Not possible unless Zandro/ZDumb implements fractions for inventory or the system is rehauled to be in the thousands rather than tens.
+113: Ice statues cut apart should drop souls. // Gun attacks should never give souls.
 - 
 [04:31:35 pm] Badass adorkable: i want a bonerstorms caused by ironmeido mode kills to be a shotgun blasts
 [04:32:02 pm] TerminusEst13: That...actually sounds like a cool idea for a special move.
@@ -275,6 +271,10 @@ DONE:
 118: Remove extraneous ISHT sprites from github, they're conflicting with the soul trail sprites.
 121: Add +DONTBLAST to all monsters, it's too easy to start infighting that never ends on monsters immune to each other's attacks.
 122: Remove barrels' dependency on sv_barrelrespawn, hopefully that fixes the ghost-barrel bugs.
+131: Sentinel bullets shouldn't trigger Baron retreats.
+134: ds_omenstart and ds_backpack start
+136: [11:03:10 PM] Sgt. Shivers: hey term, you know what would be cool in demonsteele
+[11:12:13 PM] Sgt. Shivers: double tap crouch to stop midair and go straight down
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter

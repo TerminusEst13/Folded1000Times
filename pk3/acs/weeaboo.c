@@ -83,6 +83,14 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_2brutal"))
             { ConsoleCommand("set ds_2brutal 0");
               ConsoleCommand("archivecvar ds_2brutal 0"); }
+			  
+        if (!GetCvar("ds_omenstart"))
+            { ConsoleCommand("set ds_omenstart 0");
+              ConsoleCommand("archivecvar ds_omenstart 0"); }
+			  
+        if (!GetCvar("ds_backpackstart"))
+            { ConsoleCommand("set ds_backpackstart 0");
+              ConsoleCommand("archivecvar ds_backpackstart 0"); }
     }
 }
 
@@ -526,8 +534,18 @@ script WEEB_ENTER ENTER
             MusicRandomizerIsIncluded = 1;
             GiveInventory("IAmAnAwesomePersonWhoLikesCoolMusic",1);
         }
-
         GiveInventory("ImAlive",1);
+
+        if (GetCvar("ds_omenstart") == 1)
+        {
+            GiveInventory("Kharon + Omen",1);
+            GiveInventory("GotHammer",1);
+        }
+
+        if (GetCvar("ds_backpackstart") == 1)
+        {
+            GiveInventory("Backpack",1);
+        }
     }
     else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
     {
