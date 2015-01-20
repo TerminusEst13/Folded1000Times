@@ -64,6 +64,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_ClearRefire
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
         Loop
@@ -286,7 +287,8 @@ ACTOR Kharon : Weapon
     Fired2:
         //TNT1 A 0 A_JumpIfInventory("SwordAttack",6,"HoldAttack")
         TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
-        TNT1 A 25 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 20 A_WeaponReady//(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("SheatheSwung",1)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
@@ -561,7 +563,8 @@ ACTOR Kharon : Weapon
         TNT1 A 1
         Goto Select4
     AltFired2:
-        TNT1 A 35 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 25 A_WeaponReady//(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("SheatheSwung",1)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)

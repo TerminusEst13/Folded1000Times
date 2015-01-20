@@ -38,6 +38,7 @@ FROM 0.74 TO 0.75:
 - Lost Souls are now slightly smaller graphically because reasons. Their hitbox remains the same.
 - ds_omenstart and ds_backpackstart have been implemented for maps that don't have chainsaw or backpack spawns, or those who simply want a boost in starting ability.
 - The Sentinel no longer triggers the Baron of Hell's retreat.
+- It's now possible to swap away from the sheathe's attack much faster.
 
 
 FROM 0.73 TO 0.74:
