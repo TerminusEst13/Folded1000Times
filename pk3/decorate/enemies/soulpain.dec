@@ -111,6 +111,7 @@ ACTOR BlackSoul
     +DONTFALL
     +VISIBILITYPULSE
     +NOINFIGHTING
+    -SOLID
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
@@ -190,6 +191,8 @@ ACTOR Blackened replaces PainElemental
     Height 52
     Mass 300
     Speed 4
+    MeleeRange 96
+    MeleeThreshold 96
     RenderStyle Add
     Alpha 0.999
     Species "Body"
@@ -213,6 +216,7 @@ ACTOR Blackened replaces PainElemental
     MinMissileChance 5
     Monster
     +FLOAT
+    +FLOATBOB
     +NOGRAVITY
     +MISSILEMORE
     +MISSILEEVENMORE
@@ -243,7 +247,7 @@ ACTOR Blackened replaces PainElemental
         BLCK F 1 BRIGHT A_Chase
         loop
     Missile:
-        TNT1 A 0 A_Jump(32,"Missile2")
+        TNT1 A 0 A_Jump(64,"Missile2")
         TNT1 A 0 A_FaceTarget
         BLCK GGGGG 1 BRIGHT A_SpawnItemEx("DarkAfterimageB",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,0,0,0,0,32)
         TNT1 A 0 A_PlaySound("blackened/attack")
@@ -257,6 +261,14 @@ ACTOR Blackened replaces PainElemental
         TNT1 A 0 A_PlaySound("blackened/attack")
         TNT1 A 0 A_DualPainAttack("BlackSoul")
         BLCK HHHHH 1 BRIGHT A_SpawnItemEx("DarkAfterimageC",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,0,0,0,0,32)
+        BLCK IIIII 1 BRIGHT A_SpawnItemEx("DarkAfterimageD",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,0,0,0,0,32)
+        goto See
+    Melee:
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_PlaySoundEx("blackened/drain","soundslot7")
+        TNT1 A 0 A_TakeFromTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_GiveToTarget("BlackenedFlicker",1)
+        TNT1 A 0 A_GiveToTarget("BlackenedSlowdown",1)
         BLCK IIIII 1 BRIGHT A_SpawnItemEx("DarkAfterimageD",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,0,0,0,0,32)
         goto See
     Pain:
@@ -333,6 +345,26 @@ ACTOR Blackened replaces PainElemental
     Death.IronFistDamage:
         TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
         goto Death
+    }
+}
+
+actor BlackenedFlicker : CustomInventory
+{
+    Inventory.MaxAmount 0
+    -INVBAR
+    +AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        stop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_SetBlend("Black",0.5,8)
+        stop
+    UseStop:
+        TNT1 A 0
+        stop
     }
 }
 

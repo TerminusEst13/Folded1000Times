@@ -143,6 +143,10 @@ weapon/switch             WEPSWTCH
 
 // System
 
+//                        DSRADIO  // Taken from Killer7
+//                        DSTINK   // Taken from Fatal/Fake
+//                        cnnctsnd // Taken from Painkiller
+
 silence                   QUIET
 world/quake               QUIET
 misc/teleport             TELEPROT
