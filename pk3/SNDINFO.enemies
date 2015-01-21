@@ -158,7 +158,8 @@ wizard/shothit            WZRDSHIT // The only non-Painkiller sound! Taken from 
 wizard/pain               WZRDPAIN // Taken from Plumculler
 wizard/death              WZRDDETH // Taken from Poolkonger
 
-blackened/attack          DARKATCK // Taken from Heretic, I believe?
+blackened/attack          DARKATCK // Taken from Poofkoofer
+blackened/drain           DARKDRAN // Taken from Pan-cooler
 
 $random blackened/laugh { dlaf1 dlaf2 dlaf3 dlaf4 dlaf5 } // Recorded by John Archer
 dlaf1                     DARKLAF1

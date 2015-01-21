@@ -1553,6 +1553,7 @@ ACTOR HammerAttackOverchargeSFX : HammerAttackBaseSFX
 actor ScreenFlashWhite2 : CustomInventory
 {
     Inventory.MaxAmount 0
+    -INVBAR
     +AUTOACTIVATE
     States
     {
@@ -1572,6 +1573,7 @@ actor ScreenFlashWhite2 : CustomInventory
 actor ChargeScreenFlash : CustomInventory
 {
     Inventory.MaxAmount 0
+    -INVBAR
     +AUTOACTIVATE
     States
     {

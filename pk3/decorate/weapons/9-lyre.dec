@@ -582,6 +582,7 @@ actor ElecSparkGuitar : ElecSpark { Scale 0.15 }
 actor ChargeScreenFlashGuitar : CustomInventory
 {
     Inventory.MaxAmount 0
+    -INVBAR
     +AUTOACTIVATE
     States
     {

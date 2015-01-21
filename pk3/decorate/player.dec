@@ -23,7 +23,7 @@ ACTOR MeleePlayer : PlayerPawn
     Player.JumpZ 9.0
     Player.ForwardMove 2.4, 1.2
     Player.SideMove 2.3, 1.15
-    Player.DisplayName "Hae-Lin"
+    Player.DisplayName "Hae-Lin"//"Manual Fire"
     Player.SoundClass "Hae-Lin"
     PainChance "EnemyInfightDamage", 0
     DamageFactor "Normal", 0.5
@@ -246,6 +246,20 @@ ACTOR MeleePlayer : PlayerPawn
         WARR N -1
         Stop
     }
+}
+
+actor MeleePlayerCasual : MeleePlayer
+{
+    Player.DisplayName "Automatic Fire"
+    Player.StartItem "Kharon + Acacia A-22", 1
+    Player.StartItem "Kharon", 1
+    Player.StartItem "KamenRiderModeActivate", 1
+    Player.StartItem "SuperMeterCounter", 20
+    Player.StartItem "WeebClip", 20
+    Player.StartItem "UppercutTrigger",1
+    Player.StartItem "UppercutUntrigger",1
+    Player.StartItem "ZDoomTauntButton", 1
+    Player.StartItem "IAmAMassiveCasualWhoNeedsMyWeaponsToFireAutomatically", 1
 }
 
 actor GhostPort : PowerGhost { Powerup.Duration 10 }

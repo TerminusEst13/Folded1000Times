@@ -58,6 +58,7 @@ actor IAmAnOkayPersonWhoLikesToAutoSwitch : Boolean {}
 actor IAmADumbPersonWhoWillProbablyAccidentallyDie : Boolean {}
 actor IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls : Boolean {}
 actor IAmATraditionalDoomerWhoLikesNumbersOverTokens : Boolean {}
+actor IAmAMassiveCasualWhoNeedsMyWeaponsToFireAutomatically : Boolean {}
 
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}

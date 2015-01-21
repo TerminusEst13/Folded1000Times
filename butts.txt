@@ -83,7 +83,6 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 130: DoomedSpacemarine: I think what needs to be added in Demonsteele more than anything is a PSHHHHHHHT blood spray sound
 SgtShivers: haha yeah
 132: Redone font on main menu options, restart New Game with "Rock n' Roll".
-133: Player classes split into "Manual" and "Automatic", with Manual firing/swording being much faster than Automatic.
 135: Baron of Hell replacement--cyber baron with Satyr head
 
 
@@ -129,6 +128,7 @@ PVP-ONLY WOES: // Yes, some people actually tried PvP with this. Yes, these peop
 
 LATER, MAYBE:
 35: Replace generic blood with something of neater substance, like Psychic's or a smaller version of AtM's. // Nope, didn't work for some reason. I'll figure it out later.
+133: Player classes split into "Manual" and "Automatic", with Manual firing/swording being much faster than Automatic. // Needs 2.0's A_Refire custom states.
 
 
 
