@@ -84,6 +84,25 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 SgtShivers: haha yeah
 132: Redone font on main menu options, restart New Game with "Rock n' Roll".
 135: Baron of Hell replacement--cyber baron with Satyr head
+136: [4:26:47 AM] combine_kegan: Hey Term can you explain what Hae-Lin does with the soda can after drinking it?
+[4:26:55 AM] combine_kegan: Does she eat it
+[4:27:24 AM] Marty Kirra: you should leave used soda cans after dirnking it or recycle them
+[4:27:31 AM] Med: heh, that'd be a neat addition
+[4:27:53 AM] Med: after eating a food item, you drop an empty can or bowl after a few seconds
+[4:27:54 AM] terminusest13: Heehhh. Yeah, it would. I should do that.
+[4:28:07 AM] Med: Bowl of ramen? Empty bowl after 2 seconds or so
+[4:28:14 AM] combine_kegan: ...I kinda want to drop a bone after a player eats meat now
+[4:28:14 AM] Sgt. Shivers: do what dukeplus does lol
+[4:28:18 AM] Sgt. Shivers: have a crushed can appear
+[4:28:21 AM] Med: do it
+[4:28:26 AM] terminusest13: I have no clue how I'd account for respawning items in online play, but hey, worth a shot.
+
+
+
+Tutorial map
+cvar that doesn't remove meter when damaged
+Menudef edit to put "READ THIS" on main menu.
+Better throwing sound for the Legion special.
 
 
 

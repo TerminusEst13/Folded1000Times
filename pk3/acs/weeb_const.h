@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 117
+#define QUOTECOUNT 118
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -404,5 +404,6 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "I sure hope I'm not supposed to be guarding the Spear of Destiny right now.",
 "I bet the UAC did this.",
 "Does this run with Brutal Doom?",
-"I'm surprised you can read this, what with the firing and shooting and running around at 50 MPH."
+"I'm surprised you can read this, what with the firing and shooting and running around at 50 MPH.",
+"Mom can't make you clean your room."
 };
