@@ -230,6 +230,7 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/weapons/0-ironmaiden.dec"
 #include "decorate/weapons/0-ironeffects.dec"
 #include "decorate/weapons/6-boomerang.dec"
+#include "decorate/weapons/6b-boomspecial.dec"
 #include "decorate/weapons/8-frosthammer.dec"
 #include "decorate/weapons/9-lyre.dec"
 #include "decorate/player.dec"

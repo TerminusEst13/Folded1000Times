@@ -328,6 +328,12 @@ boomerang/throwbunch      BOOMTOS3
 boomerang/stack           BOOMSTCK
 boomerang/get             BOOMGET1
 $volume boomerang/get 0.3
+boomerang/spin            BOOMSPN1
+boomerang/spinstop        BOOMSPN2
+$volume boomerang/spin 0.5
+$limit boomerang/spin 0
+$volume boomerang/spinstop 0.5
+$limit boomerang/spinstop 0
 
 // Frosthammer
 

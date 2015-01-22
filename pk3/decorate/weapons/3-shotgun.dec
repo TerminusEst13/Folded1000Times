@@ -454,6 +454,7 @@ actor "Kharon + Testament" : Kharon
         TNT1 AA 0       A_FireCustomMissile("SoulShotgunBullet1",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
         TNT1 A 0    A_FireCustomMissile("ShotgunJumpageHeavy",0,0,0,1,0,0)
         TNT1 A 0 A_PlayWeaponSound("shotgun/firespecial")
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot5",0,0)
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_Light2
         TNT1 A 0 A_Recoil(10)
