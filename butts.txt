@@ -96,6 +96,7 @@ SgtShivers: haha yeah
 [4:28:18 AM] Sgt. Shivers: have a crushed can appear
 [4:28:21 AM] Med: do it
 [4:28:26 AM] terminusest13: I have no clue how I'd account for respawning items in online play, but hey, worth a shot.
+138: Unique slashes when done mid-dash
 
 
 
@@ -294,6 +295,7 @@ DONE:
 134: ds_omenstart and ds_backpack start
 136: [11:03:10 PM] Sgt. Shivers: hey term, you know what would be cool in demonsteele
 [11:12:13 PM] Sgt. Shivers: double tap crouch to stop midair and go straight down
+137: Uppercut slash should reflect, rather than just block.
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter
@@ -385,3 +387,13 @@ Stalagtite              // Stalagmite (on the ground)
 TallGreenColumn         // Tall Green Pillar
 TallRedColumn           // Tall Red Pillar
 TorchTree               // Small Burned Tree
+
+
+
+
+
+
+QUOTES:
+========================
+"Did you know that you can drink lava? Only once, though."
+"Go to Heaven to sleep, but go to Hell for the women."

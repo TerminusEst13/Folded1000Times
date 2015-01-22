@@ -42,6 +42,7 @@ FROM 0.74 TO 0.75:
 - There are now unique talking and connecting sounds.
 - The Black Souls that the Blackened shoots out are now -Solid. In exchange, he now has the ability to drain the soul meter from players when they get in range.
 - The Omen's inventory-based flashing no longer appears in the invbar.
+- The Kharon's uppercut, when used on projectiles, now reflects the shots back to the enemy. It's finnicky and based on Doom "physics", but it's neat nonetheless.
 
 
 FROM 0.73 TO 0.74:
