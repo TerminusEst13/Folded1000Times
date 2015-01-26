@@ -43,10 +43,10 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 85: Skulltag support:
   ^ Skulltag runes need to be replaced: Regeneration, Resistance, Prosperity, Reflection, and Drain are completely useless. Rage is useless on everything but Testament.
     ^ Regeneration: Soul regeneration
-    ^ Resistance:
+    ^ Resistance: <gaydad420> resistance could be increased invincibility after being hit
     ^ Prosperity: Double the souls?
     ^ Reflection: Mirror Sword - Sword now reflects shots instead of blocking
-    ^ Drain:
+    ^ Drain: Drains souls on hit?
     ^ Rage:
 89: Destroy corpse decorations, get their soul.
 91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
@@ -104,6 +104,7 @@ Tutorial map
 cvar that doesn't remove meter when damaged
 Menudef edit to put "READ THIS" on main menu.
 Better throwing sound for the Legion special.
+Implement Shivers' new idle animation/Baron Death.
 
 
 
@@ -395,5 +396,3 @@ TorchTree               // Small Burned Tree
 
 QUOTES:
 ========================
-"Did you know that you can drink lava? Only once, though."
-"Go to Heaven to sleep, but go to Hell for the women."
