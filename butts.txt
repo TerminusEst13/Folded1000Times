@@ -60,7 +60,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 107: For some people, holding alt-fire isn't charging the Frosthammer.
 111: Some kind of indication for when in god mode.
 114: Banners for the fortune cookie lines instead of text?
-116: Remove colors on Iron Maiden shot impacts.
 120: Optional key to lay the Sentinel in place.
 123: <WaTaKiD> https://www.dropbox.com/s/lec025lq2447rkd/Screenshot_Doom_20141217_192218.png?dl=0  before reconnecting
 <WaTaKiD> https://www.dropbox.com/s/a1p6ybfwukqgv41/Screenshot_Doom_20141217_192510.png?dl=0 after reconnecting
@@ -281,6 +280,7 @@ DONE:
 112: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
 115: Tighten up spread on Shotgun slightly, reduce damage on GL.
+116: Remove colors on Iron Maiden shot impacts.
 117: "You need at least one full soul bar." message on Iron Maiden error.
 118: Remove extraneous ISHT sprites from github, they're conflicting with the soul trail sprites.
 119: Mumblemumble: I do want to mention something about the sheath, it seems that you cant change guns while using it until the sword is back in the sheath. This makes item juggling from guns to the sheath to block a giant pain.

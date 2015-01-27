@@ -7,7 +7,6 @@ PRIORITY:
 8: Tutorial map
 9: sounds for the lamps, nick Smooth Doom's candle.
 11: Skulltag armor/health bonuses aren't being replaced in Invasion?
-12: Remove colors on Iron Maiden shot impacts.
 13: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
 14: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
 17: Armor bar of the Iron Maiden should be integrated with the HUD.
@@ -53,6 +52,7 @@ WOULD BE NICE:
 6: Menudef edit to put "READ THIS" on main menu.
 7: cvar that doesn't remove meter when damaged
 10: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
+12: Remove colors on Iron Maiden shot impacts.
 15: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
 16: Include the rest of the new Hae-Lin intro sounds.

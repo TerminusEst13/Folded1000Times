@@ -920,7 +920,7 @@ ACTOR IronFistExplosion
 
 actor IronFistGuard : KharonGuard {}
 
-actor HolyShot
+actor HolyShot : FastProjectile
 {
     Height 8
     Radius 6
@@ -937,7 +937,6 @@ actor HolyShot
     +BLOODSPLATTER
     +THRUGHOST
     +THRUSPECIES
-    +EXTREMEDEATH
     States
     {
     Spawn:
@@ -961,11 +960,12 @@ actor HolyRocket : HolyShot
 {
     Height 12
     Radius 8
-    Speed 40
+    Speed 100
     Scale 0.8
-    Damage (60)
+    Damage (65)
     DeathSound "holyrocket/hit"
     Decal Scorch
+    +EXTREMEDEATH
     //-NOEXTREMEDEATH
     States
     {
@@ -996,6 +996,7 @@ ACTOR HolyShotExplode
     +NOCLIP
     -SOLID
     +DONTBLAST
+    +EXTREMEDEATH
     +FORCERADIUSDMG
     DamageType "IronMaidenShot"
     Obituary "%k consumed %o in light."
@@ -1003,7 +1004,7 @@ ACTOR HolyShotExplode
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(196,256,0)
+        TNT1 A 1 A_Explode(256,256,0)
         Stop
     }
 }
