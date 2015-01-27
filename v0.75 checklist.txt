@@ -38,7 +38,6 @@ WOULD BE NICE:
 6: Replacement sounds for other world objects, such as lifts, switches, and doors.
 7: Casing ejection/smoke effects on the guns.
 8: Redone font on main menu options, restart New Game with "Rock n' Roll".
-9: Better skull for main menu select icon, current looks fucked beyond fuck.
 10: Cvar for zombies to drop their respective ammo type.
 
 
@@ -54,3 +53,6 @@ WOULD BE NICE:
 
 2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.
 6: Menudef edit to put "READ THIS" on main menu.
+
+
+9: Better skull for main menu select icon, current looks fucked beyond fuck.
