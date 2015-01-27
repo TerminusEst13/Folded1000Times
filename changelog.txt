@@ -48,6 +48,7 @@ FROM 0.74 TO 0.75:
 - In ZDoom and GZDoom, Read This! now appears no matter whether the game is Doom 1 or Doom 2. It also appears at the top, to emphasize that, yeah, you should read this. Maybe now people will stop asking how to do special attacks!
 - The skull icon for the main menu looks 666% edgier and more \m/ hardkore \m/.
 - The combo meter no longer stays the same shade of blue as it increases, but instead inches over to purple, pink, and more for the sake of visual distinction.
+- A new cvar has been added, ds_nodamagepenalty, that does not penalize one's combo meter when damaged. This setting is for superbad casuals.
 
 
 FROM 0.73 TO 0.74:

@@ -91,6 +91,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_backpackstart"))
             { ConsoleCommand("set ds_backpackstart 0");
               ConsoleCommand("archivecvar ds_backpackstart 0"); }
+			  
+        if (!GetCvar("ds_nodamagepenalty"))
+            { ConsoleCommand("set ds_nodamagepenalty 0");
+              ConsoleCommand("archivecvar ds_nodamagepenalty 0"); }
     }
 }
 
@@ -139,12 +143,15 @@ int i;
         
 		if( GetCVar( "ds_doomhealth" ) == 0 )
 		{
+            if (GetCvar("ds_nodamagepenalty") == 0)
+            {
 			if (CheckInventory("ContraArmorToken") >= 1)
 				{ TakeInventory("ContraArmorToken",1); TakeInventory("HyperComboCounter",25); }
 			else if (CheckInventory("OverLifeToken") >= 1)
 				{ TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",50); }
 			else if (CheckInventory("ContraLifeToken") >= 1)
 				{ TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",50); }
+            }
 
         GiveInventory("Wounded",1);
         
