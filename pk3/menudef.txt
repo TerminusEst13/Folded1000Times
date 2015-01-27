@@ -1,62 +1,73 @@
+ListMenu "MainMenu"
+{
+    StaticPatch 94, 2, "M_DOOM"
+    Position 97, 72
+    PatchItem "M_RDTHIS","r", "ReadThisMenu"
+    PatchItem "M_NGAME", "n", "PlayerclassMenu"
+    PatchItem "M_OPTION","o", "OptionsMenu"
+    PatchItem "M_LOADG", "l", "LoadGameMenu"
+    PatchItem "M_SAVEG", "s", "SaveGameMenu"
+    PatchItem "M_QUITG", "q", "QuitMenu"
+}
 
-    OptionMenu "OptionsMenu"
-    {
-            Title "OPTIONS"
-            Submenu "Customize Controls",                   "CustomizeControls"
-            Submenu "Mouse options",                        "MouseOptions"
-            Submenu "Joystick options",                     "JoystickOptions"
-            StaticText " "
-            Submenu "DemonSteele Options",                  "Changes-TurnThePage"
-            StaticText " "
-            Submenu "Player Setup",                         "PlayerMenu"
-            Submenu "Gameplay Options",                     "GameplayOptions"
-            Submenu "Compatibility Options",                "CompatibilityOptions"
-            Submenu "Automap Options",                      "AutomapOptions"
-            Submenu "HUD Options",                          "HUDOptions"
-            Submenu "Miscellaneous Options",                "MiscOptions"
-            Submenu "Sound Options",                        "SoundOptions"
-            Submenu "Display Options",                      "VideoOptions"
-            Submenu "Set video mode",                       "VideoModeMenu"
-            StaticText " "
-            SafeCommand "Reset to defaults",                "reset2defaults"
-            SafeCommand "Reset to last saved",              "reset2saved"
-            Command "Go to console",                        "menuconsole"
-    }
+OptionMenu "OptionsMenu"
+{
+    Title "OPTIONS"
+    Submenu "Customize Controls",                   "CustomizeControls"
+    Submenu "Mouse options",                        "MouseOptions"
+    Submenu "Joystick options",                     "JoystickOptions"
+    StaticText " "
+    Submenu "DemonSteele Options",                  "Changes-TurnThePage"
+    StaticText " "
+    Submenu "Player Setup",                         "PlayerMenu"
+    Submenu "Gameplay Options",                     "GameplayOptions"
+    Submenu "Compatibility Options",                "CompatibilityOptions"
+    Submenu "Automap Options",                      "AutomapOptions"
+    Submenu "HUD Options",                          "HUDOptions"
+    Submenu "Miscellaneous Options",                "MiscOptions"
+    Submenu "Sound Options",                        "SoundOptions"
+    Submenu "Display Options",                      "VideoOptions"
+    Submenu "Set video mode",                       "VideoModeMenu"
+    StaticText " "
+    SafeCommand "Reset to defaults",                "reset2defaults"
+    SafeCommand "Reset to last saved",              "reset2saved"
+    Command "Go to console",                        "menuconsole"
+}
      
-    OptionMenu "Changes-TurnThePage"
-    {
+OptionMenu "Changes-TurnThePage"
+{
     Title "DEMONSTEELE - OPTIONS"
-            StaticText      ""
-            StaticText      "General Options", 1
-            Option "No gun recoil",                  "ds_cl_norecoil", "OnOff"
-            Option "Switch when out of ammo",        "ds_cl_autoswitch", "OnOff"
-            Option "No Iron Maiden music",           "ds_cl_nomusic", "OnOff"
-            Option "No low health warning",          "ds_cl_nobeeping", "OnOff"
-            Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
-            StaticText      ""
-            StaticText      "Gameplay Options", 1
-            Option "Start with Omen",                "ds_omenstart", "OnOff"
-            Option "Start with Backpack",            "ds_backpackstart", "OnOff"
-            Option "Infinite soul meter",            "ds_infinitesouls", "OnOff"
-            Option "Testament only spawns on SSG",   "ds_noshotgun", "OnOff"
-            Option "Disable special moves",          "ds_nospecials", "OnOff"
-            Option "Gun deaths give souls",          "ds_gunsouls", "OnOff"
-            Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
-            Option "Spawn Arrogant weapons",         "ds_arrogantweapons", "ArrogantOptions"
-            StaticText      ""
-            Option "OH FUCK, SKELETONS!",            "ds_2brutal", "OnOff"
-    }
+    StaticText      ""
+    StaticText      "General Options", 1
+    Option "No gun recoil",                  "ds_cl_norecoil", "OnOff"
+    Option "Switch when out of ammo",        "ds_cl_autoswitch", "OnOff"
+    Option "No Iron Maiden music",           "ds_cl_nomusic", "OnOff"
+    Option "No low health warning",          "ds_cl_nobeeping", "OnOff"
+    Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
+    StaticText      ""
+    StaticText      "Gameplay Options", 1
+    Option "Start with Omen",                "ds_omenstart", "OnOff"
+    Option "Start with Backpack",            "ds_backpackstart", "OnOff"
+    Option "Infinite soul meter",            "ds_infinitesouls", "OnOff"
+    Option "Testament only spawns on SSG",   "ds_noshotgun", "OnOff"
+    Option "Disable special moves",          "ds_nospecials", "OnOff"
+    Option "Gun deaths give souls",          "ds_gunsouls", "OnOff"
+    Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
+    Option "Spawn Arrogant weapons",         "ds_arrogantweapons", "ArrogantOptions"
+    StaticText      ""
+    Option "OH FUCK, SKELETONS!",            "ds_2brutal", "OnOff"
+}
      
-    OptionValue ToasterOptions
-    {
-            0, "All effects"
-            1, "Less effects"
-            2, "Minimal effects"
-    }
+OptionValue ToasterOptions
+{
+    0, "All effects"
+    1, "Less effects"
+    2, "Minimal effects"
+}
      
-    OptionValue ArrogantOptions
-    {
-            0, "No"
-            1, "Replaces Skulltag Weapons"
-            2, "Randomized Appearances"
-    }
+OptionValue ArrogantOptions
+{
+    0, "No"
+    1, "Replaces Skulltag Weapons"
+    2, "Randomized Appearances"
+}

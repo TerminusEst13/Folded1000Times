@@ -100,7 +100,6 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 
 Tutorial map
 cvar that doesn't remove meter when damaged
-Menudef edit to put "READ THIS" on main menu.
 Better throwing sound for the Legion special.
 Implement Shivers' new idle animation/Baron Death.
 
@@ -306,6 +305,11 @@ SgtShivers: haha yeah
 
 
 <PresidentPeople> Also I suggested slash decals and coopinfo displaying combo meter
+
+
+
+
+Menudef edit to put "READ THIS" on main menu.
 
 
 

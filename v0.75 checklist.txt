@@ -5,7 +5,6 @@ PRIORITY:
 3: Implement Shivers' new idle animation/Baron Death.
 4: Dramatic sheathing for all Kharon-by-itself specials--if enemies are killed with this, they wait until the sheathing or until a timer ends before dying.
 5: Better throwing sound for the Legion special.
-6: Menudef edit to put "READ THIS" on main menu.
 7: cvar that doesn't remove meter when damaged
 8: Tutorial map
 9: sounds for the lamps, nick Smooth Doom's candle.
@@ -54,3 +53,4 @@ WOULD BE NICE:
 
 
 2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.
+6: Menudef edit to put "READ THIS" on main menu.
