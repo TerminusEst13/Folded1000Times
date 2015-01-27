@@ -11,7 +11,6 @@ PRIORITY:
 12: Remove colors on Iron Maiden shot impacts.
 13: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
 14: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
-16: Include the rest of the new Hae-Lin intro sounds.
 17: Armor bar of the Iron Maiden should be integrated with the HUD.
 18: Finish the specials for:
      ^ Acacia A-22
@@ -56,6 +55,7 @@ WOULD BE NICE:
 7: cvar that doesn't remove meter when damaged
 15: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
+16: Include the rest of the new Hae-Lin intro sounds.
 
 
 9: Better skull for main menu select icon, current looks fucked beyond fuck.

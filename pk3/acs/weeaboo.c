@@ -556,8 +556,8 @@ script WEEB_ENTER ENTER
     }
     else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
     {
-        IntroChance = random(0,3);
-        if (IntroChance == 3) { LocalAmbientSound("haelin/intro",127); }
+        IntroChance = random(0,2);
+        if (IntroChance == 2) { LocalAmbientSound("haelin/intro",127); }
     }
 
     if (CheckInventory("SentinelUp") == 1)
