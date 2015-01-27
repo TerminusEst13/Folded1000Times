@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 118
+#define QUOTECOUNT 125
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -405,5 +405,12 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "I bet the UAC did this.",
 "Does this run with Brutal Doom?",
 "I'm surprised you can read this, what with the firing and shooting and running around at 50 MPH.",
-"Mom can't make you clean your room."
+"Mom can't make you clean your room.",
+"Did you know that you can drink lava? Only once, though.",
+"Go to Heaven for the men, but go to Hell for the women.",
+"Dongs take skill.",
+"Let me tell you why Satan is a myth and the demons are actually aliens.",
+"I identify as angelkin and your powers are oppressing me you shitlord prime. #actuallydivine",
+"Why bother with original content when you can just quote a meme and have an epic win?",
+"John Who? John Woo."
 };
