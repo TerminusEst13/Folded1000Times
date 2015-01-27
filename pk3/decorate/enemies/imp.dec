@@ -169,9 +169,11 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         IXD3 A 2 A_SpawnItem("TROXKubiuted",0,40,0)
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_SpawnDebris("BloodShower2",1)
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         IXD3 AAA 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
         TNT1 A 0 A_Jump(32,1)
         goto Decapitation1+4
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
         TNT1 A 0 A_Jump(128,"Decapitation2")
         IXD3 BBBBCCCDDDEEEEE 2 A_SpawnDebris("BloodShower2",0)
         IXD3 E -1
@@ -185,9 +187,11 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         IXD3 J 2 A_SpawnItem("TROXKubiuted",0,40,0)
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_SpawnDebris("BloodShower2",1)
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         IXD3 JJJ 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),5+random(0,7))
         TNT1 A 0 A_Jump(32,1)
-        goto Decapitation3+4
+        goto Decapitation3+3
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
         TNT1 A 0 A_Jump(128,"Decapitation4")
         IXD3 KKKKLLLMMMNNNNN 2 A_SpawnDebris("BloodShower2",0)
         IXD3 N -1
@@ -230,10 +234,12 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         TNT1 A 0 A_SpawnItemEx("BisectedImpTorso",0,0,45,random(-25,0)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
         IXD4 ABC 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
         TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         IXD4 DDEEFF 1 A_SpawnDebris("BloodShower2",1)
         TNT1 A 0 A_Jump(32,"TorsoGoneB")
         goto TorsoGone+7
     TorsoGoneB:
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
         IXD4 GHI 2 A_SpawnItem("BloodShower",0,16)
         IXD4 I 10
         IXD4 JK 4
@@ -245,10 +251,12 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         TNT1 A 0 A_SpawnItemEx("BisectedImpTorso2",0,0,45,random(0,25)/10.0,random(-15,15)/10.0,random(55,105)/10.0,random(-180,180),32)
         IXD4 MNO 1 A_CustomMissile("BloodShower2",random(16,48),0,180+random(-45,45),2,random(0,75))
         TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         IXD4 PPQQRR 1 A_SpawnDebris("BloodShower2",1)
         TNT1 A 0 A_Jump(32,"TorsoGone2B")
         goto TorsoGone2+7
     TorsoGone2B:
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
         IXD4 STU 2 A_SpawnItem("BloodShower",0,16)
         IXD4 U 10
         IXD4 VW 4

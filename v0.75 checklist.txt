@@ -2,7 +2,6 @@ CHECKLIST FOR V0.75
 
 PRIORITY:
 1: Unique slashes when done mid-dash
-2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.
 3: Implement Shivers' new idle animation/Baron Death.
 4: Dramatic sheathing for all Kharon-by-itself specials--if enemies are killed with this, they wait until the sheathing or until a timer ends before dying.
 5: Better throwing sound for the Legion special.
@@ -42,3 +41,16 @@ WOULD BE NICE:
 8: Redone font on main menu options, restart New Game with "Rock n' Roll".
 9: Better skull for main menu select icon, current looks fucked beyond fuck.
 10: Cvar for zombies to drop their respective ammo type.
+
+
+
+
+
+
+
+
+
+
+
+
+2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.

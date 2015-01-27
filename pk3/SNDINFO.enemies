@@ -21,6 +21,11 @@ imp/shootfire             IMPSHOOT
 
 
 
+blood/spew                SPEWLOOP // Taken from SoundFX Now!
+blood/spewstop            SPEWSTOP // Taken from SoundFX Now!
+
+
+
 $random lost/idle { lostidle1 lostidle2 lostidle3 } // Taken from Painkiller
 lostidle1                 LOSTIDL1
 lostidle2                 LOSTIDL2

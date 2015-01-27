@@ -455,19 +455,28 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         BOSS I 1
         TNT1 A 0 A_Fall
         TNT1 A 0 A_Jump(96,"DThunter2")
-        TNT1 A 0 A_SpawnItem("BOSSKubiuted",0,32,0)    
-        XDI1 AAAAAAAAAA 1 A_ThrowGrenade ("BloodSplashGus1c",-2,5+random(0,7),8)    
-        goto death.kubiuti+11
+        TNT1 A 0 A_SpawnItem("BOSSKubiuted",0,32,0)
+        TNT1 A 0
+    DeathHunter1B:
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
+        XDI1 AAAAAAAAAA 1 A_CustomMissile("BloodSplashGus1c",54,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade ("BloodSplashGus1c",-2,5+random(0,7),8) 
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
+        XDI1 AAAAAAAAAA 1 A_CustomMissile("BloodSplashGus1c",54,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade ("BloodSplashGus1c",-2,5+random(0,7),8) 
+        TNT1 A 0 A_Jump(246,"DeathHunter1B")
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)   
+        goto death.kubiuti+16
     DThunter2:
         TNT1 A 0 A_SpawnItem("BOSSKubiuted2",0,32,0)    
         TNT1 AAAAAAAAAA 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
         BXD1 AAAAAAAAAA 1 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
     DTherp:
-        BXD1 A 1 A_ThrowGrenade("BloodShowerC2",-8,5+random(0,7),8)    
-        TNT1 A 0 A_Jump(16,1)
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
+        BXD1 AAAAAAAAAA 1 A_CustomMissile("BloodShowerC2",36,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade("BloodShowerC2",-4,5+random(0,360),8)    
+        TNT1 A 0 A_Jump(8,1)
         loop
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
         BXD1 BBBBBCCCCC 2 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)    
-        BXD1 DDDDDDDDDD 2 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)    
+        BXD1 DDDDD 4 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)    
         BXD1 D -1 A_BossDeath
         stop
     death.kubiuti:
@@ -479,7 +488,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        TNT1 A 0 A_Jump(16,"Death.Hunter")
+        TNT1 A 0 A_Jump(256,"Death.Hunter")
         TNT1 A 0 A_Jump(128,"Death.Bloody")
         TNT1 A 0 A_Fall
         TNT1 A 0 A_SpawnItem("BOSSKubiuted",0,56,0)

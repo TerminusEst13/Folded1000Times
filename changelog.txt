@@ -44,6 +44,7 @@ FROM 0.74 TO 0.75:
 - The Omen's inventory-based flashing no longer appears in the invbar.
 - The Kharon's uppercut, when used on projectiles, now reflects the shots back to the enemy. It's finnicky and based on Doom "physics", but it's neat nonetheless.
 - Fortune cookie quotes no longer overlap each other.
+- Looping bloodspray enemy deaths now have a PPSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHH sound effect, using old stock anime sound effects.
 
 
 FROM 0.73 TO 0.74:
