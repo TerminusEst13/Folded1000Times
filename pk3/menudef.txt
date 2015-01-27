@@ -54,7 +54,7 @@ OptionMenu "Changes-TurnThePage"
     Option "Gun deaths give souls",          "ds_gunsouls", "OnOff"
     Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
     Option "Spawn Arrogant weapons",         "ds_arrogantweapons", "ArrogantOptions"
-    Option "No Combo penalty when damaged"   "ds_nodamagepenalty", "OnOff"
+    Option "No Combo penalty when damaged",  "ds_nodamagepenalty", "OnOff"
     StaticText      ""
     Option "OH FUCK, SKELETONS!",            "ds_2brutal", "OnOff"
 }
