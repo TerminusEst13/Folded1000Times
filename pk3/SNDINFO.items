@@ -325,6 +325,7 @@ $random boomerang/throw   { boomthr1 boomthr2 }
 boomthr1                  BOOMTOS1
 boomthr2                  BOOMTOS2
 boomerang/throwbunch      BOOMTOS3
+boomerang/throwspecial    BOOMTOS4
 boomerang/stack           BOOMSTCK
 boomerang/get             BOOMGET1
 $volume boomerang/get 0.3

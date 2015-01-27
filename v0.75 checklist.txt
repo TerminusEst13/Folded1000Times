@@ -4,8 +4,6 @@ PRIORITY:
 1: Unique slashes when done mid-dash
 3: Implement Shivers' new idle animation/Baron Death.
 4: Dramatic sheathing for all Kharon-by-itself specials--if enemies are killed with this, they wait until the sheathing or until a timer ends before dying.
-5: Better throwing sound for the Legion special.
-7: cvar that doesn't remove meter when damaged
 8: Tutorial map
 9: sounds for the lamps, nick Smooth Doom's candle.
 10: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
@@ -21,10 +19,13 @@ PRIORITY:
      ^ Kharon
      ^ Frosthammer
      ^ Omen
+     ^ BALANCE
 19: Polish up the uppercut sequence so that it can be used at resting points (gun at rest, holding fire, etc)
 20: Adapt Testament shotgun system for the Omen and Chaingun
 21: Use HorrorMovieGuy's bloodless sprites to do bloodless launches for the pinky and Nobles.
 22: Sentinel should fire in long bursts, rather than constantly.
+23: Secret skeleton difficulty.
+24: Test, test, test online.
 
 
 WOULD BE NICE:
@@ -50,7 +51,9 @@ WOULD BE NICE:
 
 
 2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.
+5: Better throwing sound for the Legion special.
 6: Menudef edit to put "READ THIS" on main menu.
+7: cvar that doesn't remove meter when damaged
 15: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
 
