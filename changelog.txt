@@ -1,7 +1,7 @@
 FROM 0.74 TO 0.75:
 =======================================
 - Players are now able to rocketjump with the shotgun because reasons.
-- The accuracy of the Testament has been tightened up slightly.
+- The accuracy of the Testament has been tightened up dramatically, from 12 to 6. No weapon should be competing with the Kharon for close-range.
 - Some players had sensitive ears that were hurt by the low health beeping. It's been replaced with a more standard heartbeat.
 - Explosions assisting with jumping no longer cause blood splatters.
 - The charge-up rate for the Legion has gone from 35 tics to 25.
