@@ -52,6 +52,7 @@ actor Abaddon : Wizard 5015
     DeathSound "wizard/death"
     ActiveSound "wizard/idle"
     //BloodColor blue
+    DropItem ""
     PainChance 128
     Monster
     +FLOAT
@@ -179,6 +180,7 @@ actor Cacolantern : Abaddon 5006
     SpawnID 159
     Health 800
     Translation "176:183=200:207", "184:191=240:247"
+    DropItem ""
     States
     {
     See:

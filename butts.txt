@@ -66,7 +66,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 <WaTaKiD> https://www.dropbox.com/s/a1p6ybfwukqgv41/Screenshot_Doom_20141217_192510.png?dl=0 after reconnecting
 <WaTaKiD> basically go to doom2 map22, kill some torches and reconnect
 124: Skulltag armor/health bonuses aren't being replaced.
-125: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
 126: Nick Chronoteeth's sprites for the techpillar, sounds for the lamps, nick Smooth Doom's candle.
 127: Nick _sink's tracers and spatters from cyberpunk shootdown.
 128: Give the Acacia pistol a slide already.
@@ -287,6 +286,7 @@ DONE:
 119: Mumblemumble: I do want to mention something about the sheath, it seems that you cant change guns while using it until the sword is back in the sheath. This makes item juggling from guns to the sheath to block a giant pain.
 121: Add +DONTBLAST to all monsters, it's too easy to start infighting that never ends on monsters immune to each other's attacks.
 122: Remove barrels' dependency on sv_barrelrespawn, hopefully that fixes the ghost-barrel bugs.
+125: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
 130: DoomedSpacemarine: I think what needs to be added in Demonsteele more than anything is a PSHHHHHHHT blood spray sound
 SgtShivers: haha yeah
 131: Sentinel bullets shouldn't trigger Baron retreats.
