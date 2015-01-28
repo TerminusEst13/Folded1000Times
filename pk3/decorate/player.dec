@@ -46,9 +46,10 @@ ACTOR MeleePlayer : PlayerPawn
     Player.StartItem "KamenRiderModeActivate", 1
     Player.StartItem "SuperMeterCounter", 20
     Player.StartItem "WeebClip", 20
-    Player.StartItem "UppercutTrigger",1
-    Player.StartItem "UppercutUntrigger",1
+    Player.StartItem "UppercutTrigger", 1
+    Player.StartItem "UppercutUntrigger", 1
     Player.StartItem "ZDoomTauntButton", 1
+    Player.StartItem "IsJungHaeLin", 1
     Player.ColorRange 112, 127
     Player.AttackZOffset 16
     States

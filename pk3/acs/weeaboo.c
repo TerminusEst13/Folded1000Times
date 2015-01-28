@@ -525,6 +525,8 @@ script WEEB_ENTER ENTER
     int NewSentinelHP;
     int GetSomeHealthAlready;
 
+    if (CheckInventory("IsJungHaeLin") == 0) { terminate; }
+
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     {
         if (GameSkill () == 0) { GiveInventory("BabyMarker",1); GiveInventory("ContraLifeToken",10); }
@@ -941,7 +943,7 @@ script WEEB_ENTER ENTER
         {
           if (buttons & BT_SPEED && buttons & BT_CROUCH && CheckInventory("OnTheGround") == 0)
           {
-              ThrustThingZ(0,80,1,0);
+              ThrustThingZ(0,120,1,0);
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
