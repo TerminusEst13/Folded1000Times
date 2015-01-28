@@ -53,6 +53,7 @@ FROM 0.74 TO 0.75:
 - The Skulltag wizards should no longer drop Claw Orbs or Tomes of Power.
 - The Iron Maiden's shot impacts are no longer tinged a blue-purple
 - The Iron Maiden's holy rocket now travels twice as fast and does 32 more damage.
+- Additive translucency is handled in-sprite now for a whole ton of effects, reducing filesize and reducing lag, as well as making them look better in Software.
 
 
 FROM 0.73 TO 0.74:

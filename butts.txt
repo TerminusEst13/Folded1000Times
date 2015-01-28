@@ -53,7 +53,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 92: Burning barrels should be replaced as well.
 95: Change Soul Prison into something that needs to be destroyed--destroying it launches out all the souls into the person.
 99: Cvar for turning off jumping for Priests/Emperor.
-100: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
 101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
  ^- One over-armor token if armor is full, replenishes one armor otherwise.
 104: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
@@ -267,6 +266,7 @@ DONE:
 94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 97: Now that the Infrared is rendered completely useless, something should replace it.
 98: Commander Keen replacement.
+100: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
 102: Unique talking/connection sounds.
 103: Cooldown timer on Iron Maiden error to keep people from spamming it.
  ^- Player slowdown as well.
