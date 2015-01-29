@@ -55,6 +55,8 @@ FROM 0.74 TO 0.75:
 - The Iron Maiden's holy rocket now travels twice as fast and does 32 more damage.
 - Additive translucency is handled in-sprite now for a whole ton of effects, reducing filesize and reducing lag, as well as making them look better in Software.
 - DemonSteele scripts now terminate if the player is not actually playing as Hae-Lin.
+- On average of every twelve shots, the Sentinel will need to cycle its guns for 22 tics, allowing enemies a chance to retaliate.
+- The Sentinel's shot accuracy has been tightened up.
 
 
 FROM 0.73 TO 0.74:

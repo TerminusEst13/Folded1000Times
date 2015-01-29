@@ -98,6 +98,7 @@ actor LaunchTimerCounter : Counter { Inventory.MaxAmount 175 }
 
 actor SentinelIdleCounter : Counter { Inventory.MaxAmount 70 }
 actor SentinelLifeCounter : Counter { Inventory.MaxAmount 200 }
+actor SentinelShotCounter : Counter { Inventory.MaxAmount 24 }
 actor BlindGuardianLifeCounter : Counter { Inventory.MaxAmount 1000 }
 actor LegionCounter : Counter { Inventory.MaxAmount 35 }
 actor LegionStacked : Counter { Inventory.MaxAmount 9 }

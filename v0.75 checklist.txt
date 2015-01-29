@@ -19,7 +19,6 @@ PRIORITY:
 19: Polish up the uppercut sequence so that it can be used at resting points (gun at rest, holding fire, etc)
 20: Adapt Testament shotgun system for the Omen and Chaingun
 21: Use HorrorMovieGuy's bloodless sprites to do bloodless launches for the pinky and Nobles.
-22: Sentinel should fire in long bursts, rather than constantly.
 23: Secret skeleton difficulty.
 24: Test, test, test online.
 
@@ -56,6 +55,7 @@ WOULD BE NICE:
 15: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
 16: Include the rest of the new Hae-Lin intro sounds.
+22: Sentinel should fire in long bursts, rather than constantly.
 
 
 9: Better skull for main menu select icon, current looks fucked beyond fuck.
