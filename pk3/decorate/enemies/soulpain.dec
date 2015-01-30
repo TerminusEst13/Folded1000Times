@@ -27,11 +27,14 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     {
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
+    Pain.KubiLungeAttackSheathe:
+    Pain.KubiSpinAttackSheathe:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Pain
     Pain.KubiRangeAttack:
+    Pain.KubiRangeAttackSheathe:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Pain
@@ -159,11 +162,14 @@ ACTOR BlackSoul
 
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
+    Pain.KubiLungeAttackSheathe:
+    Pain.KubiSpinAttackSheathe:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain
     Pain.KubiRangeAttack:
+    Pain.KubiRangeAttackSheathe:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Pain
@@ -278,6 +284,8 @@ ACTOR Blackened replaces PainElemental
         goto See
     Pain.KubiSpinAttack:
     Pain.KubiLungeAttack:
+    Pain.KubiSpinAttackSheathe:
+    Pain.KubiLungeAttackSheathe:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
@@ -296,6 +304,7 @@ ACTOR Blackened replaces PainElemental
         TNT1 AAAAA 1 A_SpawnItemEx("DarkAfterimageE",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),32)
         Goto See
     Pain.KubiRangeAttack:
+    Pain.KubiRangeAttackSheathe:
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Pain

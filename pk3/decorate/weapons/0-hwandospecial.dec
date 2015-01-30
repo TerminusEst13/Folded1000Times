@@ -41,6 +41,31 @@ actor RazorWind
     }
 }
 
+actor RazorWindSheathe : RazorWind
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItemEx("RazorWindExplosion2Sheathe",0,0,0,0,0,0,0,48)
+        TNT1 A 1 A_SpawnItemEx("RazorWindTrail", 0,               0,              2)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (2 *momx)/-30.0, -(2 *momy)/-30.0, 2+(2 *momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (4 *momx)/-30.0, -(4 *momy)/-30.0, 2+(4 *momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (6 *momx)/-30.0, -(6 *momy)/-30.0, 2+(6 *momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (8 *momx)/-30.0, -(8 *momy)/-30.0, 2+(8 *momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (10*momx)/-30.0, -(10*momy)/-30.0, 2+(10*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (12*momx)/-30.0, -(12*momy)/-30.0, 2+(12*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (14*momx)/-30.0, -(14*momy)/-30.0, 2+(14*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (16*momx)/-30.0, -(16*momy)/-30.0, 2+(16*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (18*momx)/-30.0, -(18*momy)/-30.0, 2+(18*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (20*momx)/-30.0, -(20*momy)/-30.0, 2+(20*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (22*momx)/-30.0, -(22*momy)/-30.0, 2+(22*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (24*momx)/-30.0, -(24*momy)/-30.0, 2+(24*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RazorWindTrail", (26*momx)/-30.0, -(26*momy)/-30.0, 2+(26*momz)/-30.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_CountDown
+        loop
+    }
+}
+
 actor RazorWind2 : RazorWind
 {
     ReactionTime 70
@@ -70,6 +95,8 @@ actor RazorWind2 : RazorWind
     }
 }
 
+actor RazorWind2Sheathe : RazorWind2 { DamageType "KubiRangeAttackSheathe" }
+
 ACTOR KharonExplosion
 {
     Radius 1
@@ -84,10 +111,12 @@ ACTOR KharonExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(512,384,0)
+        TNT1 A 1 A_Explode(512,448,0)
         Stop
     }
 }
+
+actor KharonExplosionSheathe : KharonExplosion { DamageType "KubiSpinAttackSheathe" } 
 
 ACTOR RazorWindExplosion
 {
@@ -101,12 +130,14 @@ ACTOR RazorWindExplosion
     Obituary "%k split %o in half with a dash attack."
     States
     {
-      Spawn:
+    Spawn:
         TNT1 A 0
         TNT1 A 1 A_Explode(128,128,0)
         Stop
     }
 }
+
+actor RazorWindExplosionSheathe : RazorWindExplosion { DamageType "KubiLungeAttackSheathe" }
 
 ACTOR RazorWindExplosion2 : RazorWindExplosion
 {
@@ -114,10 +145,12 @@ ACTOR RazorWindExplosion2 : RazorWindExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(48,128,0)
+        TNT1 A 1 A_Explode(40,128,0)
         Stop
     }
 }
+
+actor RazorWindExplosion2Sheathe : RazorWindExplosion2 { DamageType "KubiLungeAttackSheathe" }
 
 ACTOR TelefragHack
 {

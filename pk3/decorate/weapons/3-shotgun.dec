@@ -486,6 +486,7 @@ actor "Kharon + Testament" : Kharon
         TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
+        TNT1 A 0 A_ClearRefire
         goto Fired2
     SpecialAttackFinish2:
         TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)

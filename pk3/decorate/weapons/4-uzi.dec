@@ -446,6 +446,7 @@ actor "Kharon + Sabbath" : Kharon
         TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
+        TNT1 A 0 A_ClearRefire
         goto Fired2
 
 

@@ -69,6 +69,7 @@ shield/hurt4              SHLDHRT4 // Ditto
 shield/dead               SHLDDEAD // Ditto
 shield/pickup             SHLDPKUP // Taken from Fatal/Fake
 
+sentinel/cock             SENTCOCK // Taken from Kamen Rider Kabuto
 sentinel/fire             SENTFIRE
 sentinel/load             SENTLOAD // Taken from Killing Floor
 sentinel/unload           SENTDOWN // Taken from Killing Floor
@@ -182,6 +183,7 @@ sword/reflect             SRDRFLCT
 sheathe/lower             SHTHEDWN // Taken from the Oblivion Combat Sound Replacement
 sheathe/swing             SHTHSWNG // Taken from the General Series 6000
 sheathe/reflect           SHTHBLCK // Taken from the Oblivion Combat Sound Replacement
+sheathe/specialfinish     SHTHFIN  // Taken from the Oblivion Combat Sound Replacement
 
 idle/spray                IDLSPRAY
 idle/rub                  IDLRUBBR

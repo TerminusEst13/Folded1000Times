@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 125
+#define QUOTECOUNT 128
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -412,5 +412,8 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Let me tell you why Satan is a myth and the demons are actually aliens.",
 "I identify as angelkin and your powers are oppressing me you shitlord prime. #actuallydivine",
 "Why bother with original content when you can just quote a meme and have an epic win?",
-"John Who? John Woo."
+"John Who? John Woo.",
+"Install your GPU drivers.",
+"You think I have it rough? Wait until you see my friend, the New Year's Party Popper.",
+"Did you know that dumb upside down is qnwp?"
 };

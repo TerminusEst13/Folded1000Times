@@ -51,6 +51,7 @@ actor LyreCharging : Boolean {}
 actor LyreHit : Boolean {}
 actor PowerBeamCharged : Boolean {}
 actor SynthAltFire : Boolean {}
+actor KharonSheathed : Boolean {}
 
 actor IAmASillyPersonWhoDoesntLikeRecoil : Boolean {}
 actor IAmAnAwesomePersonWhoLikesCoolMusic : Boolean {}
@@ -95,6 +96,7 @@ actor SwordAttack : Counter { Inventory.MaxAmount 99 }
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
 actor LaunchDamageCounter : Counter { Inventory.MaxAmount 10 }
 actor LaunchTimerCounter : Counter { Inventory.MaxAmount 175 }
+actor KharonDeathCounter : Counter { Inventory.MaxAmount 350 }
 
 actor SentinelIdleCounter : Counter { Inventory.MaxAmount 70 }
 actor SentinelLifeCounter : Counter { Inventory.MaxAmount 200 }

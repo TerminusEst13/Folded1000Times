@@ -49,6 +49,7 @@ ACTOR Kharon : Weapon
     Ready:
         WEPK ABCD 1 A_WeaponReady
         TNT1 A 2
+        TNT1 A 0 A_GiveInventory("KharonSheathed",1)
         TNT1 A 0 A_PlaySoundEx("sword/sheathe","soundslot6",0,0)
         WEPK EFG 1 A_WeaponReady
     Ready2:
@@ -64,6 +65,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_TakeInventory("KharonSheathed",1)
         TNT1 A 0 A_ClearRefire
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
@@ -77,10 +79,12 @@ ACTOR Kharon : Weapon
         KTUP ABCDE 1 A_Raise
         KTUP FG 1
         TNT1 A 12 A_GiveInventory("AlreadyInLevel",1)
+        TNT1 A 0 A_GiveInventory("KharonSheathed",1)
         TNT1 A 0 A_PlaySoundEx("sword/sheathe","soundslot6",0,0)
         WEPK EFGH 1
         Goto Ready2
     Select2:
+        TNT1 A 0 A_GiveInventory("KharonSheathed",1)
         TNT1 A 0 A_PlaySoundEx("sword/sheathe","soundslot6",0,0)
     Select4:
         WEPK EFG 1 A_WeaponReady
@@ -90,6 +94,7 @@ ACTOR Kharon : Weapon
         TNT1 A 1 A_Raise
         loop
     IdleAnimation:
+        TNT1 A 0 A_TakeInventory("KharonSheathed",1)
         WEPK HGFE 2 A_WeaponReady
     IdleDecide:
         TNT1 A 0 A_Jump(16,"Idle0")
@@ -166,6 +171,7 @@ ACTOR Kharon : Weapon
         TNT1 A 2 A_WeaponReady
         goto IdleFinish
     IdleFinish:
+        TNT1 A 0 A_GiveInventory("KharonSheathed",1)
         TNT1 A 0 A_PlaySoundEx("sword/sheathe","soundslot6",0,0)
         WEPK EFGH 2 A_WeaponReady
         TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
@@ -173,6 +179,7 @@ ACTOR Kharon : Weapon
 
     Fire:
         //TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
+        TNT1 A 0 A_TakeInventory("KharonSheathed",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         TNT1 A 0
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
@@ -331,7 +338,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_PlayWeaponSound("sword/spinattack")
         TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
-        TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
+        TNT1 A 0 A_SpawnItemEx("KharonExplosionSheathe",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_CheckFloor("SpinAttackLeftContinue")
         TNT1 A 0 ThrustThingZ(0,24,0,0)
@@ -353,7 +360,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_PlayWeaponSound("sword/spinattack")
         TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
         TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
-        TNT1 A 0 A_SpawnItemEx("KharonExplosion",0,0,0,0,0,0,0,48)
+        TNT1 A 0 A_SpawnItemEx("KharonExplosionSheathe",0,0,0,0,0,0,0,48)
         TNT1 A 0 A_SpawnItemEx("ShockwaveSpawner",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_CheckFloor("SpinAttackRightContinue")
         TNT1 A 0 ThrustThingZ(0,28,0,0)
@@ -380,16 +387,16 @@ ACTOR Kharon : Weapon
         TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("sword/beam3")
         TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
-        TNT1 AA 0 A_SpawnItemEx("RazorWindExplosion",0,0,0,0,0,0,0,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,125,0,0,0,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,124,0,0,1,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,124,0,0,-1,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,123,0,0,2,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,123,0,0,-2,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,122,0,0,3,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,122,0,0,-3,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,121,0,0,4,48)
-        TNT1 A 0 A_SpawnItemEx("RazorWind",0,0,32,121,0,0,-4,48)
+        TNT1 AA 0 A_SpawnItemEx("RazorWindExplosionSheathe",0,0,0,0,0,0,0,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,125,0,0,0,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,124,0,0,1,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,124,0,0,-1,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,123,0,0,2,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,123,0,0,-2,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,122,0,0,3,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,122,0,0,-3,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,121,0,0,4,48)
+        TNT1 A 0 A_SpawnItemEx("RazorWindSheathe",0,0,32,121,0,0,-4,48)
         TNT1 A 0 ThrustThing(angle*256/360,120,1,0)
     LungeAttackContinue:
         KSPC ABCDEF 1
@@ -415,17 +422,17 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_PlayWeaponSound("sword/reflect")
         TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",0,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-3,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",3,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-6,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",6,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-9,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",9,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-12,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",12,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",-15,0,0,0,0,0)
-        TNT1 A 0 A_FireCustomMissile("RazorWind2",15,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",0,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",-3,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",3,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",-6,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",6,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",-9,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",9,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",-12,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",12,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",-15,0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("RazorWind2Sheathe",15,0,0,0,0,0)
         KSPC XYZ 1
         TNT1 AA 1
         goto SpecialAttackFinish
@@ -440,7 +447,20 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
         TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
-        goto Fired2
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 30 A_WeaponReady
+        TNT1 A 0 A_PlayWeaponSound("sheathe/specialfinish")
+        SWRC ABCDEF 1 A_WeaponReady(WRF_NOBOB)
+        TNT1 A 0 A_GiveInventory("KharonSheathed",1)
+        SWRC G 20 A_WeaponReady(WRF_NOBOB)
+        SWRC HIJKLMN 1 A_WeaponReady(WRF_NOBOB)
+        TNT1 A 0 A_TakeInventory("SheatheSwung",1)
+        TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        Goto Select4
 
     HenshinCheck:
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",100,"Henshin")
@@ -459,6 +479,7 @@ ACTOR Kharon : Weapon
         WEPK GFE 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)
+        TNT1 A 0 A_TakeInventory("KharonSheathed",1)
         TNT1 A 4 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SheatheSwung",1)
         TNT1 A 0 A_PlayWeaponSound("henshin/foley")
@@ -554,7 +575,8 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFired2")
     AltFired:
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 35 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 25 A_WeaponReady//(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("SheatheSwung",1)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
@@ -573,6 +595,7 @@ ACTOR Kharon : Weapon
         TNT1 A 1
         Goto Select2
     AltAttack1:
+        TNT1 A 0 A_TakeInventory("KharonSheathed",1)
         TNT1 A 0 A_PlayWeaponSound("sheathe/swing")
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-35,0,-35)
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",-20,0,-20)
@@ -640,25 +663,6 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_FireCustomMissile("KharonGuardSpecial",35,0,35)
         SHTH N 1
         goto AltFired2
-    /*KharonSpecialSlash:
-        TNT1 A 0 A_PlaySoundEx("sword/swingheavy","soundslot7",0,0)
-        TNT1 A 1
-        KTCH A 1
-        KTCH B 1
-        TNT1 A 0 A_TakeInventory("KharonChargedCounter",5)
-        TNT1 A 0 A_FireCustomMissile("KharonRipAttack",-30,0,-30)
-        TNT1 A 0 A_FireCustomMissile("KharonRipAttack",-20,0,-20)
-        TNT1 A 0 A_FireCustomMissile("KharonRipAttack",-10,0,-10)
-        TNT1 A 0 A_FireCustomMissile("KharonRipAttack",0,0)
-        TNT1 A 0 A_FireCustomMissile("KharonRipAttack",10,0,10)
-        TNT1 A 0 A_FireCustomMissile("KharonRipAttack",20,0,20)
-        TNT1 A 0 A_FireCustomMissile("KharonRipAttack",30,0,30)
-        KTCH C 1
-        KTCH D 1
-        KTCH E 1
-        KTCH F 1
-        TNT1 A 1
-        goto Fired*/
     }
 }
 
