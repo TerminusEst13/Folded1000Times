@@ -98,13 +98,13 @@ actor WeeabooRevenant : Revenant replaces Revenant
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
+        goto Pain
     Pain.KubiRangeAttack:
     Pain.KubiRangeAttackSheathe:
         TNT1 A 0 A_JumpIfInventory("EnemyHasBeenLaunched",1,"LaunchedPainKubiuti")
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto Super::Pain
+        goto Pain
     Pain.FrosthammerCharged:
     Pain.FrosthammerExplode:
     Pain.Frosthammer:
@@ -184,6 +184,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
         TNT1 A 0 A_Fall
         TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(32,48),0,random(0,360),2,random(0,360))
         TNT1 A 0 A_Jump(128,"kubiuti2","death.Bloody")
+        SKEL L 1
         TNT1 A 0 A_SpawnItem("SKEXKubiuted",0,40,0)
         XDR1 EEEEEEEEEE 2 A_ThrowGrenade ("BloodSplashGus1",-2,5+random(0,7),40)
         TNT1 A 0 A_NoBlocking
