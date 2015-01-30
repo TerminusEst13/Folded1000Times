@@ -3,7 +3,6 @@ CHECKLIST FOR V0.75
 PRIORITY:
 1: Unique slashes when done mid-dash
 3: Implement Shivers' new idle animation/Baron Death.
-4: Dramatic sheathing for all Kharon-by-itself specials--if enemies are killed with this, they wait until the sheathing or until a timer ends before dying.
 8: Tutorial map
 9: sounds for the lamps, nick Smooth Doom's candle.
 11: Skulltag armor/health bonuses aren't being replaced in Invasion?
@@ -46,6 +45,7 @@ WOULD BE NICE:
 
 
 2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.
+4: Dramatic sheathing for all Kharon-by-itself specials--if enemies are killed with this, they wait until the sheathing or until a timer ends before dying.
 5: Better throwing sound for the Legion special.
 6: Menudef edit to put "READ THIS" on main menu.
 7: cvar that doesn't remove meter when damaged

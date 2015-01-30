@@ -3,7 +3,6 @@
 
 ACTOR SwanFoxDakimakura replaces CommanderKeen
 {
-    Game Doom
     Health 200
     Radius 16
     Height 72

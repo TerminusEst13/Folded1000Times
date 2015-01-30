@@ -55,6 +55,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        POSS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
         TNT1 A 0 A_Gravity
@@ -79,6 +80,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Death.SabbathDamage:
     Death.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        POSS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
         TNT1 A 0 A_Gravity
@@ -710,6 +712,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Death.SabbathDamage:
     Death.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        SPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
         TNT1 A 0 A_Gravity
@@ -765,6 +768,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        SPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
         TNT1 A 0 A_Gravity
@@ -1236,6 +1240,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Death.SabbathDamage:
     Death.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        CPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
         TNT1 A 0 A_Gravity
@@ -1290,6 +1295,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        CPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
         goto XDeath
     Death.IronFistDamage:
@@ -1573,6 +1579,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.SabbathDamage:
     Death.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        YKZA H 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
         TNT1 A 0 A_FaceTarget
@@ -1600,6 +1607,7 @@ ACTOR Yakuza replaces WolfensteinSS
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
+        YKZA H 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
         YKZA I 3
