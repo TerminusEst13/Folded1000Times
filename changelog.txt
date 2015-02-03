@@ -34,6 +34,7 @@ FROM 0.74 TO 0.75:
 - The Iron Maiden's holy rockets now force extreme death, as does the punchsplosion.
 - A new cvar has been included, ds_2brutal, for those who want to be pursued by skeletons.
 - As the uppercut was not a vital move to include, but with an extremely clunky execution, it has been moved over to Optional Keys, for people to trigger at will.
+- The uppercut can now be triggered at more areas--instead of just being held, now it can be done while at rest, after firing, or while holding.
 - Destructable objects can now be triggered by the uppercut.
 - Lost Souls are now slightly smaller graphically because reasons. Their hitbox remains the same.
 - ds_omenstart and ds_backpackstart have been implemented for maps that don't have chainsaw or backpack spawns, or those who simply want a boost in starting ability.

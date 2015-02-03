@@ -58,163 +58,163 @@ actor "Kharon + Frosthammer" : Kharon
     States
     {
     Ready:
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF AA 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF BB 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF CC 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF DD 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF EE 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF FF 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF GG 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF HH 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF II 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF JJ 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF KK 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF LL 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF MM 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF NN 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF OO 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF PP 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF AA 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF BB 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF CC 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF DD 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF EE 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF FF 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF AA 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF BB 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF CC 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF DD 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF EE 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF FF 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF AA 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF BB 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF CC 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF DD 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF EE 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF FF 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF AA 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF BB 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF CC 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF DD 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF EE 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         W2PF FF 1 A_WeaponReady
@@ -419,6 +419,7 @@ actor "Kharon + Frosthammer" : Kharon
 
     Hold:
         TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
@@ -441,9 +442,21 @@ actor "Kharon + Frosthammer" : Kharon
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
         Goto Select2
+    PrepareToHoldAttackGun:
+        WEPF IH 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
+    PrepareToHoldAttack:
+        TNT1 A 0 A_TakeInventory("SheatheSwung",1)
+        TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 1
+        goto HoldAttack
+    PrepareToHoldAttackNormal:
+        WEPF BCD 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
     HoldAttack:
         TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
-        WEPF BCD 1
         TNT1 A 1
         //TNT1 A 0 A_Recoil(-2)
         TNT1 A 0 A_SetPitch(pitch-0.5)
@@ -616,7 +629,74 @@ actor "Kharon + Frosthammer" : Kharon
         FRFR G 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRHM A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Refire
-        FRHM ABCDEFABCDEFABCDEFABCDEFGHIJKLMNOP 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady // 10
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady // 20
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM G 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM H 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM I 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM J 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM K 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM L 2 A_WeaponReady // 30
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM M 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM N 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM O 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM P 2 A_WeaponReady // 34
         Goto AltFired
     AltFirePrepare:
         WEPF H 1 A_TakeInventory("KharonSwung",1)
@@ -671,7 +751,74 @@ actor "Kharon + Frosthammer" : Kharon
         FRFR CCDDEEFFF 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRFR G 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRHM A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        FRHM ABCDEFABCDEFABCDEFABCDEFGHIJKLMNOP 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady // 10
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady // 20
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM G 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM H 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM I 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM J 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM K 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM L 2 A_WeaponReady // 30
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM M 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM N 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM O 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM P 2 A_WeaponReady // 34
         Goto AltFired
 
     Hold3:
@@ -747,7 +894,74 @@ actor "Kharon + Frosthammer" : Kharon
         FRFR CCDDEEFFF 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRFR G 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         FRHM A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        FRHM ABCDEFABCDEFABCDEFABCDEFGHIJKLMNOP 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady // 10
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM B 2 A_WeaponReady // 20
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM F 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM G 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM H 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM I 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM J 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM K 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM L 2 A_WeaponReady // 30
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM M 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM N 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM O 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        FRHM P 2 A_WeaponReady // 34
         Goto AltFired
 
     HoldFinal3:
@@ -829,13 +1043,13 @@ actor FrosthammerPuff
     Decal DoomImpScorch
     States
     {
-      Spawn:
-      Death:
-      XDeath: // Half of these identifiers probably don't work, but might as well make sure.
+    Spawn:
+    Death:
+    XDeath: // Half of these identifiers probably don't work, but might as well make sure.
         TNT1 A 1
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
-      Crash:
+    Crash:
         TNT1 A 1
         TNT1 A 0 Radius_Quake(1,4,0,1,0)
         TNT1 A 0 A_PlaySound("frost/hit")
@@ -861,13 +1075,13 @@ actor FrosthammerPuffCharged
     Decal Scorch
     States
     {
-      Spawn:
-      Death:
-      XDeath:
+    Spawn:
+    Death:
+    XDeath:
         TNT1 A 1
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",6)
-      Crash:
+    Crash:
         TNT1 A 1
         TNT1 A 0 Radius_Quake(2,8,0,1,0)
         TNT1 A 0 A_PlaySound("frost/hitcharged")
@@ -893,7 +1107,7 @@ ACTOR FrosthammerDamage
     Obituary "%k swallowed %o in ice."
     States
     {
-      Spawn:
+    Spawn:
         TNT1 A 0
         TNT1 A 1 A_Explode(128,128,0)
         Stop

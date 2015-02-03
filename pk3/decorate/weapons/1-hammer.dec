@@ -34,7 +34,7 @@ actor "Kharon + Omen" : Kharon
         Stop
     Ready:
         TNT1 A 0 A_TakeInventory("HammerHit",1)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         WEPO A 1 A_WeaponReady
@@ -243,6 +243,7 @@ actor "Kharon + Omen" : Kharon
 
     Hold:
         TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
@@ -265,9 +266,21 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
         Goto Select2
+    PrepareToHoldAttackGun:
+        WEPO BCD 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
+    PrepareToHoldAttack:
+        TNT1 A 0 A_TakeInventory("SheatheSwung",1)
+        TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 1
+        goto HoldAttack
+    PrepareToHoldAttackNormal:
+        WEPO BCD 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
     HoldAttack:
         TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
-        WEPO BCD 1
         TNT1 A 1
         //TNT1 A 0 A_Recoil(-2)
         TNT1 A 0 A_SetPitch(pitch-0.5)
@@ -436,7 +449,6 @@ actor "Kharon + Omen" : Kharon
         CMC1 F 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight") // ...for when online play lags.
         TNT1 A 1
-        TNT1 A 70 A_WeaponReady
         Goto AltFired
     AttackLight:
         TNT1 A 0 A_PlayWeaponSound("hammer/swing")
@@ -450,7 +462,6 @@ actor "Kharon + Omen" : Kharon
         CMC1 F 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitLight")
         TNT1 A 1
-        TNT1 A 70 A_WeaponReady
         Goto AltFired
     AttackMedium:
         TNT1 A 0 A_PlayWeaponSound("hammer/swing")
@@ -465,7 +476,6 @@ actor "Kharon + Omen" : Kharon
         CMC2 G 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitMedium")
         CMC2 H 1
-        TNT1 A 70 A_WeaponReady
         Goto AltFired
     AttackHeavy:
         TNT1 A 0 A_PlaySoundEx("hammer/snap","soundslot5",0,0)
@@ -485,7 +495,6 @@ actor "Kharon + Omen" : Kharon
         CMC3 K 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         TNT1 A 1
-        TNT1 A 70 A_WeaponReady
         Goto AltFired
     HitLight:
         TNT1 A 0 A_SetAngle(angle+(random(-400,400)/1000.000))
@@ -493,8 +502,6 @@ actor "Kharon + Omen" : Kharon
         CMC1 G 1 A_SetPitch(pitch+(150)/100.00)
         CMC1 H 1 A_SetPitch(pitch-(150)/100.00)
         TNT1 A 0 A_TakeInventory("HammerHit",1)
-        TNT1 A 10 A_WeaponReady(WRF_NOSECONDARY)
-        TNT1 A 60 A_WeaponReady
         goto AltFired
     HitMedium:
         TNT1 A 0
@@ -502,9 +509,6 @@ actor "Kharon + Omen" : Kharon
         CMC2 J 1 A_Recoil(2)
         CMC2 K 1
         TNT1 A 0 A_TakeInventory("HammerHit",1)
-        TNT1 A 5
-        TNT1 A 10 A_WeaponReady(WRF_NOSECONDARY)
-        TNT1 A 55 A_WeaponReady
         goto AltFired
     HitHeavy:
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE,0,0)
@@ -514,9 +518,6 @@ actor "Kharon + Omen" : Kharon
         CMC3 M 1
         CMC3 N 1
         TNT1 A 0 A_TakeInventory("HammerHit",1)
-        TNT1 A 10
-        TNT1 A 10 A_WeaponReady(WRF_NOSECONDARY)
-        TNT1 A 50 A_WeaponReady
         goto AltFired
     AltHold:
         TNT1 A 0 A_JumpIfInventory("HammerOverchargeLevel",1,"AltHoldTime")
@@ -576,8 +577,7 @@ actor "Kharon + Omen" : Kharon
         CMC3 K 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitHeavy")
         TNT1 A 1
-        TNT1 A 70 A_WeaponReady
-        Goto Fired
+        Goto AltFired
     HammerFinalCharge:
         TNT1 A 0 A_TakeInventory("HammerOverchargeLevel",35)
         TNT1 A 0 A_PlaySoundEx("hammer/stun","soundslot5",0,0)
@@ -598,8 +598,7 @@ actor "Kharon + Omen" : Kharon
         CMC3 K 1
         TNT1 A 0 A_JumpIfInventory("HammerHit",1,"HitFinal")
         TNT1 A 1
-        TNT1 A 70 A_WeaponReady
-        Goto Fired
+        Goto AltFired
     HitFinal:
         TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE2,0,0)
         TNT1 A 0 A_Stop
@@ -610,10 +609,7 @@ actor "Kharon + Omen" : Kharon
         CMC3 M 1
         CMC3 N 1
         TNT1 A 0 A_TakeInventory("HammerHit",1)
-        TNT1 A 10
-        TNT1 A 10 A_WeaponReady(WRF_NOSECONDARY)
-        TNT1 A 50 A_WeaponReady
-        goto Fired
+        goto AltFired
     AltFirePrepare:
         TNT1 A 1 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
@@ -621,10 +617,92 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 1
         goto AltFireGun
     AltFired:
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 0 A_TakeInventory("HammerHit",1)
+        TNT1 A 0 A_TakeInventory("HammerOverchargeLevel",35)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady // 10
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady // 20
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady // 30
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        TNT1 A 2 A_WeaponReady // 35
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_ClearRefire
         WEPO DCB 1
         Goto Ready
 

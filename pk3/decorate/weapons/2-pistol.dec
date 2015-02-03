@@ -30,7 +30,7 @@ actor "Kharon + Acacia A-22" : Kharon
     States
     {
     Ready:
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"HoldAttack")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackNormal")
         TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"HenshinCheck")
         WEPA A 1 A_WeaponReady
@@ -235,6 +235,7 @@ actor "Kharon + Acacia A-22" : Kharon
 
     Hold:
         TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
@@ -257,9 +258,21 @@ actor "Kharon + Acacia A-22" : Kharon
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
         Goto Select2
+    PrepareToHoldAttackGun:
+        WEPA IH 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
+    PrepareToHoldAttack:
+        TNT1 A 0 A_TakeInventory("SheatheSwung",1)
+        TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 1
+        goto HoldAttack
+    PrepareToHoldAttackNormal:
+        WEPA BCD 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
     HoldAttack:
         TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
-        WEPA BCD 1
         TNT1 A 1
         //TNT1 A 0 A_Recoil(-2)
         TNT1 A 0 A_SetPitch(pitch-0.5)
@@ -429,19 +442,117 @@ actor "Kharon + Acacia A-22" : Kharon
         HPIS BC 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Light0
         HPIS DEDDCCFF 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("IAmAMassiveCasualWhoNeedsMyWeaponsToFireAutomatically",1,"CasualFinish")
-        HPIS A 70 A_WeaponReady
-        Goto AltFired
-    CasualFinish:
-        HPIS A 10 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_Refire//("AltFireGun")
-        HPIS A 70 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady // 10
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady // 20
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady // 30
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_WeaponReady // 35
         Goto AltFired
     Nope:
         TNT1 A 0 A_PlaySoundEx("pistol/dry","soundslot7",0,0)
         HPIS A 10 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
         TNT1 A 0 A_JumpIfInventory("IAmAnOkayPersonWhoLikesToAutoSwitch",1,"DeselectShit")
-        HPIS A 35 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready // 10
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttackGun")
+        HPIS A 2 A_Weaponready // 17
         Goto AltFired
     AltFirePrepare:
         WEPA H 1 A_TakeInventory("KharonSwung",1)
