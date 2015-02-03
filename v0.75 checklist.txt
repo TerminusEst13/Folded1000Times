@@ -7,7 +7,6 @@ PRIORITY:
 9: sounds for the lamps, nick Smooth Doom's candle.
 11: Skulltag armor/health bonuses aren't being replaced in Invasion?
 13: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
-17: Armor bar of the Iron Maiden should be integrated with the HUD.
 18: Finish the specials for:
      ^ Acacia A-22
      ^ Exodus
@@ -55,6 +54,7 @@ WOULD BE NICE:
 15: <OnePunch-Man> Yo Term I was wondering something, why are all the style levels in white?
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
 16: Include the rest of the new Hae-Lin intro sounds.
+17: Armor bar of the Iron Maiden should be integrated with the HUD.
 19: Polish up the uppercut sequence so that it can be used at resting points (gun at rest, holding fire, etc)
 22: Sentinel should fire in long bursts, rather than constantly.
 

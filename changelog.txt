@@ -61,6 +61,7 @@ FROM 0.74 TO 0.75:
 - All special attacks now have A_ClearRefire at the end, for smoother transitioning between special attacks and attacking right after.
 - The damage of the forward special has been decreased by 8 per explosion. The radius of the side specials have been increased by 64 units.
 - When wielding the Kharon by itself, special attacks now end with a dramatic re-sheathing. Enemies killed with these will not die until the player re-sheathes.
+- The armor bar, while in Iron Maiden, has been more cleanly integrated with the HUD.
 
 
 FROM 0.73 TO 0.74:

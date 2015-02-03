@@ -43,6 +43,7 @@ actor GoldenBoner
     -SHOOTABLE
     -COUNTKILL
     -ISMONSTER
+    Obituary "%o was boned."
     ActiveSound "boner/laugh"
     States
     {
