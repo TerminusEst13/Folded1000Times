@@ -13,10 +13,9 @@ PRIORITY:
      ^ Omen
      ^ BALANCE
 20: Adapt Testament shotgun system for the Omen and Chaingun
-21: Use HorrorMovieGuy's bloodless sprites to do bloodless launches for the pinky and Nobles.
 23: Secret skeleton difficulty.
 24: Test, test, test online.
-25: Update the metal jukebox.
+25: Update the metal jukebox/in-game credits/in-game changelog.
 
 
 WOULD BE NICE:
@@ -56,6 +55,7 @@ WOULD BE NICE:
 16: Include the rest of the new Hae-Lin intro sounds.
 17: Armor bar of the Iron Maiden should be integrated with the HUD.
 19: Polish up the uppercut sequence so that it can be used at resting points (gun at rest, holding fire, etc)
+21: Use HorrorMovieGuy's bloodless sprites to do bloodless launches for the pinky and Nobles. // Turns out Pinky's already is fine?
 22: Sentinel should fire in long bursts, rather than constantly.
 
 
