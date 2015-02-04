@@ -10441,7 +10441,7 @@ Actor ThrownKnifeSpecialB400 : ThrownKnifeSpecial
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("boomerang/spinstop","body",0,0)
         BMRG ABCDABCDABCD 1 A_FadeOut(0.15)
-        TNT1 A 0
+        TNT1 A 0 A_TakeFromTarget("LegionSpecialCounter",1)
         Stop
     }
 }

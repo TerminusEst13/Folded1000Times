@@ -1190,6 +1190,7 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
     TakeInventory("MidCombat",0x7FFFFFFF);
     TakeInventory("LegionCounter",0x7FFFFFFF);
+    TakeInventory("LegionSpecialCounter",0x7FFFFFFF);
     TakeInventory("LegionStacked",0x7FFFFFFF);
     TakeInventory("SwordAttack",0x7FFFFFFF);
 }
@@ -1217,6 +1218,7 @@ script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
     TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
     TakeInventory("MidCombat",0x7FFFFFFF);
     TakeInventory("LegionCounter",0x7FFFFFFF);
+    TakeInventory("LegionSpecialCounter",0x7FFFFFFF);
     TakeInventory("LegionStacked",0x7FFFFFFF);
     TakeInventory("SwordAttack",0x7FFFFFFF);
 }

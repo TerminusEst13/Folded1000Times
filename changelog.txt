@@ -62,6 +62,8 @@ FROM 0.74 TO 0.75:
 - The damage of the forward special has been decreased by 8 per explosion. The radius of the side specials have been increased by 64 units.
 - When wielding the Kharon by itself, special attacks now end with a dramatic re-sheathing. Enemies killed with these will not die until the player re-sheathes.
 - The armor bar, while in Iron Maiden, has been more cleanly integrated with the HUD.
+- The three-digit ammo counters are now properly aligned with the edges of the ammo box.
+- The Legion and Frosthammer now have ammo displays.
 
 
 FROM 0.73 TO 0.74:

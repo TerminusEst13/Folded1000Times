@@ -103,6 +103,7 @@ actor SentinelLifeCounter : Counter { Inventory.MaxAmount 200 }
 actor SentinelShotCounter : Counter { Inventory.MaxAmount 24 }
 actor BlindGuardianLifeCounter : Counter { Inventory.MaxAmount 1000 }
 actor LegionCounter : Counter { Inventory.MaxAmount 35 }
+actor LegionSpecialCounter : Counter { Inventory.MaxAmount 5 }
 actor LegionStacked : Counter { Inventory.MaxAmount 9 }
 actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
 actor UziSequence : Counter { Inventory.MaxAmount 60 }
