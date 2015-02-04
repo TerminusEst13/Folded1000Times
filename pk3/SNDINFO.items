@@ -193,6 +193,9 @@ idle/spray                IDLSPRAY
 idle/rub                  IDLRUBBR
 idle/raise                IDLSWARR
 idle/shing                IDLSHING // Taken from the General Series 6000, with extra reverb/echo!
+idle/swing                IDLSWING // Taken from...Postal 2, I think?
+idle/swing2               IDLSWIN2 // Man I don't even know
+idle/pose                 IDLPOSE  // Yeah, stumped
 
 $random sword/shielddefense { block1 block2 block3 } // Taken from the Oblivion Combat Sound Replacement
 block1                    SHLDBLK1

@@ -67,6 +67,8 @@ FROM 0.74 TO 0.75:
 - All numbered Decorate ACS calls have been named for convenience.
 - Thanks to Horrormovieguy, the launch sequence for the Nobles no longer looks so...off.
 - Skulltag armor/health bonuses and red armor should be replaced properly now.
+- The Sabbath no longer spits out an Idle4 error.
+- A new idle animation has been implemented, made by Sgt. Shivers.
 
 
 FROM 0.73 TO 0.74:
