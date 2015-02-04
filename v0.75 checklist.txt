@@ -4,7 +4,6 @@ PRIORITY:
 1: Unique slashes when done mid-dash
 3: Implement Shivers' new idle animation/Baron/Mancubus Death.
 8: Tutorial map
-11: Skulltag armor/health bonuses aren't being replaced in Invasion?
 18: Finish the specials for:
      ^ Acacia A-22
      ^ Exodus
@@ -47,6 +46,7 @@ WOULD BE NICE:
 7: cvar that doesn't remove meter when damaged
 9: sounds for the lamps and torches, nick Smooth Doom's candle.
 10: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
+11: Skulltag armor/health bonuses aren't being replaced in Invasion?
 12: Remove colors on Iron Maiden shot impacts.
 13: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
 14: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.

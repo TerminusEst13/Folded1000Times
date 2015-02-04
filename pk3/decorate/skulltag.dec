@@ -1,24 +1,24 @@
 // Weapon/item spawners for Skulltag-specific maps. Wahey!
 
-actor SentinelPickup3 : SentinelPickup 5035//replaces InvisibilitySphere
+actor InvisibilitySphere : SentinelPickup 5035//replaces InvisibilitySphere
 {
     Game Doom
     SpawnID 174
 }
 
-actor BlindGuardianPickup2 : BlindGuardianPickup 5040//replaces RedArmor
+actor RedArmor : BlindGuardianPickup 5040//replaces RedArmor
 {
     Game Doom
     SpawnID 168
 }
 
-actor SoulStoneSpawner3 : SoulStoneSpawner1 5091//replaces MaxArmorBonus
+actor MaxArmorBonus : SoulStoneSpawner1 5091//replaces MaxArmorBonus
 {
     Game Doom
     SpawnID 167
 }
 
-actor SoulStoneSpawner4 : SoulStoneSpawner1 5090//replaces MaxHealthBonus
+actor MaxHealthBonus : SoulStoneSpawner1 5090//replaces MaxHealthBonus
 {
     Game Doom
     SpawnID 166
