@@ -127,7 +127,7 @@ ACTOR Messiah : Kharon
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
     FirePrepare:
-        GUI4 CA 1 A_TakeInventory("ShootingLikeABaka")
+        GUI3 CA 1 A_TakeInventory("ShootingLikeABaka")
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         goto FireSequence1
 
@@ -157,19 +157,19 @@ ACTOR Messiah : Kharon
     FireSequence2: // Left to right
         TNT1 A 1
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
-        GUI3 ABC 1
+        GUI2 ABC 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
         TNT1 A 0 A_FireCustomMissile("LyreAttack1",0,0)
-        GUI3 D 1 A_JumpIfInventory("LyreHit",1,"FireHit2")
+        GUI2 D 1 A_JumpIfInventory("LyreHit",1,"FireHit2")
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
-        GUI3 EFG 1 A_JumpIfInventory("LyreHit",1,"FireHit2")
+        GUI2 EFG 1 A_JumpIfInventory("LyreHit",1,"FireHit2")
         TNT1 A 1 A_JumpIfInventory("LyreHit",1,"FireHit2")
         TNT1 A 0 A_TakeInventory("LyreHit",1)
         goto Fired
     FireHit2:
         TNT1 A 0 Radius_Quake(2,8,0,16,0)
-        GUI3 E 2
-        GUI3 FFG 1
+        GUI2 E 2
+        GUI2 FFG 1
         TNT1 A 1
         TNT1 A 0 A_TakeInventory("LyreHit",1)
         goto Fired
@@ -190,44 +190,47 @@ ACTOR Messiah : Kharon
         goto Fired2
     HoldCharging:
         TNT1 A 0 A_GiveInventory("LyreCharging",1)
-        GUIT DCB 1
+        TNT1 A 1
+        GUI4 ABC 1
         TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
     Hold2:
-        TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
-        TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
-        TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
-        TNT1 A 0 A_JumpIfInventory("DoubleTapRight",1,"SpinAttackRight")
-        TNT1 A 0 A_GiveInventory("LyreChargeLevel",1)
+        TNT1 A 0 //A_GiveInventory("LyreChargeLevel",1)
         TNT1 A 0 A_GiveInventory("LyreChargeLevel2",1)
-        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel",9,"ResetChargeMusic")
-        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel2",140,"HoldCharging2")
-        GUIT A 1
+        TNT1 A 0 //A_JumpIfInventory("LyreChargeLevel",9,"ResetChargeMusic")
+        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel2",16,"HoldChargingNext") // Previously 140
+        TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
+        GUI4 DEFGHIGE 1
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
-        GUIT A 1 A_PlaySoundEx("lyre/chargenope","soundslot6",0,0)
-        goto Fired3
-    ResetChargeMusic:
-        TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
+        GUI4 D 5 A_PlaySoundEx("lyre/chargenope","soundslot6",0,0)
+        GUI4 CBA 1
+        goto Fired2
+    //ResetChargeMusic:
+        //TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
+        //TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
+        //goto Hold2
+    HoldChargingNext:
         TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
-        goto Hold2
+        GUI4 JKLKJJKL 1
     HoldCharging2:
         TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
         TNT1 A 0 A_GiveInventory("LyreCharged",1)
-        GUIT A 1 A_GiveInventory("ChargeScreenFlash",1)
+        TNT1 A 0 A_GiveInventory("ChargeScreenFlashGuitar",1)
         TNT1 A 0 A_PlaySoundEx("lyre/charge2","soundslot6",0,0)
     Hold3:
-        TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
-        TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
-        TNT1 A 0 A_JumpIfInventory("DoubleTapLeft",1,"SpinAttackLeft")
-        TNT1 A 0 A_JumpIfInventory("DoubleTapRight",1,"SpinAttackRight")
         TNT1 A 0 A_GiveInventory("LyreChargeLevel",1)
-        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel",18,"ResetChargeMusic2")
+        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel",6,"ResetChargeMusic2")
         TNT1 A 0 A_GiveInventory("ChargeScreenFlashGuitar",1)
-        GUIT A 1 A_SpawnItemEx("ElecSparkGuitar",random(5,25)/10.0,random(25,25)/10.0,random(350,420)/10.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,200)
+        GUI4 MNO 1 A_SpawnItemEx("ElecSparkGuitar",random(5,25)/10.0,random(25,25)/10.0,random(350,420)/10.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,200)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
-        GUIT A 1 A_PlaySoundEx("lyre/chargerelease","soundslot6",0,0)
-        goto Fired3
+        GUI4 PQR 1
+        GUI4 S 1 A_PlaySoundEx("lyre/chargerelease","soundslot6",0,0)
+        GUI4 TU 1
+        GUI4 V 25
+        GUI4 WXYZ 1
+        TNT1 A 10
+        goto Fired2
     ResetChargeMusic2:
         TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
         TNT1 A 0 A_PlaySoundEx("lyre/charge2","soundslot6",0,0)
@@ -264,16 +267,16 @@ ACTOR Messiah : Kharon
         TNT1 A 0 A_PlaySoundEx("lyre/swing","soundslot7",0,0)
         TNT1 A 1
         TNT1 A 0 A_Recoil(-2)
-        GUI3 A 1
+        GUI2 A 1
         TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFF)
-        GUI3 B 1
+        GUI2 B 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
         TNT1 A 0 A_FireCustomMissile("LyreAttack2",0,0)
-        GUI3 C 1
+        GUI2 C 1
         TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
-        GUI3 D 1 A_TakeInventory("KharonSwung",1)
-        GUI3 E 1
-        GUI3 F 1
+        GUI2 D 1 A_TakeInventory("KharonSwung",1)
+        GUI2 E 1
+        GUI2 F 1
         TNT1 A 2
         TNT1 A 2
         TNT1 A 1
@@ -410,7 +413,7 @@ ACTOR Messiah : Kharon
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
         GUIT BCD 1
         TNT1 A 1
-        GUI4 ABCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GUI3 ABCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
     AltFireGun:
         TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
@@ -428,58 +431,68 @@ ACTOR Messiah : Kharon
         TNT1 A 0 A_TakeInventory("LyreCharged",1)
         TNT1 A 0 A_TakeInventory("LyreChargeLevel",0x7FFFFFFF)
         TNT1 A 0 A_ZoomFactor(0.975,ZOOM_INSTANT)
-        GUI4 E 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GUI3 E 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_ZoomFactor(0.9875,ZOOM_INSTANT)
-        GUI4 FF 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GUI3 FG 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
         TNT1 A 0 A_Light0
-        GUI4 GGG 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GUI3 HIJK 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Refire
-        GUI4 D 70 A_WeaponReady
+        GUI3 D 70 A_WeaponReady
         Goto AltFired
     AltHold:
         TNT1 A 0 A_JumpIfInventory("LyreCharged",1,"AltHold3")
         TNT1 A 0 A_JumpIfInventory("LyreCharging",1,"AltHold2")
-        GUI4 D 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GUI3 D 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_GiveInventory("SwordAttack",1)
         TNT1 A 0 A_JumpIfInventory("SwordAttack",35,"AltHoldCharging")
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
-        GUI4 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GUI3 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto AltFireGun
     AltHoldCharging:
         TNT1 A 0 A_GiveInventory("LyreCharging",1)
-        GUI4 CBA 1
+        GUI3 CBA 1
         TNT1 A 1
-        GUIT DCB 1
+        GUI4 ABC 1
         TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
     AltHold2:
-        TNT1 A 0 A_GiveInventory("LyreChargeLevel",1)
+        TNT1 A 0 //A_GiveInventory("LyreChargeLevel",1)
         TNT1 A 0 A_GiveInventory("LyreChargeLevel2",1)
-        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel",9,"AltResetChargeMusic")
-        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel2",140,"AltHoldCharging2")
-        GUIT A 1
+        TNT1 A 0 //A_JumpIfInventory("LyreChargeLevel",9,"AltResetChargeMusic")
+        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel2",16,"AltHoldChargingNext") // Previously 140
+        TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
+        GUI4 DEFGHIGE 1
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
-        GUIT A 1 A_PlaySoundEx("lyre/chargenope","soundslot6",0,0)
+        GUI4 D 5 A_PlaySoundEx("lyre/chargenope","soundslot6",0,0)
+        GUI4 CBA 1
         goto AltFired2
-    AltResetChargeMusic:
-        TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
+    //AltResetChargeMusic:
+        //TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
+        //TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
+        //goto AltHold2
+    AltHoldChargingNext:
         TNT1 A 0 A_PlaySoundEx("lyre/charge1","soundslot6",0,0)
-        goto AltHold2
+        GUI4 JKLKJJKL 1
     AltHoldCharging2:
         TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
         TNT1 A 0 A_GiveInventory("LyreCharged",1)
-        GUIT A 1 A_GiveInventory("ChargeScreenFlash",1)
+        TNT1 A 0 A_GiveInventory("ChargeScreenFlashGuitar",1)
         TNT1 A 0 A_PlaySoundEx("lyre/charge2","soundslot6",0,0)
     AltHold3:
         TNT1 A 0 A_GiveInventory("LyreChargeLevel",1)
-        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel",18,"AltResetChargeMusic2")
+        TNT1 A 0 A_JumpIfInventory("LyreChargeLevel",6,"AltResetChargeMusic2")
         TNT1 A 0 A_GiveInventory("ChargeScreenFlashGuitar",1)
-        GUIT A 1 A_SpawnItemEx("ElecSparkGuitar",random(5,25)/10.0,random(25,25)/10.0,random(350,420)/10.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,200)
+        GUI4 MNO 1 A_SpawnItemEx("ElecSparkGuitar",random(5,25)/10.0,random(25,25)/10.0,random(350,420)/10.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,200)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
-        GUIT A 1 A_PlaySoundEx("lyre/chargerelease","soundslot6",0,0)
+        GUI4 PQR 1
+        GUI4 S 1 A_PlaySoundEx("lyre/chargerelease","soundslot6",0,0)
+        GUI4 TU 1
+        GUI4 V 25
+        GUI4 WXYZ 1
+        TNT1 A 10
         goto AltFired2
     AltResetChargeMusic2:
         TNT1 A 0 A_TakeInventory("LyreChargeLevel",35)
@@ -487,23 +500,23 @@ ACTOR Messiah : Kharon
         goto AltHold3
     Nope:
         TNT1 A 0 A_PlaySoundEx("pistol/dry","soundslot7",0,0)
-        GUI4 D 10 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        GUI3 D 10 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
         TNT1 A 0 A_JumpIfInventory("IAmAnOkayPersonWhoLikesToAutoSwitch",1,"DeselectShit")
-        GUI4 D 35 A_Weaponready
+        GUI3 D 35 A_Weaponready
         Goto AltFired
     AltFirePrepare:
         TNT1 A 1 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
         TNT1 A 1
-        GUI4 ABCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GUI3 ABCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto AltFireGun
     AltFired:
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        GUI4 CBA 1
+        GUI3 CBA 1
         Goto Select2
     AltFired2:
         TNT1 A 0 A_TakeInventory("LyreCharged",1)
@@ -514,8 +527,8 @@ ACTOR Messiah : Kharon
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        GUIT A 10 A_WeaponReady(WRF_NOSWITCH)
-        goto Ready2
+        TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
+        goto Select2
 
     HenshinCheck:
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",100,"Henshin")

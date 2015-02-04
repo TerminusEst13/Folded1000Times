@@ -279,6 +279,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
 #include "decorate/decorations/barrels.dec"
 #include "decorate/decorations/pillar.dec"
 #include "decorate/decorations/lamps.dec"
+#include "decorate/decorations/candles.dec"
 
 
 actor DecorationShooterTurbo

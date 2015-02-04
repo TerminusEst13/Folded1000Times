@@ -345,6 +345,15 @@ Object FlashLightBeam22
 
 // Decorative objects
 
+object Candlestick2
+{
+    frame CNDLA { light CANDLE }
+    frame CNDLB { light CANDLE }
+    frame CNDLC { light CANDLE }
+    frame CNDLD { light CANDLE }
+    frame CNDLE { light CANDLE }
+}
+
 object Candelabra2
 {
     frame CBR2A { light CANDELABRA }

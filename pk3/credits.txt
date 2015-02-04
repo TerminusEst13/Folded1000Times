@@ -95,6 +95,7 @@ GRAPHICS:
 - Scuba Steve/Mike12/torridGristle (The sheathe for the Kharon, heavily edited from Action Doom 2)
 - The Guided Fate Paradox (The halo for the Majestic Vanguard)
 - SoloSpaghetti (The Boots of Protection, modified from the Doom Roguelike Arsenal boots)
+- zrriontheinsect (The gothic candles, modified from his Doom 64 candles)
 
 CODE:
 =========

@@ -1,0 +1,76 @@
+ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
+{
+    Radius 16
+    Height 60
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("sound/torch","soundslot5",1,0)
+    Spawn1:
+        CBR2 ABC 5 bright
+        loop
+    Pain.IronFistDamage:
+    Pain.HaltHammerzeitImpact:
+    Pain.Kubiuti:
+    Pain.Kubiuti.Upper:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+        TNT1 A 0 A_StopSoundEx("soundslot5")
+        TNT1 A 0 A_PlaySoundEx("destroy/candelabra","soundslot5",0,0)
+        TNT1 A 0 //A_SpawnItemEx("DecorationSpawner",0,0,32,0,0,0,0,32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains1",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains2",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains3",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("BarrelRemains4",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(400,800)/100.00,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("CandelabraDestroyed",0,0,32,random(-200,200)/100.00,random(-200,200)/100.00,random(800,1200)/100.00,random(-180,180),32)
+        CBR2 Z 1
+        Goto See
+    }
+}
+
+actor CandelabraDestroyed
+{
+    Radius 16
+    Height 16
+    Projectile
+    -SOLID
+    -NOGRAVITY
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    Gravity 0.95
+    BounceCount 6
+    BounceFactor 0.5
+    States
+    {
+    Spawn:
+        CBR2 EFGH 4
+        loop
+    Death:
+        TNT1 A 0 A_Jump(128,"Death2")
+        CBR2 H 3500
+        CBR2 HHHHH 2 A_FadeOut(0.2)
+        stop
+    Death2:
+        CBR2 F 3500
+        CBR2 FFFFF 2 A_FadeOut(0.2)
+        stop
+    }
+}
+
+ACTOR Candlestick2 replaces Candlestick
+{
+    Radius 20
+    Height 14
+    XScale 0.8
+    YScale 0.7
+    ProjectilePassHeight -16
+    -SOLID
+    States
+    {
+    Spawn:
+        CNDL ABCDE 3 Bright
+        loop
+    }
+}

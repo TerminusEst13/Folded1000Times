@@ -3,6 +3,10 @@
 destroy/lamp              LAMPCUT
 destroy/candelabra        CNDLCUT
 destroy/pillar            PILRCUT
+sound/lamp                LAMPLOOP
+sound/torch               TRCHLOOP
+$rolloff sound/lamp 100 600
+$rolloff sound/torch 100 600
 $random damage/barrel { dbarl1 dbarl2 dbarl3 dbarl4 } // Taken from Painkiller
 dbarl1                    BARLHIT1
 dbarl2                    BARLHIT2
