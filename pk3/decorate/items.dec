@@ -303,7 +303,7 @@ actor MaybeHealthBonus replaces HealthBonus
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DOOMHEALTH) == 1, 2 )
         TNT1 A 0 A_SpawnItemEx("SoulStoneSpawner2",0,0,0,0,0,0,0,32)
         Stop
         TNT1 A 0 A_SpawnItemEx("DoomHealthBonusSpawner",0,0,0,0,0,0,0,32)
@@ -416,7 +416,7 @@ actor HealPackSmall1 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA A 1 BRIGHT
         SODA A 30
@@ -433,7 +433,7 @@ actor HealPackSmall2 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA B 1 BRIGHT
         SODA B 30
@@ -450,7 +450,7 @@ actor HealPackSmall3 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA C 1 BRIGHT
         SODA C 30
@@ -467,7 +467,7 @@ actor HealPackSmall4 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA D 1 BRIGHT
         SODA D 30
@@ -485,7 +485,7 @@ actor HealPackSmall5 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA E 1 BRIGHT
         SODA E 30
@@ -505,7 +505,7 @@ actor MaybeStimpack replaces Stimpack
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DOOMHEALTH) == 1, 2 )
         TNT1 A 0 A_SpawnItemEx("HealPackSmallSpawner",0,0,0,0,0,0,0,32)
         Stop
         TNT1 A 0 A_SpawnItemEx("DoomStimpackSpawner",0,0,0,0,0,0,0,32)
@@ -656,7 +656,7 @@ actor HealPackMedium1 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL A 1 BRIGHT
         APPL A 30
@@ -673,7 +673,7 @@ actor HealPackMedium2 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL B 1 BRIGHT
         APPL B 30
@@ -690,7 +690,7 @@ actor HealPackMedium3 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL C 1 BRIGHT
         APPL C 30
@@ -707,7 +707,7 @@ actor HealPackMedium4 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL D 1 BRIGHT
         APPL D 30
@@ -725,7 +725,7 @@ actor HealPackMedium5 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(267,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL E 1 BRIGHT
         APPL E 30
@@ -745,7 +745,7 @@ actor MaybeMedikit replaces Medikit
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DOOMHEALTH) == 1, 2 )
         TNT1 A 0 A_SpawnItemEx("HealPackMediumSpawner",0,0,0,0,0,0,0,32)
         Stop
         TNT1 A 0 A_SpawnItemEx("DoomMedikitSpawner",0,0,0,0,0,0,0,32)
@@ -899,7 +899,7 @@ actor MaybeSoulsphere replaces Soulsphere
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DOOMHEALTH) == 1, 2 )
         TNT1 A 0 A_SpawnItemEx("OverHealPackSpawner",0,0,0,0,0,0,0,32)
         Stop
         TNT1 A 0 A_SpawnItemEx("DoomSoulsphereSpawner",0,0,0,0,0,0,0,32)
@@ -925,7 +925,7 @@ actor MaybeGreenArmor replaces GreenArmor
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DOOMHEALTH) == 1, 2 )
         TNT1 A 0 A_SpawnItemEx("ArmorPackSmallSpawner",0,0,0,0,0,0,0,32)
         Stop
         TNT1 A 0 A_SpawnItemEx("DoomGreenArmorSpawner",0,0,0,0,0,0,0,32)
@@ -975,7 +975,7 @@ actor MaybeBlueArmor replaces BlueArmor
     {
         Spawn:
         TNT1 A 0
-        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DOOMHEALTH) == 1, 2 )
         TNT1 A 0 A_SpawnItemEx("ArmorPackLargeSpawner",0,0,0,0,0,0,0,32)
         Stop
         TNT1 A 0 A_SpawnItemEx("DoomBlueArmorSpawner",0,0,0,0,0,0,0,32)
@@ -1047,7 +1047,7 @@ actor MaybeMegasphere replaces Megasphere
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(267,WEEB_DEC_DOOMHEALTH) == 1, 2 )
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DOOMHEALTH) == 1, 2 )
         TNT1 A 0 A_SpawnItemEx("ArmorHealthMegaPackSpawner",0,0,0,0,0,0,0,32)
         Stop
         TNT1 A 0 A_SpawnItemEx("DoomMegasphereSpawner",0,0,0,0,0,0,0,32)
@@ -1075,7 +1075,7 @@ actor ArmorHealthMegaPack: CustomInventory
         TNT1 A 1
         TNT1 A 0 A_SetBlend("Blue",0.6,15)
         TNT1 A 0 A_GiveInventory("HaeLinFoodRamenComment")
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_MEGASPHERE,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_MEGASPHERE,0,0)
         TNT1 A 1
         stop
     }
@@ -1286,7 +1286,7 @@ actor FortuneCookie : CustomInventory 30242
         loop
     Pickup:
         TNT1 A 0 A_SetBlend("Green",0.45,10)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,24,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,24,0,0)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop

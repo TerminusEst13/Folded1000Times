@@ -345,7 +345,7 @@ actor "Kharon + Sabbath" : Kharon
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
         TNT1 A 0 A_ChangeFlag("GHOST",1)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE,0,0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("sword/beam3")
@@ -366,7 +366,7 @@ actor "Kharon + Sabbath" : Kharon
         TNT1 A 1
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_Stop // You'd think this would be redundant.
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE,0,0)
         TNT1 A 5 A_SpawnItemEx("TelefragHack",0)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",0)

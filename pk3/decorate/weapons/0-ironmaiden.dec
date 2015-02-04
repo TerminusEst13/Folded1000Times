@@ -210,10 +210,10 @@ actor "Iron Fist" : Weapon
         TNT1 A 6
         goto Fired
     FireHit1:
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
         IRP1 GHI 1 Radius_Quake(4,10,0,16,0)
         IRP1 J 1 A_Recoil(3)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE2,0,0)
         IRP1 K 1
         IRP1 L 1 A_GiveInventory("FistSwung",1)
         TNT1 A 0 A_TakeInventory("FistHit",1)
@@ -241,10 +241,10 @@ actor "Iron Fist" : Weapon
         TNT1 A 6
         goto Fired
     FireHit1B:
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
         IRP3 GHI 1 Radius_Quake(4,10,0,16,0)
         IRP3 J 1 A_Recoil(3)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE2,0,0)
         IRP3 K 1
         IRP3 L 1 A_GiveInventory("FistSwung",1)
         TNT1 A 0 A_TakeInventory("FistHit",1)
@@ -278,10 +278,10 @@ actor "Iron Fist" : Weapon
         TNT1 A 6
         goto Fired
     FireHit2:
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
         IRP2 GHI 1 Radius_Quake(4,10,0,16,0)
         IRP2 J 1 A_Recoil(3)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE2,0,0)
         IRP2 K 1
         IRP2 L 1 A_TakeInventory("FistSwung",1)
         TNT1 A 0 A_TakeInventory("FistHit",1)
@@ -309,10 +309,10 @@ actor "Iron Fist" : Weapon
         TNT1 A 6
         goto Fired
     FireHit2B:
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
         IRP4 GHI 1 Radius_Quake(4,10,0,16,0)
         IRP4 J 1 A_Recoil(3)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE2,0,0)
         IRP4 K 1
         IRP4 L 1 A_TakeInventory("FistSwung",1)
         TNT1 A 0 A_TakeInventory("FistHit",1)
@@ -400,7 +400,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
         TNT1 A 0 A_ChangeFlag("GHOST",1)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE,0,0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("iron/lunge")
@@ -421,7 +421,7 @@ actor "Iron Fist" : Weapon
         TNT1 A 1
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_Stop // You'd think this would be redundant.
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE,0,0)
         TNT1 A 5 A_SpawnItemEx("TelefragHack",0)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",0)

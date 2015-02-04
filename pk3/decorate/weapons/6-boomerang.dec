@@ -373,7 +373,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
         TNT1 A 0 A_ChangeFlag("GHOST",1)
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_FREEZE,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE,0,0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("sword/beam3")
@@ -394,7 +394,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 1
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_Stop // You'd think this would be redundant.
-        TNT1 A 0 ACS_ExecuteAlways(267,0,WEEB_DEC_UNFREEZE,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE,0,0)
         TNT1 A 5 A_SpawnItemEx("TelefragHack",0)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",0)
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",0)
@@ -431,6 +431,7 @@ actor "Kharon + Legion" : Kharon
     GunSpecial:
         TNT1 A 0
         TNT1 A 0 A_JumpIfInventory("LegionSpecialCounter",5,"SpecialAttackFinish")
+        TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwspecial")
         TNT1 A 4
         BMRN K 1
@@ -440,6 +441,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_GiveInventory("LegionSpecialCounter",1)
         TNT1 AAAAA 0 A_FireCustomMissile("ThrownKnifeSpecial",random(-45,-20),0,0,0,0,random(-10,10))
         TNT1 AAAAA 0 A_FireCustomMissile("ThrownKnifeSpecialB",random(20,45),0,0,0,0,random(-10,10))
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_LEGSPECIAL,0,0)
         BMRN OP 1
         TNT1 A 6
         goto SpecialAttackFinish

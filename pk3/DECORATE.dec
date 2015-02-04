@@ -180,6 +180,9 @@ actor IceTrailFlicker2
 actor IceChunk2 : IceChunk { Health 1 +CLIENTSIDEONLY -SOLID }
 
 // Constants which are paired with their ACS counterparts
+
+const int WEEB_DECORATE        = 267;
+
 const int WEEB_DEC_DAMAGE      = 0;
 const int WEEB_DEC_FREEZE      = 1;
 const int WEEB_DEC_UNFREEZE    = 2;
@@ -207,6 +210,7 @@ const int WEEB_DEC_FROSTCHECK  = 23;
 const int WEEB_DEC_COOKIEQUOTE = 24;
 const int WEEB_DEC_SLOWDOWN    = 25;
 const int WEEB_DEC_GUNSOULS    = 26;
+const int WEEB_DEC_LEGSPECIAL  = 27;
 const int WEEB_DEC_DOOMHEALTH  = 28;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
