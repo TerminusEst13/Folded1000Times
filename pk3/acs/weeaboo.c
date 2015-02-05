@@ -95,6 +95,10 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_nodamagepenalty"))
             { ConsoleCommand("set ds_nodamagepenalty 0");
               ConsoleCommand("archivecvar ds_nodamagepenalty 0"); }
+			  
+        if (!GetCvar("ds_runmod"))
+            { ConsoleCommand("set ds_runmod 100");
+              ConsoleCommand("archivecvar ds_runmod 100"); }
     }
 }
 
@@ -417,6 +421,11 @@ int i;
     case WEEB_DEC_DOOMHEALTH:
         SetResultValue(GetCVar("ds_doomhealth"));
         break;
+		
+    case WEEB_DEC_LEGSPECIAL:
+        delay(1575);
+        TakeInventory("LegionSpecialCounter",1);
+        break;
     }
 }
 
@@ -524,6 +533,7 @@ script WEEB_ENTER ENTER
     int NewShieldHP;
     int NewSentinelHP;
     int GetSomeHealthAlready;
+    int speedmod;
 
     if (CheckInventory("IsJungHaeLin") == 0) { terminate; }
 
@@ -1081,6 +1091,12 @@ script WEEB_ENTER ENTER
             MarchOfTheImmortal = 0;
             IronArmor = 0;
           }
+        }
+
+        if (GetCvar("ds_runmod") < 10001 && GetCvar("ds_runmod") > -2) // I forget what the maximum integer is. 36525? Well, whatever, anything beyond that and it'll crash.
+        {
+            speedmod = max(0, condFalse(GetCVar("ds_runmod"), 100)) * 0.01; // Get the percentage equivalent of the value...
+            SetActorProperty(0, APROP_Speed, speedmod); // And adjust the player's speed accordingly.
         }
 
         if (isbrutal)

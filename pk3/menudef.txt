@@ -55,6 +55,7 @@ OptionMenu "Changes-TurnThePage"
     Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
     Option "Spawn Arrogant weapons",         "ds_arrogantweapons", "ArrogantOptions"
     Option "No Combo penalty when damaged",  "ds_nodamagepenalty", "OnOff"
+    Option "Run speed modifier",  "ds_runmod", "RunModOptions"
     StaticText      ""
     Option "OH FUCK, SKELETONS!",            "ds_2brutal", "OnOff"
 }
@@ -71,4 +72,18 @@ OptionValue ArrogantOptions
     0, "No"
     1, "Replaces Skulltag Weapons"
     2, "Randomized Appearances"
+}
+     
+OptionValue RunModOptions
+{
+    -1, "Immobile"
+    25, "Modern FPS Protagonist"
+    50, "Half Speed"
+    75, "Doom Speed"
+    100, "Default"
+    125, "Fast"
+    150, "Faster"
+    200, "Even Faster"
+    400, "Even More Faster"
+    600, "HELP"
 }
