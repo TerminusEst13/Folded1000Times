@@ -78,12 +78,16 @@ OptionValue RunModOptions
 {
     -1, "Immobile"
     25, "Modern FPS Protagonist"
-    50, "Half Speed"
+    50, "Slow"
     75, "Doom Speed"
     100, "Default"
     125, "Fast"
     150, "Faster"
     200, "Even Faster"
     400, "Even More Faster"
-    600, "HELP"
+    600, "Yet Even More Faster"
+    1000, "HELP"
+    2000, "FUCK"
+    5000, "AAAAAAAAAAA"
+    10000, "JESUS TAKE THE WHEEL"
 }
