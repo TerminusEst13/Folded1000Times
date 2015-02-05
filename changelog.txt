@@ -70,6 +70,9 @@ FROM 0.74 TO 0.75:
 - The Sabbath no longer spits out an Idle4 error.
 - A new idle animation has been implemented, made by Sgt. Shivers.
 - Implemented a new cvar, ds_runmod, which modifies the percentage of the speed the player runs at. 100 is the default, 100% normal speed.
+- The main menu font has been tweaked for cleanliness and rephrasing.
+- As there are no Cacodemons in DemonSteele, the Dead Cacodemon decoration has been replaced with a pile of skulls.
+- The Soul Prison now gives 100 souls, instead of matching the pepper's 50.
 
 
 FROM 0.73 TO 0.74:

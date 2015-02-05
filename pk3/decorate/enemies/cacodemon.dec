@@ -261,3 +261,15 @@ actor WizardTrail2 : WizardTrail1
         Loop
    }
 }
+
+ACTOR DeadCacoReplacement replaces DeadCacodemon
+{
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        SKPL A -1
+        stop
+    }
+}

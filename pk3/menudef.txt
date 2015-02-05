@@ -2,8 +2,8 @@ ListMenu "MainMenu"
 {
     StaticPatch 94, 2, "M_DOOM"
     Position 97, 72
-    PatchItem "M_RDTHIS","r", "ReadThisMenu"
     PatchItem "M_NGAME", "n", "PlayerclassMenu"
+    PatchItem "M_RDTHIS","r", "ReadThisMenu"
     PatchItem "M_OPTION","o", "OptionsMenu"
     PatchItem "M_LOADG", "l", "LoadGameMenu"
     PatchItem "M_SAVEG", "s", "SaveGameMenu"

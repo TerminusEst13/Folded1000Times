@@ -1,8 +1,12 @@
 CHECKLIST FOR V0.75
 
+Decapitation death for the Archvile as well
+Decapitation/bisection death for the Priest?
+Hell Knight should use the same splatter technology as the Baron
+
 PRIORITY:
 1: Unique slashes when done mid-dash
-3: Implement Shivers' new idle animation/Baron/Mancubus Death.
+3: Implement Shivers' Baron/Mancubus/Priest Death and edit/implement Mike's BD AV death.
 8: Tutorial map
 18: Finish the specials for:
      ^ Acacia A-22
@@ -22,10 +26,8 @@ WOULD BE NICE:
 2: New sprites for the Iron Maiden gauntlets.
 3: Player sprites
 4: DevilDriver replacement for the Cyberdemon
-5: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 6: Replacement sounds for other world objects, such as lifts, switches, and doors.
 7: Casing ejection/smoke effects on the guns.
-8: Redone font on main menu options, restart New Game with "Rock n' Roll".
 10: Cvar for zombies to drop their respective ammo type.
 
 
@@ -40,6 +42,7 @@ WOULD BE NICE:
 
 
 2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.
+3: Implement Shivers' new Idle Animation
 4: Dramatic sheathing for all Kharon-by-itself specials--if enemies are killed with this, they wait until the sheathing or until a timer ends before dying.
 5: Better throwing sound for the Legion special.
 6: Menudef edit to put "READ THIS" on main menu.
@@ -59,4 +62,6 @@ WOULD BE NICE:
 22: Sentinel should fire in long bursts, rather than constantly.
 
 
+5: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
+8: Redone font on main menu options, restart New Game with "Rock n' Roll".
 9: Better skull for main menu select icon, current looks fucked beyond fuck.

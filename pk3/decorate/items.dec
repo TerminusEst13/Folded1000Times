@@ -46,7 +46,7 @@ actor LargeSoulGem : CustomInventory
     Pickup:
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
         TNT1 A 0 A_SetBlend("White",0.75,35)
-        TNT1 A 0 A_GiveInventory("SuperMeterCounter",50)
+        TNT1 A 0 A_GiveInventory("SuperMeterCounter",100)
         TNT1 A 0 A_StopSoundEx("soundslot6")
         stop
     PickupFail:

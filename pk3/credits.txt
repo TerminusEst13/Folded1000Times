@@ -97,6 +97,7 @@ GRAPHICS:
 - SoloSpaghetti (The Boots of Protection, modified from the Doom Roguelike Arsenal boots)
 - zrriontheinsect (The gothic candles, modified from his Doom 64 candles)
 - Horrormovieguy (The launched sprites for the Hell Baron and Hell Knight)
+- Monolith Productions (The pile of skulls from Blood)
 
 CODE:
 =========
