@@ -2,7 +2,7 @@ CHECKLIST FOR V0.75
 
 Decapitation death for the Archvile as well
 Decapitation/bisection death for the Priest?
-Hell Knight should use the same splatter technology as the Baron
+Hell Knight should use the same ADVANCED SPLATTER TECHNOLOGY (tm) as the Baron
 
 PRIORITY:
 1: Unique slashes when done mid-dash
@@ -16,16 +16,16 @@ PRIORITY:
      ^ Omen
      ^ BALANCE
 20: Adapt Testament shotgun system for the Omen and Chaingun
-23: Secret skeleton difficulty.
+23: Secret skeleton difficulty. (Scroton is doing thipfffttthahahahahahahahaha yeah no he's not)
 24: Test, test, test online.
 25: Update the metal jukebox/in-game credits/in-game changelog.
 
 
 WOULD BE NICE:
-1: Messiah guitar
-2: New sprites for the Iron Maiden gauntlets.
-3: Player sprites
-4: DevilDriver replacement for the Cyberdemon
+1: Messiah guitar (Sprites are done, need to rehaul the code)
+2: New sprites for the Iron Maiden gauntlets. (The_Riet is doing this)
+3: Player sprites (Gundere is doing this - "It could be around two more weeks before these babies are up to video game quality. [...] I'm back to knocking out several frames a night so hopefully it won't be too much longer. The absolute worst case scenario is March 1st, however I will not miss that deadline by a minute, even if I must draw with broken fingers.")
+4: DevilDriver replacement for the Cyberdemon (Vinse is doing this)
 6: Replacement sounds for other world objects, such as lifts, switches, and doors.
 7: Casing ejection/smoke effects on the guns.
 10: Cvar for zombies to drop their respective ammo type.
