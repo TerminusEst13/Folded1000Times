@@ -24,7 +24,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 129
+#define QUOTECOUNT 130
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -417,5 +417,6 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Install your GPU drivers.",
 "You think I have it rough? Wait until you see my friend, the New Year's Party Popper.",
 "Did you know that dumb upside down is qnwp?",
-"A person dies every 11 seconds. How many people have died since you started?"
+"A person dies every 11 seconds. How many people have died since you started?",
+"I've never seen a Kano transformation."
 };
