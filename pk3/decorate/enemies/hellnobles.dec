@@ -233,7 +233,8 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     Dhunter2:
         KXD2 E 4 A_ThrowGrenade ("BloodSplashGus1c",-24,5+random(0,7),8)
         TNT1 A 0 A_Jump(16,1)
-        Loop    
+        Loop
+        TNT1 A 0
         KXD2 E -1
         Stop
     death.kubiuti:
@@ -250,10 +251,17 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_Fall
         XDI3 EEEEEEEEEE 0 A_CustomMissile("EnemySplashGus3",random(52,60),0,random(0,360),2,random(0,360))
         XDI3 E 1 A_SpawnItem("BOS2Kubiuted",0,56,0)
-        XDI3 EEEEEEEEEE 1 A_ThrowGrenade ("BloodSplashGus1c",56,5+random(0,7),8)
+    DeathKubiHerp:
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
+        XDI3 EEEEEEEEEE 1 A_CustomMissile("BloodSplashGus1c",44,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade ("BloodSplashGus1c",56,5+random(0,7),8)
         TNT1 A 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(60,90))
-        XDI3 EEEEEEEEEE 1 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
+        XDI3 EEEEEEEEEE 1 A_CustomMissile("BloodSplashGus1c",44,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
         TNT1 A 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(60,90))
+        TNT1 A 0 A_Jump(8,1)
+        loop
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
         XDI3 FFFFFFFFFF 1 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
         TNT1 A 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(60,90))
         XDI3 GGGG 2 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
@@ -502,8 +510,9 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         XDI1 AAAAAAAAAA 1 A_CustomMissile("BloodSplashGus1c",54,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade ("BloodSplashGus1c",-2,5+random(0,7),8) 
         TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         XDI1 AAAAAAAAAA 1 A_CustomMissile("BloodSplashGus1c",54,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade ("BloodSplashGus1c",-2,5+random(0,7),8) 
-        TNT1 A 0 A_Jump(246,"DeathHunter1B")
-        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)   
+        TNT1 A 0 A_Jump(248,"DeathHunter1B")
+        TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
+        XDI1 A 1
         goto death.kubiuti+16
     DThunter2:
         TNT1 A 0 A_SpawnItem("BOSSKubiuted2",0,32,0)    
@@ -511,12 +520,14 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         BXD1 AAAAAAAAAA 1 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
     DTherp:
         TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
+        BXD1 AAAAAAAAAA 1 A_CustomMissile("BloodShowerC2",36,0,random(-180,180),2,random(750,900)/10.0)
+        TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         BXD1 AAAAAAAAAA 1 A_CustomMissile("BloodShowerC2",36,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade("BloodShowerC2",-4,5+random(0,360),8)    
         TNT1 A 0 A_Jump(8,1)
         loop
         TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
-        BXD1 BBBBBCCCCC 2 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)    
-        BXD1 DDDDD 4 A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)    
+        BXD1 BBBBBCCCCC 2 A_ThrowGrenade("BloodSplashGus1c",-8,5+random(0,7),8)    
+        BXD1 DDDDD 4 A_ThrowGrenade("BloodSplashGus1c",-8,5+random(0,7),8)    
         BXD1 D -1 A_BossDeath
         stop
     death.kubiuti:

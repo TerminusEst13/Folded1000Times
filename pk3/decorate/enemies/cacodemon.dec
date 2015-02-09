@@ -264,6 +264,7 @@ actor WizardTrail2 : WizardTrail1
 
 ACTOR DeadCacoReplacement replaces DeadCacodemon
 {
+    Scale 0.8
     -SOLID
     +CLIENTSIDEONLY
     States
