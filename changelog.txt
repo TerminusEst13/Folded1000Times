@@ -74,7 +74,7 @@ FROM 0.74 TO 0.75:
 - As there are no Cacodemons in DemonSteele, the Dead Cacodemon decoration has been replaced with a pile of skulls.
 - The Soul Prison now gives 100 souls, instead of matching the pepper's 50.
 - The Archvile now has a new death sequence, courtesy of Mike12.
-- The Mancubi now has a new death sequence, courtesy of Sgt. Shivers.
+- The Mancubi and Baron of Hell now have a new death sequence, courtesy of Sgt. Shivers.
 - Freezing Mancs now triggers A_BossDeath.
 
 
