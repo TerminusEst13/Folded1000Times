@@ -5,7 +5,7 @@ Decapitation/bisection death for the Priest?
 
 PRIORITY:
 1: Unique slashes when done mid-dash
-3: Implement Shivers' Baron/Mancubus/Priest Death and edit/implement Mike's BD AV death.
+3: Implement Shivers' Baron/Mancubus/Priest Death.
 8: Tutorial map
 18: Finish the specials for:
      ^ Acacia A-22
@@ -41,7 +41,7 @@ WOULD BE NICE:
 
 
 2: Spread PSSSSHHHHHTTTTT blood sound to other constantly-bleeding deaths.
-3: Implement Shivers' new Idle Animation
+3: Implement Shivers' new Idle Animation and edit/implement Mike's BD AV death.
 4: Dramatic sheathing for all Kharon-by-itself specials--if enemies are killed with this, they wait until the sheathing or until a timer ends before dying.
 5: Better throwing sound for the Legion special.
 6: Menudef edit to put "READ THIS" on main menu.
