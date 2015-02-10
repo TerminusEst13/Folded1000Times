@@ -172,7 +172,7 @@ ACTOR Priest replaces Arachnotron
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_PlaySound("enemy/bisected")
-        goto Death
+        goto DeathCutUp
 
 
     Death.KubiRangeAttackSheathe:
@@ -195,7 +195,19 @@ ACTOR Priest replaces Arachnotron
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
-        goto Death
+    DeathCutUp:
+        TNT1 AAAAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(16,32),0,180+random(-45,45),2,random(0,75))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(4,32),0,random(0,360),2,random(0,360))
+        PXD2 AA 1 A_CustomMissile("BloodShower2",random(16,32),0,180+random(-45,45),2,random(0,75))
+        TNT1 A 0 A_SpawnItemEx("PriestBisectedTorso",0,0,32,random(-100,100)/100.00,random(-100,100)/100.00,random(600,1200)/100.00,random(-180,180),160,0)
+        PXD2 BBB 1 A_CustomMissile("BloodShower2",random(16,32),0,180+random(-45,45),2,random(0,75))
+        TNT1 A 0 A_SpawnItemEx("PriestRemovedCape",0,0,32,random(-100,100)/100.00,random(-200,-100)/100.00,random(-50,50)/100.00,random(-180,180),160,0)
+        PXD2 CCC 1 A_CustomMissile("BloodShower2",random(16,32),0,180+random(-45,45),2,random(0,75))
+        PXD2 DDDEEEFFFGGG 1 A_CustomMissile("BloodShower2",random(16,32),0,180+random(-45,45),2,random(0,75))
+        PXD2 HHHHHHHHHHHHHHH 2 A_CustomMissile("BloodShower2",random(16,32),0,180+random(-45,45),2,random(0,75))
+        PXD2 I 3 A_NoBlocking
+        PXD2 J -1 A_BossDeath
+        stop
     Death.HaltHammerzeitImpact:
     Death.HaltHammerzeit:
     Death.IronFistExplosion:
@@ -281,6 +293,53 @@ actor PriestguyFrozen : FrozenDummy
         PRST Z 2100
         PRST Z 1 A_Jump(128, "Death")
         Loop
+    }
+}
+
+actor PriestBisectedTorso : POSXKubiuted
+{
+    -SHOOTABLE
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 //ThrustThing (random(0,255),random(1,4))
+        TNT1 A 0 //ThrustThingZ(0,random(15,30),0,0)
+        PXD2 KKKKK 1 A_SpawnItem("BloodShowerC3",0)
+        TNT1 A 0 A_CheckFloor("Spawned")
+        PXD2 K 1 A_SpawnItem("BloodShowerC3",0)
+        TNT1 A 0 A_CheckFloor("Spawned")
+        goto Spawn+9
+    Spawned:
+        TNT1 A 0 A_PlaySound("S_Blodd")
+        TNT1 A 0 A_ChangeFlag("PUSHABLE",0)
+        PXD2 LMNO 2
+        PXD2 P -1
+        Stop
+    Death:
+        TNT1 A 0 A_Fall
+        TNT1 A 0 A_Scream
+        TNT1 AAAAA 0 A_SpawnDebris("BloodShowerC2")
+        BLD1 CBA 1
+        Stop
+    }
+}
+
+actor PriestRemovedCape
+{
+    +CLIENTSIDEONLY
+    Gravity 0.25
+    States
+    {
+    Spawn:
+        PXD2 Q 2
+        TNT1 A 0 A_CheckFloor("Spawned")
+        loop
+    Spawned:
+        PXD2 RS 2
+        PXD2 T -1
+        stop
     }
 }
 
