@@ -1,5 +1,9 @@
 CHECKLIST FOR V0.75
 
+Reduce gunsoul amount, halve the amount of souls given
+<The_Riet> Term, not sure if you saw me mention it, but Legion's special is OP as fuck, you can just run up to a Cyber and stunlock him with it, killing him in seconds
+<The_Riet> In fact, I cleared out the majority of one of the final rooms in that mapset, had a bunch of enemies, including a Cyber and a few Arch-viles, and what seemed like endless Pinkies, and it just cut through them like butter
+
 PRIORITY:
 1: Unique slashes when done mid-dash
 18: Finish the specials for:

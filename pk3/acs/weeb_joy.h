@@ -43,7 +43,7 @@ Script WEEB_JOY_FORW Enter
 			{
 				ForwardCounter = 8;
 				TapCounterForward ++;
-				Until (stick_forward < 3200) // Do this while we wait for the stick to return to neutral
+				Until (stick_forward < 3200 || TapCounterForward >= 2) // Do this while we wait for the stick to return to neutral
 				{
 					ForwardCounter --;
 					If (ForwardCounter == 0) // Did we wait too long
@@ -93,7 +93,7 @@ Script WEEB_JOY_LEFT Enter
 			{
 				BackCounter = 8;
 				TapCounterBack ++;
-				Until (stick_forward > -3200)
+				Until (stick_forward > -3200 || TapCounterBack >= 2)
 				{
 					BackCounter --;
 					If (BackCounter == 0)
@@ -141,7 +141,7 @@ Script WEEB_JOY_RITE Enter
 			{
 				LeftCounter = 8;
 				TapCounterLeft ++;
-				Until (stick_side > -3200)
+				Until (stick_side > -3200 || TapCounterLeft >= 2)
 				{
 					LeftCounter --;
 					If (LeftCounter == 0)
@@ -190,7 +190,7 @@ Script WEEB_JOY_BACK Enter
 			{
 				RightCounter = 8;
 				TapCounterRight ++;
-				Until (stick_side < 3200)
+				Until (stick_side < 3200 || TapCounterRight >= 2)
 				{
 					RightCounter --;
 					If (RightCounter == 0)

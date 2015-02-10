@@ -29,7 +29,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 138
+#define QUOTECOUNT 139
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -431,5 +431,7 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "There's absolutely no illuminati watching you right now.",
 "Protip: To kill the Cyberdemon, stab it until it dies.",
 "play some punch out with these nerds and beat them 2 the punch",
-"How exactly do you refine toxins?"
+"How exactly do you refine toxins?",
+"HOW DOE'S IT FEEL TO BE WELL DONE? BUT I BET YOU TASTE TERRIBLE."
+
 };
