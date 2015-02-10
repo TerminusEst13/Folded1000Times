@@ -13,7 +13,7 @@ ACTOR Candelabra2 : DestructableDecorationBase replaces Candelabra
     Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
-    Pain.Kubiuti.Upper:
+    Pain.KubiutiUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")

@@ -13,7 +13,7 @@ ACTOR TechLamp3 : DestructableDecorationBase replaces TechLamp
     Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
-    Pain.Kubiuti.Upper:
+    Pain.KubiutiUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")
@@ -80,7 +80,7 @@ ACTOR TechLamp4 : DestructableDecorationBase replaces TechLamp2
     Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
-    Pain.Kubiuti.Upper:
+    Pain.KubiutiUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")
@@ -147,7 +147,7 @@ ACTOR Column2 : DestructableDecorationBase replaces Column
     Pain.IronFistDamage:
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
-    Pain.Kubiuti.Upper:
+    Pain.KubiutiUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")

@@ -152,12 +152,21 @@ int GravityOfLight;
         {
             if (GetCvar("ds_nodamagepenalty") == 0)
             {
-            if (CheckInventory("ContraArmorToken") >= 1)
+              if (CheckInventory("ContraArmorToken") >= 1)
                 { TakeInventory("ContraArmorToken",1); TakeInventory("HyperComboCounter",25); }
-            else if (CheckInventory("OverLifeToken") >= 1)
+              else if (CheckInventory("OverLifeToken") >= 1)
                 { TakeInventory("OverLifeToken",1); TakeInventory("HyperComboCounter",50); }
-            else if (CheckInventory("ContraLifeToken") >= 1)
+              else if (CheckInventory("ContraLifeToken") >= 1)
                 { TakeInventory("ContraLifeToken",1); TakeInventory("HyperComboCounter",50); }
+            }
+            else
+            {
+              if (CheckInventory("ContraArmorToken") >= 1)
+                { TakeInventory("ContraArmorToken",1); }
+              else if (CheckInventory("OverLifeToken") >= 1)
+                { TakeInventory("OverLifeToken",1); }
+              else if (CheckInventory("ContraLifeToken") >= 1)
+                { TakeInventory("ContraLifeToken",1); }
             }
 
         GiveInventory("Wounded",1);

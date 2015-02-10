@@ -1,7 +1,5 @@
 CHECKLIST FOR V0.75
 
-Implement Jpalomo's joystick build.
-
 PRIORITY:
 1: Unique slashes when done mid-dash
 18: Finish the specials for:

@@ -29,7 +29,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 133
+#define QUOTECOUNT 138
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -426,5 +426,10 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "I've never seen a Kano transformation.",
 "Beware of he who would deny you access to information, for in his heart he dreams himself your master.",
 "I'd say it's a good day to die, but next Sunday might be good too.",
-"Control the media, control the mind."
+"Control the media, control the mind.",
+"You're not the boss of me!",
+"There's absolutely no illuminati watching you right now.",
+"Protip: To kill the Cyberdemon, stab it until it dies.",
+"play some punch out with these nerds and beat them 2 the punch",
+"How exactly do you refine toxins?"
 };
