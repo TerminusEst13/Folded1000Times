@@ -71,13 +71,14 @@ FROM 0.74 TO 0.75:
 - A new idle animation has been implemented, made by Sgt. Shivers.
 - Implemented a new cvar, ds_runmod, which modifies the percentage of the speed the player runs at. 100 is the default, 100% normal speed.
 - The main menu font has been tweaked for cleanliness and rephrasing.
-- As there are no Cacodemons in DemonSteele, the Dead Cacodemon decoration has been replaced with a pile of skulls.
+- As there are no Cacodemons in DemonSteele, the Dead Cacodemon decoration has bween replaced with a pile of skulls.
 - The Soul Prison now gives 100 souls, instead of matching the pepper's 50.
 - The Archvile now has a new death sequence, courtesy of Mike12.
 - The Mancubi and Baron of Hell now have a new death sequence, courtesy of Sgt. Shivers.
 - The Priest now has a unique kubiuti death sequence, courtesy of Sgt. Shivers.
 - Freezing Mancs now triggers A_BossDeath.
 - Thanks to jpalomo's code, DemonSteele's special moves and dodging now can support joystick and touchscreen movements!
+- Transforming into the Iron Maiden from the Omen and untransforming meant the Omen's ammo would not degrade until it was selected. This has been fixed.
 
 
 FROM 0.73 TO 0.74:

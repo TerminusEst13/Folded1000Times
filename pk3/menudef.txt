@@ -49,7 +49,7 @@ OptionMenu "Changes-TurnThePage"
     Option "Start with Omen",                "ds_omenstart", "OnOff"
     Option "Start with Backpack",            "ds_backpackstart", "OnOff"
     Option "Infinite soul meter",            "ds_infinitesouls", "OnOff"
-    Option "Testament only spawns on SSG",   "ds_noshotgun", "OnOff"
+    Option "Testament spawns on",            "ds_noshotgun", "TestamentOptions"
     Option "Disable special moves",          "ds_nospecials", "OnOff"
     Option "Gun deaths give souls",          "ds_gunsouls", "OnOff"
     Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
@@ -59,14 +59,20 @@ OptionMenu "Changes-TurnThePage"
     StaticText      ""
     Option "OH FUCK, SKELETONS!",            "ds_2brutal", "OnOff"
 }
-     
+
 OptionValue ToasterOptions
 {
     0, "All effects"
     1, "Less effects"
     2, "Minimal effects"
 }
-     
+
+OptionValue TestamentOptions
+{
+    0, "Shotgun/SSG"
+    1, "SSG Only"
+}
+
 OptionValue ArrogantOptions
 {
     0, "No"
