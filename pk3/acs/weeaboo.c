@@ -4,6 +4,7 @@
 #include "commonfuncs.h"
 #include "weeb_const.h"
 #include "weeb_frosthammer.h"
+#include "weeb_joy.h"
 
 global int 58:LevelCount;
 

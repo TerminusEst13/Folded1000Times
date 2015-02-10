@@ -77,6 +77,7 @@ FROM 0.74 TO 0.75:
 - The Mancubi and Baron of Hell now have a new death sequence, courtesy of Sgt. Shivers.
 - The Priest now has a unique kubiuti death sequence, courtesy of Sgt. Shivers.
 - Freezing Mancs now triggers A_BossDeath.
+- Thanks to jpalomo's code, DemonSteele's special moves and dodging now can support joystick and touchscreen movements!
 
 
 FROM 0.73 TO 0.74:

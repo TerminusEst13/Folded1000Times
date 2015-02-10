@@ -20,11 +20,16 @@
 #define WEEB_FROST_BURST                     283
 #define WEEB_FROST_TRAIL                     284
 #define WEEB_FROST_COORDSHIT                 285
+#define WEEB_JOY_FORW                        286
+#define WEEB_JOY_LEFT                        287
+#define WEEB_JOY_RITE                        288
+#define WEEB_JOY_BACK                        289
+#define WEEB_JOY_LOOP                        290
 
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 130
+#define QUOTECOUNT 133
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -418,5 +423,8 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "You think I have it rough? Wait until you see my friend, the New Year's Party Popper.",
 "Did you know that dumb upside down is qnwp?",
 "A person dies every 11 seconds. How many people have died since you started?",
-"I've never seen a Kano transformation."
+"I've never seen a Kano transformation.",
+"Beware of he who would deny you access to information, for in his heart he dreams himself your master.",
+"I'd say it's a good day to die, but next Sunday might be good too.",
+"Control the media, control the mind."
 };

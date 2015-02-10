@@ -124,6 +124,7 @@ CODE:
 - TiberiumSoul (The code for the bulletpuffs based off of his neat little effects)
 - Zael (For the Ultima Cannon, which I shamelessly ripped off for the not-Kamehameha. May your mass never go inert)
 - amv2k9 (The launching system, adapted from his old Devil May Cry mod)
+- jpalomo (Joystick and touchscreen support, written entirely by him!)
 
 MUSIC:
 =========

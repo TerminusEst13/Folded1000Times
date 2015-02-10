@@ -4,7 +4,6 @@ Implement Jpalomo's joystick build.
 
 PRIORITY:
 1: Unique slashes when done mid-dash
-8: Tutorial map
 18: Finish the specials for:
      ^ Acacia A-22
      ^ Exodus
@@ -44,6 +43,7 @@ WOULD BE NICE:
 5: Better throwing sound for the Legion special.
 6: Menudef edit to put "READ THIS" on main menu.
 7: cvar that doesn't remove meter when damaged
+8: Tutorial map // Nahhhhhhhhhh, it'd be better to make a retro game manual.
 9: sounds for the lamps and torches, nick Smooth Doom's candle.
 10: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
 11: Skulltag armor/health bonuses aren't being replaced in Invasion?
