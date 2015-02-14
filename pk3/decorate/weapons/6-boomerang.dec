@@ -566,105 +566,105 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_GiveInventory("LegionStacked",1)
         TNT1 A 0 A_PlayWeaponSound("boomerang/stack")
         goto AltHold
-	FireBoomerang2:
+    FireBoomerang2:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-4,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-4,0,0,0,2)
         BMRN H 1 A_FireCustomMissile("ThrownKnife2",4,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang3:
+        goto FireBoomerangFinish
+    FireBoomerang3:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-6,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",6,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-6,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",6,0,0,0,2)
         BMRN H 1 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang4:
+        goto FireBoomerangFinish
+    FireBoomerang4:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
         BMRN H 1 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang5:
+        goto FireBoomerangFinish
+    FireBoomerang5:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
         BMRN H 1 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang6:
+        goto FireBoomerangFinish
+    FireBoomerang6:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
         BMRN H 1 A_FireCustomMissile("ThrownKnife2",13,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang7:
+        goto FireBoomerangFinish
+    FireBoomerang7:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
         BMRN H 1 A_FireCustomMissile("ThrownKnife2",15,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang8:
+        goto FireBoomerangFinish
+    FireBoomerang8:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
         TNT1 A 0 A_FireCustomMissile("ThrownKnife2",13,0,0,0,2)
-	    BMRN H 1 A_FireCustomMissile("ThrownKnife2",18,0,0,0,2)
+        BMRN H 1 A_FireCustomMissile("ThrownKnife2",18,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang9:
+        goto FireBoomerangFinish
+    FireBoomerang9:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-20,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-20,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-15,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-10,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-5,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",0,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",5,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",10,0,0,0,2)
         TNT1 A 0 A_FireCustomMissile("ThrownKnife2",15,0,0,0,2)
-	    BMRN H 1 A_FireCustomMissile("ThrownKnife2",20,0,0,0,2)
+        BMRN H 1 A_FireCustomMissile("ThrownKnife2",20,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
-	FireBoomerang10:
+        goto FireBoomerangFinish
+    FireBoomerang10:
         BMRN FG 1
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwbunch")
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-23,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-23,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-18,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-13,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-8,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",-3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",3,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",8,0,0,0,2)
         TNT1 A 0 A_FireCustomMissile("ThrownKnife2",13,0,0,0,2)
-	    TNT1 A 0 A_FireCustomMissile("ThrownKnife2",18,0,0,0,2)
-	    BMRN H 1 A_FireCustomMissile("ThrownKnife2",23,0,0,0,2)
+        TNT1 A 0 A_FireCustomMissile("ThrownKnife2",18,0,0,0,2)
+        BMRN H 1 A_FireCustomMissile("ThrownKnife2",23,0,0,0,2)
         BMRN I 1
-		goto FireBoomerangFinish
+        goto FireBoomerangFinish
     FireBoomerangFinish:
         BMRN J 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("LegionCounter",0x7FFFFFFF)

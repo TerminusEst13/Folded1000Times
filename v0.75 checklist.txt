@@ -8,7 +8,6 @@ PRIORITY:
 1: Unique slashes when done mid-dash
 18: Finish the specials for:
      ^ Acacia A-22
-     ^ Exodus
      ^ Kharon
      ^ Frosthammer
      ^ Omen

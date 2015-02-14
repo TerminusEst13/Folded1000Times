@@ -259,6 +259,22 @@ $rolloff grenades/explode3 400 1600
 $rolloff grenades/explode4 400 1600
 $rolloff grenades/explode5 400 1600
 
+exodus/specialsight       XSPECSIT // Taken from Unreal 2
+exodus/specialbeep        XSPECCH1 // Taken from Rainbow Six: Lockdown
+exodus/specialboop        XSPECCH2 // Taken from Rainbow Six: Lockdown
+exodus/specialfire        XSPECFIR
+exodus/specialburn        XSPECBRN // Taken from the General Series 6000
+$random exodus/specialhit { smiss/hit1 smiss/hit2 smiss/hit3 }
+smiss/hit1                SMISEXP1
+smiss/hit2                SMISEXP2
+smiss/hit3                SMISEXP3
+
+$rolloff smiss/hit1     600 2000
+$rolloff smiss/hit2     600 2000
+$rolloff smiss/hit3     600 2000
+
+// Etc
+
 $random bullet/hit { bullhit1 bullhit2 bullhit3 bullhit4 } // Taken from Halo: Reach
 bullhit1                  BULLHIT1
 bullhit2                  BULLHIT2
