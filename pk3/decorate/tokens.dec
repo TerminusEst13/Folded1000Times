@@ -60,6 +60,7 @@ actor IAmADumbPersonWhoWillProbablyAccidentallyDie : Boolean {}
 actor IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls : Boolean {}
 actor IAmATraditionalDoomerWhoLikesNumbersOverTokens : Boolean {}
 actor IAmAMassiveCasualWhoNeedsMyWeaponsToFireAutomatically : Boolean {}
+actor IAmABoringPersonWhoThinksPointsAreForNerds : Boolean {}
 
 actor IsJungHaeLin : Boolean {}
 actor ImAlive : Boolean {}

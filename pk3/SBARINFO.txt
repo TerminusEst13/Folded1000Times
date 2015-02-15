@@ -5,7 +5,11 @@ InterpolateArmor true, 8;
 
 statusbar normal, forcescaled
 {
-DrawNumber 10, smallfont, white, Points, fillzeros, 205, 6;
+InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
+{
+    DrawNumber 9, smallfont, white, Points, fillzeros, 205, 6;
+    DrawNumber 1, smallfont, white, BillionsOfPoints, fillzeros, 124, 6;
+}
 
 ininventory not SkulltagWeaponsAcquired, 1
 {
@@ -189,46 +193,50 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
     {
         AspectRatio "4:3"
         {
-        DrawImage "SENTACTV", 1, 20;
-        DrawNumber 3, smallfont, green, SentinelLifeCounter, 45, 24;
+            DrawImage "SENTACTV", 1, 20;
+            DrawNumber 3, smallfont, green, SentinelLifeCounter, 45, 24;
         }
         AspectRatio "16:10"
         {
-        DrawImage "SENTACTV", -31, 20;
-        DrawNumber 3, smallfont, green, SentinelLifeCounter, 13, 24;
+            DrawImage "SENTACTV", -31, 20;
+            DrawNumber 3, smallfont, green, SentinelLifeCounter, 13, 24;
         }
         AspectRatio "16:9"
         {
-        DrawImage "SENTACTV", -52, 20;
-        DrawNumber 3, smallfont, green, SentinelLifeCounter, -8, 24;
+            DrawImage "SENTACTV", -52, 20;
+            DrawNumber 3, smallfont, green, SentinelLifeCounter, -8, 24;
         }
     }
     InInventory BlindGuardianShieldUp
     {
         AspectRatio "4:3"
         {
-        DrawImage "SHLDACTV", 1, 2;
-        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 54, 6; }
-        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 45, 6; }
+            DrawImage "SHLDACTV", 1, 2;
+            InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 54, 6; }
+            InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 45, 6; }
         }
         AspectRatio "16:10"
         {
-        DrawImage "SHLDACTV", -31, 2;
-        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 22, 6; }
-        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 13, 6; }
+            DrawImage "SHLDACTV", -31, 2;
+            InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 22, 6; }
+            InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 13, 6; }
         }
         AspectRatio "16:9"
         {
-        DrawImage "SHLDACTV", -52, 2;
-        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
-        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
+            DrawImage "SHLDACTV", -52, 2;
+            InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
+            InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
         }
     }
 }
 
 statusbar fullscreen, forcescaled
 {
-DrawNumber 10, smallfont, white, Points, fillzeros, 205, 6;
+InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
+{
+    DrawNumber 9, smallfont, white, Points, fillzeros, 205, 6;
+    DrawNumber 1, smallfont, white, BillionsOfPoints, fillzeros, 124, 6;
+}
 
 drawimage ammoicon1, 258, 187, center;
 drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;

@@ -2,6 +2,15 @@
 // handle things this way and save bandwidth.
 
 actor Points : Counter {}
+actor BillionsOfPoints : Counter { Inventory.MaxAmount 9 }
+
+actor PointsTookDamage : Boolean {}
+actor PointsGrabbedItem : Boolean {}
+actor PointsAttacked : Boolean {}
+actor PointsUsedSpecial : Boolean {}
+actor PointsIsBrutal : Boolean {}
+
+actor PointsSpeedrunning : Counter { Inventory.MaxAmount 875 } // 25 seconds
 
 actor KharonSlashPoints : CustomInventory
 {

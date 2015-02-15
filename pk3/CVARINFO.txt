@@ -23,3 +23,4 @@ server int ds_cl_toaster        = 0;
 // Actually clientside, but apparently it doesn't work if it's a user cvar. NEAT.
 user int ds_cl_autoswitch       = 0;
 user int ds_cl_nobeeping        = 0;
+user int ds_cl_nopoints         = 0;

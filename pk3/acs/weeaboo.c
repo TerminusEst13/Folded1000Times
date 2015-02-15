@@ -15,6 +15,7 @@ int IsServer;
 int array_recoilrules[PLAYERMAX];
 int array_autoswitch[PLAYERMAX];
 int array_beepbeepbeep[PLAYERMAX];
+int array_nopan[PLAYERMAX];
 int flashlightOn[PLAYERMAX];
 
 int GotShotgun;
@@ -39,7 +40,7 @@ script WEEB_RESPAWN respawn
     if (GameSkill () == 2) { GiveInventory("ContraLifeToken",6); }
     if (GameSkill () == 3) { GiveInventory("ContraLifeToken",4); }
     if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
-    TakeInventory("Points",100000);
+    TakeInventory("Points",1000000);
     
     ACS_ExecuteAlways(268,0,0,0);
 }
@@ -128,6 +129,10 @@ script WEEB_OPEN_CLIENT OPEN clientside
         if (!GetCvar("ds_cl_nobeeping"))
             { ConsoleCommand("set ds_cl_nobeeping 0");
               ConsoleCommand("archivecvar ds_cl_nobeeping"); }
+
+        if (!GetCvar("ds_cl_nopoints"))
+            { ConsoleCommand("set ds_cl_nopoints 0");
+              ConsoleCommand("archivecvar ds_cl_nopoints"); }
     }
 }
 
@@ -149,6 +154,7 @@ int GravityOfLight;
         
         if (CheckInventory("PowerShieldProtection") == 1) { terminate; }
         
+        GiveInventory("PointsTookDamage",1);
         if( GetCVar( "ds_doomhealth" ) == 0 )
         {
             if (GetCvar("ds_nodamagepenalty") == 0)
@@ -614,6 +620,7 @@ script WEEB_ENTER ENTER
     {
         Thing_Remove(i);
         isbrutal = 1;
+        GiveInventory("PointsIsBrutal",1);
     }
 
     SetActorProperty(0,APROP_INVULNERABLE,0); // Just in case some wiseass exits while invuln.
@@ -624,6 +631,7 @@ script WEEB_ENTER ENTER
     SetActorProperty(0,APROP_Gravity,0.85);
     GiveInventory("NewLevelStatReset",1);
     GiveInventory("FlashlightStopper",1);
+    GiveInventory("PointsSpeedrunning",875);
     if (CheckInventory("HammerCharge") > 100)
     {
         TakeInventory("HammerCharge",100); // A bit brute-force, but they'll regain it back.
@@ -658,6 +666,8 @@ script WEEB_ENTER ENTER
 
         if (GetCvar("ds_doomhealth") == 1) { GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
            else { TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
+
+        if (CheckInventory("Points") >= 1000000000) { TakeInventory("Points",1000000000); GiveInventory("BillionsOfPoints",1); }
         
         if( GetCVar( "ds_doomhealth" ) == 1 )
         {
@@ -844,6 +854,7 @@ script WEEB_ENTER ENTER
         TakeInventory("DoubleTapReadyBack",1);
         TakeInventory("MidCombat",1);
         TakeInventory("HenshinCooldown",1);
+        TakeInventory("PointsSpeedrunning",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
         // If the player still has life left, they get full health.
@@ -1142,6 +1153,8 @@ script WEEB_ENTER ENTER
         else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
         if (array_beepbeepbeep[pln]) { GiveInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie",1); }
         else { TakeInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie", 0x7FFFFFFF); }
+        if (array_nopan[pln]) { GiveInventory("IAmABoringPersonWhoThinksPointsAreForNerds",1); }
+        else { TakeInventory("IAmABoringPersonWhoThinksPointsAreForNerds", 0x7FFFFFFF); }
 
         if (flashlightOn[pln])
             { GiveInventory("FlashlightSpawner", 1); }
@@ -1215,8 +1228,13 @@ script WEEB_UNLOADING UNLOADING
     if (GameSkill () == 3) { GiveInventory("Points",10000); }
     if (GameSkill () == 4) { GiveInventory("Points",50000); }
     if (GameSkill () == 5) { GiveInventory("Points",100000); }
+    if (CheckInventory("PointsIsBrutal") == 1) { GiveInventory("Points",10000); }
+    if (CheckInventory("PointsTookDamage") == 0) { GiveInventory("Points",1000000); }
+    if (CheckInventory("PointsSpeedrunning") > 0) { GiveInventory("Points",1000000); }
 
     TakeInventory("AlreadyInLevel",1);
+    TakeInventory("PointsTookDamage",1);
+    TakeInventory("PointsSpeedrunning",0x7FFFFFFF);
 
     TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
@@ -1246,6 +1264,8 @@ script WEEB_UNLOADING UNLOADING
 
 script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
 {
+    TakeInventory("PointsSpeedrunning",0x7FFFFFFF);
+
     TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
     TakeInventory("ShootingLikeABaka",1);
@@ -1273,17 +1293,16 @@ script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
 }
 
 //int array_custmischarg[PLAYERMAX];
-//int array_hitindic[PLAYERMAX];
 
 function int WeebClientVars(void)
 {
     //int custmischarg      = !!GetCVar("metroid_cl_custommissilecharge");
-    //int hitindic          = !!GetCVar("metroid_cl_hitindicator");
+    int nopan               = !!GetCVar("ds_cl_nopoints");
     int beepbeepbeep        = !!GetCVar("ds_cl_nobeeping");
     int autoswitch          = !!GetCVar("ds_cl_autoswitch");
     int recoilrules         = !!GetCVar("ds_cl_norecoil");
 
-    return /*(custmischarg << 4) + (hitindic << 3) +*/ (beepbeepbeep << 2) + (autoswitch << 1) + recoilrules;
+    return /*(custmischarg << 4) +*/ (nopan << 3) + (beepbeepbeep << 2) + (autoswitch << 1) + recoilrules;
 }
 
 script WEEB_ENTER_CLIENT ENTER clientside
@@ -1322,8 +1341,8 @@ script WEEB_PUKE (int values) net
     array_recoilrules[pln]     = values & 1;
     array_autoswitch[pln]      = values & 2;
     array_beepbeepbeep[pln]    = values & 4;
-    /*array_hitindic[pln]      = values & 8;
-    array_custmischarg[pln]  = values & 16;*/
+    array_nopan[pln]           = values & 8;
+    //array_custmischarg[pln]  = values & 16;*/
 }
 
 script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE

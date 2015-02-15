@@ -6,6 +6,8 @@ Reduce gunsoul amount, halve the amount of souls given
 
 <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
 
+Killing with sheathe gives no points.
+
 PRIORITY:
 1: Unique slashes when done mid-dash
 18: Finish the specials for:

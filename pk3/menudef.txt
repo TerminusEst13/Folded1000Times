@@ -44,6 +44,7 @@ OptionMenu "Changes-TurnThePage"
     Option "No Iron Maiden music",           "ds_cl_nomusic", "OnOff"
     Option "No low health warning",          "ds_cl_nobeeping", "OnOff"
     Option "Display graphical effects",      "ds_cl_toaster", "ToasterOptions"
+    Option "Remove score display",           "ds_cl_nopoints", "OnOff"
     StaticText      ""
     StaticText      "Gameplay Options", 1
     Option "Start with Omen",                "ds_omenstart", "OnOff"
