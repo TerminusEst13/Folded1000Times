@@ -79,7 +79,8 @@ FROM 0.74 TO 0.75:
 - Freezing Mancs now triggers A_BossDeath.
 - Thanks to jpalomo's code, DemonSteele's special moves and dodging now can support joystick and touchscreen movements!
 - Transforming into the Iron Maiden from the Omen and untransforming meant the Omen's ammo would not degrade until it was selected. This has been fixed.
-- Punching the Lost Souls while in Iron Maiden now gives Soul
+- Punching the Lost Souls while in Iron Maiden now gives souls.
+- A points system has now been implemented, for that extra arcade-y feel.
 
 
 FROM 0.73 TO 0.74:
