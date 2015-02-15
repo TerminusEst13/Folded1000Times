@@ -197,10 +197,6 @@ idle/swing                IDLSWING // Taken from...Postal 2, I think?
 idle/swing2               IDLSWIN2 // Man I don't even know
 idle/pose                 IDLPOSE  // Yeah, stumped
 
-$random sword/shielddefense { block1 block2 block3 } // Taken from the Oblivion Combat Sound Replacement
-block1                    SHLDBLK1
-block2                    SHLDBLK2
-block3                    SHLDBLK3
 $random sword/swingmed { medswing1 medswing2 medswing3 } // Taken from the Oblivion Combat Sound Replacement
 medswing1                 SWINGMD1
 medswing2                 SWINGMD2

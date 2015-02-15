@@ -5,6 +5,8 @@ InterpolateArmor true, 8;
 
 statusbar normal, forcescaled
 {
+DrawNumber 10, smallfont, white, Points, fillzeros, 205, 6;
+
 ininventory not SkulltagWeaponsAcquired, 1
 {
     ininventory not GotIronMaiden, 1 { drawimage "AMMBOX", 308, 182, center; }

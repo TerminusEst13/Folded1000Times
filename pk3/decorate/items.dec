@@ -23,6 +23,7 @@ actor TinyMeterPickup : CustomInventory
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
         TNT1 A 0 A_SetBlend("White",0.15,10)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_GiveInventory("Points",10)
         stop
     PickupFail:
         TNT1 A 0
@@ -47,6 +48,7 @@ actor LargeSoulGem : CustomInventory
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
         TNT1 A 0 A_SetBlend("White",0.75,35)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",100)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_StopSoundEx("soundslot6")
         stop
     PickupFail:
@@ -340,6 +342,7 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     EasyPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverEasyPickup")
@@ -348,6 +351,7 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     NormalPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNormalPickup")
@@ -356,6 +360,7 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     HardPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverHardPickup")
@@ -364,6 +369,7 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     NightmarePickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"OverNightmarePickup")
@@ -372,6 +378,7 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
 
     OverBabyPickup:
@@ -379,30 +386,35 @@ actor HealPackSmall: CustomInventory //replaces StimPack
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     OverEasyPickup: // Heh.
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     OverNormalPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"NormalFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     OverHardPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"HardFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     OverNightmarePickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"NightmareFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        TNT1 A 0 A_GiveInventory("Points",100)
         stop
     PickupFail:
         TNT1 A 0
@@ -548,6 +560,7 @@ actor HealPackMedium: CustomInventory
     BabyFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",10,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
     BabyFailCheck2:
@@ -559,6 +572,7 @@ actor HealPackMedium: CustomInventory
     EasyFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",8,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
     EasyFailCheck2:
@@ -570,6 +584,7 @@ actor HealPackMedium: CustomInventory
     NormalFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",6,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
     NormalFailCheck2:
@@ -581,6 +596,7 @@ actor HealPackMedium: CustomInventory
     HardFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",4,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
     HardFailCheck2:
@@ -592,6 +608,7 @@ actor HealPackMedium: CustomInventory
     NightmareFailCheck:
         TNT1 A 0 A_JumpIfInventory("ContraLifeToken",2,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("ContraLifeToken",1)
     NightmareFailCheck2:
@@ -602,6 +619,7 @@ actor HealPackMedium: CustomInventory
     OverBabyPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"BabyFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"BabyFailCheck2")
@@ -610,6 +628,7 @@ actor HealPackMedium: CustomInventory
     OverEasyPickup: // Heh.
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"EasyFailCheck2")
@@ -618,6 +637,7 @@ actor HealPackMedium: CustomInventory
     OverNormalPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"NormalFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"NormalFailCheck2")
@@ -626,6 +646,7 @@ actor HealPackMedium: CustomInventory
     OverHardPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"HardFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"HardFailCheck2")
@@ -634,6 +655,7 @@ actor HealPackMedium: CustomInventory
     OverNightmarePickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"NightmareFailCheck")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",250)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"NightmareFailCheck2") // Just in case you get hit while picking this up.
@@ -786,6 +808,7 @@ actor OverHealPack : CustomInventory
     BabyPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
@@ -796,6 +819,7 @@ actor OverHealPack : CustomInventory
     EasyPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
@@ -806,6 +830,7 @@ actor OverHealPack : CustomInventory
     NormalPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
@@ -816,6 +841,7 @@ actor OverHealPack : CustomInventory
     HardPickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupStop")
@@ -826,6 +852,7 @@ actor OverHealPack : CustomInventory
     NightmarePickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"PickupStop")
@@ -834,6 +861,7 @@ actor OverHealPack : CustomInventory
     OhGodHelpMePickup:
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         stop
@@ -954,10 +982,12 @@ actor ArmorPackSmall: CustomInventory
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",2,"PickupFail")
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",1,"Pickup1")
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",200)
         TNT1 A 0 A_GiveInventory("ContraArmorToken",2)
         stop
     Pickup1:
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",200)
         TNT1 A 0 A_GiveInventory("ContraArmorToken",1)
         stop
     PickupFail:
@@ -1002,6 +1032,7 @@ actor ArmorPackLarge: CustomInventory
     Pickup:
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",4,"PickupFail")
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("ContraArmorToken",4)
         stop
     PickupFail:
@@ -1028,11 +1059,13 @@ actor BlindGuardianPickup : CustomInventory replaces Blursphere
     Pickup:
         TNT1 A 0 A_JumpIfInventory("BlindGuardianShieldUp",1,"PickupHeal")
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("BlindGuardianShieldUp",1)
         stop
     PickupHeal:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("BlindGuardianShieldHeal",1)
         stop
     }
@@ -1074,6 +1107,7 @@ actor ArmorHealthMegaPack: CustomInventory
             // so complex that it's actually easier to do in ACS than in Decorate.
         TNT1 A 1
         TNT1 A 0 A_SetBlend("Blue",0.6,15)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_GiveInventory("HaeLinFoodRamenComment")
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_MEGASPHERE,0,0)
         TNT1 A 1
@@ -1236,6 +1270,7 @@ actor PowerupPickup : CustomInventory replaces Berserk
 
     PickupFinish:
         TNT1 A 0 A_SetBlend(Red,0.5,70)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("HyperComboCounter",50)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",50)
@@ -1259,11 +1294,13 @@ actor SentinelPickup : CustomInventory replaces AllMap
     Pickup:
         TNT1 A 0 A_JumpIfInventory("SentinelUp",1,"PickupHeal")
         TNT1 A 0 A_SetBlend("White",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("SentinelUp",1)
         stop
     PickupHeal:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("White",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
         TNT1 A 0 A_GiveInventory("SentinelDissidentAggressor",1)
         stop
     }
@@ -1286,6 +1323,7 @@ actor FortuneCookie : CustomInventory 30242
         loop
     Pickup:
         TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",5000)
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,24,0,0)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)

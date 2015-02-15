@@ -341,6 +341,7 @@ ACTOR SoulAmmo : CustomInventory
         TNT1 A 0 A_SetBlend("white",0.04,5)
         TNT1 A 0 A_PlaySound("ammo/soul")
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",1)
+        TNT1 A 0 A_GiveInventory("Points",1)
     Death:
         TNT1 A 1
         //CYBR A 35 

@@ -1,0 +1,54 @@
+// It would probably be much easier to do this in ACS, but I'd much rather do it
+// this way and save bandwidth.
+
+actor Points : Counter {}
+
+actor KharonSlashPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",15)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",20)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",25)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",30)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",35)
+        stop
+    }
+}

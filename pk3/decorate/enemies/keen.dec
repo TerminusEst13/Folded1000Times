@@ -27,10 +27,18 @@ ACTOR SwanFoxDakimakura replaces CommanderKeen
     Spawn:
         DAKI A -1
         Loop
+    Pain:
+        TNT1 AAAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,random(16,32),random(-75,75)/100.00,random(-75,75)/100.00,random(-75,75)/100.00,0,160)
+        TNT1 AAAAAA 0 A_SpawnItemEx("DakiSmoke",0,0,random(16,32),random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        TNT1 A 0 A_PlaySound("daki/pomf")
+        DAKI I 1
+        DAKI I 4 A_Pain
+        Goto Spawn
     Death:
         TNT1 AAAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,random(16,32),random(-75,75)/100.00,random(-75,75)/100.00,random(-75,75)/100.00,0,160)
         TNT1 AAAAAA 0 A_SpawnItemEx("DakiSmoke",0,0,random(16,32),random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
         TNT1 A 0 A_PlaySound("daki/pomf")
+        TNT1 A 0 A_GiveToTarget("Points",9001) // Yep. I fucking went there.
         DAKI AB 3
         DAKI C 3 A_Scream
         DAKI DE 2
@@ -39,13 +47,6 @@ ACTOR SwanFoxDakimakura replaces CommanderKeen
         DAKI H 2 A_KeenDie
         DAKI H -1
         Stop
-    Pain:
-        TNT1 AAAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,random(16,32),random(-75,75)/100.00,random(-75,75)/100.00,random(-75,75)/100.00,0,160)
-        TNT1 AAAAAA 0 A_SpawnItemEx("DakiSmoke",0,0,random(16,32),random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
-        TNT1 A 0 A_PlaySound("daki/pomf")
-        DAKI I 1
-        DAKI I 4 A_Pain
-        Goto Spawn
     }
 }
 

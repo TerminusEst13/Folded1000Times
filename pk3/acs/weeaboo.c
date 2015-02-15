@@ -39,6 +39,7 @@ script WEEB_RESPAWN respawn
     if (GameSkill () == 2) { GiveInventory("ContraLifeToken",6); }
     if (GameSkill () == 3) { GiveInventory("ContraLifeToken",4); }
     if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
+    TakeInventory("Points",100000);
     
     ACS_ExecuteAlways(268,0,0,0);
 }
@@ -1208,6 +1209,13 @@ script WEEB_COMBOREMOVAL ENTER
 
 script WEEB_UNLOADING UNLOADING
 {
+    GiveInventory("Points",10000);
+    if (GameSkill () == 1) { GiveInventory("Points",1000); }
+    if (GameSkill () == 2) { GiveInventory("Points",5000);  }
+    if (GameSkill () == 3) { GiveInventory("Points",10000); }
+    if (GameSkill () == 4) { GiveInventory("Points",50000); }
+    if (GameSkill () == 5) { GiveInventory("Points",100000); }
+
     TakeInventory("AlreadyInLevel",1);
 
     TakeInventory("KharonSwung",1);

@@ -46,6 +46,7 @@ ACTOR XaserBarrel : DestructableDecorationBaseStates replaces ExplosiveBarrel
         TNT1 A 0
         TNT1 A 0 A_Pain
         TNT1 AA 0 A_SpawnItemEx("BloodShowerC2",0,0,16,random(-500,500)/100.00,random(-500,500)/100.00,random(300,1200)/100.00,random(-180,180),160)
+        TNT1 A 0 A_GiveToTarget("Points",1000)
         BEXP ABA 3
         BEXP C 6 BRIGHT 
         TNT1 A 0 A_NoBlocking

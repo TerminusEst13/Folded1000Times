@@ -342,7 +342,6 @@ DESTRUCTABLE OBJECTS TO REPLACE:
 BurningBarrel           // Barrel Fire
 
 BigTree                 // Big Scorched Tree
-Candlestick             // Candle
 EvilEye                 // Floating Eye above Candle
 FloatingSkull           // Floating Skulls
 HeadCandles             // Skulls with Candles
