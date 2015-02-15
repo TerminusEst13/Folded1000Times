@@ -1,5 +1,5 @@
-// It would probably be much easier to do this in ACS, but I'd much rather do it
-// this way and save bandwidth.
+// It would probably be much easier to do this in ACS, but I'd much rather
+// handle things this way and save bandwidth.
 
 actor Points : Counter {}
 
@@ -49,6 +49,856 @@ actor KharonSlashPoints : CustomInventory
     Slayer:
         TNT1 A 1
         TNT1 A 0 A_GiveInventory("Points",35)
+        stop
+    }
+}
+
+actor ZombieguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",1500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4000)
+        stop
+    }
+}
+
+actor ShotguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",1500)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2000)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2500)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3000)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3500)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4000)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4500)
+        stop
+    }
+}
+
+actor ChainguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5000)
+        stop
+    }
+}
+
+actor ImpguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6000)
+        stop
+    }
+}
+
+actor LostguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",1500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",2500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",3500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4000)
+        stop
+    }
+}
+
+actor DemonguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7000)
+        stop
+    }
+}
+
+actor ClinkguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",4500)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5000)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5500)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6000)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6500)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7000)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7500)
+        stop
+    }
+}
+
+actor VirginguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8000)
+        stop
+    }
+}
+
+actor CoolguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9000)
+        stop
+    }
+}
+
+actor FatguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10000)
+        stop
+    }
+}
+
+actor KnightguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11000)
+        stop
+    }
+}
+
+actor PriestguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",12000)
+        stop
+    }
+}
+
+actor BlackguyComboPoints : CustomInventory // No racial commentary intended.
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",12000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",12500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",13000)
+        stop
+    }
+}
+
+actor BaronguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11500)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",12000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",12500)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",13000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",13500)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",14000)
+        stop
+    }
+}
+
+actor ArchguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",125000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",13000)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",13500)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",14000)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",14500)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",15000)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",15500)
+        stop
+    }
+}
+
+actor BossguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",50000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",60000)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",70000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",80000)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",90000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",100000)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",110000)
+        stop
+    }
+}
+
+actor YakuzaguyComboPoints : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+        TNT1 A 1
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",300,"Slayer")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",250,"Annihilator")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",200,"Behemoth")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",150,"Champion")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
+        TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",5000)
+        stop
+    Fearless:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",6000)
+        stop
+    Destruction:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",7000)
+        stop
+    Champion:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",8000)
+        stop
+    Behemoth:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",9000)
+        stop
+    Annihilator:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",10000)
+        stop
+    Slayer:
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Points",11000)
         stop
     }
 }

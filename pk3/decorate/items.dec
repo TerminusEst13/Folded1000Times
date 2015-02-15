@@ -869,8 +869,10 @@ actor OverHealPack : CustomInventory
         TNT1 A 0
         stop
     PickupFail:
-        TNT1 A 0
-        fail
+        TNT1 A 0 A_SetBlend("Green",0.45,10)
+        TNT1 A 0 A_GiveInventory("Points",500)
+        TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
+        stop
     }
 }
 
@@ -1059,13 +1061,13 @@ actor BlindGuardianPickup : CustomInventory replaces Blursphere
     Pickup:
         TNT1 A 0 A_JumpIfInventory("BlindGuardianShieldUp",1,"PickupHeal")
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
-        TNT1 A 0 A_GiveInventory("Points",500)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_GiveInventory("BlindGuardianShieldUp",1)
         stop
     PickupHeal:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("Yellow",0.45,10)
-        TNT1 A 0 A_GiveInventory("Points",500)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_GiveInventory("BlindGuardianShieldHeal",1)
         stop
     }
@@ -1294,13 +1296,13 @@ actor SentinelPickup : CustomInventory replaces AllMap
     Pickup:
         TNT1 A 0 A_JumpIfInventory("SentinelUp",1,"PickupHeal")
         TNT1 A 0 A_SetBlend("White",0.45,10)
-        TNT1 A 0 A_GiveInventory("Points",500)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_GiveInventory("SentinelUp",1)
         stop
     PickupHeal:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("White",0.45,10)
-        TNT1 A 0 A_GiveInventory("Points",500)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_GiveInventory("SentinelDissidentAggressor",1)
         stop
     }

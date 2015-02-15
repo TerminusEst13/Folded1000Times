@@ -54,6 +54,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     XDeath.TestamentDamage:
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         POSS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
@@ -79,6 +80,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Death.TestamentDamage:
     Death.SabbathDamage:
     Death.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         POSS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
@@ -148,6 +150,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
     Death.KubiSpinAttackSheathe:
+        TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
@@ -159,17 +162,19 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         loop
         TNT1 A 0
         TNT1 A 0 A_TakeInventory("KharonDeathCounter",0x7FFFFFFF)
-        goto death.kubiuti+2
+        goto death.kubiuti+3
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+        TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto death.kubiuti+2
+        goto death.kubiuti+3
     death.kubiuti:
     Death.KubiutiUpper:
+        TNT1 A 0 A_GiveToTarget("ZombieguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
@@ -298,6 +303,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
 
 
     Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("ZombieguyComboPoints",1)
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
@@ -399,6 +405,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         ZXD7 P -1
         Stop
     Death.UltimaBeam:
+        TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         POSS GGGGGGGG 2 A_FadeOut(0.1)
@@ -408,6 +415,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Death.FrosthammerCharged:
     Death.FrosthammerExplode:
     Death.Frosthammer:
+        TNT1 A 0 A_GiveToTarget("Points",500)
         POSS G 1
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_PlaySound("misc/freeze")
@@ -684,6 +692,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
     Death.KubiSpinAttackSheathe:
+        TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
@@ -695,15 +704,16 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         loop
         TNT1 A 0
         TNT1 A 0 A_TakeInventory("KharonDeathCounter",0x7FFFFFFF)
-        goto death.kubiuti+2
+        goto death.kubiuti+3
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+        TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto death.kubiuti+2
+        goto death.kubiuti+3
     Death.HaltHammerzeitImpact:
     Death.HaltHammerzeit:
     Death.IronFistExplosion:
@@ -711,6 +721,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Death.TestamentDamage:
     Death.SabbathDamage:
     Death.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         SPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
@@ -722,6 +733,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 
     death.kubiuti:
     Death.KubiutiUpper:
+        TNT1 A 0 A_GiveToTarget("ShotguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
@@ -767,6 +779,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     XDeath.TestamentDamage:
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         SPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
@@ -873,6 +886,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
 
 
     Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("ShotguyComboPoints",1)
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
@@ -974,6 +988,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         SXD7 P -1
         Stop
     Death.UltimaBeam:
+        TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         SPOS GGGGGGGG 2 A_FadeOut(0.1)
@@ -983,6 +998,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Death.FrosthammerCharged:
     Death.FrosthammerExplode:
     Death.Frosthammer:
+        TNT1 A 0 A_GiveToTarget("Points",1000)
         SPOS G 1
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_PlaySound("misc/freeze")
@@ -1211,6 +1227,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
     Death.KubiSpinAttackSheathe:
+        TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
@@ -1222,15 +1239,16 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         loop
         TNT1 A 0
         TNT1 A 0 A_TakeInventory("KharonDeathCounter",0x7FFFFFFF)
-        goto death.kubiuti+2
+        goto death.kubiuti+3
     Death.KubiRangeAttack:
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+        TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        goto death.kubiuti+2
+        goto death.kubiuti+3
 
     Death.HaltHammerzeitImpact:
     Death.HaltHammerzeit:
@@ -1239,6 +1257,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Death.TestamentDamage:
     Death.SabbathDamage:
     Death.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         CPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
@@ -1250,6 +1269,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
 
     death.kubiuti:
     Death.KubiutiUpper:
+        TNT1 A 0 A_GiveToTarget("ChainguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         TNT1 A 0 A_Gravity
@@ -1294,11 +1314,13 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     XDeath.TestamentDamage:
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         CPOS G 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
         goto XDeath
     Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("ChainguyComboPoints",1)
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
     xdeath:
         TNT1 A 0 A_Gravity
@@ -1330,6 +1352,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         CXD3 F -1
         Stop
     Death.UltimaBeam:
+        TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         CPOS GGGGGGGG 2 A_FadeOut(0.1)
@@ -1339,6 +1362,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Death.FrosthammerCharged:
     Death.FrosthammerExplode:
     Death.Frosthammer:
+        TNT1 A 0 A_GiveToTarget("Points",1500)
         CPOS G 1
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_PlaySound("misc/freeze")
@@ -1553,6 +1577,7 @@ ACTOR Yakuza replaces WolfensteinSS
 
     Death.Kubiuti:
     Death.KubiutiUpper:
+        TNT1 A 0 A_GiveToTarget("YakuzaguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
     SliceDeath:
@@ -1578,6 +1603,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.TestamentDamage:
     Death.SabbathDamage:
     Death.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         YKZA H 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
@@ -1606,6 +1632,7 @@ ACTOR Yakuza replaces WolfensteinSS
     XDeath.TestamentDamage:
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
+        TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         YKZA H 1
         TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
@@ -1659,6 +1686,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
     Death.KubiSpinAttackSheathe:
+        TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
@@ -1675,14 +1703,17 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+        TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto SliceDeath
     Death.IronFistDamage:
+        TNT1 A 0 A_GiveToTarget("YakuzaguyComboPoints",1)
         TNT1 A 0 A_CustomMissile("SoulAmmo")//A_GiveToTarget("SuperMeterCounter",1)
         goto XDeath
     Death.UltimaBeam:
+        TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_Scream
         YKZA HHHHHHHH 2 A_FadeOut(0.1)
@@ -1692,6 +1723,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.FrosthammerCharged:
     Death.FrosthammerExplode:
     Death.Frosthammer:
+        TNT1 A 0 A_GiveToTarget("Points",4500)
         YKZA H 1
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_PlaySound("misc/freeze")
