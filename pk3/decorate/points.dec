@@ -1,8 +1,12 @@
 // It would probably be much easier to do this in ACS, but I'd much rather
 // handle things this way and save bandwidth.
 
+// <Dusk> inventory counts are synced with 2 bytes on the assumption that nothing will use an amount that high
+
 actor Points : Counter {}
-actor BillionsOfPoints : Counter { Inventory.MaxAmount 9 }
+actor ManPoints : Counter {} // 万 = Ten thousand
+actor OkuPoints : Counter { Inventory.MaxAmount 99 } // 億 = Hundred million
+//actor BillionsOfPoints : Counter { Inventory.MaxAmount 9 }
 
 actor PointsTookDamage : Boolean {}
 actor PointsGrabbedItem : Boolean {}
@@ -561,7 +565,7 @@ actor FatguyComboPoints : CustomInventory
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
         stop
     }
 }
@@ -603,15 +607,17 @@ actor KnightguyComboPoints : CustomInventory
         stop
     Behemoth:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
         stop
     Annihilator:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",500)
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         stop
     }
 }
@@ -645,23 +651,27 @@ actor PriestguyComboPoints : CustomInventory
         stop
     Destruction:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
         stop
     Champion:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",500)
         stop
     Behemoth:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         stop
     Annihilator:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1500)
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",12000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",2000)
         stop
     }
 }
@@ -687,31 +697,37 @@ actor BlackguyComboPoints : CustomInventory // No racial commentary intended.
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
         stop
     Fearless:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",500)
         stop
     Destruction:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         stop
     Champion:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1500)
         stop
     Behemoth:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",12000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",2000)
         stop
     Annihilator:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",12500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",2500)
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",13000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",3000)
         stop
     }
 }
@@ -737,31 +753,38 @@ actor BaronguyComboPoints : CustomInventory
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         stop
     Fearless:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1500)
         stop
     Destruction:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",12000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",2000)
         stop
     Champion:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",12500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",2500)
         stop
     Behemoth:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",13000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",3000)
         stop
     Annihilator:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",13500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",3500)
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",14000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",4000)
         stop
     }
 }
@@ -787,31 +810,38 @@ actor ArchguyComboPoints : CustomInventory
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",125000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",2500)
         stop
     Fearless:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",13000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",3000)
         stop
     Destruction:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",13500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",3500)
         stop
     Champion:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",14000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",4000)
         stop
     Behemoth:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",14500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",4500)
         stop
     Annihilator:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",15000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",5000)
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",15500)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",5500)
         stop
     }
 }
@@ -837,31 +867,31 @@ actor BossguyComboPoints : CustomInventory
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",100,"Destruction")
         TNT1 A 0 A_JumpIfInventory("HyperComboCounter",50,"Fearless")
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",50000)
+        TNT1 A 0 A_GiveInventory("ManPoints",5)
         stop
     Fearless:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",60000)
+        TNT1 A 0 A_GiveInventory("ManPoints",6)
         stop
     Destruction:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",70000)
+        TNT1 A 0 A_GiveInventory("ManPoints",7)
         stop
     Champion:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",80000)
+        TNT1 A 0 A_GiveInventory("ManPoints",8)
         stop
     Behemoth:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",90000)
+        TNT1 A 0 A_GiveInventory("ManPoints",9)
         stop
     Annihilator:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",100000)
+        TNT1 A 0 A_GiveInventory("ManPoints",10)
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",110000)
+        TNT1 A 0 A_GiveInventory("ManPoints",11)
         stop
     }
 }
@@ -907,11 +937,12 @@ actor YakuzaguyComboPoints : CustomInventory
         stop
     Annihilator:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",10000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
         stop
     Slayer:
         TNT1 A 1
-        TNT1 A 0 A_GiveInventory("Points",11000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
         stop
     }
 }

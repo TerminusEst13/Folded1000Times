@@ -1,6 +1,7 @@
 gameinfo
 {
 	infopage = "DEMNTIP0", "CREDIT0"
+    //translator = "xlat/Doom.txt" // DO NOT RE-ENABLE THIS, SERIOUSLY
 }
 
 map MAPFINAL "Steel Meets Steel" // Hammerfall

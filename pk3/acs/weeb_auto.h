@@ -150,10 +150,17 @@ script WEEB_ENTER ENTER
            else { TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
 
         // Points malarkey
-        if (CheckInventory("Points") >= 1000000000)
+
+        if (CheckInventory("Points") >= 10000)
         {
-            TakeInventory("Points",1000000000);
-            GiveInventory("BillionsOfPoints",1);
+            TakeInventory("Points",10000);
+            GiveInventory("ManPoints",1);
+        }
+
+        if (CheckInventory("ManPoints") >= 10000)
+        {
+            TakeInventory("ManPoints",10000);
+            GiveInventory("OkuPoints",1);
         }
 
         /*mtotal = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS); // Monster number can increase, be it through either resurrecting or summoning.
@@ -167,12 +174,12 @@ script WEEB_ENTER ENTER
         sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
         if (sfound > sfound2) // Found a secret.
         {
-            GiveInventory("Points",10000);
+            GiveInventory("ManPoints",1);
             sfound2 = sfound;
         }
         if (stotal != 0 && stotal == sfound && CheckInventory("PointsFoundAllSecrets") == 0) // Found all secrets.
         {
-            GiveInventory("Points",90000); // Plus the previous 10000 for a total of 100000.
+            GiveInventory("ManPoints",9); // Plus the previous 10000 for a total of 100000.
             GiveInventory("PointsFoundAllSecrets",1);
         }
 

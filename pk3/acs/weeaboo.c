@@ -41,7 +41,8 @@ script WEEB_RESPAWN respawn
     if (GameSkill () == 2) { GiveInventory("ContraLifeToken",6); }
     if (GameSkill () == 3) { GiveInventory("ContraLifeToken",4); }
     if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
-    TakeInventory("Points",1000000);
+    if (CheckInventory("ManPoints") >= 1000) { TakeInventory("ManPoints",1000); }
+    else { TakeInventory("ManPoints",999); TakeInventory("Points",9999); }
     
     ACS_ExecuteAlways(268,0,0,0);
 }
@@ -519,7 +520,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         if(GetCvar("ds_cl_toaster") <= 0) { SetActorState(0,"Toaster0"); }
         if(GetCvar("ds_cl_toaster") == 1) { SetActorState(0,"Toaster1"); }
         if(GetCvar("ds_cl_toaster") >= 2) { SetActorState(0,"Toaster2"); }
-        break;   
+        break;
     case WEEB_DEC_TOASTER2:
         SetResultValue(getCvar("ds_cl_toaster"));
         break;
@@ -528,12 +529,12 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
 script WEEB_UNLOADING UNLOADING
 {
-    GiveInventory("Points",10000);
+    GiveInventory("ManPoints",1);
     if (GameSkill () == 1) { GiveInventory("Points",1000); }//Log(s:"Difficulty bonus: +1000 Points"); }
     if (GameSkill () == 2) { GiveInventory("Points",5000); }//Log(s:"Difficulty bonus: +5000 Points"); }
-    if (GameSkill () == 3) { GiveInventory("Points",10000); }//Log(s:"Difficulty bonus: +10000 Points"); }
-    if (GameSkill () == 4) { GiveInventory("Points",50000); }//Log(s:"Difficulty bonus: +50000 Points"); }
-    if (GameSkill () == 5) { GiveInventory("Points",100000); }//Log(s:"Difficulty bonus: +100000 Points"); }
+    if (GameSkill () == 3) { GiveInventory("ManPoints",1); }//Log(s:"Difficulty bonus: +10000 Points"); }
+    if (GameSkill () == 4) { GiveInventory("ManPoints",5); }//Log(s:"Difficulty bonus: +50000 Points"); }
+    if (GameSkill () == 5) { GiveInventory("ManPoints",10); }//Log(s:"Difficulty bonus: +100000 Points"); }
     //if (CheckInventory("PointsIsBrutal") == 1) { GiveInventory("Points",10000); Log(s:"A Devil in God's Country: +10000 Points"); } // Played with Brutal Doom or with the skeletons
     //if (CheckInventory("PointsTookDamage") == 0) { GiveInventory("Points",1000000); Log(s:"Iron Man: +1000000 Points"); } // No damage.
     //if (CheckInventory("PointsSpeedrunning") > 0) { GiveInventory("Points",1000000); Log(s:"Fast as a Shark: +1000000 Points"); } // Finished level within 25 seconds.

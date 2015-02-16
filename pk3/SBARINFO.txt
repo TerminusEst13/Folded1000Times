@@ -7,8 +7,9 @@ statusbar normal, forcescaled
 {
 InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
 {
-    DrawNumber 9, smallfont, white, Points, fillzeros, 205, 6;
-    DrawNumber 1, smallfont, white, BillionsOfPoints, fillzeros, 124, 6;
+    DrawNumber 4, smallfont, white, Points, fillzeros, 205, 6;
+    DrawNumber 4, smallfont, white, ManPoints, fillzeros, 169, 6;
+    DrawNumber 2, smallfont, white, OkuPoints, fillzeros, 133, 6;
 }
 
 ininventory not SkulltagWeaponsAcquired, 1
@@ -234,8 +235,9 @@ statusbar fullscreen, forcescaled
 {
 InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
 {
-    DrawNumber 9, smallfont, white, Points, fillzeros, 205, 6;
-    DrawNumber 1, smallfont, white, BillionsOfPoints, fillzeros, 124, 6;
+    DrawNumber 4, smallfont, white, Points, fillzeros, 205, 6;
+    DrawNumber 4, smallfont, white, ManPoints, fillzeros, 169, 6;
+    DrawNumber 2, smallfont, white, OkuPoints, fillzeros, 133, 6;
 }
 
 drawimage ammoicon1, 258, 187, center;
