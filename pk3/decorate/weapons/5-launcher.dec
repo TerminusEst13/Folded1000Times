@@ -165,6 +165,7 @@ actor "Kharon + Exodus" : Kharon
 
 
     Fire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         WEPE BCD 1
@@ -301,6 +302,7 @@ actor "Kharon + Exodus" : Kharon
     PrepareToHoldAttackNormal:
         WEPE BCD 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
     HoldAttack:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
         TNT1 A 1
         //TNT1 A 0 A_Recoil(-2)
@@ -330,6 +332,7 @@ actor "Kharon + Exodus" : Kharon
 
 
     SpinAttackLeft:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -352,6 +355,7 @@ actor "Kharon + Exodus" : Kharon
         goto SpecialAttackFinish
 
     SpinAttackRight:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle-11.25)
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -376,6 +380,7 @@ actor "Kharon + Exodus" : Kharon
     LungeAttack:
         TNT1 A 0 A_CheckFloor("LungeAttackRise")
     LungeAttackPrepare:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
@@ -412,6 +417,7 @@ actor "Kharon + Exodus" : Kharon
         goto LungeAttackPrepare
 
     RepelWave:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         KBLK ABCDEE 1
         KBLK F 15 A_PlayWeaponSound("sword/block")
         KSPC STU 1
@@ -439,6 +445,7 @@ actor "Kharon + Exodus" : Kharon
         TNT1 A 0 A_JumpIfInventory("WeebRocket",5,1)
         goto SpecialAttackFinish
         TNT1 A 0
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         WEPE HI 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         GLAG A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         ESPC ABCDE 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -499,6 +506,7 @@ actor "Kharon + Exodus" : Kharon
 
 
     AltFire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
         WEPE EFG 1
@@ -661,6 +669,7 @@ actor "Kharon + Exodus" : Kharon
         TNT1 A 0 A_ClearRefire
         goto Fired2
     Henshin:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         WEPE BCD 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)

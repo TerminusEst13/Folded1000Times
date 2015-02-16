@@ -142,6 +142,7 @@ ACTOR Messiah : Kharon
         goto Ready2
 
     Fire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         GUIT BCD 1
@@ -306,6 +307,7 @@ ACTOR Messiah : Kharon
 
 
     SpinAttackLeft:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -328,6 +330,7 @@ ACTOR Messiah : Kharon
         goto SpecialAttackFinish
 
     SpinAttackRight:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle-11.25)
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -352,6 +355,7 @@ ACTOR Messiah : Kharon
     LungeAttack:
         TNT1 A 0 A_CheckFloor("LungeAttackRise")
     LungeAttackPrepare:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
@@ -388,6 +392,7 @@ ACTOR Messiah : Kharon
         goto LungeAttackPrepare
 
     RepelWave:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         KBLK ABCDEE 1
         KBLK F 15 A_PlayWeaponSound("sword/block")
         KSPC STU 1
@@ -430,6 +435,7 @@ ACTOR Messiah : Kharon
 
 
     AltFire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
         GUIT BCD 1
@@ -565,6 +571,7 @@ ACTOR Messiah : Kharon
         TNT1 A 0 A_ClearRefire
         goto Fired2
     Henshin:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         GUIT BCD 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)

@@ -179,6 +179,7 @@ actor "Kharon + Legion" : Kharon
 
 
     Fire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         WEPL BCD 1
@@ -315,6 +316,7 @@ actor "Kharon + Legion" : Kharon
     PrepareToHoldAttackNormal:
         WEPL BCD 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
     HoldAttack:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
         TNT1 A 1
         //TNT1 A 0 A_Recoil(-2)
@@ -344,6 +346,7 @@ actor "Kharon + Legion" : Kharon
 
 
     SpinAttackLeft:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -366,6 +369,7 @@ actor "Kharon + Legion" : Kharon
         goto SpecialAttackFinish
 
     SpinAttackRight:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle-11.25)
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -390,6 +394,7 @@ actor "Kharon + Legion" : Kharon
     LungeAttack:
         TNT1 A 0 A_CheckFloor("LungeAttackRise")
     LungeAttackPrepare:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
@@ -426,6 +431,7 @@ actor "Kharon + Legion" : Kharon
         goto LungeAttackPrepare
 
     RepelWave:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         KBLK ABCDEE 1
         KBLK F 15 A_PlayWeaponSound("sword/block")
         KSPC STU 1
@@ -453,6 +459,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0
         TNT1 A 0 A_JumpIfInventory("LegionSpecialCounter",5,"SpecialAttackFinish")
         TNT1 A 1
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 0 A_PlayWeaponSound("boomerang/throwspecial")
         TNT1 A 4
         BMRN K 1
@@ -482,6 +489,7 @@ actor "Kharon + Legion" : Kharon
 
 
     AltFire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
         WEPL ABC 1
@@ -705,6 +713,7 @@ actor "Kharon + Legion" : Kharon
         TNT1 A 0 A_ClearRefire
         goto Fired2
     Henshin:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         WEPL BCD 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)

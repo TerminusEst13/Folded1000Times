@@ -199,6 +199,7 @@ ACTOR Kharon : Weapon
         goto Ready2
 
     Fire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         //TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_TakeInventory("KharonSheathed",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
@@ -333,6 +334,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_ClearRefire
         TNT1 A 1
     HoldAttack:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
         TNT1 A 1
         //TNT1 A 0 A_Recoil(-2)
@@ -362,6 +364,7 @@ ACTOR Kharon : Weapon
 
 
     SpinAttackLeft:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -384,6 +387,7 @@ ACTOR Kharon : Weapon
         goto SpecialAttackFinish
 
     SpinAttackRight:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle-11.25)
         TNT1 A 1 A_SetAngle(angle-22.5)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -408,6 +412,7 @@ ACTOR Kharon : Weapon
     LungeAttack:
         TNT1 A 0 A_CheckFloor("LungeAttackRise")
     LungeAttackPrepare:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE)
         TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
@@ -444,6 +449,7 @@ ACTOR Kharon : Weapon
         goto LungeAttackPrepare
 
     RepelWave:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         KBLK ABCDEE 1
         KBLK F 15 A_PlayWeaponSound("sword/block")
         KSPC STU 1
@@ -506,6 +512,7 @@ ACTOR Kharon : Weapon
         TNT1 A 0 A_ClearRefire
         goto Fired2
     Henshin:
+        TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         WEPK GFE 1
         TNT1 A 1
         TNT1 A 0 A_PlaySoundEx("henshin/click","soundslot6",0,0)
@@ -553,6 +560,7 @@ ACTOR Kharon : Weapon
         goto Deselect
 
     AltFire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFirePrepare")
         TNT1 A 0 A_PlayWeaponSound("sheathe/lower")
@@ -792,7 +800,7 @@ actor KharonGuard : FastProjectile
         Stop
     Death:
         TNT1 A 1
-        TNT1 A 0 A_GiveToTarget("Points",5)
+        TNT1 A 0 //A_GiveToTarget("Points",5)
         Stop
     }
 }
@@ -805,7 +813,7 @@ actor KharonGuard2 : KharonGuard
     {
     Death:
         TNT1 A 1
-        TNT1 A 0 A_GiveToTarget("Points",5)
+        TNT1 A 0 //A_GiveToTarget("Points",5)
         Stop
     }
 }
@@ -849,7 +857,7 @@ actor KharonGuardReflect : FastProjectile
         Stop
     Death:
         TNT1 A 0
-        TNT1 A 1 A_GiveToTarget("Points",10)
+        TNT1 A 1 //A_GiveToTarget("Points",10)
         Stop
     }
 }

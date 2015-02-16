@@ -9,6 +9,10 @@ actor PointsGrabbedItem : Boolean {}
 actor PointsAttacked : Boolean {}
 actor PointsUsedSpecial : Boolean {}
 actor PointsIsBrutal : Boolean {}
+actor PointsKilledMonsters : Boolean {}
+actor PointsFoundAllSecrets : Boolean {}
+actor PointsNoSpecials : Boolean {}
+actor PointsNoAttacks : Boolean {}
 
 actor PointsSpeedrunning : Counter { Inventory.MaxAmount 875 } // 25 seconds
 

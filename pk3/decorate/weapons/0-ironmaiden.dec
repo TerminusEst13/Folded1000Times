@@ -175,6 +175,7 @@ actor "Iron Fist" : Weapon
         Loop
 
     Fire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         //TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
         IRNF BCD 1
@@ -473,6 +474,7 @@ actor "Iron Fist" : Weapon
 
 
     AltFire:
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFireSequence1")
         IRNF BCD 1
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
