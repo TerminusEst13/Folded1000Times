@@ -1,6 +1,5 @@
 LEFT FOR HAE-LIN:
 1: Special moves for guns
-2: non-placeholder sprites for Iron Maiden (but Riet's working on that)
 3: one more Arrogant weapon (though Mike is working on that and I have a wonderful backup in case he doesn't deliver by the end of the year)
 4: and...yeah, player sprites. (Gundere is working on that)
 
@@ -23,8 +22,6 @@ TO DO in no particular order:
 51: Player sprites for Jung Hae-Lin and Iron Maiden
 53: Iron Maiden polishing
   ^ Design
-  ^ New HUD signifying you're in armor
-  ^ Non-placeholder sprites for fists/pickup
 53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 54: Casing ejection/smoke effects on the guns.
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
@@ -49,13 +46,9 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
     ^ Drain: Drains souls on hit?
     ^ Rage:
 89: Destroy corpse decorations, get their soul.
-91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 92: Burning barrels should be replaced as well.
 95: Change Soul Prison into something that needs to be destroyed--destroying it launches out all the souls into the person.
 99: Cvar for turning off jumping for Priests/Emperor.
-101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
- ^- One over-armor token if armor is full, replenishes one armor otherwise.
-104: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
 107: For some people, holding alt-fire isn't charging the Frosthammer.
 111: Some kind of indication for when in god mode.
 114: Banners for the fortune cookie lines instead of text?
@@ -63,8 +56,6 @@ TerminusEst13: Plus it'd make sense from an in-universe perspective, since the s
 123: <WaTaKiD> https://www.dropbox.com/s/lec025lq2447rkd/Screenshot_Doom_20141217_192218.png?dl=0  before reconnecting
 <WaTaKiD> https://www.dropbox.com/s/a1p6ybfwukqgv41/Screenshot_Doom_20141217_192510.png?dl=0 after reconnecting
 <WaTaKiD> basically go to doom2 map22, kill some torches and reconnect
-124: Skulltag armor/health bonuses aren't being replaced.
-126: Nick Chronoteeth's sprites for the techpillar, sounds for the lamps, nick Smooth Doom's candle.
 127: Nick _sink's tracers and spatters from cyberpunk shootdown.
 128: Give the Acacia pistol a slide already.
 129: Uzi_idiot: I wish there was a mod to add ambient sounds to all levels
@@ -75,7 +66,6 @@ Mcgonn: that'd be a huge project tho wouldn't it? unless you assigned sounds to 
 Uzi_idiot: That's what I was thinking, but I have no idea how that would work
 Terminusest13: You could replace decorative items and have them constantly emit ambient noises.
 Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some especially demonic decorative items, like, constantly whisper or something.
-132: Redone font on main menu options, restart New Game with "Rock n' Roll".
 135: Baron of Hell replacement--cyber baron with Satyr head
 136: [4:26:47 AM] combine_kegan: Hey Term can you explain what Hae-Lin does with the soda can after drinking it?
 [4:26:55 AM] combine_kegan: Does she eat it
@@ -221,6 +211,8 @@ DONE:
 53: Iron Maiden polishing
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
+  ^ Non-placeholder sprites for fists/pickup
+  ^ New HUD signifying you're in armor
 55: New teleport effect
 56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
 58: Attack when you let go of holding down fire.
@@ -262,14 +254,18 @@ DONE:
 87: Do all of the Vile deaths have A_KillChildren?
 88: Unique graphic for invuln pickup and radsuit.
 90: Terminusest13: [watching Doomguy going down a dark corridor on stream] I should probably add a flashlight, just because Painkiller did.
+91: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
 93: Replace the bossbrain head with something more appropriate, like Metrood. Maybe Ozzy Osbourne's head?
 94: Viscra Maelstrom: speaking of the Iron Maiden, maybe the suit's armor should get stronger the more power you have? like at Slayer, it'd take quite a bit of firepower to make you take damage, but if you don't have any, it'll take considerably less hits to make you take damage.
 97: Now that the Infrared is rendered completely useless, something should replace it.
 98: Commander Keen replacement.
 100: leileilol: But U Need Explosin Gif's For R_DrawTrans 0 People So I Can See The Level Better On My Slow Computer With Less Black Pixel On My SCreen From The Smoke Trail's.
+101: Fortune cookies would be a really nice Shadow Warrior throwback. Maybe to replace some Skulltag-specific items?
+ ^- One over-armor token if armor is full, replenishes one armor otherwise.
 102: Unique talking/connection sounds.
 103: Cooldown timer on Iron Maiden error to keep people from spamming it.
  ^- Player slowdown as well.
+104: Infinite Ammo display for the Arrogant weapons, along with images of their "ammo" type.
 105: Frosthammer can kill the Sentinel.
 106: Some enemies' special death states lead into the redefined Death, making goto Death or goto Kubiuti+X states to be wrongly aligned.
  ^- Chainguy
@@ -286,10 +282,13 @@ DONE:
 119: Mumblemumble: I do want to mention something about the sheath, it seems that you cant change guns while using it until the sword is back in the sheath. This makes item juggling from guns to the sheath to block a giant pain.
 121: Add +DONTBLAST to all monsters, it's too easy to start infighting that never ends on monsters immune to each other's attacks.
 122: Remove barrels' dependency on sv_barrelrespawn, hopefully that fixes the ghost-barrel bugs.
+124: Skulltag armor/health bonuses aren't being replaced.
 125: Cacolantern/Abaddon replacements drop Heretic Claw Orbs
+126: Nick Chronoteeth's sprites for the techpillar, sounds for the lamps, nick Smooth Doom's candle.
 130: DoomedSpacemarine: I think what needs to be added in Demonsteele more than anything is a PSHHHHHHHT blood spray sound
 SgtShivers: haha yeah
 131: Sentinel bullets shouldn't trigger Baron retreats.
+132: Redone font on main menu options, restart New Game with "Rock n' Roll".
 134: ds_omenstart and ds_backpack start
 136: [11:03:10 PM] Sgt. Shivers: hey term, you know what would be cool in demonsteele
 [11:12:13 PM] Sgt. Shivers: double tap crouch to stop midair and go straight down
