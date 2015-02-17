@@ -144,10 +144,11 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     XDeath.TestamentDamage:
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
+    XDeath.KharonSheathe:
         TNT1 A 0 A_GiveToTarget("Points",2500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         TROO H 1
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
+        //TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
@@ -170,10 +171,11 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     Death.TestamentDamage:
     Death.SabbathDamage:
     Death.ExodusDamage:
+    Death.KharonSheathe:
         TNT1 A 0 A_GiveToTarget("Points",2500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         TROO H 1
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
+        //TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)

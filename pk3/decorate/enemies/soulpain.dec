@@ -51,10 +51,11 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     Death.TestamentDamage:
     Death.SabbathDamage:
     Death.ExodusDamage:
+    Death.KharonSheathe:
         TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         SKUL E 1
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
+        //TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     Death:
         TNT1 A 0
         goto Super::Death
@@ -335,10 +336,11 @@ ACTOR Blackened replaces PainElemental
     Death.TestamentDamage:
     Death.SabbathDamage:
     Death.ExodusDamage:
+    Death.KharonSheathe:
         TNT1 A 0 A_GiveToTarget("Points",9500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         TNT1 A 1 A_SpawnItemEx("DarkAfterimageE",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),32)
-        TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
+        TNT1 AA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",4)
     Death:
         TNT1 A 0
         TNT1 A 0 A_Scream
