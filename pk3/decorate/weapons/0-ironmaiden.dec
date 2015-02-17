@@ -522,7 +522,7 @@ actor "Iron Fist" : Weapon
 
     AltHold:
         TNT1 A 1
-        TNT1 A 0 A_JumpIfInventory("IronChargeCounter",25,"IronChargeUp")
+        TNT1 A 0 A_JumpIfInventory("IronChargeCounter",20,"IronChargeUp")
         TNT1 A 0 A_GiveInventory("IronChargeCounter",1)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
