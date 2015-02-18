@@ -107,6 +107,7 @@ actor WeeabooFatty : Fatso replaces Fatso
     Death.SabbathDamage:
     Death.ExodusDamage:
     Death.KharonSheathe:
+    Death.IronMaidenShot:
         TNT1 A 0 A_GiveToTarget("Points",6500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         FATT J 1
@@ -188,7 +189,7 @@ actor WeeabooFatty : Fatso replaces Fatso
         XDG2 S 6
         XDG2 T -1 A_BossDeath
         goto super::death+5
-    death.kubiuti:
+    Death.kubiuti:
     Death.KubiutiUpper:
         TNT1 A 0 A_GiveToTarget("FatguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters

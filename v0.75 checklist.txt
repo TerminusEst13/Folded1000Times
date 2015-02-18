@@ -2,21 +2,19 @@ CHECKLIST FOR V0.75
 
 <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
 
-Light blasts in Iron Maiden don't give score.
-
 PRIORITY:
 1: Unique slashes when done mid-dash
 18: Finish the specials for:
-     ^ Acacia A-22
-     ^ Kharon
-     ^ Frosthammer
-     ^ Omen
-     ^ BALANCE
+   ^ Acacia A-22
+   ^ Kharon
+   ^ Frosthammer
+   ^ Omen
+   ^ BALANCE
 20: Adapt Testament shotgun system for the Omen and Chaingun
 23: Secret skeleton difficulty. (Scroton is doing thipfffttthahahahahahahahaha yeah no he's not)
 24: Test, test, test online.
 25: Update the metal jukebox/in-game credits/in-game changelog.
- ^ For the ModDB upload, include changelog/list of credits in .txt file.
+   ^ For the ModDB upload, include changelog/list of credits in .txt file.
 
 
 WOULD BE NICE:

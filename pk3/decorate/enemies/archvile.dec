@@ -151,6 +151,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
     Death.SabbathDamage:
     Death.ExodusDamage:
     Death.KharonSheathe:
+    Death.IronMaidenShot:
         TNT1 A 0 A_GiveToTarget("Points",10000)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         VILE Q 1

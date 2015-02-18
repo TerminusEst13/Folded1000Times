@@ -145,6 +145,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     XDeath.SabbathDamage:
     XDeath.ExodusDamage:
     XDeath.KharonSheathe:
+    XDeath.IronMaidenShot:
         TNT1 A 0 A_GiveToTarget("Points",2500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         TROO H 1
@@ -172,6 +173,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     Death.SabbathDamage:
     Death.ExodusDamage:
     Death.KharonSheathe:
+    Death.IronMaidenShot:
         TNT1 A 0 A_GiveToTarget("Points",2500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         TROO H 1

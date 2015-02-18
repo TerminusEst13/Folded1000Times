@@ -121,6 +121,7 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
     Death.SabbathDamage:
     Death.ExodusDamage:
     Death.KharonSheathe:
+    Death.IronMaidenShot:
         TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
         WZRD C 1
