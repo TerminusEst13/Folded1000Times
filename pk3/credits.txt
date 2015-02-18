@@ -43,6 +43,7 @@ GRAPHICS:
   ^ The pillow for the dakimakura
   ^ The Frosthammer cryo railgun
   ^ The animation for the Legion's special attack
+  ^ The Iron Maiden weapon sprites
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us
   rotate the Kharon properly forcing us to rely on Photoshop's really ugly and
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA
