@@ -4,6 +4,7 @@ CHECKLIST FOR V0.75
 
 PRIORITY:
 1: Unique slashes when done mid-dash
+   ^ If so, don't forget attacks for the Iron Maiden as well.
 18: Finish the specials for:
    ^ Acacia A-22
    ^ Kharon

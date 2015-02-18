@@ -964,7 +964,7 @@ ACTOR KharonAttackHeavy : KharonAttack1
     Radius 2
     Height 2
     Speed 128
-    Damage (10)
+    Damage (20)
     DamageType "KubiutiUpper"
     Decal KharonSlash3
     States
