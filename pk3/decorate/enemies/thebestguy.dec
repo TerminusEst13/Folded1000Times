@@ -8,6 +8,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
@@ -53,6 +54,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
         Goto See2
 
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0 A_Pain
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance2",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)

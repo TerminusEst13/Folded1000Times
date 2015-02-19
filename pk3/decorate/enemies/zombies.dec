@@ -8,6 +8,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
@@ -121,6 +122,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         Goto See
 
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0 A_Pain
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
@@ -591,6 +593,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
@@ -664,6 +667,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         Goto See
 
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0 A_Pain
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
@@ -1137,6 +1141,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiRangeAttack", 255
@@ -1177,6 +1182,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         Goto Missile+2
 
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0 A_Pain
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)
@@ -1485,6 +1491,7 @@ ACTOR Yakuza replaces WolfensteinSS
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
@@ -1553,6 +1560,7 @@ ACTOR Yakuza replaces WolfensteinSS
         Goto See
 
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0 A_Pain
         TNT1 A 0 A_GiveInventory("EnemyLaunchedResistance",1)
         TNT1 A 0 A_GiveInventory("EnemyHasBeenLaunched",1)

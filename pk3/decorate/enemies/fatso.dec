@@ -5,6 +5,7 @@ actor WeeabooFatty : Fatso replaces Fatso
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255

@@ -5,6 +5,7 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
@@ -128,6 +129,7 @@ ACTOR BlackSoul
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "IronFistDamage", 255
     PainChance "KubiSpinAttack", 255
@@ -217,6 +219,7 @@ ACTOR Blackened replaces PainElemental
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
+    PainChance "IronFistUpper", 255
     PainChance "KharonSheathe", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255

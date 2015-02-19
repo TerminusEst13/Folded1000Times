@@ -14,6 +14,7 @@ ACTOR BlueTorch2 : DestructableDecorationBase replaces BlueTorch
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")
@@ -45,6 +46,7 @@ ACTOR RedTorch2 : DestructableDecorationBase replaces RedTorch
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")
@@ -76,6 +78,7 @@ ACTOR GreenTorch2 : DestructableDecorationBase replaces GreenTorch
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")
@@ -137,6 +140,7 @@ ACTOR ShortBlueTorch2 : DestructableDecorationBase replaces ShortBlueTorch
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")
@@ -168,6 +172,7 @@ ACTOR ShortRedTorch2 : DestructableDecorationBase replaces ShortRedTorch
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")
@@ -199,6 +204,7 @@ ACTOR ShortGreenTorch2 : DestructableDecorationBase replaces ShortGreenTorch
     Pain.HaltHammerzeitImpact:
     Pain.Kubiuti:
     Pain.KubiutiUpper:
+    Pain.IronFistUpper:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_StopSoundEx("soundslot5")

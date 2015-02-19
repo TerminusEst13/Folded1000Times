@@ -153,6 +153,7 @@ actor "Iron Fist" : Weapon
         Stop
     Ready:
         TNT1 A 0 A_TakeInventory("FistHit",1)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldNormal")
         TNT1 A 0 A_JumpIfInventory("HenshinActivated",1,"Unhenshin")
         IRNF A 1 A_WeaponReady
         Loop
@@ -322,6 +323,7 @@ actor "Iron Fist" : Weapon
 
     Hold:
         TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
         TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"AltSpecial")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
@@ -347,6 +349,38 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
         Goto Select2
+    PrepareToHoldNormal:
+        IRNF BCD 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE)
+    PrepareToHold:
+        TNT1 A 0 A_TakeInventory("FistSwung",1)
+        TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 1
+    HoldAttack:
+        TNT1 A 0 A_TakeInventory("TimeToLaunchOctopus", 1)
+        TNT1 A 1
+        TNT1 A 0 A_SetPitch(pitch-1)
+        TNT1 A 0 A_PlaySoundEx("iron/swingheavy","soundslot7",0,0)
+        IRUP A 1
+        TNT1 A 0 A_SetPitch(pitch-2)
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFF)
+        IRUP B 1
+        TNT1 A 0 A_FireCustomMissile("IronFistGuard",0,0)
+        TNT1 A 0 A_FireCustomMissile("IronFistUppercut",0,0)
+        IRUP C 1
+        TNT1 A 0 A_SetPitch(pitch-4)
+        IRUP CD 2
+        TNT1 A 0 A_SetPitch(pitch+4)
+        IRUP D 1
+        TNT1 A 0 A_SetPitch(pitch+2)
+        IRUP E 1
+        TNT1 A 0 A_SetPitch(pitch+1)
+        IRUP EFFGH 1
+        TNT1 A 1
+        //TNT1 A 5 A_WeaponReady(WRF_NOPRIMARY | WRF_NOSWITCH)
+        goto Fired2
 
 
 
@@ -512,9 +546,41 @@ actor "Iron Fist" : Weapon
         goto AltFired
 
     AltFired:
-        TNT1 A 15 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_Refire
-        TNT1 A 20 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("FistSwung",1)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_ClearRefire
@@ -528,7 +594,36 @@ actor "Iron Fist" : Weapon
         TNT1 A 0 A_ClearRefire
         TNT1 A 0 A_TakeInventory("IronChargeCounter",35)
         TNT1 A 0 A_JumpIfInventory("IronCharged",1,"AltFireCharged")
-        TNT1 A 30 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 2 A_WeaponReady(WRF_NOSWITCH)
         goto AltFired
     IronChargeUp:
         TNT1 A 0 A_TakeInventory("IronChargeCounter",35)
@@ -901,6 +996,58 @@ actor IronFistAttack1 : FastProjectile
     }
 }
 
+ACTOR IronFistUppercut : FastProjectile
+{
+    Radius 1
+    Height 1
+    Speed 96
+    Damage (120)
+    RenderStyle Add
+    Alpha 0.6
+    Scale 0.65
+    SeeSound "none"
+    DeathSound "none"
+    Species "Player"
+    DamageType "IronFistUpper"
+    Projectile
+    +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    +EXTREMEDEATH
+    +FORCERADIUSDMG
+    Decal WallCrack
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Death:
+    Crash:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_PlaySound("iron/miss")
+        TNT1 A 0 A_GiveToTarget("IronFistEarthquake",1)
+        TNT1 AAAAAA 0 A_SpawnItemEx("IronMaidenImpactSmoke",0,0,0,random(-150,150)/50.00,random(-150,150)/50.00,random(-150,150)/50.00,0,160)
+        TNT1 AAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        FHFX SS 1
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeath:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",10)
+        TNT1 A 0 A_PlaySound("iron/hit")
+        TNT1 A 0 A_GiveToTarget("IronFistEarthquake",1)
+        TNT1 AAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    }
+}
+
 ACTOR IronFistExplosion
 {
     Radius 1
@@ -917,6 +1064,25 @@ ACTOR IronFistExplosion
       Spawn:
         TNT1 A 0
         TNT1 A 1 A_Explode(96,128,0)
+        Stop
+    }
+}
+
+ACTOR IronFistEarthquake : CustomInventory
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 0
+    -INVBAR
+    +INVENTORY.AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        stop
+    Pickup:
+    Use:
+        TNT1 A 0
+        TNT1 A 1 Radius_Quake(4,10,0,16,0)
         Stop
     }
 }

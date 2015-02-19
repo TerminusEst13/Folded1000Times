@@ -276,12 +276,14 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "HaltHammerzeitImpact", 1.0
     DamageFactor "IronFistDamage", 1.0
+    DamageFactor "IronFistUpper", 1.0
     PainChance 0
     PainChance "MessiahDamage", 255
     PainChance "Kubiuti", 255
     PainChance "KubiutiUpper", 255
     PainChance "HaltHammerzeitImpact", 255
     PainChance "IronFistDamage", 255
+    PainChance "IronFistUpper", 255
 }
 
 #include "decorate/decorations/torches.dec"
