@@ -526,7 +526,7 @@ actor "Kharon + Exodus" : Kharon
         TNT1 A 0 A_SetPitch(pitch-(random(800,1800)/1000.000))
     NoRecoil:
         GLAG CD 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        GLAG EEEE 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        GLAG EEEEEE 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("carronade/turn","soundslot5",0,0)
         TNT1 A 0 A_Light0
         GLAG FGHIJKLM 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
