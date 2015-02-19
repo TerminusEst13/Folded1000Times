@@ -86,6 +86,7 @@ FROM 0.74 TO 0.75:
 - The Iron Maiden's holy rocket is now slightly faster to charge up.
 - The Over-Life token cap on Facing Hell is now two, instead of three.
 - Much like life, the armor cap now decreases as difficulty rises. On Facing Hell and Killing Machine, max armor tokens is now three. On Angel of Death, max armor tokens is now two.
+- The Frosthammer's charged explosive damage is now 160.
 
 
 FROM 0.73 TO 0.74:
