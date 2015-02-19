@@ -1077,7 +1077,7 @@ actor ArmorPackLarge: CustomInventory
         fail
     PickupStop:
         TNT1 A 0
-        fail
+        stop
     }
 }
 
