@@ -242,7 +242,6 @@ int GravityOfLight;
         break;
 
     case WEEB_DEC_MEGASPHERE:
-        GiveInventory("ContraArmorToken",4);
         if (GameSkill () == 0)
         {
           if (CheckInventory("ContraLifeToken") < 10) { GiveInventory("ContraLifeToken",1); }
@@ -259,6 +258,7 @@ int GravityOfLight;
           if (CheckInventory("OverLifeToken") < 4) { GiveInventory("OverLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 4) { GiveInventory("OverLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 4) { GiveInventory("OverLifeToken",1); }
+          GiveInventory("ContraArmorToken",4);
         }
         if (GameSkill () == 1)
         {
@@ -274,6 +274,7 @@ int GravityOfLight;
           if (CheckInventory("OverLifeToken") < 4) { GiveInventory("OverLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 4) { GiveInventory("OverLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 4) { GiveInventory("OverLifeToken",1); }
+          GiveInventory("ContraArmorToken",4);
         }
         if (GameSkill () == 2)
         {
@@ -286,6 +287,7 @@ int GravityOfLight;
           if (CheckInventory("OverLifeToken") < 3) { GiveInventory("OverLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 3) { GiveInventory("OverLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 3) { GiveInventory("OverLifeToken",1); }
+          GiveInventory("ContraArmorToken",4);
         }
         if (GameSkill () == 3)
         {
@@ -293,9 +295,11 @@ int GravityOfLight;
           if (CheckInventory("ContraLifeToken") < 4) { GiveInventory("ContraLifeToken",1); }
           if (CheckInventory("ContraLifeToken") < 4) { GiveInventory("ContraLifeToken",1); }
           if (CheckInventory("ContraLifeToken") < 4) { GiveInventory("ContraLifeToken",1); }
-          if (CheckInventory("OverLifeToken") < 3) { GiveInventory("OverLifeToken",1); }
-          if (CheckInventory("OverLifeToken") < 3) { GiveInventory("OverLifeToken",1); }
-          if (CheckInventory("OverLifeToken") < 3) { GiveInventory("OverLifeToken",1); }
+          if (CheckInventory("OverLifeToken") < 2) { GiveInventory("OverLifeToken",1); }
+          if (CheckInventory("OverLifeToken") < 2) { GiveInventory("OverLifeToken",1); }
+          if (CheckInventory("ContraArmorToken") < 3) { GiveInventory("ContraArmorToken",1); }
+          if (CheckInventory("ContraArmorToken") < 3) { GiveInventory("ContraArmorToken",1); }
+          if (CheckInventory("ContraArmorToken") < 3) { GiveInventory("ContraArmorToken",1); }
         }
         if (GameSkill () == 4)
         {
@@ -303,10 +307,15 @@ int GravityOfLight;
           if (CheckInventory("ContraLifeToken") < 2) { GiveInventory("ContraLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 2) { GiveInventory("OverLifeToken",1); }
           if (CheckInventory("OverLifeToken") < 2) { GiveInventory("OverLifeToken",1); }
+          if (CheckInventory("ContraArmorToken") < 3) { GiveInventory("ContraArmorToken",1); }
+          if (CheckInventory("ContraArmorToken") < 3) { GiveInventory("ContraArmorToken",1); }
+          if (CheckInventory("ContraArmorToken") < 3) { GiveInventory("ContraArmorToken",1); }
         }
         if (GameSkill () == 5)
         {
           if (CheckInventory("OverLifeToken") < 1) { GiveInventory("OverLifeToken",1); }
+          if (CheckInventory("ContraArmorToken") < 2) { GiveInventory("ContraArmorToken",1); }
+          if (CheckInventory("ContraArmorToken") < 2) { GiveInventory("ContraArmorToken",1); }
         }
         break;
 
