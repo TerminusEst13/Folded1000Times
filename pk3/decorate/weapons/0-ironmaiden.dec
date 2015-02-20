@@ -37,7 +37,7 @@ actor IronMaidenArmor2 : BasicArmorPickup
 actor IronMaidenProtection : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.95
+    DamageFactor "Normal", 0.975
     DamageFactor "ArchvileFire", 0.85
     DamageFactor "HeavyEnemyDamage", 0.75
     DamageFactor "EnemyInfightDamage", 0.0
@@ -47,7 +47,7 @@ actor IronMaidenProtection : PowerProtection
     DamageFactor "EnemyInfightDamageRevenant", 0.0
     DamageFactor "EnemyInfightDamageFatso", 0.0
     DamageFactor "EnemyInfightDamageCaco", 0.0
-    DamageFactor "EnemyInfightDamageCyber", 0.65
+    DamageFactor "EnemyInfightDamageCyber", 0.75
     DamageFactor "Lava", 0.0
     DamageFactor "Fire", 0.0
     DamageFactor "Slime", 0.0
@@ -57,43 +57,43 @@ actor IronMaidenProtection : PowerProtection
 actor IronMaidenProtectionF : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.825 // 0.78375
-    DamageFactor "EnemyInfightDamageCyber", 0.8
+    DamageFactor "Normal", 0.85 // 0.8075
+    DamageFactor "EnemyInfightDamageCyber", 0.85
 }
 
 actor IronMaidenProtectionD : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.85 // 0.6661875
-    DamageFactor "EnemyInfightDamageCyber", 0.825
+    DamageFactor "Normal", 0.875 // 0.7065625
+    DamageFactor "EnemyInfightDamageCyber", 0.875
 }
 
 actor IronMaidenProtectionC : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.875 // 0.5829140625
-    DamageFactor "EnemyInfightDamageCyber", 0.85
+    DamageFactor "Normal", 0.9 // 0.63590625
+    DamageFactor "EnemyInfightDamageCyber", 0.9
 }
 
 actor IronMaidenProtectionB : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.9 // 0.52462265625
-    DamageFactor "EnemyInfightDamageCyber", 0.875
+    DamageFactor "Normal", 0.925 // 0.58821328125
+    DamageFactor "EnemyInfightDamageCyber", 0.925
 }
 
 actor IronMaidenProtectionA : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.925 // 0.48527595703125
-    DamageFactor "EnemyInfightDamageCyber", 0.9
+    DamageFactor "Normal", 0.95 // 0.5588026171875
+    DamageFactor "EnemyInfightDamageCyber", 0.95
 }
 
 actor IronMaidenProtectionS : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.95 // 0.4610121591796875
-    DamageFactor "EnemyInfightDamageCyber", 0.925
+    DamageFactor "Normal", 0.975 // 0.5448325517578125
+    DamageFactor "EnemyInfightDamageCyber", 0.975
 }
 
 ACTOR IronMaidenRepel

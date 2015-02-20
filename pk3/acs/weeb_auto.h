@@ -599,11 +599,11 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            if (IronArmor >= 7)
+            if (IronArmor >= 5)
             {
               if (GetArmorType("IronMaidenArmor",PlayerNumber()) || GetArmorType("IronMaidenArmor2",PlayerNumber()))
               {
-                  if (CheckInventory("Armor") < 40) { GiveInventory("IronMaidenArmor",1); }
+                  if (CheckInventory("Armor") < 30) { GiveInventory("IronMaidenArmor",1); }
                   GiveInventory("IronMaidenArmor",1);
               }
               else // A failsafe just in case players have somehow managed to get their hands on some other kind of armor.
@@ -617,7 +617,7 @@ script WEEB_ENTER ENTER
 
             if (CheckInventory("MidCombat") > 1)
             {
-              if (MarchOfTheImmortal >= 30)
+              if (MarchOfTheImmortal >= 26)
               {
                 TakeInventory("SuperMeterCounter",1);
                 MarchOfTheImmortal = 0;

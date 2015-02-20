@@ -89,6 +89,7 @@ FROM 0.74 TO 0.75:
 - The Frosthammer's charged explosive damage is now 160.
 - The KubiutiUpper damagetype now properly launches the Steele Beast.
 - Iron Maiden's punches, on splattering enemies, now alerts nearby monsters.
+- The Iron Maiden's armor has been tweaked slightly. It regenerates slightly faster, but the armor resistance itself is slower--this should make it better for out-and-out brawls, but more susceptible to burst damage.
 
 
 FROM 0.73 TO 0.74:
