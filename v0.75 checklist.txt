@@ -2,8 +2,6 @@ CHECKLIST FOR V0.75
 
 <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
 
-Uppercut for Iron Maiden.
-
 PRIORITY:
 1: Unique slashes when done mid-dash
    ^ If so, don't forget attacks for the Iron Maiden as well.
