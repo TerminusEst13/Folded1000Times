@@ -397,6 +397,43 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_SpawnItemEx("DemonguyFrozen",0,0,0,0,0,0,0,32)
         NONE A 5
         Stop
+
+    Death.IronFistUpper:
+        SARG IJ 1
+        TNT1 A 0 A_NoGravity
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_Recoil(4)
+        TNT1 A 0 ThrustThingZ(0,256,0,0)
+    DeathUpperLoop:
+        SARG K 1
+        TNT1 A 0 A_JumpIf(CeilingZ-Z <= 16,"DeathUpperFinish")//A_CheckCeiling("DeathUpperFinish")
+        loop
+    DeathUpperFinish:
+        TNT1 A 0 A_GiveToTarget("DemonguyComboPoints",1)
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_XScream
+        SARG K 1
+        TNT1 AA 0 A_CustomMissile("SoulAmmo")
+        TNT1 A 0 A_CustomMissile("CeilingBodySplatMissile",-16,0,0,2,90)//A_SpawnItemEx("CeilingBodySplatNormalSmall",0,0,0,0,0,0,0,160)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower5",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(-16,-32),0,random(0,360),2,random(-90,-75))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus2",random(-16,-32),0,random(0,360),2,random(-90,-75))
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("TinyBone",random(-5,5),random(-5,5),random(-12,-40),random(-400,400)/100.00,random(-400,400)/100.00,random(-100,-400)/1000.00,random(-180,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("TinyBouncyBone",random(-5,5),random(-5,5),random(-12,-40),random(-400,400)/100.00,random(-400,400)/100.00,random(-100,-400)/1000.00,random(-180,180),160)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib0",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib1",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib2",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib3",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib4",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib5",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib6",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib7",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib8",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 A 1
+        stop 
     }
 }
 
@@ -652,6 +689,42 @@ ACTOR WeeabooClink replaces Spectre
         TNT1 A 0 A_SpawnItemEx("ClinkguyFrozen",0,0,0,0,0,0,0,32)
         NONE A 5
         Stop
+    Death.IronFistUpper:
+        CLNK HH 1
+        TNT1 A 0 A_NoGravity
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_Recoil(4)
+        TNT1 A 0 ThrustThingZ(0,256,0,0)
+    DeathUpperLoop:
+        CLNK H 1
+        TNT1 A 0 A_JumpIf(CeilingZ-Z <= 16,"DeathUpperFinish")//A_CheckCeiling("DeathUpperFinish")
+        loop
+    DeathUpperFinish:
+        TNT1 A 0 A_GiveToTarget("ClinkguyComboPoints",1)
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_XScream
+        CLNK H 1
+        TNT1 AA 0 A_CustomMissile("SoulAmmo")
+        TNT1 A 0 A_CustomMissile("CeilingBodySplatMissile",-16,0,0,2,90)//A_SpawnItemEx("CeilingBodySplatNormalSmall",0,0,0,0,0,0,0,160)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower2",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodShower5",random(-16,-32),0,180+random(-45,45),2,random(-115,-75))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus1",random(-16,-32),0,random(0,360),2,random(-90,-75))
+        TNT1 AAAAA 0 A_CustomMissile("EnemySplashGus2",random(-16,-32),0,random(0,360),2,random(-90,-75))
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("TinyBone",random(-5,5),random(-5,5),random(-12,-40),random(-400,400)/100.00,random(-400,400)/100.00,random(-100,-400)/1000.00,random(-180,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("TinyBouncyBone",random(-5,5),random(-5,5),random(-12,-40),random(-400,400)/100.00,random(-400,400)/100.00,random(-100,-400)/1000.00,random(-180,180),160)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib0",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib1",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib2",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib3",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib4",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib5",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib6",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib7",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 AAAAA 0 A_SpawnItemEx("Gore_Gib8",random(-10,10),random(-10,10),random(-12,-40),random(-700,700)/100.00,random(-700,700)/100.00,random(-300,-700)/1000.00,random(-180,180),160,16)
+        TNT1 A 1
+        stop 
     }
 }
 

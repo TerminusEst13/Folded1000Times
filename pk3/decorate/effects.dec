@@ -123,6 +123,151 @@ actor GenericGoreActor
     +FORCEXYBILLBOARD
 }
 
+actor CeilingBodySplatMissile// : FastProjectile
+{
+    Radius 1
+    Height 1
+    Speed 0
+    VSpeed 10
+    Damage 0
+    SeeSound None
+    DeathSound None
+    Projectile
+    -SOLID
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_ChangeVelocity(0,0,32,CVF_REPLACE)
+        TNT1 A 1
+        loop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"DeathA","DeathB","DeathC","DeathD","DeathE")
+        TNT1 A 1
+        loop
+    DeathA:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("CeilingBodySplatNormalA",0,0,-10,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    DeathB:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("CeilingBodySplatNormalB",0,0,-10,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    DeathC:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("CeilingBodySplatNormalC",0,0,-10,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    DeathD:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("CeilingBodySplatNormalD",0,0,-10,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    DeathE:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("CeilingBodySplatNormalE",0,0,-10,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor CeilingBodySplatNormalA : GenericGoreActor
+{
+    +NOGRAVITY
+    +SPAWNCEILING
+    +NOCLIP
+    +FORCEYBILLBOARD
+    -CLIENTSIDEONLY
+    Radius 1
+    Height 1
+    XScale 0.3
+    YScale 0.15
+    States
+    {
+    Spawn:
+       BGIB I -1
+       stop
+    }
+}
+
+actor CeilingBodySplatNormalB : GenericGoreActor
+{
+    +NOGRAVITY
+    +SPAWNCEILING
+    +NOCLIP
+    +FORCEYBILLBOARD
+    -CLIENTSIDEONLY
+    Radius 1
+    Height 1
+    XScale 0.6
+    YScale 0.4
+    States
+    {
+    Spawn:
+       BGIB A -1
+       stop
+    }
+}
+
+actor CeilingBodySplatNormalC : GenericGoreActor
+{
+    +NOGRAVITY
+    +SPAWNCEILING
+    +NOCLIP
+    +FORCEYBILLBOARD
+    -CLIENTSIDEONLY
+    Radius 1
+    Height 1
+    XScale 0.6
+    YScale 0.4
+    States
+    {
+    Spawn:
+       BGIB B -1
+       stop
+    }
+}
+
+actor CeilingBodySplatNormalD : GenericGoreActor
+{
+    +NOGRAVITY
+    +SPAWNCEILING
+    +NOCLIP
+    +FORCEYBILLBOARD
+    -CLIENTSIDEONLY
+    Radius 1
+    Height 1
+    XScale 0.6
+    YScale 0.4
+    States
+    {
+    Spawn:
+       BGIB C -1
+       stop
+    }
+}
+
+actor CeilingBodySplatNormalE : GenericGoreActor
+{
+    +NOGRAVITY
+    +SPAWNCEILING
+    +NOCLIP
+    +FORCEYBILLBOARD
+    -CLIENTSIDEONLY
+    Radius 1
+    Height 1
+    XScale 0.5
+    YScale 0.4
+    States
+    {
+    Spawn:
+       BGIB D -1
+       stop
+    }
+}
+
 actor TinyBouncyBone : GenericGoreActor
 {
     Radius 1
@@ -899,51 +1044,12 @@ actor BloodShower5b
 +NOTELEPORT+NOBLOCKMONST
 +FLOORCLIP
 +CLIENTSIDEONLY
-health    10
-radius    4
-height    4
-mass    1000
-scale    1
-damagefactor        "normal",    0.1
-damagefactor        "bloody",    0.2
-DeathSound    "S_Cut"
 states
 {
 Spawn:
-BFE4 A 100
-BFE4 A 100 A_FadeOut
-    Wait
-    Death.bloody:
-        Goto Death
-    Death:
-        TNT1 A 0
-        TNT1 A 0
-        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) <= 0,"Toaster0")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) == 1,"Toaster1")
-        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER2) >= 2,"Toaster2")
-        BEF2 A 1
-        Loop
-    Toaster0:
-        BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
-        BEF2 A 2 A_Scream
-        BEF2 A 0 A_Fall
-        BEF2 BB 1 A_SpawnDebris("BloodShower2")
-        BEF1 EFG 2
-        stop
-    Toaster1:
-        BEF2 A 0 A_SpawnItem("BloodShower4",0,0,0,1)
-        BEF2 A 2 A_Scream
-        BEF2 A 0 A_Fall
-        BEF2 B 1 A_SpawnDebris("BloodShower2")
-        BEF2 B 1
-        BEF1 EFG 2
-        stop
-    Toaster2:
-        BEF2 A 2 A_Scream
-        BEF2 A 0 A_Fall
-        BEF1 BEFG 2
-        stop
+BFE4 A 2100
+BFE4 AAAAAAAAAA 1 A_FadeOut(0.1)
+    stop
     }
 }
 
