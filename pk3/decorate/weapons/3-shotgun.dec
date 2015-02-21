@@ -576,6 +576,7 @@ actor "Kharon + Testament" : Kharon
         TNT1 A 0 A_PlaySoundEx("shotgun/reload","soundslot6",0,0)
         MSHT F 4 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSHT G 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_FireCustomMissile("TestamentCasingSpawner",0,0,0,0,2)
         MSHT H 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSHT I 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSHT J 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -950,5 +951,95 @@ ACTOR SoulShotgunBullet2 : SoulShotgunBullet1
         TNT1 A 0 A_PlaySound("bullet/hit")
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         stop
+    }
+}
+
+ACTOR TestamentCasingSpawner // I GUESS IT'S A
+{
+    Radius 1
+    Height 1
+    Speed 15
+    Projectile
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_CustomMissile("TestamentCasing1",-13,9,random(8000,10000)/100.00,2,random(-500,100)/100.00)
+        TNT1 A 0 A_CustomMissile("TestamentCasing2",-13,11,random(-10000,-8000)/100.00,2,random(-500,100)/100.00)
+        Stop
+    }
+}
+
+ACTOR TestamentCasing1 // TESTAMENT TO ITS POWER
+{ 
+    Radius 2
+    Height 2
+    Speed 5
+    Scale 0.225
+    BounceFactor 0.7
+    WallBounceFactor 0.9
+    BounceCount 8
+    Gravity 0.75
+    Projectile
+    -NOGRAVITY
+    +NOTELEPORT
+    +FLOORCLIP
+    +DOOMBOUNCE
+    +CLIENTSIDEONLY
+    SeeSound "casing/testament"
+    DeathSound "casing/testament"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
+    Spawn1:
+        SCSN ABCDEFGHIJ 3
+        loop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Death1","Death2","Death3","Death4","Death5","Death6")
+        TNT1 A 1
+        loop
+    Death1:
+        SCSN C 2100
+        SCSN CCCCCCCCCC 1 A_FadeOut(0.1)
+        Stop
+    Death2:
+        SCSN H 2100
+        SCSN HHHHHHHHHH 1 A_FadeOut(0.1)
+        Stop
+    Death3:
+        SCSN M 2100
+        SCSN MMMMMMMMMM 1 A_FadeOut(0.1)
+        Stop
+    Death4:
+        SCSN R 2100
+        SCSN RRRRRRRRRR 1 A_FadeOut(0.1)
+        Stop
+    Death5:
+        SCSN U 2100
+        SCSN UUUUUUUUUU 1 A_FadeOut(0.1)
+        Stop
+    Death6:
+        SCSN V 2100
+        SCSN VVVVVVVVVV 1 A_FadeOut(0.1)
+        Stop
+    }
+}
+
+ACTOR TestamentCasing2 : TestamentCasing1 // Yeah I'm sorry for that.
+{ 
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
+    Spawn1:
+        SCSN KLMNOPQRST 3
+        loop
     }
 }

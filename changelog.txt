@@ -90,6 +90,11 @@ FROM 0.74 TO 0.75:
 - The KubiutiUpper damagetype now properly launches the Steele Beast.
 - Iron Maiden's punches, on splattering enemies, now alerts nearby monsters.
 - The Iron Maiden's armor has been tweaked slightly. It regenerates slightly faster, but the armor resistance itself is slower--this should make it better for out-and-out brawls, but more susceptible to burst damage.
+- The Iron Maiden now has a powerful uppercut for a launcher attack.
+- To accomodate Hae-Lin's drastic increase in power, a lot of enemies have been buffed to be nastier in various ways.
+ ^- Demons, Steele Beasts, and Lost Souls are now much faster and more aggressive. The Lost Soul now stops after travelling a short distance.
+ ^- The Mancubus now takes a much shorter time in between shots.
+- The Acacia, Testament, and Sabbath now eject casings because reasons.
 
 
 FROM 0.73 TO 0.74:

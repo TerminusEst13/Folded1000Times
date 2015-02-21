@@ -269,35 +269,6 @@ $rolloff smiss/hit1     600 2000
 $rolloff smiss/hit2     600 2000
 $rolloff smiss/hit3     600 2000
 
-// Etc
-
-$random bullet/hit { bullhit1 bullhit2 bullhit3 bullhit4 } // Taken from Halo: Reach
-bullhit1                  BULLHIT1
-bullhit2                  BULLHIT2
-bullhit3                  BULLHIT3
-bullhit4                  BULLHIT4
-
-$volume bullet/hit 0.75
-$rolloff bullet/hit 100 400
-
-$random bullet/miss { bullmis1 bullmis2 bullmis3 bullmis4 }
-bullmis1                  BULLMIS1
-bullmis2                  BULLMIS2
-bullmis3                  BULLMIS3
-bullmis4                  BULLMIS4
-
-$volume bullet/miss 0.75
-$rolloff bullet/miss 100 400
-
-$random soulbullet/miss { sobullmis1 sobullmis2 sobullmis3 sobullmis4 }
-sobullmis1                SOBUMIS1
-sobullmis2                SOBUMIS2
-sobullmis3                SOBUMIS3
-sobullmis4                SOBUMIS4
-
-$volume soulbullet/miss 0.75
-$rolloff soulbullet/miss 100 400
-
 // Iron Maiden
 
 $random iron/hit { ironfist1 ironfist2 ironfist3 }

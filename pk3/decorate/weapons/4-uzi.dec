@@ -528,6 +528,7 @@ actor "Kharon + Sabbath" : Kharon
         TNT1 A 0 A_TakeInventory("UziLikeAGuzzi",1)
         goto AltFinish
     AltFinish:
+        TNT1 A 0 A_FireCustomMissile("SabbathCasingSpawner",0,0,0,0,2,0)
         TNT1 A 0 A_Recoil(0.1)
         TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoil")
         TNT1 A 0 A_SetAngle(angle+(random(-300,300)/1000.000))
@@ -964,5 +965,90 @@ actor SabbathBulletBouncing5 : SabbathBulletBouncing1
         TNT1 A 0 A_PlaySound("soulbullet/miss")
         TNT1 A 1 A_SpawnItemEx("SoulBulletPuff",0,0,0,0,0,0,0,160)
         stop
+    }
+}
+
+ACTOR SabbathCasingSpawner
+{
+    Radius 1
+    Height 1
+    Speed 15
+    Projectile
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_CustomMissile("SabbathCasing",-8,21,random(-13000,-8000)/100.00,2,random(750,2500)/100.00)
+        Stop
+    }
+}
+
+ACTOR SabbathCasing
+{ 
+    Radius 2
+    Height 2
+    Speed 5
+    Scale 0.1
+    BounceFactor 0.65
+    WallBounceFactor 0.8
+    BounceCount 8
+    Gravity 0.8
+    Projectile
+    -NOGRAVITY
+    +NOTELEPORT
+    +FLOORCLIP
+    +DOOMBOUNCE
+    +CLIENTSIDEONLY
+    SeeSound "casing/sabbath"
+    DeathSound "casing/sabbath"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
+        TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3")
+        TNT1 A 1
+        loop
+    Spawn1:
+        BCSN ABCDE 3
+        loop
+    Spawn2:
+        BCSN FGHI 3
+        loop
+    Spawn3:
+        BCSN JKLMNOPQ 3
+        loop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Death1","Death2","Death3","Death4","Death5","Death6")
+        TNT1 A 1
+        loop
+    Death1:
+        BCSN N 2100
+        BCSN NNNNNNNNNN 1 A_FadeOut(0.1)
+        Stop
+    Death2:
+        BCSN J 2100
+        BCSN JJJJJJJJJJ 1 A_FadeOut(0.1)
+        Stop
+    Death3:
+        BCSN H 2100
+        BCSN HHHHHHHHHH 1 A_FadeOut(0.1)
+        Stop
+    Death4:
+        BCSN F 2100
+        BCSN FFFFFFFFFF 1 A_FadeOut(0.1)
+        Stop
+    Death5:
+        BCSN E 2100
+        BCSN EEEEEEEEEE 1 A_FadeOut(0.1)
+        Stop
+    Death6:
+        BCSN C 2100
+        BCSN CCCCCCCCCC 1 A_FadeOut(0.1)
+        Stop
     }
 }
