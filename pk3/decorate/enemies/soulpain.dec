@@ -1,6 +1,7 @@
 actor WeeabooSoul : LostSoul replaces LostSoul
 {
     Scale 0.9
+    Speed 15
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "MessiahDamage", 255
@@ -24,8 +25,23 @@ actor WeeabooSoul : LostSoul replaces LostSoul
     DeathSound "lost/death"
     ActiveSound "lost/idle"
     +DONTBLAST
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    MinMissileChance 10
     States
     {
+    Spawn:
+        SKUL AB 4 Bright A_Look
+        Loop
+    See:
+        SKUL AB 4 Bright A_Chase
+        Loop
+    Missile:
+        SKUL C 10 bright A_FaceTarget
+        SKUL D 4 bright A_SkullAttack(30)
+        SKUL CDCDCDC 4 Bright
+        TNT1 A 0 A_Stop
+        Goto See
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
     Pain.KubiLungeAttackSheathe:

@@ -26,21 +26,16 @@ ACTOR WeeabooDemon : Demon replaces Demon
     States
     {
     See: // Apparently increasing the speed gets the critter stuck on some parts of the environment. Weird!
-        SARG A 2 A_Chase
-        SARG AA 1 A_Chase
-        SARG B 2 A_Chase
-        SARG BB 1 A_Chase
+        SARG AAAA 1 A_Chase
+        SARG BBBB 1 A_Chase
         TNT1 A 0 A_PlaySound("pinky/step")
-        SARG C 2 A_Chase
-        SARG CC 1 A_Chase
-        SARG D 2 A_Chase
-        SARG DD 1 A_Chase
+        SARG CCCC 1 A_Chase
+        SARG DDDD 1 A_Chase
         TNT1 A 0 A_PlaySound("pinky/step")
         Loop
     Melee:
-        SARG E 6 A_FaceTarget
-        SARG F 6 A_SargAttack
-        SARG G 6 A_SargAttack
+        SARG EF 4 A_FaceTarget
+        SARG G 5 A_SargAttack
         Goto See
     Death.HaltHammerzeitImpact:
     Death.HaltHammerzeit:
@@ -136,6 +131,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        TNT1 A 0 A_NoBlocking
     SheatheDeathLoop:
         SARG H 1
         TNT1 A 0 A_GiveInventory("KharonDeathCounter",1)
@@ -491,21 +487,23 @@ ACTOR WeeabooClink replaces Spectre
         TNT1 A 0 A_JumpIfCloser(384,"SeeClose")
         TNT1 A 0 A_PlaySoundEx("steelbeast/step","soundslot7",0,0)
         CLNK AA 2 A_FastChase
-        CLNK B 4 A_Chase
+        CLNK BB 2 A_Chase
         TNT1 A 0 A_PlaySoundEx("steelbeast/step","soundslot7",0,0)
         CLNK CC 2 A_FastChase
-        CLNK D 4 A_Chase
+        CLNK DD 2 A_Chase
         Loop
     SeeClose:
         TNT1 A 0 A_PlaySoundEx("steelbeast/step","soundslot7",0,0)
-        CLNK AABB 2 A_Chase
+        CLNK AA 2 A_Chase
+        CLNK BBBB 1 A_Chase
         TNT1 A 0 A_PlaySoundEx("steelbeast/step","soundslot7",0,0)
-        CLNK CCDD 2 A_Chase
+        CLNK CC 2 A_Chase
+        CLNK DDDD 1 A_Chase
         goto See
     Melee:
         CLNK E 2 A_FaceTarget
-        CLNK F 4 A_FaceTarget
-        CLNK G 6 A_CustomMeleeAttack(random(1,10)*4,"steelbeast/attackhit","steelbeast/attackmiss")
+        CLNK F 3 A_FaceTarget
+        CLNK G 4 A_CustomMeleeAttack(random(1,10)*4,"steelbeast/attackhit","steelbeast/attackmiss")
         Goto See
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
@@ -591,6 +589,7 @@ ACTOR WeeabooClink replaces Spectre
         TNT1 A 0 A_PlaySoundEx("steelbeast/hwandohit","soundslot6",0,0)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
+        TNT1 A 0 A_NoBlocking
     SheatheDeathLoop:
         CLNK H 1
         TNT1 A 0 A_GiveInventory("KharonDeathCounter",1)
