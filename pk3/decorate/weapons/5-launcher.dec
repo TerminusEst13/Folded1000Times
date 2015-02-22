@@ -1364,7 +1364,7 @@ ACTOR ExodusShockwave
     +CLIENTSIDEONLY
     -SOLID
     +NOCLIP
-    Scale 0.7
+    Scale 0.6
     RenderStyle Add
     Alpha 0.99
     States
