@@ -56,7 +56,7 @@ GRAPHICS:
 - Aeons of Death (The Exodus explosion graphics)
 - Ettingrinder (The Candelabra)
 - NeuralStunner (The Omen's pickup sprite)
-- Rogue Software (All the lightning effects and the keycard bases, from Strife)
+- Rogue Software (The lightning effects, the keycard bases, and the gunsmoke, from Strife)
 - Raven Software
   ^ The skull keys edited from Hexen
   ^ The Steel Beast edited from the Heretic Sabreclaw
@@ -101,6 +101,7 @@ GRAPHICS:
 - Monolith Productions (The pile of skulls from Blood)
 - Bungie (The shotgun, taken from Marathon and polished dramatically, the Acacia/Sabbath casings)
 - Moorhuhn 3: Es Gibt Huhn (The Testament shell casings)
+- Touhou Hisouten (The explosion shockwave)
 
 CODE:
 =========

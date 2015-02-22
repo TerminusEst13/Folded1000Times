@@ -11,6 +11,22 @@ ACTOR TeleportFog2 : TeleportFog replaces TeleportFog
     }
 }
 
+actor GunSmoke
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Alpha 0.125
+    YScale 0.075
+    XScale 0.05
+    States
+    {
+    Spawn:
+        BNG4 ABCDEFGHIJKLMN 1
+        stop
+    }
+}
+
 ACTOR TeleFogMini
 {
     +CLIENTSIDEONLY

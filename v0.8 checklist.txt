@@ -1,4 +1,4 @@
-CHECKLIST FOR V0.75
+CHECKLIST FOR V0.8
 
 <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
 
@@ -23,7 +23,6 @@ WOULD BE NICE:
 3: Player sprites (Gundere is doing this - "It could be around two more weeks before these babies are up to video game quality. [...] I'm back to knocking out several frames a night so hopefully it won't be too much longer. The absolute worst case scenario is March 1st, however I will not miss that deadline by a minute, even if I must draw with broken fingers.")
 4: DevilDriver replacement for the Cyberdemon (Vinse is doing this)
 6: Replacement sounds for other world objects, such as lifts, switches, and doors.
-7: Smoke effects on the guns.
 10: Cvar for zombies to drop their respective ammo type.
 
 
@@ -61,6 +60,6 @@ WOULD BE NICE:
 
 2: New sprites for the Iron Maiden gauntlets. (The_Riet is doing this) // Shivers did, too!
 5: Since Cacodemons are no longer in the mod, dead caco decorations should be replaced.
-7: Casing ejection/
+7: Casing ejection/Smoke effects on the guns.
 8: Redone font on main menu options, restart New Game with "Rock n' Roll".
 9: Better skull for main menu select icon, current looks fucked beyond fuck.

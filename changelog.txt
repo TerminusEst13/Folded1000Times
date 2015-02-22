@@ -1,4 +1,4 @@
-FROM 0.74 TO 0.75:
+FROM 0.74 TO 0.8:
 =======================================
 - Players are now able to rocketjump with the shotgun because reasons.
 - The accuracy of the Testament has been tightened up dramatically, from 12 to 6. No weapon should be competing with the Kharon for close-range.
