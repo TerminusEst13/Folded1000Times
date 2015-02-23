@@ -94,6 +94,8 @@ FROM 0.74 TO 0.8:
 - To accomodate Hae-Lin's drastic increase in power, a lot of enemies have been buffed to be nastier in various ways.
  ^- Demons, Steele Beasts, and Lost Souls are now much faster and more aggressive. The Lost Soul now stops after travelling a short distance.
  ^- The Mancubus now takes a much shorter time in between shots.
+ ^- The Zombiemen and Chaingunners take five tics faster to fire.
+ ^- The Shotgunners take eight tics faster to fire.
 - The Acacia, Testament, and Sabbath now eject casings because reasons.
 - The Acacia, Testament, and Sabbath now also have gun smoke because reasons.
 - The Exodus' explosion now has a shockwave emitting from it.
