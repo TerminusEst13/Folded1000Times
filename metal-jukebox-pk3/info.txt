@@ -16,8 +16,11 @@ FROM V2 TO V3:
 - White Zombie's Temple of the Bull wasn't a song we were able to find any info
   on. We're not even sure it's actually a real song. It was replaced with a new
   White Zombie song.
-- Renamed "Classic Metal" to "Traditional Metal" due to genre nerds getting up
-  in arms about the term.
+- Corrected some mistaken song information:
+  ^- Barathrum's Warmetal is off the album Infernal.
+  ^- Linkin Park's Crawling is off the album Hybrid Theory.
+  ^- Battlelore's Stormmaster was renamed to the proper Swordmaster.
+  ^- Song 186 was credited to Cannical Corpse instead of Cannibal Corpse.
 
 
 FROM V1c TO V2:
