@@ -92,10 +92,11 @@ FROM 0.74 TO 0.8:
 - The Iron Maiden's armor has been tweaked slightly. It regenerates slightly faster, but the armor resistance itself is slower--this should make it better for out-and-out brawls, but more susceptible to burst damage.
 - The Iron Maiden now has a powerful uppercut for a launcher attack.
 - To accomodate Hae-Lin's drastic increase in power, a lot of enemies have been buffed to be nastier in various ways.
- ^- Demons, Steele Beasts, and Lost Souls are now much faster and more aggressive. The Lost Soul now stops after travelling a short distance.
- ^- The Mancubus now takes a much shorter time in between shots.
- ^- The Zombiemen and Chaingunners take five tics faster to fire.
- ^- The Shotgunners take eight tics faster to fire.
+ ^- Demons, Steele Beasts, and Lost Souls are now much faster and more aggressive. These critters are intended to keep the player moving and watch their blind spot or else take damage; as the reduced hitbox and faster speed in DemonSteele makes it easier to ignore their danger, they now fill up spaces to create danger much faster.
+ ^- The Lost Soul now stops after travelling a short distance. The increase in speed makes it incredibly easy to miss the player, defeating its purpose.
+ ^- The Mancubus now takes a much shorter time in between shots. The idea of the Mancubus' attack sequence is to fill a wide spread of an area, shooting left and right instead of just straight at the player. Since the player now has many more options to dodge or nullify the attacks, the Mancubi can now fill up areas more easily.
+ ^- The Zombiemen and Chaingunners take five tics faster to fire. While they're complete non-threats now, lacking hitscans, they should at least get off shots a little bit faster.
+ ^- The Shotgunners take eight tics faster to fire. See above.
 - The Acacia, Testament, and Sabbath now eject casings because reasons.
 - The Acacia, Testament, and Sabbath now also have gun smoke because reasons.
 - The Exodus' explosion now has a shockwave emitting from it.
