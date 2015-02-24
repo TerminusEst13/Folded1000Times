@@ -149,7 +149,7 @@ JUKEBOX_145 = "Artist: Venom\nSong: Don't Burn the Witch\nAlbum: Black Metal\nGe
 JUKEBOX_146 = "Artist: VKiller\nSong: Switchback\nAlbum: N/A\nGenre: Thrash Metal";
 JUKEBOX_147 = "Artist: W.A.S.P.\nSong: Wild Child\nAlbum: The Last Command\nGenre: Heavy Metal";
 JUKEBOX_148 = "Artist: White Zombie\nSong: I, Zombie\nAlbum: Astro-Creep: 2000\nGenre: Industrial Metal";
-JUKEBOX_149 = "Artist: White Zombie\nSong: Temple of the Bull\nAlbum: N/A\nGenre: Industrial Metal";
+JUKEBOX_149 = "Artist: White Zombie\nSong: Black Sunshine\nAlbum: La Sexorcisto: Devil Music, Vol. 1\nGenre: Heavy Metal";
 JUKEBOX_150 = "Artist: Wizard\nSong: Hall of Odin\nAlbum: Odin\nGenre: Power Metal";
 
 // Wave 2
@@ -185,7 +185,7 @@ JUKEBOX_179 = "Artist: Bobby Prince\nSong: Hiding the Secrets\nAlbum: Doom\nGenr
 JUKEBOX_180 = "Artist: Bobby Prince\nSong: I Sawed the Demons\nAlbum: Doom\nGenre: Thrash Metal";
 JUKEBOX_181 = "Artist: Bobby Prince\nSong: Kitchen Ace (And Taking Names)\nAlbum: Doom\nGenre: Thrash Metal";
 JUKEBOX_182 = "Artist: Brujeria\nSong: Seis Seis Seis\nAlbum: Matando Gueros\nGenre: Death Metal";
-JUKEBOX_183 = "Artist: Burzum\nSong: Daudi Baldrs\nAlbum: Daudi Baldrs\nGenre: Dark Ambient";
+JUKEBOX_183 = "Artist: Burzum\nSong: My Journey To The Stars\nAlbum: Burzum\nGenre: Black Metal";
 JUKEBOX_184 = "Artist: Cannibal Corpse\nSong: Compelled to Lacerate\nAlbum: Gore Obsessed\nGenre: Death Metal";
 JUKEBOX_185 = "Artist: Cannibal Corpse\nSong: Decency Defied\nAlbum: The Wretched Spawn\nGenre: Death Metal";
 JUKEBOX_186 = "Artist: Cannical Corpse\nSong: Hammer Smashed Face\nAlbum: Tomb of the Mutilated\nGenre: Death Metal";

@@ -6,6 +6,20 @@ CookieJar
 
 
 
+FROM V2 TO V3:
+===========================
+- 50 more songs!
+- Judas Priest's Tyrant had a random beep around the 0:56-ish mark. This has been
+  fixed.
+- Dark ambient music has been removed and replaced. This is a pack for jamming to
+  super-cheesy and tinny music, not getting 2spook'd.
+- White Zombie's Temple of the Bull wasn't a song we were able to find any info
+  on. We're not even sure it's actually a real song. It was replaced with a new
+  White Zombie song.
+- Renamed "Classic Metal" to "Traditional Metal" due to genre nerds getting up
+  in arms about the term.
+
+
 FROM V1c TO V2:
 ===========================
 - 100 more songs!
