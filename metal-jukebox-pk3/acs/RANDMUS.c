@@ -740,3 +740,42 @@ switch (musicshit)
     break;
 }
 }
+
+script 349 (int fuckery) NET clientside
+{
+  if (fuckery > 0 && fuckery < 302)
+  {
+    if (GetCvar("norandommusic") == 0)
+    {
+        fuckery--; // By default, arrays start at 0. So inserting puke 349 1 would take you to song 2.
+
+        SetMusic("silence");
+        LocalAmbientSound("music/shift",127);
+        Delay(35);
+
+        MusicRandomizerOn = 1;
+        if (GetCvar("mus_runninginzdoom") == 1)
+        {
+            SetMusic(RandMusList[fuckery],0);
+        }
+        else
+        {
+            SetMusic(RandMusList[fuckery], 0);
+        }
+        if (GetCvar("nomusicinfo") == 0)
+        {
+            MusicInfo = RandMusInfo[fuckery];
+            SetFont("SmallFont");
+            hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
+        }
+    }
+    else
+    {
+        MusicRandomizerOn = 0;
+    }
+  }
+  else
+  {
+    Log(s:"Error: Invalid song number specified.");
+  }
+}
