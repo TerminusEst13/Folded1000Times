@@ -5,4 +5,4 @@ addmenukey "Default song" origsong
 
 alias nextsong "puke -348 0"
 alias origsong "puke -348 1"
-alias song "puke 349 "
+alias song "puke 349 %1"

@@ -16,6 +16,8 @@ FROM V2 TO V3:
 - White Zombie's Temple of the Bull wasn't a song we were able to find any info
   on. We're not even sure it's actually a real song. It was replaced with a new
   White Zombie song.
+- It's now possible to change exactly to the song you want. Input "song" and then
+  a number in the console, and it'll swap to that exact song.
 - Corrected some mistaken song information:
   ^- Barathrum's Warmetal is off the album Infernal.
   ^- Linkin Park's Crawling is off the album Hybrid Theory.
