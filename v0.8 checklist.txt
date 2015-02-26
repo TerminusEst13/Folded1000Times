@@ -1,5 +1,7 @@
 CHECKLIST FOR V0.8
 
+Insulting death messages when you die in singleplayer.
+
 <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
 
 PRIORITY:

@@ -3,7 +3,7 @@
 
 #include "commonFuncs.h" // Even in making a silly music randomizer mod, I require ijon's funcs.
 
-#define RANDOMMUS 301
+#define RANDOMMUS 310
 
 int MusicRandomizerOn;
 int MusicInfo;
@@ -312,7 +312,16 @@ int RandMusList[RANDOMMUS] =
    "Song298",
    "Song299",
    "Song300",
-   "Song301"
+   "Song301",
+   "Song302",
+   "Song303",
+   "Song304",
+   "Song305",
+   "Song306",
+   "Song307",
+   "Song308",
+   "Song309",
+   "Song310"
 };
 
 int RandMusInfo[RANDOMMUS] = 
@@ -619,7 +628,16 @@ int RandMusInfo[RANDOMMUS] =
    "JUKEBOX_298",
    "JUKEBOX_299",
    "JUKEBOX_300",
-   "JUKEBOX_301"
+   "JUKEBOX_301",
+   "JUKEBOX_302",
+   "JUKEBOX_303",
+   "JUKEBOX_304",
+   "JUKEBOX_305",
+   "JUKEBOX_306",
+   "JUKEBOX_307",
+   "JUKEBOX_308",
+   "JUKEBOX_309",
+   "JUKEBOX_310"
 };
 
 Script 346 OPEN NET clientside
@@ -743,7 +761,7 @@ switch (musicshit)
 
 script 349 (int fuckery) NET clientside
 {
-  if (fuckery > 0 && fuckery < 302)
+  if (fuckery > 0 && fuckery < 311)
   {
     if (GetCvar("norandommusic") == 0)
     {

@@ -1,28 +1,31 @@
 CREDITS TO:
-Bloax
-TheToxicAvenger
-Mike12
-CookieJar
+Bloax (Song gathering, info checking)
+TheToxicAvenger (Song gathering, info checking)
+Mike12 (Song gathering)
+CookieJar (Song gathering)
+Ryan Cordell (Fixing the "song xxx" bug)
 
 
 
 FROM V2 TO V3:
 ===========================
-- 50 more songs!
+- 60 more songs!
 - Judas Priest's Tyrant had a random beep around the 0:56-ish mark. This has been
   fixed.
 - Dark ambient music has been removed and replaced. This is a pack for jamming to
   super-cheesy and tinny music, not getting 2spook'd.
 - White Zombie's Temple of the Bull wasn't a song we were able to find any info
   on. We're not even sure it's actually a real song. It was replaced with a new
-  White Zombie song.
+  White Zombie song, Black Sunshine.
 - It's now possible to change exactly to the song you want. Input "song" and then
-  a number in the console, and it'll swap to that exact song.
+  a number in the console, like "song 142", and it'll swap to that exact song.
+- All song info has been given tan and white coloring for easier differentiation.
 - Corrected some mistaken song information:
   ^- Barathrum's Warmetal is off the album Infernal.
   ^- Linkin Park's Crawling is off the album Hybrid Theory.
   ^- Battlelore's Stormmaster was renamed to the proper Swordmaster.
   ^- Song 186 was credited to Cannical Corpse instead of Cannibal Corpse.
+  ^- Sanctuary's Die for My Sins and Taste Revenge are Thrash Metal.
 
 
 FROM V1c TO V2:
