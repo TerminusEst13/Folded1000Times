@@ -49,6 +49,7 @@ script WEEB_ENTER ENTER
     if (CheckInventory("IsJungHaeLin") == 0) { terminate; }
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
+    // If the player is spawning for the first time.
     {
         if (GameSkill () == 0) { GiveInventory("BabyMarker",1); GiveInventory("ContraLifeToken",10); }
         if (GameSkill () == 1) { GiveInventory("EasyMarker",1); GiveInventory("ContraLifeToken",8);  }
@@ -78,9 +79,12 @@ script WEEB_ENTER ENTER
         }
     }
     else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
+    // If the player isn't respawning but is entering a level fresh.
     {
         IntroChance = random(0,2);
         if (IntroChance == 2) { LocalAmbientSound("haelin/intro",127); }
+        TakeInventory("PointsFoundAllSecrets",1);
+        TakeInventory("PointsKilledMonsters",1);
         //GiveInventory("PointsSpeedrunning",875);
         //GiveInventory("PointsNoSpecials",1);
         //GiveInventory("PointsNoAttacks",1);
@@ -163,11 +167,23 @@ script WEEB_ENTER ENTER
             GiveInventory("OkuPoints",1);
         }
 
-        /*mtotal = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS); // Monster number can increase, be it through either resurrecting or summoning.
+        mtotal = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS);
         mkilled = GetLevelInfo(LEVELINFO_KILLED_MONSTERS);
-        if (mtotal != 0 && mtotal == mkilled)
-        { GiveInventory("PointsKilledMonsters",1); } // This is a loop because the monster count can change accordingly.
-        else { TakeInventory("PointsKilledMonsters",1); } // A map can start with, like, ten monsters, the player can kill ten, and then suddenly it jumps up to 12093.*/
+        if (mtotal != 0 && mtotal == mkilled && CheckInventory("PointsKilledMonsters") == 0)
+        {
+        // Monster number can increase, be it through either resurrecting or summoning.
+        // So because I can't check for the total amount on Unloading, the player is just
+        // given a dummy token that indicates they got it at first.
+            GiveInventory("PointsKilledMonsters",1);
+            if (mtotal <= 50) { GiveInventory("ManPoints",10); } // Vanilla Doom
+            if (mtotal > 50 && mtotal <= 100) { GiveInventory("ManPoints",25); } // 1994 mapwad
+            if (mtotal > 100 && mtotal <= 500) { GiveInventory("ManPoints",50); } // Scythe 2
+            if (mtotal > 500 && mtotal <= 1000) { GiveInventory("ManPoints",100); } // Babby's first slaughtermap
+            if (mtotal > 1000 && mtotal <= 5000) { GiveInventory("ManPoints",500); } // Slaughtermap
+            if (mtotal > 5000 && mtotal <= 10000) { GiveInventory("ManPoints",1000); } // Chillax
+            if (mtotal > 10000 && mtotal <= 50000) { GiveInventory("OkuPoints",1); } // OkuMap
+            if (mtotal > 50000) { GiveInventory("OkuPoints",10); } // What the hell are you playing?!
+        }
 
         stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
         sfound2 = sfound;

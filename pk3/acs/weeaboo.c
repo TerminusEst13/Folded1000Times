@@ -511,13 +511,15 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         break;
 
     case WEEB_DEC_CHANGEMUS:
-        if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) { if (getcvar("norandommusic") == 0) { terminate; }}
+        if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) 
+        { if (getcvar("norandommusic") == 0) { terminate; }}
         int i = random(0, IRONMUS-1);
         if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic(IronMaidenMusic[i],0); }
         break;
 
     case WEEB_DEC_CHANGEMUSBACK:
-        if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) { if (getcvar("norandommusic") == 0) { terminate; }}
+        if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1)
+        { if (getcvar("norandommusic") == 0) { terminate; }}
         if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
         break;
 
@@ -556,7 +558,7 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("AlreadyInLevel",1);
     //TakeInventory("PointsTookDamage",1);
     TakeInventory("PointsFoundAllSecrets",1);
-    //TakeInventory("PointsKilledMonsters",1);
+    TakeInventory("PointsKilledMonsters",1);
     //TakeInventory("PointsSpeedrunning",0x7FFFFFFF);
 
     TakeInventory("KharonSwung",1);

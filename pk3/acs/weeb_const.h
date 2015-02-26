@@ -237,60 +237,98 @@ SOUNDS:\n\
 
 
 int DemonChangelog =
-"FROM 0.73 TO 0.74:\n\
+"FROM 0.74 TO 0.75:\n\
 =======================================\n\
-- The Archvile's flame turrets now have A_NoBlocking in their death state.\n\
-- All of the Archvile's death states now call A_KillChildren.\n\
-- The Archvile's flame turrets now are no longer considered monsters and won't spam up the monster count or block things in Invasion.\n\
-- There are three more 'fade from black' sounds, thanks to torridGristle's rip of Eternal Darkness and thanks to MAGIX Soundpool DVDs.\n\
-- The Exodus grenades now explode on the sky, rather than simply vanish.\n\
-- The Icon of Sin now has its own custom sounds.\n\
-- Hae-Lin's landing sound is now less crackly.\n\
-- Pickups are now no longer considered monsters and will no longer bork things up in survival invasion.\n\
-- The initial swing of the Kharon's sheathe can now be refired one tic faster. Whoo.\n\
-- The Wolfenstein SS now has a replacement.\n\
-- Decorations now have a slightly higher chance to spew out items.\n\
-- In lieu of the Kamehameha, the Exodus no longer needs to go through walls. The explosion is now simply a 256-radius explosive, rather than four explosives with 192 radius.\n\
-- The Kharon by itself now has idle animations. Oops.\n\
-- Transformation has been streamlined and no longer requires 'hold fire'--just hit Use Inventory and it'll activate.\n\
-- Online, people were occaisionally getting weapon desynchs, where they were in Iron Maiden but using the Kharon. This has been fixed.\n\
-- A new idle animation has been implemented.\n\
-- Hammering the ground will now allow Hae-Lin to jump higher, because reasons. The higher the charge, the higher the jump.\n\
-- The Iron Maiden's armor will become more effective depending on your rank--at S Rank, you can no-sell practically everything.\n\
-- The not-Kamehameha now takes a little over 1.5x as much soul energy but now each explosion does 128 damage instead of 96.\n\
-- There are no longer double decals for the bullet weapons.\n\
-- The switch-hitting no-damage bulletpuff no longer splashes on liquids.\n\
-- The Invulnerability Sphere and RadSuit now have their own respective appropriate replacements.\n\
-- The sound range on the not-Kamehameha has been tripled.\n\
-- Enemies killed with the not-Kamehameha are now no longer resurrectable.\n\
-- Meleeing enemies in pitch dark is a pain in the ass. For users who play with lower visibility settings and/or on dark maps, a flashlight has been provided. At the moment, it's an optional customizable key, but in the future (when Zandronum supports it) then it'll use the Reload key.\n\
-- The Omen and Iron Maiden are more responsive online and now has multiple checks for if the player has hit something with it. This should polish up all inconsistencies in hitting and should also reduce the amount of times people hit something and then get stuck in place.\n\
-- The Sentinel and the Blind Guardian can now be carried from level to level.\n\
-- The Infrared Visor has been replaced with a Sentinel pickup as well, which should make it slightly more common than just the allmap.\n\
-- The Archvile has +MISSILEEVENMORE removed.\n\
-- The Blackened's children now have a different appearance, to prevent confusion with Lost Souls.\n\
-- Lost Souls now drop souls when killed.\n\
-- The Blackened now has a sound when summoning its children, to prevent confusion of when a child is attacking or being summoned.\n\
-- Quakes no longer cause sounds.\n\
-- All enemies now have their own custom sound set. Whew! That was a lot of work.\n\
-- A few people's ears had trouble with the Kharon's sheathe, so the sheathing sound effect has been slightly softened, its pitch lowered, and its bass reduced.\n\
-- There is now an options menu for handling cvars and DemonSteele-specific settings, in ZDoom.\n\
-- New teleport effect. Neat!\n\
-- Hae-Lin now has lines for the not-Kamehameha. I can't think of a name for it, so neither can she.\n\
-- Hae-Lin now has lines for picking up food.\n\
-- In the chance a player picks up a new weapon DemonSteele doesn't replace, the ammo HUD will now show the ammo for it.\n\
-- ZDoom stealth monsters are now supported. Due to the gameplay style of DemonSteele, the monsters no longer flicker in and out of visibility, but are now a constant and flat 0.4 visibility.\n\
-- People tended to lose track of exactly how much health they had and would die accidentally. In true retro game style, now there is a beeping warning when low on health. This can be disabled with 'ds_cl_nobeeping'.\n\
-- Skulltag items and monsters now have a proper replacement. Skulltag monsters occaisionally recieve strange colors when killed, but for now this is a great step forward.\n\
-- Some people wanted to be able to taunt in ZDoom. Weird. There is now a ZDoom-specific key for doing the Zandronum taunt in ZDoom.\n\
-- The Blind Guardian will no longer trigger the Sentinel and send it into a Tumblr fit. In the off chance it does, the Sentinel will check its privilege and reassert itself.\n\
-- The Kharon's attacks no longer pass harmlessly through ghosts.\n\
-- The Keen now has a unique replacement.\n\
-- The techlamps are now destructable items, like the torches, and will now provide item drops.\n\
-- Techlamps and torches now have their original gldef lights back.\n\
-- A new cvar has been implemented to handle Skulltag weapon replacements--ds_arrogantweapons. 0 spawns the normal weapons, 1 spawns new for-fun weapons in place of Skulltag weapons, and 2 spawns the new weapons randomly in place of the original weapons.\n\
-- Holding down fire for over a second will now prepare a launching uppercut slash. (Most) enemies launched with this will be suspended in mid-air until they hit the ground--shooting them will keep them in mid-air.\n\
-- There are now intermission text replacements for vanilla levels.";
+- Players are now able to rocketjump with the shotgun because reasons.\n\
+- The accuracy of the Testament has been tightened up dramatically, from 12 to 6. No weapon should be competing with the Kharon for close-range.\n\
+- Some players had sensitive ears that were hurt by the low health beeping. It's been replaced with a more standard heartbeat.\n\
+- Explosions assisting with jumping no longer cause blood splatters.\n\
+- The charge-up rate for the Legion has gone from 35 tics to 25.\n\
+- The weapon decorate files have been re-organized and renamed.\n\
+- Barrels no longer have a SpawnStimpack error and now, well, spawn stimpacks properly.\n\
+- Thanks to ShiftyAxel, there is now an option to be able to acquire souls from gun kills. ds_gunsouls will make the souls come to you on gun death as well.\n\
+- Kharon's launcher attack is now easier to do, no longer throws you forward, and is quicker to recover from.\n\
+- The Blind Guardian and Sentinel can no longer be telefragged.\n\
+- Exodus can no longer cause infighting on enemies.\n\
+- The 'ghost barrel' bug has (hopefully) been fixed.\n\
+- Exodus' explosive damage has been reduced from 192 to 160.\n\
+- Chaingunners and Hell Knights no longer die multiple times on one death.\n\
+- Hell Knights no longer suddenly switch directions when they collapse over.\n\
+- Mancubi second shots no longer fire inwards.\n\
+- Thanks to ShiftyAxel, there is now an option for typical Doom-style health play--ds_doomhealth will replace the token-based health system with a traditional health system.\n\
+- Dying or exiting a level with over 100% Hammer charge should no longer cause wonkiness.\n\
+- Respawning no longer triggers one-liners. Like, for real this time.\n\
+- The Blind Guardian, Sentinel, and Majestic Vanguard are now considered 'big'/'super' powerups and require sv_respawnsuper to respawn.\n\
+- TechPillars now have a destructable replacement.\n\
+- All decorations now force Y billboarding.\n\
+- The smoke off of bulletpuffs is now a little bit smaller and a little bit more transparent.\n\
+- The Exodus now takes four tics longer to fire.\n\
+- The first damage half of the Exodus' explosions now force gibbing.\n\
+- Fortune Cookies now give an over-life token instead of a life token, and now are always picked up no matter what.\n\
+- Hell Noble decapitations are now properly sized.\n\
+- The Sentinel now checks multiple times to see if its target is a Blind Guardian.\n\
+- More Fortune Cookie quotes, because everyone likes those.\n\
+- There were a few frames where the Kharon by itself mid-raise couldn't be used. This has been fixed.\n\
+- It is now possible to 'dash' down in mid-air, for the sake of more air control or lower-gravity maps. As like the usual dashing, hold Run and then hit Crouch.\n\
+- The Iron Maiden's holy rockets now force extreme death, as does the punchsplosion.\n\
+- A new cvar has been included, ds_2brutal, for those who want to be pursued by skeletons.\n\
+- As the uppercut was not a vital move to include, but with an extremely clunky execution, it has been moved over to Optional Keys, for people to trigger at will.\n\
+- The uppercut can now be triggered at more areas--instead of just being held, now it can be done while at rest, after firing, or while holding.\n\
+- Destructable objects can now be triggered by the uppercut.\n\
+- Lost Souls are now slightly smaller graphically because reasons. Their hitbox remains the same.\n\
+- ds_omenstart and ds_backpackstart have been implemented for maps that don't have chainsaw or backpack spawns, or those who simply want a boost in starting ability.\n\
+- The Sentinel no longer triggers the Baron of Hell's retreat.\n\
+- It's now possible to swap away from the sheathe's attack much faster.\n\
+- There are now unique talking and connecting sounds.\n\
+- The Black Souls that the Blackened shoots out are now -Solid. In exchange, he now has the ability to drain the soul meter from players when they get in range.\n\
+- The Omen's inventory-based flashing no longer appears in the invbar.\n\
+- The Kharon's uppercut, when used on projectiles, now reflects the shots back to the enemy. It's finnicky and based on Doom 'physics', but it's neat nonetheless.\n\
+- Fortune cookie quotes no longer overlap each other.\n\
+- Looping bloodspray enemy deaths now have a PPSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHH sound effect, using old stock anime sound effects.\n\
+- In ZDoom and GZDoom, Read This! now appears no matter whether the game is Doom 1 or Doom 2. It also appears at the top, to emphasize that, yeah, you should read this. Maybe now people will stop asking how to do special attacks!\n\
+- The skull icon for the main menu looks 666% edgier and more \m/ hardkore \m/.\n\
+- The combo meter no longer stays the same shade of blue as it increases, but instead inches over to purple, pink, and more for the sake of visual distinction.\n\
+- A new cvar has been added, ds_nodamagepenalty, that does not penalize one's combo meter when damaged. This setting is for superbad casuals.\n\
+- 17 more intro taunts have been added. Chance of saying them has been increased from one-in-four to one-in-three.\n\
+- The Skulltag wizards should no longer drop Claw Orbs or Tomes of Power.\n\
+- The Iron Maiden's shot impacts are no longer tinged a blue-purple.\n\
+- The Iron Maiden's holy rocket now travels twice as fast and does 32 more damage.\n\
+- Additive translucency is handled in-sprite now for a whole ton of effects, reducing filesize and reducing lag, as well as making them look better in Software.\n\
+- DemonSteele scripts now terminate if the player is not actually playing as Hae-Lin.\n\
+- On average of every twelve shots, the Sentinel will need to cycle its guns for 22 tics, allowing enemies a chance to retaliate.\n\
+- The Sentinel's shot accuracy has been tightened up.\n\
+- All special attacks now have A_ClearRefire at the end, for smoother transitioning between special attacks and attacking right after.\n\
+- The damage of the forward special has been decreased by 8 per explosion. The radius of the side specials have been increased by 64 units.\n\
+- When wielding the Kharon by itself, special attacks now end with a dramatic re-sheathing. Enemies killed with these will not die until the player re-sheathes.\n\
+- The armor bar, while in Iron Maiden, has been more cleanly integrated with the HUD.\n\
+- The three-digit ammo counters are now properly aligned with the edges of the ammo box.\n\
+- The Legion and Frosthammer now have ammo displays.\n\
+- All numbered Decorate ACS calls have been named for convenience.\n\
+- Thanks to Horrormovieguy, the launch sequence for the Nobles no longer looks so...off.\n\
+- Skulltag armor/health bonuses and red armor should be replaced properly now.\n\
+- The Sabbath no longer spits out an Idle4 error.\n\
+- A new idle animation has been implemented, made by Sgt. Shivers.\n\
+- Implemented a new cvar, ds_runmod, which modifies the percentage of the speed the player runs at. 100 is the default, 100% normal speed.\n\
+- The main menu font has been tweaked for cleanliness and rephrasing.\n\
+- As there are no Cacodemons in DemonSteele, the Dead Cacodemon decoration has bween replaced with a pile of skulls.\n\
+- The Soul Prison now gives 100 souls, instead of matching the pepper's 50.\n\
+- The Archvile now has a new death sequence, courtesy of Mike12.\n\
+- The Mancubi and Baron of Hell now have a new death sequence, courtesy of Sgt. Shivers.\n\
+- The Priest now has a unique kubiuti death sequence, courtesy of Sgt. Shivers.\n\
+- Freezing Mancs now triggers A_BossDeath.\n\
+- Thanks to jpalomo's code, DemonSteele's special moves and dodging now can support joystick and touchscreen movements!\n\
+- Transforming into the Iron Maiden from the Omen and untransforming meant the Omen's ammo would not degrade until it was selected. This has been fixed.\n\
+- Punching the Lost Souls while in Iron Maiden now gives souls.\n\
+- A points system has now been implemented, for that extra arcade-y feel.\n\
+- Thanks to Sgt. Shivers, the Iron Maiden's HUD sprites are now significantly better!\n\
+- The MidCombat counter has had its limit increased by 1.5x, allowing for a slightly longer lull before the meters start going down.\n\
+- The Iron Maiden's holy rocket is now slightly faster to charge up.\n\
+- The Over-Life token cap on Facing Hell is now two, instead of three.\n\
+- Much like life, the armor cap now decreases as difficulty rises. On Facing Hell and Killing Machine, max armor tokens is now three. On Angel of Death, max armor tokens is now two.\n\
+- The Frosthammer's charged explosive damage is now 160.\n\
+- The KubiutiUpper damagetype now properly launches the Steele Beast.\n\
+- Iron Maiden's punches, on splattering enemies, now alerts nearby monsters.\n\
+- The Iron Maiden's armor has been tweaked slightly. It regenerates slightly faster, but the armor resistance itself is slower--this should make it better for out-and-out brawls, but more susceptible to burst damage.";
 
 int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {
