@@ -121,7 +121,7 @@ actor OverLifeToken : Counter { Inventory.MaxAmount 3 }
 actor EnviroDamageCount : Counter { Inventory.MaxAmount 3 }
 actor EnviroDamageCooldown : Counter { Inventory.MaxAmount 75 }
 actor GhostStepCooldown : Counter { Inventory.MaxAmount 35 }
-actor MidCombat : Counter { Inventory.MaxAmount 90 }
+actor MidCombat : Counter { Inventory.MaxAmount 70 }
 actor SuperMeterCounter : Counter { Inventory.MaxAmount 400 }
 actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
 actor WaitingTooLong : Counter { Inventory.MaxAmount 525 }
