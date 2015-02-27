@@ -8,6 +8,29 @@
 #define SECOND_TICS 35.714285714285715
 #define UNIT_CM     2.73921568627451
 
+#define DAMAGE_NORANDOM     0x40000000
+
+int TeamNames[TEAMCOUNT] = 
+{
+    "Blue", "Red", "Green", "Gold", "Black", "White", "Orange", "Purple"
+};
+
+int TeamColors[TEAMCOUNT] = 
+{
+    CR_BLUE, CR_RED, CR_GREEN, CR_GOLD, CR_BLACK, CR_WHITE, CR_ORANGE, CR_PURPLE
+};
+
+int TeamColorCodes[TEAMCOUNT] = 
+{
+    "\ch", "\cg", "\cd", "\cf", "\cm", "\cj", "\ci", "\ct"
+};
+
+int msgColors[22] = 
+{
+    "\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
+    "\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
+};
+
 function int itof(int x) { return x << 16; }
 function int ftoi(int x) { return x >> 16; }
 
@@ -49,13 +72,27 @@ function int powFloat(int x, int y)
     return n;
 }
 
+function int gcf(int a, int b)
+{
+    int c;
+    while (1)
+    {
+        if (b == 0) { return a; }
+        c = a % b;
+        a = b;
+        b = c;
+    }
+    
+    return -1;
+}
+
 function int min(int x, int y)
 {
     if (x < y) { return x; }
     return y;
 }
 
-function int max (int x, int y)
+function int max(int x, int y)
 {
     if (x > y) { return x; }
     return y;
@@ -82,6 +119,14 @@ function int keyUp(int key)
     int buttons = GetPlayerInput(-1, INPUT_BUTTONS);
 
     if ((~buttons & key) == key) { return 1; }
+    return 0;
+}
+
+function int keyUp_any(int key)
+{
+    int buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+
+    if (~buttons & key) { return 1; }
     return 0;
 }
 
@@ -119,6 +164,59 @@ function int keyPressed(int key)
 function int keyPressed_any(int key)
 {
     if (keysPressed() & key) { return 1; }
+    return 0;
+}
+
+function int inputUp(int input)
+{
+    int buttons = GetPlayerInput(-1, MODINPUT_BUTTONS);
+
+    if ((~buttons & input) == input) { return 1; }
+    return 0;
+}
+
+function int inputUp_any(int input)
+{
+    int buttons = GetPlayerInput(-1, MODINPUT_BUTTONS);
+
+    if (~buttons & input) { return 1; }
+    return 0;
+}
+
+function int inputDown(int input)
+{
+    int buttons = GetPlayerInput(-1, MODINPUT_BUTTONS);
+
+    if ((buttons & input) == input) { return 1; }
+    return 0;
+}
+
+function int inputDown_any(int input)
+{
+    int buttons = GetPlayerInput(-1, MODINPUT_BUTTONS);
+
+    if (buttons & input) { return 1; }
+    return 0;
+}
+
+function int inputsPressed(void)
+{
+    int buttons     = GetPlayerInput(-1, MODINPUT_BUTTONS);
+    int oldbuttons  = GetPlayerInput(-1, MODINPUT_OLDBUTTONS);
+    int newbuttons  = (buttons ^ oldbuttons) & buttons;
+
+    return newbuttons;
+}
+
+function int inputPressed(int input)
+{
+    if ((inputsPressed() & input) == input) { return 1; }
+    return 0;
+}
+
+function int inputPressed_any(int input)
+{
+    if (inputsPressed() & input) { return 1; }
     return 0;
 }
 
@@ -177,7 +275,7 @@ function int sqrt_i(int number)
     if (number <= 3) { return number > 0; }
 
     int oldAns = number >> 1,                     // initial guess
-        newAns = (oldAns + number / oldAns) >> 1; // first iteration
+        newAns = (oldAns + (number / oldAns)) >> 1; // first iteration
 
     // main iterative method
     while (newAns < oldAns)
@@ -189,7 +287,7 @@ function int sqrt_i(int number)
     return oldAns;
 }
 
-/*function int sqrt(int number)
+function int zan_sqrt(int number)
 {
     if (number == 1.0) { return 1.0; }
     if (number <= 0) { return 0; }
@@ -197,7 +295,7 @@ function int sqrt_i(int number)
     for (int i=0; i<15; i++) { val = (val + FixedDiv(number, val)) >> 1; }
 
     return val;
-}*/
+}
 
 function int magnitudeTwo(int x, int y)
 {
@@ -206,7 +304,13 @@ function int magnitudeTwo(int x, int y)
 
 function int magnitudeTwo_f(int x, int y)
 {
-    return sqrt(FixedMul(x, x) + FixedMul(y, y));
+    int len, ang;
+
+    ang = VectorAngle(x, y);
+    if (((ang + 0.125) % 0.5) > 0.25) { len = FixedDiv(y, sin(ang)); }
+    else { len = FixedDiv(x, cos(ang)); }
+
+    return len;
 }
 
 function int magnitudeThree(int x, int y, int z)
@@ -232,7 +336,7 @@ function int magnitudeThree_f(int x, int y, int z)
 
 function int quadPos(int a, int b, int c)
 {
-    int s1 = sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
+    int s1 = zan_sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
     int s2 = (2 * a);
     int b1 = FixedDiv(-b + s1, s2);
 
@@ -241,7 +345,7 @@ function int quadPos(int a, int b, int c)
 
 function int quadNeg(int a, int b, int c)
 {
-    int s1 = sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
+    int s1 = zan_sqrt(FixedMul(b, b)-(4*FixedMul(a, c)));
     int s2 = (2 * a);
     int b1 = FixedDiv(-b - s1, s2);
 
@@ -307,6 +411,32 @@ function int cleanString(int string)
         else
         {
             ignoreNext = 0;
+        }
+    }
+
+    return ret;
+}
+
+function int cvarFromString(int prefix, int newname)
+{
+    int ret = "";
+    int i, c;
+    int prelen = strlen(prefix);
+    int namelen = strlen(newname);
+    int cap = prelen+namelen;
+
+    for (i = 0; i <= cap; i++)
+    {
+        c = cond(i >= prelen, GetChar(newname, i-prelen), GetChar(prefix, i));
+
+        if (
+            (c > 64 && c < 91)  // is uppercase letter
+         || (c > 90 && c < 123) // is lowercase letter
+         || (c > 47 && c < 58)  // is number
+         || c == 95             // _
+         )
+        {
+            ret = StrParam(s:ret, c:c);
         }
     }
 
@@ -411,7 +541,7 @@ function int sliceString(int string, int start, int end)
     return ret;
 }
 
-function int cstrcmp(int str1, int str2)
+function int zand_strcmp(int str1, int str2)
 {
     int i,j,k,l;
     int len1 = StrLen(str1);
@@ -425,12 +555,97 @@ function int cstrcmp(int str1, int str2)
         
         k = GetChar(str1, i); l = GetChar(str2, i);
 
-        if (k > j) { return  1; }
-        if (k < j) { return -1; }
+        if (k > l) { return  1; }
+        if (k < l) { return -1; }
     }
     return 0;
 }
 
+// [marrub] ijon's strcmp doesn't work, hell if I know why
+// so I stol-- er, liberated -- some code from the standard C library
+/* for(; *s1 && *s2; ++s1, ++s2)
+   {
+      if(*s1 != *s2)
+         return *s1 - *s2;
+   }
+
+   return *s1 - *s2; */
+function int cstrcmp(int s1, int s2)
+{
+  int i = 0;
+  int fuck, acs;
+  
+  while(true) {
+    fuck = GetChar(s1, i); acs = GetChar(s2, i);
+    
+    if((!fuck && !acs) || (fuck != acs)) { break; }
+    
+    i++;
+  }
+  
+  return fuck - acs;
+}
+// end marrub's horrible re-implementation
+
+// End StrParam
+
+function int strstr(int string, int from, int to)
+{
+    int ret = "";
+    int len = StrLen(string);
+    int fromLen = StrLen(from);
+
+    int i, j, c;
+    int charsFound  = 0;
+    int lastEnd     = -1;
+    int lastWasWord = 0;
+
+    for (i = 0; i < len; i++)
+    {
+        int chr     = GetChar(string, i);
+        int fromChr = GetChar(from, charsFound);
+        lastWasWord = 0;
+
+        if (chr == fromChr)
+        {
+            charsFound++;
+
+            if (charsFound == fromLen)
+            {
+                charsFound  = 0;
+                lastEnd     = i;
+                lastWasWord = 1;
+
+                ret = StrParam(s:ret, s:to);
+            }
+        }
+        else
+        {
+            for (j = 0; j <= charsFound; j++)
+            {
+                c = GetChar(string, lastEnd + j + 1);
+                if (c == 92) { ret = StrParam(s:ret, s:"\\"); }
+                else { ret = StrParam(s:ret, c:c); }
+            }
+
+            charsFound  = 0;
+            lastEnd     = i;
+        }
+    }
+
+    if (!lastWasWord) // dump whatever is left
+    {
+        for (j = 0; j <= charsFound; j++)
+        {
+            c = GetChar(string, lastEnd + j + 1);
+            if (c == 92) { ret = StrParam(s:ret, s:"\\"); }
+            else { ret = StrParam(s:ret, c:c); }
+        }
+    }
+        
+
+    return ret;
+}
 
 // End StrParam
 
@@ -471,7 +686,7 @@ function int giveHealth(int amount)
 
 function int giveHealthFactor(int amount, int maxFactor)
 {
-    return giveHealthMax(amount, ftoi(getMaxHealth() * maxFactor));
+    return giveHealthMax(amount, FixedMul(getMaxHealth(), maxFactor));
 }
 
 function int giveHealthMax(int amount, int maxHP)
@@ -481,7 +696,11 @@ function int giveHealthMax(int amount, int maxHP)
     int curHP = GetActorProperty(0, APROP_Health);
 
     if (maxHP == 0) { newHP = max(curHP, curHP+amount); }
-    else { newHP = middle(curHP, curHP+amount, maxHP); }
+    else
+    {
+        if (curHP > maxHP) { return 0; }
+        newHP = middle(curHP, curHP+amount, maxHP);
+    }
 
     SetActorProperty(0, APROP_Health, newHP);
 
@@ -566,16 +785,17 @@ function void SetInventory(int item, int amount)
     GiveAmmo(item, amount - count);
     return;
 }
-function void ToggleInventory(int inv)
+
+function int ToggleInventory(int inv)
 {
     if (CheckInventory(inv))
     {
         TakeInventory(inv, 0x7FFFFFFF);
+        return 0;
     }
-    else
-    {
-        GiveInventory(inv, 1);
-    }
+
+    GiveInventory(inv, 1);
+    return 1;
 }
 
 function void GiveAmmo(int type, int amount)
@@ -768,33 +988,42 @@ function int loadStringCVar(int cvarname)
 
 function int defaultTID(int def)
 {
+    return _defaulttid(def, 0);
+}
+
+function int _defaulttid(int def, int alwaysPropagate)
+{
+    if (ClassifyActor(0) & ACTOR_WORLD) { return 0; }
+
     int tid = ActivatorTID();
-    int i;
+    int i, changed = 0;
 
-    if (ThingCount(0, tid) == 1) { return tid; }
-
-    tid = def;
-    if (def <= 0)
+    if (ThingCount(0, tid) != 1)
     {
-        i = random(13, 23);
-        tid = unusedTID(i*1000, (i+10)*1000);
+        tid = def;
+        changed = 1;
+        if (def <= 0)
+        {
+            i = random(12, 220);
+            tid = unusedTID(i*100, (i+100)*100);
+        }
+
+        Thing_ChangeTID(0, tid);
     }
 
-    Thing_ChangeTID(0, tid);
-    ACS_ExecuteAlways(DEFAULTTID_SCRIPT, 0, tid,0,0);
-
+    if (alwaysPropagate) { Thing_ChangeTID(0, tid); }
     return tid;
 }
 
-script DEFAULTTID_SCRIPT (int tid) clientside
+function int HeightFromJumpZ(int jumpz, int gravFactor)
 {
-    if (ConsolePlayerNumber() == -1) { terminate; }
-    Thing_ChangeTID(0, tid);
+    if (jumpz < 0) { return 0; }
+    return FixedDiv(FixedMul(jumpz, jumpz), gravFactor << 1);
 }
 
 function int JumpZFromHeight(int height, int gravFactor)
 {
-    return sqrt(2 * height * gravFactor);
+    return zan_sqrt(2 * height * gravFactor);
 }
 
 function int roundZero(int toround)
@@ -826,21 +1055,42 @@ function int intFloat(int toround)
     return itof(ftoi(toround));
 }
 
+function int distance(int x1, int y1, int z1, int x2, int y2, int z2)
+{
+    return magnitudeThree_f(x2-x1, y2-y1, z2-z1);
+}
+
+function int distance_tid(int tid1, int tid2)
+{
+    int x1 = GetActorX(tid1);
+    int y1 = GetActorY(tid1);
+    int z1 = GetActorZ(tid1);
+
+    int x2 = GetActorX(tid2);
+    int y2 = GetActorY(tid2);
+    int z2 = GetActorZ(tid2);
+
+    return magnitudeThree_f(x2-x1, y2-y1, z2-z1);
+}
+
 function int distance_ftoi(int x1, int y1, int z1, int x2, int y2, int z2)
 {
-    return magnitudeThree(ftoi(x2-x1), ftoi(y2-y1), ftoi(z2-z1));
+    return ftoi(distance(x1,y1,z1, x2,y2,z2));
 }
 
 function void printDebugInfo(void)
 {
     int classify    = ClassifyActor(0);
-    int fead        = classify & ACTOR_DEAD;
+    int dead        = classify & ACTOR_DEAD;
     int player      = classify & ACTOR_PLAYER;
     int pln         = PlayerNumber();
+    int tid         = ActivatorTID();
 
     Log(s:" -- DEBUG INFO -- ");
 
     Log(s:"Executed on tic ", d:Timer(), s:" on map ", d:GetLevelInfo(LEVELINFO_LEVELNUM));
+    Log(s:"Has TID of ", d:tid, s:" - sharing with ", d:ThingCount(0, tid) - 1, s:" actors");
+    Log(s:"Position: (", f:GetActorX(0), s:", ", f:GetActorY(0), s:", ", f:GetActorZ(0), s:")");
 
     if (classify & (ACTOR_PLAYER | ACTOR_MONSTER))
     {
@@ -861,7 +1111,7 @@ function int PlayerTeamCount(int teamNo)
     int i, ret;
     for (i = 0; i < PLAYERMAX; i++)
     {
-        if (GetPlayerInfo(i, PLAYERINFO_TEAM) == teamNO) { ret++; }
+        if (GetPlayerInfo(i, PLAYERINFO_TEAM) == teamNo) { ret++; }
     }
     return ret;
 }
@@ -878,9 +1128,146 @@ function int upper(int chr)
     return chr;
 }
 
+function int strLower(int string)
+{
+    int ret = "";
+    int len = StrLen(string);
+    int i;
+
+    for (i = 0; i < len; i++)
+    {
+        ret = StrParam(s:ret, c:lower(GetChar(string, i)));
+    }
+
+    return ret;
+}
+
+function int strUpper(int string)
+{
+    int ret = "";
+    int len = StrLen(string);
+    int i;
+
+    for (i = 0; i < len; i++)
+    {
+        ret = StrParam(s:ret, c:upper(GetChar(string, i)));
+    }
+
+    return ret;
+}
+
 function int AddActorProperty(int tid, int prop, int amount)
 {
     int newAmount = GetActorProperty(tid, prop) + amount;
     SetActorProperty(tid, prop, newAmount);
     return newAmount;
+}
+
+function int ClientCount(void)
+{
+    int ret, i;
+
+    for (i = 0; i < PLAYERMAX; i++)
+    {
+        if (PlayerInGame(i) || PlayerIsSpectator(i)) { ret++; }
+    }
+
+    return ret;
+}
+
+function int HasRoom(int actorname, int x, int y, int z)
+{
+    int tid = unusedTID(40000, 50000);
+    int ret = Spawn(actorname, x, y, z, tid);
+
+    if (ret >= 1) { Thing_Remove(tid); }
+
+    return ret;
+}
+
+function int RealPlayerCount(void)
+{
+    int ret, i;
+
+    for (i = 0; i < PLAYERMAX; i++)
+    {
+        if (PlayerInGame(i) && !PlayerIsBot(i)) { ret++; }
+    }
+
+    return ret;
+}
+
+function int quadSlope(int orgX, int orgY, int pntX, int pntY, int floatY)
+{
+    int dist = abs(pntX - orgX);
+    int height = pntY - orgY;
+    int negative = 0;
+
+    if (height == 0) { return 0; }
+
+    if (height < 0)
+    {
+        negative = -1;
+        height = -height;
+    }
+    
+    int slope = cond(floatY, zan_sqrt(height), zan_sqrt(itof(height)));
+
+    slope = (slope / dist);
+
+    slope = FixedMul(slope, slope);
+
+    if (negative) { return -slope; }
+    return slope;
+}
+
+function int actorVelMagnitude(int tid)
+{
+    return magnitudeThree_f(GetActorVelX(tid), GetActorVelY(tid), GetActorVelZ(tid));
+}
+
+function int isAmmo(int name)
+{
+    return GetAmmoCapacity(name) > 0;
+}
+
+function int intcmp(int x, int y)
+{
+    if (x < y) { return -1; }
+    if (x > y) { return  1; }
+    return 0;
+}
+
+
+function int RaiseAmmoCapacity(int ammoname, int newcapacity, int raiseammo)
+{
+    int ammo = CheckInventory(ammoname);
+    int capacity = GetAmmoCapacity(ammoname);
+
+    if (capacity < newcapacity)
+    {
+        SetAmmoCapacity(ammoname, newcapacity);
+        capacity = newcapacity;
+    }
+
+    if ((ammo < capacity) && raiseammo)
+    {
+        GiveInventory(ammoname, capacity - ammo);
+    }
+    
+    return CheckInventory(ammo);
+}
+
+function int Zand_GetCVarFixed(int cvarname)
+{
+    int tmpName = StrParam(s:"tmpcvar_rand", d:random(12000, 24000));
+    ConsoleCommand(StrParam(s:"set ", s:tmpName, s:" 0"));
+
+    int evalCmd = StrParam(s:"eval * $", s:cvarname, s:" 65536 ", s:tmpName);
+    ConsoleCommand(evalCmd);
+
+    int ret = GetCVar(tmpName);
+    ConsoleCommand(StrParam(s:"unset ", d:tmpName));
+
+    return ret;
 }

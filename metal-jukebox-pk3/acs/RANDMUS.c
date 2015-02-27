@@ -49,7 +49,8 @@ function int getMaxRandSong(void)
   
   for(i = 1; i < 9999; i++) { // Please do not use more than 9999 songs.
     temp = getSongStr(i, SONGSTR_INFO); // Compare the string and the language text, if they're the same it's the last one.
-    if(CStrCmp(temp, StrParam(l:temp)) == 1) {
+    if(!CStrCmp(temp, StrParam(l:temp)))
+    {
       return i - 1;
     }
   }
@@ -104,8 +105,9 @@ Script 346 OPEN NET clientside
     if(GetCvar("nomusicinfo") == 0)
     {
       MusicInfo = getSongStr(i, SONGSTR_INFO);
-      if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)) != 1) { // This compares the info with the language text it's associated with
-        SetFont("SmallFont");                        // If it's the same, there is no language text associated with it, thus we should not print it
+      if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)))
+      {                       // This compares the info with the language text it's associated with
+        SetFont("SmallFont"); // If it's the same, there is no language text associated with it, thus we should not print it
         hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
       }
     }
@@ -176,7 +178,7 @@ script 348 (int musicshit) NET clientside // Hitting "Next Song".
         if (GetCvar("nomusicinfo") == 0)
         {
           MusicInfo = getSongStr(i, SONGSTR_INFO);
-          if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)) != 1)
+          if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)))
           {
             SetFont("SmallFont");
             hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
@@ -224,8 +226,9 @@ script 349 (int fuckery) NET clientside // Manually changing the song
       if(GetCvar("nomusicinfo") == 0)
       {
         MusicInfo = getSongStr(fuckery, SONGSTR_INFO);
-        if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)) != 1) { // This compares the info with the language text it's associated with
-          SetFont("SmallFont");                        // If it's the same, there is no language text associated with it, thus we should not print it
+        if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)))
+        {
+          SetFont("SmallFont");
           hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
         }
       }
