@@ -4,6 +4,7 @@ TheToxicAvenger (Song gathering, info checking)
 Mike12 (Song gathering)
 CookieJar (Song gathering)
 Ryan Cordell (Fixing the "song xxx" bug)
+Marrub (Converting all the ACS to use strParam instead of an array, clientsiding the music as well)
 
 
 
@@ -20,6 +21,9 @@ FROM V2 TO V3:
 - It's now possible to change exactly to the song you want. Input "song" and then
   a number in the console, like "song 142", and it'll swap to that exact song.
 - All song info has been given tan and white coloring for easier differentiation.
+- Thanks to Marrub's incredible work, even the song amount now is clientsided.
+  People are now able to add, remove, and adjust songs as they want without any
+  issues in joining servers!
 - Corrected some mistaken song information:
   ^- Barathrum's Warmetal is off the album Infernal.
   ^- Linkin Park's Crawling is off the album Hybrid Theory.
