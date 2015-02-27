@@ -209,8 +209,7 @@ actor "Iron Fist" : Weapon
         IRP1 E 1
         TNT1 A 0 A_JumpIfInventory("FistHit",1,"FireHit1")
         IRP1 F 1 A_GiveInventory("FistSwung",1)
-        TNT1 A 4
-        TNT1 AA 1 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 6
         goto Fired
     FireHit1:
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
@@ -242,8 +241,7 @@ actor "Iron Fist" : Weapon
         IRP3 E 1
         TNT1 A 0 A_JumpIfInventory("FistHit",1,"FireHit1B")
         IRP3 F 1 A_GiveInventory("FistSwung",1)
-        TNT1 A 4
-        TNT1 AA 1 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 6
         goto Fired
     FireHit1B:
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
@@ -281,8 +279,7 @@ actor "Iron Fist" : Weapon
         IRP2 E 1
         TNT1 A 0 A_JumpIfInventory("FistHit",1,"FireHit2")
         IRP2 F 1 A_TakeInventory("FistSwung",1)
-        TNT1 A 4
-        TNT1 AA 1 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 6
         goto Fired
     FireHit2:
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
@@ -314,8 +311,7 @@ actor "Iron Fist" : Weapon
         IRP4 E 1
         TNT1 A 0 A_JumpIfInventory("FistHit",1,"FireHit2B")
         IRP4 F 1 A_TakeInventory("FistSwung",1)
-        TNT1 A 4
-        TNT1 AA 1 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        TNT1 A 6
         goto Fired
     FireHit2B:
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
