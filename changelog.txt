@@ -96,10 +96,12 @@ FROM 0.74 TO 0.8:
  ^- The Mancubus now takes a much shorter time in between shots. The idea of the Mancubus' attack sequence is to fill a wide spread of an area, shooting left and right instead of just straight at the player. Since the player now has many more options to dodge or nullify the attacks, the Mancubi can now fill up areas more easily.
  ^- The Zombiemen and Chaingunners take five tics faster to fire. While they're complete non-threats now, lacking hitscans, they should at least get off shots a little bit faster.
  ^- The Shotgunners take eight tics faster to fire. See above.
+ ^- The Imp now fires two shots in a row and has a higher chance to go right back to firing more. The Imps are supposed to be more threatening than the zombiemen with more damage with a slower projectile--while in DemonSteele they can't have higher damage, they can at least have higher damage potential.
 - The Acacia, Testament, and Sabbath now eject casings because reasons.
 - The Acacia, Testament, and Sabbath now also have gun smoke because reasons.
 - The Exodus' explosion now has a shockwave emitting from it.
 - The transformation sequence to Iron Maiden now takes the currently-wielded weapon last, to prevent scripts from cancelling early.
+- The low-health beep no longer plays when the player has over-life tokens.
 
 
 FROM 0.73 TO 0.74:

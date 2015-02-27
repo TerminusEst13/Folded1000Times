@@ -691,7 +691,7 @@ script WEEB_ENTER ENTER
         if (flashlightOn[pln])
             { GiveInventory("FlashlightSpawner", 1); }
 
-        if (CheckInventory("ContraLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
+        if (CheckInventory("ContraLifeToken") == 0 && CheckInventory("OverLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
         {
           if (GetSomeHealthAlready >= 60)
           {

@@ -561,6 +561,34 @@ function int zand_strcmp(int str1, int str2)
     return 0;
 }
 
+// [marrub] ijon's strcmp doesn't work, hell if I know why
+// so I stol-- er, liberated -- some code from the standard C library
+/* for(; *s1 && *s2; ++s1, ++s2)
+   {
+      if(*s1 != *s2)
+         return *s1 - *s2;
+   }
+
+   return *s1 - *s2; */
+function int cstrcmp(int s1, int s2)
+{
+  int i = 0;
+  int fuck, acs;
+  
+  while(true) {
+    fuck = GetChar(s1, i); acs = GetChar(s2, i);
+    
+    if((!fuck && !acs) || (fuck != acs)) { break; }
+    
+    i++;
+  }
+  
+  return fuck - acs;
+}
+// end marrub's horrible re-implementation
+
+// End StrParam
+
 function int strstr(int string, int from, int to)
 {
     int ret = "";

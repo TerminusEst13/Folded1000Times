@@ -2,10 +2,6 @@ CHECKLIST FOR V0.8
 
 Insulting death messages when you die in singleplayer.
 
-Heart beeping when over-life tokens.
-
-Uppercutting enemies into each other freezes them in place.
-
 Points for killing the Icon of Sin
 
 <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
