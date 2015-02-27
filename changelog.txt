@@ -99,6 +99,7 @@ FROM 0.74 TO 0.8:
 - The Acacia, Testament, and Sabbath now eject casings because reasons.
 - The Acacia, Testament, and Sabbath now also have gun smoke because reasons.
 - The Exodus' explosion now has a shockwave emitting from it.
+- The transformation sequence to Iron Maiden now takes the currently-wielded weapon last, to prevent scripts from cancelling early.
 
 
 FROM 0.73 TO 0.74:

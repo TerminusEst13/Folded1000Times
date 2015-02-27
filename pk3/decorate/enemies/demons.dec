@@ -399,8 +399,8 @@ ACTOR WeeabooDemon : Demon replaces Demon
         TNT1 A 0 A_NoGravity
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_Recoil(4)
-        TNT1 A 0 ThrustThingZ(0,256,0,0)
     DeathUpperLoop:
+        TNT1 A 0 ThrustThingZ(0,256,0,0)
         SARG K 1
         TNT1 A 0 A_JumpIf(CeilingZ-Z <= 16,"DeathUpperFinish")//A_CheckCeiling("DeathUpperFinish")
         loop
@@ -693,8 +693,8 @@ ACTOR WeeabooClink replaces Spectre
         TNT1 A 0 A_NoGravity
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_Recoil(4)
-        TNT1 A 0 ThrustThingZ(0,256,0,0)
     DeathUpperLoop:
+        TNT1 A 0 ThrustThingZ(0,256,0,0)
         CLNK H 1
         TNT1 A 0 A_JumpIf(CeilingZ-Z <= 16,"DeathUpperFinish")//A_CheckCeiling("DeathUpperFinish")
         loop

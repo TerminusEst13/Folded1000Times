@@ -299,8 +299,8 @@ ACTOR Priest replaces Arachnotron
         TNT1 A 0 A_NoGravity
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_Recoil(4)
-        TNT1 A 0 ThrustThingZ(0,256,0,0)
     DeathUpperLoop:
+        TNT1 A 0 ThrustThingZ(0,256,0,0)
         PRST K 1
         TNT1 A 0 A_JumpIf(CeilingZ-Z <= 16,"DeathUpperFinish")//A_CheckCeiling("DeathUpperFinish")
         loop
