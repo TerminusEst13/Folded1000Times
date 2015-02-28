@@ -68,9 +68,13 @@ ACTOR Candlestick2 replaces Candlestick
     YScale 0.7
     ProjectilePassHeight -16
     -SOLID
+    +RANDOMIZE
     States
     {
     Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("sound/candle","soundslot5",1,0)
+    Spawn1:
         CNDL ABCDE 3 Bright
         loop
     }
