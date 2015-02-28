@@ -102,6 +102,7 @@ FROM 0.74 TO 0.8:
 - The Exodus' explosion now has a shockwave emitting from it.
 - The transformation sequence to Iron Maiden now takes the currently-wielded weapon last, to prevent scripts from cancelling early.
 - The low-health beep no longer plays when the player has over-life tokens.
+- Revenants no longer jump to cutting death states when shot.
 
 
 FROM 0.73 TO 0.74:
