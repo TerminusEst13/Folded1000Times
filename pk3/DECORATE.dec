@@ -258,7 +258,7 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/enemies/thebestguy.dec"
 #include "decorate/enemies/archvile.dec"
 #include "decorate/enemies/soulpain.dec"
-#include "decorate/enemies/keen.dec"
+#include "decorate/enemies/misc.dec"
 #include "decorate/enemies/stealth.dec"
 
 #include "decorate/skulltag.dec"
