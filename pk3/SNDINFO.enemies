@@ -339,6 +339,41 @@ fatso/shotx               MANSHHIT // Taken from Gears of War
 $volume fatso/shotx 0.9
 $limit fatso/shotx 0
 
+drone/sight         dssntsee // Taken from Duke Nukem 3D
+drone/death         dssntdth // Taken from Duke Nukem 3D
+drone/active        dssntact // Taken from Duke Nukem 3D
+
+ddbeep "Sounds/enemies/devildriver/bomb_timer2.ogg" // Taken from STALKER: Shadows of Chernobyl
+ddrockalert "Sounds/enemies/devildriver/rocketalert.ogg" // Taken from a simple pager
+
+ddheal "Sounds/enemies/devildriver/DDHeal.ogg" // Edited from Chronicles of Riddick
+
+$random devildriver/active { ddactive1 ddactive2 } // Taken from Killing Floor
+
+ddactive1 "Sounds/enemies/devildriver/DDActive1.ogg"
+ddactive2 "Sounds/enemies/devildriver/DDActive2.ogg"
+
+$rolloff devildriver/active 400 2400
+
+$random devildriver/death { dddeath1 dddeath2 } // Taken from Killing Floor
+
+dddeath1 "Sounds/enemies/devildriver/DDDeath1.ogg"
+dddeath2 "Sounds/enemies/devildriver/DDDeath2.ogg"
+
+$random devildriver/pain { ddpain1 ddpain2 } // Taken from Killing Floor
+
+ddpain1 "Sounds/enemies/devildriver/DDPain1.ogg"
+ddpain2 "Sounds/enemies/devildriver/DDPain2.ogg"
+
+$rolloff devildriver/pain 400 2400
+
+$random devildriver/see {ddsee1 ddsee2 ddsee3 ddsee4 } // Taken from Killing Floor
+
+ddsee1 "Sounds/enemies/devildriver/DDSee1.ogg"
+ddsee2 "Sounds/enemies/devildriver/DDSee2.ogg"
+ddsee3 "Sounds/enemies/devildriver/DDSee3.ogg"
+ddsee4 "Sounds/enemies/devildriver/DDSee4.ogg"
+
 
 
 

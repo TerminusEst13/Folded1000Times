@@ -3,9 +3,9 @@
 destroy/lamp              LAMPCUT
 destroy/candelabra        CNDLCUT
 destroy/pillar            PILRCUT
-sound/lamp                LAMPLOOP
-sound/torch               TRCHLOOP
-sound/candle              CANDLOOP
+sound/lamp                LAMPLOOP // Taken from the General Series 6000
+sound/torch               TRCHLOOP // Taken from the General Series 6000
+sound/candle              CANDLOOP // Taken from the General Series 6000
 $rolloff sound/lamp 100 600
 $rolloff sound/torch 100 600
 $rolloff sound/candle 100 600

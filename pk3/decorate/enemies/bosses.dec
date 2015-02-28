@@ -214,7 +214,7 @@ ACTOR Emperor replaces SpiderMastermind
 actor EmperorShotSpell : WizardSpell { +HEXENBOUNCE +SKYEXPLODE Speed 25 BounceCount 3 }
 actor EmperorHailSpell : EmperorShotSpell { -NOGRAVITY }
 
-actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
+/*actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
 {
     Scale 1.1
     PainChance "KharonSheathe", 128
@@ -310,7 +310,7 @@ actor WeeabooCyberdemon : Cyberdemon replaces Cyberdemon
         NONE A 1 A_BossDeath
         stop
     }
-}
+}*/
 
 actor CyberRocket : Rocket //replaces Rocket
 {
@@ -394,3 +394,5 @@ ACTOR CyberRocketDeathSFX
         Stop
    }
 }
+
+#include "decorate/enemies/devildriver.dec"

@@ -1,0 +1,573 @@
+// All of this was coded by Vince. Bloody hell, excellent job, mate!
+
+#include "decorate/enemies/HealDrone.dec"
+#include "decorate/enemies/DriverAttacks.dec"
+
+const int DDMeleeRange = 200;            //Custom Melee Range for reduced redundancy in state definitions and other checking-of-things
+//const int DDMeleeRange = 4000;            //Massive melee range to test melee attacks. Using 0x7FFFFFFF seems to cause overflow and prevent melee from firing.
+const int DDDroneChance = 128;            //A number between 1 and 256 -- this is the chance to spawn a drone while attacking. 128 is my baseline for testing.
+const int DDDroneMax = 3;                //3 seems to create frequent heals.
+const int DDDroneDelayAmount = 2;        //When the Driver has just created an orbiting drone, we want there to be a minimum delay of attack phases before it attempts to create another one.
+const int DDDroneDelayMaxAmount = 2;    //If the Driver has reached maximum drones, this delay is added to the basic delay
+//const int DDUltHealthThreshold = 8000;    //The amount of hp the Driver has to reach before it begins decrementing ultimate delay.
+//const int DDUltDelay1 = 40;                //The initial amount of delay given the cyber upon spawn
+//const int DDUltDelay2 = 50;                //The additional delay given the cyber upon using an ultimate
+//const int DDUltDelayDecrementRange = 2;
+//The delay amount is decremented by a random value between 0 and this amount every attack, to create the variable delay range.
+//ULTIMATE UPDATE:
+//DevilDriver now gets an ultimate attack. He builds up anger after reaching half health and starts using ultimate attacks
+
+
+//Term: Due to the amount of commenting on this document already, sound related comments will be marked with a $$$$
+//SeeSound, PainSound, DeathSound, ActiveSound all have designations. Walking has no sounds.
+//Attacking has no sounds -- there are 9 separate attack states (two of those are the same attack but with an alt direction option; making for 8 possible attacks.
+//HealDrone.Dec has pretty much complete sound design. I found it too noisy to give the drones regular sounds with everything else going on, so they only make a sound upon healing
+//DriverAttacks.Dec has all of the attacks. Most of the rockets use basic sounds. None of the electricity attacks have sounds to them.
+
+ACTOR DevilDriver replaces Cyberdemon
+{                                   
+    Species "DevilDriver"
+    PainChance "KharonSheathe", 128
+    PainChance "IronFistDamage", 255
+    PainChance "SabbathDamage", 96
+    PainChance "DroneHeal", 0
+    PainChance "EnemyInfightDamageCyber", 0
+    DamageFactor "EnemyInfightDamageCyber", 0
+    DamageFactor "DroneHeal", 0
+    DamageFactor "GuardMove", 0.0
+    DamageFactor "ArchvileFire", 0.0
+    DamageFactor "ExodusJump", 0.0
+    Health 5000
+    Radius 40
+    Height 110
+    Mass 1000
+    Speed 19
+    Damage 10    //This is the damage dealt by the charge attack, which should be altered for DemonSteele -- oddly, in vanilla doom, 10 damage does 50 health of damage
+    PainChance 5 //a quirk of skullfly? or perhaps a factor of the thrust amount? Something to keep in mind.
+    Monster
+    MinMissileChance 160
+    +BOSS
+    +FLOORCLIP
+    +NORADIUSDMG
+    +DONTMORPH
+    +BOSSDEATH    
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +DONTRIP
+    +DONTBLAST
+    SeeSound "devildriver/see"
+    PainSound "devildriver/pain"
+    DeathSound "devildriver/death"
+    ActiveSound "devildriver/active"
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
+    States
+    {
+    Spawn:
+        TNT1 A 0 
+        //TNT1 A 0 ACS_ExecuteWithResult(999,1)    //currently used to track cyberdemon hp value during testing.
+        TNT1 A 0 A_GiveInventory("IsDevilDriver",1)
+        //TNT1 A 0 A_GiveInventory("UltimateDelay",DDUltDelay1)
+    SpawnLoop:
+        TNT1 A 0 A_JumpIfInventory("DD_IsCharging",1,"NextMove")
+        CYBR AB 10 A_Look
+        Loop
+    See:
+        //TNT1 A 0 A_JumpIf(Health >= DDUltHealthThreshold, "See2")    //check if our health is still in the upper ranges. If not, get ready to fire ultimate
+        //TNT1 A 0 A_GiveInventory("ReadyForUltimate",1)
+    //See2://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND and Animations are basic. Sounds removed
+        CYBR A 2 //A_Hoof
+        CYBR ABBCC 2 A_Chase
+        CYBR D 2 //A_Metal
+        CYBR D 2 A_Chase
+        Loop
+    
+
+//======Determine if I'm attacking or done attacking============================
+    Missile:    //Setup the initial queueing logic
+        TNT1 A 0 A_JumpIfInventory("HealDroneCounter",DDDroneMax,"MaxDronesReached")         //See if we're going to cast a drone or not
+        TNT1 A 0 A_JumpIfInventory("HealDroneDelay",1,"HealDroneReplenishCountdown")        //If we're delaying our drone cast, jump to the countdown
+        TNT1 A 0 A_Jump(DDDroneChance, "DroneSpawn")
+        goto MissileDoneDroneCasting
+    MaxDronesReached:
+        TNT1 A 0 A_GiveInventory("HealDroneDelay",DDDroneDelayAmount + DDDroneDelayMaxAmount)
+        goto MissileDoneDroneCasting
+    HealDroneReplenishCountdown:                                                            //Take away a drone delay counter then continue the attack logic
+        TNT1 A 0 A_TakeInventory("HealDroneDelay",1)
+        goto MissileDoneDroneCasting
+            
+    MissileDoneDroneCasting://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND: No casting sound yet
+        TNT1 A 0 A_JumpIfCloser(DDMeleeRange+40,2)                            //The +40 is for the monster's own radius.
+        TNT1 A 0 A_GiveInventory("DD_QueueAmount",random(2,4))                //More attacks if we're not in melee range
+        goto AttackResolve
+        TNT1 A 0 A_GiveInventory("DD_QueueAmount",random(1,2))                //Less attacks if we're in melee range -- needs testing for difficulty tweakin'
+        goto AttackResolve                                                    //^This functionality is not currently in use. Figure out how to use it?                                            
+            
+    AttackResolve:
+        TNT1 A 0 A_JumpIfInventory("DD_QueueAmount",1,"AttackResolve2")                    //Check if we're still attacking
+        goto See                                                            //Otherwise goto See like a normal fucking attack state
+        //TNT1 A 0 A_JumpIfInventory("UltimateDelay",1,"AttackResolve2")
+        //goto Ultimate
+    AttackResolve2:
+        TNT1 A 0 A_JumpIfCloser(DDMeleeRange+40,"MeleeResolve")                //Check if in melee range
+        TNT1 A 0 A_Jump(128, "Ranged_Attack")
+        TNT1 A 0 A_Jump(255, "Area_Denial", "Ranged_Attack")
+        CYBR A 1
+        loop//goto Error
+    MeleeResolve:
+        TNT1 A 0 A_Jump(200, "Close_Range")
+        TNT1 A 0 A_Jump(255, "Area_Denial", "Close_Range", "Ranged_Attack")
+        CYBR A 1
+        loop//goto Error        
+    NextMove:            //Every attack jumps to this state at the end of it. This state removes one queueamount
+        TNT1 A 0 A_TakeInventory("DD_IsCharging",0x7FFFFFFF)                //as well as any check items that are state-specific
+        TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)                                //and reset any flags that needed to wait until the nextmove state (like invulnerable -- to prevent pain interruption)
+        TNT1 A 0 A_TakeInventory("DD_QueueAmount",1)                        
+        //TNT1 A 0 A_JumpIfInventory("ReadyForUltimate",1,"DecrementUltimateDelay")
+        goto AttackResolve                                                    //andthen goes to AttackResolve, which has the "see if we're still attacking" logic
+    /*DecrementUltimateDelay:
+        TNT1 A 0 A_TakeInventory("UltimateDelay",random(1,DDUltDelayDecrementRange))
+        goto AttackResolve*/
+//======Select an attack to use from the basic categories of attacks============            
+    Area_Denial:                                                            
+        TNT1 A 0 A_Jump(256, "Area_FloatMissiles", "Area_SlowRockets")        
+    Ranged_Attack:
+        TNT1 A 0 A_Jump(256, "Range_PatternRockets","Range_PatternRockets", "Range_SeekingRocket")        
+    Close_Range:
+        //TNT1 A 0 A_Jump(100, "Melee_Charge")
+        TNT1 A 0 A_Jump(256, "Melee_Punch", "Melee_Spin", "Melee_Charge")
+//==============================================================================
+//==============================================================================
+//======Area_Denial attacks=====================================================
+    Area_FloatMissiles://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND            
+        TNT1 A 0 A_PlaySound("cyberdemn/gunready")                            //ALMOST DONE. Needs: Sound for missile launching Launch Graphic. Graphic for targetter.
+        CYBR E 4 A_FaceTarget                            
+        CYBR F 8
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile1",0,0,0,0,4,7)
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile2",0,0,0,0,2,8)
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile3",0,0,0,0,-2,8)
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile4",0,0,0,0,-4,7)    
+        goto NextMove
+    Area_SlowRockets://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND
+        TNT1 A 0 A_PlaySound("cyberdemn/gunready")
+        CYBR E 4 A_FaceTarget                                            
+        CYBR F 8
+        TNT1 A 0 A_CustomMissile("DD_SlowRocket",36,0,0,1)
+        TNT1 A 0 A_CustomMissile("DD_SlowRocket",28,(55 * (-2 * random(0,1) +1)),0,1)
+        TNT1 A 0 A_CustomMissile("DD_SlowRocket",48,(110 * (-2 * random(0,1) +1)),0,1)
+        goto NextMove
+//======Ranged_Attack attacks===================================================
+    Range_PatternRockets://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND
+        TNT1 A 0 A_PlaySound("cyberdemn/gunready")
+        CYBR E 4 A_FaceTarget                                                //I like the slowrocket pattern so much, i'm using it for the fast rocket pattern.
+        CYBR F 8                                                            //Basically, now it looks like the same attack but one is a slowed version. Still has separate functions.
+        TNT1 A 0 A_CustomMissile("DD_BasicRocket",36,0,0,1)                    //The offset rockets will fire at 55 or -55, and 110 or -110
+        TNT1 A 0 A_CustomMissile("DD_BasicRocket",28,(55 * (-2 * random(0,1) +1)),0,1)
+        TNT1 A 0 A_CustomMissile("DD_BasicRocket",48,(110 * (-2 * random(0,1) +1)),0,1)
+        goto NextMove
+    Range_SeekingRocket://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND
+        TNT1 A 0 A_PlaySound("cyberdemn/gunready")
+        CYBR E 4 A_FaceTarget                                                //It's basically a cyberdemon rocket with revenant tracer mechanics
+        CYBR F 8                                                            //This should be fiddled with, and I also want a separate graphic
+        TNT1 A 0 A_CustomMissile("DD_Tracer")                                //Preferably a shark-faced rocket :^)
+        goto NextMove                                                        //At the very least, maybe a different or more aggressive color. Needs to be OBVIOUS it's homing.
+//======Close_Range attacks=====================================================//Taser effect will be used for all close range things. Its melee attacks will be "taser-flavored"
+    Melee_Punch://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND
+//        TNT1 A 0 A_PlaySound("a chargeup sound for lightning")                //To Do: Chargeup Sound (weaker)
+        CYBR E 1 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeLightningStrike")
+        CYBR E 2 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,0,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,38,-32,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,-38,32,1)
+        TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+        CYBR E 3
+        TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+        CYBR E 3 
+        TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+        CYBR F 3                                                            
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,38,-32,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,-38,32,1)
+        goto NextMove
+    Melee_Spin:    //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND
+        TNT1 A 0 A_Jump(128, "Melee_Spin_OppositeDirection")                
+//        TNT1 A 0 A_PlaySound("a chargeup sound for lightning")                //To Do: Chargeup Sound (Stronger)
+        CYBR E 1 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeLightningStrike")
+        CYBR E 2 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,0,1)            //this is just some bullshit circle drawing because I suck at these things.    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-32,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-64,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-96,1)    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,32,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,64,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,96,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,128,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,160,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,192,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,224,1)            
+        TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+        CYBR E 3 A_FaceTarget
+        TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+        CYBR E 3 A_FaceTarget
+        TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+        CYBR F 3 A_FaceTarget                                                        
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle + 32)                
+        goto NextMove
+    Melee_Spin_OppositeDirection://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND
+//        TNT1 A 0 A_PlaySound("a chargeup sound for lightning")                //To Do: Chargeup Sound (Stronger)
+        CYBR E 1 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeLightningStrike")
+        CYBR E 2 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,0,1)            //this is just some bullshit circle drawing because I suck at these things.    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-32,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-64,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-96,1)    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,32,1)                    
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,64,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,96,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,128,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,160,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,192,1)
+        TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,224,1)            
+        TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+        CYBR E 3 A_FaceTarget
+        TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+        CYBR E 3 A_FaceTarget
+        TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+        CYBR F 3 A_FaceTarget                                                        
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)
+        TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
+        CYBR F 2 A_SetAngle(Angle - 32)                
+        goto NextMove
+    Melee_Charge:                                                             
+        CYBR E 6 A_FaceTarget                                                
+        TNT1 A 0 A_Stop                                                        
+        TNT1 A 0 ThrustThing(angle*256/360, 30, 1, 0)
+        TNT1 A 0 A_ChangeFlag("SKULLFLY",1)
+        TNT1 A 0 A_ChangeFlag("INVULNERABLE",1)
+        TNT1 A 0 A_GiveInventory("DD_IsCharging",1)
+        CYBR F 7
+        TNT1 A 0 A_ChangeFlag("SKULLFLY",0)            
+        Goto NextMove
+//======Ultimate Attack=========================================================//
+ /*       Ultimate://$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SOUND    -- this shit needs some awesome storm sound effects like cray, yo
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            CYBR F 4
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 0, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -32, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -64, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -96, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 32, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 64, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 96, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 128, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 160, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 192, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 224, 2)
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
+            CYBR F 3 A_FaceTarget
+            TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
+            CYBR F 3 A_FaceTarget
+            CYBR F 4
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 0, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -32, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -64, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -96, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 32, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 64, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 96, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 128, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 160, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 192, 2)
+            TNT1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 224, 2)
+            CYBR F 3 A_GiveInventory("UltimateDelay", DDUltDelay2)
+            goto NextMove*/
+//======Drone Spawning==========================================================//Drone spawning is done instantly to make it look like they're spawning independently of the monster
+    DroneSpawn:                                                                //Possible to do: create a little teleport graphic for them?
+        TNT1 A 0 A_GiveInventory("HealDroneDelay",DDDroneDelayAmount)
+        TNT1 A 0 A_Jump(256,"DroneSpawn1","DroneSpawn2")                    
+        goto Error
+    DroneSpawn1:
+        TNT1 A 0 A_GiveInventory("HealDroneCast",1)
+        TNT1 A 0 A_GiveInventory("HealDroneCounter",1)
+        goto MissileDoneDroneCasting
+    DroneSpawn2:
+        TNT1 A 0 A_GiveInventory("HealDroneCast2",1)
+        TNT1 A 0 A_GiveInventory("HealDroneCounter",1)
+        goto MissileDoneDroneCasting
+//==============================================================================
+//==============================================================================
+//==============================================================================
+    Pain.KubiLungeAttack:
+    Pain.KubiSpinAttack:
+    Pain.KubiLungeAttackSheathe:
+    Pain.KubiSpinAttackSheathe:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Pain
+    Pain.KubiRangeAttack:
+    Pain.KubiRangeAttackSheathe:
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Pain
+    Pain:
+        CYBR G 6 A_Pain
+        TNT1 A 0 A_JumpIfInventory("HealDroneCounter",DDDroneMax,"See")     //See if we're going to cast a drone or not
+        TNT1 A 0 A_Jump(DDDroneChance, "DroneSpawn")                        
+        Goto See
+    Pain.SabbathDamage:
+    Pain.KharonSheathe:
+        CYBR G 6
+        CYBR G 6 A_Pain
+        Goto See
+    Death.KubiRangeAttack:
+    Death.KubiLungeAttack:
+    Death.KubiSpinAttack:
+    Death.KubiRangeAttackSheathe:
+    Death.KubiLungeAttackSheathe:
+    Death.KubiSpinAttackSheathe:
+        TNT1 A 0 A_GiveToTarget("ManPoints",4)
+        TNT1 A 0 A_AlertMonsters
+        //TNT1 A 0 A_GiveToTarget("SuperMeterCounter",5)
+        TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Death
+    Death.IronFistDamage:
+    Death.IronFistUpper:
+    Death.Kubiuti:
+    Death.KubiutiUpper:
+        TNT1 A 0 A_GiveToTarget("BossguyComboPoints",1)
+        CYBR G 1
+        TNT1 A 0 A_AlertMonsters
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",10)
+        goto Death
+    Death.HaltHammerzeitImpact:
+    Death.HaltHammerzeit:
+    Death.IronFistExplosion:
+    Death.AcaciaDamage:
+    Death.TestamentDamage:
+    Death.SabbathDamage:
+    Death.ExodusDamage:
+    Death.KharonSheathe:
+    Death.IronMaidenShot:
+        TNT1 A 0 A_GiveToTarget("ManPoints",4)
+        TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"Death")
+        CYBR G 1
+        TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("IsDead",1)
+        TNT1 A 0 DamageThing(2000)
+        CYBR G 1
+        TNT1 A 0 A_Scream
+        CYBR HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR H 1 A_SpawnItem("DevilDriverBlood")
+        CYBR HH 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR JJJJJJJJJJJJJJJ 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR J 1 A_SpawnItem("DevilDriverBlood")
+        CYBR JJJJJJJJJJJJ 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR K 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR K 1 A_SpawnItem("DevilDriverBlood")
+        CYBR KKKKKKKKK 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR K 1 A_SpawnItem("DevilDriverBlood")
+        CYBR KKKKKKKKKKK 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR LLLLLLL 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR L 1 A_SpawnItem("DevilDriverBlood")
+        CYBR LLLLLLLLLLLL 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR L 1 A_SpawnItem("DevilDriverBlood")
+        CYBR LLLLLLLL 1 A_SpawnItemEx("DevilDriverKaboom", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+        CYBR M 10 A_NoBlocking
+        CYBR NO 10
+        CYBR P 30
+        CYBR P -1 A_BossDeath
+        Stop
+    Death.UltimaBeam:
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("IsDead",1)
+        TNT1 A 0 DamageThing(2000)
+        TNT1 A 0 A_GiveToTarget("ManPoints",4)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_Scream
+        CYBR GGGGGGGG 2 A_FadeOut(0.1)
+        TNT1 A 0 A_NoBlocking
+        NONE A 1 A_BossDeath
+        stop
+
+//=====ERROR CHECKING===========================================================
+    Error:
+        TNT1 A 0 //A_PrintBold("State Fallthrough") //is A_PrintBold not zan? Doesn't seem to work :/
+        goto ErrorLoop
+    ErrorLoop: // A_PrintBold doesn't work, so to indicate error it turns into a Spidermind.
+        SPID AB 1
+        loop
+//==============================================================================
+//======STALL TO TEST THINGS====================================================
+    DD_Stall:
+        CYBR A 1
+        loop
+    }    
+}
+
+ACTOR DevilDriverKaboom
+{
+    Radius 10
+    Height 10
+    Speed 5
+    PROJECTILE
+    +CLIENTSIDEONLY
+    +NOCLIP
+    +NOINTERACTION
+    States
+    {
+    Spawn:
+        MISL B 2
+        MISL B 2 BRIGHT A_PlaySound("weapons/rocklx")
+        MISL B 4 BRIGHT
+        MISL C 6
+        MISL D 4
+        Stop
+    }
+}
+
+ACTOR DevilDriverBlood
+{
+    Radius 20
+    Height 20
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_Gravity
+        TNT1 A 0
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower3", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower3", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        Stop
+    }
+}
+
+//ACTOR UltimateDelay : Inventory{}
+//ACTOR ReadyForUltimate : Inventory{}
+ACTOR IsDead : Boolean {}
+ACTOR HealDroneDelay : Counter {}//this is a counter that exists to create extra delay before spawning a new drone when the cyber has its maximum drones and one of them is removed
+ACTOR IsDevilDriver : Boolean {}
+
+//queue number
+ACTOR DD_QueueAmount : Inventory{}
+ACTOR DD_IsCharging : Inventory{}
+
+
+// ACTOR AbsolutelyNothing replaces WolfensteinSS {}

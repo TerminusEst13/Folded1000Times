@@ -1,0 +1,498 @@
+/*This is the document for the Healing Drone. It orbits around the DevilDriver.
+Its graphics are from 3D Realms according to the credits page of the MiniSentinel on R667, where I downloaded them.
+Heal effect graphics were thrown together in gimp so you can blame me (Vince/Sarcose) for that mess.
+
+Some quirks: It is based on the Afrit's OrbitComet design, and so the original 
+orbiting idea can be credited to Nanami and/or Ghastly_dragon according to the 
+credits page on Realm667 for said monster.
+
+It was originally designed witha reiteration angle of 75 and a speed of 6, as the OrbitComet. This creates a perfect
+revolution when the actor is still. However, as the DevilDriver is much fatter than the Afrit,
+it causes them to hug it too tightly. Increasing the angle and speed and keeping a perfect
+revolution is very difficult -- however, whenever the DevilDriver moves, they don't orbit 
+it perfectly anyway, and so there is a "realignment" mechanic built-in. The realignment
+mechanic also fixes the issue of the non-locked orbit and creates more erratic movement behavior
+-- something I consider a plus. When the Driver is standing still and inactive, the drones seem to lose
+their orbits at the same exact spot and correct at the same spot -- this is to be expected.
+I find this issue of minimal importance, considering monsters are rarely standing still for long in
+gofastgame
+
+Bigger issue: Because POINTERS DONT EXITS, or at least target pointers can't be passed in
+Zanbullshitum, it has to use A_CustomMissile to maintain its target of the Driver over and over.
+Turns out, missiles fired by aerial actors at grounded actors get fired downishward unless the actor is already at
+a certain relatively low height. Result: the drone is incapable of maintaining an aerial height anywhere above
+Cyberdemon-ankle-level. It looks silly but my hope is it will look better orbiting the tractor treads, since they will
+look like they're maintaining its vehicle part or something.
+*/
+
+const int DDDroneDistance = 200;                        //The distance a drone can travel before it realigns.
+//Different distances change the apparent behavior radically, and also lower distances will result in "Realign" being called way more often
+//As a result, if the distance is lowered, the RealignMod should be raised to reduce its chance of healing the cyber
+//200 seems to make them go everywhere
+//150 makes them stray about a cyberdemon's length away
+//100 makes them hug the cyber's ass
+//Higher distances increase chances of getting stuck on other actors (unless we plan to make it go through actors, which it currently doesn't)
+
+const int DDHealChance = 40;                                //The chance for an orbiting drone to heal the cyber every 3 tics
+const int DDRealignMod = 10;                                //The reduction of the above chance for a realigning drone to heal the cyber. This is necessary because
+                                                            //Drones realign more often than orbiting
+const int DDHealAmount = 40;                                //Note the frequency that heals seem to happen and adjust accordingly
+
+ACTOR HealDroneCast : CustomInventory
+{
+    +INVENTORY.AUTOACTIVATE
+    States
+        {
+        Pickup:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbitInitiate", 33, 50, 0, 2, 0)
+            stop
+        }
+}
+
+ACTOR HealDroneCast2 : CustomInventory
+{
+    +INVENTORY.AUTOACTIVATE
+    States
+        {
+        Pickup:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_Initiate", 33, -50, 180, 2, 0)
+            stop
+        }
+}
+
+ACTOR HealDroneCounter : Counter {}
+
+ACTOR DroneHeal : CustomInventory
+{
+    +INVENTORY.AUTOACTIVATE
+    States
+        {
+        Pickup:
+            TNT1 A 0 A_PlaySound("ddheal")
+            TNT1 A 0 Healthing(DDHealAmount)
+            TNT1 A 0 A_SpawnItemEx("HealParticleSpawn")
+            stop
+        }
+}
+
+ACTOR HealParticleSpawn
+{
+    +NOCLIP
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            TNT1 AAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("GreenHealLine", random(-35,35), random(-35,35), random(10,60), 0, 0, 8)
+            stop
+        }
+}
+
+            
+ACTOR HealDroneBase
+{
+    Species "DevilDriver"
+    DamageType "DroneHeal" //damagetypes and species are both redundant at this point. Can be removed likely.
+    DamageFactor "DevilDriver", 0
+    PainChance "EnemyInfightDamageCyber", 0
+    DamageFactor "DroneHeal", 0
+    PainChance "DroneHeal", 0
+    Health 0x7FFFFFFF
+    PainChance 255
+    Speed 7
+    Floatspeed 12
+    Radius 15
+    Height 23
+    Scale 1.2
+    Damage 0
+    Bouncetype "Doom"
+    BounceCount 0x7FFFFFFF
+    +SHOOTABLE
+    +NOGRAVITY
+    +MISSILE
+    +BRIGHT
+    +ISMONSTER
+    +BOUNCEONACTORS
+    +PAINLESS
+    +NORADIUSDMG
+    +BRIGHT
+
+    +THRUSPECIES
+    -SOLID        //would rather avoid these but they've been necessary for testing
+    +NOCLIP
+
+    States
+        {
+        Pain:    //the drone "dies" from its painstate. With painchance 255 and maximum health, it can only be pained, not killed. 
+            TNT1 A 0 A_TakeFromTarget("HealDroneCounter",1)                                    //So: shooting it pains it, killing it
+            TNT1 A 0 A_SetInvulnerable                                                        //If it impacts with an actor, it "respawns" to mimic bouncing
+            MNDR C 7 BRIGHT A_Fall                                                //(+BOUNCEONACTORS seemed to not work on the player)
+            MNDR D 5 BRIGHT A_Scream
+            MNDR E 5 BRIGHT A_TossGib
+            MNDR F 5 BRIGHT
+            MNDR G 5 BRIGHT A_TossGib
+            MNDR HI 5 BRIGHT
+            stop
+        Death:    //death state is used to mimic bouncing off of actors (in its further iterations below, the death state spawns another drone)
+            TNT1 A 0 A_TakeFromTarget("HealDroneCounter",1)
+            TNT1 A 0 A_SetInvulnerable            
+            MNDR C 7 BRIGHT A_Fall
+            MNDR D 5 BRIGHT A_Scream
+            MNDR E 5 BRIGHT A_TossGib
+            MNDR F 5 BRIGHT
+            MNDR G 5 BRIGHT A_TossGib
+            MNDR HI 5 BRIGHT
+            stop
+        }
+}
+
+    
+
+ACTOR HealDroneOrbitInitiate : HealDroneBase
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDevilDriver",1,1)
+            goto Pain
+            TNT1 A 0 A_SpawnItemEx("DroneTeleportFog")
+            TNT1 A 0 A_PlaySound("drone/Sight")
+        Initiate:
+            TNT1 A 0
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Pain")
+            TNT1 A 0 A_JumpIfCloser(DDDroneDistance, 1)    //if it is farther than this distance, it attempts to realign. 
+            goto Realign                                                                                
+            TNT1 A 0 A_Jump(DDHealChance,"Healshot")                                                    
+            MNDR A 3
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit1", 0, 0, /**/85)
+            stop
+        Realign:
+            TNT1 A 0 A_Stop
+            MNDR A 2 A_FaceTarget
+            TNT1 A 0 A_CustomMissile("HealDroneOrbitRealign",0,0,0,0)
+            stop
+        HealShot:
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 0 A_GiveToTarget("DroneHeal",1)
+            goto MissileFire
+        Death:    
+            TNT1 A 0 A_Stop
+            TNT1 A 0 A_FaceTarget
+            TNT1 A 1 A_CustomMissile("HealDroneOrbitRealign",0,0,0,0)
+            stop
+        Error:
+            BAL1 A 1
+            loop
+            
+        }
+}
+
+ACTOR HealDroneOrbitRealign : HealDroneBase
+{                     //this is fired whenever the drone is "too far" from the cyber
+    Speed 9           //that distance is set above
+    States            //jump chance to heal is lowered, and the delay of healing is raised,
+        {             //because if this actor is being spawned it seems to get spawned multiple times 
+        Spawn:        //consecutively before the drone can return to its "orbit", so to offset this i reduced healing frequency
+            TNT1 A 0
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDevilDriver",1,1)
+            goto Pain
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Pain")
+            TNT1 A 0 A_Jump(DDHealChance - DDRealignMod,"Healshot")
+            MNDR A 15
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit1", 0, 0, 75)
+            stop
+        HealShot:
+            MNDR B 7
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 0 A_GiveToTarget("DroneHeal",1)
+            goto MissileFire
+        Death:
+            TNT1 A 0 A_Stop
+            TNT1 A 0 A_FaceTarget
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit1", 0, 0, 180)
+            stop
+        Error:
+            BAL1 A 1
+            loop        
+        }
+}
+        
+/* Below are five nearly identical drone actors that fall into one another, behaving in the same way as 
+the Afrit's OrbitComet. The purpose of this is to "countdown" to a chance to self-terminate. The chance
+to self-terminate is fairly high when it reaches that point, but it only tries every so often. 
+This is to prevent instances of the drones self-terminating immediately upon spawn,
+which can happen even with a low jump chance.*/
+
+ACTOR HealDroneOrbit1 : HealDroneOrbitInitiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit2", 0, 0, /**/85) //comment lines for using find and replace becuz code
+            stop
+        }
+}
+
+ACTOR HealDroneOrbit2 : HealDroneOrbitInitiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit3", 0, 0, /**/85)
+            stop
+        }
+}
+
+ACTOR HealDroneOrbit3 : HealDroneOrbitInitiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit4", 0, 0, /**/85)
+            stop
+        }
+}
+
+ACTOR HealDroneOrbit4 : HealDroneOrbitInitiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_Jump(180, 2)
+            TNT1 A 0 A_PlaySound("drone/Active")
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit5", 0, 0, /**/85)
+            stop
+        }
+}
+
+ACTOR HealDroneOrbit5 : HealDroneOrbitInitiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_Jump(220, "Death")
+            MNDR A 1
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit1", 0, 0, /**/85)
+            stop
+        }
+}
+
+//==============================================================================
+//All drone actors below this line are a copy of the healdrone objects above,
+//but with the angle of A_CustomMissile reversed, to allow for orbiting in the
+//opposite direction
+//==============================================================================
+ACTOR HealDroneOrbit_2_Initiate : HealDroneBase
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDevilDriver",1,1)
+            goto Pain
+            TNT1 A 0 A_SpawnItemEx("DroneTeleportFog")
+            TNT1 A 0 A_PlaySound("drone/Sight")
+        Initiate:
+        Initiate:
+            TNT1 A 0
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Pain")
+            TNT1 A 0 A_JumpIfCloser(DDDroneDistance, 1)    //if it is farther than this distance, it attempts to realign. 
+            goto Realign                                                                                
+            TNT1 A 0 A_Jump(DDHealChance,"Healshot")                                                    
+            MNDR A 3
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_1", 0, 0, /**/-85)
+            stop
+        Realign:
+            TNT1 A 0 A_Stop
+            MNDR A 2 A_FaceTarget
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_Realign",0,0,0,0)
+            stop
+        HealShot:
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 0 A_GiveToTarget("DroneHeal",1)
+            goto MissileFire
+        Death:    
+            TNT1 A 0 A_Stop
+            TNT1 A 0 A_FaceTarget
+            TNT1 A 1 A_CustomMissile("HealDroneOrbit_2_Realign",0,0,0,0)
+            stop
+        Error:
+            BAL1 A 1
+            loop
+            
+        }
+}
+ACTOR HealDroneOrbit_2_Realign : HealDroneBase
+{                     //this is fired whenever the drone is "too far" from the cyber
+    Speed 9           //that distance is set above
+    States            //jump chance to heal is lowered, and the delay of healing is raised,
+        {             //because if this actor is being spawned it seems to get spawned multiple times 
+        Spawn:        //consecutively before the drone can return to its "orbit", so to offset this i reduced healing frequency
+            TNT1 A 0
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDevilDriver",1,1)
+            goto Pain
+            TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Pain")
+            TNT1 A 0 A_Jump(DDHealChance - DDRealignMod,"Healshot")
+            MNDR A 15
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_1", 0, 0, 75)
+            stop
+        HealShot:
+            MNDR B 7
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 1 A_CustomMissile("GreenHealShot")
+            MNDR B 0 A_GiveToTarget("DroneHeal",1)
+            goto MissileFire
+        Death:
+            TNT1 A 0 A_Stop
+            TNT1 A 0 A_FaceTarget
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_1", 0, 0, 180)
+            stop        
+        Error:
+            BAL1 A 1
+            loop
+        }
+}        
+/* Below are five nearly identical drone actors that fall into one another, behaving in the same way as 
+the Afrit's OrbitComet. The purpose of this is to "countdown" to a chance to self-terminate. The chance
+to self-terminate is fairly high when it reaches that point, but it only tries every so often. 
+This is to prevent instances of the drones self-terminating immediately upon spawn,
+which can happen even with a low jump chance.*/
+ACTOR HealDroneOrbit_2_1 : HealDroneOrbit_2_Initiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_2", 0, 0, /**/-85) //comment lines for using find and replace becuz code
+            stop
+        }
+}
+ACTOR HealDroneOrbit_2_2 : HealDroneOrbit_2_Initiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_3", 0, 0, /**/-85)
+            stop
+        }
+}
+ACTOR HealDroneOrbit_2_3 : HealDroneOrbit_2_Initiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_4", 0, 0, /**/-85)
+            stop
+        }
+}
+ACTOR HealDroneOrbit_2_4 : HealDroneOrbit_2_Initiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_Jump(180, 2)
+            TNT1 A 0 A_PlaySound("drone/Active")
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_5", 0, 0, /**/-85)
+            stop
+        }
+}
+ACTOR HealDroneOrbit_2_5 : HealDroneOrbit_2_Initiate
+{
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            goto Initiate
+        MissileFire:
+            TNT1 A 0 A_Jump(220, "Death")
+            MNDR A 1
+            TNT1 A 0 A_CustomMissile("HealDroneOrbit_2_1", 0, 0, /**/-85)
+            stop
+        }
+}
+
+
+
+//==============================================================================
+//Special Effects
+//hoping these don't cause lag on toasters but i suppose it's possible
+//==============================================================================
+
+ACTOR GreenHealShot
+{
+    Scale 1.4
+    Speed 6
+    Projectile
+    +NOINTERACTION +CLIENTSIDEONLY
+        States
+            {
+            Spawn:
+                TNT1 A 0
+                GREN ABCD 2 Bright
+                stop
+            }
+}
+
+
+ACTOR GreenHealLine
+{
+    Scale 0.7
+    +NOINTERACTION +CLIENTSIDEONLY
+        States
+            {
+            Spawn:
+                GREN E 8 Bright
+                stop
+            }
+}
+
+ACTOR DroneTeleportFog
+{
+    Scale 0.5
+    +NOINTERACTION +CLIENTSIDEONLY
+      States
+      {
+        Spawn:
+            TFOG ABABCDEFGHIJ 6 Bright
+            Stop
+    }
+}

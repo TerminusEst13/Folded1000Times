@@ -129,6 +129,7 @@ CODE:
 - Zael (For the Ultima Cannon, which I shamelessly ripped off for the not-Kamehameha. May your mass never go inert)
 - amv2k9 (The launching system, adapted from his old Devil May Cry mod)
 - jpalomo (Joystick and touchscreen support, written entirely by him!)
+- Vince (Pretty much all of the DevilDriver)
 
 MUSIC:
 =========

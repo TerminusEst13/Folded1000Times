@@ -1,0 +1,679 @@
+ACTOR DD_FloatMissileBase
+{
+    Species "DevilDriver"
+    DamageType "EnemyInfightDamageCyber"
+    Radius 1
+    Height 0
+    Speed 25
+    Damage 20
+    -SOLID
+    +NOGRAVITY
+    +THRUSPECIES
+    +LOOKALLAROUND
+    -ROCKETTRAIL
+    States
+        {
+        Spawn:
+            CBMS A 16 Bright
+            CBMS A 1 Bright A_Stop
+        OverWatch:
+            CBMS A 70 Bright A_Look
+            Goto Death
+        See:
+            CBMS A 1 Bright A_FaceTarget
+            goto Delay
+        Delay:
+            CBMS A 1 Bright
+            stop
+        Targetter:
+            CBMS A 1 Bright A_FaceTarget
+            TNT1 A 0 A_GiveToTarget("DD_FloatTarget",1)
+            goto Launch
+        Launch:
+            TNT1 A 0 A_CustomMissile("DD_FloatMissileLaunched", 0)
+            stop
+        Death:
+            TNT1 A 0
+            TNT1 A 0 A_PlaySound("weapons/rocklx")
+            TNT1 A 0 A_Explode(128,128,0)
+            TNT1 A 0 Radius_Quake(5,3,0,8,0)
+            TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+            TNT1 A 0 A_SpawnItemEx("CyberRocketDeathSFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+            TNT1 A 1
+            Stop
+        }
+}
+
+ACTOR DD_FloatMissile1 : DD_FloatMissileBase
+{
+    States
+        {
+        See:
+            CBMS A 1 Bright A_FaceTarget
+            goto Delay
+        Delay:
+            CBMS A 10 Bright A_FaceTarget
+            goto Targetter
+        }
+}
+ACTOR DD_FloatMissile2 : DD_FloatMissileBase
+{
+    States
+        {
+        See:
+            CBMS A 1 Bright A_FaceTarget
+            goto Delay
+        Delay:
+            CBMS A 30 Bright A_FaceTarget
+            goto Targetter
+        }
+}
+ACTOR DD_FloatMissile3 : DD_FloatMissileBase
+{
+    States
+        {
+        See:
+            CBMS A 1 Bright A_FaceTarget
+            goto Delay
+        Delay:
+            CBMS A 40 Bright A_FaceTarget
+            goto Targetter
+        }
+}
+ACTOR DD_FloatMissile4 : DD_FloatMissileBase
+{
+    States
+        {
+        See:
+            CBMS A 1 Bright A_FaceTarget
+            goto Delay
+        Delay:
+            CBMS A 20 Bright A_FaceTarget
+            goto Targetter
+        }
+}
+
+ACTOR DD_FloatMissileLaunched
+{
+    Species "DevilDriver"
+    DamageType "EnemyInfightDamageCyber"
+    Radius 11
+    Height 8
+    Speed 1
+    Damage 20
+    Projectile
+    SeeSound "weapons/rocklf"
+    +THRUSPECIES
+    -ROCKETTRAIL
+    States
+        {
+        Spawn:
+            CBMS A 22 Bright
+            TNT1 A 0 A_ChangeVelocity(momx*30, momy*30, momz*30)
+        Fly:
+            CBMS A 10 Bright
+        JukeTry:
+            CBMS A 1 Bright A_Jump(10, "Juke")
+            loop
+        Juke:
+            TNT1 A 0 A_SpawnItemEx("DD_JukeMissile")
+            stop
+        Death:
+            TNT1 A 0
+            TNT1 A 0 A_PlaySound("weapons/rocklx")
+            TNT1 A 0 A_Explode(128,128,0)
+            TNT1 A 0 Radius_Quake(5,3,0,8,0)
+            TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+            TNT1 A 0 A_SpawnItemEx("CyberRocketDeathSFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+            TNT1 A 1
+            Stop
+        }
+}
+
+ACTOR DD_JukeMissile
+{
+    Species "DevilDriver"
+    DamageType "EnemyInfightDamageCyber"
+    Radius 11
+    Height 8
+    Speed 0
+    Damage 20
+    +LOOKALLAROUND
+    +THRUSPECIES
+    +NOGRAVITY
+    -ROCKETTRAIL
+    +DONTBLAST
+    States
+        {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_PlaySound("ddrockalert")
+            TNT1 A 0 A_SpawnItemEx("DD_SurpriseExclamation",0,0,14)
+            CBMS A 10 Bright A_FaceTarget
+        SpawnLoop:
+            CBMS A 1 Bright A_Look
+            loop
+        See:
+            CBMS A 10 Bright A_FaceTarget
+            CBMS A 1 Bright A_JumpIfCloser(100,"Death")
+            TNT1 A 1 Bright
+            TNT1 A 0 A_CustomMissile("DD_JukeMissileLaunched",0)
+            stop
+        Death:
+            TNT1 A 0
+            TNT1 A 0 A_PlaySound("weapons/rocklx")
+            TNT1 A 0 A_Explode(128,128,0)
+            TNT1 A 0 Radius_Quake(5,3,0,8,0)
+            TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+            TNT1 A 0 A_SpawnItemEx("CyberRocketDeathSFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+            TNT1 A 1
+            Stop
+        }
+}
+        
+ACTOR DD_JukeMissileLaunched
+{
+    Species "DevilDriver"
+    DamageType "EnemyInfightDamageCyber"
+    Radius 11
+    Height 8
+    Speed 1
+    Damage 20
+    Projectile
+    SeeSound "weapons/rocklf"
+    +THRUSPECIES
+    -ROCKETTRAIL
+    States
+        {
+        Spawn:
+            CBMS A 2 Bright
+            TNT1 A 0 Bright A_ChangeVelocity(momx*30, momy*30, momz*30)
+        Fly:
+            CBMS A 1 Bright
+            loop
+        Death:
+            TNT1 A 0
+            TNT1 A 0 A_PlaySound("weapons/rocklx")
+            TNT1 A 0 A_Explode(128,128,0)
+            TNT1 A 0 Radius_Quake(5,3,0,8,0)
+            TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+            TNT1 A 0 A_SpawnItemEx("CyberRocketDeathSFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+            TNT1 A 1
+            Stop
+        }
+}
+
+
+
+ACTOR DD_FloatTarget : CustomInventory
+{
+    +inventory.autoactivate
+    States
+        {
+        Pickup:
+            TNT1 A 0 A_SpawnItemEx("DD_FloatTargetSpot")
+            stop
+        }
+}
+
+ACTOR DD_FloatTargetSpot
+{
+    +NOINTERACTION
+    Scale 3.0
+        States
+            {
+            Spawn:
+                TNT1 A 0
+                AROW A 2 A_PlaySound("ddbeep",1)
+                TNT1 A 2
+                AROW A 2 
+                TNT1 A 2
+                AROW A 2 
+                TNT1 A 2
+                AROW A 2 
+                AROW A 2 
+                TNT1 A 2
+                AROW A 2 
+                TNT1 A 2
+                AROW A 2 
+                TNT1 A 1
+                AROW A 1 
+                TNT1 A 1
+                AROW A 1 
+                TNT1 A 1
+                AROW A 1 
+                TNT1 A 1 
+                AROW A 1 
+                TNT1 A 1
+                AROW A 1 
+                TNT1 A 1 
+                AROW A 1 
+                TNT1 A 1  
+                stop
+            }
+}
+
+ACTOR DD_SurpriseExclamation
+{
+    +NOINTERACTION
+        States
+            {
+            Spawn:
+                EXCL A 10 Bright
+                Stop
+            }
+}
+
+
+ACTOR DD_SlowRocket : CyberRocket
+{
+    Species "DevilDriver"
+    DamageType "EnemyInfightDamageCyber"
+    +THRUSPECIES
+    -ROCKETTRAIL
+    Speed 6
+}
+    
+    
+ACTOR DD_BasicRocket : CyberRocket
+{
+    Species "DevilDriver"
+    +THRUSPECIES
+    DamageType "EnemyInfightDamageCyber"
+    -ROCKETTRAIL
+}
+
+ACTOR DD_Tracer : Rocket
+{
+    DamageType "EnemyInfightDamageCyber"
+    Species "DevilDriver"
+    Health 20
+    Speed 10
+    Scale 1.5
+    -NOBLOCKMAP
+    +SEEKERMISSILE
+    +SHOOTABLE
+    +THRUSPECIES
+    -ROCKETTRAIL
+    States
+        {
+        Spawn:
+            CBMS A 1 Bright A_Tracer
+            Loop
+        }
+}
+
+
+
+ACTOR DD_MeleeBall
+{
+    Radius 12
+    Height 16
+    Speed 20
+    Damage 10
+    Projectile
+    Scale 1.4
+    States
+    {
+    Spawn:
+        DDHT AA 2 Bright
+        TNT1 A 0 A_Stop
+        DDHT BCDEF 3 Bright
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        //TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHitSound")
+        TNT1 A 1
+        Stop
+    }
+}
+
+ACTOR DD_MeleeDamageHit
+{
+    +NOINTERACTION
+    Scale 0.8
+    States
+    {
+    Spawn:
+        TNT1 A 1 
+        TNT1 A 0 A_Jump(256, "A", "B", "C", "D", "E")
+    A:
+        LITE ABC 2 Bright
+        goto Finish
+    B:
+        LITE BCD 2 Bright
+        goto Finish
+    C:
+        LITE CDA 2 Bright
+        goto Finish
+    D:
+        LITE DAC 2 Bright
+        goto Finish
+    E:
+        LITE CBA 2 Bright
+        goto Finish
+    Finish:
+        BLIT OL 2 Bright
+        LITE L 2 Bright
+        stop
+    }
+        
+}
+    
+    
+//ACTOR DD_MeleeDamageHitSound{}
+
+
+ACTOR DD_MeleeGenericBuildUp
+{
+    +NOINTERACTION
+    Scale 1.4
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SLI2 LMNOPQRS 2 Bright
+        BLIT H 2 Bright
+        stop
+    }
+}
+
+ACTOR DD_MeleeLightningStrike
+{
+    +NOINTERACTION
+    Scale 2.0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        VLIT ABAB 2 Bright
+        VLIT ABCDEFGHIJK 2 Bright
+        Stop
+    }
+}
+
+ACTOR DD_MeleeHitMarkerGo
+{
+    -SOLID +NOCLIP
+    Speed 35
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeHitMarker",0,0,7)
+        Stop
+    }
+}
+
+ACTOR DD_MeleeHitMarker
+{
+    +NOINTERACTION
+    Scale 0.8
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        VLI2 ABCABC 2 Bright
+        Stop
+    }
+}
+        
+
+ACTOR UltTester
+{
+    +LOOKALLAROUND
+    States
+    {
+    Spawn:
+        BAL1 A 1 A_Look
+        loop
+    See:
+        BAL1 A 6
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 0, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -32, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -64, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, -96, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 32, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 64, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 96, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 128, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 160, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 192, 2)
+        BAL1 A 0 A_CustomMissile("DD_UltLightStrike", 0, 0, 224, 2)
+        BAL1 A 10
+        loop
+        
+    }
+}
+        
+ACTOR DD_UltLightStrike
+{
+    Scale 4.0
+    +RIPPER
+    +MISSILE
+    Damage 1
+    Speed 30
+    BounceType "Doom"
+    States
+    {
+    Spawn:
+        VLIT DEFGHIJIHGFEDEFGHIJIHGFEDEFGHDEFGHIJ 2 Bright
+        TNT1 A 1 A_CustomMissile("DD_UltLightStand")
+        TNT1 A 1
+        Stop
+    }
+}
+        
+
+
+ACTOR DD_UltLightStand
+{
+    -SOLID +NOCLIP +MISSILE
+    Speed 0
+    Scale 4.0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_ChangeVelocity(0,0,-10)
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_CustomMissile("DD_UltLightProjectile")        
+        VLIT DEFGHIJIHGFEDEFGHIJIHGFEDEFGHIJIHGFEDEFGHIJIHGFEDEFGHIJIHGFE 3 Bright
+        Stop
+    }
+}
+
+//alive for 180 frames
+
+ACTOR DD_UltLightProjectile
+{
+    -SOLID +NOCLIP +NOGRAVITY
+    +MISSILE
+    Speed 0
+    States
+    {
+    Spawn:
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        //TNT1 A 0 A_PlaySound //put this in between every custom missile in this object for the standing lightning of the ultimates -- a bzzt firing sound
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit1_1",0,0,0,2,0)
+        TNT1 A 11 A_CustomMissile("DD_LightningOrbit2_1",0,0,180,2,0)
+        stop
+    }
+}
+        
+    
+
+
+ACTOR DD_LightningOrbitBase
+{
+    Radius 9
+    Height 12
+    Speed 16
+    Damage 10
+    Projectile
+    Scale 1.2
+}
+
+
+ACTOR DD_LightningOrbit1_1 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT AA 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit1_2", 0, 0, 75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit1_2 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT BB 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit1_3", 0, 0, 75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit1_3 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT CC 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit1_4", 0, 0, 75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit1_4 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT DD 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit1_5", 0, 0,75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit1_5 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT EE 2 Bright
+        DDHT FF 2 Bright
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+
+ACTOR DD_LightningOrbit2_1 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT AA 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit2_2", 0, 0, 75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit2_2 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT BB 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit2_3", 0, 0, 75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit2_3 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT CC 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit2_4", 0, 0, 75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit2_4 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT DD 2 Bright
+        TNT1 A 0 A_CustomMissile("DD_LightningOrbit2_5", 0, 0, 75, 2)
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR DD_LightningOrbit2_5 : DD_LightningOrbitBase
+{
+    States
+    {
+    Spawn:
+        DDHT EE 1 Bright
+        DDHT FF 1 Bright
+    Death:
+        TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
+        TNT1 A 1
+        stop
+    }
+}
