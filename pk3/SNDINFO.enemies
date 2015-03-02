@@ -14,6 +14,7 @@ sergeant/fire             ENSHOT2
 chngnner/fire             ENSHOT3
 cyber/laserfire           ENSHOT4
 cyber/laserhit            CYSHOTHT
+cyber/rocketfly           DDRFLY   // Taken from Unreal 2
 cyber/rockethit           CYRCKEXP // Mixed the Doom explosion with a Doom 3 explosion
 
 imp/preparefire           IMPFWOSH // Taken from Doom 3, sped up
@@ -388,6 +389,13 @@ ddjrock2         DDHFIRE2
 ddjrock3         DDHFIRE3
 
 $rolloff devildriver/jukerocket 800 3200
+
+$random devildriver/honk { ddhonk1 ddhonk2 ddhonk3 } // Taken from the General Series 6000
+ddhonk1          DDHONK1
+ddhonk2          DDHONK2
+ddhonk3          DDHONK3
+
+$rolloff devildriver/honk 800 3200
 
 $random devildriver/seekrocket { ddsrock1 ddsrock2 ddsrock3 } // Taken from Halo: Reach
 ddsrock1         DDSFIRE1

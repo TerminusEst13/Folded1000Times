@@ -314,6 +314,7 @@ actor EmperorHailSpell : EmperorShotSpell { -NOGRAVITY }
 
 actor CyberRocket : Rocket //replaces Rocket
 {
+    SeeSound "cyber/rocketfly"
     DeathSound "cyber/rockethit"
     +THRUGHOST
     -FIREDAMAGE
