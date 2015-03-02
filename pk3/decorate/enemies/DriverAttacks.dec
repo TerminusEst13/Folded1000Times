@@ -327,7 +327,7 @@ ACTOR DD_MeleeBall
 {
     Radius 12
     Height 16
-    Speed 20
+    Speed 30
     Damage 10
     Projectile
     Scale 1.4
