@@ -349,6 +349,7 @@ ACTOR DevilDriver replaces Cyberdemon
         goto See
     Pain.SabbathDamage:
     Pain.KharonSheathe:
+        TNT1 A 0 A_Jump(8,"Honk")
         DDRV A 4
         DDRV A 4 A_Pain
         Goto See

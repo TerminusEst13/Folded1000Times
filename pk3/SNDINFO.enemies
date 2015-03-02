@@ -395,7 +395,7 @@ ddhonk1          DDHONK1
 ddhonk2          DDHONK2
 ddhonk3          DDHONK3
 
-$rolloff devildriver/honk 800 3200
+$rolloff devildriver/honk 1800 3200
 
 $random devildriver/seekrocket { ddsrock1 ddsrock2 ddsrock3 } // Taken from Halo: Reach
 ddsrock1         DDSFIRE1
