@@ -374,6 +374,38 @@ ddsee2 "Sounds/enemies/devildriver/DDSee2.ogg"
 ddsee3 "Sounds/enemies/devildriver/DDSee3.ogg"
 ddsee4 "Sounds/enemies/devildriver/DDSee4.ogg"
 
+$random devildriver/rocket { ddrock1 ddrock2 ddrock3 ddrock4 } // Taken from Halo: Reach
+ddrock1          DDFIRE1
+ddrock2          DDFIRE2
+ddrock3          DDFIRE3
+ddrock4          DDFIRE4
+
+$rolloff devildriver/rocket 400 2400
+
+$random devildriver/jukerocket { ddjrock1 ddjrock2 ddjrock3 } // Taken from Halo: Reach
+ddjrock1         DDHFIRE1
+ddjrock2         DDHFIRE2
+ddjrock3         DDHFIRE3
+
+$rolloff devildriver/jukerocket 800 3200
+
+$random devildriver/seekrocket { ddsrock1 ddsrock2 ddsrock3 } // Taken from Halo: Reach
+ddsrock1         DDSFIRE1
+ddsrock2         DDSFIRE2
+ddsrock3         DDSFIRE3
+
+$rolloff devildriver/seekrocket 400 2400
+
+devildriver/loop         DDLOOP   // Taken from the General Series 6000
+devildriver/end          DDLOOPE  // Taken from the General Series 6000
+devildriver/tasecharge   DDECHARG // Taken from Devil May Cry 3
+devildriver/tase         DDETASE  // Taken from Derp May Herp 3
+
+$rolloff devildriver/loop 400 2400
+$rolloff devildriver/end 400 2400
+$rolloff devildriver/tasecharge 400 2400
+$rolloff devildriver/tase 400 2400
+
 
 
 

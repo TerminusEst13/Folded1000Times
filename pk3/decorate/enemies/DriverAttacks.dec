@@ -6,6 +6,7 @@ ACTOR DD_FloatMissileBase
     Height 0
     Speed 25
     Damage 20
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     -SOLID
     +NOGRAVITY
     +THRUSPECIES
@@ -14,19 +15,19 @@ ACTOR DD_FloatMissileBase
     States
         {
         Spawn:
-            CBMS A 16 Bright
-            CBMS A 1 Bright A_Stop
+            RKET A 16 Bright
+            RKET A 1 Bright A_Stop
         OverWatch:
-            CBMS A 70 Bright A_Look
+            RKET A 70 Bright A_Look
             Goto Death
         See:
-            CBMS A 1 Bright A_FaceTarget
+            RKET A 1 Bright A_FaceTarget
             goto Delay
         Delay:
-            CBMS A 1 Bright
+            RKET A 1 Bright
             stop
         Targetter:
-            CBMS A 1 Bright A_FaceTarget
+            RKET A 1 Bright A_FaceTarget
             TNT1 A 0 A_GiveToTarget("DD_FloatTarget",1)
             goto Launch
         Launch:
@@ -49,10 +50,10 @@ ACTOR DD_FloatMissile1 : DD_FloatMissileBase
     States
         {
         See:
-            CBMS A 1 Bright A_FaceTarget
+            RKET A 1 Bright A_FaceTarget
             goto Delay
         Delay:
-            CBMS A 10 Bright A_FaceTarget
+            RKET A 10 Bright A_FaceTarget
             goto Targetter
         }
 }
@@ -61,10 +62,10 @@ ACTOR DD_FloatMissile2 : DD_FloatMissileBase
     States
         {
         See:
-            CBMS A 1 Bright A_FaceTarget
+            RKET A 1 Bright A_FaceTarget
             goto Delay
         Delay:
-            CBMS A 30 Bright A_FaceTarget
+            RKET A 30 Bright A_FaceTarget
             goto Targetter
         }
 }
@@ -73,10 +74,10 @@ ACTOR DD_FloatMissile3 : DD_FloatMissileBase
     States
         {
         See:
-            CBMS A 1 Bright A_FaceTarget
+            RKET A 1 Bright A_FaceTarget
             goto Delay
         Delay:
-            CBMS A 40 Bright A_FaceTarget
+            RKET A 40 Bright A_FaceTarget
             goto Targetter
         }
 }
@@ -85,10 +86,10 @@ ACTOR DD_FloatMissile4 : DD_FloatMissileBase
     States
         {
         See:
-            CBMS A 1 Bright A_FaceTarget
+            RKET A 1 Bright A_FaceTarget
             goto Delay
         Delay:
-            CBMS A 20 Bright A_FaceTarget
+            RKET A 20 Bright A_FaceTarget
             goto Targetter
         }
 }
@@ -103,17 +104,18 @@ ACTOR DD_FloatMissileLaunched
     Damage 20
     Projectile
     SeeSound "weapons/rocklf"
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     +THRUSPECIES
     -ROCKETTRAIL
     States
         {
         Spawn:
-            CBMS A 22 Bright
+            RKET A 22 Bright
             TNT1 A 0 A_ChangeVelocity(momx*30, momy*30, momz*30)
         Fly:
-            CBMS A 10 Bright
+            RKET A 10 Bright
         JukeTry:
-            CBMS A 1 Bright A_Jump(10, "Juke")
+            RKET A 1 Bright A_Jump(10, "Juke")
             loop
         Juke:
             TNT1 A 0 A_SpawnItemEx("DD_JukeMissile")
@@ -138,6 +140,7 @@ ACTOR DD_JukeMissile
     Height 8
     Speed 0
     Damage 20
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     +LOOKALLAROUND
     +THRUSPECIES
     +NOGRAVITY
@@ -149,13 +152,13 @@ ACTOR DD_JukeMissile
             TNT1 A 0
             TNT1 A 0 A_PlaySound("ddrockalert")
             TNT1 A 0 A_SpawnItemEx("DD_SurpriseExclamation",0,0,14)
-            CBMS A 10 Bright A_FaceTarget
+            RKET A 10 Bright A_FaceTarget
         SpawnLoop:
-            CBMS A 1 Bright A_Look
+            RKET A 1 Bright A_Look
             loop
         See:
-            CBMS A 10 Bright A_FaceTarget
-            CBMS A 1 Bright A_JumpIfCloser(100,"Death")
+            RKET A 10 Bright A_FaceTarget
+            RKET A 1 Bright A_JumpIfCloser(100,"Death")
             TNT1 A 1 Bright
             TNT1 A 0 A_CustomMissile("DD_JukeMissileLaunched",0)
             stop
@@ -181,15 +184,16 @@ ACTOR DD_JukeMissileLaunched
     Damage 20
     Projectile
     SeeSound "weapons/rocklf"
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     +THRUSPECIES
     -ROCKETTRAIL
     States
         {
         Spawn:
-            CBMS A 2 Bright
+            RKET A 2 Bright
             TNT1 A 0 Bright A_ChangeVelocity(momx*30, momy*30, momz*30)
         Fly:
-            CBMS A 1 Bright
+            RKET A 1 Bright
             loop
         Death:
             TNT1 A 0
@@ -271,7 +275,9 @@ ACTOR DD_SlowRocket : CyberRocket
     DamageType "EnemyInfightDamageCyber"
     +THRUSPECIES
     -ROCKETTRAIL
-    Speed 6
+    Speed 10
+    Scale 0.6
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
 }
     
     
@@ -281,6 +287,8 @@ ACTOR DD_BasicRocket : CyberRocket
     +THRUSPECIES
     DamageType "EnemyInfightDamageCyber"
     -ROCKETTRAIL
+    Scale 0.6
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
 }
 
 ACTOR DD_Tracer : Rocket
@@ -289,16 +297,17 @@ ACTOR DD_Tracer : Rocket
     Species "DevilDriver"
     Health 20
     Speed 10
-    Scale 1.5
+    Scale 0.9
     -NOBLOCKMAP
     +SEEKERMISSILE
     +SHOOTABLE
     +THRUSPECIES
     -ROCKETTRAIL
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     States
         {
         Spawn:
-            CBMS A 1 Bright A_Tracer
+            RMIS A 1 Bright A_Tracer
             Loop
         }
 }
@@ -313,6 +322,7 @@ ACTOR DD_MeleeBall
     Damage 10
     Projectile
     Scale 1.4
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     States
     {
     Spawn:
