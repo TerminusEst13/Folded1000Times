@@ -331,13 +331,17 @@ ACTOR DD_MeleeBall
     Damage 10
     Projectile
     Scale 1.4
+    Species "DevilDriver"
+    DamageType "EnemyInfightDamageCyber"
+    +FORCERADIUSDMG
+    +THRUSPECIES
     Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     States
     {
     Spawn:
         DDHT AA 2 Bright
         TNT1 A 0 A_Stop
-        DDHT BCDEF 3 Bright
+        DDHT BCDEF 3 Bright A_Explode(64,64,0)
     Death:
         TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHit")
         //TNT1 A 0 A_SpawnItemEx("DD_MeleeDamageHitSound")
