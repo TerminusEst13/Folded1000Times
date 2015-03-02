@@ -298,7 +298,7 @@ ACTOR DD_Tracer : Rocket
 {
     DamageType "EnemyInfightDamageCyber"
     Species "DevilDriver"
-    Health 20
+    Health 40
     Speed 20
     Scale 0.9
     -NOBLOCKMAP
@@ -307,6 +307,7 @@ ACTOR DD_Tracer : Rocket
     +THRUSPECIES
     +THRUGHOST
     -ROCKETTRAIL
+    DamageFactor "SentinelDamage", 0.0
     Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     States
         {
