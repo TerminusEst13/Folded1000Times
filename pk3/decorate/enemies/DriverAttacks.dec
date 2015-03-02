@@ -12,6 +12,7 @@ ACTOR DD_FloatMissileBase
     +THRUSPECIES
     +LOOKALLAROUND
     -ROCKETTRAIL
+    +THRUGHOST
     States
         {
         Spawn:
@@ -106,6 +107,7 @@ ACTOR DD_FloatMissileLaunched
     SeeSound "weapons/rocklf"
     Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     +THRUSPECIES
+    +THRUGHOST
     -ROCKETTRAIL
     States
         {
@@ -275,7 +277,7 @@ ACTOR DD_SlowRocket : CyberRocket
     DamageType "EnemyInfightDamageCyber"
     +THRUSPECIES
     -ROCKETTRAIL
-    Speed 10
+    Speed 25
     Scale 0.6
     Obituary "$o bore witness unto the revelation machine, the DevilDriver."
 }
@@ -287,6 +289,7 @@ ACTOR DD_BasicRocket : CyberRocket
     +THRUSPECIES
     DamageType "EnemyInfightDamageCyber"
     -ROCKETTRAIL
+    Speed 35
     Scale 0.6
     Obituary "$o bore witness unto the revelation machine, the DevilDriver."
 }
@@ -296,12 +299,13 @@ ACTOR DD_Tracer : Rocket
     DamageType "EnemyInfightDamageCyber"
     Species "DevilDriver"
     Health 20
-    Speed 10
+    Speed 20
     Scale 0.9
     -NOBLOCKMAP
     +SEEKERMISSILE
     +SHOOTABLE
     +THRUSPECIES
+    +THRUGHOST
     -ROCKETTRAIL
     Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     States
