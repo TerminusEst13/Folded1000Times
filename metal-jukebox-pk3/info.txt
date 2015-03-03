@@ -24,6 +24,8 @@ FROM V2 TO V3:
 - Thanks to Marrub's incredible work, even the song amount now is clientsided.
   People are now able to add, remove, and adjust songs as they want without any
   issues in joining servers!
+- Hitting "Next Song" and manually selecting a song no longer requires the
+  norandommusic cvar to be set to 0.
 - Corrected some mistaken song information:
   ^- Barathrum's Warmetal is off the album Infernal.
   ^- Linkin Park's Crawling is off the album Hybrid Theory.

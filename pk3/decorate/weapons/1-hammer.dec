@@ -804,7 +804,7 @@ actor HammerAttackBase : FastProjectile
     Radius 8
     Height 6
     Damage (0)
-    Speed 64
+    Speed 80
     RenderStyle Add
     Alpha 0.6
     Scale 0.65

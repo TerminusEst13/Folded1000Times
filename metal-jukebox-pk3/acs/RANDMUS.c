@@ -150,8 +150,8 @@ script 348 (int musicshit) NET clientside // Hitting "Next Song".
       SetMusic("silence");
       LocalAmbientSound("music/shift",127);
       Delay(35);
-      if (GetCvar("norandommusic") == 0)
-      {
+      //if (GetCvar("norandommusic") == 0) // If they're hitting Next Song, even with the randomizer off, they want music.
+      //{
         MusicRandomizerOn = 1;
         if (GetCvar("mus_runninginzdoom") == 1)
         {
@@ -184,12 +184,12 @@ script 348 (int musicshit) NET clientside // Hitting "Next Song".
             hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
           }
         }
-      }
-      else
-      {
-        MusicRandomizerOn = 0;
-        SetMusic("*",0);
-      }
+      //}
+      //else
+      //{
+      //  MusicRandomizerOn = 0;
+      //  SetMusic("*",0);
+      //}
       break;
 
     case 1: // Hitting "Default Song".
@@ -205,8 +205,8 @@ script 349 (int fuckery) NET clientside // Manually changing the song
 {
   if(fuckery > 0)
   {
-    if(GetCvar("norandommusic") == 0)
-    {
+    //if(GetCvar("norandommusic") == 0) // Likewise, if they're manually changing the song, they want music.
+    //{
       SetMusic("silence");
       LocalAmbientSound("music/shift",127);
       Delay(35);
@@ -232,10 +232,10 @@ script 349 (int fuckery) NET clientside // Manually changing the song
           hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
         }
       }
-    }
-    else
-    {
-      MusicRandomizerOn = 0;
-    }
+    //}
+    //else
+    //{
+    //  MusicRandomizerOn = 0;
+    //}
   }
 }

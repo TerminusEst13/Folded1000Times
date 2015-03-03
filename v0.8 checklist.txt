@@ -4,11 +4,10 @@ Insulting death messages when you die in singleplayer.
 
 <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
 
-Tweak Iron Maiden, increase soul consumption, decrease damage on punch AoE
+Tweak Iron Maiden, increase soul consumption
 
 Exhaust on DevilDriver, deeper/beefier/louder engine noises.
 One final explosion on death?
-- Nerf DevilDriver
 
 <WaTaKiD> also when i try to go super saiyan without enuff soul, the error gets printed to the console twice
 

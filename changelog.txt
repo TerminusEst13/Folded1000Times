@@ -107,6 +107,7 @@ FROM 0.74 TO 0.8:
 - The low-health beep no longer plays when the player has over-life tokens.
 - Revenants no longer jump to cutting death states when shot.
 - The Cyberdemon now has a proper replacement, the DevilDriver. No longer does it pale in comparison to his fellow boss!
+- The Hammer's range has been boosted by 16 units.
 
 
 FROM 0.73 TO 0.74:

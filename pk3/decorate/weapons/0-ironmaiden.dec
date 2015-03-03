@@ -1095,7 +1095,7 @@ ACTOR IronFistExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(96,128,0)
+        TNT1 A 1 A_Explode(64,128,0)
         Stop
     }
 }
