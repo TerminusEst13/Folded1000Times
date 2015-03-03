@@ -656,17 +656,17 @@ script WEEB_ENTER_CLIENT ENTER clientside
             }
         }
         
-        // Kyle873's super timefreeze thing
-        // TODO: Sounds and pretty effects and shit
+        // Kyle873 makes a super timefreeze thing
+        // TODO: Sounds and pretty effects and shit, HAVE FUN WITH THAT TERM
         int buttons = keysPressed();
-        if (buttons == (BT_MOVELEFT + BT_MOVERIGHT))
+        if (buttons == (BT_MOVELEFT + BT_MOVERIGHT)) // Key check, toggles tiem freeze on/off
             playerTimeFreeze[PlayerNumber()] = !playerTimeFreeze[PlayerNumber()];
         if (PlayerTimeFreeze[PlayerNumber()] && CheckInventory("SuperMeterCounter") > 0)
         {
             GiveInventory("SuperTimeFreezer", 1);
-            if ((Timer() % 5) == 0) // 1 spirit loss per 5 tics
+            if ((Timer() % 5) == 0) // 1 spirit loss per 5 tics, adjust as needed
                 TakeInventory("SuperMeterCounter", 1);
-            if (CheckInventory("SuperMeterCounter") == 0)
+            if (CheckInventory("SuperMeterCounter") == 0) // Disable automatically if we run out of super
                 playerTimeFreeze[PlayerNumber()] = false;
         }
         
