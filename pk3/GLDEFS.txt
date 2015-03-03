@@ -1,3 +1,785 @@
+// Brightmaps
+
+brightmap texture COMP2
+{
+	map "brightmaps/comp2.png"
+	iwad
+}	
+
+brightmap texture COMPSTA1
+{
+	map "brightmaps/compsta1.png"
+	iwad
+}
+
+brightmap texture COMPSTA2
+{
+	map "brightmaps/compsta2.png"
+	iwad
+}
+
+brightmap texture COMPTALL
+{
+	map "brightmaps/comptall.png"
+	iwad
+}
+
+brightmap texture COMPUTE1
+{
+	map "brightmaps/compute1.png"
+	iwad
+}
+
+brightmap texture COMPUTE2
+{
+	map "brightmaps/compute2.png"
+	iwad
+}
+
+brightmap texture COMPUTE3
+{
+	map "brightmaps/compute3.png"
+	iwad
+}
+
+brightmap texture EXITDOOR
+{
+	map "brightmaps/exitdoor.png"
+	iwad
+}
+
+brightmap texture EXITSIGN
+{
+	map "brightmaps/exitsign.png"
+	iwad
+}
+
+brightmap texture liteblu1
+{
+	map "brightmaps/liteblu1.png"
+	iwad
+}
+
+brightmap texture liteblu2
+{
+	map "brightmaps/liteblu2.png"
+	iwad
+}
+
+brightmap texture liteblu3
+{
+	map "brightmaps/liteblu3.png"
+	iwad
+}
+
+brightmap texture liteblu4
+{
+	map "brightmaps/liteblu4.png"
+	iwad
+}
+
+brightmap texture nuke24
+{
+	map "brightmaps/nuke24.png"
+	iwad
+}
+
+brightmap texture nukedege1
+{
+	map "brightmaps/nukedge1.png"
+	iwad
+}
+
+brightmap texture nukeslad
+{
+	map "brightmaps/nukeslad.png"
+	iwad
+}
+
+brightmap texture planet1
+{
+	map "brightmaps/planet1.png"
+	iwad
+}
+
+brightmap texture redwall1
+{
+	map "brightmaps/redwall1.png"
+	iwad
+}
+
+brightmap texture sladrip1
+{
+	map "brightmaps/sladrip1.png"
+	iwad
+}
+
+brightmap texture sladrip2
+{
+	map "brightmaps/sladrip2.png"
+	iwad
+}
+
+brightmap texture sladrip3
+{
+	map "brightmaps/sladrip3.png"
+	iwad
+}
+
+brightmap texture sw1brcom
+{
+	map "brightmaps/sw1brcom.png"
+	iwad
+}
+
+brightmap texture sw1comm
+{
+	map "brightmaps/sw1comm.png"
+	iwad
+}
+
+brightmap texture sw1dirt
+{
+	map "brightmaps/sw1dirt.png"
+	iwad
+}
+
+brightmap texture sw1ston1
+{
+	map "brightmaps/sw1ston1.png"
+	iwad
+}
+
+brightmap texture sw1stone
+{
+	map "brightmaps/sw1stone.png"
+	iwad
+}
+
+brightmap texture sw1strtn
+{
+	map "brightmaps/sw1strtn.png"
+	iwad
+}
+
+brightmap texture sw2brcom
+{
+	map "brightmaps/sw2brcom.png"
+	iwad
+}
+
+brightmap texture sw2brn2
+{
+	map "brightmaps/sw2brn2.png"
+	iwad
+}
+
+brightmap texture sw2brngn
+{
+	map "brightmaps/sw2brngn.png"
+	iwad
+}
+
+brightmap texture sw2comm
+{
+	map "brightmaps/sw2comm.png"
+	iwad
+}
+
+brightmap texture sw2comp
+{
+	map "brightmaps/sw2comp.png"
+	iwad
+}
+
+brightmap texture sw2dirt
+{
+	map "brightmaps/sw2dirt.png"
+	iwad
+}
+
+brightmap texture sw2exit
+{
+	map "brightmaps/sw2exit.png"
+	iwad
+}
+
+brightmap texture sw2grey
+{
+	map "brightmaps/sw2grey.png"
+	iwad
+}
+
+brightmap texture sw2grey1
+{
+	map "brightmaps/sw2grey1.png"
+	iwad
+}
+
+brightmap texture sw2metal
+{
+	map "brightmaps/sw2metal.png"
+	iwad
+}
+
+brightmap texture sw2slad
+{
+	map "brightmaps/sw2slad.png"
+	iwad
+}
+
+brightmap texture sw2ston1
+{
+	map "brightmaps/sw2ston1.png"
+	iwad
+}
+
+brightmap texture sw2ston2
+{
+	map "brightmaps/sw2slad.png"
+	iwad
+}
+
+brightmap texture sw2stone
+{
+	map "brightmaps/sw2stone.png"
+	iwad
+}
+
+brightmap texture sw2strtn
+{
+	map "brightmaps/sw2stone.png"
+	iwad
+}
+
+brightmap texture tekwall1
+{
+	map "brightmaps/tekwall1.png"
+	iwad
+}
+
+brightmap texture tekwall2
+{
+	map "brightmaps/tekwall2.png"
+	iwad
+}
+
+brightmap texture tekwall5
+{
+	map "brightmaps/tekwall5.png"
+	iwad
+}
+
+brightmap texture exitston
+{
+	map "brightmaps/exitston.png"
+	iwad
+}
+
+brightmap texture fireblu1
+{
+	map "brightmaps/fireblu1.png"
+	iwad
+}
+
+brightmap texture fireblu2
+{
+	map "brightmaps/fireblu2.png"
+	iwad
+}
+
+brightmap texture firelav2
+{
+	map "brightmaps/firelav2.png"
+	iwad
+}
+
+brightmap texture firelav3
+{
+	map "brightmaps/firelav2.png"
+	iwad
+}
+
+brightmap texture firelava
+{
+	map "brightmaps/firelava.png"
+	iwad
+}
+
+brightmap texture firemag1
+{
+	map "brightmaps/firemag1.png"
+	iwad
+}
+
+brightmap texture firemag2
+{
+	map "brightmaps/firemag2.png"
+	iwad
+}
+
+brightmap texture firemag3
+{
+	map "brightmaps/firemag3.png"
+	iwad
+}
+
+brightmap texture firewala
+{
+	map "brightmaps/firewala.png"
+	iwad
+}
+
+brightmap texture firewalb
+{
+	map "brightmaps/firewalb.png"
+	iwad
+}
+
+brightmap texture firewall
+{
+	map "brightmaps/firewall.png"
+	iwad
+}
+
+brightmap texture litered
+{
+	map "brightmaps/litered.png"
+	iwad
+}
+
+brightmap texture nukepois
+{
+	map "brightmaps/nukedge1.png"
+	iwad
+}
+
+brightmap texture sladskul
+{
+	map "brightmaps/sladskul.png"
+	iwad
+}
+
+brightmap texture sw2blue
+{
+	map "brightmaps/sw2blue.png"
+	iwad
+}
+
+brightmap texture sw2garg
+{
+	map "brightmaps/sw2garg.png"
+	iwad
+}
+
+brightmap texture sw2gston
+{
+	map "brightmaps/sw2gston.png"
+	iwad
+}
+
+brightmap texture sw2hot
+{
+	map "brightmaps/sw2hot.png"
+	iwad
+}
+
+brightmap texture sw2lion
+{
+	map "brightmaps/sw2lion.png"
+	iwad
+}
+
+brightmap texture sw2satyr
+{
+	map "brightmaps/sw2satyr.png"
+	iwad
+}
+
+brightmap texture sw2vine
+{
+	map "brightmaps/sw2vine.png"
+	iwad
+}
+
+brightmap texture sw2wood
+{
+	map "brightmaps/sw2wood.png"
+	iwad
+}
+
+brightmap texture wood4
+{
+	map "brightmaps/wood4.png"
+	iwad
+}
+
+brightmap texture woodgarg
+{
+	map "brightmaps/woodgarg.png"
+	iwad
+}
+
+brightmap texture woodskul
+{
+	map "brightmaps/woodskul.png"
+	iwad
+}
+
+brightmap flat  CEIL3_4
+{
+	map "brightmaps/ceil3_4.png"
+	iwad
+}	
+
+brightmap flat  CEIL3_6
+{
+	map "brightmaps/ceil3_6.png"
+	iwad
+}
+
+brightmap flat  CONS1_1
+{
+	map "brightmaps/cons1_1.png"
+	iwad
+}	
+
+brightmap flat  CONS1_5
+{
+	map "brightmaps/cons1_5.png"
+	iwad
+}
+
+brightmap flat  CONS1_7
+{
+	map "brightmaps/cons1_7.png"
+	iwad
+}
+
+brightmap flat  RROCK01
+{
+	map "brightmaps/rrock01.png"
+	iwad
+}	
+
+brightmap flat  RROCK02
+{
+	map "brightmaps/rrock02.png"
+	iwad
+}
+
+brightmap flat  CEIL1_3
+{
+	map "brightmaps/ceil1_3.png"
+	iwad
+}
+
+brightmap flat  CEIL1_2
+{
+	map "brightmaps/ceil1_2.png"
+	iwad
+}
+
+brightmap flat  FLAT2
+{
+	map "brightmaps/flat2.png"
+	iwad
+}
+
+brightmap flat  FLOOR1_7
+{
+	map "brightmaps/floor1_7.png"
+	iwad
+}
+
+brightmap flat  GRNLITE1
+{
+	map "brightmaps/grnlite1.png"
+	iwad
+}
+
+brightmap flat  GATE4
+{
+	map "brightmaps/GATE4.png"
+	iwad
+}
+
+brightmap flat  TLITE6_1
+{
+	map "brightmaps/tlite6_4.png"
+	iwad
+}
+
+brightmap flat  TLITE6_4
+{
+	map "brightmaps/tlite6_4.png"
+	iwad
+}
+
+brightmap flat  TLITE6_5
+{
+	map "brightmaps/tlite6_5.png"
+	iwad
+}
+
+brightmap flat  TLITE6_6
+{
+	map "brightmaps/tlite6_6.png"
+	iwad
+}
+
+brightmap texture bigbrik3
+{
+  map "brightmaps/bigbrik3.png"
+  iwad
+}
+
+brightmap texture bricklit
+{
+  map "brightmaps/bricklit.png"
+  iwad
+}  
+
+brightmap texture bronze4
+{
+  map "brightmaps/bigbrik3.png"
+  iwad
+}
+
+brightmap texture bstone3
+{
+  map "brightmaps/bstone3.png"
+  iwad
+}
+
+brightmap texture CRACKLe2
+{
+  map "brightmaps/CRACKLe2.png"
+  iwad
+}
+
+brightmap texture CRACKLe4
+{
+  map "brightmaps/CRACKLe2.png"
+  iwad
+}
+
+brightmap texture metal3
+{
+  map "brightmaps/metal3.png"
+  iwad
+}
+
+brightmap texture metal6
+{
+  map "brightmaps/metal6.png"
+  iwad
+}
+
+brightmap texture metal7
+{
+  map "brightmaps/metal7.png"
+  iwad
+}
+
+brightmap texture panbook
+{
+  map "brightmaps/panbook.png"
+  iwad
+}
+
+brightmap texture pipewal1
+{
+  map "brightmaps/pipewall1.png"
+  iwad
+}
+
+brightmap texture silver2
+{
+  map "brightmaps/silver2.png"
+  iwad
+}
+
+brightmap texture silver3
+{
+  map "brightmaps/silver3.png"
+  iwad
+}
+
+brightmap texture spacew3
+{
+  map "brightmaps/spacew3.png"
+  iwad
+}
+
+brightmap texture spcdoor1
+{
+  map "brightmaps/spcdoor1.png"
+  iwad
+}
+
+brightmap texture spcdoor2
+{
+  map "brightmaps/spcdoor1.png"
+  iwad
+}
+
+brightmap texture spcdoor3
+{
+  map "brightmaps/spcdoor3.png"
+  iwad
+}
+
+brightmap texture spcdoor4
+{
+  map "brightmaps/spcdoor4.png"
+  iwad
+}
+
+brightmap texture sw1met2
+{
+  map "brightmaps/sw1met2.png"
+  iwad
+}
+
+brightmap texture sw1starg
+{
+  map "brightmaps/sw1brcom.png"
+  iwad
+}
+
+brightmap texture sw1brn1
+{
+  map "brightmaps/sw1brcom.png"
+  iwad
+}
+
+brightmap texture sw1brik
+{
+  map "brightmaps/sw1brik.png"
+  iwad
+}
+
+brightmap texture sw1wdmet
+{
+  map "brightmaps/sw1wdmet.png"
+  iwad
+}
+
+brightmap texture sw2brik
+{
+  map "brightmaps/sw1wdmet.png"
+  iwad
+}
+
+brightmap texture sw2brn1
+{
+  map "brightmaps/sw2brcom.png"
+  iwad
+}
+
+brightmap texture sw2marb
+{
+  map "brightmaps/sw2marb.png"
+  iwad
+}
+
+brightmap texture sw2met2
+{
+  map "brightmaps/sw2met2.png"
+  iwad
+}
+
+brightmap texture sw2mod1
+{
+  map "brightmaps/sw2mod1.png"
+  iwad
+}
+
+brightmap texture sw2panel
+{
+  map "brightmaps/sw2panel.png"
+  iwad
+}
+
+brightmap texture sw2rock
+{
+  map "brightmaps/sw2rock.png"
+  iwad
+}
+
+brightmap texture sw2skull
+{
+  map "brightmaps/sw2skull.png"
+  iwad
+}
+
+brightmap texture sw2starg
+{
+  map "brightmaps/sw2brcom.png"
+  iwad
+}
+
+brightmap texture sw2brn1
+{
+  map "brightmaps/sw2brcom.png"
+  iwad
+}
+
+brightmap texture sw2ston6
+{
+  map "brightmaps/sw2ston6.png"
+  iwad
+}
+
+brightmap texture sw2tek
+{
+  map "brightmaps/sw2tek.png"
+  iwad
+}
+
+brightmap texture sw2wdmet
+{
+  map "brightmaps/sw1wdmet.png"
+  iwad
+}
+
+brightmap texture sw2zim
+{
+  map "brightmaps/sw2zim.png"
+  iwad
+}
+
+brightmap texture tekbron2
+{
+  map "brightmaps/tekbron2.png"
+  iwad
+}
+
+brightmap texture tekgren1
+{
+  map "brightmaps/tekgren1.png"
+  iwad
+}
+
+brightmap texture tekgren3
+{
+  map "brightmaps/tekgren3.png"
+  iwad
+}
+
+brightmap texture tekgren5
+{
+  map "brightmaps/tekgren5.png"
+  iwad
+}
+
+brightmap texture tekwall6
+{
+  map "brightmaps/tekwall6.png"
+  iwad
+}
+
 // Flats
 
 Glow

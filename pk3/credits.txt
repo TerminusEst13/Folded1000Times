@@ -104,6 +104,7 @@ GRAPHICS:
 - Touhou Hisouten/Doorhenge (The explosion shockwave)
 - Marrub (The DevilDriver's sprites)
 - DavidG (The alternate attack frames for the Baron)
+- Virtue (All of the texture brightmaps)
 
 CODE:
 =========
