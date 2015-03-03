@@ -3,7 +3,7 @@ ACTOR EnemyBullet
     Radius 8
     Height 6
     Speed 20
-    Damage (random(1,5)*3)
+    Damage (20)
     SeeSound None
     DeathSound None
     Decal HImpScorch
@@ -519,7 +519,7 @@ ACTOR YakuzaBullet
     Radius 2
     Height 2
     Speed 60
-    Damage (random(1,5)*3)
+    Damage (15)
     SeeSound None
     DeathSound None
     Decal BulletChip

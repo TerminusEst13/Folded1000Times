@@ -8,6 +8,7 @@ Tweak Iron Maiden, increase soul consumption, decrease damage on punch AoE
 
 Exhaust on DevilDriver, deeper/beefier/louder engine noises.
 One final explosion on death?
+- Nerf DevilDriver
 
 <WaTaKiD> also when i try to go super saiyan without enuff soul, the error gets printed to the console twice
 
