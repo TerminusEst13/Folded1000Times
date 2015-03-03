@@ -108,7 +108,7 @@ FROM 0.74 TO 0.8:
 - Revenants no longer jump to cutting death states when shot.
 - The Cyberdemon now has a proper replacement, the DevilDriver. No longer does it pale in comparison to his fellow boss!
 - The Hammer's range has been boosted by 16 units.
-- Thanks to Virtue, texture brightmaps have been integrated for the sake of prettiness.
+- The Legion can now be thrown one tic faster, the stacking can go up to 15 knives, and stacked knives bounce slightly more.
 
 
 FROM 0.73 TO 0.74:

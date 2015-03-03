@@ -588,12 +588,6 @@ brightmap texture panbook
   iwad
 }
 
-brightmap texture pipewal1
-{
-  map "brightmaps/pipewall1.png"
-  iwad
-}
-
 brightmap texture silver2
 {
   map "brightmaps/silver2.png"
