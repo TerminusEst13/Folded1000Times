@@ -10,6 +10,7 @@
 global int 58:LevelCount;
 
 int playerTimers[PLAYERMAX][TIMER_COUNT];
+int playerTimeFreeze[PLAYERMAX];
 int ClientEnterLocks[PLAYERMAX];
 int dodgeitem;
 int IsServer;
@@ -654,7 +655,21 @@ script WEEB_ENTER_CLIENT ENTER clientside
                 ACS_ExecuteWithResult(WEEB_PUKE, execInt, pln);
             }
         }
-
+        
+        // Kyle873's super timefreeze thing
+        // TODO: Sounds and pretty effects and shit
+        int buttons = keysPressed();
+        if (buttons == (BT_MOVELEFT + BT_MOVERIGHT))
+            playerTimeFreeze[PlayerNumber()] = !playerTimeFreeze[PlayerNumber()];
+        if (PlayerTimeFreeze[PlayerNumber()] && CheckInventory("SuperMeterCounter") > 0)
+        {
+            GiveInventory("SuperTimeFreezer", 1);
+            if ((Timer() % 5) == 0) // 1 spirit loss per 5 tics
+                TakeInventory("SuperMeterCounter", 1);
+            if (CheckInventory("SuperMeterCounter") == 0)
+                playerTimeFreeze[PlayerNumber()] = false;
+        }
+        
         delay(1);
     }
 }
