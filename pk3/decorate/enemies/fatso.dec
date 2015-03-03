@@ -257,6 +257,7 @@ actor WeeabooFatShot : FatShot replaces FatShot
     Radius 10
     Height 12
     Speed 10
+    Damage (50)
     SeeSound "silence"
     DamageType "HeavyEnemyDamage"
     +THRUGHOST

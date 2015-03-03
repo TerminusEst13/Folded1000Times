@@ -398,7 +398,7 @@ ACTOR PriestFire
     Radius 13
     Height 8
     Speed 20
-    Damage 5
+    Damage (30)
     RenderStyle Add 
     Alpha 0.95
     Scale 0.9

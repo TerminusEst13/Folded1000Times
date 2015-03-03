@@ -406,6 +406,7 @@ actor SnappyArchieFireFire : BaronBall
     Translation "112:127=160:167"
     Radius 8
     Height 10
+    Damage (50)
     DamageType "ArchvileFire"
     +THRUGHOST
 }

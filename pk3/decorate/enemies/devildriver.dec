@@ -6,7 +6,7 @@
 const int DDMeleeRange = 200;            //Custom Melee Range for reduced redundancy in state definitions and other checking-of-things
 //const int DDMeleeRange = 4000;            //Massive melee range to test melee attacks. Using 0x7FFFFFFF seems to cause overflow and prevent melee from firing.
 const int DDDroneChance = 128;            //A number between 1 and 256 -- this is the chance to spawn a drone while attacking. 128 is my baseline for testing.
-const int DDDroneMax = 3;                //3 seems to create frequent heals.
+const int DDDroneMax = 4;                //3 seems to create frequent heals.
 const int DDDroneDelayAmount = 2;        //When the Driver has just created an orbiting drone, we want there to be a minimum delay of attack phases before it attempts to create another one.
 const int DDDroneDelayMaxAmount = 2;    //If the Driver has reached maximum drones, this delay is added to the basic delay
 //const int DDUltHealthThreshold = 8000;    //The amount of hp the Driver has to reach before it begins decrementing ultimate delay.
@@ -81,7 +81,7 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 A 0 A_JumpIfCloser(1280,"MissileOther")
         TNT1 A 0 A_PlaySoundEx("cyber/laserfire","soundslot6",0,0)
         DDRV D 4 A_FaceTarget
-        DDRV E 4 BRIGHT A_CustomMissile("EnemyBullet2",32,0,0,0,0)
+        DDRV E 4 BRIGHT A_CustomMissile("EnemyBullet2",50,0,0,0,0)
         TNT1 A 0 A_CPosRefire
         goto Missile
     MissileOther:
@@ -143,10 +143,10 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 A 0 A_PlaySound("cyberdemn/gunready")                            //ALMOST DONE. Needs: Sound for missile launching Launch Graphic. Graphic for targetter.
         DDRV A 12 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/jukerocket","soundslot5",0,0)
-        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile1",0,0,0,0,4,7)
-        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile2",0,0,0,0,2,8)
-        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile3",0,0,0,0,-2,8)
-        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile4",0,0,0,0,-4,7)                                
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile1",0,0,32,0,4,7)
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile2",0,0,32,0,2,8)
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile3",0,0,32,0,-2,8)
+        TNT1 A 0 A_SpawnItemEx("DD_FloatMissile4",0,0,32,0,-4,7)                                
         DDRV F 8
         goto NextMove
     Area_SlowRockets:
@@ -154,8 +154,8 @@ ACTOR DevilDriver replaces Cyberdemon
         DDRV F 12 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/rocket","soundslot5",0,0)
         //TNT1 A 0 A_CustomMissile("DD_SlowRocket",36,0,0,1)
-        TNT1 A 0 A_CustomMissile("DD_SlowRocket",60,28,0,1)
-        TNT1 A 0 A_CustomMissile("DD_SlowRocket",60,-28,0,1)                                            
+        TNT1 A 0 A_CustomMissile("DD_SlowRocket",58,24,0,1)
+        TNT1 A 0 A_CustomMissile("DD_SlowRocket",58,-24,0,1)                                            
         DDRV G 8
         goto NextMove
 //======Ranged_Attack attacks===================================================
@@ -164,8 +164,8 @@ ACTOR DevilDriver replaces Cyberdemon
         DDRV F 12 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/rocket","soundslot5",0,0)                                                           //Basically, now it looks like the same attack but one is a slowed version. Still has separate functions.
         //TNT1 A 0 A_CustomMissile("DD_BasicRocket",36,0,0,1)                    //The offset rockets will fire at 55 or -55, and 110 or -110
-        TNT1 A 0 A_CustomMissile("DD_BasicRocket",60,28,0,1)
-        TNT1 A 0 A_CustomMissile("DD_BasicRocket",60,-28,0,1)                                                //I like the slowrocket pattern so much, i'm using it for the fast rocket pattern.
+        TNT1 A 0 A_CustomMissile("DD_BasicRocket",58,24,0,1)
+        TNT1 A 0 A_CustomMissile("DD_BasicRocket",58,-24,0,1)                                                //I like the slowrocket pattern so much, i'm using it for the fast rocket pattern.
         DDRV G 8
         goto NextMove
     Range_SeekingRocket:
@@ -173,8 +173,8 @@ ACTOR DevilDriver replaces Cyberdemon
         DDRV F 12 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/seekrocket","soundslot5",0,0)                                                          //This should be fiddled with, and I also want a separate graphic
         //TNT1 A 0 A_CustomMissile("DD_Tracer")                                //Preferably a shark-faced rocket :^)
-        TNT1 A 0 A_CustomMissile("DD_Tracer",60,28,0,1)
-        TNT1 A 0 A_CustomMissile("DD_Tracer",60,-28,0,1)                                                //It's basically a cyberdemon rocket with revenant tracer mechanics
+        TNT1 A 0 A_CustomMissile("DD_Tracer",58,24,0,1)
+        TNT1 A 0 A_CustomMissile("DD_Tracer",58,-24,0,1)                                                //It's basically a cyberdemon rocket with revenant tracer mechanics
         DDRV G 8
         goto NextMove                                                        //At the very least, maybe a different or more aggressive color. Needs to be OBVIOUS it's homing.
 //======Close_Range attacks=====================================================//Taser effect will be used for all close range things. Its melee attacks will be "taser-flavored"
@@ -190,9 +190,9 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
         DDRV A 2
         TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
-        DDRV A 2 
+        DDRV A 3 
         TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
-        DDRV F 2                                      
+        DDRV F 3                                      
         TNT1 A 0 A_PlaySoundEx("devildriver/tase","soundslot5",0,0)                      
         TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,1)                    
         TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,19,-16,1)                    
@@ -222,9 +222,9 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
         DDRV F 2 A_FaceTarget
         TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
-        DDRV F 2 A_FaceTarget
+        DDRV F 3 A_FaceTarget
         TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
-        DDRV F 2 A_FaceTarget            
+        DDRV F 3 A_FaceTarget            
         TNT1 A 0 A_PlaySoundEx("devildriver/tase","soundslot5",0,0)                                            
         TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
         DDRV F 1 A_SetAngle(Angle + 16)
@@ -295,9 +295,9 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
         DDRV F 2 A_FaceTarget
         TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
-        DDRV F 2 A_FaceTarget
+        DDRV F 3 A_FaceTarget
         TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
-        DDRV F 2 A_FaceTarget                                                        
+        DDRV F 3 A_FaceTarget                                                        
         TNT1 A 0 A_PlaySoundEx("devildriver/tase","soundslot5",0,0)
         TNT1 A 0 A_CustomMissile("DD_MeleeBall",36,0,0,2)
         DDRV F 1 A_SetAngle(Angle - 16)

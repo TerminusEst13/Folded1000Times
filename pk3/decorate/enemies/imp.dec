@@ -465,7 +465,7 @@ actor WeeabooImpBall
     Radius 8
     Height 10
     Speed 13
-    Damage 3
+    Damage (20)
     Renderstyle Add
     Alpha 0.99
     Scale 0.9

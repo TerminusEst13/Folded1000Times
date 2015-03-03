@@ -19,6 +19,8 @@ cyber/rockethit           CYRCKEXP // Mixed the Doom explosion with a Doom 3 exp
 
 imp/preparefire           IMPFWOSH // Taken from Doom 3, sped up
 imp/shootfire             IMPSHOOT
+baron/preparefire         BRNFWOSH // The above IMPFWOSH mixed with a Painkiller sound
+baron/shootfire           BRNSHOOT // The above IMPSHOOT mixed with a Painkiller sound
 
 
 

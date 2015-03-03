@@ -38,7 +38,7 @@ ACTOR SwanFoxDakimakura replaces CommanderKeen
         TNT1 AAAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,random(16,32),random(-75,75)/100.00,random(-75,75)/100.00,random(-75,75)/100.00,0,160)
         TNT1 AAAAAA 0 A_SpawnItemEx("DakiSmoke",0,0,random(16,32),random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
         TNT1 A 0 A_PlaySound("daki/pomf")
-        TNT1 A 0 A_GiveToTarget("Points",9001) // Yep. I fucking went there.
+        TNT1 A 0 A_GiveToTarget("ManPoints",1)
         DAKI AB 3
         DAKI C 3 A_Scream
         DAKI DE 2

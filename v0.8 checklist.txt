@@ -6,6 +6,11 @@ Insulting death messages when you die in singleplayer.
 
 Tweak Iron Maiden, increase soul consumption, decrease damage on punch AoE
 
+Exhaust on DevilDriver, deeper/beefier/louder engine noises.
+One final explosion on death?
+
+<WaTaKiD> also when i try to go super saiyan without enuff soul, the error gets printed to the console twice
+
 PRIORITY:
 1: Unique slashes when done mid-dash
    ^ If so, don't forget attacks for the Iron Maiden as well.

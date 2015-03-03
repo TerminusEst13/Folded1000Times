@@ -103,6 +103,7 @@ GRAPHICS:
 - Moorhuhn 3: Es Gibt Huhn (The Testament shell casings)
 - Touhou Hisouten/Doorhenge (The explosion shockwave)
 - Marrub (The DevilDriver's sprites)
+- DavidG (The alternate attack frames for the Baron)
 
 CODE:
 =========

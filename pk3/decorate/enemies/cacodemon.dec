@@ -202,7 +202,7 @@ actor WizardSpell
     Height 8
     Speed 10
     FastSpeed 20
-    Damage 5
+    Damage (30)
     RenderStyle Add
     Alpha 1
     Scale 0.75

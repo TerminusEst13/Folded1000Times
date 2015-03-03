@@ -95,8 +95,11 @@ FROM 0.74 TO 0.8:
  ^- The Lost Soul now stops after travelling a short distance. The increase in speed makes it incredibly easy to miss the player, defeating its purpose.
  ^- The Mancubus now takes a much shorter time in between shots. The idea of the Mancubus' attack sequence is to fill a wide spread of an area, shooting left and right instead of just straight at the player. Since the player now has many more options to dodge or nullify the attacks, the Mancubi can now fill up areas more easily.
  ^- The Zombiemen and Chaingunners take five tics faster to fire. While they're complete non-threats now, lacking hitscans, they should at least get off shots a little bit faster.
- ^- The Shotgunners take eight tics faster to fire. See above.
+ ^- The Shotgunners take eight tics faster to fire, fire in bursts of four, and take four less tics between shots. See above.
+ ^- The Chaingunguy now has one less tic in his refire loop. Previously, the chaingunner firing rate was balanced around how fast Hae-Lin could swing her sword. Now that she can swing it faster and faster in various ways, they should shoot faster.
  ^- The Imp now fires two shots in a row and has a higher chance to go right back to firing more. The Imps are supposed to be more threatening than the zombiemen with more damage with a slower projectile--while in DemonSteele they can't have higher damage, they can at least have higher damage potential.
+ ^- Previously, all attacks had a random element to them just in case of loading another wad with them. With the advent of Doomhealth and the Iron Maiden's armor, though, all attacks need their random element removed. Instead, all monsters do static damage.
+ ^- Hell Knights and Barons now have indicators of when they're going to attack. To make up for it, now they attack faster and more frequently.
 - The Acacia, Testament, and Sabbath now eject casings because reasons.
 - The Acacia, Testament, and Sabbath now also have gun smoke because reasons.
 - The Exodus' explosion now has a shockwave emitting from it.
