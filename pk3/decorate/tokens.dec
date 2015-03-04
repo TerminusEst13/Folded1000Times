@@ -1,24 +1,29 @@
 actor KharonSwung : Boolean {}
 actor SheatheSwung : Boolean {}
-actor HenshinActivated : Boolean {}
-actor HenshinDeactivation : Boolean {}
 actor SlashingLikeAGaijin : Boolean {}
 actor ShootingLikeABaka : Boolean {}
+actor TimeToLaunchOctopus : Boolean {}
+actor 20SpecialCost : Boolean {}
+actor 10SpecialCost : Boolean {}
+actor 00SpecialCost : Boolean {}
+
+actor HenshinActivated : Boolean {}
+actor HenshinDeactivation : Boolean {}
+actor InIronMaiden : Boolean {}
+actor IronMaidenWarning : Boolean {}
+
 actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
 actor GhostStepDone : Boolean {}
 actor AcesHigh : Boolean {}
 actor VertIGo : Boolean {}
 actor ReadyToDoubleJump : Boolean {}
-actor InIronMaiden : Boolean {}
-actor IronMaidenWarning : Boolean {}
 actor Wounded : Boolean {}
-actor CheckYourPrivilege : Boolean {}
 actor NoTauntAllowed : Boolean {}
 actor EnemyHasBeenLaunched : Boolean {}
-actor TimeToLaunchOctopus : Boolean {}
 actor TimeFreezeModeOn : Boolean {}
 
+actor CheckYourPrivilege : Boolean {}
 actor BlindGuardianWaitForAnAnswer : Boolean {}
 actor BlindGuardianShieldUp : Boolean {}
 actor BlindGuardianShieldActive : Boolean {}

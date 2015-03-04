@@ -109,6 +109,7 @@ FROM 0.74 TO 0.8:
 - The Cyberdemon now has a proper replacement, the DevilDriver. No longer does it pale in comparison to his fellow boss!
 - The Hammer's range has been boosted by 16 units.
 - The Legion can now be thrown one tic faster, the stacking can go up to 15 knives, and stacked knives bounce slightly more.
+- Thanks to Virtue, texture brightmaps have been integrated for the sake of prettiness.
 
 
 FROM 0.73 TO 0.74:
