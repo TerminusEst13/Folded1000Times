@@ -13,7 +13,7 @@ script WEEB_ENTER ENTER
     int Ys2;
     int IsBrutal = 0;
     int mytid;
-    int i, j, k, ang;
+    int i, j, k, u, ang;
     int MarchOfTheImmortal;
     int IronArmor;
     int armor;
@@ -29,8 +29,6 @@ script WEEB_ENTER ENTER
     int ShieldTID;
     int SentTID;
     int TheAngerInside;
-    i = unusedTID(37000, 47000);
-    int u = unusedTID(37000, 47000);
     int IntroChance;
     int ShieldHP;
     int SentinelHP;
@@ -43,13 +41,19 @@ script WEEB_ENTER ENTER
     int stotal;
     int sfound;
     int sfound2;
+    int TimeStandStill;
+    // 56 ints and counting!
 
+    i = unusedTID(37000, 47000);
+    u = unusedTID(37000, 47000);
     sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
 
+    // If the player isn't Hae-Lin, terminates. Duh.
     if (CheckInventory("IsJungHaeLin") == 0) { terminate; }
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     // If the player is spawning for the first time.
+    // Don't run it on titlescreens, or else Things Would Happen.
     {
         if (GameSkill () == 0) { GiveInventory("BabyMarker",1); GiveInventory("ContraLifeToken",10); }
         if (GameSkill () == 1) { GiveInventory("EasyMarker",1); GiveInventory("ContraLifeToken",8);  }
@@ -59,13 +63,13 @@ script WEEB_ENTER ENTER
         FadeRange(0,0,0,1.00,0,0,0,0,3.50);
         LocalAmbientSound("level/intro",127);
 
+        // Check for if the metal jukebox is loaded as well.
         if (Spawn("DemonSteeleIsSuperCoolAndYouShouldProbablyPlayIt", GetActorX(0), GetActorY(0), GetActorZ(0), u))
         {
             Thing_Remove(u);
             MusicRandomizerIsIncluded = 1;
             GiveInventory("IAmAnAwesomePersonWhoLikesCoolMusic",1);
         }
-        GiveInventory("ImAlive",1);
 
         if (GetCvar("ds_omenstart") == 1)
         {
@@ -77,6 +81,8 @@ script WEEB_ENTER ENTER
         {
             GiveInventory("Backpack",1);
         }
+
+        GiveInventory("ImAlive",1);
     }
     else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
     // If the player isn't respawning but is entering a level fresh.
@@ -85,17 +91,18 @@ script WEEB_ENTER ENTER
         if (IntroChance == 2) { LocalAmbientSound("haelin/intro",127); }
         TakeInventory("PointsFoundAllSecrets",1);
         TakeInventory("PointsKilledMonsters",1);
-        //GiveInventory("PointsSpeedrunning",875);
-        //GiveInventory("PointsNoSpecials",1);
-        //GiveInventory("PointsNoAttacks",1);
     }
 
+    // If the Sentinel was carried over from a previous level...
     if (CheckInventory("SentinelUp") == 1)
     {
+    // This is to prevent the Sentinel's info on the HUD from reading max value when we change levels with the Sentinel up.
+    // It's very work-around-y, but it's what I get for assuming stuff can transfer across levels.
         NewSentinelHP = CheckInventory("SentinelLifeCounter");
         TakeInventory("SentinelActive",1);
         GiveInventory("SentinelFromPreviousLevel",1);
     }
+    // Same shit, different git.
     if (CheckInventory("BlindGuardianShieldUp") == 1)
     {
         NewShieldHP = CheckInventory("BlindGuardianLifeCounter");
@@ -103,6 +110,7 @@ script WEEB_ENTER ENTER
         GiveInventory("BlindGuardianFromPreviousLevel",1);
     }
 
+    // Brutal Doom compatibility check.
     if (Spawn("Brutal_Blood",GetActorX(0),GetActorY(0),GetActorZ(0),i) || Spawn("BrutalPistol",GetActorX(0),GetActorY(0),GetActorZ(0),i) || GetCvar("ds_2brutal") == 1)
     {
         Thing_Remove(i);
@@ -110,7 +118,9 @@ script WEEB_ENTER ENTER
         GiveInventory("PointsIsBrutal",1);
     }
 
-    SetActorProperty(0,APROP_INVULNERABLE,0); // Just in case some wiseass exits while invuln.
+    // Status resets for the sake of weapons/items/etc that change between levels.
+    // Like in case some wiseass exits while in post-hit invulnerability.
+    SetActorProperty(0,APROP_INVULNERABLE,0);
     SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
     if (GameType() == GAME_NET_DEATHMATCH) { SetActorProperty(0,APROP_Species,"DMPlayer"); }
     else { SetActorProperty(0,APROP_Species,"Player"); }
@@ -118,11 +128,15 @@ script WEEB_ENTER ENTER
     SetActorProperty(0,APROP_Gravity,0.85);
     GiveInventory("NewLevelStatReset",1);
     GiveInventory("FlashlightStopper",1);
+
+    // If someone enters the map while having been overcharging the hammer.
     if (CheckInventory("HammerCharge") > 100)
     {
         TakeInventory("HammerCharge",100); // A bit brute-force, but they'll regain it back.
         SetAmmoCapacity("HammerCharge",100);
     }
+
+    // Likewise, if someone enters while in Iron Maiden.
     if (CheckInventory("InIronMaiden") == 1) { ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0); }
     
     while (1)
@@ -140,8 +154,11 @@ script WEEB_ENTER ENTER
         vely  = GetActorVelY(mytid);
         velz  = GetActorVelZ(mytid);
 
+        // If the player's staying in one spot, bring up the idle animation counter.
         if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); }
         else { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
+
+        // Cvar nonsense.
 
         if (GetCvar("ds_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
@@ -173,7 +190,9 @@ script WEEB_ENTER ENTER
         {
         // Monster number can increase, be it through either resurrecting or summoning.
         // So because I can't check for the total amount on Unloading, the player is just
-        // given a dummy token that indicates they got it at first.
+        // given a dummy token that indicates they got it, and pray that maps aren't so
+        // in-depth that they suddenly spawn another massive amount as soon as the existing
+        // amount is killed.
             GiveInventory("PointsKilledMonsters",1);
             if (mtotal <= 50) { GiveInventory("ManPoints",10); } // Vanilla Doom
             if (mtotal > 50 && mtotal <= 100) { GiveInventory("ManPoints",25); } // 1994 mapwad
@@ -188,12 +207,14 @@ script WEEB_ENTER ENTER
         stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
         sfound2 = sfound;
         sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
-        if (sfound > sfound2) // Found a secret.
+        // Found a secret.
+        if (sfound > sfound2)
         {
             GiveInventory("ManPoints",1);
             sfound2 = sfound;
         }
-        if (stotal != 0 && stotal == sfound && CheckInventory("PointsFoundAllSecrets") == 0) // Found all secrets.
+        // Found all secrets.
+        if (stotal != 0 && stotal == sfound && CheckInventory("PointsFoundAllSecrets") == 0)
         {
             GiveInventory("ManPoints",9); // Plus the previous 10000 for a total of 100000.
             GiveInventory("PointsFoundAllSecrets",1);
@@ -229,6 +250,10 @@ script WEEB_ENTER ENTER
                 // DON'T WORRY, MA'AM, WE'RE PROFESSIONALS
                 Spawn("BlindGuardian",XMen,Ys,ZDum,ShieldTID,Angel);
                 GiveInventory("BlindGuardianShieldActive",1);
+                // If the Buttshield is carried over from a previous level, this summons a new one
+                // and then uses the player's NewShieldHP int (established earlier) to make it have
+                // the previous entity's HP. Because you can't quite carry monsters from level to
+                // level like you can inventory items.
                 if (CheckInventory("BlindGuardianFromPreviousLevel") == 1)
                 {
                     SetActorProperty(ShieldTID,APROP_Health,NewShieldHP);
@@ -238,8 +263,9 @@ script WEEB_ENTER ENTER
             else
             {
                 // WOOP WOOP PULL OVER DAT ASS TOO FAT
-                // (angle's factored in; pitch isn't)
-                // (it'd be bad for an attack to slip through because the player's looking up/down)
+                // Move the buttshield in order to match the player's position.
+                // Angle's factored in but pitch isn't, since it'd be bad for an
+                // attack to slip through because the player's looking up/down.
                 xOffset = 0;
                 yOffset = 0;
                 zOffset = 0;
@@ -359,22 +385,36 @@ script WEEB_ENTER ENTER
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
         if (CheckInventory("HammerUp") == 1)
         {
+           // Different levels of charging the hammer based on different states of the hammer
+           // when you're holding it out. The more charge you have, the slower it charges.
            if (CheckInventory("HammerCharge") >= 90 && CheckInventory("HammerCharge") <= 100 )
-               { if (RideTheLightning >= 34) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 34)
+                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               // Overcharging is put here because of the explicit need of the previous level to be
+               // between 90 and 100, thanks to changing ammo capacities.
+               // Everything else can just be "meh, more than X".
            else if (CheckInventory("HammerCharge") > 100)
-               { if (RideTheLightning >= 8) { GiveInventory("HammerCharge",1); GiveInventory("ChargeScreenFlash",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 8)
+                  { GiveInventory("HammerCharge",1); GiveInventory("ChargeScreenFlash",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 80)
-               { if (RideTheLightning >= 27) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 27)
+                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 60)
-               { if (RideTheLightning >= 22) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 22)
+                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 40)
-               { if (RideTheLightning >= 17) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 17)
+                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 20)
-               { if (RideTheLightning >= 12) { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 12)
+                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
            else if (CheckInventory("HammerCharge") >= 0)
-               { if (RideTheLightning >= 7)  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
+               { if (RideTheLightning >= 7)
+                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
         }
-        else { if (RideTheLightning >= 40 && CheckInventory("HammerCharge") >= 30)  { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
+        // If the player isn't holding the hammer, slowly take away ammo charge.
+        else { if (RideTheLightning >= 40 && CheckInventory("HammerCharge") >= 30)
+            { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
         RideTheLightning++;
 
         TakeInventory("GhostStepCooldown",1);
@@ -389,7 +429,9 @@ script WEEB_ENTER ENTER
         //TakeInventory("PointsSpeedrunning",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
-        // If the player still has life left, they get full health.
+        // If the player still has life left, they get full life.
+        // How's that for redundancy?
+        // Next up: PEOPLE DIE WHEN THEY ARE KILLED.
         if( GetCVar( "ds_doomhealth" ) == 0 )
         {
             if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1 || CheckInventory("ContraArmorToken") >= 1)
@@ -398,25 +440,52 @@ script WEEB_ENTER ENTER
             { SetActorProperty(0,APROP_HEALTH,1); }
         }
         
-        // Not the kind you lean on.
+        // THE SUPER COUNTER. Not the kind you lean on.
         SuperCount = CheckInventory("SuperMeterCounter");
         //SetInventory("SuperCounter1",SuperCount); // Life would be so much easier if this worked online.
+        // This script changes the display on the HUD.
+        // While SuperMeterCounter can be whatever, each of the bars on the HUD read 100 of SuperMeterCounter.
+        // Because of this, I have to manually see exactly how much of each level the player has and then give
+        // a dummy item which the bars then read.
         TakeInventory("SuperCounter1", 0x7FFFFFFF);
         GiveInventory("SuperCounter1", SuperCount);
-        if (SuperCount < 20) { if (TheAngerInside >= 280) { GiveInventory("SuperMeterCounter",1); TheAngerInside = 0; }}
-        if (SuperCount > 100) { TakeInventory("SuperCounter2",0x7FFFFFFF); GiveInventory("SuperCounter2", SuperCount - 100); } //SetInventory("SuperCounter2",(SuperCount - 100)); }
+        if (SuperCount > 100)
+            { TakeInventory("SuperCounter2",0x7FFFFFFF);
+              GiveInventory("SuperCounter2", SuperCount - 100); } //SetInventory("SuperCounter2",(SuperCount - 100)); }
             else { TakeInventory("SuperCounter2",0x7FFFFFFF); }
-        if (SuperCount > 200) { TakeInventory("SuperCounter3",0x7FFFFFFF); GiveInventory("SuperCounter3", SuperCount - 200); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+        if (SuperCount > 200)
+            { TakeInventory("SuperCounter3",0x7FFFFFFF);
+              GiveInventory("SuperCounter3", SuperCount - 200); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
             else { TakeInventory("SuperCounter3",0x7FFFFFFF); }
-        if (SuperCount > 300) { TakeInventory("SuperCounter4",0x7FFFFFFF); GiveInventory("SuperCounter4", SuperCount - 300); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+        if (SuperCount > 300)
+            { TakeInventory("SuperCounter4",0x7FFFFFFF);
+              GiveInventory("SuperCounter4", SuperCount - 300); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
             else { TakeInventory("SuperCounter4",0x7FFFFFFF); }
+        // If the player has less than 20 of SuperMeterCounter, they slowly regenerate.
+        if (SuperCount < 20) { if (TheAngerInside >= 280)
+            { GiveInventory("SuperMeterCounter",1); TheAngerInside = 0; }}
         TheAngerInside++;
 
         // 666 COMBO! SUPER SWEET STYLISH!
+        // Likewise, this is mostly dedicated to showing the player how much combo meter they
+        // have on the HUD.
+        // It's all the same basic principal. Split the entire counter into bars of 1-100,
+        // see how much of each level the player has, give it to them as a dummy item.
+        // This is slightly more complicated by use of the ranking system.
         ComboCount = CheckInventory("HyperComboCounter");
         TakeInventory("ComboCounter1",0x7FFFFFFF);
         GiveInventory("ComboCounter1",ComboCount);
-        if (ComboCount <= 50) { TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+        if (ComboCount <= 50)
+        {
+            TakeInventory("FRank",1);
+            TakeInventory("DRank",1);
+            TakeInventory("CRank",1);
+            TakeInventory("BRank",1);
+            TakeInventory("ARank",1);
+            TakeInventory("SRank",1);
+        }
+        // Kyle873 once told me that "one-line code" was basically the worst thing a coder could do.
+        // If he sees this, I think he'll kill me...
         if (ComboCount > 50)
             { TakeInventory("ComboCounter2",0x7FFFFFFF); GiveInventory("ComboCounter2",(ComboCount - 50)); GiveInventory("ComboDamageLevel1",1);
               GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
@@ -437,6 +506,10 @@ script WEEB_ENTER ENTER
               TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); } else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
 
         // Global variables
+        // In singleplayer, these make the weapon pickups read if the player have actually
+        // picked up the weapons, and if so they...well...
+        // They make the things spawn other things.
+        // That makes sense. I promise.
         if (isSinglePlayer())
         {
             if (CheckInventory("GotShotgun") == 1) { GotShotgun = 1; }
@@ -455,28 +528,79 @@ script WEEB_ENTER ENTER
 
         if (GetCvar("ds_nospecials") == 0)
         {
-        if (buttons & BT_ALTATTACK && CheckInventory("SuperMeterCounter") >= 20)
+        // This entire system is so brute force it's not even funny.
+        // I never said I was an elegant or even a good coder, but this is still
+        // extremely brute force, even for me.
+        // It's "simply" a matter of checking for what buttons the player pushed,
+        // then giving an inventory item. If the player pushes the button and the
+        // inventory item is still there, they're given another item saying that
+        // they double-tapped the button.
+
+          if (buttons & BT_ALTATTACK && CheckInventory("SuperMeterCounter") >= 20)
             { GiveInventory("SynthAltFire",1); }
-        else
+          else
             { TakeInventory("SynthAltFire",1); }
 
-        if (keypressed(BT_MOVERIGHT))
+          if (keypressed(BT_MOVERIGHT))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
                       else { GiveInventory("DoubleTapReadyRight",8); }}}
-        if (keypressed(BT_MOVELEFT))
+          if (keypressed(BT_MOVELEFT))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",20); }
                       else { GiveInventory("DoubleTapReadyLeft",8); }}}
-        if (keypressed(BT_FORWARD))
+          if (keypressed(BT_FORWARD))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",20); }
                       else { GiveInventory("DoubleTapReadyForward",8); }}}
-        if (keypressed(BT_BACK))
+          if (keypressed(BT_BACK))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
                       else { GiveInventory("DoubleTapReadyBack",8); }}}
+
+          // Kyle873 makes a super timefreeze thing! HAVE FUN TERM
+          // [13] OR WOULD HAVE IF HE HADN'T PUT IT IN THE CLIENTSIDE SCRIPT LOOP
+          // I MEAN, WOW KYLE
+          // WOW
+          // WOOOOOOOWWWWWW
+          // WOOOOOOOOOOOOWWWWWWWWWW
+          /*if (buttons == (BT_MOVELEFT + BT_FORWARD + BT_MOVERIGHT))
+          {
+            if (CheckInventory("SuperTimeFreezer") == 0 && CheckInventory("SuperMeterCounter") == 400)
+            {
+              GiveInventory("TimeFreezeModeOn",1);
+              playerTimeFreeze[PlayerNumber()] = true;
+            }
+            else if (CheckInventory("SuperTimeFreezer") == 1)
+            {
+              TakeInventory("SuperTimeFreezer",1);
+              TakeInventory("TimeFreezeModeOn",1);
+              playerTimeFreeze[PlayerNumber()] = false;
+            }
+          }*/
         }
+
+        /*if (TimeStandStill >= 5 && CheckInventory("SuperTimeFreezer") == 1)
+        { TakeInventory("SuperMeterCounter",1);
+          TimeStandStill = 0; }
+        TimeStandStill++;
+        if (CheckInventory("SuperTimeFreezer") == 1 && CheckInventory("SuperMeterCounter") == 0)
+        {
+              TakeInventory("SuperTimeFreezer",1);
+              TakeInventory("TimeFreezeModeOn",1);
+              playerTimeFreeze[PlayerNumber()] = false;
+        }*/
+
+          /*playerTimeFreeze[PlayerNumber()] = !playerTimeFreeze[PlayerNumber()];
+          if (PlayerTimeFreeze[PlayerNumber()] && CheckInventory("SuperMeterCounter") > 0) // If the player doesn't have time freeze on and is at full bar...
+          {
+            GiveInventory("SuperTimeFreezer", 1);
+              if ((Timer() % 5) == 0) // 1 spirit loss per 5 tics, adjust as needed
+                TakeInventory("SuperMeterCounter", 1);
+              if (CheckInventory("SuperMeterCounter") == 0) // Disable automatically if we run out of super
+                playerTimeFreeze[PlayerNumber()] = false;
+          }*/
+
 
     // This block of code was done by Kyle873.
     // He wishes me to inform you that ACS is a pile of cocks that owes him money.
@@ -486,6 +610,7 @@ script WEEB_ENTER ENTER
     // But he is waiting. Oh, yes, he is waiting.
         WalkTheDinosaur = GetActorZ(0) - GetActorFloorZ(0);        
         //print(f:WalkTheDinosaur, s:" ", f:GetActorVelZ(0), s:"\n", d:CheckInventory("OnTheGround"), s:" ", d:CheckInventory("AcesHigh"));
+
         // Floor check
         if (GetActorZ(0) - GetActorFloorZ(0) == 0)
         {
@@ -517,15 +642,18 @@ script WEEB_ENTER ENTER
     // This concludes the block of code done by Kyle873.
     // You may now applaud his genius.
 
-        // Dodging
+        // GET OUTTA DODGE
         if (CheckInventory("GhostStepCooldown") == 0 && CheckInventory("GhostStepDone") == 0)
         {
+          // Simple stuff. If the player hits Run and another button, they get thrown in a direction
+          // and are given a powerup and a cooldown.
           if (buttons & BT_SPEED && buttons & BT_CROUCH && CheckInventory("OnTheGround") == 0)
           {
               ThrustThingZ(0,120,1,0);
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
+              // This script just gives +Ghost, then removes it after a short pause.
               ACS_ExecuteAlways(WEEB_DECORATE,0,6,0,0);
           }
           if (buttons & BT_SPEED && buttons & BT_FORWARD)
@@ -565,10 +693,14 @@ script WEEB_ENTER ENTER
         // SUPER SAIYAN HNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
         // HHHHHHHHHHHHHNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
         // HHHHHHHHHHHHHHHHHHNNNNNNNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGHHHHHHHH
-
+        // IRON MAIDEN SCRIPT
+        // HELL FUCKING YEAH
+        // THE MOST METAL SCRIPT IN ALL OF VIDEOGAMEDOM
         oarmor = armor;
         armor = CheckInventory("Armor");
 
+        // Oarmor is always one tic behind armor. If Oarmor is higher than armor, the player took a hit.
+        // Display a painflash as needed.
         if (oarmor > armor && CheckInventory("InIronMaiden") == 1)
         {
           ActivatorSound("iron/armorhit", 127);
@@ -579,6 +711,8 @@ script WEEB_ENTER ENTER
         if (CheckInventory("InIronMaiden") == 1)
         {
 
+        // Gives differing levels of defenses based on the player's combo ranking.
+        // The higher their rank, the more, uh, defense-y they are.
         GiveInventory("IronMaidenProtection",1);
         if (ComboCount <= 50) { TakeInventory("IronMaidenProtectionF",1); TakeInventory("IronMaidenProtectionD",1); TakeInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
         if (ComboCount > 50)
@@ -594,10 +728,15 @@ script WEEB_ENTER ENTER
         if (ComboCount > 300)
             { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); GiveInventory("IronMaidenProtectionB",1); GiveInventory("IronMaidenProtectionA",1); GiveInventory("IronMaidenProtectionS",1); }
 
+          // Keeps going for as long as the player has meter.
           if (CheckInventory("SuperMeterCounter") > 0)
           {
             SetActorProperty(0,APROP_JUMPZ,10.0);
 
+            // YO BRO
+            // I'M TELLING YOU NOW
+            // YOU CAN'T JUST CHECK YOUR LIFE
+            // YOU GOTTA CHECK YOUR SOOOOOOOOOOUL
             if (CheckInventory("SuperMeterCounter") < 31 && CheckInventory("IronMaidenWarning") == 0)
             {
               GiveInventory("IronMaidenWarning",1);
@@ -605,6 +744,7 @@ script WEEB_ENTER ENTER
               LocalAmbientSound("henshin/warning",127);
             }
 
+            // If the player's manually de-activating with the, uh, Use Inventory thingermajob.
             if (CheckInventory("HenshinDeactivation") == 1)
             {
               GiveInventory("HenshinCooldown",35);
@@ -615,6 +755,7 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
+            // Armor regeneration.
             if (IronArmor >= 5)
             {
               if (GetArmorType("IronMaidenArmor",PlayerNumber()) || GetArmorType("IronMaidenArmor2",PlayerNumber()))
@@ -631,6 +772,7 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
+            // Soul degeneration. Slower if in the middle of combat.
             if (CheckInventory("MidCombat") > 1)
             {
               if (MarchOfTheImmortal >= 26)
@@ -662,14 +804,16 @@ script WEEB_ENTER ENTER
           }
         }
 
+        // NYRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
         if (GetCvar("ds_runmod") < 10001 && GetCvar("ds_runmod") > -2) // I forget what the maximum integer is. 36525? Well, whatever, anything beyond that and it'll crash.
         {
             speedmod = max(0, condFalse(GetCVar("ds_runmod"), 100)) * 0.01; // Get the percentage equivalent of the value...
             SetActorProperty(0, APROP_Speed, speedmod); // And adjust the player's speed accordingly.
         }
 
+        // Yes, this mod is 100% compatible with Brutal Doom. Absolutely nothing bad will happen!
         if (isbrutal)
-        { // Yes, this mod is 100% compatible with Brutal Doom. Absolutely nothing bad will happen!
+        {
             k = unusedTID(23000, 33000);
                 
             if (ThingCountName("GoldenBoner",0) < (20 * PlayerCount()))
@@ -679,6 +823,7 @@ script WEEB_ENTER ENTER
             Thing_ChangeTID(k,0);
         }
 
+        // Clientside cvar arrays.
         if (array_recoilrules[pln]) { GiveInventory("IAmASillyPersonWhoDoesntLikeRecoil", 1); }
         else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
         if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
@@ -691,6 +836,8 @@ script WEEB_ENTER ENTER
         if (flashlightOn[pln])
             { GiveInventory("FlashlightSpawner", 1); }
 
+        // OH SHIT I'M OUT OF HEALTH
+        // SUDDENLY AND COINCIDENTALLY I HAVE A MASSIVE CRAVING FOR MUNCHIES
         if (CheckInventory("ContraLifeToken") == 0 && CheckInventory("OverLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
         {
           if (GetSomeHealthAlready >= 60)
@@ -703,6 +850,8 @@ script WEEB_ENTER ENTER
         }
         
         Delay(1);
+
+        // RIP in peas.
         if (isDead(0))
         {
             Thing_Remove(SentTID);
@@ -725,6 +874,7 @@ script WEEB_DOUBLETAP ENTER
 {
     while (1)
     {
+        // After the player doubletaps, delays a short bit and then takes it away.
         if (CheckInventory("DoubleTapForward") || CheckInventory("DoubleTapLeft") || CheckInventory("DoubleTapRight") || CheckInventory("DoubleTapBack") )
         {
             Delay(13);
@@ -739,6 +889,7 @@ script WEEB_DOUBLETAP ENTER
 
 script WEEB_COMBOREMOVAL ENTER
 {
+    // The higher your rank is, the faster your meter degenerates.
     while (1)
     {
         if (CheckInventory("HyperComboCounter") < 50) { Delay(12); }

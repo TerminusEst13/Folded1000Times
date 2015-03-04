@@ -29,7 +29,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 139
+#define QUOTECOUNT 140
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -470,6 +470,6 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Protip: To kill the Cyberdemon, stab it until it dies.",
 "play some punch out with these nerds and beat them 2 the punch",
 "How exactly do you refine toxins?",
-"HOW DOE'S IT FEEL TO BE WELL DONE? BUT I BET YOU TASTE TERRIBLE."
-
+"HOW DOE'S IT FEEL TO BE WELL DONE? BUT I BET YOU TASTE TERRIBLE.",
+"Boy, this mod would be so much better if it had its own dedicated mapset."
 };

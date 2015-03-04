@@ -1,5 +1,4 @@
-// By jpalomo!
-// Execute specials and the ghost step with joysticks
+// [jpalomo] Execute specials and the ghost step with joysticks
 // It still works perfectly fine with buttons instead of sticks
 
 int stick_forward; // positive is forward, negative is backward

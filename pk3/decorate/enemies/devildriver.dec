@@ -140,8 +140,7 @@ ACTOR DevilDriver replaces Cyberdemon
 //==============================================================================
 //======Area_Denial attacks=====================================================
     Area_FloatMissiles:
-        TNT1 A 0 A_PlaySound("cyberdemn/gunready")                            //ALMOST DONE. Needs: Sound for missile launching Launch Graphic. Graphic for targetter.
-        DDRV A 12 A_FaceTarget
+        DDRV A 6 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/jukerocket","soundslot5",0,0)
         TNT1 A 0 A_SpawnItemEx("DD_FloatMissile1",0,0,32,0,4,7)
         TNT1 A 0 A_SpawnItemEx("DD_FloatMissile2",0,0,32,0,2,8)
@@ -151,7 +150,7 @@ ACTOR DevilDriver replaces Cyberdemon
         goto NextMove
     Area_SlowRockets:
         TNT1 A 0 A_PlaySound("cyberdemn/gunready")
-        DDRV F 12 A_FaceTarget
+        DDRV F 18 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/rocket","soundslot5",0,0)
         //TNT1 A 0 A_CustomMissile("DD_SlowRocket",36,0,0,1)
         TNT1 A 0 A_CustomMissile("DD_SlowRocket",58,24,0,1)
@@ -161,7 +160,7 @@ ACTOR DevilDriver replaces Cyberdemon
 //======Ranged_Attack attacks===================================================
     Range_PatternRockets:
         TNT1 A 0 A_PlaySound("cyberdemn/gunready")
-        DDRV F 12 A_FaceTarget
+        DDRV F 18 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/rocket","soundslot5",0,0)                                                           //Basically, now it looks like the same attack but one is a slowed version. Still has separate functions.
         //TNT1 A 0 A_CustomMissile("DD_BasicRocket",36,0,0,1)                    //The offset rockets will fire at 55 or -55, and 110 or -110
         TNT1 A 0 A_CustomMissile("DD_BasicRocket",58,24,0,1)
@@ -170,7 +169,7 @@ ACTOR DevilDriver replaces Cyberdemon
         goto NextMove
     Range_SeekingRocket:
         TNT1 A 0 A_PlaySound("cyberdemn/gunready")
-        DDRV F 12 A_FaceTarget
+        DDRV F 18 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("devildriver/seekrocket","soundslot5",0,0)                                                          //This should be fiddled with, and I also want a separate graphic
         //TNT1 A 0 A_CustomMissile("DD_Tracer")                                //Preferably a shark-faced rocket :^)
         TNT1 A 0 A_CustomMissile("DD_Tracer",58,24,0,1)

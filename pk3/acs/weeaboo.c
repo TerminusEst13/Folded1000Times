@@ -42,10 +42,11 @@ script WEEB_RESPAWN respawn
     if (GameSkill () == 2) { GiveInventory("ContraLifeToken",6); }
     if (GameSkill () == 3) { GiveInventory("ContraLifeToken",4); }
     if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
+    // Takes away a million points on respawn.
     if (CheckInventory("ManPoints") >= 1000) { TakeInventory("ManPoints",1000); }
     else { TakeInventory("ManPoints",999); TakeInventory("Points",9999); }
     
-    ACS_ExecuteAlways(268,0,0,0);
+    ACS_ExecuteAlways(WEEB_ENTER,0,0,0);
 }
 
 script WEEB_OPEN OPEN
@@ -53,6 +54,7 @@ script WEEB_OPEN OPEN
     IsServer = 1;
 
     if (GameType() != GAME_TITLE_MAP) { LevelCount++; } // Titlemaps add to the global variable, irritatingly.
+
     if (GetCvar("ds_runninginzdoom") == 0)
     {
         if (!GetCvar("compat_clientssendfullbuttoninfo"))
@@ -139,7 +141,7 @@ script WEEB_OPEN_CLIENT OPEN clientside
     }
 }
 
-script WEEB_DECORATE (int burrshet, int ballshat)
+script WEEB_DECORATE (int burrshet, int ballshat) // All the Decorate/utility/etc calls go here.
 {
 int i;
 int GravityRoll;
@@ -154,10 +156,13 @@ int GravityOfLight;
         int delaycount = 0;
 
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
-        
+
+        // If a player somehow manages to get hurt through the Invulnerability,
+        // don't take any health anyway.
         if (CheckInventory("PowerShieldProtection") == 1) { terminate; }
         
         //GiveInventory("PointsTookDamage",1);
+
         if( GetCVar( "ds_doomhealth" ) == 0 )
         {
             if (GetCvar("ds_nodamagepenalty") == 0)
@@ -221,11 +226,13 @@ int GravityOfLight;
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
         break;
 
+        // You know, I probably could consolidate all these checks into one smaller check.
     case WEEB_DEC_SHOTCHECK:
         if (isSinglePlayer() && GotShotgun == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
 
+        // Meh.
     case WEEB_DEC_CARRCHECK:
         if (isSinglePlayer() && GotCarronade == 1) { SetResultValue(1); }
         else { SetResultValue(0); }
@@ -243,6 +250,7 @@ int GravityOfLight;
         break;
 
     case WEEB_DEC_MEGASPHERE:
+        // That feel when your health system is so complicated that it's easier to do in ACS than Decorate.
         if (GameSkill () == 0)
         {
           if (CheckInventory("ContraLifeToken") < 10) { GiveInventory("ContraLifeToken",1); }
@@ -392,7 +400,11 @@ int GravityOfLight;
         break;
 
     case WEEB_DEC_ONLINECHECK:
-        if ( (GetCvar("ds_noshotgunlimiter") == 0 && LevelCount < 2) || GetCvar("ds_noshotgun") == 1) { SetResultValue(1); }
+        // The Shotgun is never given out right away.
+        // It's powerful as hell, so it needs to be staggered out a bit.
+        // Also gives people opportunity to get used to the sword.
+        if ( (GetCvar("ds_noshotgunlimiter") == 0 && LevelCount < 2) || GetCvar("ds_noshotgun") == 1)
+             { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
 
@@ -452,7 +464,9 @@ int GravityOfLight;
     case WEEB_DEC_DOOMHEALTH:
         SetResultValue(GetCVar("ds_doomhealth"));
         break;
-        
+
+        // Takes the player's existing gravity and reduces it a bit because of
+        // all the spinning blades. That's how physics works, right?
     case WEEB_DEC_LEGSPECIAL:
         GravityRoll = GetActorProperty(0,APROP_Gravity);
         SetActorProperty(0,APROP_Gravity,GravityRoll - 0.15);
@@ -524,7 +538,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
         break;
 
-    //cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
+    //[Scroton] cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
     //if you want more cases that aren't subject to it, put them here in descending order
     //and decrease the number in the check at the top of this script
 
@@ -570,6 +584,7 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapLeft",1);
     TakeInventory("DoubleTapRight",1);
     TakeInventory("Wounded",1);
+    TakeInventory("SuperTimeFreezer",1);
     TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);
@@ -600,6 +615,7 @@ script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
     TakeInventory("DoubleTapLeft",1);
     TakeInventory("DoubleTapRight",1);
     TakeInventory("Wounded",1);
+    TakeInventory("SuperTimeFreezer",1);
     TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);
@@ -617,6 +633,49 @@ script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
     TakeInventory("LegionStacked",0x7FFFFFFF);
     TakeInventory("SwordAttack",0x7FFFFFFF);
 }
+
+script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE
+{
+    switch (changelogshit2)
+    {
+    case 1:
+        Log(s:DemonCredits);
+        break;
+
+    case 2:
+        Log(s:DemonChangelog);
+        break;
+    }
+}
+
+script WEEB_PUKE2 (void) NET CLIENTSIDE
+{
+// I can't believe I'm dedicating an entire script to this one instance.
+
+    if (flashlightOn[PlayerNumber()])
+    {
+        flashlightOn[PlayerNumber()] = 0;
+        GiveInventory("FlashlightStopper",1);
+        ActivatorSound("flashlight/off", 127);
+    }
+    else
+    {
+        flashlightOn[PlayerNumber()] = 1;
+        ActivatorSound("flashlight/on", 127);
+    }
+}
+
+
+
+// [13] Hoo, this shit.
+// I have no clue how this works. As far as I'm concerned, it's dark magic.
+// Do not touch, lest thy dark hand remain cursed. Many a night have I spent
+// trying to optimize it, only to lay awake in bed, staring at the ceiling
+// and watching compiler errors laugh down at me from the dark aeons split in
+// the sky.
+// I dread the day Zandronum finds alternative opportunities to handle clientside
+// cvars, because on that day, there will be blood spilt.
+// I pray it may not be mine.
 
 //int array_custmischarg[PLAYERMAX];
 
@@ -656,20 +715,6 @@ script WEEB_ENTER_CLIENT ENTER clientside
             }
         }
         
-        // Kyle873 makes a super timefreeze thing
-        // TODO: Sounds and pretty effects and shit, HAVE FUN WITH THAT TERM
-        int buttons = keysPressed();
-        if (buttons == (BT_MOVELEFT + BT_MOVERIGHT)) // Key check, toggles tiem freeze on/off
-            playerTimeFreeze[PlayerNumber()] = !playerTimeFreeze[PlayerNumber()];
-        if (PlayerTimeFreeze[PlayerNumber()] && CheckInventory("SuperMeterCounter") > 0)
-        {
-            GiveInventory("SuperTimeFreezer", 1);
-            if ((Timer() % 5) == 0) // 1 spirit loss per 5 tics, adjust as needed
-                TakeInventory("SuperMeterCounter", 1);
-            if (CheckInventory("SuperMeterCounter") == 0) // Disable automatically if we run out of super
-                playerTimeFreeze[PlayerNumber()] = false;
-        }
-        
         delay(1);
     }
 }
@@ -683,35 +728,6 @@ script WEEB_PUKE (int values) net
     array_beepbeepbeep[pln]    = values & 4;
     array_nopan[pln]           = values & 8;
     //array_custmischarg[pln]  = values & 16;*/
-}
-
-script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE
-{
-    switch (changelogshit2)
-    {
-    case 1:
-        Log(s:DemonCredits);
-        break;
-
-    case 2:
-        Log(s:DemonChangelog);
-        break;
-    }
-}
-
-script WEEB_PUKE2 (void) NET CLIENTSIDE // I can't believe I'm dedicating an entire script to this one instance.
-{
-    if (flashlightOn[PlayerNumber()])
-    {
-        flashlightOn[PlayerNumber()] = 0;
-        GiveInventory("FlashlightStopper",1);
-        ActivatorSound("flashlight/off", 127);
-    }
-    else
-    {
-        flashlightOn[PlayerNumber()] = 1;
-        ActivatorSound("flashlight/on", 127);
-    }
 }
 
 /*        if (array_custmischarg[pln]) { GiveInventory("CustomMissileCharge", 1); }
