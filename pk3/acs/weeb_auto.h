@@ -536,7 +536,7 @@ script WEEB_ENTER ENTER
         // inventory item is still there, they're given another item saying that
         // they double-tapped the button.
 
-          if (buttons & BT_ALTATTACK && (CheckInventory("20SpecialCost") == 1 && CheckInventory("SuperMeterCounter") >= 20) || (CheckInventory("10SpecialCost") == 1 && CheckInventory("SuperMeterCounter") >= 10) || (CheckInventory("00SpecialCost") == 1))
+          if (buttons & BT_ALTATTACK && ( (CheckInventory("20SpecialCost") == 1 && CheckInventory("SuperMeterCounter") >= 20) || (CheckInventory("10SpecialCost") == 1 && CheckInventory("SuperMeterCounter") >= 10) || (CheckInventory("00SpecialCost") == 1) ))
             { GiveInventory("SynthAltFire",1); }
           else
             { TakeInventory("SynthAltFire",1); }

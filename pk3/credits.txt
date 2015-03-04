@@ -106,6 +106,7 @@ GRAPHICS:
 - Marrub (The DevilDriver's sprites)
 - DavidG (The alternate attack frames for the Baron)
 - Virtue (All of the texture brightmaps)
+- Kyle873 (The Exodus/Frosthammer brightmaps)
 
 CODE:
 =========
