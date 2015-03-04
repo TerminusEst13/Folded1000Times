@@ -199,6 +199,10 @@ idle/swing                IDLSWING // Taken from...Postal 2, I think?
 idle/swing2               IDLSWIN2 // Man I don't even know
 idle/pose                 IDLPOSE  // Yeah, stumped
 
+grapple/ready             GRAPREAD // Taken from Legend of Zelda: Twilight Princess
+grapple/fire              GRAPFIRE
+grapple/reload            GRAPCOCK // Taken from Painkiller: Overdose
+
 $random sword/swingmed { medswing1 medswing2 medswing3 } // Taken from the Oblivion Combat Sound Replacement
 medswing1                 SWINGMD1
 medswing2                 SWINGMD2

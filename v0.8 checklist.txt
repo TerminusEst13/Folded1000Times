@@ -16,7 +16,6 @@ PRIORITY:
    ^ If so, don't forget attacks for the Iron Maiden as well.
 18: Finish the specials for:
    ^ Acacia A-22
-   ^ Kharon
    ^ Frosthammer
    ^ Omen
    ^ BALANCE

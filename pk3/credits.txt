@@ -64,6 +64,7 @@ GRAPHICS:
   ^ The Blackened edited from the Hexen Reiver
   ^ The Priest edited from Hexen's Parias and the Heretic Iron Lich
   ^ The Priest/Imp's fire effects nicked from Hexen
+  ^ The hook and chain for the Kharon's special
 - Id Software (The laser shots from the zombies, some electricity sprites for Omen)
 - Ravage/rf' (The red/blue/green torches)
 - KeksDose (The miniature explosions and particles used for the bullet puffs)
