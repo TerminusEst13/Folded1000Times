@@ -774,6 +774,340 @@ brightmap texture tekwall6
   iwad
 }
 
+// Exodus
+
+brightmap sprite ESPCA0
+{
+  map "brightmaps/ESPCA0.png"
+}
+brightmap sprite ESPCB0
+{
+  map "brightmaps/ESPCA0.png"
+}
+brightmap sprite ESPCC0
+{
+  map "brightmaps/ESPCC0.png"
+}
+brightmap sprite ESPCD0
+{
+  map "brightmaps/ESPCD0.png"
+}
+brightmap sprite ESPCE0
+{
+  map "brightmaps/ESPCE0.png"
+}
+brightmap sprite ESPCF0
+{
+  map "brightmaps/ESPCF0.png"
+}
+brightmap sprite ESPCH0
+{
+  map "brightmaps/ESPCH0.png"
+}
+brightmap sprite ESPCI0
+{
+  map "brightmaps/ESPCI0.png"
+}
+brightmap sprite ESPCJ0
+{
+  map "brightmaps/ESPCJ0.png"
+}
+brightmap sprite ESPCK0
+{
+  map "brightmaps/ESPCK0.png"
+}
+brightmap sprite ESPCL0
+{
+  map "brightmaps/ESPCL0.png"
+}
+brightmap sprite ESPCM0
+{
+  map "brightmaps/ESPCM0.png"
+}
+brightmap sprite ESPCN0
+{
+  map "brightmaps/ESPCN0.png"
+}
+brightmap sprite ESPCO0
+{
+  map "brightmaps/ESPCO0.png"
+}
+brightmap sprite ESPCP0
+{
+  map "brightmaps/ESPCP0.png"
+}
+brightmap sprite ESPCQ0
+{
+  map "brightmaps/ESPCQ0.png"
+}
+brightmap sprite ESPCR0
+{
+  map "brightmaps/ESPCR0.png"
+}
+brightmap sprite ESPCS0
+{
+  map "brightmaps/ESPCS0.png"
+}
+brightmap sprite ESPCT0
+{
+  map "brightmaps/ESPCT0.png"
+}
+brightmap sprite ESPCU0
+{
+  map "brightmaps/ESPCU0.png"
+}
+brightmap sprite ESPCV0
+{
+  map "brightmaps/ESPCV0.png"
+}
+brightmap sprite ESPCW0
+{
+  map "brightmaps/ESPCW0.png"
+}
+brightmap sprite GLAGA0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGB0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGC0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGD0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGE0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGF0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGG0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGH0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGI0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGJ0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGK0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGL0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite GLAGM0
+{
+  map "brightmaps/GLAGA0.png"
+}
+brightmap sprite WEPEA0
+{
+  map "brightmaps/WEPEA0.png"
+}
+brightmap sprite WEPEE0
+{
+  map "brightmaps/WEPEE0.png"
+}
+brightmap sprite WEPEF0
+{
+  map "brightmaps/WEPEE0.png"
+}
+brightmap sprite WEPEG0
+{
+  map "brightmaps/WEPEE0.png"
+}
+
+// Frosthammer
+
+brightmap sprite FRFRG0
+{
+  map "brightmaps/FRFRG0.png"
+}
+brightmap sprite FRHMA0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMB0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMC0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMD0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHME0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMF0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMG0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMH0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMI0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMJ0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMK0
+{
+  map "brightmaps/FRHMK0.png"
+}
+brightmap sprite FRHML0
+{
+  map "brightmaps/FRHML0.png"
+}
+brightmap sprite FRHMM0
+{
+  map "brightmaps/FRHML0.png"
+}
+brightmap sprite FRHMN0
+{
+  map "brightmaps/FRHML0.png"
+}
+brightmap sprite FRHMO0
+{
+  map "brightmaps/FRHML0.png"
+}
+brightmap sprite FRHMP0
+{
+  map "brightmaps/FRHMK0.png"
+}
+brightmap sprite FRHMQ0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMR0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMS0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMT0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMU0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMV0
+{
+  map "brightmaps/FRHMA0.png"
+}
+brightmap sprite FRHMZ0
+{
+  map "brightmaps/FRHMZ0.png"
+}
+brightmap sprite W2PFA0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFB0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFC0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFD0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFE0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFF0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFG0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFH0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFI0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFJ0
+{
+  map "brightmaps/W2PFA0.png"
+}
+brightmap sprite W2PFK0
+{
+  map "brightmaps/W2PFK0.png"
+}
+brightmap sprite W2PFL0
+{
+  map "brightmaps/W2PFL0.png"
+}
+brightmap sprite W2PFM0
+{
+  map "brightmaps/W2PFL0.png"
+}
+brightmap sprite W2PFN0
+{
+  map "brightmaps/W2PFL0.png"
+}
+brightmap sprite W2PFO0
+{
+  map "brightmaps/W2PFL0.png"
+}
+brightmap sprite W2PFP0
+{
+  map "brightmaps/W2PFK0.png"
+}
+brightmap sprite WEPFE0
+{
+  map "brightmaps/WEPFE0.png"
+}
+brightmap sprite WEPFF0
+{
+  map "brightmaps/WEPFE0.png"
+}
+brightmap sprite WEPFG0
+{
+  map "brightmaps/WEPFE0.png"
+}
+
 // Flats
 
 Glow
