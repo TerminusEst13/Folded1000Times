@@ -42,7 +42,13 @@ script WEEB_ENTER ENTER
     int sfound;
     int sfound2;
     int TimeStandStill;
-    // 56 ints and counting!
+    int RemoveFRankAnnouncer;
+    int RemoveDRankAnnouncer;
+    int RemoveCRankAnnouncer;
+    int RemoveBRankAnnouncer;
+    int RemoveARankAnnouncer;
+    int RemoveSRankAnnouncer;
+    // 62 ints and counting!
 
     i = unusedTID(37000, 47000);
     u = unusedTID(37000, 47000);
@@ -128,6 +134,12 @@ script WEEB_ENTER ENTER
     SetActorProperty(0,APROP_Gravity,0.85);
     GiveInventory("NewLevelStatReset",1);
     GiveInventory("FlashlightStopper",1);
+    if (CheckInventory("HyperComboCounter") < 50) { TakeInventory("FRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 100) { TakeInventory("DRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 150) { TakeInventory("CRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 200) { TakeInventory("BRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 250) { TakeInventory("ARankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 300) { TakeInventory("SRankAnnounced",1); }
 
     // If someone enters the map while having been overcharging the hammer.
     if (CheckInventory("HammerCharge") > 100)
@@ -533,6 +545,32 @@ script WEEB_ENTER ENTER
             { if (CheckInventory("SRankAnnounced") == 0)
               { GiveInventory("SRankAnnounced",1); LocalAmbientSound("ranking/slayer",127); }}
 
+        if (ComboCount < 50 && CheckInventory("FRankAnnounced") == 1)
+           { RemoveFRankAnnouncer++; }
+           else { RemoveFRankAnnouncer = 0; }
+        if (ComboCount < 100 && CheckInventory("DRankAnnounced") == 1)
+           { RemoveDRankAnnouncer++; }
+           else { RemoveDRankAnnouncer = 0; }
+        if (ComboCount < 150 && CheckInventory("CRankAnnounced") == 1)
+           { RemoveCRankAnnouncer++; }
+           else { RemoveCRankAnnouncer = 0; }
+        if (ComboCount < 200 && CheckInventory("BRankAnnounced") == 1)
+           { RemoveBRankAnnouncer++; }
+           else { RemoveBRankAnnouncer = 0; }
+        if (ComboCount < 250 && CheckInventory("ARankAnnounced") == 1)
+           { RemoveARankAnnouncer++; }
+           else { RemoveARankAnnouncer = 0; }
+        if (ComboCount < 300 && CheckInventory("SRankAnnounced") == 1)
+           { RemoveSRankAnnouncer++; }
+           else { RemoveSRankAnnouncer = 0; }
+
+           if (RemoveFRankAnnouncer == 525) { TakeInventory("FRankAnnounced",1); }
+           if (RemoveDRankAnnouncer == 525) { TakeInventory("DRankAnnounced",1); }
+           if (RemoveCRankAnnouncer == 525) { TakeInventory("CRankAnnounced",1); }
+           if (RemoveBRankAnnouncer == 525) { TakeInventory("BRankAnnounced",1); }
+           if (RemoveARankAnnouncer == 525) { TakeInventory("ARankAnnounced",1); }
+           if (RemoveSRankAnnouncer == 525) { TakeInventory("SRankAnnounced",1); }
+
         // Global variables
         // In singleplayer, these make the weapon pickups read if the player have actually
         // picked up the weapons, and if so they...well...
@@ -920,7 +958,7 @@ script WEEB_COMBOREMOVAL ENTER
     // The higher your rank is, the faster your meter degenerates.
     while (1)
     {
-        if (CheckInventory("HyperComboCounter") < 10)
+        if (CheckInventory("HyperComboCounter") == 0)
         {
             TakeInventory("FRankAnnounced",1);
             TakeInventory("DRankAnnounced",1);
