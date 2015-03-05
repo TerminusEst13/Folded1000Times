@@ -493,11 +493,16 @@ actor POSXKubiuted
     +FLOORCLIP
     -EXPLODEONWATER
     -SOLID
+    PainChance "KharonHookshot", 255
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "KubiSpinAttack", 0.0
     DamageFactor "KubiRangeAttack", 0.0
     DamageFactor "KubiLungeAttack", 0.0
+    DamageFactor "KubiSpinAttackSheathe", 0.0
+    DamageFactor "KubiRangeAttackSheathe", 0.0
+    DamageFactor "KubiLungeAttackSheathe", 0.0
+    DamageFactor "KharonHookshot", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
@@ -505,11 +510,11 @@ actor POSXKubiuted
     AttackSound "wp/kickh1"
     DeathSound "S_Cut"
     Health 20
-    Radius 8
-    Height 8
+    Radius 12
+    Height 12
     Speed 0
     MeleeRange 16
-    Mass 500
+    Mass 75
     States
     {
     Spawn:
