@@ -86,6 +86,12 @@ actor CRank : Boolean {}
 actor BRank : Boolean {}
 actor ARank : Boolean {}
 actor SRank : Boolean {}
+actor FRankAnnounced : Boolean {}
+actor DRankAnnounced : Boolean {}
+actor CRankAnnounced : Boolean {}
+actor BRankAnnounced : Boolean {}
+actor ARankAnnounced : Boolean {}
+actor SRankAnnounced : Boolean {}
 
 actor GotShotgun : Boolean {}
 actor GotCarronade : Boolean {}

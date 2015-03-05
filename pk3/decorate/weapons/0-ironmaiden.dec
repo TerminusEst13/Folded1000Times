@@ -1020,7 +1020,7 @@ actor IronFistAttack1 : FastProjectile
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("FistHit",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",8)
         TNT1 A 0 A_PlaySound("iron/hit")
         TNT1 A 0 A_SpawnItemEx("IronFistExplosion",0,0,0,0,0,0,0,48)
         TNT1 AAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
@@ -1072,7 +1072,7 @@ ACTOR IronFistUppercut : FastProjectile
         TNT1 A 1
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",8)
         TNT1 A 0 A_PlaySound("iron/hit")
         TNT1 A 0 A_GiveToTarget("IronFistEarthquake",1)
         TNT1 AAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)

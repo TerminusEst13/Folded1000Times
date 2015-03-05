@@ -485,25 +485,53 @@ script WEEB_ENTER ENTER
             TakeInventory("SRank",1);
         }
         // Kyle873 once told me that "one-line code" was basically the worst thing a coder could do.
-        // If he sees this, I think he'll kill me...
+        // If he ever sees this, I am so sorry. I am so, so sorry.
         if (ComboCount > 50)
             { TakeInventory("ComboCounter2",0x7FFFFFFF); GiveInventory("ComboCounter2",(ComboCount - 50)); GiveInventory("ComboDamageLevel1",1);
-              GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
+              GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
         if (ComboCount > 100)
             { TakeInventory("ComboCounter3",0x7FFFFFFF); GiveInventory("ComboCounter3",(ComboCount - 100)); GiveInventory("ComboDamageLevel2",1);
-              TakeInventory("FRank",1); GiveInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter3",0x7FFFFFFF); TakeInventory("ComboDamageLevel2",0x7FFFFFFF); }
+              TakeInventory("FRank",1); GiveInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter3",0x7FFFFFFF); TakeInventory("ComboDamageLevel2",0x7FFFFFFF); }
         if (ComboCount > 150)
             { TakeInventory("ComboCounter4",0x7FFFFFFF); GiveInventory("ComboCounter4",(ComboCount - 150)); GiveInventory("ComboDamageLevel3",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); GiveInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter4",0x7FFFFFFF); TakeInventory("ComboDamageLevel3",0x7FFFFFFF); }
+              TakeInventory("FRank",1); TakeInventory("DRank",1); GiveInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter4",0x7FFFFFFF); TakeInventory("ComboDamageLevel3",0x7FFFFFFF); }
         if (ComboCount > 200)
             { TakeInventory("ComboCounter5",0x7FFFFFFF); GiveInventory("ComboCounter5",(ComboCount - 200)); GiveInventory("ComboDamageLevel4",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
         if (ComboCount > 250)
             { TakeInventory("ComboCounter6",0x7FFFFFFF); GiveInventory("ComboCounter6",(ComboCount - 250)); GiveInventory("ComboDamageLevel5",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); } else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
         if (ComboCount > 300)
             { TakeInventory("ComboCounter7",0x7FFFFFFF); GiveInventory("ComboCounter7",(ComboCount - 300)); GiveInventory("ComboDamageLevel6",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); } else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); }
+              else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
+
+        // Technically it would be more efficient to integrate these into the combo level checks above.
+        // But you just saw that code. Fuck that code.
+        // FUCK that code.
+        if (ComboCount > 50)
+            { if (CheckInventory("FRankAnnounced") == 0)
+              { GiveInventory("FRankAnnounced",1); LocalAmbientSound("ranking/fearless",127); }}
+        if (ComboCount > 100)
+            { if (CheckInventory("DRankAnnounced") == 0)
+              { GiveInventory("DRankAnnounced",1); LocalAmbientSound("ranking/destruction",127); }}
+        if (ComboCount > 150)
+            { if (CheckInventory("CRankAnnounced") == 0)
+              { GiveInventory("CRankAnnounced",1); LocalAmbientSound("ranking/champion",127); }}
+        if (ComboCount > 200)
+            { if (CheckInventory("BRankAnnounced") == 0)
+              { GiveInventory("BRankAnnounced",1); LocalAmbientSound("ranking/behemoth",127); }}
+        if (ComboCount > 250)
+            { if (CheckInventory("ARankAnnounced") == 0)
+              { GiveInventory("ARankAnnounced",1); LocalAmbientSound("ranking/annihilator",127); }}
+        if (ComboCount > 300)
+            { if (CheckInventory("SRankAnnounced") == 0)
+              { GiveInventory("SRankAnnounced",1); LocalAmbientSound("ranking/slayer",127); }}
 
         // Global variables
         // In singleplayer, these make the weapon pickups read if the player have actually
@@ -892,6 +920,15 @@ script WEEB_COMBOREMOVAL ENTER
     // The higher your rank is, the faster your meter degenerates.
     while (1)
     {
+        if (CheckInventory("HyperComboCounter") < 10)
+        {
+            TakeInventory("FRankAnnounced",1);
+            TakeInventory("DRankAnnounced",1);
+            TakeInventory("CRankAnnounced",1);
+            TakeInventory("BRankAnnounced",1);
+            TakeInventory("ARankAnnounced",1);
+            TakeInventory("SRankAnnounced",1);
+        }
         if (CheckInventory("HyperComboCounter") < 50) { Delay(12); }
         if (CheckInventory("HyperComboCounter") >= 50 && CheckInventory("HyperComboCounter") < 100 ) { Delay(10); }
         if (CheckInventory("HyperComboCounter") >= 100 && CheckInventory("HyperComboCounter") < 150 ) { Delay(8); }

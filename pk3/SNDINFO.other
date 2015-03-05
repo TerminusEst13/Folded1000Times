@@ -4,6 +4,13 @@
 //                        DSTINK   // Taken from Fatal/Fake
 //                        cnnctsnd // Taken from Painkiller
 
+ranking/fearless          RANKST_F // All of these were recorded by MartyKirra.
+ranking/destruction       RANKST_D // Thanks a ton, mate!
+ranking/champion          RANKST_C
+ranking/behemoth          RANKST_B
+ranking/annihilator       RANKST_A
+ranking/slayer            RANKST_S
+
 silence                   QUIET
 world/quake               QUIET
 misc/teleport             TELEPROT

@@ -158,4 +158,5 @@ SOUNDS:
 - torridGristle (The robotic voice of the Iron Maiden, ripping numerous sound effects)
 - Combine_Kegan (Ripping and gathering all of the Sentinel's sound bytes)
 - Marrub (Ripping the Killing Floor sound effects)
+- MartyKirra (The announcer for the ranking system)
 - All sounds are credited to their respective owner in SNDINFO.
