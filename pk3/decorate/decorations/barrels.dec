@@ -26,8 +26,10 @@ ACTOR XaserBarrel : DestructableDecorationBaseStates replaces ExplosiveBarrel
     PainSound "damage/barrel"
     DeathSound "destroy/barrel"
     DamageFactor "KharonSheathe", 0.0
+    DamageFactor "GuardMove", 0.0
     DamageFactor "IronFistExplode", 0.0
     DamageFactor "ExodusJump", 0.0
+    DamageFactor "KharonHookshot", 0.0
     Obituary "$OB_BARREL" 
     States
     {

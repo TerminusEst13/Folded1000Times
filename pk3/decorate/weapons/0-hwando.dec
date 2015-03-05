@@ -1087,6 +1087,7 @@ ACTOR FakeLoreShot : LoreShot
     Radius 2
     SeeSound ""
     DeathSound ""
+    DamageType "KharonHookshot"
     States
     {
     Spawn:
@@ -1112,7 +1113,12 @@ ACTOR FakeLoreShot : LoreShot
         TNT1 A 0 A_SpawnItemEx("FakeLoreShot2", (38*momx)/-35.0, -(38*momy)/-35.0, 2+(38*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         TNT1 A 0 A_SpawnItemEx("FakeLoreShot2", (40*momx)/-35.0, -(40*momy)/-35.0, 2+(40*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
         Loop
+    XDeath:
+        TNT1 A 0
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
     Death:
+    Crash:
         TNT1 A 0
         TNT1 A 0
         TNT1 A 0 //A_CustomMissile("FakeLoreShotReturn",0,0,0,4,0) // Nope, doesn't work.

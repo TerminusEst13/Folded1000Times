@@ -62,6 +62,7 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronMaidenShot", 1.0
     DamageFactor "IronFistUpper", 1.0
+    DamageFactor "KharonHookshot", 1.0
     DamageFactor "HaltHammerzeit", 1.5
     DamageFactor "MessiahDamage", 1.5
     DamageFactor "IronFistDamage", 1.5
@@ -83,6 +84,7 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronMaidenShot", 1.0
     DamageFactor "IronFistUpper", 1.0
+    DamageFactor "KharonHookshot", 1.0
     DamageFactor "HaltHammerzeit", 1.425
     DamageFactor "MessiahDamage", 1.425
     DamageFactor "IronFistDamage", 1.425
@@ -104,6 +106,7 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronMaidenShot", 1.0
     DamageFactor "IronFistUpper", 1.0
+    DamageFactor "KharonHookshot", 1.0
     DamageFactor "HaltHammerzeit", 1.35
     DamageFactor "MessiahDamage", 1.35
     DamageFactor "IronFistDamage", 1.35
@@ -125,6 +128,7 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronMaidenShot", 1.0
     DamageFactor "IronFistUpper", 1.0
+    DamageFactor "KharonHookshot", 1.0
     DamageFactor "HaltHammerzeit", 1.275
     DamageFactor "MessiahDamage", 1.275
     DamageFactor "IronFistDamage", 1.275
@@ -146,6 +150,7 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronMaidenShot", 1.0
     DamageFactor "IronFistUpper", 1.0
+    DamageFactor "KharonHookshot", 1.0
     DamageFactor "HaltHammerzeit", 1.2
     DamageFactor "MessiahDamage", 1.2
     DamageFactor "IronFistDamage", 1.2
@@ -167,6 +172,7 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronMaidenShot", 1.0
     DamageFactor "IronFistUpper", 1.0
+    DamageFactor "KharonHookshot", 1.0
     DamageFactor "HaltHammerzeit", 1.15
     DamageFactor "MessiahDamage", 1.15
     DamageFactor "IronFistDamage", 1.15
