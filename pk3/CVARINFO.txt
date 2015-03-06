@@ -24,3 +24,4 @@ server int ds_cl_toaster        = 0;
 user int ds_cl_autoswitch       = 0;
 user int ds_cl_nobeeping        = 0;
 user int ds_cl_nopoints         = 0;
+user int ds_cl_noannouncer      = 0;

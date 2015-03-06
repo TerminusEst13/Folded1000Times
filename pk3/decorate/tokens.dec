@@ -67,6 +67,7 @@ actor IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls : Boolean {}
 actor IAmATraditionalDoomerWhoLikesNumbersOverTokens : Boolean {}
 actor IAmAMassiveCasualWhoNeedsMyWeaponsToFireAutomatically : Boolean {}
 actor IAmABoringPersonWhoThinksPointsAreForNerds : Boolean {}
+actor IAmAQuietPersonWhoWantsMoreQuietRankings : Boolean {}
 
 actor IsJungHaeLin : Boolean {}
 actor ImAlive : Boolean {}

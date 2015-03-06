@@ -549,22 +549,28 @@ script WEEB_ENTER ENTER
         // FUCK that code.
         if (ComboCount > 50)
             { if (CheckInventory("FRankAnnounced") == 0)
-              { GiveInventory("FRankAnnounced",1); LocalAmbientSound("ranking/fearless",127); }}
+              { GiveInventory("FRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/fearless",127); }}}
         if (ComboCount > 100)
             { if (CheckInventory("DRankAnnounced") == 0)
-              { GiveInventory("DRankAnnounced",1); LocalAmbientSound("ranking/destruction",127); }}
+              { GiveInventory("DRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/destruction",127); }}}
         if (ComboCount > 150)
             { if (CheckInventory("CRankAnnounced") == 0)
-              { GiveInventory("CRankAnnounced",1); LocalAmbientSound("ranking/champion",127); }}
+              { GiveInventory("CRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/champion",127); }}}
         if (ComboCount > 200)
             { if (CheckInventory("BRankAnnounced") == 0)
-              { GiveInventory("BRankAnnounced",1); LocalAmbientSound("ranking/behemoth",127); }}
+              { GiveInventory("BRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/behemoth",127); }}}
         if (ComboCount > 250)
             { if (CheckInventory("ARankAnnounced") == 0)
-              { GiveInventory("ARankAnnounced",1); LocalAmbientSound("ranking/annihilator",127); }}
+              { GiveInventory("ARankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/annihilator",127); }}}
         if (ComboCount > 300)
             { if (CheckInventory("SRankAnnounced") == 0)
-              { GiveInventory("SRankAnnounced",1); LocalAmbientSound("ranking/slayer",127); }}
+              { GiveInventory("SRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/slayer",127); }}}
 
         if (ComboCount < 50 && CheckInventory("FRankAnnounced") == 1)
            { RemoveFRankAnnouncer++; }
@@ -919,6 +925,8 @@ script WEEB_ENTER ENTER
         else { TakeInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie", 0x7FFFFFFF); }
         if (array_nopan[pln]) { GiveInventory("IAmABoringPersonWhoThinksPointsAreForNerds",1); }
         else { TakeInventory("IAmABoringPersonWhoThinksPointsAreForNerds", 0x7FFFFFFF); }
+        if (array_noannounce[pln]) { GiveInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",1); }
+        else { TakeInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",0x7FFFFFFF); }
 
         if (flashlightOn[pln])
             { GiveInventory("FlashlightSpawner", 1); }

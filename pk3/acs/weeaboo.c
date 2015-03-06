@@ -18,6 +18,7 @@ int array_recoilrules[PLAYERMAX];
 int array_autoswitch[PLAYERMAX];
 int array_beepbeepbeep[PLAYERMAX];
 int array_nopan[PLAYERMAX];
+int array_noannounce[PLAYERMAX];
 int flashlightOn[PLAYERMAX];
 int NotADoomGame;
 
@@ -139,6 +140,10 @@ script WEEB_OPEN_CLIENT OPEN clientside
         if (!GetCvar("ds_cl_nopoints"))
             { ConsoleCommand("set ds_cl_nopoints 0");
               ConsoleCommand("archivecvar ds_cl_nopoints"); }
+
+        if (!GetCvar("ds_cl_noannouncer"))
+            { ConsoleCommand("set ds_cl_noannouncer 0");
+              ConsoleCommand("archivecvar ds_cl_noannouncer"); }
     }
 }
 
@@ -682,13 +687,13 @@ script WEEB_PUKE2 (void) NET CLIENTSIDE
 
 function int WeebClientVars(void)
 {
-    //int custmischarg      = !!GetCVar("metroid_cl_custommissilecharge");
+    int noannounce          = !!GetCVar("ds_cl_noannouncer");
     int nopan               = !!GetCVar("ds_cl_nopoints");
     int beepbeepbeep        = !!GetCVar("ds_cl_nobeeping");
     int autoswitch          = !!GetCVar("ds_cl_autoswitch");
     int recoilrules         = !!GetCVar("ds_cl_norecoil");
 
-    return /*(custmischarg << 4) +*/ (nopan << 3) + (beepbeepbeep << 2) + (autoswitch << 1) + recoilrules;
+    return (noannounce << 4) + (nopan << 3) + (beepbeepbeep << 2) + (autoswitch << 1) + recoilrules;
 }
 
 script WEEB_ENTER_CLIENT ENTER clientside
@@ -728,7 +733,7 @@ script WEEB_PUKE (int values) net
     array_autoswitch[pln]      = values & 2;
     array_beepbeepbeep[pln]    = values & 4;
     array_nopan[pln]           = values & 8;
-    //array_custmischarg[pln]  = values & 16;*/
+    array_noannounce[pln]      = values & 16;
 }
 
 /*        if (array_custmischarg[pln]) { GiveInventory("CustomMissileCharge", 1); }
