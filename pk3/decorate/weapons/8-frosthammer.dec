@@ -345,7 +345,7 @@ actor "Kharon + Frosthammer" : Kharon
 
 
     Fire:
-        TNT1 A 0 A_JumpIfInventory("GhostStepCooldown",20,"FinishingCleave")
+        TNT1 A 0 A_JumpIfInventory("GhostStepCooldown",25,"FinishingCleave")
         TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
