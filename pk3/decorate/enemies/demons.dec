@@ -5,6 +5,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     Species "Body"
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
+    PainChance "kubiutiCleave", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
@@ -183,6 +184,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
 
     Death.kubiuti:
     Death.KubiutiUpper:
+    Death.KubiutiCleave:
         TNT1 A 0 A_GiveToTarget("DemonguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 AA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",2)
@@ -469,6 +471,7 @@ ACTOR WeeabooClink replaces Spectre
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
     PainChance "kubiuti", 255
+    PainChance "kubiutiCleave", 255
     PainChance "MessiahDamage", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
@@ -626,6 +629,7 @@ ACTOR WeeabooClink replaces Spectre
         goto Death
     Death.Kubiuti:
     Death.KubiutiUpper:
+    Death.KubiutiCleave:
         TNT1 A 0 A_GiveToTarget("ClinkguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlaySoundEx("steelbeast/hwandohit","soundslot6",0,0)

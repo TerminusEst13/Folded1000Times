@@ -28,6 +28,7 @@ ACTOR DevilDriver replaces Cyberdemon
 {            
     YScale 0.9                       
     Species "DevilDriver"
+    PainChance "kubiutiCleave", 64
     PainChance "KharonSheathe", 128
     PainChance "IronFistDamage", 255
     PainChance "SabbathDamage", 16
@@ -418,6 +419,7 @@ ACTOR DevilDriver replaces Cyberdemon
     Death.IronFistUpper:
     Death.Kubiuti:
     Death.KubiutiUpper:
+    Death.KubiutiCleave:
         TNT1 A 0 A_GiveToTarget("BossguyComboPoints",1)
         DDRV H 1
         TNT1 A 0 A_AlertMonsters

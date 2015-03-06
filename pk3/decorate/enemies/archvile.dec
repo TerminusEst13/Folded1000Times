@@ -2,6 +2,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
 {
     Species "Body"
     PainChance "kubiuti", 64
+    PainChance "kubiutiCleave", 128
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
@@ -187,6 +188,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
         Stop
     Death.Kubiuti:
     Death.KubiutiUpper:
+    Death.KubiutiCleave:
         TNT1 A 0 A_GiveToTarget("ArchguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",5)
