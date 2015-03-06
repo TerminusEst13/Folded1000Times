@@ -1429,7 +1429,40 @@ actor FortuneCookie : CustomInventory 30242
         TNT1 A 0 A_GiveInventory("Points",5000)
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,24,0,0)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
+        TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
+        TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
+        TNT1 A 0 A_JumpIfInventory("HardMarker",1,"HardPickup")
+        TNT1 A 0 A_JumpIfInventory("NightmareMarker",1,"NightmarePickup")
+        TNT1 A 1
+        goto OhGodHelpMePickup
+
+    BabyPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFinish")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        goto PickupFinish
+    EasyPickup: // Heh.
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFinish")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        goto PickupFinish
+    NormalPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",3,"PickupFinish")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        goto PickupFinish
+    HardPickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"PickupFinish")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        goto PickupFinish
+    NightmarePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",2,"PickupFinish")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        goto PickupFinish
+    OhGodHelpMePickup:
+        TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"PickupFinish")
+        TNT1 A 0 A_GiveInventory("OverLifeToken",1)
+        goto PickupFinish
+    PickupFinish:
+        TNT1 A 1
         stop
     }
 }
