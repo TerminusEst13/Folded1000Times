@@ -11,26 +11,24 @@ One final explosion on death?
 
 <WaTaKiD> also when i try to go super saiyan without enuff soul, the error gets printed to the console twice
 
+Implement shivers' new idle animation.
+
 PRIORITY:
-1: Unique slashes when done mid-dash
-   ^ If so, don't forget attacks for the Iron Maiden as well.
 18: Finish the specials for:
    ^ Acacia A-22
    ^ Frosthammer
    ^ Omen
    ^ BALANCE
 20: Adapt Testament shotgun system for the Omen and Chaingun
-23: Secret skeleton difficulty. (Scroton is doing thipfffttthahahahahahahahaha yeah no he's not)
 24: Test, test, test online.
 25: Update the metal jukebox/in-game credits/in-game changelog.
    ^ For the ModDB upload, include changelog/list of credits in .txt file.
+   ^ Don't forget to remove the Messiah's code and save it for next build.
 
 
 WOULD BE NICE:
-1: Messiah guitar (Sprites are done, need to rehaul the code)
 3: Player sprites (Gundere is doing this - "It could be around two more weeks before these babies are up to video game quality. [...] I'm back to knocking out several frames a night so hopefully it won't be too much longer. The absolute worst case scenario is March 1st, however I will not miss that deadline by a minute, even if I must draw with broken fingers.")
 6: Replacement sounds for other world objects, such as lifts, switches, and doors.
-10: Cvar for zombies to drop their respective ammo type.
 
 
 

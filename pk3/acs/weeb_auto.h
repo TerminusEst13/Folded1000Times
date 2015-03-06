@@ -48,7 +48,9 @@ script WEEB_ENTER ENTER
     int RemoveBRankAnnouncer;
     int RemoveARankAnnouncer;
     int RemoveSRankAnnouncer;
-    // 62 ints and counting!
+    int NotADoomGame;
+    int IFuckedTheGameUp;
+    // 64 ints and counting!
 
     i = unusedTID(37000, 47000);
     u = unusedTID(37000, 47000);
@@ -84,8 +86,17 @@ script WEEB_ENTER ENTER
         }
 
         if (GetCvar("ds_backpackstart") == 1)
+        { GiveInventory("Backpack",1); }
+
+        if (GetCvar("ds_doomhealth") == 1)
         {
-            GiveInventory("Backpack",1);
+            GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
+            NotADoomGame = 0;
+        }
+        else
+        {
+            TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
+            NotADoomGame = 1;
         }
 
         GiveInventory("ImAlive",1);
@@ -179,8 +190,17 @@ script WEEB_ENTER ENTER
         if (GetCvar("ds_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
            else { TakeInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
 
+        // If you do this mid-game, you're fucked.
+        // Millions of games are fucked over monthly by accidental or intentional negligence.
+        // Please, donate now to the Foundation for Unfucking Games, or FUG.
         if (GetCvar("ds_doomhealth") == 1) { GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
            else { TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
+        if ( (NotADoomGame == 1 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 1) || (NotADoomGame == 0 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 0) || IFuckedTheGameUp == 1)
+        {
+           SetFont("BIGFONT");
+           HudMessage(s:"PLEASE RESTART THE GAME";HUDMSG_PLAIN,13,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
+           IFuckedTheGameUp = 1;
+        }
 
         // Points malarkey
 

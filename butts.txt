@@ -12,7 +12,6 @@ TO DO in no particular order:
     <ijon> have ACS or custominventory or something check that and only give you more if it'd place you no more than X above that count
 37: Pretty up all non-laser enemy attacks.
   ^ Revenant
-  ^ Baron of Hell/Hell Knight
   ^ Archvile
   ^ Mancubus
 43: GLDEFS
@@ -23,15 +22,7 @@ TO DO in no particular order:
 53: Iron Maiden polishing
   ^ Design
 53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
-54: Casing ejection/smoke effects on the guns.
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
-61: 6000 ANGRY BEES: one small idea to toy with:
-6000 ANGRY BEES: subtle sound cues when you go up or down a combo level (fearless etc.)
-TerminusEst13: That's a good idea, actually.
-6000 ANGRY BEES: maybe layer additional sounds under the sword swing sound for each combo level, increasingly unsubtle
-6000 ANGRY BEES: so combo level 1 adds a slight whine to the sword slash, while max combo level is the quad damage sound
-TerminusEst13: That'd add some really visceral feedback, and it'd definitely encourage going even harder and faster--just so you can see those neat effects even more.
-TerminusEst13: Plus it'd make sense from an in-universe perspective, since the sword is eating souls in a stereotypical edgy 90s fashion.
 65: Look into adapting Pres' wandering-soul system for others to pick up.
 70: Some kind of "don't mash the button for more powerful strikes" system.
 72: Skulltag weapon replacements?
@@ -80,11 +71,12 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 [4:28:21 AM] Med: do it
 [4:28:26 AM] terminusest13: I have no clue how I'd account for respawning items in online play, but hey, worth a shot.
 138: Unique slashes when done mid-dash
+139: Secret skeleton difficulty. (Scroton is doing thipfffttthahahahahahahahaha yeah no he's not)
+140: Cvar for zombies to drop their respective ammo type.
 
 
 
 Tutorial map
-Implement Shivers' new idle animation/Baron Death.
 
 
 
@@ -196,6 +188,7 @@ DONE:
 34: Replace explosive barrels with something of neater substance.
 36: Edit the LANGUAGE lump and replace existing messages with more metal references.
 37: Pretty up all non-laser enemy attacks.
+  ^ Baron of Hell/Hell Knight
   ^ Imp
   ^ Cyberdemon
 39: Replace graphics on main menu options.
@@ -213,6 +206,7 @@ DONE:
   ^ Pickup sprite/sound replacing BFG9000
   ^ Non-placeholder sprites for fists/pickup
   ^ New HUD signifying you're in armor
+54: Casing ejection/smoke effects on the guns.
 55: New teleport effect
 56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
 58: Attack when you let go of holding down fire.
@@ -222,6 +216,13 @@ DONE:
 <torridGristle> Converting them to Doom format using the Doom palette, not the DemonSteele palette, should fix that well enough.
 <torridGristle> Filesize actually decreases.
 <torridGristle> Might want to go ahead and convert all the splashes into Doom format, Doom palette, so it's changed to the same colours as everything else when the new palette is in use.
+61: 6000 ANGRY BEES: one small idea to toy with:
+6000 ANGRY BEES: subtle sound cues when you go up or down a combo level (fearless etc.)
+TerminusEst13: That's a good idea, actually.
+6000 ANGRY BEES: maybe layer additional sounds under the sword swing sound for each combo level, increasingly unsubtle
+6000 ANGRY BEES: so combo level 1 adds a slight whine to the sword slash, while max combo level is the quad damage sound
+TerminusEst13: That'd add some really visceral feedback, and it'd definitely encourage going even harder and faster--just so you can see those neat effects even more.
+TerminusEst13: Plus it'd make sense from an in-universe perspective, since the sword is eating souls in a stereotypical edgy 90s fashion.
 62: Emperor's teleport doesn't show up online.
 63: <PresidentPeople> TerminusEst13: You can interrupt the shotgun reload sound by jumping in Demonsteele
 64: [12:37:27 am] DRL 3.33: would be nice if torches had a chance to drop peppers
