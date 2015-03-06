@@ -945,7 +945,28 @@ actor OverHealPackSpawner : RandomSpawner
 }
 
 actor DoomGreenArmorSpawner : RandomSpawner { -DROPPED DropItem "DoomGreenArmor" }
-actor DoomGreenArmor : GreenArmor { -DROPPED }
+
+actor DoomGreenArmor : CustomInventory//GreenArmor { -DROPPED }
+{
+    -DROPPED
+    Inventory.PickupMessage "$GOTARMOR" // "Picked up the armor."
+    States
+    {
+    Spawn:
+        ARM1 A 6
+        ARM1 B 7 Bright
+        Loop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("BasicArmorBonus",100,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GreenArmor",1)
+        stop
+    PickupFail:
+        TNT1 A 1
+        fail
+    }
+}
 
 actor MaybeGreenArmor replaces GreenArmor
 {
@@ -1009,7 +1030,28 @@ actor ArmorPackSmall: CustomInventory
 }
 
 actor DoomBlueArmorSpawner : RandomSpawner { -DROPPED DropItem "DoomBlueArmor" }
-actor DoomBlueArmor : BlueArmor { -DROPPED }
+
+actor DoomBlueArmor : CustomInventory//BlueArmor { -DROPPED }
+{
+    -DROPPED
+    Inventory.PickupMessage "$GOTMEGA" // "Picked up the armor."
+    States
+    {
+    Spawn:
+        ARM2 A 6
+        ARM2 B 6 Bright
+        Loop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("BasicArmorBonus",200,"PickupFail")
+        TNT1 A 0 A_GiveInventory("BlueArmor",1)
+        stop
+    PickupFail:
+        TNT1 A 1
+        fail
+    }
+}
 
 actor MaybeBlueArmor replaces BlueArmor
 {
@@ -1112,7 +1154,28 @@ actor BlindGuardianPickup : CustomInventory replaces Blursphere
 }
 
 actor DoomMegasphereSpawner : RandomSpawner { -DROPPED DropItem "DoomMegasphere" }
-actor DoomMegasphere : Megasphere {}
+
+actor DoomMegasphere : CustomInventory//Megasphere { -DROPPED }
+{
+    -DROPPED
+    Inventory.PickupMessage "$GOTMSPHERE" // "MegaSphere!"
+    Inventory.PickupSound "misc/p_pkup"
+    States
+    {
+    Spawn:
+        MEGA ABCD 6 Bright
+        Loop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"PickupHealthOnly")
+        TNT1 A 0 A_GiveInventory("BlueArmorForMegasphere", 1)
+        TNT1 A 0 A_GiveInventory("MegasphereHealth", 1)
+        stop
+    PickupHealthOnly:
+        TNT1 A 0 A_GiveInventory("MegasphereHealth", 1)
+        stop
+    }
+}
 
 actor MaybeMegasphere replaces Megasphere
 {

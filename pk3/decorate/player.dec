@@ -26,7 +26,7 @@ ACTOR MeleePlayer : PlayerPawn
     Player.DisplayName "Hae-Lin"//"Manual Fire"
     Player.SoundClass "Hae-Lin"
     PainChance "EnemyInfightDamage", 0
-    DamageFactor "Normal", 0.5
+    DamageFactor "Normal", 0.75
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "EnemyInfightDamageImp", 0.0
     DamageFactor "EnemyInfightDamageArachnotron", 0.0
@@ -339,6 +339,13 @@ ACTOR SoulAmmo : CustomInventory
     Spawn:
         TNT1 A 1
     Spawn2:
+        TNT1 A 1 A_BishopMissileWeave
+        TNT1 A 0 A_SeekerMissile(20,35)
+        //TNT1 A 0 A_SpawnItemEx("SoulTrail",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_JumpIfInTargetInventory("IsJungHaeLin",1,"Spawn3")
+        TNT1 A 1
+        stop
+    Spawn3:
         ISHA A 1 Bright A_BishopMissileWeave
         TNT1 A 0 A_SeekerMissile(20,35)
         TNT1 A 0 A_SpawnItemEx("SoulTrail",0,0,0,0,0,0,0,160)
