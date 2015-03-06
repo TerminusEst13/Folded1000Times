@@ -48,8 +48,8 @@ script WEEB_ENTER ENTER
     int RemoveBRankAnnouncer;
     int RemoveARankAnnouncer;
     int RemoveSRankAnnouncer;
-    int NotADoomGame;
     int IFuckedTheGameUp;
+    int DodgeCounter;
     // 64 ints and counting!
 
     i = unusedTID(37000, 47000);
@@ -88,17 +88,6 @@ script WEEB_ENTER ENTER
         if (GetCvar("ds_backpackstart") == 1)
         { GiveInventory("Backpack",1); }
 
-        if (GetCvar("ds_doomhealth") == 1)
-        {
-            GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
-            NotADoomGame = 0;
-        }
-        else
-        {
-            TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
-            NotADoomGame = 1;
-        }
-
         GiveInventory("ImAlive",1);
     }
     else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
@@ -125,6 +114,17 @@ script WEEB_ENTER ENTER
         NewShieldHP = CheckInventory("BlindGuardianLifeCounter");
         TakeInventory("BlindGuardianShieldActive",1);
         GiveInventory("BlindGuardianFromPreviousLevel",1);
+    }
+
+    if (GetCvar("ds_doomhealth") == 1)
+    {
+        GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
+        NotADoomGame = 0;
+    }
+    else
+    {
+        TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
+        NotADoomGame = 1;
     }
 
     // Brutal Doom compatibility check.
@@ -457,6 +457,7 @@ script WEEB_ENTER ENTER
         TakeInventory("DoubleTapReadyLeft",1);
         TakeInventory("DoubleTapReadyBack",1);
         TakeInventory("MidCombat",1);
+        TakeInventory("IsDodging",1);
         TakeInventory("HenshinCooldown",1);
         //TakeInventory("PointsSpeedrunning",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }

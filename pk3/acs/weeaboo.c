@@ -19,6 +19,7 @@ int array_autoswitch[PLAYERMAX];
 int array_beepbeepbeep[PLAYERMAX];
 int array_nopan[PLAYERMAX];
 int flashlightOn[PLAYERMAX];
+int NotADoomGame;
 
 int GotShotgun;
 int GotCarronade;
