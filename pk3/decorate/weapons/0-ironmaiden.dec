@@ -37,7 +37,7 @@ actor IronMaidenArmor2 : BasicArmorPickup
 actor IronMaidenProtection : PowerProtection
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "Normal", 0.975
+    DamageFactor "Normal", 0.95
     DamageFactor "ArchvileFire", 0.85
     DamageFactor "HeavyEnemyDamage", 0.75
     DamageFactor "EnemyInfightDamage", 0.0

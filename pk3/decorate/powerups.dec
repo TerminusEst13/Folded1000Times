@@ -68,6 +68,7 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "IronFistDamage", 1.5
     DamageFactor "IronFistExplode", 1.5
     DamageFactor "Kubiuti", 1.5
+    DamageFactor "KubiutiCleave", 1.25
     DamageFactor "KubiSpinAttack", 1.4
     DamageFactor "KubiLungeAttack", 1.4
     DamageFactor "KubiRangeAttack", 1.4
@@ -90,6 +91,7 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "IronFistDamage", 1.425
     DamageFactor "IronFistExplode", 1.425
     DamageFactor "Kubiuti", 1.425 // 2.1375
+    DamageFactor "KubiutiCleave", 1.2125
     DamageFactor "KubiSpinAttack", 1.325
     DamageFactor "KubiLungeAttack", 1.325
     DamageFactor "KubiRangeAttack", 1.325
@@ -112,6 +114,7 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "IronFistDamage", 1.35
     DamageFactor "IronFistExplode", 1.35
     DamageFactor "Kubiuti", 1.35 // 2.885625
+    DamageFactor "KubiutiCleave", 1.175
     DamageFactor "KubiSpinAttack", 1.25
     DamageFactor "KubiLungeAttack", 1.25
     DamageFactor "KubiRangeAttack", 1.25
@@ -134,6 +137,7 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "IronFistDamage", 1.275
     DamageFactor "IronFistExplode", 1.275
     DamageFactor "Kubiuti", 1.275 // 3.679171875
+    DamageFactor "KubiutiCleave", 1.1375
     DamageFactor "KubiSpinAttack", 1.175
     DamageFactor "KubiLungeAttack", 1.175
     DamageFactor "KubiRangeAttack", 1.175
@@ -156,6 +160,7 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "IronFistDamage", 1.2
     DamageFactor "IronFistExplode", 1.2
     DamageFactor "Kubiuti", 1.2 // 4.41500625
+    DamageFactor "KubiutiCleave", 1.1
     DamageFactor "KubiSpinAttack", 1.1
     DamageFactor "KubiLungeAttack", 1.1
     DamageFactor "KubiRangeAttack", 1.1
@@ -178,6 +183,7 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "IronFistDamage", 1.15
     DamageFactor "IronFistExplode", 1.15
     DamageFactor "Kubiuti", 1.15 // 5.0772571875
+    DamageFactor "KubiutiCleave", 1.075
     DamageFactor "KubiSpinAttack", 1.05
     DamageFactor "KubiLungeAttack", 1.05
     DamageFactor "KubiRangeAttack", 1.05
