@@ -307,6 +307,7 @@ ACTOR DD_Tracer : Rocket
     +SHOOTABLE
     +THRUSPECIES
     +THRUGHOST
+    +NOBLOOD
     -ROCKETTRAIL
     DamageFactor "SentinelDamage", 0.0
     Obituary "$o bore witness unto the revelation machine, the DevilDriver."
