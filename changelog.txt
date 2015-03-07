@@ -111,7 +111,9 @@ FROM 0.74 TO 0.8:
 - The Legion can now be thrown one tic faster, the stacking can go up to 15 knives, and stacked knives bounce slightly more.
 - Thanks to Virtue, texture brightmaps have been integrated for the sake of prettiness.
 - Thanks to Kyle873, brightmaps have been implemented for the Exodus and the Frosthammer.
-- Thanks to MartyKirra, there is now a voice announcer every time you go up a rank!
+- Thanks to MartyKirra, there is now a voice announcer every time you go up a rank! To disable this, please use ds_cl_noannouncer.
+- Iron Maiden punches are now four tics faster.
+- Armor damage in Iron Maiden now takes a slight bit of combo meter.
 
 
 FROM 0.73 TO 0.74:
