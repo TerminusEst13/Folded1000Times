@@ -850,7 +850,7 @@ script WEEB_ENTER ENTER
             }
 
             // Armor regeneration.
-            if (IronArmor >= 5)
+            if (IronArmor >= 4)
             {
               if (GetArmorType("IronMaidenArmor",PlayerNumber()) || GetArmorType("IronMaidenArmor2",PlayerNumber()))
               {
@@ -866,10 +866,10 @@ script WEEB_ENTER ENTER
               IronArmor = 0;
             }
 
-            // Soul degeneration. Slower if in the middle of combat.
+            // Soul degeneration. Faster if in the middle of combat, due to burning more energy or something.
             if (CheckInventory("MidCombat") > 1)
             {
-              if (MarchOfTheImmortal >= 26)
+              if (MarchOfTheImmortal >= 21)
               {
                 TakeInventory("SuperMeterCounter",1);
                 MarchOfTheImmortal = 0;
@@ -877,7 +877,7 @@ script WEEB_ENTER ENTER
             }
             else
             {
-              if (MarchOfTheImmortal >= 21)
+              if (MarchOfTheImmortal >= 27)
               {
                 TakeInventory("SuperMeterCounter",1);
                 MarchOfTheImmortal = 0;
