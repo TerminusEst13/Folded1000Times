@@ -49,8 +49,8 @@ actor LegionPickup : PickupBase //replaces Minigun
         TNT1 A 0 A_SetBlend("d8 00 ff",0.65,45)
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,5,0)
         TNT1 A 0 A_PlaySound("weapon/legion", CHAN_ITEM)
-        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
         TNT1 A 0 A_GiveInventory("SkulltagWeaponsAcquired",1)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
         TNT1 A 0 A_GiveInventory("Kharon + Legion",1)
         TNT1 A 0 A_GiveInventory("Points",2000)
         goto CheckStay
@@ -109,8 +109,8 @@ actor FrosthammerPickup : PickupBase //replaces Railgun
         TNT1 A 0 A_SetBlend("d8 00 ff",0.65,45)
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,6,0)
         TNT1 A 0 A_PlaySound("weapon/frost", CHAN_ITEM)
-        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
         TNT1 A 0 A_GiveInventory("SkulltagWeaponsAcquired",1)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
         TNT1 A 0 A_GiveInventory("Kharon + Frosthammer",1)
         TNT1 A 0 A_GiveInventory("Points",2000)
         goto CheckStay
