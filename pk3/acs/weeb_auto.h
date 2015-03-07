@@ -799,6 +799,7 @@ script WEEB_ENTER ENTER
           ActivatorSound("iron/armorhit", 127);
           FadeRange(255,255,0,min(0.5,(oarmor-armor)*0.015),0,0,0,0.0,min(35.0,1.5*(oarmor-armor))/35); 
           GiveInventory("MidCombat",75);
+          TakeInventory("HyperComboCounter",5);
         }
 
         if (CheckInventory("InIronMaiden") == 1)
