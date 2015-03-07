@@ -7,6 +7,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
+    PainChance "KharonHookshot", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
@@ -637,6 +638,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
+    PainChance "KharonHookshot", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
@@ -1227,6 +1229,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Species "Body"
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
+    PainChance "KharonHookshot", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
@@ -1617,6 +1620,7 @@ ACTOR Yakuza replaces WolfensteinSS
     DeathSound "yakuza/die"
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
+    PainChance "KharonHookshot", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255

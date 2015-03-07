@@ -3,6 +3,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
     Species "Body"
     PainChance "kubiuti", 64
     PainChance "kubiutiCleave", 128
+    PainChance "KharonHookshot", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255

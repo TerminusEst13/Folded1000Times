@@ -5,6 +5,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
+    PainChance "KharonHookshot", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
@@ -378,6 +379,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     Species "Body"
     PainChance "kubiuti", 64
     PainChance "kubiutiCleave", 128
+    PainChance "KharonHookshot", 255
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 64
     PainChance "IronFistUpper", 128
