@@ -426,8 +426,6 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_PlayWeaponSound("baron/shootfire")
         BOSS G 4 A_CustomMissile("WeeabooNobleBall")
         BOSS EF 4 A_FaceTarget
-        TNT1 A 0 A_PlayWeaponSound("baron/shootfire")
-        BOSS G 4 A_CustomMissile("WeeabooNobleBall")
         TNT1 A 0 A_Jump(64,"Missile")
         TNT1 A 0 A_Jump(192,"See")
         TNT1 A 0 A_SpidRefire
@@ -440,12 +438,6 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_SpawnItemEx("WeeabooNobleBallPrepareLarge",2,-36,74,0,0,0,0,160)
         BRHN AAA 6 A_FaceTarget
         BRHN AB 4 A_FaceTarget
-        TNT1 A 0 A_CustomMissile("WeeabooNobleBall",32,0,0)
-        BRHN C 1
-        TNT1 A 0 A_CustomMissile("WeeabooNobleBall",32,0,-7)
-        TNT1 A 0 A_CustomMissile("WeeabooNobleBall",32,0,7)
-        BRHN C 2
-        BRHN AB 3 A_FaceTarget
         TNT1 A 0 A_CustomMissile("WeeabooNobleBall",32,0,0)
         BRHN C 1
         TNT1 A 0 A_CustomMissile("WeeabooNobleBall",32,0,-7)
