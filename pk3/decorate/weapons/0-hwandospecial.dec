@@ -111,7 +111,7 @@ ACTOR KharonExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(512,448,0)
+        TNT1 A 1 A_Explode(528,448,0)
         Stop
     }
 }

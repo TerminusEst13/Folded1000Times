@@ -219,10 +219,21 @@ swordhit1                 SORDHIT1
 swordhit2                 SORDHIT2
 swordhit3                 SORDHIT3
 
+
 // Pistol sounds
 
 pistol/fire               HPISFIRE
-pistol/dry                HPISDRY // Taken from Killing Floor
+pistol/dry                HPISDRY  // Taken from Killing Floor
+
+pistol/open               HPISOPEN // Taken from Left 4 Dead 2
+pistol/raiseround         HPISRISE // Taken from Devil May Cry 3
+pistol/loadround          HPISNSRT // Taken from Killing Floor
+pistol/close              HPISCLSE // Taken from Halo: Reach
+pistol/charge             HPISCHRG // Taken from Devil May Cry 3
+pistol/firespecial        HPISSFIR
+pistol/specialwall        HPISWALL // Taken from Devil May Cry 3
+
+$rolloff pistol/specialwall 800 3200
 
 // Shotgun sounds
 

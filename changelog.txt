@@ -115,6 +115,7 @@ FROM 0.74 TO 0.8:
 - Iron Maiden punches are now four tics faster.
 - Armor damage in Iron Maiden now takes a slight bit of combo meter.
 - Picking up Arrogant weapons in Iron Maiden no longer breaks the HUD.
+- The energy usage of the Iron Maiden has been swapped--the Iron Maiden now burns more fuel when mid-combat, and relaxes up slightly when the player is out of combat.
 
 
 FROM 0.73 TO 0.74:
