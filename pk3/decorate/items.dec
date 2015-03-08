@@ -1312,6 +1312,7 @@ actor PowerupPickup : CustomInventory replaces Berserk
         PEPR A 30
         loop
     Pickup:
+        TNT1 A 0 A_JumpIfInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1,"DoomPickup")
         TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
         TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
         TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
@@ -1371,6 +1372,8 @@ actor PowerupPickup : CustomInventory replaces Berserk
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         goto PickupFinish
 
+    DoomPickup:
+        TNT1 A 0 A_GiveInventory("HealthBonus",25)
     PickupFinish:
         TNT1 A 0 A_SetBlend(Red,0.5,70)
         TNT1 A 0 A_GiveInventory("Points",500)
@@ -1426,9 +1429,10 @@ actor FortuneCookie : CustomInventory 30242
         loop
     Pickup:
         TNT1 A 0 A_SetBlend("Green",0.45,10)
-        TNT1 A 0 A_GiveInventory("Points",5000)
+        TNT1 A 0 A_GiveInventory("ManPoints",1)
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,24,0,0)
         TNT1 A 0 A_GiveInventory("HaeLinFoodSmallComment")
+        TNT1 A 0 A_JumpIfInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1,"DoomPickup")
         TNT1 A 0 A_JumpIfInventory("BabyMarker",1,"BabyPickup")
         TNT1 A 0 A_JumpIfInventory("EasyMarker",1,"EasyPickup")
         TNT1 A 0 A_JumpIfInventory("NormalMarker",1,"NormalPickup")
@@ -1461,6 +1465,8 @@ actor FortuneCookie : CustomInventory 30242
         TNT1 A 0 A_JumpIfInventory("OverLifeToken",1,"PickupFinish")
         TNT1 A 0 A_GiveInventory("OverLifeToken",1)
         goto PickupFinish
+    DoomPickup:
+        TNT1 A 0 A_GiveInventory("HealthBonus",25)
     PickupFinish:
         TNT1 A 1
         stop

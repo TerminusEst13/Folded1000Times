@@ -58,7 +58,7 @@ actor WeebClipBox : WeebClip replaces ClipBox
 
 actor WeebShell : Ammo replaces Shell
 {
-    Inventory.PickupMessage "$GOTSHELLS" // "Picked up 4 shotgun shells."
+    Inventory.PickupMessage "Picked up a few shotgun shells." // "Picked up 4 shotgun shells."
     Inventory.PickupSound "ammo/shell1"
     Inventory.Amount 4
     Inventory.MaxAmount 40
