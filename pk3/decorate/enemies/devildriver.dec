@@ -31,6 +31,7 @@ ACTOR DevilDriver replaces Cyberdemon
     PainChance "kubiutiCleave", 64
     PainChance "KharonSheathe", 128
     PainChance "IronFistDamage", 255
+    PainChance "IronFistOverkill", 255
     PainChance "SabbathDamage", 16
     PainChance "DroneHeal", 0
     PainChance "EnemyInfightDamageCyber", 0
@@ -416,6 +417,7 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Death
     Death.IronFistDamage:
+    Death.IronFistOverkill:
     Death.IronFistUpper:
     Death.Kubiuti:
     Death.KubiutiUpper:

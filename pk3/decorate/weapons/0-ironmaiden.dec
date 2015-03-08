@@ -179,6 +179,7 @@ actor "Iron Fist" : Weapon
         Loop
 
     Fire:
+        TNT1 A 0 A_JumpIfInventory("GhostStepCooldown",25,"ForearmSmash")
         TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         //TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrepare")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"FireSequence1")
@@ -416,6 +417,39 @@ actor "Iron Fist" : Weapon
         TNT1 A 1
         //TNT1 A 5 A_WeaponReady(WRF_NOPRIMARY | WRF_NOSWITCH)
         goto Fired2
+
+    ForearmSmash:
+        TNT1 A 1
+        TNT1 A 0 A_SetAngle(angle-1)
+        TNT1 A 0 A_PlaySoundEx("iron/swingheavy","soundslot7",0,0)
+        IRFA A 1
+        TNT1 A 0 A_SetAngle(angle-2)
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFF)
+        IRFA B 1
+        TNT1 A 0 A_FireCustomMissile("IronFistGuard",0,0)
+        TNT1 A 0 A_FireCustomMissile("IronFistHeavySmash",0,0)
+        IRFA CD 1 //A_JumpIfInventory("FistHit",1,"ForearmHit")
+        TNT1 A 0 A_SetAngle(angle-4)
+        IRFA EFGH 1 A_JumpIfInventory("FistHit",1,"ForearmHit")
+        TNT1 A 0 A_SetAngle(angle+4)
+        TNT1 A 3
+        TNT1 A 0 A_SetAngle(angle+2)
+        TNT1 A 2
+        TNT1 A 0 A_SetAngle(angle+1)
+        TNT1 A 5
+        goto Fired2
+    ForearmHit:
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
+        IRFA IJK 1 Radius_Quake(5,10,0,16,0)
+        IRFA L 1 A_Recoil(4)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE2,0,0)
+        IRFA M 1
+        IRFA NOP 1 A_TakeInventory("FistSwung",1)
+        TNT1 A 0 A_TakeInventory("FistHit",1)
+        //TNT1 A 4
+        TNT1 A 7
+        TNT1 AAAAA 1 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHold")
+        goto Fired
 
 
 
@@ -1031,6 +1065,53 @@ actor IronFistAttack1 : FastProjectile
     }
 }
 
+
+
+actor IronFistHeavySmash : IronFistAttack1
+{
+    Damage (240)
+    DamageType "IronFistOverkill"
+    Projectile
+    +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    +EXTREMEDEATH
+    +FORCERADIUSDMG
+    Decal WallCrack
+    Obituary "%k crushed %o's bones into a dusty pile."
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Death:
+    Crash:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveToTarget("FistHit",1)
+        TNT1 A 0 A_PlaySound("iron/miss")
+        TNT1 AAAAAAAA 0 A_SpawnItemEx("IronMaidenImpactSmoke",0,0,0,random(-150,150)/50.00,random(-150,150)/50.00,random(-150,150)/50.00,0,160)
+        TNT1 AAAAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        FHFX SS 1
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeath:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveToTarget("FistHit",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",10)
+        TNT1 A 0 A_PlaySound("iron/hit")
+        TNT1 A 0 A_SpawnItemEx("IronFistExplosionHeavy",0,0,0,0,0,0,0,48)
+        TNT1 AAAAAAAA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    }
+}
+
 ACTOR IronFistUppercut : FastProjectile
 {
     Radius 1
@@ -1098,7 +1179,18 @@ ACTOR IronFistExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(64,128,0)
+        TNT1 A 1 A_Explode(80,128,0)
+        Stop
+    }
+}
+
+actor IronFistExplosionHeavy : IronFistExplosion
+{
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_Explode(160,160,0)
         Stop
     }
 }

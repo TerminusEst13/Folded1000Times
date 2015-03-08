@@ -21,7 +21,6 @@ PRIORITY:
 
 WOULD BE NICE:
 3: Player sprites (Gundere is doing this - "It could be around two more weeks before these babies are up to video game quality. [...] I'm back to knocking out several frames a night so hopefully it won't be too much longer. The absolute worst case scenario is March 1st, however I will not miss that deadline by a minute, even if I must draw with broken fingers.")
-6: Replacement sounds for other world objects, such as lifts, switches, and doors.
 
 
 

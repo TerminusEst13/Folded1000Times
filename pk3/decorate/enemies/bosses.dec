@@ -41,6 +41,7 @@ ACTOR Emperor replaces SpiderMastermind
     PainChance "kubiutiCleave", 64
     PainChance "KharonSheathe", 128
     PainChance "IronFistDamage", 255
+    PainChance "IronFistOverkill", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "KubiRangeAttack", 255
@@ -157,6 +158,7 @@ ACTOR Emperor replaces SpiderMastermind
         EPRR G 4 A_Pain 
         Goto See
     Death.IronFistDamage:
+    Death.IronFistOverkill:
     Death.IronFistUpper:
     Death.Kubiuti:
     Death.KubiutiUpper:

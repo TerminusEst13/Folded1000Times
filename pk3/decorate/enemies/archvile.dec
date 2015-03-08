@@ -10,6 +10,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
     PainChance "KharonSheathe", 255
     PainChance "SabbathDamage", 128
     PainChance "IronFistDamage", 255
+    PainChance "IronFistOverkill", 255
     PainChance "KubiSpinAttack", 255
     PainChance "KubiLungeAttack", 255
     PainChance "KubiRangeAttack", 255
@@ -232,6 +233,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
         stop
 
     Death.IronFistDamage:
+    Death.IronFistOverkill:
         TNT1 A 0 A_GiveToTarget("ArchguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
