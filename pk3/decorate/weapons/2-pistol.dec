@@ -895,7 +895,7 @@ ACTOR HolyHuntingPistolBullet : FastProjectile
     Radius 2
     Height 2
     Speed 300
-    Damage (30) // x20 = 600. Just under Archvile-killing damage.
+    Damage (35) // x20 = 700. Can one-shot an Archvile, if something isn't in the way.
     // Probably the lowest damaging, but the most accurate for long distances and can pseudo-rip through actors.
     SeeSound None
     DeathSound None
