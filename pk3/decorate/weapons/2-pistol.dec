@@ -486,6 +486,7 @@ actor "Kharon + Acacia A-22" : Kharon
         PSPC Y 5
         PSPC Z 1 BRIGHT A_PlayWeaponSound("pistol/charge")
         PSP2 ABCD 1 BRIGHT
+        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_TakeInventory("WeebClip",20)
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         TNT1 A 0 A_PlaySoundEx("pistol/firespecial","soundslot5",0,0)
@@ -493,7 +494,7 @@ actor "Kharon + Acacia A-22" : Kharon
         TNT1 A 0 A_FireCustomMissile("AcaciaCasingSpawner",0,0,0,0,2)
         TNT1 A 0 A_FireCustomMissile("AcaciaGunsmokeSpawner",0,0,0,0,2)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("HolyHuntingPistolBulletNoImpact",0,1,0,1)
-        PSP2 E 1 Bright
+        PSP2 E 1 BRIGHT
         TNT1 A 0 A_FireCustomMissile("HolyHuntingPistolBullet",0,1,0,1)
         TNT1 A 0 A_Recoil(8)
         TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoilSpecial")
