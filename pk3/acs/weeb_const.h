@@ -29,7 +29,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 141
+#define QUOTECOUNT 150
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -472,5 +472,13 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "How exactly do you refine toxins?",
 "HOW DOE'S IT FEEL TO BE WELL DONE? BUT I BET YOU TASTE TERRIBLE.",
 "Boy, this mod would be so much better if it had its own dedicated mapset.",
-"What's the speed of dark?"
+"What's the speed of dark?",
+"Does this run with HDoom?",
+"Let me tell you about my fetishes.",
+"Lewd.",
+"Bang.",
+"Remember, ironic shitposting is still shitposting.",
+"Behold, I have created the smith that bloweth the coals in the fire and that bringeth forth an instrument for this work; and I have created the waster, to destroy.",
+"I looked, and there was a pale horse! Its rider's name was Death, and Hell followed him. They were given authority over one-fourth of the earth to kill people using wars, famines, plagues, and the wild animals of the earth.",
+"No waifu, no laifu. Unfortunately for you, your waifu is shit, so laifu is bad anyway."
 };
