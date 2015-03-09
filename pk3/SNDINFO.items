@@ -176,6 +176,15 @@ hammer/overcharge         HAMOVRCH
 $limit hammer/overcharge 0
 $rolloff hammer/overcharge 1200 5600
 
+hammer/specialstart       HSPCSTRT // Taken from Super Street Fighter IV
+hammer/specialloop        HSPCLOOP
+hammer/specialstop        HSPCSTOP
+
+$random hammer/specialhit { hspit1 hspit2 hspit3 } // Taken from Quake III Arena
+hspit1                    HSPCHIT1
+hspit2                    HSPCHIT2
+hspit3                    HSPCHIT3
+
 // Hwando
 
 sword/draw                SWORDUP // Taken from...somewhere. I can't recall, sorry!

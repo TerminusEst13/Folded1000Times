@@ -9,7 +9,6 @@ Implement shivers' new idle animation.
 PRIORITY:
 18: Finish the specials for:
    ^ Frosthammer
-   ^ Omen
    ^ BALANCE
 20: Adapt Testament shotgun system for the Omen and Chaingun
 24: Test, test, test online.

@@ -479,7 +479,9 @@ actor "Kharon + Omen" : Kharon
         OMSP ABC 1
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_PlaySoundEx("hammer/specialstart","soundslot5",0,0)
         TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("hammer/specialloop","soundslot7",1,0)
         TNT1 A 0 A_SetBlend("White",0.4,6)
     GunSpecialHold:
         TNT1 A 0
@@ -521,8 +523,8 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 464)
         TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 480)
         TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 496)
-        TNT1 A 0 A_FireBullets(0, 0, 1, 25, "LGPuff", FBF_NORANDOM, 512)
-        // 25 x 200(ish) = 5000. Just enough to saw a Devildriver to death.
+        TNT1 A 0 A_FireBullets(0, 0, 1, 30, "LGPuff", FBF_NORANDOM, 512)
+        // 30 x 200(ish) = 6000. A little over enough to saw a Devildriver to death.
         // The most powerful of all the specials, but the shortest range and the most prohibitively expensive.
     DecisionLoopBecauseOnlineIsASetOfDicks:
         TNT1 A 0 A_Jump(255,"SpecialFrame1","SpecialFrame2","SpecialFrame3","SpecialFrame4","SpecialFrame5")
@@ -569,6 +571,12 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0
         TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"GunSpecialHold")
     GunSpecialFinish4:
+        TNT1 A 0
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_StopSoundEx("soundslot7") // Fuck A_StopSoundEx.
+        TNT1 A 0 A_StopSound(7)              // No, seriously, fuck it.
+        TNT1 A 0 A_StopSound(7)              // RIGHT UP THE AAAAAASSSSSSSSS.
+        TNT1 A 0 A_PlaySoundEx("hammer/specialstop","soundslot7",0,0)
         OMSP C 5
         OMSP BA 2
         TNT1 A 2
@@ -2934,6 +2942,7 @@ actor LGBeam: BulletPuff
       Spawn:
         DPLE A 0
         TNT1 A 0 Radius_Quake(2,3,0,16,0)
+        TNT1 A 0 A_SpawnItemEx("ElecSpark",random(10,10)/10.0,random(10,10)/10.0,random(10,10)/10.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,208)
         DPLE A 0 A_Jump(255, "B", "C", "D", "E")
         goto C
 
@@ -2981,9 +2990,18 @@ actor LGPuff: BulletPuff
 
     States
     {
-      Spawn:
-        DPLE A 0
-        DPLE A 0 //A_Explode(31, 6, 0)
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 //A_Explode(31, 6, 0)
+        TNT1 A 0 A_PlaySound("hammer/specialhit")
+        TNT1 A 0 A_SpawnItemEx("LightningSpark",random(-5,5),random(-5,5),0,random(-500,500)/100.00,random(-500,500)/100.00,random(0,500)/100.00,random(-180,180),128,0)
+        TNT1 A 0 A_SpawnItemEx("ElecSpark",random(10,10)/10.0,random(10,10)/10.0,random(10,10)/10.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,128)
+        DPLE ABCDE 4 bright
+        stop
+    Crash:
+        TNT1 A 0
+        TNT1 A 0 //A_Explode(31, 6, 0)
+        TNT1 A 0 A_SpawnItemEx("ElecSpark",random(10,10)/10.0,random(10,10)/10.0,random(10,10)/10.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,128)
         DPLE ABCDE 4 bright
         stop
     }
