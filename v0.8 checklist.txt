@@ -8,7 +8,6 @@ Implement shivers' new idle animation.
 
 PRIORITY:
 18: Finish the specials for:
-   ^ Acacia A-22
    ^ Frosthammer
    ^ Omen
    ^ BALANCE
