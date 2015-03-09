@@ -41,8 +41,8 @@ actor "Kharon + Omen" : Kharon
         Loop
     Select:
         TNT1 A 0 A_TakeInventory("20SpecialCost",1)
-        TNT1 A 0 A_GiveInventory("10SpecialCost",1)
-        TNT1 A 0 A_TakeInventory("00SpecialCost",1)
+        TNT1 A 0 A_TakeInventory("10SpecialCost",1)
+        TNT1 A 0 A_GiveInventory("00SpecialCost",1) // Technically inaccurate, but...well...you'll see.
         TNT1 A 0 A_GiveInventory("HammerUp",1)
         TNT1 A 0 A_JumpIfInventory("AlreadyInLevel",1,"Select3")
         TNT1 AAAAAAA 0 A_Raise
@@ -269,6 +269,7 @@ actor "Kharon + Omen" : Kharon
 
     Hold:
         TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"GunSpecial")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PrepareToHoldAttack")
         TNT1 A 0 A_JumpIfInventory("DoubleTapBack",1,"RepelWave")
         TNT1 A 0 A_JumpIfInventory("DoubleTapForward",1,"LungeAttack")
@@ -467,6 +468,115 @@ actor "Kharon + Omen" : Kharon
         TNT1 AA 1
         goto SpecialAttackFinish
 
+    GunSpecial:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",30,1)
+        goto SpecialAttackFinish
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HammerCharge",10,1)
+        goto SpecialAttackFinish
+        TNT1 A 0
+        OMSP ABC 1
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
+        TNT1 A 0 A_SetBlend("White",0.4,6)
+    GunSpecialHold:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialCounter",1,"GunSpecialHold2")
+        TNT1 A 0 A_TakeInventory("HammerCharge",1)
+    GunSpecialHold2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialAmount",1,"GunSpecialHold3")
+        TNT1 A 0 A_TakeInventory("SuperMeterCounter",1)
+    GunSpecialHold3:
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 16)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 32)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 48)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 64)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 80)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 96)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 112)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 128)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 144)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 160)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 176)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 192)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 208)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 224)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 240)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 256)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 272)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 288)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 304)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 320)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 336)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 352)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 368)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 384)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 400)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 416)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 432)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 448)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 464)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 480)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 496)
+        TNT1 A 0 A_FireBullets(0, 0, 1, 25, "LGPuff", FBF_NORANDOM, 512)
+        // 25 x 200(ish) = 5000. Just enough to saw a Devildriver to death.
+        // The most powerful of all the specials, but the shortest range and the most prohibitively expensive.
+    DecisionLoopBecauseOnlineIsASetOfDicks:
+        TNT1 A 0 A_Jump(255,"SpecialFrame1","SpecialFrame2","SpecialFrame3","SpecialFrame4","SpecialFrame5")
+        OMSP C 1 BRIGHT
+        loop
+    SpecialFrame1:
+        OMSP C 1 BRIGHT
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialCounter",1,"GunSpecialFinish")
+        TNT1 A 0 A_GiveInventory("HammerSpecialCounter",1)
+        goto GunSpecialFinish2
+    SpecialFrame2:
+        OMSP D 1 BRIGHT
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialCounter",1,"GunSpecialFinish")
+        TNT1 A 0 A_GiveInventory("HammerSpecialCounter",1)
+        goto GunSpecialFinish2
+    SpecialFrame3:
+        OMSP E 1 BRIGHT
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialCounter",1,"GunSpecialFinish")
+        TNT1 A 0 A_GiveInventory("HammerSpecialCounter",1)
+        goto GunSpecialFinish2
+    SpecialFrame4:
+        OMSP F 1 BRIGHT
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialCounter",1,"GunSpecialFinish")
+        TNT1 A 0 A_GiveInventory("HammerSpecialCounter",1)
+        goto GunSpecialFinish2
+    SpecialFrame5:
+        OMSP G 1 BRIGHT
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialCounter",1,"GunSpecialFinish")
+        TNT1 A 0 A_GiveInventory("HammerSpecialCounter",1)
+        goto GunSpecialFinish2
+    GunSpecialFinish:
+        TNT1 A 0 A_TakeInventory("HammerSpecialCounter",1)
+    GunSpecialFinish2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HammerSpecialAmount",11,"GunSpecialFinish3")
+        TNT1 A 0 A_GiveInventory("HammerSpecialAmount",1)
+    GunSpecialFinish2b:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("HammerCharge",1,1)
+        goto GunSpecialFinish4
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",1,1)
+        goto GunSpecialFinish4
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"GunSpecialHold")
+    GunSpecialFinish4:
+        OMSP C 5
+        OMSP BA 2
+        TNT1 A 2
+        goto SpecialAttackFinish2
+    GunSpecialFinish3:
+        TNT1 A 0 A_TakeInventory("HammerSpecialAmount",11)
+        goto GunSpecialFinish2b
+
     SpecialAttackFinish:
         TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
         TNT1 A 0 A_TakeInventory("KharonSwung",1)
@@ -478,6 +588,19 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
         TNT1 A 0 A_ClearRefire
         goto Fired2
+    SpecialAttackFinish2:
+        TNT1 A 0 A_TakeInventory("SwordAttack",0x7FFFFFFF)
+        TNT1 A 0 A_TakeInventory("KharonSwung",1)
+        TNT1 A 0 A_TakeInventory("HammerSpecialAmount",11)
+        TNT1 A 0 A_TakeInventory("HammerSpecialCounter",1)
+        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
+        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
+        TNT1 A 0 A_TakeInventory("DoubleTapBack", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapLeft", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapRight", 1)
+        TNT1 A 0 A_TakeInventory("DoubleTapForward", 1)
+        TNT1 A 0 A_ClearRefire
+        goto AltFired
 
 
 
@@ -2786,5 +2909,82 @@ ACTOR HammerShockwave
     Spawn:
         BIGB ABCDEFGHIJKLMNOPQRSTU 2 BRIGHT
         Stop
+    }
+}
+
+
+
+actor LGBeam: BulletPuff
+{
+    +ALWAYSPUFF
+    +BLOODLESSIMPACT
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    +NOTIMEFREEZE
+    +NOPAIN
+    VSpeed 0
+
+    Scale 0.225
+
+    RenderStyle Add
+    Alpha 0.25
+
+    States
+    {
+      Spawn:
+        DPLE A 0
+        TNT1 A 0 Radius_Quake(2,3,0,16,0)
+        DPLE A 0 A_Jump(255, "B", "C", "D", "E")
+        goto C
+
+      B:
+        DPLE B 1 bright
+        DPLE B 0 A_Stop
+        DPLE B 1 bright
+        stop
+
+      C:
+        DPLE C 1 bright
+        DPLE C 0 A_Stop
+        DPLE C 1 bright
+        stop
+
+      D:
+        DPLE D 1 bright
+        DPLE D 0 A_Stop
+        DPLE D 1 bright
+        stop
+
+      E:
+        DPLE E 1 bright
+        DPLE E 0 A_Stop
+        DPLE E 1 bright
+        stop
+    }
+}
+
+actor LGPuff: BulletPuff
+{
+    +ALWAYSPUFF
+    +PUFFONACTORS
+    +PUFFGETSOWNER
+    +BLOODLESSIMPACT
+    //+FORCERADIUSDMG
+    +NODAMAGETHRUST
+
+    VSpeed 0
+    Scale 0.4
+
+    RenderStyle Add
+
+    //Obituary "%o \csaccepts\c- %k's \csshaft.\c-"
+
+    States
+    {
+      Spawn:
+        DPLE A 0
+        DPLE A 0 //A_Explode(31, 6, 0)
+        DPLE ABCDE 4 bright
+        stop
     }
 }

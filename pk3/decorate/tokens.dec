@@ -47,6 +47,7 @@ actor UziFrame5 : Boolean {}
 actor UziFrame6 : Boolean {}
 actor HammerHit : Boolean {}
 actor HammerUp : Boolean {}
+actor HammerSpecialCounter : Boolean {}
 actor ShockCanDie : Boolean {}
 actor ShockArcDie : Boolean {}
 actor FistSwung : Boolean {}
@@ -120,6 +121,7 @@ actor LegionCounter : Counter { Inventory.MaxAmount 35 }
 actor LegionSpecialCounter : Counter { Inventory.MaxAmount 5 }
 actor LegionStacked : Counter { Inventory.MaxAmount 14 }
 actor HammerOverchargeLevel : Counter { Inventory.MaxAmount 35 }
+actor HammerSpecialAmount : Counter { Inventory.MaxAmount 11 }
 actor UziSequence : Counter { Inventory.MaxAmount 60 }
 actor IronChargeCounter : Counter { Inventory.MaxAmount 35 }
 actor KharonChargedCounter : Counter { Inventory.MaxAmount 10 }

@@ -591,6 +591,8 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("DoubleTapRight",1);
     TakeInventory("Wounded",1);
     TakeInventory("SuperTimeFreezer",1);
+    TakeInventory("HammerSpecialCounter",1);
+    TakeInventory("HammerSpecialAmount",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);
@@ -622,6 +624,8 @@ script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
     TakeInventory("DoubleTapRight",1);
     TakeInventory("Wounded",1);
     TakeInventory("SuperTimeFreezer",1);
+    TakeInventory("HammerSpecialCounter",1);
+    TakeInventory("HammerSpecialAmount",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
     TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);
