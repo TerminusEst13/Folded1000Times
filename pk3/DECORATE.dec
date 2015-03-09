@@ -108,12 +108,13 @@ actor FrozenDummy
     Radius 16
     Health 15
     Speed 0
-    Mass 0x7fffffff
+    Mass 200
     Translation "Ice"
     DamageFactor "ExodusJump", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "Normal", 0.75
     DamageFactor "FrosthammerExplode", 0.0
+    DamageFactor "KharonHookshot", 0.0
     States
     {
     Spawn:
