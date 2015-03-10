@@ -177,6 +177,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
@@ -771,6 +772,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
@@ -1355,6 +1357,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)
@@ -1868,6 +1871,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)

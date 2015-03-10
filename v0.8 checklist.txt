@@ -6,6 +6,10 @@ Insulting death messages when you die in singleplayer.
 
 Implement shivers' new idle animation.
 
+Gibbing XDeath for Baron of Hell for Iron Maiden
+
+Hell Nobles need to be able to stop their splattering, online it's too easy to lag someone out.
+
 PRIORITY:
 18: Finish the specials for:
    ^ Frosthammer

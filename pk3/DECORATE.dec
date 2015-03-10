@@ -265,3 +265,5 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/skulltag.dec"
 #include "decorate/pickups2.dec"
 #include "decorate/points.dec"
+
+#include "decorate/props.dec"

@@ -173,6 +173,7 @@ ACTOR Emperor replaces SpiderMastermind
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
     Death.KubiSpinAttackSheathe:
+    //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("ManPoints",4)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",2)

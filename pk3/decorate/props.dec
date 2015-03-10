@@ -1,0 +1,418 @@
+actor PropBase
+{
+    Scale 0.5
+    Mass 0x7FFFFFFF
+    Radius 20
+    Height 56
+    +SOLID
+}
+
+actor PropBase2 : PropBase { Scale 1.0 }
+
+actor ZombiemanProp : PropBase 30360
+{
+    States
+    {
+    Spawn:
+        POSS A -1
+        stop
+    }
+}
+
+actor ShotguyProp : PropBase 30361
+{
+    States
+    {
+    Spawn:
+        SPOS A -1
+        stop
+    }
+}
+
+actor ChainguyProp : PropBase 30362
+{
+    States
+    {
+    Spawn:
+        CPOS A -1
+        stop
+    }
+}
+
+actor ImpProp : PropBase 30363
+{
+    States
+    {
+    Spawn:
+        TROO A -1
+        stop
+    }
+}
+
+actor DemonProp : PropBase 30364
+{
+    States
+    {
+    Spawn:
+        SARG A -1
+        stop
+    }
+}
+
+actor SteeleProp : PropBase 30365
+{
+    States
+    {
+    Spawn:
+        CLNK A -1
+        stop
+    }
+}
+
+actor WizardProp : PropBase 30366
+{
+    States
+    {
+    Spawn:
+        WZRD A -1
+        stop
+    }
+}
+
+actor YakuzaProp : PropBase 30367
+{
+    States
+    {
+    Spawn:
+        YKZA A -1
+        stop
+    }
+}
+
+actor DevildriverProp : PropBase 30368
+{
+    States
+    {
+    Spawn:
+        DDRV A -1
+        stop
+    }
+}
+
+actor BlackenedProp : PropBase 30369
+{
+    States
+    {
+    Spawn:
+        BLCK A -1
+        stop
+    }
+}
+
+actor PriestProp : PropBase 30370
+{
+    States
+    {
+    Spawn:
+        PRST A -1
+        stop
+    }
+}
+
+actor EmperorProp : PropBase 30371
+{
+    States
+    {
+    Spawn:
+        EPRR A -1
+        stop
+    }
+}
+
+actor FatsoProp : PropBase 30372
+{
+    States
+    {
+    Spawn:
+        FATT A -1
+        stop
+    }
+}
+
+actor VileProp : PropBase 30373
+{
+    States
+    {
+    Spawn:
+        VILE A -1
+        stop
+    }
+}
+
+actor KnightProp : PropBase 30374
+{
+    States
+    {
+    Spawn:
+        BOS2 A -1
+        stop
+    }
+}
+
+actor BaronProp : PropBase 30375
+{
+    States
+    {
+    Spawn:
+        BOSS A -1
+        stop
+    }
+}
+
+actor BonerProp : PropBase 30376
+{
+    States
+    {
+    Spawn:
+        SKEL A -1
+        stop
+    }
+}
+
+actor LostProp : PropBase 30377
+{
+    States
+    {
+    Spawn:
+        SKUL A -1
+        stop
+    }
+}
+
+actor TestamentProp : PropBase2 30378
+{
+    States
+    {
+    Spawn:
+        MSHT Z -1
+        stop
+    }
+}
+
+actor ExodusProp : PropBase2 30379
+{
+    States
+    {
+    Spawn:
+        GLAU A -1
+        stop
+    }
+}
+
+actor SabbathProp : PropBase2 30380
+{
+    States
+    {
+    Spawn:
+        SUZI P -1
+        stop
+    }
+}
+
+actor OmenProp : PropBase2 30381
+{
+    States
+    {
+    Spawn:
+        CMCP A -1
+        stop
+    }
+}
+
+actor MaidenProp : PropBase2 30382
+{
+    States
+    {
+    Spawn:
+        IRNP A -1
+        stop
+    }
+}
+
+actor LegionProp : PropBase2 30383
+{
+    States
+    {
+    Spawn:
+        BMRG Z -1
+        stop
+    }
+}
+
+/*actor GrenadeLauncherProp : PropBase2 30384
+{
+    States
+    {
+    Spawn:
+        IRNP A -1
+        stop
+    }
+}*/
+
+actor FrosthammerProp : PropBase2 30385
+{
+    States
+    {
+    Spawn:
+        FRHM Z -1
+        stop
+    }
+}
+
+/*actor BFG10kProp : PropBase2 30386
+{
+    States
+    {
+    Spawn:
+        IRNP A -1
+        stop
+    }
+}*/
+
+actor BackpackProp : PropBase2 30387
+{
+    States
+    {
+    Spawn:
+        BKPK A -1
+        stop
+    }
+}
+
+actor AmmoProp : PropBase2 30388
+{
+    States
+    {
+    Spawn:
+        ASMG B -1
+        stop
+    }
+}
+
+actor SodaProp : PropBase2 30389
+{
+    States
+    {
+    Spawn:
+        SODA A -1
+        stop
+    }
+}
+
+actor AppleProp : PropBase2 30390
+{
+    States
+    {
+    Spawn:
+        APPL A -1
+        stop
+    }
+}
+
+actor SilverArmorProp : PropBase2 30391
+{
+    States
+    {
+    Spawn:
+        ARMR A -1
+        stop
+    }
+}
+
+actor GoldenArmorProp : PropBase2 30392
+{
+    States
+    {
+    Spawn:
+        ARMR B -1
+        stop
+    }
+}
+
+actor BurgerProp : PropBase2 30393
+{
+    States
+    {
+    Spawn:
+        BRGR A -1
+        stop
+    }
+}
+
+actor RamenProp : PropBase2 30394
+{
+    States
+    {
+    Spawn:
+        RAMN A -1
+        stop
+    }
+}
+
+actor ButtshieldProp : PropBase 30395
+{
+    States
+    {
+    Spawn:
+        SHLD P -1
+        stop
+    }
+}
+
+actor SentinelProp : PropBase 30396
+{
+    States
+    {
+    Spawn:
+        SENT Z -1
+        stop
+    }
+}
+
+actor PepperProp : PropBase2 30397
+{
+    States
+    {
+    Spawn:
+        PEPR A -1
+        stop
+    }
+}
+
+actor CookieProp : PropBase2 30398
+{
+    States
+    {
+    Spawn:
+        COOK I -1
+        stop
+    }
+}
+
+actor InvulnProp : PropBase 30399
+{
+    States
+    {
+    Spawn:
+        ARMR C -1
+        stop
+    }
+}
+
+/*actor SgtShiversProp : PropBase 30400
+
+actor GundereProp : PropBase 30401
+
+actor CombineKeganProp : PropBase 30402
+
+actor Mike12Prop : PropBase 30403*/

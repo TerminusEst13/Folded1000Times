@@ -2980,7 +2980,7 @@ actor LGPuff: BulletPuff
     +BLOODLESSIMPACT
     //+FORCERADIUSDMG
     +NODAMAGETHRUST
-
+    DamageType "HaltHammerzeit"//"OmenHeavyMetalThunder"
     VSpeed 0
     Scale 0.4
 

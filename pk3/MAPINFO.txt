@@ -10,6 +10,13 @@ map MAPFINAL "Steel Meets Steel" // Hammerfall
     music = "D_FINAL1" // Finntroll - Haterop
 }
 
+map MAPTEST "Practice What You Preach" // Manowar
+{
+    next = "MAP01"
+    music = "D_FINAL1" // Finntroll - Haterop
+    sky1 = "RSKY2", 0.1
+}
+
 skill baby
 {
 	ACSReturn = 0

@@ -662,6 +662,12 @@ actor LightningStarter
         TNT1 A 0 A_SpawnItemEx("LightningThin",0,0,-720,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("LightningThick",0,0,-765,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("LightningThin",0,0,-765,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("LightningThick",0,0,-810,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("LightningThin",0,0,-810,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("LightningThick",0,0,-855,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("LightningThin",0,0,-855,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("LightningThick",0,0,-900,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("LightningThin",0,0,-900,0,0,0,0,32)
         //TNT1 A 0 A_CustomMissile("LightningThick",0,0,0,4,-90)
         //TNT1 A 0 A_CustomMissile("LightningThin",0,0,0,4,-90)
         TNT1 A 1
