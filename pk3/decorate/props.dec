@@ -409,10 +409,28 @@ actor InvulnProp : PropBase 30399
     }
 }
 
-/*actor SgtShiversProp : PropBase 30400
+actor SgtShiversProp : PropBase2 30400
+{
+    States
+    {
+    Spawn:
+        CRDT A -1
+        stop
+    }
+}
 
-actor GundereProp : PropBase 30401
+/*actor GundereProp : PropBase 30401
 
-actor CombineKeganProp : PropBase 30402
+actor CombineKeganProp : PropBase 30402*/
 
-actor Mike12Prop : PropBase 30403*/
+actor Mike12Prop : PropBase2 30403
+{
+    States
+    {
+    Spawn:
+        CRDT B -1
+        stop
+    }
+}
+
+/*actor TerminusEst13Prop : PropBase 30404*/

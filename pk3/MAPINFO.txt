@@ -14,7 +14,7 @@ map MAPTEST "Practice What You Preach" // Manowar
 {
     next = "MAP01"
     music = "D_FINAL1" // Finntroll - Haterop
-    sky1 = "RSKY2", 0.1
+    sky1 = "RSKY3", 0.1
 }
 
 skill baby
