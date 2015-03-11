@@ -419,9 +419,28 @@ actor SgtShiversProp : PropBase2 30400
     }
 }
 
-/*actor GundereProp : PropBase 30401
+actor GundereProp : PropBase2 30401
+{
+    XScale 0.75
+    YScale 0.65
+    States
+    {
+    Spawn:
+        CRDT C -1
+        stop
+    }
+}
+ 
 
-actor CombineKeganProp : PropBase 30402*/
+actor CombineKeganProp : PropBase2 30402
+{
+    States
+    {
+    Spawn:
+        CRDT D -1
+        stop
+    }
+}
 
 actor Mike12Prop : PropBase2 30403
 {
@@ -433,4 +452,101 @@ actor Mike12Prop : PropBase2 30403
     }
 }
 
-/*actor TerminusEst13Prop : PropBase 30404*/
+actor TerminusEst13Prop : PropBase2 30404
+{
+    Scale 0.85
+    States
+    {
+    Spawn:
+        CRDT E -1
+        stop
+    }
+}
+
+actor SeryderProp : PropBase2 30405
+{
+    Scale 0.85
+    States
+    {
+    Spawn:
+        CRDT F -1
+        stop
+    }
+}
+
+actor YhollProp : PropBase 30406
+{
+    Scale 0.5
+    States
+    {
+    Spawn:
+        CRDT G -1
+        stop
+    }
+}
+
+actor ExodusCrucifixProp 30407
+{
+    +NOCLIP
+    -SOLID
+    +DONTBLAST
+    +NOGRAVITY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 2
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,5,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,10,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,15,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,20,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,25,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,30,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,35,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,40,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,45,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,50,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-5,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-10,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-15,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-20,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-25,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-30,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-35,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-40,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-45,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,-50,0,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,5,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,10,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,15,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,20,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,25,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,30,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,35,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,40,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,45,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,50,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,55,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,60,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,65,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,70,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,75,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,80,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,85,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,90,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,95,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,100,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-5,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-10,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-15,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-20,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-25,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-30,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-35,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-40,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-45,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        TNT1 A 0 A_SpawnItemEx("ExodusFire",0,0,-50,random(-10,10)/10.0,random(-10,10)/10.0,random(-1,10)/10.0,0,160,0)
+        loop
+    }
+}
