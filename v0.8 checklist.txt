@@ -10,6 +10,10 @@ Gibbing XDeath for Baron of Hell for Iron Maiden
 
 Hell Nobles need to be able to stop their splattering, online it's too easy to lag someone out.
 
+Look at Trailblazer for how it adjusted the keyconf to put all the necessary keys at the top.
+
+BFG10k thing.
+
 PRIORITY:
 18: Finish the specials for:
    ^ Frosthammer
