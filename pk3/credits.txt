@@ -108,6 +108,7 @@ GRAPHICS:
 - DavidG (The alternate attack frames for the Baron)
 - Virtue (All of the texture brightmaps)
 - Kyle873 (The Exodus/Frosthammer brightmaps)
+- Seryder (Decorating and polishing up MAPTEST)
 
 CODE:
 =========
