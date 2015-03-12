@@ -10,12 +10,11 @@ Hell Nobles need to be able to stop their splattering, online it's too easy to l
 
 Look at Trailblazer for how it adjusted the keyconf to put all the necessary keys at the top.
 
+Look at Shivers' RotT fireball sprites and adjust for Hell Nobles.
+
 BFG10k thing.
 
 PRIORITY:
-18: Finish the specials for:
-   ^ Frosthammer
-   ^ BALANCE
 20: Adapt Testament shotgun system for the Omen and Chaingun
 24: Test, test, test online.
 25: Update the metal jukebox/in-game credits/in-game changelog.
@@ -54,6 +53,7 @@ WOULD BE NICE:
 <OnePunch-Man> Wouldn't it be easier to distinguish them if they had different colors
 16: Include the rest of the new Hae-Lin intro sounds.
 17: Armor bar of the Iron Maiden should be integrated with the HUD.
+18: Finish the specials for the weapons
 19: Polish up the uppercut sequence so that it can be used at resting points (gun at rest, holding fire, etc)
 21: Use HorrorMovieGuy's bloodless sprites to do bloodless launches for the pinky and Nobles. // Turns out Pinky's already is fine?
 22: Sentinel should fire in long bursts, rather than constantly.

@@ -357,7 +357,7 @@ actor "Kharon + Exodus" : Kharon
 
 
 
-    SpinAttackLeft:
+    SpinAttackLeft: // Draw the Line
         TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
@@ -403,7 +403,7 @@ actor "Kharon + Exodus" : Kharon
         TNT1 A 1 A_SetAngle(angle-11.25)
         goto SpecialAttackFinish
 
-    LungeAttack:
+    LungeAttack: // Hunter Killer
         TNT1 A 0 A_CheckFloor("LungeAttackRise")
     LungeAttackPrepare:
         TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
@@ -442,7 +442,7 @@ actor "Kharon + Exodus" : Kharon
         TNT1 A 1 ThrustThingZ(0,24,0,0)
         goto LungeAttackPrepare
 
-    RepelWave:
+    RepelWave: // Take No Prisoners
         TNT1 A 0 //A_TakeInventory("PointsNoSpecials",1)
         KBLK ABCDEE 1
         KBLK F 15 A_PlayWeaponSound("sword/block")
@@ -467,7 +467,7 @@ actor "Kharon + Exodus" : Kharon
         TNT1 AA 1
         goto SpecialAttackFinish
 
-    GunSpecial:
+    GunSpecial: // Behind the Crooked Cross
         TNT1 A 0 A_JumpIfInventory("WeebRocket",5,1)
         goto SpecialAttackFinish
         TNT1 A 0

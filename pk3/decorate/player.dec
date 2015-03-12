@@ -34,6 +34,7 @@ ACTOR MeleePlayer : PlayerPawn
     DamageFactor "EnemyInfightDamageRevenant", 0.0
     DamageFactor "EnemyInfightDamageFatso", 0.0
     DamageFactor "EnemyInfightDamageCaco", 0.0
+    DamageFactor "FrosthammerCharged", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ExodusJump", 0.0
