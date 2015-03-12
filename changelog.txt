@@ -118,6 +118,8 @@ FROM 0.74 TO 0.8:
 - The energy usage of the Iron Maiden has been swapped--the Iron Maiden now burns more fuel when mid-combat, and relaxes up slightly when the player is out of combat.
 - The lightning spawned by weapon pickups now goes down even further, to about 900 units.
 - A new map, MAPTEST, has been included specifically for streamlined testing, comparing damage values, testing out item functions, etc.
+- Barons now have a unique death effect when punched to death with the Iron Maiden. Splat!
+- Weapons now have their own unique special attacks! When holding down fire, hit alt-fire to charge your currently-held alternate weapon with soul energy and deliver a devastating unique attack. While not always as powerful as the sword attacks, these attacks are cheap on soul and take more ammo instead, which should allow players low on soul to have a viable alternative for heavier hordes.
 
 
 FROM 0.73 TO 0.74:

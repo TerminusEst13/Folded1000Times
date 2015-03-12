@@ -593,6 +593,18 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+    XDeath:
+        TNT1 A 0 A_Gravity
+        TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
+        TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
+        BXD3 AAAAA 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_XScream
+        BXD3 BBBBB 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
+        BXD3 CCCCC 1 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
+        TNT1 A 0 A_NoBlocking
+        BXD3 DEFGH 5 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(0,360))
+        BXD3 I -1
+        Stop
     Death.Hunter:
         BOSS I 1
         TNT1 A 0 A_Fall
@@ -636,7 +648,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_TakeInventory("EnemyHasBeenLaunched",1)
         TNT1 A 0 A_PlaySound("enemy/bisected")
         TNT1 A 0 A_Jump(32,"Death.Hunter")
-        TNT1 A 0 A_Jump(128,"Death.Bisect1","Death.Bisect2")
+        TNT1 A 0 A_Jump(128,"Death.Bisect1","Death.Bisect2","Death.Split")
         TNT1 A 0 A_Fall
         TNT1 A 0 A_SpawnItem("BOSSKubiuted",0,56,0)
         XDI1 A 8
@@ -667,6 +679,14 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         BXD2 NNNOOOPPPP 1 A_ThrowGrenade("BloodSplashGus1c",-8,5+random(0,7),8)    
         BXD2 Q 4 A_NoBlocking
         BXD2 R -1 A_BossDeath
+        stop
+    Death.Split:
+        BOSS P 3
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodSplashGus1c",54,0,random(-180,180),2,random(500,900)/50.0)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("BloodSplashGus1c",54,0,random(-180,180),2,random(500,900)/50.0)
+        BOSS QQQRRRSSSTTT 1 A_ThrowGrenade("BloodSplashGus1c",-8,5+random(0,7),8)    
+        BOSS U 4 A_NoBlocking
+        BOSS V -1 A_BossDeath
         stop
     Death.FrosthammerCharged:
     Death.FrosthammerExplode:
