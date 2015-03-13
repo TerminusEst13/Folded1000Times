@@ -452,7 +452,7 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Mom can't make you clean your room.",
 "Did you know that you can drink lava? Only once, though.",
 "Go to Heaven for the men, but go to Hell for the women.",
-"Dongs take skill.",
+"Gomen nasai. Nihongo ga kakenai.",
 "Let me tell you why Satan is a myth and the demons are actually aliens.",
 "I identify as angelkin and your powers are oppressing me you shitlord prime. #actuallydivine",
 "Why bother with original content when you can just quote a meme and have an epic win?",
@@ -480,5 +480,5 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Remember, ironic shitposting is still shitposting.",
 "Behold, I have created the smith that bloweth the coals in the fire and that bringeth forth an instrument for this work; and I have created the waster, to destroy.",
 "I looked, and there was a pale horse! Its rider's name was Death, and Hell followed him. They were given authority over one-fourth of the earth to kill people using wars, famines, plagues, and the wild animals of the earth.",
-"DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO"
+"DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO"
 };
