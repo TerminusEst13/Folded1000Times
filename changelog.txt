@@ -120,6 +120,7 @@ FROM 0.74 TO 0.8:
 - A new map, MAPTEST, has been included specifically for streamlined testing, comparing damage values, testing out item functions, etc.
 - Barons now have a unique death effect when punched to death with the Iron Maiden. Splat!
 - Weapons now have their own unique special attacks! When holding down fire, hit alt-fire to charge your currently-held alternate weapon with soul energy and deliver a devastating unique attack. While not always as powerful as the sword attacks, these attacks are cheap on soul and take more ammo instead, which should allow players low on soul to have a viable alternative for heavier hordes.
+- Souls now fade out little bit by little bit, vanishing if players don't eventually pick them up.
 
 
 FROM 0.73 TO 0.74:
