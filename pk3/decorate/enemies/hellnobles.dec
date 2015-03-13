@@ -261,11 +261,11 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     Dhunter:
         TNT1 A 0 A_CustomMissile("EnemySplashGus3",random(16,24),0,random(0,360),2,random(60,90))
         KXD2 EE 2 A_ThrowGrenade ("BloodSplashGus1c",-24,5+random(0,7),8)
-        TNT1 A 0 A_Jump(16,1)
+        TNT1 A 0 A_Jump(32,1)
         Loop
     Dhunter2:
         KXD2 E 4 A_ThrowGrenade ("BloodSplashGus1c",-24,5+random(0,7),8)
-        TNT1 A 0 A_Jump(16,1)
+        TNT1 A 0 A_Jump(32,1)
         Loop
         TNT1 A 0
         KXD2 E -1
@@ -293,7 +293,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         XDI3 EEEEEEEEEE 1 A_CustomMissile("BloodSplashGus1c",44,0,random(-180,180),2,random(750,900)/10.0)//A_ThrowGrenade ("BloodSplashGus1c",-8,5+random(0,7),8)
         TNT1 A 0 A_CustomMissile("EnemySplashGus3",random(24,32),0,random(0,360),2,random(60,90))
-        TNT1 A 0 A_Jump(8,1)
+        TNT1 A 0 A_Jump(32,1)
         loop
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)

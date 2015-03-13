@@ -589,6 +589,8 @@ actor IronSaviorPickup : PickupBase replaces BFG9000
     }
 }
 
+actor BFG10kReplacement : IronSaviorPickup replaces BFG10k {}
+
 actor ScreenFlashWhite : CustomInventory
 {
     Inventory.MaxAmount 0
