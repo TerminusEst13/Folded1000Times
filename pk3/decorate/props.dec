@@ -560,3 +560,14 @@ actor AdoxographistProp : PropBase2 30408
         stop
     }
 }
+
+actor KurashikiProp : PropBase2 30409
+{
+    Scale 0.8
+    States
+    {
+    Spawn:
+        CRDT I -1
+        stop
+    }
+}

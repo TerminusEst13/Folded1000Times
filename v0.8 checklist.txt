@@ -6,8 +6,6 @@ Insulting death messages when you die in singleplayer.
 
 Implement shivers' new idle animation.
 
-Hell Nobles need to be able to stop their splattering, online it's too easy to lag someone out.
-
 Look at Trailblazer for how it adjusted the keyconf to put all the necessary keys at the top.
 
 Look at Shivers' RotT fireball sprites and adjust for Hell Nobles.
@@ -20,6 +18,10 @@ PRIORITY:
 25: Update the metal jukebox/in-game credits/in-game changelog.
    ^ For the ModDB upload, include changelog/list of credits in .txt file.
    ^ Don't forget to remove the Messiah's code and save it for next build.
+
+EASY MODE MOCKERY:
+   ^ Pretty pink bow on the HUD
+   ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / 
 
 
 WOULD BE NICE:
