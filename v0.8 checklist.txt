@@ -6,8 +6,6 @@ Insulting death messages when you die in singleplayer.
 
 Implement shivers' new idle animation.
 
-Look at Trailblazer for how it adjusted the keyconf to put all the necessary keys at the top.
-
 Look at Shivers' RotT fireball sprites and adjust for Hell Nobles.
 
 PRIORITY:
