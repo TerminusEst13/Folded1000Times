@@ -109,6 +109,14 @@ script WEEB_OPEN OPEN
         if (!GetCvar("ds_runmod"))
             { ConsoleCommand("set ds_runmod 100");
               ConsoleCommand("archivecvar ds_runmod 100"); }
+
+        if (!GetCvar("ds_nochaingunlimiter"))
+            { ConsoleCommand("set ds_nochaingunlimiter 0");
+              ConsoleCommand("archivecvar ds_nochaingunlimiter 0"); }
+
+        if (!GetCvar("ds_nochaingun"))
+            { ConsoleCommand("set ds_nochaingun 0");
+              ConsoleCommand("archivecvar ds_nochaingun 0"); }
     }
 }
 
@@ -409,7 +417,9 @@ int GravityOfLight;
         // The Shotgun is never given out right away.
         // It's powerful as hell, so it needs to be staggered out a bit.
         // Also gives people opportunity to get used to the sword.
-        if ( (GetCvar("ds_noshotgunlimiter") == 0 && LevelCount < 2) || GetCvar("ds_noshotgun") == 1)
+        // Also note that the Shotgun spawn is never given out online.
+        // This might be a problem if people ever play Doom 1 mapsets online.
+        if ( (GetCvar("ds_noshotgunlimiter") == 0 && LevelCount < 2) || GetCvar("ds_noshotgun") == 1 || !isSinglePlayer())
              { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
@@ -488,6 +498,12 @@ int GravityOfLight;
         delay(1);
         SetActorProperty(0,APROP_Gravity,GravityRoll + 0.15);
         TakeInventory("LegionSpecialCounter",1);
+        break;
+
+    case WEEB_DEC_ONLINECHECK2:
+        if ( (GetCvar("ds_nochaingunlimiter") == 0 && LevelCount < 4) || GetCvar("ds_nochaingun") == 1 || !isSinglePlayer())
+             { SetResultValue(1); }
+        else { SetResultValue(0); }
         break;
     }
 }

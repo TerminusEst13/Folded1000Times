@@ -182,37 +182,38 @@ actor IceChunk2 : IceChunk { Health 1 +CLIENTSIDEONLY -SOLID }
 
 // Constants which are paired with their ACS counterparts
 
-const int WEEB_DECORATE        = 267;
+const int WEEB_DECORATE          = 267;
 
-const int WEEB_DEC_DAMAGE      = 0;
-const int WEEB_DEC_FREEZE      = 1;
-const int WEEB_DEC_UNFREEZE    = 2;
-const int WEEB_DEC_SHOTCHECK   = 3;
-const int WEEB_DEC_CARRCHECK   = 4;
-const int WEEB_DEC_UZICHECK    = 5;
+const int WEEB_DEC_DAMAGE        = 0;
+const int WEEB_DEC_FREEZE        = 1;
+const int WEEB_DEC_UNFREEZE      = 2;
+const int WEEB_DEC_SHOTCHECK     = 3;
+const int WEEB_DEC_CARRCHECK     = 4;
+const int WEEB_DEC_UZICHECK      = 5;
 //const int WEEB_DEC_ICANTREMEMBERANDIDONTCARE    = 6;
-const int WEEB_DEC_MEGASPHERE  = 7;
-const int WEEB_DEC_WEPSTAY     = 8;
-const int WEEB_DEC_HAMCHECK    = 9;
-const int WEEB_DEC_HAMAMMO1    = 10;
-const int WEEB_DEC_HAMAMMO2    = 11;
-const int WEEB_DEC_HAMAMMO3    = 12;
-const int WEEB_DEC_FREEZE2     = 13;
-const int WEEB_DEC_UNFREEZE2   = 14;
-const int WEEB_DEC_REMOVEKEBAB = 15;
-const int WEEB_DEC_DIFFCHECK   = 16;
-const int WEEB_DEC_ONLINECHECK = 17;
-const int WEEB_DEC_HENSHIN     = 18;
-const int WEEB_DEC_ARMRCHECK   = 19;
-const int WEEB_DEC_BARRELSPAWN = 20;
-const int WEEB_DEC_LEGIONCHECK = 21;
-const int WEEB_DEC_STWEAPCHECK = 22;
-const int WEEB_DEC_FROSTCHECK  = 23;
-const int WEEB_DEC_COOKIEQUOTE = 24;
-const int WEEB_DEC_SLOWDOWN    = 25;
-const int WEEB_DEC_GUNSOULS    = 26;
-const int WEEB_DEC_LEGSPECIAL  = 27;
-const int WEEB_DEC_DOOMHEALTH  = 28;
+const int WEEB_DEC_MEGASPHERE    = 7;
+const int WEEB_DEC_WEPSTAY       = 8;
+const int WEEB_DEC_HAMCHECK      = 9;
+const int WEEB_DEC_HAMAMMO1      = 10;
+const int WEEB_DEC_HAMAMMO2      = 11;
+const int WEEB_DEC_HAMAMMO3      = 12;
+const int WEEB_DEC_FREEZE2       = 13;
+const int WEEB_DEC_UNFREEZE2     = 14;
+const int WEEB_DEC_REMOVEKEBAB   = 15;
+const int WEEB_DEC_DIFFCHECK     = 16;
+const int WEEB_DEC_ONLINECHECK   = 17;
+const int WEEB_DEC_HENSHIN       = 18;
+const int WEEB_DEC_ARMRCHECK     = 19;
+const int WEEB_DEC_BARRELSPAWN   = 20;
+const int WEEB_DEC_LEGIONCHECK   = 21;
+const int WEEB_DEC_STWEAPCHECK   = 22;
+const int WEEB_DEC_FROSTCHECK    = 23;
+const int WEEB_DEC_COOKIEQUOTE   = 24;
+const int WEEB_DEC_SLOWDOWN      = 25;
+const int WEEB_DEC_GUNSOULS      = 26;
+const int WEEB_DEC_LEGSPECIAL    = 27;
+const int WEEB_DEC_DOOMHEALTH    = 28;
+const int WEEB_DEC_ONLINECHECK2  = 29;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
@@ -224,6 +225,7 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/items.dec"
 #include "decorate/ammo.dec"
 #include "decorate/pickups.dec"
+#include "decorate/pickups1.dec"
 #include "decorate/weapons/0-hwando.dec"
 #include "decorate/weapons/0-hwandospecial.dec"
 #include "decorate/weapons/0-hwandoeffects.dec"

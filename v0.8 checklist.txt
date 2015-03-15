@@ -10,10 +10,8 @@ Look at Trailblazer for how it adjusted the keyconf to put all the necessary key
 
 Look at Shivers' RotT fireball sprites and adjust for Hell Nobles.
 
-BFG10k thing.
-
 PRIORITY:
-20: Adapt Testament shotgun system for the Omen and Chaingun
+3: Player sprites (Gundere is doing this)
 24: Test, test, test online.
 25: Update the metal jukebox/in-game credits/in-game changelog.
    ^ For the ModDB upload, include changelog/list of credits in .txt file.
@@ -21,11 +19,8 @@ PRIORITY:
 
 EASY MODE MOCKERY:
    ^ Pretty pink bow on the HUD
-   ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / 
+   ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / ModArchive - radix - Unreal Superhero.xm / ModArchive - Tito - ~~P~i~z~z~a~~H~u~t.xm )
 
-
-WOULD BE NICE:
-3: Player sprites (Gundere is doing this - "It could be around two more weeks before these babies are up to video game quality. [...] I'm back to knocking out several frames a night so hopefully it won't be too much longer. The absolute worst case scenario is March 1st, however I will not miss that deadline by a minute, even if I must draw with broken fingers.")
 
 
 
@@ -57,6 +52,7 @@ WOULD BE NICE:
 17: Armor bar of the Iron Maiden should be integrated with the HUD.
 18: Finish the specials for the weapons
 19: Polish up the uppercut sequence so that it can be used at resting points (gun at rest, holding fire, etc)
+20: Adapt Testament shotgun system for the Omen and Chaingun
 21: Use HorrorMovieGuy's bloodless sprites to do bloodless launches for the pinky and Nobles. // Turns out Pinky's already is fine?
 22: Sentinel should fire in long bursts, rather than constantly.
 

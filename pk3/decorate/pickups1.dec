@@ -1,0 +1,545 @@
+actor SSGReplacement : CustomInventory replaces SuperShotgun
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0,0) == 2,"SpawnTestamentLegion")//ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0)
+        TNT1 A 1//0
+        //stop
+    SpawnTestament:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("TestamentAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnTestamentLegion:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("TestamentLegionSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor PRReplacement : CustomInventory replaces PlasmaRifle
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0,0) == 2,"SpawnSabbathFrosthammer")//ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0)
+        TNT1 A 1//0
+        //stop
+    SpawnSabbath:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("SabbathAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnSabbathFrosthammer:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("SabbathFrosthammerSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor MinigunReplacement : CustomInventory replaces Minigun
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnLegion")//ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0)
+        TNT1 A 1
+    SpawnTestament:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("TestamentAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnLegion:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("LegionAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor GLReplacement : CustomInventory replaces GrenadeLauncher
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnUnknown")
+        TNT1 A 1
+    SpawnExodus:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("ExodusAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnUnknown:
+        TNT1 A 0
+        //TNT1 A 0 A_SpawnItemEx("UnknownAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor RailgunReplacement : CustomInventory replaces Railgun
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_STWEAPCHECK,0,0) >= 1,"SpawnFrosthammer")
+        TNT1 A 1
+    SpawnSabbath:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("SabbathAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    SpawnFrosthammer:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("FrosthammerAlwaysSpawner",0,0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor LegionAlwaysSpawner : RandomSpawner
+{
+    -DROPPED
+    DropItem "LegionPickup"
+}
+
+actor TestamentAlwaysSpawner : RandomSpawner
+{
+    -DROPPED
+    DropItem "ShotgunPickup"
+}
+
+actor ExodusAlwaysSpawner : RandomSpawner
+{
+    -DROPPED
+    DropItem "CarronadePickup"
+}
+
+actor SabbathAlwaysSpawner : RandomSpawner
+{
+    -DROPPED
+    DropItem "UziPickup"
+}
+
+actor FrosthammerAlwaysSpawner : RandomSpawner
+{
+    -DROPPED
+    DropItem "FrosthammerPickup"
+}
+
+actor TestamentLegionSpawner : RandomSpawner
+{
+    -DROPPED
+    DropItem "ShotgunPickup"
+    DropItem "ShotgunPickup"
+    DropItem "ShotgunPickup"
+    DropItem "LegionPickup"
+}
+
+actor SabbathFrosthammerSpawner : RandomSpawner
+{
+    -DROPPED
+    DropItem "UziPickup"
+    DropItem "UziPickup"
+    DropItem "UziPickup"
+    DropItem "FrosthammerPickup"
+}
+
+actor PickupBase : CustomInventory
+{
+    Mass 0x7FFFFFFF
+    DamageFactor "Normal", 0.0
+    DamageFactor "Kubiuti", 0.0
+    +NOTARGET
+    +LOOKALLAROUND
+    +NOTIMEFREEZE
+    +INVULNERABLE
+    +FLOORCLIP
+    -SOLID
+    -SHOOTABLE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    CheckStay:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_WEPSTAY,0,0) == 1, "PickupFail")
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+actor ShotgunPickup2 : PickupBase replaces Shotgun
+{
+    Scale 0.9
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "IReallyDontLikeDoingThis"
+    States
+    {
+    Spawn:
+        TNT1 A 5 // Momentary delay in case the map loads too fast for the weapon.
+                 // Sounds crazy, but it's happened before.
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_ONLINECHECK,0,0) == 1,"Nope") // Is the game online?
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope") // Does the player already have the shotgun?
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1 // One tic buffer to prevent infinite loops.
+        // Check first to see if the player already has it in singleplayer.
+        // If the check's already been done, skip it.
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1: // Then do a see loop.
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 1 A_SetTranslucent(1,0)
+        MSHT Z -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotShotgun",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotShotgun",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,0,0)
+        TNT1 A 0 A_PlaySound("weapon/shotgun", CHAN_ITEM)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
+        TNT1 A 0 A_GiveInventory("Kharon + Testament",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        goto CheckStay
+    Nope:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor ShotgunPickup : PickupBase //replaces SuperShotgun
+{
+    Scale 0.9
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "ThereOnceWasAManInNantucket"
+    States
+    {
+    Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 1 A_SetTranslucent(1,0)
+        MSHT Z -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotShotgun",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotShotgun",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,0,0)
+        TNT1 A 0 A_PlaySound("weapon/shotgun", CHAN_ITEM)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
+        TNT1 A 0 A_GiveInventory("Kharon + Testament",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        goto CheckStay
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("ShellBox",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor CarronadePickup : PickupBase replaces RocketLauncher
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "WhoHadHisHeadStuckInABucket"
+    States
+    {
+    Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 1 A_SetTranslucent(1,0)
+        GLAU A -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotCarronade",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotCarronade",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,1,0)
+        TNT1 A 0 A_PlaySound("weapon/carronade", CHAN_ITEM)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
+        TNT1 A 0 A_GiveInventory("Kharon + Exodus",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        goto CheckStay
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("RocketBox",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor UziPickup : PickupBase //replaces PlasmaRifle
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "HeWouldTugAndTryThenSitDownAndCry"
+    States
+    {
+    Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 1 A_SetTranslucent(1,0)
+        SUZI P -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotUzi",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotUzi",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,2,0)
+        TNT1 A 0 A_PlaySound("weapon/uzi", CHAN_ITEM)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
+        TNT1 A 0 A_GiveInventory("Kharon + Sabbath",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        goto CheckStay
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("CellPack",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor HammerPickup : PickupBase replaces Chainsaw
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "BecauseHeHadntTheMettleToRemoveTheMetal"
+    States
+    {
+    Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope") // Yum.
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 1 A_SetTranslucent(1,0)
+        CMCP A -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotHammer",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotHammer",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,3,0)
+        TNT1 A 0 A_PlaySound("weapon/hammer", CHAN_ITEM)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
+        TNT1 A 0 A_GiveInventory("Kharon + Omen",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        goto CheckStay
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor IronSaviorPickup : PickupBase replaces BFG9000
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "WhoHadHisHeadStuckInABucket"
+    States
+    {
+    Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_ARMRCHECK,0,0) == 1,"Nope")
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_ARMRCHECK,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 1 A_SetTranslucent(1,0)
+    Whoops:
+        IRNP A 10
+        IRNP BCDEDCB 4
+        loop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotIronMaiden",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotIronMaiden",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,4,0)
+        TNT1 A 0 A_PlaySound("weapon/armor", CHAN_ITEM)
+        TNT1 A 0 A_GiveInventory("SuperMeterCounter",100)
+        TNT1 A 0 A_GiveInventory("Points",5000)
+        goto CheckStay
+    Nope:
+        TNT1 A 0 A_SpawnItemEx("LargeSoulGem",0,0,0,0,0,0,0,32)
+        TNT1 A 0
+        stop
+    }
+}
+
+actor ChaingunPickup : PickupBase replaces Chaingun
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound "IREEEEEEEALLYDontLikeDoingThis"
+    States
+    {
+    Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_ONLINECHECK2,0,0) == 1,"Nope")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope") // HAAAAAAAAAAAAAAAAM
+    Spawn2:
+        TNT1 AAAA 1 A_Look
+        loop
+    See:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("CheckYourPrivilege",1,"See1")
+        TNT1 A 0 A_GiveInventory("CheckYourPrivilege",1)
+        TNT1 AAAA 1 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope") // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
+        TNT1 A 0 A_JumpIfTargetInLos("See2",360)
+    See1:
+        TNT1 A 1
+        TNT1 AAAA 1 A_JumpIfTargetInLos("See2",360)
+        goto Spawn2
+    See2:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfCloser(512,"Reveal")
+        goto See1
+    Reveal:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
+        TNT1 A 1 A_SetTranslucent(1,0)
+        CMCP A -1
+        stop
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("GotHammer",1,"PickupFail")
+        TNT1 A 0 A_GiveInventory("GotHammer",1)
+        TNT1 A 0 A_SetBlend("White",0.45,35)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,3,0)
+        TNT1 A 0 A_PlaySound("weapon/hammer", CHAN_ITEM)
+        TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
+        TNT1 A 0 A_GiveInventory("Kharon + Omen",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        goto CheckStay
+    Nope:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor BFG10kReplacement : IronSaviorPickup replaces BFG10k {}

@@ -138,6 +138,7 @@ CODE:
 - amv2k9 (The launching system, adapted from his old Devil May Cry mod)
 - jpalomo (Joystick and touchscreen support, written entirely by him!)
 - Vince (Pretty much all of the DevilDriver)
+- FuzzballFox (All of the extra fontcolors)
 
 MUSIC:
 =========

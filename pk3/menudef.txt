@@ -52,6 +52,7 @@ OptionMenu "Changes-TurnThePage"
     Option "Start with Backpack",            "ds_backpackstart", "OnOff"
     Option "Infinite soul meter",            "ds_infinitesouls", "OnOff"
     Option "Testament spawns on",            "ds_noshotgun", "TestamentOptions"
+    Option "Omen spawns on",                 "ds_nochaingun", "OmenOptions"
     Option "Disable special moves",          "ds_nospecials", "OnOff"
     Option "Gun kills give souls",           "ds_gunsouls", "OnOff"
     Option "Traditional Doom health",        "ds_doomhealth", "OnOff"
@@ -73,6 +74,12 @@ OptionValue TestamentOptions
 {
     0, "Shotgun/SSG"
     1, "SSG Only"
+}
+
+OptionValue OmenOptions
+{
+    0, "Chaingun/Chainsaw"
+    1, "Chainsaw Only"
 }
 
 OptionValue ArrogantOptions

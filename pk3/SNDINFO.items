@@ -371,6 +371,8 @@ $limit frost/hitcharged 0
 pbeam/charge              PBEAMCHR // Taken from Metroid Prime
 pbeam/idle                PBEAMIDL // Taken from Metroid Prime
 
+frost/specialfire         CMBICE   // Ice sounds are hard, so I just ripped the Metrood Dreadnought one.
+
 // Messiah
 
 lyre/swing                LYRESWNG // Taken from Hexen
