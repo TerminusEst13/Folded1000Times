@@ -134,6 +134,9 @@ GRAPHICS:\n\
   ^ Animating the Exodus\n\
   ^ The pillow for the dakimakura\n\
   ^ The Frosthammer cryo railgun\n\
+  ^ The animation for the Legion's special attack\n\
+  ^ The Iron Maiden weapon sprites\n\
+  ^ The animation for the Acacia's special attack\n\
 - Absolutely no thanks to Rottsprite for shitting out on us and not letting us\n\
   rotate the Kharon properly forcing us to rely on Photoshop's really ugly and\n\
   jagged-y rotate function NO I'M NOT BITTER AT ALL WHAT GIVES YOU THAT IDEA\n\
@@ -146,7 +149,7 @@ GRAPHICS:\n\
 - Aeons of Death (The Exodus explosion graphics)\n\
 - Ettingrinder (The Candelabra)\n\
 - NeuralStunner (The Omen's pickup sprite)\n\
-- Rogue Software (All the lightning effects and the keycard bases, from Strife)\n\
+- Rogue Software (The lightning effects, the keycard bases, and the gunsmoke, from Strife)\n\
 - Raven Software\n\
   ^ The skull keys edited from Hexen\n\
   ^ The Steel Beast edited from the Heretic Sabreclaw\n\
@@ -154,6 +157,7 @@ GRAPHICS:\n\
   ^ The Blackened edited from the Hexen Reiver\n\
   ^ The Priest edited from Hexen's Parias and the Heretic Iron Lich\n\
   ^ The Priest/Imp's fire effects nicked from Hexen\n\
+  ^ The hook and chain for the Kharon's special\n\
 - Id Software (The laser shots from the zombies, some electricity sprites for Omen)\n\
 - Ravage/rf' (The red/blue/green torches)\n\
 - KeksDose (The miniature explosions and particles used for the bullet puffs)\n\
@@ -186,6 +190,17 @@ GRAPHICS:\n\
 - Scuba Steve/Mike12/torridGristle (The sheathe for the Kharon, heavily edited from Action Doom 2)\n\
 - The Guided Fate Paradox (The halo for the Majestic Vanguard)\n\
 - SoloSpaghetti (The Boots of Protection, modified from the Doom Roguelike Arsenal boots)\n\
+- zrriontheinsect (The gothic candles, modified from his Doom 64 candles)\n\
+- Horrormovieguy (The launched sprites for the Hell Baron and Hell Knight)\n\
+- Monolith Productions (The pile of skulls from Blood)\n\
+- Bungie (The shotgun, taken from Marathon and polished dramatically, the Acacia/Sabbath casings)\n\
+- Moorhuhn 3: Es Gibt Huhn (The Testament shell casings)\n\
+- Touhou Hisouten/Doorhenge (The explosion shockwave)\n\
+- Marrub (The DevilDriver's sprites)\n\
+- DavidG (The alternate attack frames for the Baron)\n\
+- Virtue (All of the texture brightmaps)\n\
+- Kyle873 (The Exodus/Frosthammer brightmaps)\n\
+- Seryder (Decorating and polishing up MAPTEST)\n\
 \n\
 CODE:\n\
 =========\n\
@@ -197,6 +212,7 @@ CODE:\n\
   ^ The shockwave from the spin attack\n\
   ^ The trail for the zombie lasers/razor wind\n\
   ^ The second level spatter for the Omen\n\
+  ^ The buzzsaw special for the Omen\n\
 - Doom667Shogun (For the blood/dismembering effects)\n\
 - Vaecrius (For the redone Archvile (taken from Make It Snappy))\n\
 - Kyle873 (Polishing the post-damage invulnerability code, rehauling the double-jump code)\n\
@@ -212,13 +228,16 @@ CODE:\n\
 - TiberiumSoul (The code for the bulletpuffs based off of his neat little effects)\n\
 - Zael (For the Ultima Cannon, which I shamelessly ripped off for the not-Kamehameha. May your mass never go inert)\n\
 - amv2k9 (The launching system, adapted from his old Devil May Cry mod)\n\
+- jpalomo (Joystick and touchscreen support, written entirely by him!)\n\
+- Vince (Pretty much all of the DevilDriver)\n\
+- FuzzballFox (All of the extra fontcolors)\n\
 \n\
 MUSIC:\n\
 =========\n\
 - Cryptomnesia (Titlescreen: Live Like a God, Die Like a God - Free to download off Soundcloud)\n\
 - Megadeth (Intermission: Kick the Chair - Released as a free download in 2004)\n\
 - SlayeR (Read Me: Chaos Abounds - Free to download)\n\
-- Finntroll (Final1: Haterop - Released as a free download in 2005)\n\
+- Finntroll (Final1/MAPTEST: Haterop - Released as a free download in 2005)\n\
 - Yasuharu Takanashi (Final2: Power Up, Akanbe! - Released as a promotional CD to Precure anime)\n\
 - Bolt Thrower (Iron Maiden Song 1: Cenotaph - Cover downloaded from ModArchive)\n\
 - Ravenlord (Iron Maiden Song 2: Erased Fantasy - Downloaded from ModArchive)\n\
@@ -232,13 +251,15 @@ SOUNDS:\n\
 =========\n\
 - Adoxographist ( adoxtalks.tumblr.com - Going above and beyond the line of duty for Hae-Lin's voice!)\n\
 - John Archer (The Blackened's voice)\n\
-- torridGristle (The robotic voice of the Iron Maiden)\n\
+- torridGristle (The robotic voice of the Iron Maiden, ripping numerous sound effects)\n\
 - Combine_Kegan (Ripping and gathering all of the Sentinel's sound bytes)\n\
+- Marrub (Ripping the Killing Floor sound effects)\n\
+- MartyKirra (The announcer for the ranking system)\n\
 - All sounds are credited to their respective owner in SNDINFO.";
 
 
 int DemonChangelog =
-"FROM 0.74 TO 0.75:\n\
+"FROM 0.74 TO 0.8:\n\
 =======================================\n\
 - Players are now able to rocketjump with the shotgun because reasons.\n\
 - The accuracy of the Testament has been tightened up dramatically, from 12 to 6. No weapon should be competing with the Kharon for close-range.\n\
@@ -292,7 +313,7 @@ int DemonChangelog =
 - A new cvar has been added, ds_nodamagepenalty, that does not penalize one's combo meter when damaged. This setting is for superbad casuals.\n\
 - 17 more intro taunts have been added. Chance of saying them has been increased from one-in-four to one-in-three.\n\
 - The Skulltag wizards should no longer drop Claw Orbs or Tomes of Power.\n\
-- The Iron Maiden's shot impacts are no longer tinged a blue-purple.\n\
+- The Iron Maiden's shot impacts are no longer tinged a blue-purple\n\
 - The Iron Maiden's holy rocket now travels twice as fast and does 32 more damage.\n\
 - Additive translucency is handled in-sprite now for a whole ton of effects, reducing filesize and reducing lag, as well as making them look better in Software.\n\
 - DemonSteele scripts now terminate if the player is not actually playing as Hae-Lin.\n\
@@ -322,14 +343,48 @@ int DemonChangelog =
 - Punching the Lost Souls while in Iron Maiden now gives souls.\n\
 - A points system has now been implemented, for that extra arcade-y feel.\n\
 - Thanks to Sgt. Shivers, the Iron Maiden's HUD sprites are now significantly better!\n\
-- The MidCombat counter has had its limit increased by 1.5x, allowing for a slightly longer lull before the meters start going down.\n\
 - The Iron Maiden's holy rocket is now slightly faster to charge up.\n\
 - The Over-Life token cap on Facing Hell is now two, instead of three.\n\
 - Much like life, the armor cap now decreases as difficulty rises. On Facing Hell and Killing Machine, max armor tokens is now three. On Angel of Death, max armor tokens is now two.\n\
 - The Frosthammer's charged explosive damage is now 160.\n\
 - The KubiutiUpper damagetype now properly launches the Steele Beast.\n\
 - Iron Maiden's punches, on splattering enemies, now alerts nearby monsters.\n\
-- The Iron Maiden's armor has been tweaked slightly. It regenerates slightly faster, but the armor resistance itself is slower--this should make it better for out-and-out brawls, but more susceptible to burst damage.";
+- The Iron Maiden's armor has been tweaked slightly. It regenerates slightly faster, but the armor resistance itself is slower--this should make it better for out-and-out brawls, but more susceptible to burst damage.\n\
+- The Iron Maiden now has a powerful uppercut for a launcher attack.\n\
+- To accomodate Hae-Lin's drastic increase in power, a lot of enemies have been buffed to be nastier in various ways.\n\
+ ^- Demons, Steele Beasts, and Lost Souls are now much faster and more aggressive. These critters are intended to keep the player moving and watch their blind spot or else take damage; as the reduced hitbox and faster speed in DemonSteele makes it easier to ignore their danger, they now fill up spaces to create danger much faster.\n\
+ ^- The Lost Soul now stops after travelling a short distance. The increase in speed makes it incredibly easy to miss the player, defeating its purpose.\n\
+ ^- The Mancubus now takes a much shorter time in between shots. The idea of the Mancubus' attack sequence is to fill a wide spread of an area, shooting left and right instead of just straight at the player. Since the player now has many more options to dodge or nullify the attacks, the Mancubi can now fill up areas more easily.\n\
+ ^- The Zombiemen and Chaingunners take five tics faster to fire. While they're complete non-threats now, lacking hitscans, they should at least get off shots a little bit faster.\n\
+ ^- The Shotgunners take eight tics faster to fire, fire in bursts of four, and take four less tics between shots. See above.\n\
+ ^- The Chaingunguy now has one less tic in his refire loop. Previously, the chaingunner firing rate was balanced around how fast Hae-Lin could swing her sword. Now that she can swing it faster and faster in various ways, they should shoot faster.\n\
+ ^- The Imp now fires two shots in a row and has a higher chance to go right back to firing more. The Imps are supposed to be more threatening than the zombiemen with more damage with a slower projectile--while in DemonSteele they can't have higher damage, they can at least have higher damage potential.\n\
+ ^- Previously, all attacks had a random element to them just in case of loading another wad with them. With the advent of Doomhealth and the Iron Maiden's armor, though, all attacks need their random element removed. Instead, all monsters do static damage.\n\
+ ^- Hell Knights and Barons now have indicators of when they're going to attack. To make up for it, now they attack faster and more frequently.\n\
+- The Acacia, Testament, and Sabbath now eject casings because reasons.\n\
+- The Acacia, Testament, and Sabbath now also have gun smoke because reasons.\n\
+- The Exodus' explosion now has a shockwave emitting from it.\n\
+- The transformation sequence to Iron Maiden now takes the currently-wielded weapon last, to prevent scripts from cancelling early.\n\
+- The low-health beep no longer plays when the player has over-life tokens.\n\
+- Revenants no longer jump to cutting death states when shot.\n\
+- The Cyberdemon now has a proper replacement, the DevilDriver. No longer does it pale in comparison to his fellow boss!\n\
+- The Hammer's range has been boosted by 16 units.\n\
+- The Legion can now be thrown one tic faster, the stacking can go up to 15 knives, and stacked knives bounce slightly more.\n\
+- Thanks to Virtue, texture brightmaps have been integrated for the sake of prettiness.\n\
+- Thanks to Kyle873, brightmaps have been implemented for the Exodus and the Frosthammer.\n\
+- Thanks to MartyKirra, there is now a voice announcer every time you go up a rank! To disable this, please use ds_cl_noannouncer.\n\
+- Iron Maiden punches are now four tics faster.\n\
+- Armor damage in Iron Maiden now takes a slight bit of combo meter.\n\
+- Picking up Arrogant weapons in Iron Maiden no longer breaks the HUD.\n\
+- The energy usage of the Iron Maiden has been swapped--the Iron Maiden now burns more fuel when mid-combat, and relaxes up slightly when the player is out of combat.\n\
+- The lightning spawned by weapon pickups now goes down even further, to about 900 units.\n\
+- A new map, MAPTEST, has been included specifically for streamlined testing, comparing damage values, testing out item functions, etc.\n\
+- Barons now have a unique death effect when punched to death with the Iron Maiden. Splat!\n\
+- Weapons now have their own unique special attacks! When holding down fire, hit alt-fire to charge your currently-held alternate weapon with soul energy and deliver a devastating unique attack. While not always as powerful as the sword attacks, these attacks are cheap on soul and take more ammo instead, which should allow players low on soul to have a viable alternative for heavier hordes.\n\
+- Souls now fade out little bit by little bit, vanishing if players don't eventually pick them up.\n\
+- FuzzballFox's 170 new text colors have been integrated.\n\
+- The Omen now has a Testament-esque delayed-pickup for the Chaingun, like how the Testament has with the regular shotgun. After four levels, it will replace Chaingun pickups.\n\
+- When playing in ZDoom, the Customize Controls section of Options now displays all of the relevant DemonSteele controls at the top.";
 
 int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {

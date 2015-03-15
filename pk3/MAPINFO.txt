@@ -10,7 +10,7 @@ map MAPFINAL "Steel Meets Steel" // Hammerfall
     music = "D_FINAL1" // Finntroll - Haterop
 }
 
-map MAPTEST "Practice What You Preach" // Manowar
+map MAPTEST "Practice What You Preach" // Testament
 {
     next = "MAP01"
     music = "D_FINAL1" // Finntroll - Haterop
