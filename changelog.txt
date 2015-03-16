@@ -124,6 +124,7 @@ FROM 0.74 TO 0.8:
 - FuzzballFox's 170 new text colors have been integrated.
 - The Omen now has a Testament-esque delayed-pickup for the Chaingun, like how the Testament has with the regular shotgun. After four levels, it will replace Chaingun pickups.
 - When playing in ZDoom, the Customize Controls section of Options now displays all of the relevant DemonSteele controls at the top.
+- The Iron Maiden now respects ds_cl_norecoil.
 
 
 FROM 0.73 TO 0.74:
