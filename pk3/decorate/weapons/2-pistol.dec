@@ -914,6 +914,22 @@ ACTOR HolyHuntingPistolBullet : FastProjectile
         TNT1 A 1
         Loop
     Death:
+    Crash:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_PlaySound("pistol/specialwall")
+        TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HolyShotPuffs",0,0,0,random(-100,100)/100.0,random(-100,100)/100.0,random(-100,100)/100.0,0,160)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HolyShotPuffs2",0,0,0,random(-100,100)/30.0,random(-100,100)/30.0,random(-100,100)/30.0,0,160)  
+        TNT1 AA 1 A_SpawnItemEx("SoulBulletPuffLarge",0,0,0,0,0,0,0,160)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HolyFireRemnant",random(-100,0)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-100,0)/100.00,random(-100,100)/100.00,random(-25,150)/100.00,0,160)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HolyFireRemnant",random(-100,0)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-100,0)/100.00,random(-100,100)/100.00,random(-25,150)/100.00,0,160)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HolyFireRemnant",random(-100,0)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-100,0)/100.00,random(-100,100)/100.00,random(-25,150)/100.00,0,160)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HolyFireRemnant",random(-100,0)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-100,0)/100.00,random(-100,100)/100.00,random(-25,150)/100.00,0,160)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HolyFireRemnant",random(-100,0)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-100,0)/100.00,random(-100,100)/100.00,random(-25,150)/100.00,0,160)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HolyFireRemnant",random(-100,0)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-100,0)/100.00,random(-100,100)/100.00,random(-25,150)/100.00,0,160)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HolyFireRemnant",random(-100,0)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,random(-100,0)/100.00,random(-100,100)/100.00,random(-25,150)/100.00,0,160)
+        stop
+    XDeath:
         TNT1 A 0
         TNT1 A 1
         TNT1 A 0 A_PlaySound("pistol/specialwall")
@@ -931,12 +947,28 @@ ACTOR HolyHuntingPistolBulletNoImpact : HolyHuntingPistolBullet
     States
     {
     Death:
+    Crash:
         TNT1 A 0
         TNT1 A 1
         stop
     XDeath:
         TNT1 A 0
         TNT1 A 1
+        stop
+    }
+}
+
+actor HolyFireRemnant
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.4
+    Renderstyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        PFFX ABCDEFGHIJKLM 2 Bright A_FadeOut(0.05)
         stop
     }
 }
