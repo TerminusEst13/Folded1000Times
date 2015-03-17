@@ -1,23 +1,4 @@
-CHECKLIST FOR V0.8
 
-Insulting death messages when you die in singleplayer.
-
-<TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
-
-Implement shivers' new idle animation.
-
-Look at Shivers' RotT fireball sprites and adjust for Hell Nobles.
-
-PRIORITY:
-3: Player sprites (Gundere is doing this)
-24: Test, test, test online.
-25: Update the metal jukebox/in-game credits/in-game changelog.
-   ^ For the ModDB upload, include changelog/list of credits in .txt file.
-   ^ Don't forget to remove the Messiah's code and save it for next build.
-
-EASY MODE MOCKERY:
-   ^ Pretty pink bow on the HUD
-   ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / ModArchive - radix - Unreal Superhero.xm / ModArchive - Tito - ~~P~i~z~z~a~~H~u~t.xm )
 
 
 
