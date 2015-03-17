@@ -70,9 +70,12 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "IronFistOverkill", 1.5
     DamageFactor "Kubiuti", 1.5
     DamageFactor "KubiutiCleave", 1.5
-    DamageFactor "KubiSpinAttack", 1.4
-    DamageFactor "KubiLungeAttack", 1.4
-    DamageFactor "KubiRangeAttack", 1.4
+    DamageFactor "KubiSpinAttack", 1.45
+    DamageFactor "KubiLungeAttack", 1.45
+    DamageFactor "KubiRangeAttack", 1.45
+    DamageFactor "KubiSpinAttackSheathe", 1.45
+    DamageFactor "KubiLungeAttackSheathe", 1.45
+    DamageFactor "KubiRangeAttackSheathe", 1.45
 }
 
 actor ComboDamageLevel2 : PowerDamage
@@ -94,9 +97,12 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "IronFistOverkill", 1.425
     DamageFactor "Kubiuti", 1.425 // 2.1375
     DamageFactor "KubiutiCleave", 1.425
-    DamageFactor "KubiSpinAttack", 1.325
-    DamageFactor "KubiLungeAttack", 1.325
-    DamageFactor "KubiRangeAttack", 1.325
+    DamageFactor "KubiSpinAttack", 1.375
+    DamageFactor "KubiLungeAttack", 1.375
+    DamageFactor "KubiRangeAttack", 1.375
+    DamageFactor "KubiSpinAttackSheathe", 1.375
+    DamageFactor "KubiLungeAttackSheathe", 1.375
+    DamageFactor "KubiRangeAttackSheathe", 1.375
 }
 
 actor ComboDamageLevel3 : PowerDamage
@@ -118,9 +124,12 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "IronFistOverkill", 1.35
     DamageFactor "Kubiuti", 1.35 // 2.885625
     DamageFactor "KubiutiCleave", 1.35
-    DamageFactor "KubiSpinAttack", 1.25
-    DamageFactor "KubiLungeAttack", 1.25
-    DamageFactor "KubiRangeAttack", 1.25
+    DamageFactor "KubiSpinAttack", 1.3
+    DamageFactor "KubiLungeAttack", 1.3
+    DamageFactor "KubiRangeAttack", 1.3
+    DamageFactor "KubiSpinAttackSheathe", 1.3
+    DamageFactor "KubiLungeAttackSheathe", 1.3
+    DamageFactor "KubiRangeAttackSheathe", 1.3
 }
 
 actor ComboDamageLevel4 : PowerDamage
@@ -142,9 +151,12 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "IronFistOverkill", 1.275
     DamageFactor "Kubiuti", 1.275 // 3.679171875
     DamageFactor "KubiutiCleave", 1.275
-    DamageFactor "KubiSpinAttack", 1.175
-    DamageFactor "KubiLungeAttack", 1.175
-    DamageFactor "KubiRangeAttack", 1.175
+    DamageFactor "KubiSpinAttack", 1.225
+    DamageFactor "KubiLungeAttack", 1.225
+    DamageFactor "KubiRangeAttack", 1.225
+    DamageFactor "KubiSpinAttackSheathe", 1.225
+    DamageFactor "KubiLungeAttackSheathe", 1.225
+    DamageFactor "KubiRangeAttackSheathe", 1.225
 }
 
 actor ComboDamageLevel5 : PowerDamage
@@ -166,9 +178,12 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "IronFistOverkill", 1.2
     DamageFactor "Kubiuti", 1.2 // 4.41500625
     DamageFactor "KubiutiCleave", 1.2
-    DamageFactor "KubiSpinAttack", 1.1
-    DamageFactor "KubiLungeAttack", 1.1
-    DamageFactor "KubiRangeAttack", 1.1
+    DamageFactor "KubiSpinAttack", 1.15
+    DamageFactor "KubiLungeAttack", 1.15
+    DamageFactor "KubiRangeAttack", 1.15
+    DamageFactor "KubiSpinAttackSheathe", 1.15
+    DamageFactor "KubiLungeAttackSheathe", 1.15
+    DamageFactor "KubiRangeAttackSheathe", 1.15
 }
 
 actor ComboDamageLevel6 : PowerDamage
@@ -190,9 +205,12 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "IronFistOverkill", 1.15
     DamageFactor "Kubiuti", 1.15 // 5.0772571875
     DamageFactor "KubiutiCleave", 1.15
-    DamageFactor "KubiSpinAttack", 1.05
-    DamageFactor "KubiLungeAttack", 1.05
-    DamageFactor "KubiRangeAttack", 1.05
+    DamageFactor "KubiSpinAttack", 1.1
+    DamageFactor "KubiLungeAttack", 1.1
+    DamageFactor "KubiRangeAttack", 1.1
+    DamageFactor "KubiSpinAttackSheathe", 1.1
+    DamageFactor "KubiLungeAttackSheathe", 1.1
+    DamageFactor "KubiRangeAttackSheathe", 1.1
 }
 
 actor DodgeGhostOn : CustomInventory
