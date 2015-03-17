@@ -497,6 +497,7 @@ ACTOR DevilDriverKaboom
 {
     Radius 10
     Height 10
+    Scale 1.25
     Speed 5
     PROJECTILE
     +CLIENTSIDEONLY
