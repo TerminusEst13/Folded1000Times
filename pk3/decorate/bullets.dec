@@ -48,6 +48,7 @@ ACTOR EnemyBullet
 
 ACTOR EnemyBullet2 : EnemyBullet
 {
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     Speed 40
     States
     {

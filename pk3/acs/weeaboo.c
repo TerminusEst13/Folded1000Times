@@ -466,7 +466,7 @@ int GravityOfLight;
         i = random(0, QUOTECOUNT-1);
         delay(35);
         LocalAmbientSound("health/cookieriff",127);
-        HudMessage(s:CookieQuote[i];HUDMSG_FADEINOUT,1423,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
+        HudMessage(s:CookieQuote[i];HUDMSG_FADEINOUT | HUDMSG_LOG,1423,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
         break;
 
     case WEEB_DEC_SLOWDOWN:

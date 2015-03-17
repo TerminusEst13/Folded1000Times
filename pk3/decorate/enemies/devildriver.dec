@@ -45,15 +45,14 @@ ACTOR DevilDriver replaces Cyberdemon
     Height 110
     Mass 1000
     Speed 8
-    //Damage 10    //This is the damage dealt by the charge attack, which should be altered for DemonSteele -- oddly, in vanilla doom, 10 damage does 50 health of damage
-    PainChance 12 //a quirk of skullfly? or perhaps a factor of the thrust amount? Something to keep in mind.
+    PainChance 12
     Monster
     MinMissileChance 160
     +BOSS
     +FLOORCLIP
     +NORADIUSDMG
     +DONTMORPH
-    +BOSSDEATH    
+    +BOSSDEATH
     +MISSILEMORE
     +MISSILEEVENMORE
     +DONTRIP
@@ -183,13 +182,13 @@ ACTOR DevilDriver replaces Cyberdemon
 //        TNT1 A 0 A_PlaySound("a chargeup sound for lightning")                //To Do: Chargeup Sound (weaker)
         DDRV A 1 A_FaceTarget
         TNT1 A 0 A_SpawnItemEx("DD_MeleeLightningStrike")
-        DDRV A 1 A_FaceTarget
+        DDRV A 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("devildriver/tasecharge")
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,0,1)                    
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,38,-32,1)                    
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,-38,32,1)
         TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
-        DDRV A 2
+        DDRV A 3
         TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
         DDRV A 3 
         TNT1 AAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
@@ -208,7 +207,7 @@ ACTOR DevilDriver replaces Cyberdemon
         DDRV F 1 A_FaceTarget
         TNT1 A 0 A_PlaySound("devildriver/tasecharge")
         TNT1 A 0 A_SpawnItemEx("DD_MeleeLightningStrike")
-        DDRV F 1 A_FaceTarget
+        DDRV F 2 A_FaceTarget
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,0,1)            //this is just some bullshit circle drawing because I suck at these things.    
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-32,1)                    
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-64,1)                    
@@ -221,7 +220,7 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,192,1)
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,224,1)            
         TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
-        DDRV F 2 A_FaceTarget
+        DDRV F 3 A_FaceTarget
         TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
         DDRV F 3 A_FaceTarget
         TNT1 AAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
@@ -280,7 +279,7 @@ ACTOR DevilDriver replaces Cyberdemon
 //        TNT1 A 0 A_PlaySound("a chargeup sound for lightning")                //To Do: Chargeup Sound (Stronger)
         DDRV F 1 A_FaceTarget
         TNT1 A 0 A_SpawnItemEx("DD_MeleeLightningStrike")
-        DDRV F 1 A_FaceTarget
+        DDRV F 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("devildriver/tasecharge")
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,0,1)            //this is just some bullshit circle drawing because I suck at these things.    
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,-32,1)                    
@@ -294,7 +293,7 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,192,1)
         TNT1 A 0 A_CustomMissile("DD_MeleeHitMarkerGo",36,0,224,1)            
         TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
-        DDRV F 2 A_FaceTarget
+        DDRV F 3 A_FaceTarget
         TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))
         DDRV F 3 A_FaceTarget
         TNT1 AAAAA 0 A_SpawnItemEx("DD_MeleeGenericBuildup",(random(20,40) * (-2 * random(0,1) +1)),(random(20,40) * (-2 * random(0,1) +1)),(random(0,6)*15))            
@@ -449,26 +448,19 @@ ACTOR DevilDriver replaces Cyberdemon
         DDRV H 1
         TNT1 A 0 A_Scream
         DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV H 1 A_SpawnItem("DevilDriverBlood")
-        DDRV HH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV HHHHHHHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV H 1 A_SpawnItem("DevilDriverBlood")
-        DDRV HHHHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV H 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV H 1 A_SpawnItem("DevilDriverBlood")
-        DDRV HHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV H 1 A_SpawnItem("DevilDriverBlood")
-        DDRV HHHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV HHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV H 1 A_SpawnItem("DevilDriverBlood")
-        DDRV HHHHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        DDRV H 1 A_SpawnItem("DevilDriverBlood")
-        DDRV HHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128) // 9
         DDRV H 10 A_NoBlocking
         TNT1 A 0 A_StopSoundEx("soundslot6")
         TNT1 A 0 A_PlaySoundEx("devildriver/end","soundslot6",0,0)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DevilDriverBlood",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("DevilDriverBlood",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
         DDRV I 35
         DDRV I -1 A_BossDeath
         Stop
@@ -525,30 +517,44 @@ ACTOR DevilDriverKaboom
 
 ACTOR DevilDriverBlood
 {
-    Radius 20
-    Height 20
+    Radius 2
+    Height 2
     -SOLID
     +NOINTERACTION
     +CLIENTSIDEONLY
     States
     {
     Spawn:
-        TNT1 A 0 A_Gravity
         TNT1 A 0
-        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower3", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower3", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
-        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(2,6), 0, random(0,360), 160)
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower2", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 0 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 A 1 A_SpawnItemEx("BloodShower5", 0, 0, random(0,42), random(-300,300)/100.00, random(-300,300)/100.00, random(100,360)/50.0, random(-180,180))
+        TNT1 AAAAA 0 A_SpawnItemEx("TinyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAAAA 0 A_SpawnItemEx("TinyBouncyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib0",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib1",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib2",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib3",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib4",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib5",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib6",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib7",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
+        TNT1 A 0 A_SpawnItemEx("Gore_Gib8",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160,64)
         Stop
     }
 }

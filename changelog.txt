@@ -125,6 +125,8 @@ FROM 0.74 TO 0.8:
 - The Omen now has a Testament-esque delayed-pickup for the Chaingun, like how the Testament has with the regular shotgun. After four levels, it will replace Chaingun pickups.
 - When playing in ZDoom, the Customize Controls section of Options now displays all of the relevant DemonSteele controls at the top.
 - The Iron Maiden now respects ds_cl_norecoil.
+- The ACS call for the pain state has been changed from ACS_ExecuteAlways to ACS_ExecuteWithResult, which means that the invulnerability state will start the very instant it's called rather than the tic after. In short, no more multi-token hits.
+- Fortune cookie messages are now logged to the console.
 
 
 FROM 0.73 TO 0.74:

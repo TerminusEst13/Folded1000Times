@@ -850,7 +850,7 @@ script WEEB_ENTER ENTER
             }
 
             // Armor regeneration.
-            if (IronArmor >= 4)
+            if (IronArmor >= 3)
             {
               if (GetArmorType("IronMaidenArmor",PlayerNumber()) || GetArmorType("IronMaidenArmor2",PlayerNumber()))
               {

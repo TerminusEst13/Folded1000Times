@@ -325,6 +325,7 @@ actor CyberRocket : Rocket //replaces Rocket
     -FIREDAMAGE
     Damage (150)
     DamageType "EnemyInfightDamageCyber"
+    Obituary "$o bore witness unto the revelation machine, the DevilDriver."
     States
     {
     Spawn:
