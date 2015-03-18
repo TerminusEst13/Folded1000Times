@@ -10,7 +10,7 @@ Marrub (Converting all the ACS to use strParam instead of an array, clientsiding
 
 FROM V2 TO V3:
 ===========================
-- 60 more songs!
+- 75 more songs!
 - Judas Priest's Tyrant had a random beep around the 0:56-ish mark. This has been
   fixed.
 - Dark ambient music has been removed and replaced. This is a pack for jamming to
