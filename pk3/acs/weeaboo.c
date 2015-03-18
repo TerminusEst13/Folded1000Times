@@ -45,8 +45,12 @@ script WEEB_RESPAWN respawn
     if (GameSkill () == 3) { GiveInventory("ContraLifeToken",4); }
     if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
     // Takes away a million points on respawn.
-    if (CheckInventory("ManPoints") >= 1000) { TakeInventory("ManPoints",1000); }
-    else { TakeInventory("ManPoints",999); TakeInventory("Points",9999); }
+    // If you have at least ten million points, take ten million.
+    // If you have a hundred million points, take a hundred million.
+    if (CheckInventory("OkuPoints") >= 1) { TakeInventory("OkuPoints",1); }
+    else if (CheckInventory("ManPoints") >= 1000) { TakeInventory("ManPoints",1000); }
+    else if (CheckInventory("ManPoints") >= 100) { TakeInventory("ManPoints",100); }
+    else { TakeInventory("ManPoints",99); TakeInventory("Points",9999); }
     
     ACS_ExecuteAlways(WEEB_ENTER,0,0,0);
 }
