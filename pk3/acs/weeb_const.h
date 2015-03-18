@@ -384,7 +384,10 @@ int DemonChangelog =
 - Souls now fade out little bit by little bit, vanishing if players don't eventually pick them up.\n\
 - FuzzballFox's 170 new text colors have been integrated.\n\
 - The Omen now has a Testament-esque delayed-pickup for the Chaingun, like how the Testament has with the regular shotgun. After four levels, it will replace Chaingun pickups.\n\
-- When playing in ZDoom, the Customize Controls section of Options now displays all of the relevant DemonSteele controls at the top.";
+- When playing in ZDoom, the Customize Controls section of Options now displays all of the relevant DemonSteele controls at the top.\n\
+- The Iron Maiden now respects ds_cl_norecoil.\n\
+- The ACS call for the pain state has been changed from ACS_ExecuteAlways to ACS_ExecuteWithResult, which means that the invulnerability state will start the very instant it's called rather than the tic after. In short, no more multi-token hits.\n\
+- Fortune cookie messages are now logged to the console.";
 
 int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {
