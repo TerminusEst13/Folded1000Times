@@ -447,6 +447,7 @@ ACTOR DevilDriver replaces Cyberdemon
         TNT1 A 0 DamageThing(2000)
         DDRV H 1
         TNT1 A 0 A_Scream
+        TNT1 A 0 Radius_Quake(3,110,0,32,0)
         DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
         DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)
         DDRV HHHHHHHHHH 1 A_SpawnItemEx("DevilDriverKaboom",0,0,random(16,64),random(-9,9),random(-9,9),random(5,9), 48, 128)

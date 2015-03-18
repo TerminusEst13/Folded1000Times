@@ -224,7 +224,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
         VXD1 AAAAAAAAAA 1 A_CustomMissile("BloodSplashGus1",16,0,random(-180,180),2,random(750,900)/10.0)
         TNT1 A 0 A_PlaySoundEx("blood/spew","soundslot5",0,0)
         VXD1 AAAAAAAAAA 1 A_CustomMissile("BloodSplashGus1",16,0,random(-180,180),2,random(750,900)/10.0)
-        TNT1 A 0 A_Jump(8,1)
+        TNT1 A 0 A_Jump(32,1)
         loop
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("blood/spewstop","soundslot5",0,0)
