@@ -387,7 +387,8 @@ int DemonChangelog =
 - When playing in ZDoom, the Customize Controls section of Options now displays all of the relevant DemonSteele controls at the top.\n\
 - The Iron Maiden now respects ds_cl_norecoil.\n\
 - The ACS call for the pain state has been changed from ACS_ExecuteAlways to ACS_ExecuteWithResult, which means that the invulnerability state will start the very instant it's called rather than the tic after. In short, no more multi-token hits.\n\
-- Fortune cookie messages are now logged to the console.";
+- Fortune cookie messages are now logged to the console.\n\
+- Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.";
 
 int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {

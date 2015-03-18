@@ -326,7 +326,7 @@ actor DoubleJumpWings
     States
     {
     Spawn:
-        ANWN AAAAAAAAAA 2 BRIGHT A_FadeOut(0.1)
+        ANWN AAAAAAAAAA 1 BRIGHT A_FadeOut(0.1)
         stop
     }
 }

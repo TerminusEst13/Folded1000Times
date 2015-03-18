@@ -127,6 +127,7 @@ FROM 0.74 TO 0.8:
 - The Iron Maiden now respects ds_cl_norecoil.
 - The ACS call for the pain state has been changed from ACS_ExecuteAlways to ACS_ExecuteWithResult, which means that the invulnerability state will start the very instant it's called rather than the tic after. In short, no more multi-token hits.
 - Fortune cookie messages are now logged to the console.
+- Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.
 
 
 FROM 0.73 TO 0.74:
