@@ -72,6 +72,22 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 [4:28:26 AM] terminusest13: I have no clue how I'd account for respawning items in online play, but hey, worth a shot.
 139: Secret skeleton difficulty. (Scroton is doing thipfffttthahahahahahahahaha yeah no he's not)
 140: Cvar for zombies to drop their respective ammo type.
+141: Humming noise for holding down the Acacia's special shot.
+142: Implement Shivers' new idle animation.
+143:  <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
+144: Look at Shivers' RotT fireball sprites and adjust for Hell Nobles.
+145: Insulting death messages when you die in singleplayer:
+   ^- "Oh, don't worry. It's not like the end of the world or anything."
+   ^- "Never trust a human to do an angel's job."
+   ^- "Smooth moves, slick."
+   ^- "Oooh, you totally almost saw that one coming."
+   ^- "And then you died. Oops."
+   ^- "Walk it off. Oh, wait, you can't."
+   ^- "You sure showed them."
+146: MOCKERY WHEN PLAYING ON LOWEST DIFFICULTY:
+   ^ Pretty pink bow on the HUD
+   ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / ModArchive - radix - Unreal Superhero.xm / ModArchive - Tito - ~~P~i~z~z~a~~H~u~t.xm )
+147: A unique CONBACK.
 
 
 
