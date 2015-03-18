@@ -877,7 +877,7 @@ script WEEB_ENTER ENTER
             }
             else
             {
-              if (MarchOfTheImmortal >= 27)
+              if (MarchOfTheImmortal >= 30)
               {
                 TakeInventory("SuperMeterCounter",1);
                 MarchOfTheImmortal = 0;

@@ -1581,7 +1581,7 @@ actor FreezeExplodeDamage
         TNT1 A 0
         TNT1 A 1 A_Explode(64,256,0)
         TNT1 A 0 A_ChangeFlag("FORCERADIUSDMG",0)
-        TNT1 A 1 A_Explode(64,256,0) // x10 (per shot) = 1280 damage. A little on the low end, but... 
+        TNT1 A 1 A_Explode(32,256,0) // x10 (per shot) = 960 damage. A little on the low end, but... 
         stop
     }
 }

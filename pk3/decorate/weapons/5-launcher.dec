@@ -1135,7 +1135,7 @@ ACTOR ExodusRocketSpecial
 {
     Radius 6
     Height 4
-    Damage (20) // + 198 + 198 + (8x155 = 1240) = 1656.
+    Damage (20) // + 198 + 198 + (6x155 = 930) = 1346.
     // Not the most damaging, but the easiest to hit with, the holy crucifix covers a wide area, and it lasts a good while.
     Speed 65
     Species "Player"

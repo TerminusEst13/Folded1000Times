@@ -528,8 +528,8 @@ actor "Kharon + Omen" : Kharon
         TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 464)
         TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 480)
         TNT1 A 0 A_FireBullets(0, 0, 1, 0, "LGBeam", 0, 496)
-        TNT1 A 0 A_FireBullets(0, 0, 1, 30, "LGPuff", FBF_NORANDOM, 512)
-        // 30 x 200(ish) = 6000. A little over enough to saw a Devildriver to death.
+        TNT1 A 0 A_FireBullets(0, 0, 1, 26, "LGPuff", FBF_NORANDOM, 512)
+        // 26 x 200(ish) = 5200. A little over enough to saw a Devildriver to death.
         // The most powerful of all the specials, but the shortest range and the most prohibitively expensive.
     DecisionLoopBecauseOnlineIsASetOfDicks:
         TNT1 A 0 A_Jump(255,"SpecialFrame1","SpecialFrame2","SpecialFrame3","SpecialFrame4","SpecialFrame5")

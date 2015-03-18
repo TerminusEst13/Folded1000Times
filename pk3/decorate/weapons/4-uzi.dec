@@ -873,14 +873,12 @@ actor "Kharon + Sabbath" : Kharon
     }
 }
 
-
-
 ACTOR SabbathBulletBouncing1 : FastProjectile
 {
     Radius 8
     Height 8
     Speed 60
-    Damage (60) // x35 = 2100
+    Damage (50) // x35 = 1750
     // The highest potential damage, but bounces everywhere. GOOD LUCK HITTING RELIABLY WITH IT.
     SeeSound None
     DeathSound None

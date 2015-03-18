@@ -21,7 +21,7 @@ Actor ThrownKnifeSpecial
     Spawn:
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("boomerang/spin","body",0,0)
-        BMRG ABCDABCD 1 A_Explode(4,16,0)
+        BMRG ABCDABCD 1 A_Explode(4,16,0) // 4*400 = 1600
         TNT1 A 0 A_CustomMissile("ThrownKnifeSpecial1",0,0,random(30,45))
         Stop
     }

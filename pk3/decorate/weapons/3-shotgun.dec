@@ -914,7 +914,7 @@ ACTOR SoulShotgunBullet1 : FastProjectile
     Radius 8
     Height 8
     Speed 100
-    Damage (20) // x64 = 1280. Can one-shot barons.
+    Damage (16) // x64 = 1028. Can one-shot barons.
     // Very good damage, extremely easy to hit with if you're up-close, pretty useless at anything beyond breathing range.
     SeeSound None
     DeathSound None
