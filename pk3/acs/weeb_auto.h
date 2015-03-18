@@ -720,11 +720,13 @@ script WEEB_ENTER ENTER
             if (CheckInventory("InIronMaiden") == 0 )
             {
                 ThrustThingZ(0,36,0,0);
+                GiveInventory("DoubleJumpWingTrigger",1);//Spawn("DoubleJumpWings",nx2,ny2,nz2+24,0,angel);
                 GiveInventory("AcesHigh", 1);
             }
             else
             {
                 ThrustThingZ(0,42,0,0);
+                GiveInventory("DoubleJumpWingTrigger",1);//Spawn("DoubleJumpWings",nx2,ny2,nz2+24,0,angel);
                 if (CheckInventory("VertIGo") == 1 ) { GiveInventory("AcesHigh",1); }
                 else { GiveInventory("VertIGo",1); }
             }
