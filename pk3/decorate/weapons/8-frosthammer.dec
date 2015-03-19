@@ -652,7 +652,7 @@ actor "Kharon + Frosthammer" : Kharon
         TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
         TNT1 A 0 A_PlayWeaponSound("frost/specialfire")
         TNT1 A 0 A_PlaySoundEx("haelin/attack","soundslot6",0,0)
-        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FreeziePop",16,6,(sin(pitch)*-63)+36,6,0,0,0,48)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FreeziePop",16,6,(sin(pitch)*-63)+36,16*cos(pitch),0,16 * -sin(pitch),angle,52) //A_SpawnItemEx("FreeziePop",16,6,(sin(pitch)*-63)+36,6,0,0,0,48)
         /*TNT1 A 0 A_SpawnItemEx("FreeziePop",32,0,(sin(pitch)*-63)+32,8,-2,12,0,48)
         TNT1 A 0 A_SpawnItemEx("FreeziePop",32,0,(sin(pitch)*-63)+32,8,-2,0,0,48)
         TNT1 A 0 A_SpawnItemEx("FreeziePop",32,0,(sin(pitch)*-63)+32,8,-6,-12,0,48)
