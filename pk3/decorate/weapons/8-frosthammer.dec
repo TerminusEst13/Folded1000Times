@@ -1381,6 +1381,8 @@ actor FreeziePop
     +FLOAT
     +DONTFALL
     +NOGRAVITY
+    +NOTELEPORT
+    +DROPOFF
     States
     {
     Spawn:
