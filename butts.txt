@@ -84,6 +84,8 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
    ^- "And then you died. Oops."
    ^- "Walk it off. Oh, wait, you can't."
    ^- "You sure showed them."
+   ^- "You tried. You failed, but at least you tried."
+   ^- "A hero's death is still a death."
 146: MOCKERY WHEN PLAYING ON LOWEST DIFFICULTY:
    ^ Pretty pink bow on the HUD
    ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / ModArchive - radix - Unreal Superhero.xm / ModArchive - Tito - ~~P~i~z~z~a~~H~u~t.xm )

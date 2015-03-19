@@ -201,6 +201,7 @@ GRAPHICS:\n\
 - Virtue (All of the texture brightmaps)\n\
 - Kyle873 (The Exodus/Frosthammer brightmaps)\n\
 - Seryder (Decorating and polishing up MAPTEST)\n\
+- Gundere (Hae-Lin's player sprites)\n\
 \n\
 CODE:\n\
 =========\n\

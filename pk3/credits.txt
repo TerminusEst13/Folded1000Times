@@ -14,7 +14,6 @@ SPECIAL THANKS TO:
   kickstarting DemonSteele with, letting me have a headstart on everything.
 - /vr/, as always, for being an incredible source of support and ideas.
 
-
 GRAPHICS:
 =========
 - Numerous artists for custom deaths (All sorted in folders according to the artist)
@@ -109,6 +108,7 @@ GRAPHICS:
 - Virtue (All of the texture brightmaps)
 - Kyle873 (The Exodus/Frosthammer brightmaps)
 - Seryder (Decorating and polishing up MAPTEST)
+- Gundere (Hae-Lin's player sprites)
 
 CODE:
 =========
