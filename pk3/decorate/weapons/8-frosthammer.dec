@@ -1365,7 +1365,11 @@ actor FreeziePop
     Mass 50
     Speed 6
     Species "Player"
+    DamageFactor "FrosthammerCharged", 0.0
+    DamageFactor "FrosthammerExplode", 0.0
+    DamageFactor "Frosthammer", 0.0
     Monster
+    -SHOOTABLE
     +FRIENDLY
     -COUNTKILL
     -ISMONSTER
