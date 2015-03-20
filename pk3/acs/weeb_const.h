@@ -389,7 +389,9 @@ int DemonChangelog =
 - The Iron Maiden now respects ds_cl_norecoil.\n\
 - The ACS call for the pain state has been changed from ACS_ExecuteAlways to ACS_ExecuteWithResult, which means that the invulnerability state will start the very instant it's called rather than the tic after. In short, no more multi-token hits.\n\
 - Fortune cookie messages are now logged to the console.\n\
-- Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.";
+- Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.\n\
+- The No Recoil option now disables the pushback on guns as well.\n\
+- Enabling No Recoil and firing the Frosthammer no longer jumps to the charged finish state.";
 
 int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {
@@ -504,7 +506,7 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Senpai noticed me!",
 "I want to be inside you but nobody ever eats the paper. ;_;",
 "I'd ask you to be gentle with me but you seem to have already snapped me in half.",
-"I'm in Comic Sans and you can't do shit about it.",
+"Leather armor is the best for sneaking, because it's made of Hide.",
 "Excuse me, do you have a moment free to talk about our lord and savior, Jesus Christ?",
 "I sure hope I'm not supposed to be guarding the Spear of Destiny right now.",
 "I bet the UAC did this.",
@@ -515,7 +517,7 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Go to Heaven for the men, but go to Hell for the women.",
 "Gomen nasai. Nihongo ga kakenai.",
 "Let me tell you why Satan is a myth and the demons are actually aliens.",
-"Come sail away, come sail away, come sail away with me.",
+"Hae-Lin is actually really bad at poker, because she folded 1000 times.",
 "Why bother with original content when you can just quote a meme and have an epic win?",
 "John Who? John Woo.",
 "Install your GPU drivers.",

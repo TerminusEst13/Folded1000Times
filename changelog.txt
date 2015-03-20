@@ -128,6 +128,8 @@ FROM 0.74 TO 0.8:
 - The ACS call for the pain state has been changed from ACS_ExecuteAlways to ACS_ExecuteWithResult, which means that the invulnerability state will start the very instant it's called rather than the tic after. In short, no more multi-token hits.
 - Fortune cookie messages are now logged to the console.
 - Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.
+- The No Recoil option now disables the pushback on guns as well.
+- Enabling No Recoil and firing the Frosthammer no longer jumps to the charged finish state.
 
 
 FROM 0.73 TO 0.74:

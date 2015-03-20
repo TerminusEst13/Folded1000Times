@@ -557,8 +557,8 @@ actor "Kharon + Sabbath" : Kharon
         goto AltFinish
     AltFinish:
         TNT1 A 0 A_FireCustomMissile("SabbathCasingSpawner",0,0,0,0,2,0)
-        TNT1 A 0 A_Recoil(0.1)
         TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoil")
+        TNT1 A 0 A_Recoil(0.1)
         TNT1 A 0 A_SetAngle(angle+(random(-300,300)/1000.000))
         TNT1 A 0 A_SetPitch(pitch-(random(200,450)/1000.000))
     NoRecoil:
