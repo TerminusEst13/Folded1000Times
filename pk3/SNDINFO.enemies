@@ -168,6 +168,7 @@ wizard/death              WZRDDETH // Taken from Poolkonger
 
 blackened/attack          DARKATCK // Taken from Poofkoofer
 blackened/drain           DARKDRAN // Taken from Pan-cooler
+$limit blackened/drain 0
 
 $random blackened/laugh { dlaf1 dlaf2 dlaf3 dlaf4 dlaf5 } // Recorded by John Archer
 dlaf1                     DARKLAF1
