@@ -59,7 +59,7 @@ ACTOR MeleePlayer : PlayerPawn
         JHLX A 1 A_JumpIfInventory("GhostStepCooldown",26,"Dodge")
         loop
     See:
-        JHLX HIJK 4 A_JumpIfInventory("GhostStepCooldown",26,"Dodge")
+        JHLX HHHHIIIIJJJJKKKK 1 A_JumpIfInventory("GhostStepCooldown",26,"Dodge")
         Loop
     Dodge:
         JHLX C 12
