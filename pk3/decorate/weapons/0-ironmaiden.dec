@@ -47,7 +47,7 @@ actor IronMaidenProtection : PowerProtection
     DamageFactor "EnemyInfightDamageRevenant", 0.0
     DamageFactor "EnemyInfightDamageFatso", 0.0
     DamageFactor "EnemyInfightDamageCaco", 0.0
-    DamageFactor "EnemyInfightDamageCyber", 0.75
+    DamageFactor "EnemyInfightDamageCyber", 0.5
     DamageFactor "Lava", 0.0
     DamageFactor "Fire", 0.0
     DamageFactor "Slime", 0.0
