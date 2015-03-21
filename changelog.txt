@@ -130,6 +130,7 @@ FROM 0.74 TO 0.8:
 - Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.
 - The No Recoil option now disables the pushback on guns as well.
 - Enabling No Recoil and firing the Frosthammer no longer jumps to the charged finish state.
+- Thanks to Gundere, Hae-Lin now has a set of appropriate player sprites.
 
 
 FROM 0.73 TO 0.74:

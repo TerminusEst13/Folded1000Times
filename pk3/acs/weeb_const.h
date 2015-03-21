@@ -391,7 +391,8 @@ int DemonChangelog =
 - Fortune cookie messages are now logged to the console.\n\
 - Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.\n\
 - The No Recoil option now disables the pushback on guns as well.\n\
-- Enabling No Recoil and firing the Frosthammer no longer jumps to the charged finish state.";
+- Enabling No Recoil and firing the Frosthammer no longer jumps to the charged finish state.\n\
+- Thanks to Gundere, Hae-Lin now has a set of appropriate player sprites.";
 
 int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {
