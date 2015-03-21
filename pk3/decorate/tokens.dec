@@ -142,11 +142,11 @@ actor HyperComboCounter : Counter { Inventory.MaxAmount 350 }
 actor WaitingTooLong : Counter { Inventory.MaxAmount 525 }
 actor HenshinCooldown : Counter { Inventory.MaxAmount 35 }
 
-actor DoubleTapReadyRight : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapReadyForward : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapReadyBack : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapReadyLeft : Counter { Inventory.MaxAmount 8 }
-actor DoubleTapCooldown : Counter { Inventory.MaxAmount 20 }
+actor DoubleTapReadyRight : Counter { Inventory.MaxAmount 6 }
+actor DoubleTapReadyForward : Counter { Inventory.MaxAmount 6 }
+actor DoubleTapReadyBack : Counter { Inventory.MaxAmount 6 }
+actor DoubleTapReadyLeft : Counter { Inventory.MaxAmount 6 }
+actor DoubleTapCooldown : Counter { Inventory.MaxAmount 16 }
 
 actor SuperCounter1 : Counter { Inventory.MaxAmount 100 }
 actor SuperCounter2 : Counter { Inventory.MaxAmount 100 }

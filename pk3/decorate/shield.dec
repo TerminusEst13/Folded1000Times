@@ -36,8 +36,8 @@ actor BlindGuardian
     DamageFactor "Telefrag", 0.0
     RadiusDamageFactor 0.0
     Species "Player"
-    //+NOTARGET
-    //+NOINFIGHTING
+    +NOTARGET
+    +NOINFIGHTING
     -SOLID
     +NOGRAVITY
     +THRUSPECIES

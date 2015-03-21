@@ -636,20 +636,20 @@ script WEEB_ENTER ENTER
 
           if (keypressed(BT_MOVERIGHT))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyRight",8); }}}
+                    { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyRight",6); }}}
           if (keypressed(BT_MOVELEFT))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyLeft",8); }}}
+                    { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyLeft",6); }}}
           if (keypressed(BT_FORWARD))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyForward",8); }}}
+                    { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyForward",6); }}}
           if (keypressed(BT_BACK))
             { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",20); }
-                      else { GiveInventory("DoubleTapReadyBack",8); }}}
+                    { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyBack",6); }}}
 
           // Kyle873 makes a super timefreeze thing! HAVE FUN TERM
           // [13] OR WOULD HAVE IF HE HADN'T PUT IT IN THE CLIENTSIDE SCRIPT LOOP
