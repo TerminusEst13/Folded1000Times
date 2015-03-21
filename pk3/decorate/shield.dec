@@ -19,6 +19,7 @@ actor BlindGuardian
     DamageFactor "kubispinattack", 0.0
     DamageFactor "kubilungeattack", 0.0
     DamageFactor "kubirangeattack", 0.0
+    DamageFactor "KharonHookshot", 0.0
     DamageFactor "HaltHammerzeitImpact", 0.0
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "IronFistDamage", 0.0
