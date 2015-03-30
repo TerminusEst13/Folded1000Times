@@ -34,7 +34,7 @@ Script WEEB_JOY_FORW Enter
 	{
 		stick_forward = GetPlayerInput (-1, ModInput_ForwardMove); // This needs to be constantly updated
 		
-		if (GetCvar("ds_nospecials") == 0)
+		if (GetCvar("dst_nospecials") == 0)
 		{
 			
 			// Forward  
@@ -85,7 +85,7 @@ Script WEEB_JOY_LEFT Enter
 	{
 		stick_forward = GetPlayerInput (-1, ModInput_ForwardMove);
 
-		if (GetCvar("ds_nospecials") == 0)
+		if (GetCvar("dst_nospecials") == 0)
 		{
 			// Back
 			if (stick_forward <= -3200)
@@ -133,7 +133,7 @@ Script WEEB_JOY_RITE Enter
 	{
 		stick_side = GetPlayerInput (-1, ModInput_SideMove);
 
-		if (GetCvar("ds_nospecials") == 0)
+		if (GetCvar("dst_nospecials") == 0)
 		{
 			// Left
 			if (stick_side <= -3200)
@@ -182,7 +182,7 @@ Script WEEB_JOY_BACK Enter
 	{
 		stick_side = GetPlayerInput (-1, ModInput_SideMove);
 
-		if (GetCvar("ds_nospecials") == 0)
+		if (GetCvar("dst_nospecials") == 0)
 		{
 			// Right
 			if (stick_side >= 3200)

@@ -1,27 +1,27 @@
-// Boy, this is gonna be odd if Zandro ever catches up with ZDoom.
-// Talk about not futureproof.
-
 // Server cvars
-server int ds_runninginzdoom    = 1;
-server int ds_noshotgunlimiter  = 0;
-server int ds_noshotgun         = 0;
-server int ds_nospecials        = 0;
-server int ds_infinitesouls     = 0;
-server int ds_arrogantweapons   = 0;
-server int ds_gunsouls          = 0;
-server int ds_doomhealth        = 0;
-server int ds_2brutal           = 0;
-server int ds_backpackstart     = 0;
-server int ds_omenstart         = 0;
-server int ds_nodamagepenalty   = 0;
-server int ds_runmod            = 100;
+// server int dst_runninginzdoom    = 1; - Deprecated as of Zandronum 2.0.
+server int dst_runninginzandro   = 0;
+server int dst_noshotgunlimiter  = 0;
+server int dst_noshotgun         = 0;
+server int dst_nochaingun        = 0;
+server int dst_nospecials        = 0;
+server int dst_infinitesouls     = 0;
+server int dst_arrogantweapons   = 0;
+server int dst_gunsouls          = 0;
+server int dst_doomhealth        = 0;
+server int dst_2brutal           = 0;
+server int dst_backpackstart     = 0;
+server int dst_omenstart         = 0;
+server int dst_nodamagepenalty   = 0;
+server int dst_runmod            = 100;
 
 // Clientside cvars
-user int ds_cl_nomusic          = 0;
-user int ds_cl_norecoil         = 0;
-server int ds_cl_toaster        = 0;
-// Actually clientside, but apparently it doesn't work if it's a user cvar. NEAT.
-user int ds_cl_autoswitch       = 0;
-user int ds_cl_nobeeping        = 0;
-user int ds_cl_nopoints         = 0;
-user int ds_cl_noannouncer      = 0;
+user int dst_cl_nomusic          = 0;
+user int dst_cl_norecoil         = 0;
+server int dst_cl_toasterzdoom   = 0;
+// Actually clientside, but it doesn't work if it's a user cvar. THANKS, ZDOOM.
+user int dst_cl_toaster          = 0;
+user int dst_cl_autoswitch       = 0;
+user int dst_cl_nobeeping        = 0;
+user int dst_cl_nopoints         = 0;
+user int dst_cl_noannouncer      = 0;

@@ -8,6 +8,7 @@
 #include "weeb_joy.h"
 
 global int 58:LevelCount;
+global int 59:RunningInZandro;
 
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int playerTimeFreeze[PLAYERMAX];
@@ -58,105 +59,31 @@ script WEEB_RESPAWN respawn
 script WEEB_OPEN OPEN
 {
     IsServer = 1;
-
     if (GameType() != GAME_TITLE_MAP) { LevelCount++; } // Titlemaps add to the global variable, irritatingly.
-
-    if (GetCvar("ds_runninginzdoom") == 0)
+    if (Spawn("PossessionStone",8192,8192,0,128) && RunningInZandro == 0 && LevelCount < 3) // Attempt to spawn a Doomsphere.
+    {                                // Doesn't work if we already know we're in Zandro and stops checking after two levels.
+        Thing_Remove(128);
+        RunningInZandro = 1;
+        SetCVar("dst_runninginzandro",1);
+        //PrintBold(s:"Zandronum check successful.");
+        //Log(s:"Zandronum check successful.");
+    }
+    delay(1);
+    while(1)
     {
-        if (!GetCvar("compat_clientssendfullbuttoninfo"))
-            { ConsoleCommand("set compat_clientssendfullbuttoninfo 1"); }
-
-        if (!GetCvar("ds_noshotgunlimiter"))
-            { ConsoleCommand("set ds_noshotgunlimiter 0");
-              ConsoleCommand("archivecvar ds_noshotgunlimiter 0"); }
-
-        if (!GetCvar("ds_noshotgun"))
-            { ConsoleCommand("set ds_noshotgun 0");
-              ConsoleCommand("archivecvar ds_noshotgun 0"); }
-
-        if (!GetCvar("ds_infinitesouls"))
-            { ConsoleCommand("set ds_infinitesouls 0");
-              ConsoleCommand("archivecvar ds_infinitesouls 0"); }
-
-        if (!GetCvar("ds_nospecials"))
-            { ConsoleCommand("set ds_nospecials 0");
-              ConsoleCommand("archivecvar ds_nospecials 0"); }
-
-        if (!GetCvar("ds_arrogantweapons"))
-            { ConsoleCommand("set ds_arrogantweapons 0");
-              ConsoleCommand("archivecvar ds_arrogantweapons 0"); }
-
-        if (!GetCvar("ds_gunsouls"))
-            { ConsoleCommand("set ds_gunsouls 0");
-              ConsoleCommand("archivecvar ds_gunsouls 0"); }
-              
-        if (!GetCvar("ds_doomhealth"))
-            { ConsoleCommand("set ds_doomhealth 0");
-              ConsoleCommand("archivecvar ds_doomhealth 0"); }
-              
-        if (!GetCvar("ds_2brutal"))
-            { ConsoleCommand("set ds_2brutal 0");
-              ConsoleCommand("archivecvar ds_2brutal 0"); }
-              
-        if (!GetCvar("ds_omenstart"))
-            { ConsoleCommand("set ds_omenstart 0");
-              ConsoleCommand("archivecvar ds_omenstart 0"); }
-              
-        if (!GetCvar("ds_backpackstart"))
-            { ConsoleCommand("set ds_backpackstart 0");
-              ConsoleCommand("archivecvar ds_backpackstart 0"); }
-              
-        if (!GetCvar("ds_nodamagepenalty"))
-            { ConsoleCommand("set ds_nodamagepenalty 0");
-              ConsoleCommand("archivecvar ds_nodamagepenalty 0"); }
-              
-        if (!GetCvar("ds_runmod"))
-            { ConsoleCommand("set ds_runmod 100");
-              ConsoleCommand("archivecvar ds_runmod 100"); }
-
-        if (!GetCvar("ds_nochaingunlimiter"))
-            { ConsoleCommand("set ds_nochaingunlimiter 0");
-              ConsoleCommand("archivecvar ds_nochaingunlimiter 0"); }
-
-        if (!GetCvar("ds_nochaingun"))
-            { ConsoleCommand("set ds_nochaingun 0");
-              ConsoleCommand("archivecvar ds_nochaingun 0"); }
+        if (GetCvar("dst_runninginzandro") == 1)
+        { if (GetCvar("compat_clientssendfullbuttoninfo") == 0)
+        { ConsoleCommand("compat_clientssendfullbuttoninfo 1"); }} // I'd use SetCvar, but it just doesn't work.
+        else { terminate; }
+        delay(1);
     }
 }
 
 script WEEB_OPEN_CLIENT OPEN clientside
 {
     delay(1);
-    if (GetCvar("ds_runninginzdoom") == 0)
-    {
-        if (!GetCvar("ds_cl_nomusic"))
-            { ConsoleCommand("set ds_cl_nomusic 0");
-              ConsoleCommand("archivecvar ds_cl_nomusic"); }
-
-        if (!GetCvar("ds_cl_norecoil"))
-            { ConsoleCommand("set ds_cl_norecoil 0");
-              ConsoleCommand("archivecvar ds_cl_norecoil"); }
-
-        if (!GetCvar("ds_cl_toaster"))
-            { ConsoleCommand("set ds_cl_toaster 0");
-              ConsoleCommand("archivecvar ds_cl_toaster"); }
-
-        if (!GetCvar("ds_cl_autoswitch"))
-            { ConsoleCommand("set ds_cl_autoswitch 0");
-              ConsoleCommand("archivecvar ds_cl_autoswitch"); }
-
-        if (!GetCvar("ds_cl_nobeeping"))
-            { ConsoleCommand("set ds_cl_nobeeping 0");
-              ConsoleCommand("archivecvar ds_cl_nobeeping"); }
-
-        if (!GetCvar("ds_cl_nopoints"))
-            { ConsoleCommand("set ds_cl_nopoints 0");
-              ConsoleCommand("archivecvar ds_cl_nopoints"); }
-
-        if (!GetCvar("ds_cl_noannouncer"))
-            { ConsoleCommand("set ds_cl_noannouncer 0");
-              ConsoleCommand("archivecvar ds_cl_noannouncer"); }
-    }
+    // Not sure if there's a reason for this, now that Z& 2.0 is out and there's cvarinfo.
+    // Hm.
 }
 
 script WEEB_DECORATE (int burrshet, int ballshat) // All the Decorate/utility/etc calls go here.
@@ -181,9 +108,9 @@ int GravityOfLight;
         
         //GiveInventory("PointsTookDamage",1);
 
-        if( GetCVar( "ds_doomhealth" ) == 0 )
+        if( GetCVar( "dst_doomhealth" ) == 0 )
         {
-            if (GetCvar("ds_nodamagepenalty") == 0)
+            if (GetCvar("dst_nodamagepenalty") == 0)
             {
               if (CheckInventory("ContraArmorToken") >= 1)
                 { TakeInventory("ContraArmorToken",1); TakeInventory("HyperComboCounter",25); }
@@ -423,7 +350,7 @@ int GravityOfLight;
         // Also gives people opportunity to get used to the sword.
         // Also note that the Shotgun spawn is never given out online.
         // This might be a problem if people ever play Doom 1 mapsets online.
-        if ( (GetCvar("ds_noshotgunlimiter") == 0 && LevelCount < 2) || GetCvar("ds_noshotgun") == 1 || !isSinglePlayer())
+        if ( (GetCvar("dst_noshotgunlimiter") == 0 && LevelCount < 2) || GetCvar("dst_noshotgun") == 1 || !isSinglePlayer())
              { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
@@ -448,12 +375,12 @@ int GravityOfLight;
         break;
 
     case WEEB_DEC_STWEAPCHECK:
-        if (GetCvar("ds_arrogantweapons") == 1) { SetResultValue(1); }
-        else if (GetCvar("ds_arrogantweapons") == 2) { SetResultValue(2); }
+        if (GetCvar("dst_arrogantweapons") == 1) { SetResultValue(1); }
+        else if (GetCvar("dst_arrogantweapons") == 2) { SetResultValue(2); }
         /*switch (ballshat)
         {
         case 0:
-          if (GetCvar("ds_arrogantweapons") == 2)
+          if (GetCvar("dst_arrogantweapons") == 2)
              { SetActorState(0,"SpawnTestament"); }
           else
              { SetActorState(0,"SpawnLegion"); }
@@ -478,11 +405,11 @@ int GravityOfLight;
         break;
 
     case WEEB_DEC_GUNSOULS:
-        SetResultValue(GetCVar("ds_gunsouls"));
+        SetResultValue(GetCVar("dst_gunsouls"));
         break;
         
     case WEEB_DEC_DOOMHEALTH:
-        SetResultValue(GetCVar("ds_doomhealth"));
+        SetResultValue(GetCVar("dst_doomhealth"));
         break;
 
         // Takes the player's existing gravity and reduces it a bit because of
@@ -505,7 +432,7 @@ int GravityOfLight;
         break;
 
     case WEEB_DEC_ONLINECHECK2:
-        if ( (GetCvar("ds_nochaingunlimiter") == 0 && LevelCount < 4) || GetCvar("ds_nochaingun") == 1 || !isSinglePlayer())
+        if ( (GetCvar("dst_nochaingunlimiter") == 0 && LevelCount < 4) || GetCvar("dst_nochaingun") == 1 || !isSinglePlayer())
              { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
@@ -555,13 +482,13 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) 
         { if (getcvar("norandommusic") == 0) { terminate; }}
         int i = random(0, IRONMUS-1);
-        if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic(IronMaidenMusic[i],0); }
+        if(getcvar("dst_cl_nomusic") == 0) { LocalSetMusic(IronMaidenMusic[i],0); }
         break;
 
     case WEEB_DEC_CHANGEMUSBACK:
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1)
         { if (getcvar("norandommusic") == 0) { terminate; }}
-        if(getcvar("ds_cl_nomusic") == 0) { LocalSetMusic("*"); }
+        if(getcvar("dst_cl_nomusic") == 0) { LocalSetMusic("*"); }
         break;
 
     //[Scroton] cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
@@ -569,12 +496,22 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
     //and decrease the number in the check at the top of this script
 
     case WEEB_DEC_TOASTER:
-        if(GetCvar("ds_cl_toaster") <= 0) { SetActorState(0,"Toaster0"); }
-        if(GetCvar("ds_cl_toaster") == 1) { SetActorState(0,"Toaster1"); }
-        if(GetCvar("ds_cl_toaster") >= 2) { SetActorState(0,"Toaster2"); }
+        if (GetCvar("dst_runninginzandro") == 1)
+        {
+            if(GetCvar("dst_cl_toaster") <= 0) { SetActorState(0,"Toaster0"); }
+            if(GetCvar("dst_cl_toaster") == 1) { SetActorState(0,"Toaster1"); }
+            if(GetCvar("dst_cl_toaster") >= 2) { SetActorState(0,"Toaster2"); }
+        }
+        else
+        {
+            if(GetCvar("dst_cl_toasterzdoom") <= 0) { SetActorState(0,"Toaster0"); }
+            if(GetCvar("dst_cl_toasterzdoom") == 1) { SetActorState(0,"Toaster1"); }
+            if(GetCvar("dst_cl_toasterzdoom") >= 2) { SetActorState(0,"Toaster2"); }
+        }
         break;
+
     case WEEB_DEC_TOASTER2:
-        SetResultValue(getCvar("ds_cl_toaster"));
+        SetResultValue(getCvar("dst_cl_toaster"));
         break;
     }
 }
@@ -711,11 +648,11 @@ script WEEB_PUKE2 (void) NET CLIENTSIDE
 
 function int WeebClientVars(void)
 {
-    int noannounce          = !!GetCVar("ds_cl_noannouncer");
-    int nopan               = !!GetCVar("ds_cl_nopoints");
-    int beepbeepbeep        = !!GetCVar("ds_cl_nobeeping");
-    int autoswitch          = !!GetCVar("ds_cl_autoswitch");
-    int recoilrules         = !!GetCVar("ds_cl_norecoil");
+    int noannounce          = !!GetCVar("dst_cl_noannouncer");
+    int nopan               = !!GetCVar("dst_cl_nopoints");
+    int beepbeepbeep        = !!GetCVar("dst_cl_nobeeping");
+    int autoswitch          = !!GetCVar("dst_cl_autoswitch");
+    int recoilrules         = !!GetCVar("dst_cl_norecoil");
 
     return (noannounce << 4) + (nopan << 3) + (beepbeepbeep << 2) + (autoswitch << 1) + recoilrules;
 }

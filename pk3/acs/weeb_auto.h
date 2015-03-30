@@ -79,13 +79,13 @@ script WEEB_ENTER ENTER
             GiveInventory("IAmAnAwesomePersonWhoLikesCoolMusic",1);
         }
 
-        if (GetCvar("ds_omenstart") == 1)
+        if (GetCvar("dst_omenstart") == 1)
         {
             GiveInventory("Kharon + Omen",1);
             GiveInventory("GotHammer",1);
         }
 
-        if (GetCvar("ds_backpackstart") == 1)
+        if (GetCvar("dst_backpackstart") == 1)
         { GiveInventory("Backpack",1); }
 
         GiveInventory("ImAlive",1);
@@ -116,7 +116,7 @@ script WEEB_ENTER ENTER
         GiveInventory("BlindGuardianFromPreviousLevel",1);
     }
 
-    if (GetCvar("ds_doomhealth") == 1)
+    if (GetCvar("dst_doomhealth") == 1)
     {
         GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
         NotADoomGame = 0;
@@ -128,7 +128,7 @@ script WEEB_ENTER ENTER
     }
 
     // Brutal Doom compatibility check.
-    if (Spawn("Brutal_Blood",GetActorX(0),GetActorY(0),GetActorZ(0),i) || Spawn("BrutalPistol",GetActorX(0),GetActorY(0),GetActorZ(0),i) || GetCvar("ds_2brutal") == 1)
+    if (Spawn("Brutal_Blood",GetActorX(0),GetActorY(0),GetActorZ(0),i) || Spawn("BrutalPistol",GetActorX(0),GetActorY(0),GetActorZ(0),i) || GetCvar("dst_2brutal") == 1)
     {
         Thing_Remove(i);
         isbrutal = 1;
@@ -183,17 +183,17 @@ script WEEB_ENTER ENTER
 
         // Cvar nonsense.
 
-        if (GetCvar("ds_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
+        if (GetCvar("dst_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
            else { TakeInventory("NoTauntAllowed",1); }
            
-        if (GetCvar("ds_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
+        if (GetCvar("dst_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
            else { TakeInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
 
         // If you do this mid-game, you're fucked.
         // Millions of games are fucked over monthly by accidental or intentional negligence.
         // Please, donate now to the Foundation for Unfucking Games, or FUG.
-        if (GetCvar("ds_doomhealth") == 1) { GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
+        if (GetCvar("dst_doomhealth") == 1) { GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
            else { TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
         if ( (NotADoomGame == 1 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 1) || (NotADoomGame == 0 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 0) || IFuckedTheGameUp == 1)
         {
@@ -254,7 +254,7 @@ script WEEB_ENTER ENTER
 
         // Health nonsense
         
-        if( GetCVar( "ds_doomhealth" ) == 1 )
+        if( GetCVar( "dst_doomhealth" ) == 1 )
         {
             // If we're using ye olde doome health rules,
             // set the player's inventory count for the health markers based off health
@@ -465,7 +465,7 @@ script WEEB_ENTER ENTER
         // If the player still has life left, they get full life.
         // How's that for redundancy?
         // Next up: PEOPLE DIE WHEN THEY ARE KILLED.
-        if( GetCVar( "ds_doomhealth" ) == 0 )
+        if( GetCVar( "dst_doomhealth" ) == 0 )
         {
             if (CheckInventory("ContraLifeToken") >= 1 || CheckInventory("OverLifeToken") >= 1 || CheckInventory("ContraArmorToken") >= 1)
             { GiveInventory("999Health",999); }
@@ -619,7 +619,7 @@ script WEEB_ENTER ENTER
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         KurtAngle = GetActorAngle(0) >> 8;
 
-        if (GetCvar("ds_nospecials") == 0)
+        if (GetCvar("dst_nospecials") == 0)
         {
         // This entire system is so brute force it's not even funny.
         // I never said I was an elegant or even a good coder, but this is still
@@ -901,9 +901,9 @@ script WEEB_ENTER ENTER
         }
 
         // NYRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-        if (GetCvar("ds_runmod") < 10001 && GetCvar("ds_runmod") > -2) // I forget what the maximum integer is. 36525? Well, whatever, anything beyond that and it'll crash.
+        if (GetCvar("dst_runmod") < 10001 && GetCvar("dst_runmod") > -2) // I forget what the maximum integer is. 36525? Well, whatever, anything beyond that and it'll crash.
         {
-            speedmod = max(0, condFalse(GetCVar("ds_runmod"), 100)) * 0.01; // Get the percentage equivalent of the value...
+            speedmod = max(0, condFalse(GetCVar("dst_runmod"), 100)) * 0.01; // Get the percentage equivalent of the value...
             SetActorProperty(0, APROP_Speed, speedmod); // And adjust the player's speed accordingly.
         }
 

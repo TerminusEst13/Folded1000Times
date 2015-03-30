@@ -206,7 +206,7 @@ GRAPHICS:\n\
 CODE:\n\
 =========\n\
 - Scroton\n\
-  ^ Pretty much the entirety of ds_cl_toaster\n\
+  ^ Pretty much the entirety of dst_cl_toaster\n\
   ^ Optimizing a lot of rough spots\n\
   ^ Rehauling the destructable decorations to throw their items at the players\n\
 - Ijon Tichy\n\
@@ -269,7 +269,7 @@ int DemonChangelog =
 - The charge-up rate for the Legion has gone from 35 tics to 25.\n\
 - The weapon decorate files have been re-organized and renamed.\n\
 - Barrels no longer have a SpawnStimpack error and now, well, spawn stimpacks properly.\n\
-- Thanks to ShiftyAxel, there is now an option to be able to acquire souls from gun kills. ds_gunsouls will make the souls come to you on gun death as well.\n\
+- Thanks to ShiftyAxel, there is now an option to be able to acquire souls from gun kills. dst_gunsouls will make the souls come to you on gun death as well.\n\
 - Kharon's launcher attack is now easier to do, no longer throws you forward, and is quicker to recover from.\n\
 - The Blind Guardian and Sentinel can no longer be telefragged.\n\
 - Exodus can no longer cause infighting on enemies.\n\
@@ -278,7 +278,7 @@ int DemonChangelog =
 - Chaingunners and Hell Knights no longer die multiple times on one death.\n\
 - Hell Knights no longer suddenly switch directions when they collapse over.\n\
 - Mancubi second shots no longer fire inwards.\n\
-- Thanks to ShiftyAxel, there is now an option for typical Doom-style health play--ds_doomhealth will replace the token-based health system with a traditional health system.\n\
+- Thanks to ShiftyAxel, there is now an option for typical Doom-style health play--dst_doomhealth will replace the token-based health system with a traditional health system.\n\
 - Dying or exiting a level with over 100% Hammer charge should no longer cause wonkiness.\n\
 - Respawning no longer triggers one-liners. Like, for real this time.\n\
 - The Blind Guardian, Sentinel, and Majestic Vanguard are now considered 'big'/'super' powerups and require sv_respawnsuper to respawn.\n\
@@ -294,12 +294,12 @@ int DemonChangelog =
 - There were a few frames where the Kharon by itself mid-raise couldn't be used. This has been fixed.\n\
 - It is now possible to 'dash' down in mid-air, for the sake of more air control or lower-gravity maps. As like the usual dashing, hold Run and then hit Crouch.\n\
 - The Iron Maiden's holy rockets now force extreme death, as does the punchsplosion.\n\
-- A new cvar has been included, ds_2brutal, for those who want to be pursued by skeletons.\n\
+- A new cvar has been included, dst_2brutal, for those who want to be pursued by skeletons.\n\
 - As the uppercut was not a vital move to include, but with an extremely clunky execution, it has been moved over to Optional Keys, for people to trigger at will.\n\
 - The uppercut can now be triggered at more areas--instead of just being held, now it can be done while at rest, after firing, or while holding.\n\
 - Destructable objects can now be triggered by the uppercut.\n\
 - Lost Souls are now slightly smaller graphically because reasons. Their hitbox remains the same.\n\
-- ds_omenstart and ds_backpackstart have been implemented for maps that don't have chainsaw or backpack spawns, or those who simply want a boost in starting ability.\n\
+- dst_omenstart and dst_backpackstart have been implemented for maps that don't have chainsaw or backpack spawns, or those who simply want a boost in starting ability.\n\
 - The Sentinel no longer triggers the Baron of Hell's retreat.\n\
 - It's now possible to swap away from the sheathe's attack much faster.\n\
 - There are now unique talking and connecting sounds.\n\
@@ -311,7 +311,7 @@ int DemonChangelog =
 - In ZDoom and GZDoom, Read This! now appears no matter whether the game is Doom 1 or Doom 2. It also appears at the top, to emphasize that, yeah, you should read this. Maybe now people will stop asking how to do special attacks!\n\
 - The skull icon for the main menu looks 666% edgier and more \m/ hardkore \m/.\n\
 - The combo meter no longer stays the same shade of blue as it increases, but instead inches over to purple, pink, and more for the sake of visual distinction.\n\
-- A new cvar has been added, ds_nodamagepenalty, that does not penalize one's combo meter when damaged. This setting is for superbad casuals.\n\
+- A new cvar has been added, dst_nodamagepenalty, that does not penalize one's combo meter when damaged. This setting is for superbad casuals.\n\
 - 17 more intro taunts have been added. Chance of saying them has been increased from one-in-four to one-in-three.\n\
 - The Skulltag wizards should no longer drop Claw Orbs or Tomes of Power.\n\
 - The Iron Maiden's shot impacts are no longer tinged a blue-purple\n\
@@ -331,7 +331,7 @@ int DemonChangelog =
 - Skulltag armor/health bonuses and red armor should be replaced properly now.\n\
 - The Sabbath no longer spits out an Idle4 error.\n\
 - A new idle animation has been implemented, made by Sgt. Shivers.\n\
-- Implemented a new cvar, ds_runmod, which modifies the percentage of the speed the player runs at. 100 is the default, 100% normal speed.\n\
+- Implemented a new cvar, dst_runmod, which modifies the percentage of the speed the player runs at. 100 is the default, 100% normal speed.\n\
 - The main menu font has been tweaked for cleanliness and rephrasing.\n\
 - As there are no Cacodemons in DemonSteele, the Dead Cacodemon decoration has bween replaced with a pile of skulls.\n\
 - The Soul Prison now gives 100 souls, instead of matching the pepper's 50.\n\
@@ -373,7 +373,7 @@ int DemonChangelog =
 - The Legion can now be thrown one tic faster, the stacking can go up to 15 knives, and stacked knives bounce slightly more.\n\
 - Thanks to Virtue, texture brightmaps have been integrated for the sake of prettiness.\n\
 - Thanks to Kyle873, brightmaps have been implemented for the Exodus and the Frosthammer.\n\
-- Thanks to MartyKirra, there is now a voice announcer every time you go up a rank! To disable this, please use ds_cl_noannouncer.\n\
+- Thanks to MartyKirra, there is now a voice announcer every time you go up a rank! To disable this, please use dst_cl_noannouncer.\n\
 - Iron Maiden punches are now four tics faster.\n\
 - Armor damage in Iron Maiden now takes a slight bit of combo meter.\n\
 - Picking up Arrogant weapons in Iron Maiden no longer breaks the HUD.\n\
@@ -386,7 +386,7 @@ int DemonChangelog =
 - FuzzballFox's 170 new text colors have been integrated.\n\
 - The Omen now has a Testament-esque delayed-pickup for the Chaingun, like how the Testament has with the regular shotgun. After four levels, it will replace Chaingun pickups.\n\
 - When playing in ZDoom, the Customize Controls section of Options now displays all of the relevant DemonSteele controls at the top.\n\
-- The Iron Maiden now respects ds_cl_norecoil.\n\
+- The Iron Maiden now respects dst_cl_norecoil.\n\
 - The ACS call for the pain state has been changed from ACS_ExecuteAlways to ACS_ExecuteWithResult, which means that the invulnerability state will start the very instant it's called rather than the tic after. In short, no more multi-token hits.\n\
 - Fortune cookie messages are now logged to the console.\n\
 - Every time Hae-Lin double jumps, she temporarily gains ethereal angel wings to thrust her up. Because reasons.\n\
