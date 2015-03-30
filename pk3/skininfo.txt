@@ -1,0 +1,7 @@
+{
+name = "Placeholder"
+sprite = WARR
+scale = 0.9
+class = "Hae-Lin"
+hidden = false
+}

@@ -16,6 +16,23 @@ $playeralias      Hae-Lin  male    *usefail        haelin/nope
 $playeralias      Hae-Lin  male    *taunt          haelin/laugh
 $playeralias      Hae-Lin  male    *jump           haelin/jump
 
+// The original placeholder player skin
+$playersound      Placeholder   male    *death          LGPLDETH // Taken from Unreal Tournament
+$playersounddup   Placeholder   male    *xdeath         *death
+$playersounddup   Placeholder   male    *burndeath      *death
+$playersounddup   Placeholder   male    *crazydeath     *death
+$playersounddup   Placeholder   male    *wimpydeath     *death
+$playersounddup   Placeholder   male    *gibbed         *death
+$playersound      Placeholder   male    *pain100        LGPLPAIN // Taken from Unreal Tournament
+$playersounddup   Placeholder   male    *pain75         *pain100
+$playersounddup   Placeholder   male    *pain50         *pain100
+$playersounddup   Placeholder   male    *pain25         *pain100
+$playersound      Placeholder   male    *grunt          QUIET
+$playersound      Placeholder   male    *land           LGOOF    // Taken from Painkiller
+$playersound      Placeholder   male    *usefail        LGNOWAY  // Taken from Worms: World War
+$playersound      Placeholder   male    *taunt          LGTAUNT  // Taken from Neverwinter Nights
+$playersound      Placeholder   male    *jump           LGPLJUMP // Taken from Quake III
+
 $random haelin/dead { haedead1 haedead2 }
 haedead1                HLDEATH1
 haedead2                HLDEATH2

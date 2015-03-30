@@ -1,3 +1,9 @@
+FROM 0.8 TO 0.81 (Zandronum 2.0 maintenance update)
+=======================================
+- The cvars have been entirely rewritten with the advent of cvarinfo. Keep in mind all cvar prefixes have been changed from ds_ to dst_!
+- Less Effects setting now has entirely different cvars in ZDoom and Zandronum. This is a useless feature to note. Nobody will care. But I suffered to get Zandro/ZDoom compatibility in a single build and you better fucking appreciate it.
+- For those who've been around since the beginning, original flavor waifu is now available as a secret skin. It has the original placeholder sprites AND the original placeholder player sounds!
+
 FROM 0.74 TO 0.8:
 =======================================
 - Players are now able to rocketjump with the shotgun because reasons.

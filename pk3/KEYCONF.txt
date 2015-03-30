@@ -13,7 +13,7 @@ addslotdefault 5 "Kharon + Exodus"
 addslotdefault 6 "Kharon + Legion"
 //addslotdefault 7 "Kharon + Unknown"
 addslotdefault 8 "Kharon + Frosthammer"
-addslotdefault 9 "Messiah"
+//addslotdefault 9 "Messiah"
 addslotdefault 0 "Kharon"
 addslotdefault 0 "Iron Fist"
 

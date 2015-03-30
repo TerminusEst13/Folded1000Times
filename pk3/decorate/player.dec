@@ -12,7 +12,7 @@ ACTOR MeleePlayer : PlayerPawn
     Mass 100
     PainChance 255
     Speed 1
-    +NOSKIN
+    //+NOSKIN
     -NORADIUSDMG
     -THRUSPECIES
     +DONTBLAST
