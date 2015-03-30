@@ -1,8 +1,3 @@
-LEFT FOR HAE-LIN:
-1: Special moves for guns
-3: one more Arrogant weapon (though Mike is working on that and I have a wonderful backup in case he doesn't deliver by the end of the year)
-4: and...yeah, player sprites. (Gundere is working on that)
-
 TO DO in no particular order:
 20: Mid-air flight sounds for projectiles, so as to easily gauge location.
 22: Randomized muzzleflashes for the pistol.
@@ -18,13 +13,9 @@ TO DO in no particular order:
   ^- Only when lag has been addressed and people on toasters can play at reasonable framerates even with ds_cl_toaster 2 on slaughtermaps.
 44: Expand on final map
 50: Bisected enemies somehow get caught in the ceiling
-51: Player sprites for Jung Hae-Lin and Iron Maiden
-53: Iron Maiden polishing
-  ^ Design
-53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
+51: Player sprites for Iron Maiden
 57: Chopping barrels slices through them, releasing gas. Shooting the gas, causes explosions.
 65: Look into adapting Pres' wandering-soul system for others to pick up.
-70: Some kind of "don't mash the button for more powerful strikes" system.
 72: Skulltag weapon replacements?
 74: Explosive dashing punch as the Iron Maiden's forward special
 75: Replacement sounds for other world objects, such as lifts, switches, exploding barrels, and doors.
@@ -100,7 +91,7 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
    ^- "You had one job."
    ^- "Oops."
    ^- "Pathetic."
-146: MOCKERY WHEN PLAYING ON LOWEST DIFFICULTY:
+146: MOCKERY WHEN PLAYING ON AUTOMATIC MODE:
    ^ Pretty pink bow on the HUD
    ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / ModArchive - radix - Unreal Superhero.xm / ModArchive - Tito - ~~P~i~z~z~a~~H~u~t.xm )
 147: A unique CONBACK.
@@ -165,7 +156,8 @@ NOPE:
 Like one style is to tap repeatedly for really fast strikes (what's currently in).
 Another style is retro SNES-style beat-'em-up combos where landed hits go into other hits.
 Another style is single strikes, where holding down fire charges up a more powerful strike.
-And the final style...ummm. Hm. // Kharon being wielded by itself will cover this.
+And the final style...ummm. Hm. // Kharon being wielded by itself will cover this. Save the more complicated systems for [REDACTED]
+70: Some kind of "don't mash the button for more powerful strikes" system. // Not necessary and very not-intuitive. Save the more complicated systems for [REDACTED]
 96: <Dewce> Maybe increase the amount of souls you get from kill based on your rank
 <Dewce> It's easy to get the ranking up, but it can take awhile to get the soul meter up
 <Dewce> And it'd be a way to reward keeping your rank as high as possible
@@ -231,12 +223,15 @@ DONE:
 47: Gun impact sounds on flesh and walls
 48: Convert .wav files to .ogg for size compression
 49: Replacement for Wolfenstein SS
+51: Player sprites for Hae-Lin
 52: Special charge-up laser-hadouken for Iron Maiden.
 53: Iron Maiden polishing
+  ^ Design
   ^ Kick/chop sprites/sounds replacing the special moves
   ^ Pickup sprite/sound replacing BFG9000
   ^ Non-placeholder sprites for fists/pickup
   ^ New HUD signifying you're in armor
+53: Special attacks for guns as well? Hold down fire and tap alt-fire to activate a stylish move with the gun?
 54: Casing ejection/smoke effects on the guns.
 55: New teleport effect
 56: People have been asking to wield the Kharon by itself, without any guns in alt-hand. Alt-fire would be infinite throwing knives, or alternate Kharon attacks?
