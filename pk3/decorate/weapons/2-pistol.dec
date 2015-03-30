@@ -858,6 +858,7 @@ ACTOR AcaciaCasing
     +NOTELEPORT
     +FLOORCLIP
     +DOOMBOUNCE
+    +MOVEWITHSECTOR
     +CLIENTSIDEONLY
     SeeSound "casing/acacia"
     DeathSound "casing/acacia"

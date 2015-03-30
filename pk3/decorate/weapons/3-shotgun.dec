@@ -1040,6 +1040,7 @@ ACTOR TestamentCasing1 // TESTAMENT TO ITS POWER
     +NOTELEPORT
     +FLOORCLIP
     +DOOMBOUNCE
+    +MOVEWITHSECTOR
     +CLIENTSIDEONLY
     SeeSound "casing/testament"
     DeathSound "casing/testament"
