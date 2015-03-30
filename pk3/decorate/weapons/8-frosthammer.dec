@@ -1360,16 +1360,17 @@ actor FreezieSmokeLarge : FreezieSmoke { Scale 1.1 }
 actor FreeziePop
 {
     Health 450 // Should last a little over ten seconds, if the player's out of combat and is just habbedig.
-    Radius 8
-    Height 8
+    Radius 2
+    Height 2
     Mass 50
     Speed 6
     Species "Player"
     DamageFactor "FrosthammerCharged", 0.0
     DamageFactor "FrosthammerExplode", 0.0
     DamageFactor "Frosthammer", 0.0
+    RadiusDamageFactor 0.0
     Monster
-    -SHOOTABLE
+    //-SHOOTABLE
     +FRIENDLY
     -COUNTKILL
     -ISMONSTER
