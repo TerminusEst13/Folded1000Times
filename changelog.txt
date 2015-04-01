@@ -5,6 +5,11 @@ FROM 0.8 TO 0.81 (Zandronum 2.0 maintenance update)
 - For those who've been around since the beginning, original flavor waifu is now available as a secret skin. It has the original placeholder sprites AND the original placeholder player sounds!
 - The Frosthammer special puffs now actually expire and can no longer be stacked to crash servers.
 - The gun casings now move with sectors up and down along elevators. This isn't a vital fix but it really tickled my OCD.
+- The dst_nochaingun cvar now displays properly in ZDoom.
+- Picking up a fortune cookie no longer has a 1/150 chance to cause an overflow error.
+- Interacting with the secret room in MAPTEST no longer spams strings to the server.
+- A new cvar, dst_debug, has been included to acquire information on whether some functions are working or not.
+- Until Iron Maiden has its own player sprites, players in it now have a white halo floating over them to indicate their status to co-op allies.
 
 FROM 0.74 TO 0.8:
 =======================================

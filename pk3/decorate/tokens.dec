@@ -11,6 +11,7 @@ actor HenshinActivated : Boolean {}
 actor HenshinDeactivation : Boolean {}
 actor InIronMaiden : Boolean {}
 actor IronMaidenWarning : Boolean {}
+actor MaidenHalo : Boolean {}
 
 actor AlreadyInLevel : Boolean {}
 actor OnTheGround : Boolean {}
@@ -71,6 +72,7 @@ actor IAmABoringPersonWhoThinksPointsAreForNerds : Boolean {}
 actor IAmAQuietPersonWhoWantsMoreQuietRankings : Boolean {}
 
 actor IsJungHaeLin : Boolean {}
+actor IsSSH : Boolean {}
 actor ImAlive : Boolean {}
 actor DoubleTapBack : Boolean {}
 actor DoubleTapLeft : Boolean {}

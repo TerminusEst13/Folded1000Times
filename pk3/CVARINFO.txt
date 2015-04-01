@@ -1,6 +1,9 @@
 // Server cvars
-// server int dst_runninginzdoom    = 1; - Deprecated as of Zandronum 2.0.
+
+server int dst_debug             = 0;
+
 server int dst_runninginzandro   = 0;
+server int dst_runninginzdoom    = 0;
 server int dst_noshotgunlimiter  = 0;
 server int dst_noshotgun         = 0;
 server int dst_nochaingun        = 0;

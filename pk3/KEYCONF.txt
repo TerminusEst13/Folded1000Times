@@ -4,6 +4,7 @@ addplayerclass MeleePlayer
 
 alias credits   "puke -280 1"
 alias changelog "puke -280 2"
+alias invreset  "puke 291"
 
 addslotdefault 1 "Kharon + Omen"
 addslotdefault 2 "Kharon + Acacia A-22"

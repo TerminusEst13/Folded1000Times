@@ -8,7 +8,8 @@
 #include "weeb_joy.h"
 
 global int 58:LevelCount;
-global int 59:RunningInZandro;
+//global int 59:RunningInZandro;
+//global int 60:RunningInZDoom;
 
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int playerTimeFreeze[PLAYERMAX];
@@ -52,30 +53,51 @@ script WEEB_RESPAWN respawn
     else if (CheckInventory("ManPoints") >= 1000) { TakeInventory("ManPoints",1000); }
     else if (CheckInventory("ManPoints") >= 100) { TakeInventory("ManPoints",100); }
     else { TakeInventory("ManPoints",99); TakeInventory("Points",9999); }
-    
+
+    if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:PlayerNumber(), s:" respawning, executing WEEB_ENTER."); }
     ACS_ExecuteAlways(WEEB_ENTER,0,0,0);
 }
 
 script WEEB_OPEN OPEN
 {
     IsServer = 1;
+    int s = unusedTID(37000, 47000);
+
+    delay(1);
+    if (GetCvar("dst_debug") == 1) { Log(s:"dst_runninginzandro is at ", d:GetCvar("dst_runninginzandro")); }
     if (GameType() != GAME_TITLE_MAP) { LevelCount++; } // Titlemaps add to the global variable, irritatingly.
-    if (Spawn("PossessionStone",8192,8192,0,128) && RunningInZandro == 0 && LevelCount < 3) // Attempt to spawn a Doomsphere.
-    {                                // Doesn't work if we already know we're in Zandro and stops checking after two levels.
-        Thing_Remove(128);
-        RunningInZandro = 1;
+    /*if (Spawn("Doomsphere",0,0,0,s)) // Attempt to spawn a Doomsphere, a Zandronum-exclusive item.
+    {
+        Thing_Remove(s);
+        //RunningInZandro = 1;
+        if (GetCvar("dst_debug") == 1) { Log(s:"Zandronum check successful."); }
         SetCVar("dst_runninginzandro",1);
-        //PrintBold(s:"Zandronum check successful.");
-        //Log(s:"Zandronum check successful.");
+        SetCVar("dst_runninginzdoom",0);
+    }*/
+    // This didn't work because the Spawn would choose to not work at various times, because of collision.
+    // If there is no room for an actor to exist, it simply won't spawn.
+    // To get around this, instead I'm doing it the opposite way, using SpawnForced to spawn a ZDoom-exclusive item.
+    // This is not a future-proof method at all; if Zandronum catches up with ZDoom (hahahaha), it'll spawn this item as well and read as ZDoom.
+    // If we ever reach that point and I am either dead or have moved on from Doom, simply replace the script with the uncommented above script and change it to SpawnForced.
+    if (SpawnForced("SpeakerIcon",0,0,0,s,0))
+    { // Other ZDoom-exclusive items include PowerBuddha (not in GZDoom 1.9), CajunTrace, CajunBodyNode, ArtiPoisonBagShooter, ArtiPoisonBagGiver, and AmbientSoundNoGravity.
+        Thing_Remove(s);
+        //RunningInZDoom = 1;
+        if (GetCvar("dst_debug") == 1) { Log(s:"ZDoom check successful."); }
+        SetCVar("dst_runninginzandro",0);
+        SetCVar("dst_runninginzdoom",1);
+    }
+    else
+    {
+        if (GetCvar("dst_debug") == 1) { Log(s:"ZDoom check unsuccessful, assuming Zandronum run."); }
+        SetCVar("dst_runninginzandro",1);
+        SetCVar("dst_runninginzdoom",0);
     }
     delay(1);
-    while(1)
+    if (GetCvar("compat_clientssendfullbuttoninfo") == 0 && GetCvar("dst_runninginzandro") == 1 && !isSinglePlayer()) // Singleplayer already reads extra player input, no need to make sure it's on.
     {
-        if (GetCvar("dst_runninginzandro") == 1)
-        { if (GetCvar("compat_clientssendfullbuttoninfo") == 0)
-        { ConsoleCommand("compat_clientssendfullbuttoninfo 1"); }} // I'd use SetCvar, but it just doesn't work.
-        else { terminate; }
-        delay(1);
+        if (GetCvar("dst_debug") == 1) { Log(s:"compat_clientssendfullbuttoninfo is turned off. Automatically turning it on."); }
+        ConsoleCommand("compat_clientssendfullbuttoninfo 1");
     }
 }
 
@@ -308,6 +330,7 @@ int GravityOfLight;
         FadeRange(255,255,255,1.00,0,0,0,0,1.50);
         TakeInventory("HenshinDeactivation",1);
         TakeInventory("InIronMaiden",1);
+        TakeInventory("MaidenHalo",1);
         TakeInventory("Iron Fist",1);
         TakeInventory("IronMaidenSpeed",1);
         TakeInventory("IronMaidenSlowness",1);
@@ -539,6 +562,8 @@ script WEEB_UNLOADING UNLOADING
     TakeInventory("PointsKilledMonsters",1);
     //TakeInventory("PointsSpeedrunning",0x7FFFFFFF);
 
+    TakeInventory("MaidenHalo",1);
+
     TakeInventory("KharonSwung",1);
     TakeInventory("SlashingLikeAGaijin",1);
     TakeInventory("ShootingLikeABaka",1);
@@ -634,6 +659,63 @@ script WEEB_PUKE2 (void) NET CLIENTSIDE
 
 
 
+script WEEB_PUKE3 (void) NET // why am i having to do separate scripts for this shit
+{   // Emergency inventory reset.
+    //if (ConsolePlayerNumber() != PlayerNumber()) { terminate; }
+    
+    delay(1);
+    FadeRange(0,0,0,1.00,0,0,0,0,3.50);
+    LocalAmbientSound("level/intro",127);
+    //Print(s:"Attempting emergency inventory reset.");
+
+    TakeInventory("KharonSwung",1);
+    TakeInventory("SlashingLikeAGaijin",1);
+    TakeInventory("ShootingLikeABaka",1);
+    TakeInventory("DoubleTapForward",1);
+    TakeInventory("DoubleTapBack",1);
+    TakeInventory("DoubleTapLeft",1);
+    TakeInventory("DoubleTapRight",1);
+    TakeInventory("Wounded",1);
+    TakeInventory("SuperTimeFreezer",1);
+    TakeInventory("HammerSpecialCounter",1);
+    TakeInventory("HammerSpecialAmount",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyRight",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyForward",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyLeft",0x7FFFFFFF);
+    TakeInventory("DoubleTapReadyBack",0x7FFFFFFF);
+    TakeInventory("HammerOverchargeLevel",0x7FFFFFFF);
+    TakeInventory("EnviroDamageCount",0x7FFFFFFF);
+    TakeInventory("EnviroDamageCooldown",0x7FFFFFFF);
+    TakeInventory("StopTheBlock",0x7FFFFFFF);
+    TakeInventory("BlockLife",0x7FFFFFFF);
+    TakeInventory("GhostStepCooldown",0x7FFFFFFF);
+    TakeInventory("DoubleTapCooldown",0x7FFFFFFF);
+    TakeInventory("MidCombat",0x7FFFFFFF);
+    TakeInventory("LegionCounter",0x7FFFFFFF);
+    TakeInventory("LegionSpecialCounter",0x7FFFFFFF);
+    TakeInventory("LegionStacked",0x7FFFFFFF);
+    TakeInventory("SwordAttack",0x7FFFFFFF);
+
+    TakeInventory("SlashingLikeABaka",1);
+    TakeInventory("Kharon + Acacia A-22",1);
+    TakeInventory("Kharon",1);
+    TakeInventory("KamenRiderModeActivate",1);
+    TakeInventory("UppercutTrigger",1);
+    TakeInventory("UppercutUntrigger",1);
+    TakeInventory("ZDoomTauntButton",1);
+    TakeInventory("IsJungHaeLin",1);
+    delay(1);
+    GiveInventory("Kharon + Acacia A-22",1);
+    GiveInventory("Kharon",1);
+    GiveInventory("KamenRiderModeActivate",1);
+    GiveInventory("UppercutTrigger",1);
+    GiveInventory("UppercutUntrigger",1);
+    GiveInventory("ZDoomTauntButton",1);
+    GiveInventory("IsJungHaeLin",1);
+}
+
+
+
 // [13] Hoo, this shit.
 // I have no clue how this works. As far as I'm concerned, it's dark magic.
 // Do not touch, lest thy dark hand remain cursed. Many a night have I spent
@@ -696,12 +778,3 @@ script WEEB_PUKE (int values) net
     array_nopan[pln]           = values & 8;
     array_noannounce[pln]      = values & 16;
 }
-
-/*        if (array_custmischarg[pln]) { GiveInventory("CustomMissileCharge", 1); }
-        else { TakeInventory("CustomMissileCharge", 0x7FFFFFFF); }
-
-        if (array_doomHealth[pln]) { GiveInventory("DoomHealthCounter", 1); }
-        else { TakeInventory("DoomHealthCounter", 0x7FFFFFFF); }
-        
-        if (array_metpick[pln]) { GiveInventory("NoMetroidPickupSystem", 1); }
-        else { TakeInventory("NoMetroidPickupSystem", 0x7FFFFFFF); }

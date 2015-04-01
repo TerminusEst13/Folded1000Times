@@ -77,7 +77,7 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
    ^- "You sure showed them."
    ^- "You tried. You failed, but at least you tried."
    ^- "A hero's death is still a death."
-   ^- "That was fun, what's your next plan?"
+   ^- "That was fun, what's your next plan?" // 10
    ^- "Those guys just don't give up, do they? Hmmm..."
    ^- "I hate it when that happens."
    ^- "Ouch."
@@ -87,7 +87,7 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
    ^- "Surprise. You're dead."
    ^- "Good to see you're putting those powers to good use."
    ^- "You tried your best. Shame that it wasn't enough."
-   ^- "Looks like you blew it. Good work."
+   ^- "Looks like you blew it. Good work." // 20
    ^- "You had one job."
    ^- "Oops."
    ^- "Pathetic."

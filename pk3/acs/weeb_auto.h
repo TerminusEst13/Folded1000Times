@@ -23,9 +23,11 @@ script WEEB_ENTER ENTER
     int Angel;
     int xOffset, yOffset, zOffset;
     int xOffset2, yOffset2, zOffset2;
+    int xOffset3, yOffset3, zOffset3;
     int velx, vely, velz;
     int nx, ny, nz;
     int nx2, ny2, nz2;
+    int nx3, ny3, nz3;
     int ShieldTID;
     int SentTID;
     int TheAngerInside;
@@ -50,14 +52,23 @@ script WEEB_ENTER ENTER
     int RemoveSRankAnnouncer;
     int IFuckedTheGameUp;
     int DodgeCounter;
-    // 64 ints and counting!
+    int HaloTID;
+    // 71 ints and counting!
 
     i = unusedTID(37000, 47000);
     u = unusedTID(37000, 47000);
     sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
 
-    // If the player isn't Hae-Lin, terminates. Duh.
-    if (CheckInventory("IsJungHaeLin") == 0) { terminate; }
+    Log(s:"WEEB_ENTER executing on player ", d:pln);
+
+    // If the player isn't playing as Hae-Lin, terminates.
+    // Inter-character scripts running off each other will cause a cluster of problems.
+    if (CheckInventory("IsSSH") == 1)//(CheckInventory("IsJungHaeLin") == 0)
+    {
+        if (GetCvar("dst_debug") == 1) { Log(s:"Error: Player ", d:pln, s:" is not Hae-Lin, terminating WEEB_ENTER."); }
+        terminate;
+    }
+    //if (CheckInventory("IsSSH") == 1) { terminate; }
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     // If the player is spawning for the first time.
@@ -97,6 +108,7 @@ script WEEB_ENTER ENTER
         if (IntroChance == 2) { LocalAmbientSound("haelin/intro",127); }
         TakeInventory("PointsFoundAllSecrets",1);
         TakeInventory("PointsKilledMonsters",1);
+        TakeInventory("MaidenHalo",1);
     }
 
     // If the Sentinel was carried over from a previous level...
@@ -162,6 +174,8 @@ script WEEB_ENTER ENTER
     // Likewise, if someone enters while in Iron Maiden.
     if (CheckInventory("InIronMaiden") == 1) { ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0); }
     
+    if (GetCvar("dst_debug") == 1) { Log(s:"Entering while(1) loop on player ", d:pln); }
+
     while (1)
     {
         mytid = defaultTID(-1);
@@ -412,6 +426,51 @@ script WEEB_ENTER ENTER
                     TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
                 }
             }
+        }
+
+        // And then one more for show.
+        HaloTID = 14000 + pln;
+        if (CheckInventory("InIronMaiden") == 1)
+        {
+            if (CheckInventory("MaidenHalo") == 0)
+            {
+                Spawn("IronMaidenHalo",XMen,Ys,ZDum,HaloTID,Angel);
+                GiveInventory("MaidenHalo",1);
+            }
+            else
+            {
+                // HOORAY
+                xOffset3 = 0;
+                yOffset3 = 0;
+                zOffset3 = 0;
+
+                // FOR
+                nx3 = XMen + FixedMul(xOffset3, cos(Angel)) + FixedMul(yOffset3, sin(Angel));
+                ny3 = Ys + FixedMul(xOffset3, sin(Angel)) - FixedMul(yOffset3, cos(Angel));
+                nz3 = ZDum + zOffset3;
+
+                // COPYING
+                if (pln != ConsolePlayerNumber())
+                {
+                    nx3 -= velx; ny3 -= vely; nz3 -= velz;
+                }
+                // AND
+                else
+                {
+                    nx3 -= velx; ny3 -= vely; nz3 -= 2*velz;
+                }
+
+                // PASTING
+                SetActorAngle(HaloTID, Angel);
+                SetActorPosition(HaloTID,nx3,ny3,nz3+24.0,0);
+                SetActorVelocity(HaloTID,velx,vely,velz,0,0);
+            }
+        }
+        else
+        {
+            Thing_Remove(HaloTID);
+            HaloTID = 0;
+            TakeInventory("MaidenHalo",1);
         }
 
         // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
@@ -801,12 +860,11 @@ script WEEB_ENTER ENTER
           ActivatorSound("iron/armorhit", 127);
           FadeRange(255,255,0,min(0.5,(oarmor-armor)*0.015),0,0,0,0.0,min(35.0,1.5*(oarmor-armor))/35); 
           GiveInventory("MidCombat",75);
-          TakeInventory("HyperComboCounter",5);
+          TakeInventory("HyperComboCounter",2);
         }
 
         if (CheckInventory("InIronMaiden") == 1)
         {
-
         // Gives differing levels of defenses based on the player's combo ranking.
         // The higher their rank, the more, uh, defense-y they are.
         GiveInventory("IronMaidenProtection",1);

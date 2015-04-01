@@ -1258,7 +1258,7 @@ actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
 
 actor PowerBoots : PowerupGiver replaces RadSuit
 {
-    Inventory.PickupMessage "Picked up a Boots of Protection!"
+    Inventory.PickupMessage "Picked up the Boots of Protection!"
     Inventory.PickupSound "armor/radsuit"
     Powerup.Type "IronFeet"
     Powerup.Duration -60

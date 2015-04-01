@@ -25,6 +25,7 @@
 #define WEEB_JOY_RITE                        288
 #define WEEB_JOY_BACK                        289
 #define WEEB_JOY_LOOP                        290
+#define WEEB_PUKE3                           291
 
 // Definitions
 
@@ -545,5 +546,6 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Remember, ironic shitposting is still shitposting.",
 "Behold, I have created the smith that bloweth the coals in the fire and that bringeth forth an instrument for this work; and I have created the waster, to destroy.",
 "I looked, and there was a pale horse! Its rider's name was Death, and Hell followed him. They were given authority over one-fourth of the earth to kill people using wars, famines, plagues, and the wild animals of the earth.",
-"DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO"
+"DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO",
+"The only thing better than a delicious cake is a delicious cake on fire."
 };
