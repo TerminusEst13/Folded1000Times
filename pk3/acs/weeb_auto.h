@@ -217,7 +217,6 @@ script WEEB_ENTER ENTER
         }
 
         // Points malarkey
-
         if (CheckInventory("Points") >= 10000)
         {
             TakeInventory("Points",10000);
@@ -865,6 +864,7 @@ script WEEB_ENTER ENTER
 
         if (CheckInventory("InIronMaiden") == 1)
         {
+
         // Gives differing levels of defenses based on the player's combo ranking.
         // The higher their rank, the more, uh, defense-y they are.
         GiveInventory("IronMaidenProtection",1);

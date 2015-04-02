@@ -748,6 +748,13 @@ script WEEB_ENTER_CLIENT ENTER clientside
     {
         if (ConsolePlayerNumber() != PlayerNumber()) { Delay(1); continue; }
 
+        if (CheckInventory("InIronMaiden") == 1)
+        {
+            // In Z& 2.0, if a player exits the level while in Iron Maiden, he gets a desynched-client "ghost" version of the Kharon and K+A22.
+            TakeInventory("Kharon",1);
+            TakeInventory("Kharon + Acacia A-22",1);
+        }
+
         oExecInt = execInt;
         execInt = WeebClientVars();
 
