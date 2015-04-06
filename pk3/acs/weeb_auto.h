@@ -59,7 +59,7 @@ script WEEB_ENTER ENTER
     u = unusedTID(37000, 47000);
     sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
 
-    Log(s:"WEEB_ENTER executing on player ", d:pln);
+    if (GetCvar("dst_debug") == 1) { Log(s:"WEEB_ENTER executing on player ", d:pln); }
 
     // If the player isn't playing as Hae-Lin, terminates.
     // Inter-character scripts running off each other will cause a cluster of problems.
@@ -990,7 +990,7 @@ script WEEB_ENTER ENTER
         else { TakeInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",0x7FFFFFFF); }
 
         if (flashlightOn[pln])
-            { GiveInventory("FlashlightSpawner", 1); }
+            { GiveInventory("FlashlightSpawner",1); }
 
         // OH SHIT I'M OUT OF HEALTH
         // SUDDENLY AND COINCIDENTALLY I HAVE A MASSIVE CRAVING FOR MUNCHIES
@@ -1004,6 +1004,15 @@ script WEEB_ENTER ENTER
           }
         GetSomeHealthAlready++;
         }
+        else
+        {
+            GetSomeHealthAlready = 0;
+        }
+
+        if (CheckInventory("ContraLifeToken") != 0 && CheckInventory("OverLifeToken") != 0 && CheckInventory("ContraArmorToken") != 0 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") != 0)
+        { SetPlayerProperty(0,1,PROP_BUDDHA); }
+        else
+        { SetPlayerProperty(0,0,PROP_BUDDHA); }
         
         Delay(1);
 

@@ -1,4 +1,11 @@
-FROM 0.8 TO 0.81 (Zandronum 2.0 maintenance update)
+FROM 0.82 TO 0.XX
+=======================================
+- The Skininfo entry for the Placeholder player skin has been fixed.
+- The Tag entry for KamenRiderModeActivate is now blank.
+
+
+
+FROM 0.8 TO 0.82 (Zandronum 2.0 maintenance update)
 =======================================
 - The cvars have been entirely rewritten with the advent of cvarinfo. Keep in mind all cvar prefixes have been changed from ds_ to dst_!
 - Less Effects setting now has entirely different cvars in ZDoom and Zandronum. This is a useless feature to note. Nobody will care. But I suffered to get Zandro/ZDoom compatibility in a single build and you better fucking appreciate it.
@@ -10,6 +17,9 @@ FROM 0.8 TO 0.81 (Zandronum 2.0 maintenance update)
 - Interacting with the secret room in MAPTEST no longer spams strings to the server.
 - A new cvar, dst_debug, has been included to acquire information on whether some functions are working or not.
 - Until Iron Maiden has its own player sprites, players in it now have a white halo floating over them to indicate their status to co-op allies.
+- Online, when the players exit levels while in Iron Maiden, they will no longer have a desynched client version of the Kharon and Kharon + Acacia A-22.
+- The Testament's and Omen's jumping ability is now applicable even on void floors or water.
+- The player now goes into Buddha mode when still having life tokens, and goes out of it when with no life tokens.
 
 FROM 0.74 TO 0.8:
 =======================================

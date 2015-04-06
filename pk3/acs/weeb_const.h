@@ -30,7 +30,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 150
+#define QUOTECOUNT 160
 #define IRONMUS 7
 
 #define WB_DODGE         0
@@ -547,5 +547,15 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "Behold, I have created the smith that bloweth the coals in the fire and that bringeth forth an instrument for this work; and I have created the waster, to destroy.",
 "I looked, and there was a pale horse! Its rider's name was Death, and Hell followed him. They were given authority over one-fourth of the earth to kill people using wars, famines, plagues, and the wild animals of the earth.",
 "DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO DOO",
-"The only thing better than a delicious cake is a delicious cake on fire."
+"The only thing better than a delicious cake is a delicious cake on fire.",
+"Your difficulties will strengthen you. Or break you. One of the two.",
+"Remember your love, for hate is never conquered by hate; hate is conquered by love. Both are kind of flimsy against a .45, though.",
+"The Great Wall wasn't built in one day. The Berlin Wall was, though.",
+"We cannot direct the wind, we can only adjust the sails. You're fucked either way if it's a typhoon, though.",
+"Great thoughts come from the heart. So do stupid decisions.",
+"When you cannot feel happy, working with a smile may rub off happiness on others. Or take pills. Pills are easier.",
+"You will enjoy good health. Until you die.",
+"There is no love so pure and passionate as the love of oneself. Just don't do it in public. Ew.",
+"They say 'May your dreams come true', but how many of your dreams aren't weird shit?",
+"Do you really think you'll find deep philosophical meaning from a little slip of paper inside a cookie?"
 };

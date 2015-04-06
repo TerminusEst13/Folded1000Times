@@ -1,5 +1,4 @@
 // Jung Hae-Lin (Voiced by Adoxographist)
-
 $playeralias      Hae-Lin  male    *death          haelin/dead
 $playersounddup   Hae-Lin  male    *xdeath         *death
 $playersounddup   Hae-Lin  male    *burndeath      *death
@@ -16,7 +15,7 @@ $playeralias      Hae-Lin  male    *usefail        haelin/nope
 $playeralias      Hae-Lin  male    *taunt          haelin/laugh
 $playeralias      Hae-Lin  male    *jump           haelin/jump
 
-// The original placeholder player skin
+// The original placeholder player skin and sounds
 $playersound      Placeholder   male    *death          LGPLDETH // Taken from Unreal Tournament
 $playersounddup   Placeholder   male    *xdeath         *death
 $playersounddup   Placeholder   male    *burndeath      *death
@@ -32,6 +31,24 @@ $playersound      Placeholder   male    *land           LGOOF    // Taken from P
 $playersound      Placeholder   male    *usefail        LGNOWAY  // Taken from Worms: World War
 $playersound      Placeholder   male    *taunt          LGTAUNT  // Taken from Neverwinter Nights
 $playersound      Placeholder   male    *jump           LGPLJUMP // Taken from Quake III
+
+// Swan Fox player skin, in honor of the big inspiration for DemonSteele.
+// All sounds taken from Worms: World Party
+$playersound      SwanFox   male    *death          SWPLDETH
+$playersounddup   SwanFox   male    *xdeath         *death
+$playersounddup   SwanFox   male    *burndeath      *death
+$playersounddup   SwanFox   male    *crazydeath     *death
+$playersounddup   SwanFox   male    *wimpydeath     *death
+$playersounddup   SwanFox   male    *gibbed         *death
+$playersound      SwanFox   male    *pain100        SWPLPAIN
+$playersounddup   SwanFox   male    *pain75         *pain100
+$playersounddup   SwanFox   male    *pain50         *pain100
+$playersounddup   SwanFox   male    *pain25         *pain100
+$playersound      SwanFox   male    *grunt          QUIET
+$playersound      SwanFox   male    *land           SWOOF
+$playersound      SwanFox   male    *usefail        SWNOWAY
+$playersound      SwanFox   male    *taunt          SWTAUNT
+$playersound      SwanFox   male    *jump           SWPLJUMP
 
 $random haelin/dead { haedead1 haedead2 }
 haedead1                HLDEATH1

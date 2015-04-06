@@ -1,7 +1,17 @@
-{
-name = "Placeholder"
-sprite = WARR
-scale = 0.9
-class = "Hae-Lin"
-hidden = false
+{ // The old placeholder sprites and sounds for Hae-Lin, before she got her current skin-set.
+  // Kept for legacy's sake.
+    name = "Placeholder"
+    sprite = WARR
+    scale = 0.9
+    class = "Hae-Lin"
+    hidden = false
+}
+
+{ // The eponymous protagonist of Swan Fox, one of the biggest inspirations for DemonSteele.
+  // Used with permission, and kept in all of her glory. Thanks, Shiga!
+    name = "SwanFox"
+    sprite = SWAN
+    scale = 0.475
+    class = "Hae-Lin"
+    hidden = false
 }
