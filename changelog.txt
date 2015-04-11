@@ -2,6 +2,9 @@ FROM 0.82 TO 0.XX
 =======================================
 - The Skininfo entry for the Placeholder player skin has been fixed.
 - The Tag entry for KamenRiderModeActivate is now blank.
+- The Kharon now has +SPECTRAL and can now hit enemies that are normally immune to hitting. There is nothing that my sword cannot cut!
+- Same with the Omen just because.
+- The TelefragHack on the Kharon's forward special now instantly kills any enemy, to prevent players from getting stuck in a living body.
 
 
 

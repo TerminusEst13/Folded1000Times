@@ -863,6 +863,8 @@ ACTOR ShotgunJumpage : FastProjectile
     +BLOODLESSIMPACT
     -SOLID
     +DONTBLAST
+    +SKYEXPLODE
+    +EXPLODEONWATER
     SeeSound ""
     DamageType "ExodusJump"
     States
@@ -891,6 +893,8 @@ ACTOR ShotgunJumpageHeavy : FastProjectile
     +BLOODLESSIMPACT
     -SOLID
     +DONTBLAST
+    +SKYEXPLODE
+    +EXPLODEONWATER
     SeeSound ""
     DamageType "ExodusJump"
     States

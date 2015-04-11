@@ -816,6 +816,7 @@ ACTOR ExodusRocket
     +GRENADETRAIL
     -NOGRAVITY
     +SKYEXPLODE
+    +EXPLODEONWATER
     +EXTREMEDEATH
     Gravity 0.25
     Scale 0.4
@@ -932,6 +933,8 @@ ACTOR ExodusRocketJumpage
     +NOCLIP
     +FORCERADIUSDMG
     +BLOODLESSIMPACT
+    +SKYEXPLODE
+    +EXPLODEONWATER
     -SOLID
     +DONTBLAST
     DamageType "ExodusJump"
@@ -1146,6 +1149,7 @@ ACTOR ExodusRocketSpecial
     +RANDOMIZE
     +GRENADETRAIL
     +SKYEXPLODE
+    +EXPLODEONWATER
     +EXTREMEDEATH
     Scale 0.8
     DeathSound "exodus/specialhit"

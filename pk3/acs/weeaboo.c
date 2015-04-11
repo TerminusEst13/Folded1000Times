@@ -41,6 +41,9 @@ int IronMaidenMusic[IRONMUS] =
 
 script WEEB_RESPAWN respawn
 {
+    // Death forcefully takes away all the player's remaining tokens (if killed
+    // via divine intervention or freak accident or whatever), so respawning
+    // hands over a fresh batch of tokens.
     if (GameSkill () == 0) { GiveInventory("ContraLifeToken",10); }
     if (GameSkill () == 1) { GiveInventory("ContraLifeToken",8);  }
     if (GameSkill () == 2) { GiveInventory("ContraLifeToken",6); }
@@ -49,6 +52,7 @@ script WEEB_RESPAWN respawn
     // Takes away a million points on respawn.
     // If you have at least ten million points, take ten million.
     // If you have a hundred million points, take a hundred million.
+    // There's a better way to do this, but not with Zandro's 32xxx integeter limit.
     if (CheckInventory("OkuPoints") >= 1) { TakeInventory("OkuPoints",1); }
     else if (CheckInventory("ManPoints") >= 1000) { TakeInventory("ManPoints",1000); }
     else if (CheckInventory("ManPoints") >= 100) { TakeInventory("ManPoints",100); }
@@ -182,6 +186,9 @@ int GravityOfLight;
         { TakeInventory("HyperComboCounter",25); }
         break;
 
+        // Done during the forward special. Turns the player into the same
+        // species as the enemies so they can slip through them dramatically.
+        // Applying +THRUACTORS would make them go through decorations.
     case WEEB_DEC_FREEZE:
         SetActorProperty(0,APROP_Species,"Body");
         SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
@@ -318,6 +325,7 @@ int GravityOfLight;
         SetAmmoCapacity("HammerCharge",100);
         break;
 
+        // Momentary body freeze when hitting with the hammer or Iron Fist.
     case WEEB_DEC_FREEZE2:
         SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
         break;
@@ -326,6 +334,7 @@ int GravityOfLight;
         SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
         break;
 
+        // Iron Maiden cancelling script.
     case WEEB_DEC_REMOVEKEBAB:
         FadeRange(255,255,255,1.00,0,0,0,0,1.50);
         TakeInventory("HenshinDeactivation",1);
@@ -362,6 +371,7 @@ int GravityOfLight;
         TakeInventory("IronMaidenArmor2",0x7FFFFFFF);
         break;
 
+        // If player's playing on max difficulty, health items just don't spawn.
     case WEEB_DEC_DIFFCHECK:
         if (GameSkill () == 5) { SetResultValue(1); }
         else { SetResultValue(0); }
@@ -423,8 +433,10 @@ int GravityOfLight;
         HudMessage(s:CookieQuote[i];HUDMSG_FADEINOUT | HUDMSG_LOG,1423,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
         break;
 
+        // The Frosthammer's slowdown on monsters.
+        // 50% of the current monster's speed. Stackable.
     case WEEB_DEC_SLOWDOWN:
-        SetActorProperty(0,APROP_SPEED,(GetActorProperty(0,APROP_SPEED)*1/2)); // 50% of the current monster's speed. Stackable.
+        SetActorProperty(0,APROP_SPEED,(GetActorProperty(0,APROP_SPEED)*1/2));
         break;
 
     case WEEB_DEC_GUNSOULS:
@@ -454,6 +466,7 @@ int GravityOfLight;
         TakeInventory("LegionSpecialCounter",1);
         break;
 
+        // See above with WEEB_DEC_ONLINECHECK
     case WEEB_DEC_ONLINECHECK2:
         if ( (GetCvar("dst_nochaingunlimiter") == 0 && LevelCount < 4) || GetCvar("dst_nochaingun") == 1 || !isSinglePlayer())
              { SetResultValue(1); }
@@ -469,6 +482,8 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
     switch (boreshut)
     {
     case WEEB_DEC_GETMESSAGES:
+        // OH COOL YOU CAN DO INTS WITHIN INTS
+        // I should do this with the weapon pickup checks.
         switch (bowlshot)
         {
         case 0:
@@ -501,6 +516,8 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         }
         break;
 
+        // If the player has the Metal Jukebox loaded and the music on, there is
+        // no music change. Otherwise, well, IRON MAIDEN MUSIC GOOOOOOO
     case WEEB_DEC_CHANGEMUS:
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1) 
         { if (getcvar("norandommusic") == 0) { terminate; }}

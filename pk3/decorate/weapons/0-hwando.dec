@@ -977,6 +977,7 @@ ACTOR KharonAttack1 : FastProjectile
     +THRUSPECIES
     +NOTIMEFREEZE
     +NOEXTREMEDEATH
+    +SPECTRAL // THERE IS NOTHING THAT MY SWORD CANNOT CUT
     Decal KharonSlash1
     States
     {
@@ -1061,6 +1062,7 @@ ACTOR KharonAttackCleave : FastProjectile
     +THRUSPECIES
     +NOTIMEFREEZE
     +NOEXTREMEDEATH
+    +SPECTRAL
     Decal KharonSlash1
     States
     {
@@ -1114,6 +1116,7 @@ actor KharonSheatheSmack : FastProjectile
     +NOEXTREMEDEATH
     +BLOODSPLATTER
     -NOBLOCKMAP
+    +SPECTRAL
     States
     {
     Spawn:
@@ -1159,6 +1162,7 @@ ACTOR FakeLoreShot : LoreShot
     SeeSound ""
     DeathSound ""
     DamageType "KharonHookshot"
+    +SPECTRAL
     States
     {
     Spawn:

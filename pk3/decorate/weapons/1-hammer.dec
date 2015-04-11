@@ -978,6 +978,9 @@ actor HammerAttackBase : FastProjectile
     +BLOODSPLATTER
     +THRUSPECIES
     +THRUGHOST
+    +SKYEXPLODE
+    +EXPLODEONWATER
+    +SPECTRAL
     Obituary "%k crushed %o beyond dust."
     States
     {

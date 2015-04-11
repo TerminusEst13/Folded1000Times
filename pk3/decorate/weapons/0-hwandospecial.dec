@@ -74,6 +74,7 @@ actor RazorWind2 : RazorWind
     +FORCERADIUSDMG
     +THRUACTORS
     +NODAMAGETHRUST
+    +SPECTRAL
     States
     {
     Spawn:
@@ -105,6 +106,7 @@ ACTOR KharonExplosion
     +NOCLIP
     +FORCERADIUSDMG
     -SOLID
+    +SPECTRAL
     DamageType "KubiSpinAttack"
     Obituary "%k diced %o with a spin attack."
     States
@@ -126,6 +128,7 @@ ACTOR RazorWindExplosion
     +NOCLIP
     +FORCERADIUSDMG
     -SOLID
+    +SPECTRAL
     DamageType "KubiLungeAttack"
     Obituary "%k split %o in half with a dash attack."
     States
@@ -160,13 +163,14 @@ ACTOR TelefragHack
     +NOCLIP
     +FORCERADIUSDMG
     -SOLID
+    +SPECTRAL
     DamageType "KubiLungeAttack"
     Obituary "%k split %o open with a dash attack."
     States
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(2560,16,0)
+        TNT1 A 1 A_Explode(1000000,16,0)
         Stop
     }
 }
