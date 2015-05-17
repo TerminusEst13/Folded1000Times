@@ -1,0 +1,126 @@
+ACTOR ConcussionMissile : FastProjectile
+{ 
+    Radius 13
+    Height 8
+    Damage (100)
+    Speed 75
+    Projectile
+    +RANDOMIZE
+    +FORCERADIUSDMG
+    //RenderStyle Add
+    //Alpha 0.75
+    DeathSound "grenades/explode"
+    States
+    {
+    Spawn:
+        PMIS A 1 BRIGHT A_CustomMissile("PlasmaMissileTrail",0,0,0)
+        TNT1 A 0 A_CustomMissile("PlasmaMissileTrailWave",0,0,0)
+        Loop
+    Death:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("MissileExplosionSmall",0,0,0,0,0,0,0,160)
+        TNT1 AA 0 A_SpawnItemEx("MissileExplosionLarge",0,0,0,0,0,0,0,160)
+        TNT1 A 0 Radius_Quake(5,10,0,16,0)
+        TNT1 A 0 A_Explode(384,256,0)
+        TNT1 A 0 A_SetTranslucent(0.75,1)
+        WPXS ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 BRIGHT
+        Stop
+    }
+}
+
+ACTOR PlasmaMissileTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Alpha 0.95
+    States
+    {
+    Spawn:
+      TNT1 A 0
+      WPXS MLKJIHGFEDCBA 1 BRIGHT
+      Stop
+    }
+}
+
+ACTOR PlasmaMissileTrailWave
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Alpha 0.5
+    Scale 0.15
+    States
+    {
+    Spawn:
+      TNT1 A 0
+      SHOK ABCDEFGHIJKLMN 1 BRIGHT 
+      SHOK O 1 BRIGHT A_SetTranslucent(0.4)
+      SHOK P 1 BRIGHT A_SetTranslucent(0.3)
+      SHOK Q 1 BRIGHT A_SetTranslucent(0.2)
+      SHOK R 1 BRIGHT A_SetTranslucent(0.1)
+      Stop
+    }
+}
+
+ACTOR HomingMissile
+{
+    Radius 6
+    Height 6
+    Speed 30
+    Damage (40)
+    Projectile
+    +FORCERADIUSDMG
+    +SEEKERMISSILE
+    DeathSound "missile/hit"
+    Obituary "%k blew %o up."
+    DamageType "Missile"
+    Decal Scorch
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SeekerMissile(9,18,SMF_LOOK | SMF_PRECISE,128,16)
+        SEKR A 1 Bright A_SpawnItemEx("MissileTrail",0,0,1,0,0,0,0,160)
+        Loop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_SpawnItemEx("MissileExplosionSmall",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_SpawnItemEx("MissileExplosionLarge",0,0,0,0,0,0,0,160)
+        TNT1 A 8 Bright A_Explode(64,128,0)
+        TNT1 B 6
+        TNT1 C 4
+        TNT1 A 0
+        Stop
+    }
+}
+
+actor MissileTrail
+{
+    RenderStyle Add
+    Alpha 0.9
+    Scale 0.15
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MISL BC 1 BRIGHT
+        TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        stop
+    Spawn1:
+        SMK1 ABCDEFGHIJKLMNOPQR 1
+        stop
+    Spawn2:
+        SMK2 ABCDEFGHIJKLMNOPQR 1
+        stop
+    Spawn3:
+        SMK3 ABCDEFGHIJKLMNOP 1
+        stop
+    Spawn4:
+        SMK4 ABCDEFGHIJKLMNOP 1
+        stop
+    }
+}

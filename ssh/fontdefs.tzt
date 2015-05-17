@@ -1,0 +1,12 @@
+// Named tzt so it doesn't overwrite fontdefs.txt
+
+CYBRFONT
+{
+    0 CYBRF0
+    1 CYBRF1
+}
+
+CYBRBIG
+{
+   Template dcybrbig%03d
+}

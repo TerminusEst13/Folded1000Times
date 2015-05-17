@@ -1,0 +1,1 @@
+addplayerclass MeleePlayer2

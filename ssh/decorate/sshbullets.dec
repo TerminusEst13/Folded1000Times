@@ -1,0 +1,23 @@
+actor RevolverBullet : BulletBase { Damage (35) DamageType "AcaciaDamage" }
+actor ShottyBullet1 : BulletBase { Damage (10) DamageType "TestamentDamage" }
+actor ShottyBullet2 : BulletBaseNoCombo { Damage (10) DamageType "TestamentDamage" }
+actor PistolBullet : BulletBase { Damage (30) DamageType "SabbathDamage" }
+
+ACTOR RevolverBulletBlank : RevolverBullet
+{
+    Speed 360
+    Decal ""
+    States
+    {
+    Death:
+    Crash:
+        TNT1 A 0
+        TNT1 A 1
+        stop
+    XDeath:
+        TNT1 A 0
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 1 A_GiveToTarget("HyperComboCounter",1)
+        stop
+    }
+}

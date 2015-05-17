@@ -1,0 +1,124 @@
+$playersound      Shihong   male    *death          SHIDETH  // Taken from Neverwinter Nights
+$playersounddup   Shihong   male    *xdeath         *death
+$playersounddup   Shihong   male    *burndeath      *death
+$playersounddup   Shihong   male    *crazydeath     *death
+$playersounddup   Shihong   male    *wimpydeath     *death
+$playersounddup   Shihong   male    *gibbed         *death
+$playersound      Shihong   male    *pain100        SHIPAIN  // Taken from Soul Calibur IV
+$playersounddup   Shihong   male    *pain75         *pain100
+$playersounddup   Shihong   male    *pain50         *pain100
+$playersounddup   Shihong   male    *pain25         *pain100
+$playersound      Shihong   male    *grunt          QUIET
+$playersound      Shihong   male    *land           HLLAND   // Taken from Quake 3
+$playersound      Shihong   male    *usefail        SHINOPE  // Taken from Street Fighter X Tekken
+$playersound      Shihong   male    *taunt          SHITAUNT // Taken from Street Fighter X Tekken
+$playersound      Shihong   male    *jump           QUIET
+
+$random level/introssh { sshintro1 sshintro2 sshintro3 sshintro4 sshintro5 sshintro6 sshintro7 sshintro8 sshintro9 sshintro10 sshintro11 sshintro12 }
+sshintro1              SSHNTRO1 // Made by BouncyTEM
+sshintro2              SSHNTRO2 // Made by BouncyTEM
+sshintro3              SSHNTRO3 // Made by BouncyTEM
+sshintro4              SSHNTRO4 // Made by BouncyTEM
+sshintro5              SSHNTRO5 // Made by BouncyTEM
+sshintro6              SSHNTRO6 // Made by BouncyTEM
+sshintro7              SSHNTRO7
+sshintro8              SSHNTRO8 // Taken from Drox Operative
+sshintro9              SSHNTRO9 // Taken from Drox Operative
+sshintro10             SSHNTRO0
+sshintro11             SSHNTROA // Taken from Drox Operative
+sshintro12             SSHNTROB // Taken from S.T.A.L.K.E.R.: Shadow of Chernobyl
+
+shihong/teleport       NINJPORT
+shihong/walljump       SSHWJMP
+shihong/walljumpup     SSHWJMU
+shihong/wallgrab       SSHWGRB
+
+health/doritos         DEWITNAO // Taira Komori's chips eating with Woodylein's bag crumpling and Kamen Rider OOO's scanning sound, all (but the latter) off Freesound
+health/pizza           PIZATIME // Squashy55's toasted ham sandwich with beatmad's sizzling frying pan and keweldog's apple eating, all off Freesound
+
+// Fists
+punchy/hit1            SSHPNCH1
+punchy/hit2            SSHPNCH2
+punchy/hit3            SSHPNCH3
+punchy/hit4            SSHPNCH4
+punchy/wall1           SSHFWAL1 // Taken from SvC Chaos
+punchy/wall2           SSHFWAL2 // Taken from SvC Chaos
+punchy/wall3           SSHFWAL2 // Taken from SvC Chaos
+punchy/wall4           SSHFWAL3 // Taken from SvC Chaos
+punchy/swing1          SSHFSWN1 // Taken from Super Street Fighter IV
+punchy/swing2          SSHFSWN2 // Taken from Super Street Fighter IV
+punchy/swing3          SSHFSWN3 // Taken from Super Street Fighter IV
+punchy/swing4          SSHFSWN4 // Taken from Super Street Fighter IV
+
+taser/sparks           TASPARKN // Taken from Super Street Fighter IV
+taser/attack           TASMISS  // Taken from Super Street Fighter IV
+taser/hit              TASHIT   // Taken from Super Street Fighter IV
+taser/wall             TASWALL  // Taken from the General Series 6000
+
+// Triumph
+triumph/swing          SWRDSWNG
+triumph/hit            SWRDHIT
+triumph/wall           SWRDWALL // Taken from Ninja Gaiden
+triumph/swing2         SWRDSWN2
+triumph/hit2           SWRDHIT2
+triumph/wall2          SWRDWAL2
+
+$limit triumph/swing  0
+$limit triumph/hit    0
+$limit triumph/wall   0
+$limit triumph/swing2 0
+$limit triumph/hit2   0
+$limit triumph/wall2  0
+
+// Striker
+striker/dryfire        SREVDRYF // Taken from Doom 3
+striker/fire           SREVFIRE
+striker/firefinal      SREVFIR2
+striker/unload         SREVUNLD // Taken from Killing Floor
+striker/load           SREVRELD // Taken from Left 4 Dead 2
+
+// Avenger
+avenger/fire           AVNGFIRE
+avenger/pump           AVNGPUMP // Taken from F.E.A.R.
+avenger/dryfire        AVNGDRYF // Taken from Doom 3
+avenger/unload         AVNGUNLD // Taken from Killing Floor
+avenger/reload         AVNGRELD // Taken from F.E.A.R.
+avenger/reload2        AVNGRLD2 // The above mixed with a Halo 3 sound
+
+// Enforcer
+grenade/alert          GRNALERT // Taken from San Francisco Rush 2049
+grenade/armed          GRNARMED // Taken from F.E.A.R.
+grenade/throwweak      GRNTHWEK // Taken from Super Street Fighter IV
+grenade/throwstrong    GRNTHSTR
+grenade/nope           GRNNOPE  // Taken from World of Warcraft
+grenade/explode        GRNXPLOD
+
+$rolloff grenade/explode 400 1600
+
+$random grenade/bounce { gbounc1 gbounc2 gbounc3 } // Taken from Rainbow Six: Lockdown
+gbounc1                GRNBNCE1
+gbounc2                GRNBNCE2
+gbounc3                GRNBNCE3
+
+// Rebellion
+special/dryfire        SPCLDRYF // Taken from Doom 3
+special/fireleft       SPCLFIRL
+special/fireright      SPCLFIRR
+special/unload         SPCLUNLD // Taken from Killing Floor
+special/load           SPCLRELD // Taken from Killing Floor
+
+// Special moves
+combo/ready             CHCMBCLK // Taken from Smash Bros. Melee
+stealth/engage          STELTHMD // Taken from Kamen Rider Kabuto
+supermissile/fire       SMISFIRE
+
+$random missile/hit { miss/hit1 miss/hit2 miss/hit3 }
+miss/hit1               MISSEXP1
+miss/hit2               MISSEXP2
+miss/hit3               MISSEXP3
+$limit missile/hit 0
+
+claw/hit		       claw_hit  // Taken from Devil May Cry 3
+claw/firehit	       claw_yes
+claw/firemiss	       claw_no   // Taken from Devil May Cry 3
+claw/fireend           claw_end  // Taken from Tribes: Ascend

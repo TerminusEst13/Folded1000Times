@@ -1,0 +1,439 @@
+base Doom;
+height 0;
+InterpolateHealth true, 8;
+InterpolateArmor true, 8;
+
+statusbar normal, forcescaled
+{
+InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
+{
+    DrawNumber 4, smallfont, white, Points, fillzeros, 205, 6;
+    DrawNumber 4, smallfont, white, ManPoints, fillzeros, 169, 6;
+    DrawNumber 2, smallfont, white, OkuPoints, fillzeros, 133, 6;
+}
+
+ininventory not SkulltagWeaponsAcquired, 1
+{
+    ininventory not GotIronMaiden, 1 { drawimage "AMMBOX", 308, 182, center; }
+    ininventory GotIronMaiden, 1 { drawimage "AMMBOX2", 308, 182, center; }
+}
+ininventory SkulltagWeaponsAcquired, 1
+{
+    ininventory not GotIronMaiden, 1 { drawimage "AMMBOXb", 308, 182, center; }
+    ininventory GotIronMaiden, 1 { drawimage "AMMBOX2b", 308, 182, center; }
+}
+drawimage ammoicon1, 258, 187, center;
+isselected "Kharon + Omen" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
+                               InInventory not HammerCharge, 100 { InInventory HammerCharge, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+                                                               InInventory not HammerCharge, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
+isselected "Kharon + Acacia A-22" { InInventory WeebClip, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
+                               InInventory not WeebClip, 100 { InInventory WeebClip, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+                                                               InInventory not WeebClip, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
+isselected "Kharon + Testament" { InInventory WeebShell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+                               InInventory not WeebShell, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; } }
+isselected "Kharon + Exodus" { InInventory WeebRocket, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+                               InInventory not WeebRocket, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; } }
+isselected "Kharon + Sabbath" { InInventory WeebCell, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
+                               InInventory not WeebCell, 100 { InInventory WeebCell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+                                                               InInventory not WeebCell, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
+isselected "Kharon + Frosthammer" { drawimage "FRSTAMMO", 252, 180; drawimage "INFNAMMO", 272, 182; }
+isselected "Kharon + Legion" { drawimage "KNIFAMMO", 251, 180; drawimage "INFNAMMO", 272, 182; }
+
+isselected not "Kharon + Omen" {
+  isselected not "Kharon + Acacia A-22" {
+    isselected not "Kharon + Testament" {
+      isselected not "Kharon + Exodus" {
+        isselected not "Kharon + Sabbath" {
+          isselected not "Kharon + Legion" {
+            isselected not "Kharon + Frosthammer" {
+              isselected not "Kharon" {
+                isselected not "Iron Fist" {
+
+                   drawnumber 3, DNDHUDF, untranslated, ammo1, fillzeros, drawshadow, 294, 179; }}}}}}}}}
+
+ininventory not IsSSH, 1
+{
+ininventory GotHammer, 1 { drawimage "GOTO2", 262, 171, center; }
+drawimage "GOTA2", 267, 171, center;
+ininventory GotShotgun, 1 { drawimage "GOTT2", 272, 171, center; }
+ininventory GotUzi, 1 { drawimage "GOTS2", 277, 171, center; }
+ininventory GotCarronade, 1 { drawimage "GOTE2", 282, 171, center; }
+ininventory GotLegion, 1 { drawimage "GOTL2", 291, 171, center; }
+ininventory GotFrosthammer, 1 { drawimage "GOTF2", 296, 171, center; }
+isselected "Kharon + Omen" { drawimage "GOTO1", 262, 171, center; }
+isselected "Kharon + Acacia A-22" { drawimage "GOTA1", 267, 171, center; }
+isselected "Kharon + Testament" { drawimage "GOTT1", 272, 171, center; }
+isselected "Kharon + Sabbath" { drawimage "GOTS1", 277, 171, center; }
+isselected "Kharon + Exodus" { drawimage "GOTE1", 282, 171, center; }
+isselected "Kharon + Legion" { drawimage "GOTL1", 291, 171, center; }
+isselected "Kharon + Frosthammer" { drawimage "GOTF1", 296, 171, center; }
+ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 253, 171, center;
+    ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 253, 171, center; }
+    ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 253, 171, center; }}
+}
+
+isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
+isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
+isselected "05-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
+//ininventory GotLegion, 1 { drawimage "GOTL1", 290, 171, center; }
+//drawimage "GOTA1", 295, 171, center;
+//drawimage "GOTA1", 300, 171, center;
+//drawimage "GOTA1", 305, 171, center;
+
+ininventory not InIronMaiden, 1 { DrawImage "HUDBAR", 5, 193; }
+ininventory InIronMaiden, 1 { DrawImage "HUDBAR2", 5, 193; }
+DrawBar "HARMOR", "HEMPTY", SuperCounter1, Horizontal, 7, 195;
+DrawBar "HARMOR2", "HEMPTY", SuperCounter2, Horizontal, 7, 195;
+DrawBar "HARMOR3", "HEMPTY", SuperCounter3, Horizontal, 7, 195;
+DrawBar "HARMOR4", "HEMPTY", SuperCounter4, Horizontal, 7, 195;
+
+DrawImage "STYBAR", 263, 6;
+DrawBar "STYBAR1", "STYBAR0", ComboCounter1, Horizontal, 265, 8;
+DrawBar "STYBAR2", "STYBAR0", ComboCounter2, Horizontal, 265, 8;
+DrawBar "STYBAR3", "STYBAR0", ComboCounter3, Horizontal, 265, 8;
+DrawBar "STYBAR4", "STYBAR0", ComboCounter4, Horizontal, 265, 8;
+DrawBar "STYBAR5", "STYBAR0", ComboCounter5, Horizontal, 265, 8;
+DrawBar "STYBAR6", "STYBAR0", ComboCounter6, Horizontal, 265, 8;
+DrawBar "STYBAR7", "STYBAR0", ComboCounter7, Horizontal, 265, 8;
+
+InInventory FRank, 1 { DrawImage "STYLVL1", 265, 13; }
+InInventory DRank, 1 { DrawImage "STYLVL2", 264, 14; }
+InInventory CRank, 1 { DrawImage "STYLVL3", 267, 13; }
+InInventory BRank, 1 { DrawImage "STYLVL4", 265, 13; }
+InInventory ARank, 1 { DrawImage "STYLVL5", 264, 14; }
+InInventory SRank, 1 { DrawImage "STYLVL6", 271, 13; }
+
+// I would kill for Else clauses about now.
+InInventory not IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
+{
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 10, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 20, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 30, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 40, 168; }
+    InInventory ContraLifeToken, 1
+    { drawimage "HLTHFIR1", 10, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 20, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 30, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 40, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 50, 168; } }
+    InInventory ContraLifeToken, 2
+    { drawimage "HLTHFIR1", 20, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 30, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 40, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 50, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 60, 168; } }
+    InInventory ContraLifeToken, 3
+    { drawimage "HLTHFIR1", 30, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 40, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 50, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 60, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 70, 168; } }
+    InInventory ContraLifeToken, 4
+    { drawimage "HLTHFIR1", 40, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 50, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 60, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 70, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 80, 168; } }
+    InInventory ContraLifeToken, 5
+    { drawimage "HLTHFIR1", 50, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 60, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 70, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 80, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 90, 168; } }
+    InInventory ContraLifeToken, 6
+    { drawimage "HLTHFIR1", 60, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 70, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 80, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 90, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 100, 168; } }
+    InInventory ContraLifeToken, 7
+    { drawimage "HLTHFIR1", 70, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 80, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 90, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 100, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 110, 168; } }
+    InInventory ContraLifeToken, 8
+    { drawimage "HLTHFIR1", 80, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 90, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 100, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 110, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 120, 168; } }
+    InInventory ContraLifeToken, 9
+    { drawimage "HLTHFIR1", 90, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 100, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 110, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 120, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 130, 168; } }
+    InInventory ContraLifeToken, 10
+    { drawimage "HLTHFIR1", 100, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHFIR5", 110, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHFIR5", 120, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHFIR5", 130, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHFIR5", 140, 168; } }
+
+    InInventory ContraArmorToken, 1 { drawimage "HLTHSHLD", 10, 168; }
+    InInventory ContraArmorToken, 2 { drawimage "HLTHSHLD", 20, 168; }
+    InInventory ContraArmorToken, 3 { drawimage "HLTHSHLD", 30, 168; }
+    InInventory ContraArmorToken, 4 { drawimage "HLTHSHLD", 40, 168; }
+    InInventory ContraArmorToken, 5 { drawimage "HLTHSHLD", 50, 168; }
+    InInventory ContraArmorToken, 6 { drawimage "HLTHSHLD", 60, 168; }
+
+    DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 7, 188;
+}
+
+InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
+{
+    DrawNumber 3, smallfont, red, Health, fillzeros, 32, 172;
+    DrawNumber 3, smallfont, gold, Armor, fillzeros, 64, 172;
+}
+
+    gamemode cooperative, singleplayer
+    {
+        InInventory BlueCard, 1 { drawimage "STKEYS0", 295, 181; }
+        InInventory YellowCard, 1 { drawimage "STKEYS1", 299, 181; }
+        InInventory RedCard, 1 { drawimage "STKEYS2", 303, 181; }
+        InInventory BlueSkull, 1 { drawimage "STKEYS3", 295, 187; }
+        InInventory YellowSkull, 1 { drawimage "STKEYS4", 299, 187; }
+        InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
+    }
+
+    InInventory SentinelUp
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "SENTACTV", 1, 20;
+            DrawNumber 3, smallfont, green, SentinelLifeCounter, 45, 24;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "SENTACTV", -31, 20;
+            DrawNumber 3, smallfont, green, SentinelLifeCounter, 13, 24;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "SENTACTV", -52, 20;
+            DrawNumber 3, smallfont, green, SentinelLifeCounter, -8, 24;
+        }
+    }
+    InInventory BlindGuardianShieldUp
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "SHLDACTV", 1, 2;
+            InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 54, 6; }
+            InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 45, 6; }
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "SHLDACTV", -31, 2;
+            InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 22, 6; }
+            InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 13, 6; }
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "SHLDACTV", -52, 2;
+            InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
+            InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
+        }
+    }
+}
+
+statusbar fullscreen, forcescaled
+{
+InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
+{
+    DrawNumber 4, smallfont, white, Points, fillzeros, 205, 6;
+    DrawNumber 4, smallfont, white, ManPoints, fillzeros, 169, 6;
+    DrawNumber 2, smallfont, white, OkuPoints, fillzeros, 133, 6;
+}
+
+drawimage ammoicon1, 258, 187, center;
+drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
+
+ininventory not IsSSH, 1
+{
+ininventory GotHammer, 1 { drawimage "GOTO2", 265, 174, center; }
+drawimage "GOTA2", 270, 174, center;
+ininventory GotShotgun, 1 { drawimage "GOTT2", 275, 174, center; }
+ininventory GotUzi, 1 { drawimage "GOTS2", 280, 174, center; }
+ininventory GotCarronade, 1 { drawimage "GOTE2", 285, 174, center; }
+ininventory GotLegion, 1 { drawimage "GOTL2", 290, 174, center; }
+ininventory GotFrosthammer, 1 { drawimage "GOTF2", 295, 174, center; }
+isselected "Kharon + Omen" { drawimage "GOTO1", 265, 174, center; }
+isselected "Kharon + Acacia A-22" { drawimage "GOTA1", 270, 174, center; }
+isselected "Kharon + Testament" { drawimage "GOTT1", 275, 174, center; }
+isselected "Kharon + Sabbath" { drawimage "GOTS1", 280, 174, center; }
+isselected "Kharon + Exodus" { drawimage "GOTE1", 285, 174, center; }
+isselected "Kharon + Legion" { drawimage "GOTL1", 290, 174, center; }
+isselected "Kharon + Frosthammer" { drawimage "GOTF1", 295, 174, center; }
+ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 256, 174, center;
+ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 256, 174, center; }
+ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}
+}
+
+isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
+isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
+isselected "05-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
+
+ininventory not InIronMaiden, 1 { DrawImage "HUDBARX", 5, 193; }
+ininventory InIronMaiden, 1 { DrawImage "HUDBARXb", 5, 190; }
+DrawBar "HARMOR", "HEMPTY", SuperCounter1, Horizontal, 7, 195;
+DrawBar "HARMOR2", "HEMPTY", SuperCounter2, Horizontal, 7, 195;
+DrawBar "HARMOR3", "HEMPTY", SuperCounter3, Horizontal, 7, 195;
+DrawBar "HARMOR4", "HEMPTY", SuperCounter4, Horizontal, 7, 195;
+
+DrawImage "STYBARX", 263, 6;
+DrawBar "STYBAR1", "STYBAR0", ComboCounter1, Horizontal, 265, 8;
+DrawBar "STYBAR2", "STYBAR0", ComboCounter2, Horizontal, 265, 8;
+DrawBar "STYBAR3", "STYBAR0", ComboCounter3, Horizontal, 265, 8;
+DrawBar "STYBAR4", "STYBAR0", ComboCounter4, Horizontal, 265, 8;
+DrawBar "STYBAR5", "STYBAR0", ComboCounter5, Horizontal, 265, 8;
+DrawBar "STYBAR6", "STYBAR0", ComboCounter6, Horizontal, 265, 8;
+DrawBar "STYBAR7", "STYBAR0", ComboCounter7, Horizontal, 265, 8;
+
+InInventory FRank, 1 { DrawImage "STYLVL1", 265, 13; }
+InInventory DRank, 1 { DrawImage "STYLVL2", 264, 14; }
+InInventory CRank, 1 { DrawImage "STYLVL3", 267, 13; }
+InInventory BRank, 1 { DrawImage "STYLVL4", 265, 13; }
+InInventory ARank, 1 { DrawImage "STYLVL5", 264, 14; }
+InInventory SRank, 1 { DrawImage "STYLVL6", 271, 13; }
+
+// I would kill for Else clauses about now.
+InInventory not IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
+{
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 10, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 15, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 20, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 25, 181; }
+    InInventory ContraLifeToken, 1
+    { drawimage "lifebard", 10, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 15, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 20, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 25, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 30, 181; } }
+    InInventory ContraLifeToken, 2
+    { drawimage "lifebard", 15, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 20, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 25, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 30, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 35, 181; } }
+    InInventory ContraLifeToken, 3
+    { drawimage "lifebard", 20, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 25, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 30, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 35, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 40, 181; } }
+    InInventory ContraLifeToken, 4
+    { drawimage "lifebard", 25, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 30, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 35, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 40, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 45, 181; } }
+    InInventory ContraLifeToken, 5
+    { drawimage "lifebard", 30, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 35, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 40, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 45, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 50, 181; } }
+    InInventory ContraLifeToken, 6
+    { drawimage "lifebard", 35, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 40, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 45, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 50, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 55, 181; } }
+    InInventory ContraLifeToken, 7
+    { drawimage "lifebard", 40, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 45, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 50, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 55, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 60, 181; } }
+    InInventory ContraLifeToken, 8
+    { drawimage "lifebard", 45, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 50, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 55, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 60, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 65, 181; } }
+    InInventory ContraLifeToken, 9
+    { drawimage "lifebard", 50, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 55, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 60, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 65, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 70, 181; } }
+    InInventory ContraLifeToken, 10
+    { drawimage "lifebard", 55, 181;
+      InInventory OverLifeToken, 1 { drawimage "lifebar2", 60, 181; }
+      InInventory OverLifeToken, 2 { drawimage "lifebar2", 65, 181; }
+      InInventory OverLifeToken, 3 { drawimage "lifebar2", 70, 181; }
+      InInventory OverLifeToken, 4 { drawimage "lifebar2", 75, 181; } }
+
+    InInventory ContraArmorToken, 1 { drawimage "armrbard", 10, 173; }
+    InInventory ContraArmorToken, 2 { drawimage "armrbard", 15, 173; }
+    InInventory ContraArmorToken, 3 { drawimage "armrbard", 20, 173; }
+    InInventory ContraArmorToken, 4 { drawimage "armrbard", 25, 173; }
+    InInventory ContraArmorToken, 5 { drawimage "armrbard", 30, 173; }
+    InInventory ContraArmorToken, 6 { drawimage "armrbard", 35, 173; }
+
+    DrawBar "LIFBARB", "LIFBARA", Armor, horizontal, 7, 189;
+}
+
+InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
+{
+    DrawNumber 3, smallfont, red, Health, fillzeros, 32, 184;
+    DrawNumber 3, smallfont, gold, Armor, fillzeros, 64, 184;
+}
+
+    gamemode cooperative, singleplayer
+    {
+        InInventory BlueCard, 1 { drawimage "STKEYS0", 295, 181; }
+        InInventory YellowCard, 1 { drawimage "STKEYS1", 299, 181; }
+        InInventory RedCard, 1 { drawimage "STKEYS2", 303, 181; }
+        InInventory BlueSkull, 1 { drawimage "STKEYS3", 295, 187; }
+        InInventory YellowSkull, 1 { drawimage "STKEYS4", 299, 187; }
+        InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
+    }
+
+    InInventory SentinelUp
+    {
+        AspectRatio "4:3"
+        {
+        DrawImage "SENTACTV", 1, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, 45, 24;
+        }
+        AspectRatio "16:10"
+        {
+        DrawImage "SENTACTV", -31, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, 13, 24;
+        }
+        AspectRatio "16:9"
+        {
+        DrawImage "SENTACTV", -52, 20;
+        DrawNumber 3, smallfont, green, SentinelLifeCounter, -8, 24;
+        }
+    }
+    InInventory BlindGuardianShieldUp
+    {
+        AspectRatio "4:3"
+        {
+        DrawImage "SHLDACTV", 1, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 54, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 45, 6; }
+        }
+        AspectRatio "16:10"
+        {
+        DrawImage "SHLDACTV", -31, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 22, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 13, 6; }
+        }
+        AspectRatio "16:9"
+        {
+        DrawImage "SHLDACTV", -52, 2;
+        InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
+        InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
+        }
+    }
+}
+
+statusbar automap, forcescaled
+{
+    DrawImage "HEMPTY", 151, 4;
+}

@@ -1,0 +1,18 @@
+GRAPHICS:
+===========
+- Hands by Marty Kirra and Sgt. Shivers
+- Pizza sprite taken off Pizza Hut
+- Doritos sprite originally by Golly Gosher/Orig01
+- Rebellion dual pistols ripped by torridGristle
+- Striker revolver ripped by torridGristle, edited by Mike12 and Sgt. Shivers
+- Avenger shotgun ripped by Sgt. Shivers
+- Enforcer grenades ripped by Captain J
+- Triumph sword ripped by Sgt. Shivers
+- Yuki Nagato sprites from Doom Radys Classes, made by Doom667Shogun
+
+CODE:
+===========
+- Opening binary sequence coded by Kyle873
+- Wallgrabbing by Xaser
+- Grappling hook and walljumping by Ijon Tichy
+- Enemy-tazed code by WildWeasel
