@@ -41,6 +41,8 @@ int IronMaidenMusic[IRONMUS] =
 
 script WEEB_RESPAWN respawn
 {
+    if (CheckInventory("IsSSH") == 1) { terminate; }
+
     // Death forcefully takes away all the player's remaining tokens (if killed
     // via divine intervention or freak accident or whatever), so respawning
     // hands over a fresh batch of tokens.

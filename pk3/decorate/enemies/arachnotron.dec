@@ -7,6 +7,8 @@ ACTOR Priest replaces Arachnotron
     Gravity 0.75
     Mass 600
     PainChance 192
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -161,6 +163,33 @@ ACTOR Priest replaces Arachnotron
         PRST J 3 A_Pain
         Goto EnemyHang2
 
+    Pain.Taser:
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        Goto See
+
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
     Pain.KubiLungeAttackSheathe:
@@ -180,6 +209,7 @@ ACTOR Priest replaces Arachnotron
     Death.KubiSpinAttack:
     Death.KubiRangeAttack:
     Death.Knife:
+    Death.Triumph:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",8500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -258,6 +288,7 @@ ACTOR Priest replaces Arachnotron
         TNT1 A 0 A_GiveToTarget("PriestguyComboPoints",1)
         TNT1 A 0 A_AlertMonsters
         TNT1 AAAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
+    Death.Taser:
         TNT1 A 0
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance2",1)

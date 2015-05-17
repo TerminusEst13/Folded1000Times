@@ -3,6 +3,8 @@ ACTOR WeeabooDemon : Demon replaces Demon
     Health 150
     Speed 10
     Species "Body"
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
@@ -126,6 +128,34 @@ ACTOR WeeabooDemon : Demon replaces Demon
         SARG J 3 A_Pain
         Goto EnemyHang2
 
+    Pain.Taser:
+        SARG H 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        SARG H 2 BRIGHT
+        SARG H 2
+        Goto See
+
+
 
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
@@ -148,6 +178,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    Death.Triumph:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",3500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -165,6 +196,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     XDeath.ExodusDamage:
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
+    Death.Taser:
         TNT1 A 0 A_GiveToTarget("Points",3500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         SARG H 1
@@ -471,6 +503,8 @@ ACTOR WeeabooClink replaces Spectre
     Obituary "%o was bisected by a Steele Beast."
     Species "Body"
     PainChance 64
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "KharonSheathe", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255

@@ -193,6 +193,7 @@ actor KamenRiderModeActivate : CustomInventory
     +INVBAR
     Inventory.Amount 1
     Inventory.MaxAmount 1
+    Tag " "
     States
     {
     Use:

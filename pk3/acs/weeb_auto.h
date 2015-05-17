@@ -63,12 +63,11 @@ script WEEB_ENTER ENTER
 
     // If the player isn't playing as Hae-Lin, terminates.
     // Inter-character scripts running off each other will cause a cluster of problems.
-    if (CheckInventory("IsSSH") == 1)//(CheckInventory("IsJungHaeLin") == 0)
+    if (CheckInventory("IsSSH") == 1)
     {
         if (GetCvar("dst_debug") == 1) { Log(s:"Error: Player ", d:pln, s:" is not Hae-Lin, terminating WEEB_ENTER."); }
         terminate;
     }
-    //if (CheckInventory("IsSSH") == 1) { terminate; }
 
     if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
     // If the player is spawning for the first time.
@@ -178,6 +177,11 @@ script WEEB_ENTER ENTER
 
     while (1)
     {
+        if (CheckInventory("IsSSH") == 1)
+        {
+            if (GetCvar("dst_debug") == 1) { Log(s:"Error: Player ", d:pln, s:" is not Hae-Lin, terminating WEEB_ENTER."); }
+            terminate;
+        }
         mytid = defaultTID(-1);
         //if (CheckInventory("ImAlive") == 1) { if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } }
 

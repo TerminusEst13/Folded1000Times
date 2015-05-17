@@ -5,6 +5,8 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     +DONTBLAST
     Health 100
     Species "Body"
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -60,10 +62,11 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     XDeath.ExodusDamage:
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
+    Death.Taser:
         TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         POSS G 1
-        TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
+        //TNT1 A 0 A_CustomMissile("SoulAmmo",0,0,0,4)
     XDeath:
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_TakeInventory("EnemyLaunchedResistance",1)
@@ -154,6 +157,33 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS J 1 ThrustThingZ(0,8,0,0)
         POSS J 3 A_Pain
         Goto EnemyHang2
+    Pain.Taser:
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        Goto See
+
 
 
     Death.KubiRangeAttackSheathe:
@@ -177,6 +207,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    Death.Triumph:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -639,6 +670,8 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     //+MISSILEEVENMORE
     Health 100
     Species "Body"
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -751,6 +784,35 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         SPOS J 3 A_Pain
         Goto EnemyHang2
 
+    Pain.Taser:
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        Goto See
+
+
+
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
     Death.KubiSpinAttackSheathe:
@@ -772,6 +834,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    Death.Triumph:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -848,6 +911,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     XDeath.ExodusDamage:
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
+    Death.Taser:
         TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         SPOS G 1
@@ -1233,6 +1297,8 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     +DONTBLAST
     Health 100
     Species "Body"
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -1336,6 +1402,35 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Pain
 
+    Pain.Taser:
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        Goto See
+
+
+
     Death.KubiRangeAttackSheathe:
     Death.KubiLungeAttackSheathe:
     Death.KubiSpinAttackSheathe:
@@ -1357,6 +1452,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    Death.Triumph:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -1433,6 +1529,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     XDeath.ExodusDamage:
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
+    Death.Taser:
         TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         CPOS G 1
@@ -1627,6 +1724,8 @@ ACTOR Yakuza replaces WolfensteinSS
     SeeSound "yakuza/see"
     PainSound "yakuza/hurt"
     DeathSound "yakuza/die"
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -1737,6 +1836,35 @@ ACTOR Yakuza replaces WolfensteinSS
         YKZA J 3 A_Pain
         Goto EnemyHang2
 
+    Pain.Taser:
+        LDTH B 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        Goto See
+
+
+
     Death.Kubiuti:
     Death.KubiutiUpper:
     Death.KubiutiCleave:
@@ -1799,6 +1927,7 @@ ACTOR Yakuza replaces WolfensteinSS
     XDeath.ExodusDamage:
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
+    Death.Taser:
         TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         YKZA H 1
@@ -1871,6 +2000,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    Death.Triumph:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)

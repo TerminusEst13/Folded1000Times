@@ -15,6 +15,7 @@ ACTOR TechPillar2 : DestructableDecorationBase replaces TechPillar
     Pain.IronFistUpper:
     Pain.KubiutiCleave:
     Pain.IronFistOverkill:
+    Pain.ShihongPunch:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
         TNT1 A 0 A_PlaySound("destroy/pillar")

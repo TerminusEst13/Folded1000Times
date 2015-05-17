@@ -271,6 +271,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     BloodType "BlankPuff"
     RadiusDamageFactor 0.0
     DamageFactor "Normal", 0.0
+    DamageFactor "ShihongPunch", 1.0
     DamageFactor "MessiahDamage", 1.0
     DamageFactor "Kubiuti", 1.0
     DamageFactor "KubiutiUpper", 1.0
@@ -280,6 +281,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     DamageFactor "IronFistUpper", 1.0
     DamageFactor "IronFistOverkill", 1.0
     PainChance 0
+    PainChance "ShihongPunch", 255
     PainChance "MessiahDamage", 255
     PainChance "Kubiuti", 255
     PainChance "KubiutiUpper", 255

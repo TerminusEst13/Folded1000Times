@@ -1,6 +1,8 @@
 actor WeeabooFatty : Fatso replaces Fatso
 {
     Species "Body"
+    PainChance "Triumph", 255
+    PainChance "ShihongPunch", 255
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
@@ -103,6 +105,32 @@ actor WeeabooFatty : Fatso replaces Fatso
         FATT J 5 //A_Recoil(2)
         FATT J 5 A_Pain
         Goto See
+    Pain.Taser:
+        FATT J 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        FATT J 2 BRIGHT
+        FATT J 2
+        Goto See
     Death.HaltHammerzeitImpact:
     Death.HaltHammerzeit:
     Death.IronFistExplosion:
@@ -141,6 +169,7 @@ actor WeeabooFatty : Fatso replaces Fatso
     Death.KubiLungeAttack:
     Death.KubiSpinAttack:
     Death.Knife:
+    Death.Triumph:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",6500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)
@@ -156,6 +185,7 @@ actor WeeabooFatty : Fatso replaces Fatso
         TNT1 A 0 A_AlertMonsters
         TNT1 AAA 0 A_CustomMissile("SoulAmmo",random(24,42),random(-10,10),random(-180,180),0,random(-32,90))//A_GiveToTarget("SuperMeterCounter",3)
     death.rocket:
+    Death.Taser:
         FATT U 6 A_XScream
         TNT1 A 0 A_CustomMissile("BloodShower2",40,0,45)
         TNT1 A 0 A_CustomMissile("BloodShower2",40,0,-45)

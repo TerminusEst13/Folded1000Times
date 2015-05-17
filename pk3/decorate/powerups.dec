@@ -7,6 +7,7 @@ actor PowerShieldProtection : PowerProtection
 actor EnemyLaunchedResistance : PowerProtection
 {
     DamageFactor "Normal", 0.2
+    DamageFactor "ShihongPunch", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronFistUpper", 1.0
     Powerup.Duration 0x7FFFFFFF
@@ -15,6 +16,7 @@ actor EnemyLaunchedResistance : PowerProtection
 actor EnemyLaunchedResistance2 : PowerProtection
 {
     DamageFactor "Normal", 0.5
+    DamageFactor "ShihongPunch", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronFistUpper", 1.0
     Powerup.Duration 0x7FFFFFFF
@@ -76,6 +78,8 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "KubiSpinAttackSheathe", 1.45
     DamageFactor "KubiLungeAttackSheathe", 1.45
     DamageFactor "KubiRangeAttackSheathe", 1.45
+
+    DamageFactor "ShihongPunch", 1.5
 }
 
 actor ComboDamageLevel2 : PowerDamage
@@ -103,6 +107,8 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "KubiSpinAttackSheathe", 1.375
     DamageFactor "KubiLungeAttackSheathe", 1.375
     DamageFactor "KubiRangeAttackSheathe", 1.375
+
+    DamageFactor "ShihongPunch", 1.425
 }
 
 actor ComboDamageLevel3 : PowerDamage
@@ -130,6 +136,8 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "KubiSpinAttackSheathe", 1.3
     DamageFactor "KubiLungeAttackSheathe", 1.3
     DamageFactor "KubiRangeAttackSheathe", 1.3
+
+    DamageFactor "ShihongPunch", 1.35
 }
 
 actor ComboDamageLevel4 : PowerDamage
@@ -157,6 +165,8 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "KubiSpinAttackSheathe", 1.225
     DamageFactor "KubiLungeAttackSheathe", 1.225
     DamageFactor "KubiRangeAttackSheathe", 1.225
+
+    DamageFactor "ShihongPunch", 1.275
 }
 
 actor ComboDamageLevel5 : PowerDamage
@@ -184,6 +194,8 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "KubiSpinAttackSheathe", 1.15
     DamageFactor "KubiLungeAttackSheathe", 1.15
     DamageFactor "KubiRangeAttackSheathe", 1.15
+
+    DamageFactor "ShihongPunch", 1.2
 }
 
 actor ComboDamageLevel6 : PowerDamage
@@ -211,6 +223,8 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "KubiSpinAttackSheathe", 1.1
     DamageFactor "KubiLungeAttackSheathe", 1.1
     DamageFactor "KubiRangeAttackSheathe", 1.1
+
+    DamageFactor "ShihongPunch", 1.15
 }
 
 actor DodgeGhostOn : CustomInventory
