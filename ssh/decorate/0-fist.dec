@@ -374,7 +374,7 @@ actor PunchAttack4 : PunchAttack1
 
 actor PunchAttack5 : PunchAttack1
 {
-    Damage (120)
+    Damage (150)
     States
     {
     Death:
@@ -491,9 +491,4 @@ ACTOR ElecPuff
    	    TZOT ABCD 3 Bright
         Stop
    }
-}
-
-actor ShadowCloak : PowerShadow
-{
-    Powerup.Duration -15
 }

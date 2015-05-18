@@ -23,7 +23,6 @@
 3: Rehaul the Teleport/Dash entirely
 4: BFG9000 replacement
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
-6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
 8: New HUD
 9: Better names for Avenger/Enforcer/Rebellion
@@ -37,3 +36,10 @@
 16: Nine more spawning sounds (need at least 19, currently have 10)
 17: Spawning animation for guns.
  ^- Pickup sprites for weapons
+
+
+
+
+
+
+6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)

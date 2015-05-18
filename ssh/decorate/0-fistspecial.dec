@@ -28,6 +28,11 @@ ACTOR ConcussionMissile : FastProjectile
     }
 }
 
+actor ShadowCloak : PowerShadow
+{
+    Powerup.Duration -15
+}
+
 ACTOR PlasmaMissileTrail
 {
     +NOINTERACTION
