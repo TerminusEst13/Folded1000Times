@@ -33,6 +33,14 @@ shihong/walljump       SSHWJMP
 shihong/walljumpup     SSHWJMU
 shihong/wallgrab       SSHWGRB
 
+$random shihong/healthwarning { lohealf1 lohealf2 lohealf3 lohealf4 lohealf5 lohealf6 } // Taken from the General Series 6000
+lohealf1               LOHEALF1
+lohealf2               LOHEALF2
+lohealf3               LOHEALF3
+lohealf4               LOHEALF4
+lohealf5               LOHEALF5
+lohealf6               LOHEALF6
+
 health/doritos         DEWITNAO // Taira Komori's chips eating with Woodylein's bag crumpling and Kamen Rider OOO's scanning sound, all (but the latter) off Freesound
 health/pizza           PIZATIME // Squashy55's toasted ham sandwich with beatmad's sizzling frying pan and keweldog's apple eating, all off Freesound
 

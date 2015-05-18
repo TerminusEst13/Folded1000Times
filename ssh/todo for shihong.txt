@@ -36,3 +36,4 @@
 15: What to do with Rebellion? Dual-wielding is fun, and dual-wielding pistols in a stylish action game is kind of mandatory. But the current execution is very eehhh. The Striker is more accurate, the Avenger does more damage, and the Enforcer is faster, and tapping away rapidly at the keys to try and get the damage edge is clunky and unwieldy.
 16: Nine more spawning sounds (need at least 19, currently have 10)
 17: Spawning animation for guns.
+ ^- Pickup sprites for weapons

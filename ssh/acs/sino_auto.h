@@ -7,6 +7,7 @@ script SINO_ENTER ENTER
     int yyy;
     int xxx2;
     int yyy2;
+    int GetSomeHealthAlready;
 
     //PrintBold(s:"script firing");
 
@@ -41,6 +42,22 @@ script SINO_ENTER ENTER
         if (CheckInventory("IsJungHaeLin") == 1)
         { terminate; }
 
+        // OH SHIT I'M OUT OF HEALTH
+        // SUDDENLY AND COINCIDENTALLY I HAVE A MASSIVE CRAVING FOR MUNCHIES
+        if (CheckInventory("ContraLifeToken") == 0 && CheckInventory("OverLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
+        {
+          if (GetSomeHealthAlready >= 60)
+          {
+            FadeRange(255,0,0,0.25,0,0,0,0,1.00);
+            LocalAmbientSound("shihong/healthwarning",127);
+            GetSomeHealthAlready = 0;
+          }
+        GetSomeHealthAlready++;
+        }
+        else
+        {
+            GetSomeHealthAlready = 0;
+        }
 
     // Various ground and status checks for the kickjumping and idle animation.
         xxx2 = xxx;
@@ -232,7 +249,6 @@ script SINO_ENTER_UNREPLACED ENTER
     int SentinelHP;
     int NewShieldHP;
     int NewSentinelHP;
-    int GetSomeHealthAlready;
     int speedmod;
     int mtotal;
     int mkilled;
@@ -824,23 +840,6 @@ script SINO_ENTER_UNREPLACED ENTER
 
         if (flashlightOn[pln])
             { GiveInventory("FlashlightSpawner",1); }
-
-        // OH SHIT I'M OUT OF HEALTH
-        // SUDDENLY AND COINCIDENTALLY I HAVE A MASSIVE CRAVING FOR MUNCHIES
-        if (CheckInventory("ContraLifeToken") == 0 && CheckInventory("OverLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
-        {
-          if (GetSomeHealthAlready >= 60)
-          {
-            FadeRange(255,0,0,0.25,0,0,0,0,1.00);
-            LocalAmbientSound("health/low",127);
-            GetSomeHealthAlready = 0;
-          }
-        GetSomeHealthAlready++;
-        }
-        else
-        {
-            GetSomeHealthAlready = 0;
-        }
 
         if (CheckInventory("ContraLifeToken") != 0 && CheckInventory("OverLifeToken") != 0 && CheckInventory("ContraArmorToken") != 0 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") != 0)
         { SetPlayerProperty(0,1,PROP_BUDDHA); }
