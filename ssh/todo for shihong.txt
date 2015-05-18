@@ -21,6 +21,7 @@
 2: Soul acquiring mechanic
  ^- Separate Shihong's bullets from Hae-Lin's
 3: Rehaul the Teleport/Dash entirely
+ ^- Directional jetpack?
 4: BFG9000 replacement
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
@@ -36,8 +37,8 @@
 16: Nine more spawning sounds (need at least 19, currently have 10)
 17: Spawning animation for guns.
  ^- Pickup sprites for weapons
-
-
+18: Flashlight replacement for Shihong (night vision?)
+19: A way to switch away from grenades before you switch?
 
 
 
