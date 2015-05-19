@@ -216,7 +216,14 @@ actor "Fists" : Weapon
 		TNT1 A 0 A_PlayWeaponSound("taser/attack")
         TNT1 A 0 A_SetBlend("white",0.2,3)
 		SHTS C 1 BRIGHT A_CustomPunch(35,1,0,"ElecPuff",128)
-		SHTS DEFGHIJ 1 BRIGHT
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS DE 1 BRIGHT
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS FG 1 BRIGHT
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS HI 1 BRIGHT
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS J 1 BRIGHT
 		SHTS KK 1
 		SHTS LLM 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOBOB)
         TNT1 A 70 A_WeaponReady
