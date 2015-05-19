@@ -19,9 +19,9 @@ actor PistolFired : Boolean {}
 
 // DW Specialist Custom sprites by torridGristle.
 
-actor "05-R Rebellion" : Fists
+actor "04-R Rebellion" : Fists
 {
-    Weapon.SlotNumber 5
+    Weapon.SlotNumber 4
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0
     Weapon.AmmoType2 "SpecialistMagazine"

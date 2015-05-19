@@ -47,6 +47,7 @@ ACTOR MeleePlayer2 : PlayerPawn
     Player.StartItem "UppercutTrigger", 1
     Player.StartItem "UppercutUntrigger", 1
     Player.StartItem "ZDoomTauntButton", 1
+    Player.StartItem "JetpackFuel", 100
     Player.StartItem "IsSSH", 1
     Player.ColorRange 112, 127
     Player.AttackZOffset 16

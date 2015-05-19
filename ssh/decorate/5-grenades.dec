@@ -1,6 +1,6 @@
-actor "04-E Enforcer" : Fists
+actor "05-E Enforcer" : Fists
 {
-    Weapon.SlotNumber 4
+    Weapon.SlotNumber 5
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 5
     Weapon.AmmoType2 "WeebRocket"

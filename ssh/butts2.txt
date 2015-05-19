@@ -36,13 +36,8 @@
 18: Flashlight replacement for Shihong (night vision?)
 19: A way to switch away from grenades before you throw them?
 20: Polish up the jet thruster.
- ^- Buffer--doesn't just automatically turn on if you hold down Run at low values or if you alt-tab out.
  ^- More consistent jet sound.
  ^- Some kind of trail flowing around.
- ^- Fine-tune the values of speed/cost/recovery.
- ^- Adjust the recovery. Once you're on the ground again, it can recover steadily even if you jump?
- ^- The higher up your view is, the lesser the boost. Otherwise it's too easy for people to just fly straight up.
-  ^- Make a smoother curve
 
 
 
@@ -50,3 +45,9 @@
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
 16: 19 spawning sounds
+20: Polish up the jet thruster.
+ ^- Buffer--doesn't just automatically turn on if you hold down Run at low values.
+ ^- Fine-tune the values of speed/cost/recovery.
+ ^- Adjust the recovery. Once you're on the ground again, it can recover steadily even if you jump?
+ ^- The higher up your view is, the lesser the boost. Otherwise it's too easy for people to just fly straight up.
+  ^- Make a smoother curve

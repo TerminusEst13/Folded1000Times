@@ -643,9 +643,9 @@ script SINO_ENTER ENTER
         if (CheckInventory("Kharon + Testament") == 1)
             { TakeInventory("Kharon + Testament",1); GiveInventory("03-A Avenger",1); }
         if (CheckInventory("Kharon + Exodus") == 1)
-            { TakeInventory("Kharon + Exodus",1); GiveInventory("04-E Enforcer",1); }
+            { TakeInventory("Kharon + Exodus",1); GiveInventory("05-E Enforcer",1); }
         if (CheckInventory("Kharon + Sabbath") == 1)
-            { TakeInventory("Kharon + Sabbath",1); GiveInventory("05-R Rebellion",1); }
+            { TakeInventory("Kharon + Sabbath",1); GiveInventory("04-R Rebellion",1); }
 
         Delay(1);
 

@@ -134,5 +134,5 @@ actor PowerupPickup2 : CustomInventory replaces Berserk
 #include "decorate/1-sword.dec"
 #include "decorate/2-revolver.dec"
 #include "decorate/3-shotty.dec"
-#include "decorate/4-grenades.dec"
-#include "decorate/5-pistols.dec"
+#include "decorate/4-pistols.dec"
+#include "decorate/5-grenades.dec"
