@@ -8,6 +8,8 @@ script SINO_ENTER ENTER
     int xxx2;
     int yyy2;
     int GetSomeHealthAlready;
+    int JetpackFuelCounter;
+    int pitchy;
 
     //PrintBold(s:"script firing");
 
@@ -89,12 +91,13 @@ script SINO_ENTER ENTER
         if (GetActorZ(0) - GetActorFloorZ(0) <= 0)
         {
             GiveInventory("OnTheGround",1);
-            GiveInventory("JetpackFuel",1);
             TakeInventory("KickJumped",1);
             TakeInventory("WallGrabbed",1);
             TakeInventory("KickJumpReset",0x7FFFFFFF);
             TakeInventory("InTheAir",0x7FFFFFFF);
-            SetActorProperty(0,APROP_Gravity,0.7);
+            //SetActorProperty(0,APROP_Gravity,0.7);
+
+            if (CheckInventory("JetpackModeOn") == 0) { GiveInventory("JetpackModeOff",1); }
         }
         else
         {
@@ -110,13 +113,22 @@ script SINO_ENTER ENTER
         buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         MichaelAngleoBatio = GetActorAngle(0) >> 8;
 
-        TakeInventory("TeleportCooldown",1);
+        //TakeInventory("TeleportCooldown",1);
+
+        pitchy = GetActorPitch(0);
+        //Print(d:pitchy);
 
         if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0)
         {
-            GiveInventory("JetpackSpeedPower",1);
+            if (pitchy >= 0) { GiveInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
+            if (pitchy < 0 && pitchy >= -2000) { TakeInventory("JetpackSpeedPower1",1); GiveInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
+            if (pitchy < -2000 && pitchy >= -4500) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); GiveInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
+            if (pitchy < -4500 && pitchy >= -6000) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); GiveInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
+            if (pitchy < -6000 && pitchy >= -9000) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); GiveInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
+            if (pitchy < -9000) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); GiveInventory("JetpackSpeedPower6",1); }
             GiveInventory("JetpackFlightPower",1);
-            TakeInventory("JetpackFuel",5);
+            TakeInventory("JetpackModeOff",1);
+            TakeInventory("JetpackFuel",2);
             if (CheckInventory("JetpackModeOn") == 0)
             {
               ActivatorSound("shihong/thruster",127);
@@ -125,9 +137,24 @@ script SINO_ENTER ENTER
         }
         else
         {
-            TakeInventory("JetpackSpeedPower",1);
+            TakeInventory("JetpackSpeedPower1",1);
+            TakeInventory("JetpackSpeedPower2",1);
+            TakeInventory("JetpackSpeedPower3",1);
+            TakeInventory("JetpackSpeedPower4",1);
+            TakeInventory("JetpackSpeedPower5",1);
+            TakeInventory("JetpackSpeedPower6",1);
             TakeInventory("JetpackFlightPower",1);
             TakeInventory("JetpackModeOn",1);
+        }
+
+        if (CheckInventory("JetpackModeOff") == 1)
+        {
+            if (JetpackFuelCounter >= 7)
+            {
+              GiveInventory("JetpackFuel",1);
+              JetpackFuelCounter = 0;
+            }
+            JetpackFuelCounter++;
         }
 
         /*if (buttons & BT_SPEED) {} // This is the fucking hackiest.

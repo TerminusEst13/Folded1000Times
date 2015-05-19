@@ -506,10 +506,40 @@ actor GrapplePoint
   }
 }
 
-actor JetpackSpeedPower : PowerSpeed
+actor JetpackSpeedPower1 : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF
     Speed 2.25
+}
+
+actor JetpackSpeedPower2 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 2.0
+}
+
+actor JetpackSpeedPower3 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.5
+}
+
+actor JetpackSpeedPower4 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.75
+}
+
+actor JetpackSpeedPower5 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.25
+}
+
+actor JetpackSpeedPower6 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.0
 }
 
 actor JetpackFlightPower : PowerFlight
