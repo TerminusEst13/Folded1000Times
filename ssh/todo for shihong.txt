@@ -24,7 +24,6 @@
  ^- Directional jetpack?
 4: BFG9000 replacement
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
-7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
 8: New HUD
 9: Better names for Avenger/Enforcer/Rebellion
 10: The trickster grapplebeam can lag people out when people teleport and go a long way away from the source. Is there a way to have the beam snap when teleporting?
@@ -34,13 +33,14 @@
 13: Blursphere replacement
 14: Allmap replacement
 15: What to do with Rebellion? Dual-wielding is fun, and dual-wielding pistols in a stylish action game is kind of mandatory. But the current execution is very eehhh. The Striker is more accurate, the Avenger does more damage, and the Enforcer is faster, and tapping away rapidly at the keys to try and get the damage edge is clunky and unwieldy.
-16: Nine more spawning sounds (need at least 19, currently have 10)
 17: Spawning animation for guns.
  ^- Pickup sprites for weapons
 18: Flashlight replacement for Shihong (night vision?)
-19: A way to switch away from grenades before you switch?
+19: A way to switch away from grenades before you throw them?
 
 
 
 
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
+7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
+16: 19 spawning sounds

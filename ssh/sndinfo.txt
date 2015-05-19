@@ -14,7 +14,7 @@ $playersound      Shihong   male    *usefail        SHINOPE  // Taken from Stree
 $playersound      Shihong   male    *taunt          SHITAUNT // Taken from Street Fighter X Tekken
 $playersound      Shihong   male    *jump           QUIET
 
-$random level/introssh { sshintro1 sshintro2 sshintro3 sshintro4 sshintro5 sshintro6 sshintro7 sshintro8 sshintro9 sshintro10 sshintro11 sshintro12 }
+$random level/introssh { sshintro1 sshintro2 sshintro3 sshintro4 sshintro5 sshintro6 sshintro7 sshintro8 sshintro9 sshintro10 sshintro11 sshintro12 sshintro13 sshintro14 sshintro15 sshintro16 sshintro17 sshintro18 sshintro19 }
 sshintro1              SSHNTRO1 // Made by BouncyTEM
 sshintro2              SSHNTRO2 // Made by BouncyTEM
 sshintro3              SSHNTRO3 // Made by BouncyTEM
@@ -27,6 +27,13 @@ sshintro9              SSHNTRO9 // Taken from Drox Operative
 sshintro10             SSHNTRO0
 sshintro11             SSHNTROA // Taken from Drox Operative
 sshintro12             SSHNTROB // Taken from S.T.A.L.K.E.R.: Shadow of Chernobyl
+sshintro13             SSHNTROC // Made by BouncyTEM
+sshintro14             SSHNTROD // Made by BouncyTEM
+sshintro15             SSHNTROE // Made by BouncyTEM
+sshintro16             SSHNTROF // Made by BouncyTEM
+sshintro17             SSHNTROG // Made by BouncyTEM
+sshintro18             SSHNTROH // Made by BouncyTEM
+sshintro19             SSHNTROI // Taken from gummi off ModArchive
 
 shihong/teleport       NINJPORT
 shihong/walljump       SSHWJMP
