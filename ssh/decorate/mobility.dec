@@ -521,25 +521,109 @@ actor JetpackSpeedPower2 : PowerSpeed
 actor JetpackSpeedPower3 : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF
-    Speed 1.5
+    Speed 1.9
 }
 
 actor JetpackSpeedPower4 : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF
-    Speed 0.75
+    Speed 1.8
 }
 
 actor JetpackSpeedPower5 : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF
-    Speed 0.25
+    Speed 1.7
 }
 
 actor JetpackSpeedPower6 : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF
-    Speed 0.0
+    Speed 1.6
+}
+
+actor JetpackSpeedPower7 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.5
+}
+
+actor JetpackSpeedPower8 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.4
+}
+
+actor JetpackSpeedPower9 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.3
+}
+
+actor JetpackSpeedPower10 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.2
+}
+
+actor JetpackSpeedPower11 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.1
+}
+
+actor JetpackSpeedPower12 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.0
+}
+
+actor JetpackSpeedPower13 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.9
+}
+
+actor JetpackSpeedPower14 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.8
+}
+
+actor JetpackSpeedPower15 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.7
+}
+
+actor JetpackSpeedPower16 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.6
+}
+
+actor JetpackSpeedPower17 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.5
+}
+
+actor JetpackSpeedPower18 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.4
+}
+
+actor JetpackSpeedPower19 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.3
+}
+
+actor JetpackSpeedPower20 : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 0.2
 }
 
 actor JetpackFlightPower : PowerFlight

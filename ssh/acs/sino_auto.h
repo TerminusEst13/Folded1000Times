@@ -73,31 +73,18 @@ script SINO_ENTER ENTER
         else
         { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
 
-        // This is completely different from the above check.
-        // Checks to see if the player has moved 16 mapunits within a tic, and if so they
-        // are in motion and are given a KickJumpReset token.
-        if ( ((xxx2 <= (xxx + 8.0)) && (xxx2 >= (xxx - 8.0))) && ((yyy2 <= (yyy + 8.0)) && (yyy2 >= (yyy - 8.0))) )
+        // This is a now-useless function, but the math to see if someone's within a certain
+        // distance of where they last were may come in handy in the future.
+        /*if ( ((xxx2 <= (xxx + 8.0)) && (xxx2 >= (xxx - 8.0))) && ((yyy2 <= (yyy + 8.0)) && (yyy2 >= (yyy - 8.0))) )
         { TakeInventory("KickJumpReset",1); }
         else
-        { GiveInventory("KickJumpReset",1); }
+        { GiveInventory("KickJumpReset",1); }*/
 
-        // Checks if the player is actually on the floor. This serves multiple purposes.
-        // 1: Since kickjumping changes the player's gravity, this resets it.
-        // 2: Restores kickjump/wallgrab and gets rid of all related counters.
-        // 3: Gives/takes InTheAir depending on the context. This is ESPECIALLY important
-        //    due to the finnicky nature of the Doom engine. The kickjump checks to see if
-        //    the player has about five-ish InTheAir tokens--ergo, has been in the air for
-        //    at least five tics.
+        // Checks if the player is actually on the floor.
         if (GetActorZ(0) - GetActorFloorZ(0) <= 0)
         {
             GiveInventory("OnTheGround",1);
-            TakeInventory("KickJumped",1);
-            TakeInventory("WallGrabbed",1);
-            TakeInventory("KickJumpReset",0x7FFFFFFF);
             TakeInventory("InTheAir",0x7FFFFFFF);
-            //SetActorProperty(0,APROP_Gravity,0.7);
-
-            if (CheckInventory("JetpackModeOn") == 0) { GiveInventory("JetpackModeOff",1); }
         }
         else
         {
@@ -105,27 +92,483 @@ script SINO_ENTER ENTER
             GiveInventory("InTheAir",1);
         }
 
-        // If the player has been in motion in mid-air for over nine tics, takes away
-        // KickJumped and allows them to kickjump off a wall again.
-        if (CheckInventory("KickJumpReset") >= 9) // Max is 13, gives a little buffer.
-        { TakeInventory("KickJumped",1); }
-
         buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         MichaelAngleoBatio = GetActorAngle(0) >> 8;
-
-        //TakeInventory("TeleportCooldown",1);
 
         pitchy = GetActorPitch(0);
         //Print(d:pitchy);
 
         if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0)
         {
-            if (pitchy >= 0) { GiveInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
-            if (pitchy < 0 && pitchy >= -2000) { TakeInventory("JetpackSpeedPower1",1); GiveInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
-            if (pitchy < -2000 && pitchy >= -4500) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); GiveInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
-            if (pitchy < -4500 && pitchy >= -6000) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); GiveInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
-            if (pitchy < -6000 && pitchy >= -9000) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); GiveInventory("JetpackSpeedPower5",1); TakeInventory("JetpackSpeedPower6",1); }
-            if (pitchy < -9000) { TakeInventory("JetpackSpeedPower1",1); TakeInventory("JetpackSpeedPower2",1); TakeInventory("JetpackSpeedPower3",1); TakeInventory("JetpackSpeedPower4",1); TakeInventory("JetpackSpeedPower5",1); GiveInventory("JetpackSpeedPower6",1); }
+        // Checks for the player's pitch and checks how high they're looking up.
+        // The further up they're looking, the slower the jet speed. Doom's
+        // vertical-ness is stretched down and squashed, so moving fast horizontally
+        // isn't so much a big deal, but moving vertically fast is.
+        // This is so brute force it's not even funny. If I wasn't going to simply
+        // modify the player's APROP_SPEED for the style swapping mechanic or ds_runmod,
+        // I wouldn't need to do this. But I am, so I have to.
+        // May Carmack forgive me.
+
+            if (pitchy >= 0) // Pitch is an inverted value.
+            {                // Looking down increases it, looking up decreases.
+              GiveInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < 0 && pitchy >= -500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              GiveInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -500 && pitchy >= -1000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              GiveInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -1000 && pitchy >= -1500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              GiveInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -1500 && pitchy >= -2000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              GiveInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -2000 && pitchy >= -2500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              GiveInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -2500 && pitchy >= -3000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              GiveInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -3000 && pitchy >= -3500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              GiveInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -3500 && pitchy >= -4000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              GiveInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -4000 && pitchy >= -4500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              GiveInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -4500 && pitchy >= -5000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              GiveInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -5000 && pitchy >= -5500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              GiveInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -5500 && pitchy >= -6000) // This is about where Software users will stop.
+            {                                      // The highest they can look is -5825.
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              GiveInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -6000 && pitchy >= -6500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              GiveInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -6500 && pitchy >= -7000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              GiveInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -7000 && pitchy >= -7500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              GiveInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -7500 && pitchy >= -8000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              GiveInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -8000 && pitchy >= -8500)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              GiveInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -8500 && pitchy >= -9000)
+            {
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              GiveInventory("JetpackSpeedPower19",1);
+              TakeInventory("JetpackSpeedPower20",1);
+            }
+            if (pitchy < -9000) // OpenGL users can go far beyond this, but if you're looking
+            {                   // above this value you pretty much just want to go up.
+              TakeInventory("JetpackSpeedPower1",1);
+              TakeInventory("JetpackSpeedPower2",1);
+              TakeInventory("JetpackSpeedPower3",1);
+              TakeInventory("JetpackSpeedPower4",1);
+              TakeInventory("JetpackSpeedPower5",1);
+              TakeInventory("JetpackSpeedPower6",1);
+              TakeInventory("JetpackSpeedPower7",1);
+              TakeInventory("JetpackSpeedPower8",1);
+              TakeInventory("JetpackSpeedPower9",1);
+              TakeInventory("JetpackSpeedPower10",1);
+              TakeInventory("JetpackSpeedPower11",1);
+              TakeInventory("JetpackSpeedPower12",1);
+              TakeInventory("JetpackSpeedPower13",1);
+              TakeInventory("JetpackSpeedPower14",1);
+              TakeInventory("JetpackSpeedPower15",1);
+              TakeInventory("JetpackSpeedPower16",1);
+              TakeInventory("JetpackSpeedPower17",1);
+              TakeInventory("JetpackSpeedPower18",1);
+              TakeInventory("JetpackSpeedPower19",1);
+              GiveInventory("JetpackSpeedPower20",1);
+            }
             GiveInventory("JetpackFlightPower",1);
             TakeInventory("JetpackModeOff",1);
             TakeInventory("JetpackFuel",2);
@@ -143,8 +586,23 @@ script SINO_ENTER ENTER
             TakeInventory("JetpackSpeedPower4",1);
             TakeInventory("JetpackSpeedPower5",1);
             TakeInventory("JetpackSpeedPower6",1);
+            TakeInventory("JetpackSpeedPower7",1);
+            TakeInventory("JetpackSpeedPower8",1);
+            TakeInventory("JetpackSpeedPower9",1);
+            TakeInventory("JetpackSpeedPower10",1);
+            TakeInventory("JetpackSpeedPower11",1);
+            TakeInventory("JetpackSpeedPower12",1);
+            TakeInventory("JetpackSpeedPower13",1);
+            TakeInventory("JetpackSpeedPower14",1);
+            TakeInventory("JetpackSpeedPower15",1);
+            TakeInventory("JetpackSpeedPower16",1);
+            TakeInventory("JetpackSpeedPower17",1);
+            TakeInventory("JetpackSpeedPower18",1);
+            TakeInventory("JetpackSpeedPower19",1);
+            TakeInventory("JetpackSpeedPower20",1);
             TakeInventory("JetpackFlightPower",1);
             TakeInventory("JetpackModeOn",1);
+            GiveInventory("JetpackModeOff",1);
         }
 
         if (CheckInventory("JetpackModeOff") == 1)
@@ -156,78 +614,6 @@ script SINO_ENTER ENTER
             }
             JetpackFuelCounter++;
         }
-
-        /*if (buttons & BT_SPEED) {} // This is the fucking hackiest.
-        else { TakeInventory("CantTeleport",1); }
-
-        if (CheckInventory("TeleportCooldown") == 0 && CheckInventory("CantTeleport") <= 80 && CheckInventory("GrabbingTheWall") == 0)
-        {
-
-          if(buttons & BT_SPEED && buttons & BT_FORWARD && buttons & BT_MOVERIGHT)
-           {
-            ThrustThing(MichaelAngleoBatio+224,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-          else if(buttons & BT_SPEED && buttons & BT_FORWARD && buttons & BT_MOVELEFT)
-           {
-            ThrustThing(MichaelAngleoBatio+32,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-          else if(buttons & BT_SPEED && buttons & BT_FORWARD)
-           {
-            ThrustThing(MichaelAngleoBatio+0,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-          else if(buttons & BT_SPEED && buttons & BT_BACK && buttons & BT_MOVERIGHT)
-           {
-            ThrustThing(MichaelAngleoBatio+160,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-          else if(buttons & BT_SPEED && buttons & BT_BACK && buttons & BT_MOVELEFT)
-           {
-            ThrustThing(MichaelAngleoBatio+96,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-          else if(buttons & BT_SPEED && buttons & BT_BACK)
-           {
-            ThrustThing(MichaelAngleoBatio+128,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-          else if(buttons & BT_SPEED && buttons & BT_MOVELEFT)
-           {
-            ThrustThing(MichaelAngleoBatio+64,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-          else if(buttons & BT_SPEED && buttons & BT_MOVERIGHT)
-           {
-            ThrustThing(MichaelAngleoBatio+192,210,1,0);
-              ActivatorSound("shihong/teleport",127);
-              GiveInventory("TeleportCooldown",11);
-              GiveInventory("CantTeleport",20);
-              ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
-           }
-        }*/
 
         if (buttons & BT_ALTATTACK)
             { GiveInventory("SynthAltFire",1); }

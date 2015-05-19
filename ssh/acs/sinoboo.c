@@ -155,10 +155,6 @@ script SINO_UNLOADING unloading
     TakeInventory("PunchComboCounter",0x7FFFFFFF);
     TakeInventory("GrenadeTimer",0x7FFFFFFF);
     TakeInventory("WallGrabbed",0x7FFFFFFF);
-    TakeInventory("InTheAir",0x7FFFFFFF);
-    TakeInventory("KickJumpReset",0x7FFFFFFF);
-    TakeInventory("CantTeleport",0x7FFFFFFF);
-    TakeInventory("TeleportCooldown",0x7FFFFFFF);
 }
 
 script 583 (int x, int y, int z)

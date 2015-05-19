@@ -10,11 +10,7 @@ actor JetpackModeOff : Boolean {}
 actor JetpackFuel : Counter { Inventory.MaxAmount 100 }
 actor PunchComboCounter : Counter { Inventory.MaxAmount 4 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
-actor WallGrabbed : Counter { Inventory.MaxAmount 2 }
 actor InTheAir : Counter { Inventory.MaxAmount 10 }
-actor KickJumpReset : Counter { Inventory.MaxAmount 13 }
-actor CantTeleport : Counter { Inventory.MaxAmount 100 }
-actor TeleportCooldown : Counter { Inventory.MaxAmount 11 }
 
 actor ArmorHealthMegaPack2 : CustomInventory replaces ArmorHealthMegaPack
 {
