@@ -509,7 +509,7 @@ actor GrapplePoint
 actor JetpackSpeedPower : PowerSpeed
 {
     Powerup.Duration 0x7FFFFFFF
-    Speed 1.75
+    Speed 2.25
 }
 
 actor JetpackFlightPower : PowerFlight
