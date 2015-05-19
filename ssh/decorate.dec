@@ -5,8 +5,9 @@ actor SynthFire : Boolean {}
 actor GrenadePunchHitWall : Boolean {}
 actor GrenadePunchHit : Boolean {}
 actor JetpackModeOn : Boolean {}
+actor JetpackModeOff : Boolean {}
 
-actor JetpackFuel : Counter { Inventory.MaxAmount 200 }
+actor JetpackFuel : Counter { Inventory.MaxAmount 100 }
 actor PunchComboCounter : Counter { Inventory.MaxAmount 4 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
 actor WallGrabbed : Counter { Inventory.MaxAmount 2 }
@@ -21,6 +22,7 @@ actor ArmorHealthMegaPack2 : CustomInventory replaces ArmorHealthMegaPack
     Inventory.PickupSound "health/pizza"
     +INVENTORY.ALWAYSPICKUP
     +FLOORCLIP
+    +ALWAYSRESPAWN
     //XScale 0.9
     //YScale 0.75
     XScale 0.3
