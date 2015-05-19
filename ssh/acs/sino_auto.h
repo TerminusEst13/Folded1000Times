@@ -98,6 +98,15 @@ script SINO_ENTER ENTER
         pitchy = GetActorPitch(0);
         //Print(d:pitchy);
 
+        // In Zandro 2.0, for some reason, Shihong is able to execute Hae-Lin's dash.
+        // This is despite the fact that WEEB_ENTER isn't executing on Shihong, isn't
+        // reading her inputs, and that specific block isn't firing. I checked. I
+        // even put Print spam everywhere. And yet, somehow, the Hae-Lin dash is still
+        // happening.
+        // This is fixed in 3.0, but only Lord knows how long it'll be until that comes out.
+        // Until then, have a dumb hack.
+        GiveInventory("GhostStepCooldown",100);
+
         if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0)
         {
         // Checks for the player's pitch and checks how high they're looking up.
@@ -109,6 +118,8 @@ script SINO_ENTER ENTER
         // I wouldn't need to do this. But I am, so I have to.
         // May Carmack forgive me.
 
+          if (CheckInventory("JetpackFuel") >= 25 || CheckInventory("JetpackModeOn") == 1)
+          {
             if (pitchy >= 0) // Pitch is an inverted value.
             {                // Looking down increases it, looking up decreases.
               GiveInventory("JetpackSpeedPower1",1);
@@ -577,6 +588,7 @@ script SINO_ENTER ENTER
               ActivatorSound("shihong/thruster",127);
               GiveInventory("JetpackModeOn",1);
             }
+          }
         }
         else
         {
