@@ -74,7 +74,7 @@ ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 253, 171, center;
 
 isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
 isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
-isselected "05-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
+isselected "04-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
 //ininventory GotLegion, 1 { drawimage "GOTL1", 290, 171, center; }
 //drawimage "GOTA1", 295, 171, center;
 //drawimage "GOTA1", 300, 171, center;
@@ -275,7 +275,7 @@ ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}
 
 isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
 isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
-isselected "05-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
+isselected "04-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
 
 ininventory not InIronMaiden, 1 { DrawImage "HUDBARX", 5, 193; }
 ininventory InIronMaiden, 1 { DrawImage "HUDBARXb", 5, 190; }
