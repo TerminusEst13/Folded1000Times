@@ -187,6 +187,8 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
     DrawNumber 3, smallfont, gold, Armor, fillzeros, 64, 172;
 }
 
+ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32, 152; }
+
     gamemode cooperative, singleplayer
     {
         InInventory BlueCard, 1 { drawimage "STKEYS0", 295, 181; }
@@ -381,6 +383,8 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
     DrawNumber 3, smallfont, red, Health, fillzeros, 32, 184;
     DrawNumber 3, smallfont, gold, Armor, fillzeros, 64, 184;
 }
+
+ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32, 152; }
 
     gamemode cooperative, singleplayer
     {

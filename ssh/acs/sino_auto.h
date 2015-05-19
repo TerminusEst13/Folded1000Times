@@ -89,6 +89,7 @@ script SINO_ENTER ENTER
         if (GetActorZ(0) - GetActorFloorZ(0) <= 0)
         {
             GiveInventory("OnTheGround",1);
+            GiveInventory("JetpackFuel",1);
             TakeInventory("KickJumped",1);
             TakeInventory("WallGrabbed",1);
             TakeInventory("KickJumpReset",0x7FFFFFFF);
@@ -111,7 +112,25 @@ script SINO_ENTER ENTER
 
         TakeInventory("TeleportCooldown",1);
 
-        if (buttons & BT_SPEED) {} // This is the fucking hackiest.
+        if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0)
+        {
+            GiveInventory("JetpackSpeedPower",1);
+            GiveInventory("JetpackFlightPower",1);
+            TakeInventory("JetpackFuel",5);
+            if (CheckInventory("JetpackModeOn") == 0)
+            {
+              ActivatorSound("shihong/thruster",127);
+              GiveInventory("JetpackModeOn",1);
+            }
+        }
+        else
+        {
+            TakeInventory("JetpackSpeedPower",1);
+            TakeInventory("JetpackFlightPower",1);
+            TakeInventory("JetpackModeOn",1);
+        }
+
+        /*if (buttons & BT_SPEED) {} // This is the fucking hackiest.
         else { TakeInventory("CantTeleport",1); }
 
         if (CheckInventory("TeleportCooldown") == 0 && CheckInventory("CantTeleport") <= 80 && CheckInventory("GrabbingTheWall") == 0)
@@ -181,7 +200,7 @@ script SINO_ENTER ENTER
               GiveInventory("CantTeleport",20);
               ACS_ExecuteWithResult(SINO_DECORATE,0,0,0,0);
            }
-        }
+        }*/
 
         if (buttons & BT_ALTATTACK)
             { GiveInventory("SynthAltFire",1); }

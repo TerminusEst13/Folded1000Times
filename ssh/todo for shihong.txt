@@ -20,8 +20,6 @@
 
 2: Soul acquiring mechanic
  ^- Separate Shihong's bullets from Hae-Lin's
-3: Rehaul the Teleport/Dash entirely
- ^- Directional jetpack?
 4: BFG9000 replacement
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
 8: New HUD
@@ -37,10 +35,16 @@
  ^- Pickup sprites for weapons
 18: Flashlight replacement for Shihong (night vision?)
 19: A way to switch away from grenades before you throw them?
+20: Polish up the jet thruster.
+ ^- Buffer--doesn't just automatically turn on if you hold down Run at low values or if you alt-tab out.
+ ^- More consistent jet sound.
+ ^- Some kind of trail flowing around.
+ ^- Fine-tune the values of speed/cost/recovery.
+ ^- Adjust the recovery. Once you're on the ground again, it can recover steadily even if you jump?
 
 
 
-
+3: Rehaul the Teleport/Dash entirely into a jet thruster.
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
 16: 19 spawning sounds

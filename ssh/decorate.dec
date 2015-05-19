@@ -4,7 +4,9 @@ actor Grappling : Boolean {}
 actor SynthFire : Boolean {}
 actor GrenadePunchHitWall : Boolean {}
 actor GrenadePunchHit : Boolean {}
+actor JetpackModeOn : Boolean {}
 
+actor JetpackFuel : Counter { Inventory.MaxAmount 200 }
 actor PunchComboCounter : Counter { Inventory.MaxAmount 4 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
 actor WallGrabbed : Counter { Inventory.MaxAmount 2 }

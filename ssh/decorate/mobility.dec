@@ -505,3 +505,14 @@ actor GrapplePoint
       stop
   }
 }
+
+actor JetpackSpeedPower : PowerSpeed
+{
+    Powerup.Duration 0x7FFFFFFF
+    Speed 1.75
+}
+
+actor JetpackFlightPower : PowerFlight
+{
+    Powerup.Duration 0x7FFFFFFF
+}
