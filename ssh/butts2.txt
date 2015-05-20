@@ -1,22 +1,25 @@
-1: Style swapping needs to be in.
+1: Style swapping needs to be polished.
  ^- Melee style (Needs a name)
-   A: Passive buff (Faster melee speed, hits harder)
    B: Forward special
    C: Side special
    D: Back special
    E: Style special
  ^- Ranged style (Needs a name)
-   A: Passive buff (Bullets get tracers, ranking bonus partially applies to guns)
+   A: Passive buff (Ranking bonus partially applies to guns)
    B: Forward special (In, needs new graphics/sounds)
    C: Side special (In, needs new graphics/sounds)
    D: Back special
    E: Style special
  ^- Trickster style (Needs a name)
-   A: Passive buff (Can grab walls, jetpack regenerates faster. In, needs separated)
    B: Forward special
    C: Side special
    D: Back special (In, needs new graphics/sounds)
    E: Style special (In, needs new graphics/sounds)
+ ^- Unique icons showing what the styles are
+   A: Gold Fist
+   B: Blue Gun
+   C: Purple dodging icon?
+ ^- Different color than purple for trickster
 
 2: Soul acquiring mechanic
  ^- Separate Shihong's bullets from Hae-Lin's
@@ -38,9 +41,17 @@
 20: Polish up the jet thruster.
  ^- More consistent jet sound.
  ^- Some kind of trail flowing around.
+21: Unique weapon swapping sound.
+ ^- Different one for the sword.
 
 
-
+1: Style swapping needs to be in.
+ ^- Melee style (Needs a name)
+   A: Passive buff (Faster melee speed, hits harder)
+ ^- Ranged style (Needs a name)
+   A: Passive buff (Bullets get tracers)
+ ^- Trickster style
+   A: Passive buff (Can grab walls, jetpack regenerates faster. In, needs separated)
 3: Rehaul the Teleport/Dash entirely into a jet thruster.
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)

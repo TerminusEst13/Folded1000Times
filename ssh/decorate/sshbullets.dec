@@ -66,6 +66,31 @@ actor BulletBaseRangedNoCombo : BulletBaseRanged
     }
 }
 
+actor BulletBaseRangedToaster : BulletBaseRanged
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0 
+        TNT1 A 1 A_SpawnItemEx("BulletTracer",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(2 *momx)/-35.0,-(2 *momy)/-35.0,(2 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(4 *momx)/-35.0,-(4 *momy)/-35.0,(4 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(6 *momx)/-35.0,-(6 *momy)/-35.0,(6 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(8 *momx)/-35.0,-(8 *momy)/-35.0,(8 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        loop
+    }
+}
+
+actor BulletBaseRangedToasterNoCombo : BulletBaseRangedToaster
+{
+    States
+    {
+    XDeath:
+        TNT1 A 0
+        stop
+    }
+}
+
 ACTOR BulletTracer
 {
     +NOINTERACTION
@@ -83,6 +108,6 @@ ACTOR BulletTracer
 }
 
 actor RevolverBulletTracer : BulletBaseRanged { Damage (35) DamageType "AcaciaDamage" }
-actor ShottyBullet1Tracer : BulletBaseRanged { Damage (10) DamageType "TestamentDamage" }
-actor ShottyBullet2Tracer : BulletBaseRangedNoCombo { Damage (10) DamageType "TestamentDamage" }
+actor ShottyBullet1Tracer : BulletBaseRangedToaster { Damage (10) DamageType "TestamentDamage" }
+actor ShottyBullet2Tracer : BulletBaseRangedToasterNoCombo { Damage (10) DamageType "TestamentDamage" }
 actor PistolBulletTracer : BulletBaseRanged { Damage (30) DamageType "SabbathDamage" }

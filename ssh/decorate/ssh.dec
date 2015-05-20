@@ -172,7 +172,7 @@ actor HaggarModeActivate : CustomInventory
     +INVBAR
     Inventory.Amount 1
     Inventory.MaxAmount 1
-    Tag "Style Swap: Unity of Body"
+    Tag "Change: Fighter"
     States
     {
     Use:
@@ -200,7 +200,7 @@ actor RangedModeActivate : CustomInventory
     +INVBAR
     Inventory.Amount 1
     Inventory.MaxAmount 1
-    Tag "Style Swap: Clarity of Mind"
+    Tag "Change: Trigger"
     States
     {
     Use:
@@ -228,7 +228,7 @@ actor TricksterModeActivate : CustomInventory
     +INVBAR
     Inventory.Amount 1
     Inventory.MaxAmount 1
-    Tag "Style Swap: Harmony of Soul"
+    Tag "Change: Dodger"
     States
     {
     Use:
