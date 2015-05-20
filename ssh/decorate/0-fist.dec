@@ -104,7 +104,10 @@ actor "Fists" : Weapon
         goto Punch1
     FirePrep:
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_TakeInventory("PunchComboCounter",4) // Just to make sure.
+        TNT1 A 0 A_JumpIfInventory("PunchComboCounter",4,"Punch5")
+        TNT1 A 0 A_JumpIfInventory("PunchComboCounter",3,"Punch4")
+        TNT1 A 0 A_JumpIfInventory("PunchComboCounter",2,"Punch3")
+        TNT1 A 0 A_JumpIfInventory("PunchComboCounter",1,"Punch2")
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
     Punch1:
         TNT1 A 0 A_TakeInventory("PunchComboCounter",4)

@@ -377,7 +377,12 @@ actor "02-S Striker" : Fists
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_PlayWeaponSound("striker/fire")
         TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
+        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"AltFireGunTracer")
         TNT1 A 0 A_FireCustomMissile("RevolverBullet",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
+        goto AltFireGunFinish
+    AltFireGunTracer:
+        TNT1 A 0 A_FireCustomMissile("RevolverBulletTracer",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
+    AltFireGunFinish:
         TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
         TNT1 A 0 A_Recoil(0.5)
         TNT1 A 0
@@ -397,7 +402,12 @@ actor "02-S Striker" : Fists
         TNT1 A 0 A_PlayWeaponSound("striker/firefinal")
         TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
         TNT1 AAAA 0 A_FireCustomMissile("RevolverBulletBlank",0,1,0,1,0,0)
+        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"AltFireGunFinalTracer")
         TNT1 A 0 A_FireCustomMissile("RevolverBullet",0,1,0,1,0,0)
+        goto AltFireGunFinalFinish
+    AltFireGunFinalTracer:
+        TNT1 A 0 A_FireCustomMissile("RevolverBulletTracer",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
+    AltFireGunFinalFinish:
         TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
         TNT1 A 0 A_Recoil(0.75)
         TNT1 A 0

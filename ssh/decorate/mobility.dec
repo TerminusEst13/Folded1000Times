@@ -27,6 +27,7 @@ ACTOR RadMarker // used for detecting proximity to walls among other things
 		stop
 	}
 }
+
 ACTOR RadMarker8  : RadMarker { Radius 8 }
 ACTOR RadMarker16 : RadMarker { Radius 16 }
 ACTOR RadMarker24 : RadMarker { Radius 24 }
