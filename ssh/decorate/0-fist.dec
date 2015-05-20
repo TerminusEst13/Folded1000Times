@@ -267,7 +267,7 @@ actor "Fists" : Weapon
         goto AltFireGun
     AltFirePrepare:
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
-        TNT1 A 0 A_TakeInventory("PunchComboCounter",4)
+        TNT1 A 0 //A_TakeInventory("PunchComboCounter",4)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
     AltFireGun:
 		SHTS AB 1
