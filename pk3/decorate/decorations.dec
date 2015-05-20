@@ -271,6 +271,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     BloodType "BlankPuff"
     RadiusDamageFactor 0.0
     DamageFactor "Normal", 0.0
+    DamageFactor "Triumph", 1.0
     DamageFactor "ShihongPunch", 1.0
     DamageFactor "MessiahDamage", 1.0
     DamageFactor "Kubiuti", 1.0
