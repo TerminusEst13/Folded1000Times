@@ -536,7 +536,7 @@ actor "05-E Enforcer" : Fists
         W4GR DCBB 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto ReadyAmmo
     GotoReadyEmpty:
-        TNT1 A 1
+        TNT1 A 1 A_TakeInventory("ShootingLikeABaka",1)
         W4GR VWXX 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto ReadyEmpty
 
