@@ -52,6 +52,19 @@ lohealf6               LOHEALF6
 health/doritos         DEWITNAO // Taira Komori's chips eating with Woodylein's bag crumpling and Kamen Rider OOO's scanning sound, all (but the latter) off Freesound
 health/pizza           PIZATIME // Squashy55's toasted ham sandwich with beatmad's sizzling frying pan and keweldog's apple eating, all off Freesound
 
+styleswap/open         STYSWAP1 // Taken from Kamen Rider Fourze
+styleswap/insert       STYSWAP2 // Taken from Kamen Rider Den-O
+styleswap/transform    STYSWAP3 // Taken from Kamen Rider Ryuki
+styleswap/melee        SWAPMELE // Taken from Kamen Rider Fourze
+styleswap/ranged       SWAPRANG // Taken from Kamen Rider Gaim
+styleswap/trickster    SWAPTRCK // Taken from Kamen Rider Drive
+styleswap/prepme       STYSWAP4 // Taken from Kamen Rider Agito
+styleswap/prepra       STYSWAP5 // Taken from Kamen Rider Agito
+styleswap/preptr       STYSWAP6 // Taken from Kamen Rider Agito
+
+
+
+
 // Fists
 punchy/hit1            SSHPNCH1
 punchy/hit2            SSHPNCH2

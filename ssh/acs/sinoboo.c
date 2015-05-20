@@ -71,7 +71,7 @@ function void DrawBinary(void)
 #include "sino_walljump.h"
 #include "sino_spacejump.h"
 
-script SINO_DECORATE (int pihua)
+script SINO_DECORATE (int pihua, int hunzhang)
 {
     int FontX;
     int FontY;
@@ -112,6 +112,29 @@ script SINO_DECORATE (int pihua)
           Delay(1);
         }
     break;
+
+    case 2:
+    switch (hunzhang)
+    {
+        case 0:
+            ActivatorSound("styleswap/melee",127);
+            SetActorProperty(0,APROP_SPEED,1.0);
+            SetActorProperty(0,APROP_GRAVITY,0.7);
+            break;
+
+        case 1:
+            ActivatorSound("styleswap/ranged",127);
+            SetActorProperty(0,APROP_SPEED,1.0);
+            SetActorProperty(0,APROP_GRAVITY,0.7);
+            break;
+
+        case 2:
+            ActivatorSound("styleswap/trickster",127);
+            SetActorProperty(0,APROP_SPEED,1.175);
+            SetActorProperty(0,APROP_GRAVITY,0.6);
+            break;
+    }
+    break;
     }
 }
 
@@ -151,10 +174,14 @@ script SINO_UNLOADING unloading
     TakeInventory("GrenadePunchHitWall",1);
     TakeInventory("GrenadePunchHit",1);
     TakeInventory("TriumphSwung",1);
+    TakeInventory("SwapToHaggarMode",1);
+    TakeInventory("SwapToRangedMode",1);
+    TakeInventory("SwapToTricksterMode",1);
 
     TakeInventory("PunchComboCounter",0x7FFFFFFF);
     TakeInventory("GrenadeTimer",0x7FFFFFFF);
     TakeInventory("WallGrabbed",0x7FFFFFFF);
+    TakeInventory("SwapCooldown",0x7FFFFFFF);
 }
 
 script 583 (int x, int y, int z)

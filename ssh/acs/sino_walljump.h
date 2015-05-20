@@ -17,7 +17,7 @@ script SINO_DOUBLEJUMP ENTER
             // as the player is off the ground.
             while(CheckInventory("InTheAir") > 5)
             {
-                if(GetPlayerInput(-1, INPUT_BUTTONS) & BT_CROUCH && CheckInventory("WallGrabbed") != 2)
+                if(GetPlayerInput(-1, INPUT_BUTTONS) & BT_CROUCH && CheckInventory("TricksterModeOn") == 1)
                 {
                     // Now attempt a kick-jump. Check to see if the player is close enough to a wall by
                     // attempting to spawn a dummy object and checking for its existence.
@@ -37,7 +37,7 @@ script SINO_DOUBLEJUMP ENTER
                         }
                         TakeInventory("GrabbingTheWall",1);
                         //GiveInventory("WallGrabbed",1); - On second thought, limiting this is dumb.
-                        SetActorProperty(0,APROP_Gravity,0.7);
+                        SetActorProperty(0,APROP_Gravity,0.6);
                         SetPlayerProperty(0,0,PROP_FROZEN);
                     }
                     Thing_Remove(801+PlayerNumber());

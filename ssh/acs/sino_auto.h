@@ -36,13 +36,22 @@ script SINO_ENTER ENTER
     }
 
     //PrintBold(s:"starting loop");
-    SetActorProperty(0,APROP_Gravity,0.7);
+    If (CheckInventory("TricksterModeOn") == 0 ) { SetActorProperty(0,APROP_Gravity,0.7); }
+    else { SetActorProperty(0,APROP_Gravity,0.6); }
     SetPlayerProperty(0,0,PROP_FROZEN);
 
     while (1)
     {
         if (CheckInventory("IsJungHaeLin") == 1)
         { terminate; }
+
+        TakeInventory("SwapCooldown",1);
+
+        // Style swapping nonsense
+        if (CheckInventory("HaggarModeOn") == 1) { GiveInventory("HaggarModeExtraDamage",1); }
+        else { TakeInventory("HaggarModeExtraDamage",1); }
+        if (CheckInventory("RangedModeOn") == 1) { GiveInventory("RangedModeExtraDamage",1); }
+        else { TakeInventory("RangedModeExtraDamage",1); }
 
         // OH SHIT I'M OUT OF HEALTH
         // SUDDENLY AND COINCIDENTALLY I HAVE A MASSIVE CRAVING FOR MUNCHIES
@@ -619,7 +628,12 @@ script SINO_ENTER ENTER
 
         if (CheckInventory("JetpackModeOff") == 1)
         {
-            if (JetpackFuelCounter >= 7)
+            if (CheckInventory("TricksterModeOn") == 1 && JetpackFuelCounter >= 3)
+            {
+              GiveInventory("JetpackFuel",1);
+              JetpackFuelCounter = 0;
+            }
+            else if (CheckInventory("TricksterModeOn") == 0 && JetpackFuelCounter >= 5)
             {
               GiveInventory("JetpackFuel",1);
               JetpackFuelCounter = 0;
