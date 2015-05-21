@@ -59,8 +59,17 @@ actor PowerupPickup2 : CustomInventory replaces Berserk
     States
     {
     Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2")
+        TNT1 A 1
+        loop
+    Spawn1:
         DORI A 1 BRIGHT
         DORI A 30
+        loop
+    Spawn2:
+        DORI B 1 BRIGHT
+        DORI B 30
         loop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1,"DoomPickup")
