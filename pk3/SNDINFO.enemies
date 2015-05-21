@@ -333,6 +333,8 @@ $random mancubus/step { mancstep1 mancstep2 } // Taken from Gears of War
 mancstep1                 MANSTEP1
 mancstep2                 MANSTEP2
 
+$rolloff mancubus/step 400 2400
+
 $random mancubus/pain { mancpain1 mancpain2 } // Taken from Gears of War
 mancpain1                 MANPAIN1
 mancpain2                 MANPAIN2

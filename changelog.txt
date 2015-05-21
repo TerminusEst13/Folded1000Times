@@ -6,6 +6,7 @@ FROM 0.82 TO 0.XX
 - Same with the Omen just because.
 - The TelefragHack on the Kharon's forward special now instantly kills any enemy, to prevent players from getting stuck in a living body.
 - The KeyConf entry for the Launch Attack has been renamed to Weapon Action because reasons.
+- Mancubi no longer have such advanced jiggle physics.
 
 
 
