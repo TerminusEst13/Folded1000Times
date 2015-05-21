@@ -35,10 +35,34 @@ script SINO_ENTER ENTER
         GiveInventory("ImAlive",1);
     }
 
-    //PrintBold(s:"starting loop");
+    // Restoring all the stuff from previous level, just in case someone exits under a special state.
     If (CheckInventory("TricksterModeOn") == 0 ) { SetActorProperty(0,APROP_Gravity,0.7); }
     else { SetActorProperty(0,APROP_Gravity,0.6); }
     SetPlayerProperty(0,0,PROP_FROZEN);
+    TakeInventory("JetpackSpeedPower1",1);
+    TakeInventory("JetpackSpeedPower2",1);
+    TakeInventory("JetpackSpeedPower3",1);
+    TakeInventory("JetpackSpeedPower4",1);
+    TakeInventory("JetpackSpeedPower5",1);
+    TakeInventory("JetpackSpeedPower6",1);
+    TakeInventory("JetpackSpeedPower7",1);
+    TakeInventory("JetpackSpeedPower8",1);
+    TakeInventory("JetpackSpeedPower9",1);
+    TakeInventory("JetpackSpeedPower10",1);
+    TakeInventory("JetpackSpeedPower11",1);
+    TakeInventory("JetpackSpeedPower12",1);
+    TakeInventory("JetpackSpeedPower13",1);
+    TakeInventory("JetpackSpeedPower14",1);
+    TakeInventory("JetpackSpeedPower15",1);
+    TakeInventory("JetpackSpeedPower16",1);
+    TakeInventory("JetpackSpeedPower17",1);
+    TakeInventory("JetpackSpeedPower18",1);
+    TakeInventory("JetpackSpeedPower19",1);
+    TakeInventory("JetpackSpeedPower20",1);
+    SetPlayerProperty(0,0,PROP_FLY);//TakeInventory("JetpackFlightPower",1);
+    TakeInventory("JetpackModeOn",1);
+    GiveInventory("DodgeGhostOff",1);
+    GiveInventory("JetpackModeOff",1);
 
     while (1)
     {
@@ -116,7 +140,9 @@ script SINO_ENTER ENTER
         // Until then, have a dumb hack.
         GiveInventory("GhostStepCooldown",100);
 
-        if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0)
+        // The jet booster. Thrusts you across distances at great speeds, gives you ghost.
+        // Only activates if run and a direction is pushed.
+        if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0 && buttons & (BT_FORWARD | BT_BACK | BT_MOVELEFT | BT_MOVERIGHT))
         {
         // Checks for the player's pitch and checks how high they're looking up.
         // The further up they're looking, the slower the jet speed. Doom's
@@ -589,7 +615,12 @@ script SINO_ENTER ENTER
               TakeInventory("JetpackSpeedPower19",1);
               GiveInventory("JetpackSpeedPower20",1);
             }
-            GiveInventory("JetpackFlightPower",1);
+            SetPlayerProperty(0,1,PROP_FLY);//GiveInventory("JetpackFlightPower",1);
+            // PowerFlight has a few issues. One being it thrusts you upwards even if
+            // you're not doing anything. Two being it jerks your view back to the
+            // original pitch once it's taken away. It's a pain. This method may
+            // be archaic, but it doesn't have those issues.
+            GiveInventory("DodgeGhostOn",1);
             TakeInventory("JetpackModeOff",1);
             TakeInventory("JetpackFuel",2);
             if (CheckInventory("JetpackModeOn") == 0)
@@ -621,19 +652,23 @@ script SINO_ENTER ENTER
             TakeInventory("JetpackSpeedPower18",1);
             TakeInventory("JetpackSpeedPower19",1);
             TakeInventory("JetpackSpeedPower20",1);
-            TakeInventory("JetpackFlightPower",1);
+            SetPlayerProperty(0,0,PROP_FLY);//TakeInventory("JetpackFlightPower",1);
             TakeInventory("JetpackModeOn",1);
+            GiveInventory("DodgeGhostOff",1);
             GiveInventory("JetpackModeOff",1);
         }
 
+        // Booster fuel regeneration.
+        // Fuel regenerates faster in Dodger mode. But it also regenerates faster when on the ground.
+        // First it checks to see whether you're in Dodger mode, then it checks to see whether you're on the ground or in the air.
         if (CheckInventory("JetpackModeOff") == 1)
         {
-            if (CheckInventory("TricksterModeOn") == 1 && JetpackFuelCounter >= 3)
+            if (CheckInventory("TricksterModeOn") == 1 && ( (JetpackFuelCounter >= 3 && CheckInventory("OnTheGround") == 0) | (JetpackFuelCounter >= 2 && CheckInventory("OnTheGround") == 1) ) )
             {
               GiveInventory("JetpackFuel",1);
               JetpackFuelCounter = 0;
             }
-            else if (CheckInventory("TricksterModeOn") == 0 && JetpackFuelCounter >= 5)
+            else if (CheckInventory("TricksterModeOn") == 0 && ( (JetpackFuelCounter >= 5 && CheckInventory("OnTheGround") == 0) | (JetpackFuelCounter >= 4 && CheckInventory("OnTheGround") == 1) ) )
             {
               GiveInventory("JetpackFuel",1);
               JetpackFuelCounter = 0;
