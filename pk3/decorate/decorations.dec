@@ -282,6 +282,7 @@ ACTOR DestructableDecorationBase : DestructableDecorationBaseStates
     DamageFactor "IronFistUpper", 1.0
     DamageFactor "IronFistOverkill", 1.0
     PainChance 0
+    PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
     PainChance "MessiahDamage", 255
     PainChance "Kubiuti", 255
