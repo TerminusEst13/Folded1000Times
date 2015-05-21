@@ -9,6 +9,9 @@ GRAPHICS:
 - Enforcer grenades ripped by Captain J
 - Triumph sword ripped by Sgt. Shivers
 - Yuki Nagato sprites from Doom Radys Classes, made by Doom667Shogun
+- Melee style swapping icon from Fallout: Tactics
+- Ranged style swapping icon from Grand Knights History
+- Dodger style swapping icon from Strider 2
 
 CODE:
 ===========

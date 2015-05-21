@@ -199,6 +199,8 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
 
+    InInventory IsJungHaeLin, 1
+    {
     InInventory SentinelUp
     {
         AspectRatio "4:3"
@@ -236,6 +238,53 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
             DrawImage "SHLDACTV", -52, 2;
             InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
             InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
+        }
+    }
+    }
+
+    InInventory HaggarModeOn
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "STYLMELE", 1, 0;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "STYLMELE", -31, 0;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "STYLMELE", -52, 0;
+        }
+    }
+    InInventory RangedModeOn
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "STYLRANG", 1, 0;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "STYLRANG", -31, 0;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "STYLRANG", -52, 0;
+        }
+    }
+    InInventory TricksterModeOn
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "STYLTRCK", 1, 0;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "STYLTRCK", -31, 0;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "STYLTRCK", -52, 0;
         }
     }
 }
@@ -396,6 +445,8 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
 
+    InInventory IsJungHaeLin, 1
+    {
     InInventory SentinelUp
     {
         AspectRatio "4:3"
@@ -433,6 +484,53 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
         DrawImage "SHLDACTV", -52, 2;
         InInventory BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, 1, 6; }
         InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
+        }
+    }
+    }
+
+    InInventory HaggarModeOn
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "STYLMELE", 1, 0;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "STYLMELE", -31, 0;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "STYLMELE", -52, 0;
+        }
+    }
+    InInventory RangedModeOn
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "STYLRANG", 1, 0;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "STYLRANG", -31, 0;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "STYLRANG", -52, 0;
+        }
+    }
+    InInventory TricksterModeOn
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "STYLTRCK", 1, 0;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "STYLTRCK", -31, 0;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "STYLTRCK", -52, 0;
         }
     }
 }

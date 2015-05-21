@@ -15,11 +15,8 @@
    C: Side special
    D: Back special (In, needs new graphics/sounds)
    E: Style special (In, needs new graphics/sounds)
- ^- Unique icons showing what the styles are
-   A: Gold Fist
-   B: Blue Gun
-   C: Purple dodging icon?
- ^- Different color than purple for trickster
+ ^- Some kind of visual effect after swapping
+   (Orbs flying around you?)
 
 2: Soul acquiring mechanic
  ^- Separate Shihong's bullets from Hae-Lin's
@@ -52,6 +49,11 @@
    A: Passive buff (Bullets get tracers)
  ^- Trickster style
    A: Passive buff (Can grab walls, jetpack regenerates faster. In, needs separated)
+ ^- Unique icons showing what the styles are
+   A: Gold Fist
+   B: Blue Gun
+   C: Purple dodging icon?
+ ^- Different color than purple for trickster (Magenta. Fairly red-ish, but still purple)
 3: Rehaul the Teleport/Dash entirely into a jet thruster.
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
