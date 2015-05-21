@@ -1,17 +1,17 @@
 actor HaggarModeExtraDamage : PowerDamage
 {
-    DamageFactor "ShihongPunch", 1.25
-    DamageFactor "EnforcerPunch", 1.25
-    DamageFactor "Triumph", 1.25
+    DamageFactor "ShihongPunch", 1.33
+    DamageFactor "EnforcerPunch", 1.33
+    DamageFactor "Triumph", 1.33
     Powerup.Duration 0x7FFFFFFF
 }
 
 actor RangedModeExtraDamage : PowerDamage
 {
-    DamageFactor "AcaciaDamage", 1.25
-    DamageFactor "TestamentDamage", 1.25
-    DamageFactor "SabbathDamage", 1.25
-    DamageFactor "EnforcerDamage", 1.25
-    DamageFactor "EnforcerExplosive", 1.25
+    DamageFactor "AcaciaDamage", 1.33
+    DamageFactor "TestamentDamage", 1.33
+    DamageFactor "SabbathDamage", 1.33
+    DamageFactor "EnforcerDamage", 1.33
+    DamageFactor "EnforcerExplosive", 1.33
     Powerup.Duration 0x7FFFFFFF
 }
