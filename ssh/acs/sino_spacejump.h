@@ -483,7 +483,7 @@ script SINO_SPACEJUMP_ENTER2 enter clientside
 
             if (i == 2)
             {
-                if (!IsServer)
+                if (GetCvar("dst_runninginzandro") == 1)//(!IsServer)
                 {
                     pukeStr = StrParam(s:"puke -", d:SINO_REQUESTDODGE, s:" ", d:-256);
                     ConsoleCommand(pukeStr);
@@ -495,7 +495,7 @@ script SINO_SPACEJUMP_ENTER2 enter clientside
             }
             else if (i == 1)
             {
-                if (!IsServer)
+                if (GetCvar("dst_runninginzandro") == 1)//(!IsServer)
                 {
                     pukeStr = StrParam(s:"puke -", d:SINO_REQUESTDODGE, s:" ", d:-dDirection);
                     ConsoleCommand(pukeStr);
@@ -510,22 +510,6 @@ script SINO_SPACEJUMP_ENTER2 enter clientside
             
             if (i) { addTimer(pln, TIMER_BOUNCED, 2); }
             //Print(s:"walljump: ", d:i, s:" (", d:dDirection, s:")");
-        }
-
-        if (keyPressed(BT_JUMP) && !CheckInventory("GrabbingTheWall"))
-        {
-            if (!(ground || (GetActorVelZ(0) < 0 && wasGround) || wasGround >= (MJUMP_DELAY-2) || inWater || dDirection != -1))
-            {
-                if (!IsServer)
-                {
-                    pukeStr = StrParam(s:"puke -", d:SINO_REQUESTDODGE, s:" 0 0 1");
-                    ConsoleCommand(pukeStr);
-                }
-                else if (!DidSpecials[pln] && !grabbing[pln])
-                {
-                    //MultiJump(1, 0);
-                }
-            }
         }
 
         tickTimer(pln, TIMER_CFORWARD);
