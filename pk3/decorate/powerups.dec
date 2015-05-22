@@ -7,7 +7,6 @@ actor PowerShieldProtection : PowerProtection
 actor EnemyLaunchedResistance : PowerProtection
 {
     DamageFactor "Normal", 0.2
-    DamageFactor "ShihongPunch", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronFistUpper", 1.0
     Powerup.Duration 0x7FFFFFFF
@@ -16,7 +15,6 @@ actor EnemyLaunchedResistance : PowerProtection
 actor EnemyLaunchedResistance2 : PowerProtection
 {
     DamageFactor "Normal", 0.5
-    DamageFactor "ShihongPunch", 1.0
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronFistUpper", 1.0
     Powerup.Duration 0x7FFFFFFF
@@ -80,6 +78,12 @@ actor ComboDamageLevel1 : PowerDamage
     DamageFactor "KubiRangeAttackSheathe", 1.45
 
     DamageFactor "ShihongPunch", 1.5
+    DamageFactor "EnforcerPunch", 1.5
+    DamageFactor "Triumph", 1.5
+    DamageFactor "StrikerDamageStyle", 1.25
+    DamageFactor "AvengerDamageStyle", 1.25
+    DamageFactor "EnforcerDamageStyle", 1.25
+    DamageFactor "RebellionDamageStyle", 1.25
 }
 
 actor ComboDamageLevel2 : PowerDamage
@@ -109,6 +113,12 @@ actor ComboDamageLevel2 : PowerDamage
     DamageFactor "KubiRangeAttackSheathe", 1.375
 
     DamageFactor "ShihongPunch", 1.425
+    DamageFactor "EnforcerPunch", 1.425
+    DamageFactor "Triumph", 1.425
+    DamageFactor "StrikerDamageStyle", 1.2125 // 1.515625
+    DamageFactor "AvengerDamageStyle", 1.2125
+    DamageFactor "EnforcerDamageStyle", 1.2125
+    DamageFactor "RebellionDamageStyle", 1.2125
 }
 
 actor ComboDamageLevel3 : PowerDamage
@@ -138,6 +148,12 @@ actor ComboDamageLevel3 : PowerDamage
     DamageFactor "KubiRangeAttackSheathe", 1.3
 
     DamageFactor "ShihongPunch", 1.35
+    DamageFactor "EnforcerPunch", 1.35
+    DamageFactor "Triumph", 1.35
+    DamageFactor "StrikerDamageStyle", 1.175 // 1.780859375
+    DamageFactor "AvengerDamageStyle", 1.175
+    DamageFactor "EnforcerDamageStyle", 1.175
+    DamageFactor "RebellionDamageStyle", 1.175
 }
 
 actor ComboDamageLevel4 : PowerDamage
@@ -167,6 +183,12 @@ actor ComboDamageLevel4 : PowerDamage
     DamageFactor "KubiRangeAttackSheathe", 1.225
 
     DamageFactor "ShihongPunch", 1.275
+    DamageFactor "EnforcerPunch", 1.275
+    DamageFactor "Triumph", 1.275
+    DamageFactor "StrikerDamageStyle", 1.1375 // 2.0257275390625
+    DamageFactor "AvengerDamageStyle", 1.1375
+    DamageFactor "EnforcerDamageStyle", 1.1375
+    DamageFactor "RebellionDamageStyle", 1.1375
 }
 
 actor ComboDamageLevel5 : PowerDamage
@@ -196,6 +218,12 @@ actor ComboDamageLevel5 : PowerDamage
     DamageFactor "KubiRangeAttackSheathe", 1.15
 
     DamageFactor "ShihongPunch", 1.2
+    DamageFactor "EnforcerPunch", 1.2
+    DamageFactor "Triumph", 1.2
+    DamageFactor "StrikerDamageStyle", 1.1 // 2.22830029296875
+    DamageFactor "AvengerDamageStyle", 1.1
+    DamageFactor "EnforcerDamageStyle", 1.1
+    DamageFactor "RebellionDamageStyle", 1.1
 }
 
 actor ComboDamageLevel6 : PowerDamage
@@ -225,6 +253,12 @@ actor ComboDamageLevel6 : PowerDamage
     DamageFactor "KubiRangeAttackSheathe", 1.1
 
     DamageFactor "ShihongPunch", 1.15
+    DamageFactor "EnforcerPunch", 1.15
+    DamageFactor "Triumph", 1.15
+    DamageFactor "StrikerDamageStyle", 1.075 // 2.395422814941406
+    DamageFactor "AvengerDamageStyle", 1.075
+    DamageFactor "EnforcerDamageStyle", 1.075
+    DamageFactor "RebellionDamageStyle", 1.075
 }
 
 actor DodgeGhostOn : CustomInventory

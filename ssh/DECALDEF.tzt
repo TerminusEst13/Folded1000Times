@@ -1,0 +1,10 @@
+DECAL Demon_BulletChip2
+{
+    Pic BPS2A0
+    Add 1.0
+    FullBright
+    Animator GoAway
+    X-scale 0.04
+    Y-scale 0.04
+    LowerDecal Demon_BulletChipLower1
+}

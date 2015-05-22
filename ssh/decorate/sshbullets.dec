@@ -1,7 +1,7 @@
-actor RevolverBullet : BulletBase { Damage (35) DamageType "AcaciaDamage" }
-actor ShottyBullet1 : BulletBase { Damage (10) DamageType "TestamentDamage" }
-actor ShottyBullet2 : BulletBaseNoCombo { Damage (10) DamageType "TestamentDamage" }
-actor PistolBullet : BulletBase { Damage (30) DamageType "SabbathDamage" }
+actor RevolverBullet : BulletBase { Damage (35) DamageType "StrikerDamage" }
+actor ShottyBullet1 : BulletBase { Damage (10) DamageType "AvengerDamage" }
+actor ShottyBullet2 : BulletBaseNoCombo { Damage (10) DamageType "AvengerDamage" }
+actor PistolBullet : BulletBase { Damage (30) DamageType "RebellionDamage" }
 
 ACTOR RevolverBulletBlank : RevolverBullet
 {
@@ -24,6 +24,7 @@ ACTOR RevolverBulletBlank : RevolverBullet
 
 actor BulletBaseRanged : BulletBase
 {
+    Decal Demon_BulletChip2
     States
     {
     Spawn:
@@ -39,12 +40,17 @@ actor BulletBaseRanged : BulletBase
         TNT1 A 0 A_SpawnItemEx("BulletTracer",(16*momx)/-35.0,-(16*momy)/-35.0,(16*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
         TNT1 A 0 A_SpawnItemEx("BulletTracer",(18*momx)/-35.0,-(18*momy)/-35.0,(18*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
         TNT1 A 0 A_SpawnItemEx("BulletTracer",(20*momx)/-35.0,-(20*momy)/-35.0,(20*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(22*momx)/-35.0,-(22*momy)/-35.0,(22*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(24*momx)/-35.0,-(24*momy)/-35.0,(24*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(26*momx)/-35.0,-(26*momy)/-35.0,(26*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(28*momx)/-35.0,-(28*momy)/-35.0,(28*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(30*momx)/-35.0,-(30*momy)/-35.0,(30*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
         loop
     Death:
         TNT1 A 0
         TNT1 A 1
         TNT1 A 0 A_PlaySound("bullet/miss")
-        TNT1 A 1 A_SpawnItemEx("WeebBulletPuff",0,0,0,0,0,0,0,160)
+        TNT1 A 1 A_SpawnItemEx("WeebBulletPuff2",0,0,0,0,0,0,0,160)
         stop
     XDeath:
         TNT1 A 0
@@ -77,6 +83,7 @@ actor BulletBaseRangedToaster : BulletBaseRanged
         TNT1 A 0 A_SpawnItemEx("BulletTracer",(4 *momx)/-35.0,-(4 *momy)/-35.0,(4 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
         TNT1 A 0 A_SpawnItemEx("BulletTracer",(6 *momx)/-35.0,-(6 *momy)/-35.0,(6 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
         TNT1 A 0 A_SpawnItemEx("BulletTracer",(8 *momx)/-35.0,-(8 *momy)/-35.0,(8 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
+        TNT1 A 0 A_SpawnItemEx("BulletTracer",(10*momx)/-35.0,-(10*momy)/-35.0,(10*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
         loop
     }
 }
@@ -102,12 +109,110 @@ ACTOR BulletTracer
     {
     Spawn:
         TNT1 A 0
-        BPSP A 1 Bright
+        BPS2 A 1 Bright
         Stop
     }
 }
 
-actor RevolverBulletTracer : BulletBaseRanged { Damage (35) DamageType "AcaciaDamage" }
-actor ShottyBullet1Tracer : BulletBaseRangedToaster { Damage (10) DamageType "TestamentDamage" }
-actor ShottyBullet2Tracer : BulletBaseRangedToasterNoCombo { Damage (10) DamageType "TestamentDamage" }
-actor PistolBulletTracer : BulletBaseRanged { Damage (30) DamageType "SabbathDamage" }
+actor RevolverBulletTracer : BulletBaseRanged { Damage (35) DamageType "StrikerDamageStyle" }
+actor ShottyBullet1Tracer : BulletBaseRangedToaster { Damage (10) DamageType "AvengerDamageStyle" }
+actor ShottyBullet2Tracer : BulletBaseRangedToasterNoCombo { Damage (10) DamageType "AvengerDamageStyle" }
+actor PistolBulletTracer : BulletBaseRanged { Damage (30) DamageType "RebellionDamageStyle" }
+
+
+
+ACTOR WeebBulletPuff2
+{
+    Radius 1
+    Height 1
+    Scale 0.2
+    RenderStyle Add
+    VSpeed 0
+    Alpha 0.99
+    +NOGRAVITY
+    +NOBLOCKMAP
+    +FLOORCLIP
+    +NOTIMEFREEZE
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 1
+        Loop
+    Toaster0:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAAAA 0 A_SpawnItemEx("BulletSpark2",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        goto Toaster0+10
+    Toaster1:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BulletSpark2",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        goto Toaster1+7
+    Toaster2:
+        TNT1 A 1
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        loop
+    Spawn1:
+        BPF2 A 1 Bright
+        BPF2 A 1 Bright //A_SetTranslucent(.75,1)
+        BPF2 B 1 Bright A_SetTranslucent(.5,1)
+        BPF2 C 1 Bright A_SetTranslucent(.25,1)
+        stop
+    Spawn2:
+        BPF2 D 1 Bright
+        BPF2 D 1 Bright //A_SetTranslucent(.75,1)
+        BPF2 E 1 Bright A_SetTranslucent(.5,1)
+        BPF2 F 1 Bright A_SetTranslucent(.25,1)
+        stop
+    Spawn3:
+        BPF2 H 1 Bright
+        BPF2 H 1 Bright //A_SetTranslucent(.75,1)
+        BPF2 I 1 Bright A_SetTranslucent(.5,1)
+        BPF2 J 1 Bright A_SetTranslucent(.25,1)
+        stop
+    Spawn4:
+        BPF2 K 1 Bright
+        BPF2 K 1 Bright //A_SetTranslucent(.75,1)
+        BPF2 L 1 Bright A_SetTranslucent(.5,1)
+        BPF2 M 1 Bright A_SetTranslucent(.25,1)
+        stop
+    }
+}
+
+ACTOR BulletSpark2
+{
+    Radius 1
+    Height 1
+    Speed 0.1
+    Mass 2
+    BounceCount 7
+    BounceFactor 0.6
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.055
+    PROJECTILE
+    +DOOMBOUNCE
+    +FLOORCLIP
+    -NOGRAVITY
+    +DONTSPLASH
+    +NOTELEPORT
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        BPSP AAAAAAAAAAAAAAAAAAA 1 Bright
+        BPSP AAAAAAAAAA 2 Bright A_FadeOut(0.1)
+        Stop
+    }
+}
