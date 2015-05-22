@@ -8,10 +8,10 @@ actor HaggarModeExtraDamage : PowerDamage
 
 actor RangedModeExtraDamage : PowerDamage
 {
-    DamageFactor "AcaciaDamage", 1.33
-    DamageFactor "TestamentDamage", 1.33
-    DamageFactor "SabbathDamage", 1.33
-    DamageFactor "EnforcerDamage", 1.33
+    DamageFactor "StrikerDamageStyle", 1.33
+    DamageFactor "AvengerDamageStyle", 1.33
+    DamageFactor "RebellionDamageStyle", 1.33
+    DamageFactor "EnforcerDamageStyle", 1.33
     DamageFactor "EnforcerExplosive", 1.33
     Powerup.Duration 0x7FFFFFFF
 }
