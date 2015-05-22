@@ -36,6 +36,15 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     DamageFactor "SabbathDamage", 1.65
     DamageFactor "ExodusDamage", 1.65
     DamageFactor "IronMaidenShot", 1.65
+    DamageFactor "StrikerDamage", 1.65
+    DamageFactor "AvengerDamage", 1.65
+    DamageFactor "RebellionDamage", 1.65
+    DamageFactor "EnforcerDamage", 1.65
+    DamageFactor "EnforcerPunch", 1.65
+    DamageFactor "StrikerDamageStyle", 1.65
+    DamageFactor "AvengerDamageStyle", 1.65
+    DamageFactor "RebellionDamageStyle", 1.65
+    DamageFactor "EnforcerDamageStyle", 1.65
     SeeSound "imp/see"
     ActiveSound "imp/idle"
     PainSound "imp/pain"

@@ -34,6 +34,15 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "SabbathDamage", 5.0
     DamageFactor "ExodusDamage", 5.0
     DamageFactor "IronMaidenShot", 5.0
+    DamageFactor "StrikerDamage", 3.0
+    DamageFactor "AvengerDamage", 5.0
+    DamageFactor "RebellionDamage", 5.0
+    DamageFactor "EnforcerDamage", 5.0
+    DamageFactor "EnforcerPunch", 5.0
+    DamageFactor "StrikerDamageStyle", 3.0
+    DamageFactor "AvengerDamageStyle", 5.0
+    DamageFactor "RebellionDamageStyle", 5.0
+    DamageFactor "EnforcerDamageStyle", 5.0
     SeeSound "zombie/see"
     PainSound "zombie/pain"
     ActiveSound "zombie/idle"
@@ -699,6 +708,15 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "SabbathDamage", 3.3
     DamageFactor "ExodusDamage", 3.3
     DamageFactor "IronMaidenShot", 3.3
+    DamageFactor "StrikerDamage", 3.0
+    DamageFactor "AvengerDamage", 3.3
+    DamageFactor "RebellionDamage", 3.3
+    DamageFactor "EnforcerDamage", 3.3
+    DamageFactor "EnforcerPunch", 3.3
+    DamageFactor "StrikerDamageStyle", 3.3
+    DamageFactor "AvengerDamageStyle", 3.3
+    DamageFactor "RebellionDamageStyle", 3.3
+    DamageFactor "EnforcerDamageStyle", 3.3
     SeeSound "zombie/see"
     PainSound "zombie/pain"
     ActiveSound "zombie/idle"
@@ -1326,6 +1344,15 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "SabbathDamage", 1.5
     DamageFactor "ExodusDamage", 1.5
     DamageFactor "IronMaidenShot", 1.5
+    DamageFactor "StrikerDamage", 1.5
+    DamageFactor "AvengerDamage", 1.5
+    DamageFactor "RebellionDamage", 1.5
+    DamageFactor "EnforcerDamage", 1.5
+    DamageFactor "EnforcerPunch", 1.5
+    DamageFactor "StrikerDamageStyle", 1.5
+    DamageFactor "AvengerDamageStyle", 1.5
+    DamageFactor "RebellionDamageStyle", 1.5
+    DamageFactor "EnforcerDamageStyle", 1.5
     SeeSound "zombie/see"
     PainSound "zombie/pain"
     ActiveSound "zombie/idle"
