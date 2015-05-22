@@ -508,6 +508,42 @@ actor HealPackSmall5 : HealPackSmall
     }
 }
 
+actor HealPackSmall6 : HealPackSmall
+{
+    YScale 0.8
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
+        SODA F 1 BRIGHT
+        SODA F 30
+        loop
+    PickupStop:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor HealPackSmall7 : HealPackSmall
+{
+    YScale 0.8
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
+    Spawn2:
+        SODA G 1 BRIGHT
+        SODA G 30
+        loop
+    PickupStop:
+        TNT1 A 0
+        stop
+    }
+}
+
 actor DoomStimpackSpawner : RandomSpawner { -DROPPED DropItem "DoomStimpack" }
 actor DoomStimpack : Stimpack { -DROPPED }
 
@@ -533,6 +569,8 @@ actor HealPackSmallSpawner : RandomSpawner
     DropItem "HealPackSmall3"
     DropItem "HealPackSmall4"
     DropItem "HealPackSmall5"
+    DropItem "HealPackSmall6"
+    DropItem "HealPackSmall7"
 }
 
 actor HealPackMedium: CustomInventory
