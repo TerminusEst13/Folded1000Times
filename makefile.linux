@@ -16,7 +16,7 @@ help:
 
 pk3:
 	@echo -n "Building ${NAME}.pk3 ......"
-	@cd pk3 && zip ../${NAME}.pk3 *.* *
+	@cd pk3 && 7z a -tzip ../${NAME}.pk3 *
 	@echo "done"
 
 pk7:
@@ -37,7 +37,7 @@ compile:
 
 ssh-pk3:
 	@echo -n "Building ${SSH_NAME}.pk3 ......"
-	@cd ssh && zip ../${SSH_NAME}.pk3 *.* *
+	@cd ssh && 7z a -tzip ../${SSH_NAME}.pk3 *.* *
 	@echo "done"
 
 ssh-pk7:
