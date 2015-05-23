@@ -1,5 +1,6 @@
 # a Unix based makefile
 NAME=te13-DemonSteele
+SSH_NAME=${NAME}-ssh
 SRC=pk3/acs
 OBJ=pk3/acs
 .PHONY: help pk3 pk7 clean
@@ -12,24 +13,32 @@ help:
 	@echo "  compile - equivalent to the commands in _compile.bat (assumes that acc is on the path)!"
 
 pk3:
-	@cd pk3
-	@echo -n "Building pk3 archive...."
-	@zip ../${NAME}.pk3 *.* *
-	@echo "Done"
+	@echo -n "Building ${NAME}.pk3 ......"
+	@cd pk3 && zip ../${NAME}.pk3 *.* *
+	@echo "done"
 
 pk7:
-	@cd pk3
-	@echo -n "Building pk7 archive....."
-	@7z ../${NAME}.pk7 *.* *
-	@echo "Done"
+	@echo -n "Building ${NAME}.pk7......"
+	@cd pk3 && 7z a ../${NAME}.pk7 *
+	@echo "done"
 
 clean:
 	@echo -n "Removing archives....."
-	@rm -f ${NAME}.pk7 ${NAME}.pk3
-	@echo "Done"
+	@rm -f ${NAME}.pk7 ${NAME}.pk3 ${SSH_NAME}.pk7 ${SSH_NAME}.pk3
+	@echo "done"
 
 # assume that acc is on the path
 compile:
 	@echo -n "Compiling Weeaboo"
 	@acc ${SRC}/weeaboo.c ${OBJ}/weeaboo.o
-	@echo "DONE"
+	@echo "done"
+
+ssh-pk3:
+	@echo -n "Building ${SSH_NAME}.pk3 ......"
+	@cd ssh && zip ../${SSH_NAME}.pk3 *.* *
+	@echo "done"
+
+ssh-pk7:
+	@echo -n "Building ${SSH_NAME}.pk7......"
+	@cd ssh && 7z a ../${SSH_NAME}.pk7 *
+	@echo "done"
