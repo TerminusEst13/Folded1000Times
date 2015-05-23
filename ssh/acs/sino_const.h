@@ -6,6 +6,7 @@
 #define SINO_DOUBLEJUMP                      363
 #define SINO_TURN                            364
 #define SINO_UNLOADING                       365
+#define SINO_ENTER_CLIENTSIDE                366
 
 #define CLOCKWISE           0
 #define COUNTERCLOCKWISE    1

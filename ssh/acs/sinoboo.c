@@ -195,3 +195,15 @@ script 583 (int x, int y, int z)
         SetResultValue(zan_sqrt(x*x + y*y + z*z) );
     }
 }
+
+script SINO_ENTER_CLIENTSIDE ENTER CLIENTSIDE
+{
+    // For some reason, player.startitem has an online desynch in Zandro.
+    // Every time a player enters a new level online, they get a clientsided
+    // version of their starting items and equipment. Which can lead to some
+    // nasty, nasty desyncs.
+    // This is hacky, but takes care of it.
+    delay(1);
+    if (CheckInventory("RangedModeOn") == 1) { TakeInventory("HaggarModeOn",1); }
+    if (CheckInventory("TricksterModeOn") == 1) { TakeInventory("HaggarModeOn",1); }
+}

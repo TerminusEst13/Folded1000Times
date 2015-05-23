@@ -24,6 +24,13 @@
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
 8: New HUD
 9: Better names for Avenger/Enforcer/Rebellion
+ ^- Benevolent?
+ ^- Prospect?
+ ^- Mercenary?
+ ^- Dissection?
+ ^- Agonist?
+ ^- Naildown?
+ ^- Skyfire?
 10: The trickster grapplebeam can lag people out when people teleport and go a long way away from the source. Is there a way to have the beam snap when teleporting?
 11: Separate Hae-Lin's quotes from Shihong's
  ^- Find a voice actress
@@ -40,6 +47,8 @@
  ^- Some kind of trail flowing around.
 21: Unique weapon swapping sound.
  ^- Different one for the sword.
+22: Dying with grapple done doesn't cancel on death.
+23: Is it possible to make melee attacks home in on enemies in melee style?
 
 
 1: Style swapping needs to be in.
