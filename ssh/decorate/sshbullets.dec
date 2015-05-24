@@ -47,6 +47,7 @@ actor BulletBaseRanged : BulletBase
         TNT1 A 0 A_SpawnItemEx("BulletTracer",(30*momx)/-35.0,-(30*momy)/-35.0,(30*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE | SXF_NOCHECKPOSITION)
         loop
     Death:
+    Crash:
         TNT1 A 0
         TNT1 A 1
         TNT1 A 0 A_PlaySound("bullet/miss")
