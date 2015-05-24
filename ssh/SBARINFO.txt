@@ -12,6 +12,10 @@ InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
     DrawNumber 2, smallfont, white, OkuPoints, fillzeros, 133, 6;
 }
 
+// HAE-LIN'S HUD STARTS HERE
+// =================================
+ininventory IsJungHaeLin, 1
+{
 ininventory not SkulltagWeaponsAcquired, 1
 {
     ininventory not GotIronMaiden, 1 { drawimage "AMMBOX", 308, 182, center; }
@@ -51,8 +55,6 @@ isselected not "Kharon + Omen" {
 
                    drawnumber 3, DNDHUDF, untranslated, ammo1, fillzeros, drawshadow, 294, 179; }}}}}}}}}
 
-ininventory not IsSSH, 1
-{
 ininventory GotHammer, 1 { drawimage "GOTO2", 262, 171, center; }
 drawimage "GOTA2", 267, 171, center;
 ininventory GotShotgun, 1 { drawimage "GOTT2", 272, 171, center; }
@@ -70,11 +72,6 @@ isselected "Kharon + Frosthammer" { drawimage "GOTF1", 296, 171, center; }
 ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 253, 171, center;
     ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 253, 171, center; }
     ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 253, 171, center; }}
-}
-
-isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
-isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
-isselected "04-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
 //ininventory GotLegion, 1 { drawimage "GOTL1", 290, 171, center; }
 //drawimage "GOTA1", 295, 171, center;
 //drawimage "GOTA1", 300, 171, center;
@@ -187,8 +184,6 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
     DrawNumber 3, smallfont, gold, Armor, fillzeros, 64, 172;
 }
 
-ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32, 152; }
-
     gamemode cooperative, singleplayer
     {
         InInventory BlueCard, 1 { drawimage "STKEYS0", 295, 181; }
@@ -199,8 +194,6 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
 
-    InInventory IsJungHaeLin, 1
-    {
     InInventory SentinelUp
     {
         AspectRatio "4:3"
@@ -240,53 +233,280 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
             InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
         }
     }
-    }
+}
+// HAE-LIN'S HUD ENDS HERE
 
-    InInventory HaggarModeOn
+
+// SUN SHIHONG'S HUD STARTS HERE
+// =========================================
+ininventory IsSSH, 1
+{
+drawimage "SSHHUD1", 312, 180, center;
+
+ininventory GotHammer, 1 { drawimage "SSHGOTT1", 276, 172, center; }
+drawimage "SSHGOTS1", 281, 172, center;
+ininventory GotShotgun, 1 { drawimage "SSHGOTA1", 286, 172, center; }
+ininventory GotUzi, 1 { drawimage "SSHGOTR1", 291, 172, center; }
+ininventory GotCarronade, 1 { drawimage "SSHGOTE1", 296, 172, center; }
+isselected "01-T Triumph" { drawimage "SSHGOTT2", 276, 172, center; }
+isselected "02-S Striker" { drawimage "SSHGOTS2", 281, 172, center; }
+isselected "03-A Avenger" { drawimage "SSHGOTA2", 286, 172, center; }
+isselected "04-R Rebellion" { drawimage "SSHGOTR2", 291, 172, center; }
+isselected "05-E Enforcer" { drawimage "SSHGOTE2", 296, 172, center; }
+isselected "01-T Triumph" { }
+isselected "02-S Striker"
+{
+    drawimage "AMMOREV1", 261, 184, center;
+    drawimage "AMMOREV1", 266, 184, center;
+    drawimage "AMMOREV1", 271, 184, center;
+    drawimage "AMMOREV1", 276, 184, center;
+    drawimage "AMMOREV1", 281, 184, center;
+    drawimage "AMMOREV1", 286, 184, center;
+    drawimage "AMMOREV1", 291, 184, center;
+    ininventory StrikerClip, 7 { drawimage "AMMOREV2", 261, 184, center; }
+    ininventory StrikerClip, 6 { drawimage "AMMOREV2", 266, 184, center; }
+    ininventory StrikerClip, 5 { drawimage "AMMOREV2", 271, 184, center; }
+    ininventory StrikerClip, 4 { drawimage "AMMOREV2", 276, 184, center; }
+    ininventory StrikerClip, 3 { drawimage "AMMOREV2", 281, 184, center; }
+    ininventory StrikerClip, 2 { drawimage "AMMOREV2", 286, 184, center; }
+    ininventory StrikerClip, 1 { drawimage "AMMOREV2", 291, 184, center; }
+}
+isselected "03-A Avenger"
+{
+    drawimage "AMMOSHT1", 262, 184, center;
+    drawimage "AMMOSHT1", 265, 184, center;
+    drawimage "AMMOSHT1", 268, 184, center;
+    drawimage "AMMOSHT1", 271, 184, center;
+    drawimage "AMMOSHT1", 274, 184, center;
+    drawimage "AMMOSHT1", 277, 184, center;
+    drawimage "AMMOSHT1", 280, 184, center;
+    drawimage "AMMOSHT1", 283, 184, center;
+    drawimage "AMMOSHT1", 286, 184, center;
+    drawimage "AMMOSHT1", 289, 184, center;
+    ininventory AvengerMagazine, 10 { drawimage "AMMOSHT2", 262, 184, center; }
+    ininventory AvengerMagazine, 9 { drawimage "AMMOSHT2", 265, 184, center; }
+    ininventory AvengerMagazine, 8 { drawimage "AMMOSHT2", 268, 184, center; }
+    ininventory AvengerMagazine, 7 { drawimage "AMMOSHT2", 271, 184, center; }
+    ininventory AvengerMagazine, 6 { drawimage "AMMOSHT2", 274, 184, center; }
+    ininventory AvengerMagazine, 5 { drawimage "AMMOSHT2", 277, 184, center; }
+    ininventory AvengerMagazine, 4 { drawimage "AMMOSHT2", 280, 184, center; }
+    ininventory AvengerMagazine, 3 { drawimage "AMMOSHT2", 283, 184, center; }
+    ininventory AvengerMagazine, 2 { drawimage "AMMOSHT2", 286, 184, center; }
+    ininventory AvengerMagazine, 1 { drawimage "AMMOSHT2", 289, 184, center; }
+}
+isselected "04-R Rebellion"
+{
+    drawimage "AMMOPIS1", 265, 182, center;
+    drawimage "AMMOPIS1", 267, 182, center;
+    drawimage "AMMOPIS1", 269, 182, center;
+    drawimage "AMMOPIS1", 271, 182, center;
+    drawimage "AMMOPIS1", 273, 182, center;
+    drawimage "AMMOPIS1", 275, 182, center;
+    drawimage "AMMOPIS1", 277, 182, center;
+    drawimage "AMMOPIS1", 279, 182, center;
+    drawimage "AMMOPIS1", 281, 182, center;
+    drawimage "AMMOPIS1", 283, 182, center;
+    drawimage "AMMOPIS1", 285, 182, center;
+    drawimage "AMMOPIS1", 287, 182, center;
+    drawimage "AMMOPIS1", 289, 182, center;
+    drawimage "AMMOPIS1", 262, 186, center;
+    drawimage "AMMOPIS1", 264, 186, center;
+    drawimage "AMMOPIS1", 266, 186, center;
+    drawimage "AMMOPIS1", 268, 186, center;
+    drawimage "AMMOPIS1", 270, 186, center;
+    drawimage "AMMOPIS1", 272, 186, center;
+    drawimage "AMMOPIS1", 274, 186, center;
+    drawimage "AMMOPIS1", 276, 186, center;
+    drawimage "AMMOPIS1", 278, 186, center;
+    drawimage "AMMOPIS1", 280, 186, center;
+    drawimage "AMMOPIS1", 282, 186, center;
+    drawimage "AMMOPIS1", 284, 186, center;
+    drawimage "AMMOPIS1", 286, 186, center;
+
+    ininventory SpecialistMagazine, 26 { drawimage "AMMOPIS2", 265, 182, center; }
+    ininventory SpecialistMagazine, 25 { drawimage "AMMOPIS2", 262, 186, center; }
+    ininventory SpecialistMagazine, 24 { drawimage "AMMOPIS2", 267, 182, center; }
+    ininventory SpecialistMagazine, 23 { drawimage "AMMOPIS2", 264, 186, center; }
+    ininventory SpecialistMagazine, 22 { drawimage "AMMOPIS2", 269, 182, center; }
+    ininventory SpecialistMagazine, 21 { drawimage "AMMOPIS2", 266, 186, center; }
+    ininventory SpecialistMagazine, 20 { drawimage "AMMOPIS2", 271, 182, center; }
+    ininventory SpecialistMagazine, 19 { drawimage "AMMOPIS2", 268, 186, center; }
+    ininventory SpecialistMagazine, 18 { drawimage "AMMOPIS2", 273, 182, center; }
+    ininventory SpecialistMagazine, 17 { drawimage "AMMOPIS2", 270, 186, center; }
+    ininventory SpecialistMagazine, 16 { drawimage "AMMOPIS2", 275, 182, center; }
+    ininventory SpecialistMagazine, 15 { drawimage "AMMOPIS2", 272, 186, center; }
+    ininventory SpecialistMagazine, 14 { drawimage "AMMOPIS2", 277, 182, center; }
+    ininventory SpecialistMagazine, 13 { drawimage "AMMOPIS2", 274, 186, center; }
+    ininventory SpecialistMagazine, 12 { drawimage "AMMOPIS2", 279, 182, center; }
+    ininventory SpecialistMagazine, 11 { drawimage "AMMOPIS2", 276, 186, center; }
+    ininventory SpecialistMagazine, 10 { drawimage "AMMOPIS2", 281, 182, center; }
+    ininventory SpecialistMagazine, 9 { drawimage "AMMOPIS2", 278, 186, center; }
+    ininventory SpecialistMagazine, 8 { drawimage "AMMOPIS2", 283, 182, center; }
+    ininventory SpecialistMagazine, 7 { drawimage "AMMOPIS2", 280, 186, center; }
+    ininventory SpecialistMagazine, 6 { drawimage "AMMOPIS2", 285, 182, center; }
+    ininventory SpecialistMagazine, 5 { drawimage "AMMOPIS2", 282, 186, center; }
+    ininventory SpecialistMagazine, 4 { drawimage "AMMOPIS2", 287, 182, center; }
+    ininventory SpecialistMagazine, 3 { drawimage "AMMOPIS2", 284, 186, center; }
+    ininventory SpecialistMagazine, 2 { drawimage "AMMOPIS2", 289, 182, center; }
+    ininventory SpecialistMagazine, 1 { drawimage "AMMOPIS2", 286, 186, center; }
+}
+isselected "05-E Enforcer"
+{
+    drawimage "AMMOGRN1", 275, 184, center;
+    ininventory GrenadeInHand, 1 { drawimage "AMMOGRN2", 275, 184, center; }
+}
+
+isselected not "01-T Triumph" {
+  isselected not "02-S Striker" {
+    isselected not "03-A Avenger" {
+      isselected not "04-R Rebellion" {
+        isselected not "05-E Enforcer" {
+              isselected not "Fists" {
+
+                   drawimage "AMMOEROR", 257, 179; 
+                   drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 190; }}}}}}
+
+isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 288, 190; }
+isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 288, 190; }
+isselected "04-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 288, 190; }
+isselected "05-E Enforcer" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 288, 190; }
+
+DrawImage "SSHHUD2", 7, 189;
+DrawBar "SSHSOLBA", "SSHSOLEM", SuperCounter1, Horizontal, 7, 190;
+DrawBar "SSHSOLB2", "SSHSOLEM", SuperCounter2, Horizontal, 7, 190;
+DrawBar "SSHSOLB3", "SSHSOLEM", SuperCounter3, Horizontal, 7, 190;
+DrawBar "SSHSOLB4", "SSHSOLEM", SuperCounter4, Horizontal, 7, 190;
+
+DrawBar "JETFUBAR", "JETFUEMPT", JetpackFuel, Horizontal, 2, 182;
+
+DrawImage "SSHHUD3", 261, 6;
+DrawBar "SSHCMBBA", "SSHCMBEM", ComboCounter1, Horizontal, 262, 7;
+DrawBar "SSHCMBB2", "SSHCMBEM", ComboCounter2, Horizontal, 262, 7;
+DrawBar "SSHCMBB3", "SSHCMBEM", ComboCounter3, Horizontal, 262, 7;
+DrawBar "SSHCMBB4", "SSHCMBEM", ComboCounter4, Horizontal, 262, 7;
+DrawBar "SSHCMBB5", "SSHCMBEM", ComboCounter5, Horizontal, 262, 7;
+DrawBar "SSHCMBB6", "SSHCMBEM", ComboCounter6, Horizontal, 262, 7;
+DrawBar "SSHCMBB7", "SSHCMBEM", ComboCounter7, Horizontal, 262, 7;
+
+InInventory HaggarModeOn, 1
+{
+    DrawImage "STCRYMEL", 280, 162, center;
+    DrawImage "STCRYME2", 251, 10, center;
+    DrawImage "HUDSTMEL", 3, 153;
+}
+InInventory RangedModeOn, 1
+{
+    DrawImage "STCRYRNG", 280, 162, center;
+    DrawImage "STCRYRN2", 251, 10, center;
+    DrawImage "HUDSTRNG", 3, 153;
+}
+InInventory TricksterModeOn, 1
+{
+    DrawImage "STCRYTRK", 280, 162, center;
+    DrawImage "STCRYTR2", 251, 10, center;
+    DrawImage "HUDSTTRK", 3, 153;
+}
+
+InInventory FRank, 1 { DrawImage "STYLVL1", 262, 15; }
+InInventory DRank, 1 { DrawImage "STYLVL2", 261, 16; }
+InInventory CRank, 1 { DrawImage "STYLVL3", 264, 15; }
+InInventory BRank, 1 { DrawImage "STYLVL4", 262, 15; }
+InInventory ARank, 1 { DrawImage "STYLVL5", 261, 16; }
+InInventory SRank, 1 { DrawImage "STYLVL6", 268, 15; }
+
+// I would kill for Else clauses about now.
+InInventory not IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
+{
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 5, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 15, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 25, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 35, 168; }
+    InInventory ContraLifeToken, 1
+    { drawimage "HLTHORB1", 5, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 15, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 25, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 35, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 45, 168; } }
+    InInventory ContraLifeToken, 2
+    { drawimage "HLTHORB1", 15, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 25, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 35, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 45, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 55, 168; } }
+    InInventory ContraLifeToken, 3
+    { drawimage "HLTHORB1", 25, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 35, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 45, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 55, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 65, 168; } }
+    InInventory ContraLifeToken, 4
+    { drawimage "HLTHORB1", 35, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 45, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 55, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 65, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 75, 168; } }
+    InInventory ContraLifeToken, 5
+    { drawimage "HLTHORB1", 45, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 55, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 65, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 75, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 85, 168; } }
+    InInventory ContraLifeToken, 6
+    { drawimage "HLTHORB1", 55, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 65, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 75, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 85, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 95, 168; } }
+    InInventory ContraLifeToken, 7
+    { drawimage "HLTHORB1", 65, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 75, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 85, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 95, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 105, 168; } }
+    InInventory ContraLifeToken, 8
+    { drawimage "HLTHORB1", 75, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 85, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 95, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 105, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 115, 168; } }
+    InInventory ContraLifeToken, 9
+    { drawimage "HLTHORB1", 85, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 95, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 105, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 115, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 125, 168; } }
+    InInventory ContraLifeToken, 10
+    { drawimage "HLTHORB1", 95, 168;
+      InInventory OverLifeToken, 1 { drawimage "HLTHORB5", 105, 168; }
+      InInventory OverLifeToken, 2 { drawimage "HLTHORB5", 115, 168; }
+      InInventory OverLifeToken, 3 { drawimage "HLTHORB5", 125, 168; }
+      InInventory OverLifeToken, 4 { drawimage "HLTHORB5", 135, 168; } }
+
+    InInventory ContraArmorToken, 1 { drawimage "HLTHSHLD", 4, 165; }
+    InInventory ContraArmorToken, 2 { drawimage "HLTHSHLD", 14, 165; }
+    InInventory ContraArmorToken, 3 { drawimage "HLTHSHLD", 24, 165; }
+    InInventory ContraArmorToken, 4 { drawimage "HLTHSHLD", 34, 165; }
+    InInventory ContraArmorToken, 5 { drawimage "HLTHSHLD", 44, 165; }
+    InInventory ContraArmorToken, 6 { drawimage "HLTHSHLD", 54, 165; }
+}
+
+InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
+{
+    DrawNumber 3, smallfont, red, Health, fillzeros, 32, 172;
+    DrawNumber 3, smallfont, gold, Armor, fillzeros, 64, 172;
+}
+
+    gamemode cooperative, singleplayer
     {
-        AspectRatio "4:3"
-        {
-            DrawImage "STYLMELE", 1, 0;
-        }
-        AspectRatio "16:10"
-        {
-            DrawImage "STYLMELE", -31, 0;
-        }
-        AspectRatio "16:9"
-        {
-            DrawImage "STYLMELE", -52, 0;
-        }
+        InInventory BlueCard, 1 { drawimage "STKEYS0", 295, 181; }
+        InInventory YellowCard, 1 { drawimage "STKEYS1", 299, 181; }
+        InInventory RedCard, 1 { drawimage "STKEYS2", 303, 181; }
+        InInventory BlueSkull, 1 { drawimage "STKEYS3", 295, 187; }
+        InInventory YellowSkull, 1 { drawimage "STKEYS4", 299, 187; }
+        InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
-    InInventory RangedModeOn
-    {
-        AspectRatio "4:3"
-        {
-            DrawImage "STYLRANG", 1, 0;
-        }
-        AspectRatio "16:10"
-        {
-            DrawImage "STYLRANG", -31, 0;
-        }
-        AspectRatio "16:9"
-        {
-            DrawImage "STYLRANG", -52, 0;
-        }
-    }
-    InInventory TricksterModeOn
-    {
-        AspectRatio "4:3"
-        {
-            DrawImage "STYLTRCK", 1, 0;
-        }
-        AspectRatio "16:10"
-        {
-            DrawImage "STYLTRCK", -31, 0;
-        }
-        AspectRatio "16:9"
-        {
-            DrawImage "STYLTRCK", -52, 0;
-        }
-    }
+}
+
 }
 
 statusbar fullscreen, forcescaled

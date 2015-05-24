@@ -6,6 +6,7 @@ actor GrenadePunchHitWall : Boolean {}
 actor GrenadePunchHit : Boolean {}
 actor JetpackModeOn : Boolean {}
 actor JetpackModeOff : Boolean {}
+actor GrenadeInHand : Boolean {}
 
 actor SwapToHaggarMode : Boolean {}
 actor SwapToRangedMode : Boolean {}
@@ -15,7 +16,7 @@ actor RangedModeOn : Boolean {}
 actor TricksterModeOn : Boolean {}
 actor StyleSwapping : Boolean {}
 
-actor JetpackFuel : Counter { Inventory.MaxAmount 115 }
+actor JetpackFuel : Counter { Inventory.MaxAmount 120 }
 actor PunchComboCounter : Counter { Inventory.MaxAmount 4 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
 actor InTheAir : Counter { Inventory.MaxAmount 10 }

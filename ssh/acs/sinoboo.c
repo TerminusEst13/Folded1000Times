@@ -130,7 +130,7 @@ script SINO_DECORATE (int pihua, int hunzhang)
 
         case 2:
             ActivatorSound("styleswap/trickster",127);
-            SetActorProperty(0,APROP_SPEED,1.175);
+            SetActorProperty(0,APROP_SPEED,1.2);
             SetActorProperty(0,APROP_GRAVITY,0.6);
             break;
     }

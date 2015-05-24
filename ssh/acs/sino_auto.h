@@ -153,7 +153,7 @@ script SINO_ENTER ENTER
         // I wouldn't need to do this. But I am, so I have to.
         // May Carmack forgive me.
 
-          if (CheckInventory("JetpackFuel") >= 25 || CheckInventory("JetpackModeOn") == 1)
+          if (CheckInventory("JetpackFuel") >= 20 || CheckInventory("JetpackModeOn") == 1)
           {
             if (pitchy >= 0) // Pitch is an inverted value.
             {                // Looking down increases it, looking up decreases.
