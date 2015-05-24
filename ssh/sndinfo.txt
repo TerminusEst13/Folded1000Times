@@ -131,6 +131,7 @@ gbounc3                GRNBNCE3
 
 // Rebellion
 special/dryfire        SPCLDRYF // Taken from Doom 3
+special/fire           SPCLFIRE
 special/fireleft       SPCLFIRL
 special/fireright      SPCLFIRR
 special/unload         SPCLUNLD // Taken from Killing Floor

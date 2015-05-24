@@ -5,7 +5,6 @@
    D: Back special
    E: Style special
  ^- Ranged style (Needs a name)
-   A: Passive buff (Ranking bonus partially applies to guns)
    B: Forward special (In, needs new graphics/sounds)
    C: Side special (In, needs new graphics/sounds)
    D: Back special
@@ -22,7 +21,6 @@
  ^- Separate Shihong's bullets from Hae-Lin's
 4: BFG9000 replacement
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
-8: New HUD
 9: Better names for Avenger/Enforcer/Rebellion
  ^- Benevolent?
  ^- Prospect?
@@ -37,7 +35,6 @@
 12: Separate Hae-Lin's pickups from Shihong's (Berserk, Megasphere)
 13: Blursphere replacement
 14: Allmap replacement
-15: What to do with Rebellion? Dual-wielding is fun, and dual-wielding pistols in a stylish action game is kind of mandatory. But the current execution is very eehhh. The Striker is more accurate, the Avenger does more damage, and the Enforcer is faster, and tapping away rapidly at the keys to try and get the damage edge is clunky and unwieldy.
 17: Spawning animation for guns.
  ^- Pickup sprites for weapons
 18: Flashlight replacement for Shihong (night vision?)
@@ -55,7 +52,7 @@
  ^- Melee style (Needs a name)
    A: Passive buff (Faster melee speed, hits harder)
  ^- Ranged style (Needs a name)
-   A: Passive buff (Bullets get tracers)
+   A: Passive buff (Bullets get tracers, ranking bonus partially applies to guns)
  ^- Trickster style
    A: Passive buff (Can grab walls, jetpack regenerates faster. In, needs separated)
  ^- Unique icons showing what the styles are
@@ -66,6 +63,9 @@
 3: Rehaul the Teleport/Dash entirely into a jet thruster.
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
+8: New HUD
+15: What to do with Rebellion? Dual-wielding is fun, and dual-wielding pistols in a stylish action game is kind of mandatory. But the current execution is very eehhh. The Striker is more accurate, the Avenger does more damage, and the Enforcer is faster, and tapping away rapidly at the keys to try and get the damage edge is clunky and unwieldy.
+ ^- Alternate burst-fire mode. Hold-down fire for a rapid trio of shots from both guns.
 16: 19 spawning sounds
 20: Polish up the jet thruster.
  ^- Buffer--doesn't just automatically turn on if you hold down Run at low values.

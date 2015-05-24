@@ -8,6 +8,7 @@ FROM 0.82 TO 0.XX
 - The KeyConf entry for the Launch Attack has been renamed to Weapon Action because reasons.
 - Mancubi no longer have such advanced jiggle physics.
 - Two additional sprites of soda pickup were included for variety.
+- Guns can no longer get meter by shooting decorations.
 
 
 
