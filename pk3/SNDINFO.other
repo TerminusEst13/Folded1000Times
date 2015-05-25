@@ -4,6 +4,8 @@
 //                        DSTINK   // Taken from Fatal/Fake
 //                        cnnctsnd // Taken from Painkiller
 
+gameover/break            GAMEOVR1 // Taken from Painkiller and the General Series 6000
+
 misc/kegan                KEGNCHAT // Taken from King of Dragons
 misc/yholl                YHOLCHAT // Taken from the General Series 6000
 

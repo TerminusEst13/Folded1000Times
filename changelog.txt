@@ -9,6 +9,7 @@ FROM 0.82 TO 0.XX
 - Mancubi no longer have such advanced jiggle physics.
 - Two additional sprites of soda pickup were included for variety.
 - Guns can no longer get meter by shooting decorations.
+- Game Over quotes have been included to degrade you for your failure, upon death.
 
 
 

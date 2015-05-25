@@ -614,6 +614,8 @@ script WEEB_UNLOADING UNLOADING
 
 script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
 {
+    int i;
+
     TakeInventory("PointsSpeedrunning",0x7FFFFFFF);
 
     TakeInventory("KharonSwung",1);
@@ -643,6 +645,23 @@ script WEEB_DEATH DEATH // Mostly the same, except for a few notable exclusions
     TakeInventory("LegionSpecialCounter",0x7FFFFFFF);
     TakeInventory("LegionStacked",0x7FFFFFFF);
     TakeInventory("SwordAttack",0x7FFFFFFF);
+    if (isSinglePlayer())
+    {
+        TakeInventory("IsSSH",1);
+        TakeInventory("IsJungHaeLin",1);
+        LocalSetMusic("SILENCE");
+        LocalAmbientSound("gameover/break",127);
+        delay(15);
+        FadeRange(0,0,0,0,0,0,0,1.00,3.50);
+        delay(175);        
+        sethudsize(640,480,1);
+        //ActivatorSound("gameover/quote",127);
+        setfont("GAMEOVER");
+        hudmessage(s:"A"; HUDMSG_FADEINOUT, 1002, 0, 320.0, 200.0, 0x7FFFFFFF, 2.00, 1.00);
+        setfont("BIGFONT");
+        i = random(0, DEATHQUOTES-1);
+        hudmessage(s:DeadQuotes[i]; HUDMSG_FADEINOUT, 1001, CR_WHITE, 320.0, 350.0, 0x7FFFFFFF, 2.00, 1.00);
+    }
 }
 
 script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE

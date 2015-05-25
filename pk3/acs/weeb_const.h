@@ -32,6 +32,7 @@
 #define TRAILCOUNT 3
 #define QUOTECOUNT 160
 #define IRONMUS 7
+#define DEATHQUOTES 30
 
 #define WB_DODGE         0
 #define WD_FORWARD       0
@@ -558,4 +559,38 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "There is no love so pure and passionate as the love of oneself. Just don't do it in public. Ew.",
 "They say 'May your dreams come true', but how many of your dreams aren't weird shit?",
 "Do you really think you'll find deep philosophical meaning from a little slip of paper inside a cookie?"
+};
+
+int DeadQuotes[DEATHQUOTES] =
+{
+"Oh, don't worry. It's not like the end of the world or anything.",
+"Never trust a human to do an angel's job.",
+"Smooth moves, slick.",
+"Oooh, you totally almost saw that one coming.",
+"And then you died.",
+"Walk it off. Oh, wait, you can't.",
+"You sure showed them.",
+"You tried. And failed, but at least you tried.",
+"A hero's death is still a death.",
+"That was fun, what's your next plan?",
+"You don't get a prize for 'almost' winning.",
+"I hate it when that happens.", 
+"Ouch.",
+"Did you expect saving the world to be easy?",
+"So, be honest, what did you expect would happen?",
+"I'm not angry. I'm just disappointed.",
+"Surprise. You're dead.",
+"Good to see you're putting those powers to good use.",
+"You tried your best. Shame that it wasn't enough.",
+"Looks like you blew it. Good work.",
+"You had one job.",
+"Oops.",
+"Pathetic.",
+"I'd say better luck next time, but there won't be a next time.",
+"Time for plan B, right?",
+"Spoiler alert: You die at the end.",
+"Great work. Time to take the rest of eternity off.",
+"The fate of all heroes is to die alone on the battlefield.",
+"No matter how hard you fight, you only need to die once.",
+"If getting up and trying again was all it took, we'd all be winners."
 };
