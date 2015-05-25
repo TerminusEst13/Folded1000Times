@@ -498,12 +498,12 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
 
     gamemode cooperative, singleplayer
     {
-        InInventory BlueCard, 1 { drawimage "STKEYS0", 295, 181; }
-        InInventory YellowCard, 1 { drawimage "STKEYS1", 299, 181; }
-        InInventory RedCard, 1 { drawimage "STKEYS2", 303, 181; }
-        InInventory BlueSkull, 1 { drawimage "STKEYS3", 295, 187; }
-        InInventory YellowSkull, 1 { drawimage "STKEYS4", 299, 187; }
-        InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
+        InInventory BlueCard, 1 { drawimage "STKEYS0", 301, 182; }
+        InInventory YellowCard, 1 { drawimage "STKEYS1", 305, 182; }
+        InInventory RedCard, 1 { drawimage "STKEYS2", 309, 182; }
+        InInventory BlueSkull, 1 { drawimage "STKEYS3", 301, 188; }
+        InInventory YellowSkull, 1 { drawimage "STKEYS4", 305, 188; }
+        InInventory RedSkull, 1 { drawimage "STKEYS5", 309, 188; }
     }
 }
 
