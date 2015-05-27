@@ -21,6 +21,7 @@ actor PunchComboCounter : Counter { Inventory.MaxAmount 4 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
 actor InTheAir : Counter { Inventory.MaxAmount 10 }
 actor SwapCooldown : Counter { Inventory.MaxAmount 210 }
+actor HunterBurstCounter : Counter { Inventory.MaxAmount 6 }
 
 actor ArmorHealthMegaPack2 : CustomInventory replaces ArmorHealthMegaPack
 {
