@@ -1,4 +1,4 @@
-actor "05-E Enforcer" : Fists
+actor "05-R Ruin" : Fists
 {
     Weapon.SlotNumber 5
     Weapon.AmmoUse2 1

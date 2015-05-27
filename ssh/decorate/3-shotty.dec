@@ -15,7 +15,7 @@ actor AvengerMagazine : Ammo
     }
 }
 
-actor "03-A Avenger" : Fists
+actor "03-C Challenger" : Fists
 {
     Weapon.SlotNumber 3
     Weapon.AmmoUse2 1

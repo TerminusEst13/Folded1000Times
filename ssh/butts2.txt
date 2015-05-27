@@ -21,14 +21,6 @@
  ^- Separate Shihong's bullets from Hae-Lin's
 4: BFG9000 replacement
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
-9: Better names for Avenger/Enforcer/Rebellion
- ^- Benevolent?
- ^- Prospect?
- ^- Mercenary?
- ^- Dissection?
- ^- Agonist?
- ^- Naildown?
- ^- Skyfire?
 10: The trickster grapplebeam can lag people out when people teleport and go a long way away from the source. Is there a way to have the beam snap when teleporting?
 11: Separate Hae-Lin's quotes from Shihong's
  ^- Find a voice actress
@@ -64,6 +56,10 @@
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)
 8: New HUD
+9: Better names for Avenger/Enforcer/Rebellion
+ ^- Challenger
+ ^- Ruin
+ ^- Hunter
 15: What to do with Rebellion? Dual-wielding is fun, and dual-wielding pistols in a stylish action game is kind of mandatory. But the current execution is very eehhh. The Striker is more accurate, the Avenger does more damage, and the Enforcer is faster, and tapping away rapidly at the keys to try and get the damage edge is clunky and unwieldy.
  ^- Alternate burst-fire mode. Hold-down fire for a rapid trio of shots from both guns.
 16: 19 spawning sounds

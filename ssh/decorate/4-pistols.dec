@@ -17,7 +17,7 @@ actor SpecialistMagazine : Ammo
 
 actor PistolFired : Boolean {}
 
-actor "04-R Rebellion" : Fists
+actor "04-H Hunter" : Fists
 {
     Weapon.SlotNumber 4
     Weapon.AmmoUse2 1

@@ -3,15 +3,23 @@ GRAPHICS:
 - Hands by Marty Kirra and Sgt. Shivers
 - Pizza sprite taken off Pizza Hut
 - Doritos sprite originally by Golly Gosher/Orig01
-- Rebellion dual pistols ripped by torridGristle
+- Hunter dual pistols ripped by torridGristle
 - Striker revolver ripped by torridGristle, edited by Mike12 and Sgt. Shivers
-- Avenger shotgun ripped by Sgt. Shivers
-- Enforcer grenades ripped by Captain J
+- Challenger shotgun ripped by Sgt. Shivers
+- Ruin grenades ripped by Captain J
 - Triumph sword ripped by Sgt. Shivers
 - Yuki Nagato sprites from Doom Radys Classes, made by Doom667Shogun
 - Melee style swapping icon from Fallout: Tactics
 - Ranged style swapping icon from Grand Knights History
 - Dodger style swapping icon from Strider 2
+- Hud pieced together with sprites from:
+ ^- Super Star Wars
+ ^- X-COM: Terror From the Deep
+ ^- Shaq Fu
+ ^- Super Metroid
+ ^- Mega Man X
+ ^- Mega Man & Bass
+ ^- Armored Warriors
 
 CODE:
 ===========

@@ -250,9 +250,9 @@ ininventory GotUzi, 1 { drawimage "SSHGOTR1", 291, 172, center; }
 ininventory GotCarronade, 1 { drawimage "SSHGOTE1", 296, 172, center; }
 isselected "01-T Triumph" { drawimage "SSHGOTT2", 276, 172, center; }
 isselected "02-S Striker" { drawimage "SSHGOTS2", 281, 172, center; }
-isselected "03-A Avenger" { drawimage "SSHGOTA2", 286, 172, center; }
-isselected "04-R Rebellion" { drawimage "SSHGOTR2", 291, 172, center; }
-isselected "05-E Enforcer" { drawimage "SSHGOTE2", 296, 172, center; }
+isselected "03-C Challenger" { drawimage "SSHGOTA2", 286, 172, center; }
+isselected "04-H Hunter" { drawimage "SSHGOTR2", 291, 172, center; }
+isselected "05-R Ruin" { drawimage "SSHGOTE2", 296, 172, center; }
 isselected "01-T Triumph" { }
 isselected "02-S Striker"
 {
@@ -271,7 +271,7 @@ isselected "02-S Striker"
     ininventory StrikerClip, 2 { drawimage "AMMOREV2", 286, 184, center; }
     ininventory StrikerClip, 1 { drawimage "AMMOREV2", 291, 184, center; }
 }
-isselected "03-A Avenger"
+isselected "03-C Challenger"
 {
     drawimage "AMMOSHT1", 262, 184, center;
     drawimage "AMMOSHT1", 265, 184, center;
@@ -294,7 +294,7 @@ isselected "03-A Avenger"
     ininventory AvengerMagazine, 2 { drawimage "AMMOSHT2", 286, 184, center; }
     ininventory AvengerMagazine, 1 { drawimage "AMMOSHT2", 289, 184, center; }
 }
-isselected "04-R Rebellion"
+isselected "04-H Hunter"
 {
     drawimage "AMMOPIS1", 265, 182, center;
     drawimage "AMMOPIS1", 267, 182, center;
@@ -350,7 +350,7 @@ isselected "04-R Rebellion"
     ininventory SpecialistMagazine, 2 { drawimage "AMMOPIS2", 289, 182, center; }
     ininventory SpecialistMagazine, 1 { drawimage "AMMOPIS2", 286, 186, center; }
 }
-isselected "05-E Enforcer"
+isselected "05-R Ruin"
 {
     drawimage "AMMOGRN1", 275, 184, center;
     ininventory GrenadeInHand, 1 { drawimage "AMMOGRN2", 275, 184, center; }
@@ -358,18 +358,18 @@ isselected "05-E Enforcer"
 
 isselected not "01-T Triumph" {
   isselected not "02-S Striker" {
-    isselected not "03-A Avenger" {
-      isselected not "04-R Rebellion" {
-        isselected not "05-E Enforcer" {
+    isselected not "03-C Challenger" {
+      isselected not "04-H Hunter" {
+        isselected not "05-R Ruin" {
               isselected not "Fists" {
 
                    drawimage "AMMOEROR", 257, 179; 
                    drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 190; }}}}}}
 
 isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 288, 190; }
-isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 288, 190; }
-isselected "04-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 288, 190; }
-isselected "05-E Enforcer" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 288, 190; }
+isselected "03-C Challenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 288, 190; }
+isselected "04-H Hunter" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 288, 190; }
+isselected "05-R Ruin" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 288, 190; }
 
 DrawImage "SSHHUD2", 7, 189;
 DrawBar "SSHSOLBA", "SSHSOLEM", SuperCounter1, Horizontal, 7, 190;
@@ -506,7 +506,6 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
         InInventory RedSkull, 1 { drawimage "STKEYS5", 309, 188; }
     }
 }
-
 }
 
 statusbar fullscreen, forcescaled
@@ -543,8 +542,8 @@ ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}
 }
 
 isselected "02-S Striker" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
-isselected "03-A Avenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
-isselected "04-R Rebellion" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
+isselected "03-C Challenger" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
+isselected "04-H Hunter" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
 
 ininventory not InIronMaiden, 1 { DrawImage "HUDBARX", 5, 193; }
 ininventory InIronMaiden, 1 { DrawImage "HUDBARXb", 5, 190; }

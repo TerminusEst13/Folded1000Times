@@ -106,7 +106,7 @@ striker/firefinal      SREVFIR2
 striker/unload         SREVUNLD // Taken from Killing Floor
 striker/load           SREVRELD // Taken from Left 4 Dead 2
 
-// Avenger
+// Challenger
 avenger/fire           AVNGFIRE
 avenger/pump           AVNGPUMP // Taken from F.E.A.R.
 avenger/dryfire        AVNGDRYF // Taken from Doom 3
@@ -114,7 +114,7 @@ avenger/unload         AVNGUNLD // Taken from Killing Floor
 avenger/reload         AVNGRELD // Taken from F.E.A.R.
 avenger/reload2        AVNGRLD2 // The above mixed with a Halo 3 sound
 
-// Enforcer
+// Ruin
 grenade/alert          GRNALERT // Taken from San Francisco Rush 2049
 grenade/armed          GRNARMED // Taken from F.E.A.R.
 grenade/throwweak      GRNTHWEK // Taken from Super Street Fighter IV
@@ -129,7 +129,7 @@ gbounc1                GRNBNCE1
 gbounc2                GRNBNCE2
 gbounc3                GRNBNCE3
 
-// Rebellion
+// Hunter
 special/dryfire        SPCLDRYF // Taken from Doom 3
 special/fire           SPCLFIRE
 special/fireleft       SPCLFIRL
