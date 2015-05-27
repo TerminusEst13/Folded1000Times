@@ -118,19 +118,19 @@ script SINO_DECORATE (int pihua, int hunzhang)
     {
         case 0:
             ActivatorSound("styleswap/melee",127);
-            SetActorProperty(0,APROP_SPEED,1.0);
+            TakeInventory("TricksterModeSpeed",1);
             SetActorProperty(0,APROP_GRAVITY,0.7);
             break;
 
         case 1:
             ActivatorSound("styleswap/ranged",127);
-            SetActorProperty(0,APROP_SPEED,1.0);
+            TakeInventory("TricksterModeSpeed",1);
             SetActorProperty(0,APROP_GRAVITY,0.7);
             break;
 
         case 2:
             ActivatorSound("styleswap/trickster",127);
-            SetActorProperty(0,APROP_SPEED,1.2);
+            GiveInventory("TricksterModeSpeed",1);
             SetActorProperty(0,APROP_GRAVITY,0.6);
             break;
     }

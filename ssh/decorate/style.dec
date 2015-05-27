@@ -15,3 +15,21 @@ actor RangedModeExtraDamage : PowerDamage
     DamageFactor "EnforcerExplosive", 1.33
     Powerup.Duration 0x7FFFFFFF
 }
+
+actor TricksterModeSpeed : PowerSpeed
+{
+    Speed 1.175
+    Powerup.Duration 0x7FFFFFFF
+}
+
+actor BlankSpeedTrail replaces PlayerSpeedTrail
+{ // Next version of Zandronum will have POWERSPEED.NOTRAIL and I won't need this for the above.
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        stop
+    }
+}

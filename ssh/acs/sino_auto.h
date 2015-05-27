@@ -36,8 +36,16 @@ script SINO_ENTER ENTER
     }
 
     // Restoring all the stuff from previous level, just in case someone exits under a special state.
-    If (CheckInventory("TricksterModeOn") == 0 ) { SetActorProperty(0,APROP_Gravity,0.7); }
-    else { SetActorProperty(0,APROP_Gravity,0.6); }
+    If (CheckInventory("TricksterModeOn") == 0 )
+    {
+        SetActorProperty(0,APROP_Gravity,0.7);
+        TakeInventory("TricksterModeSpeed",1);
+    }
+    else
+    {
+        SetActorProperty(0,APROP_Gravity,0.6);
+        GiveInventory("TricksterModeSpeed",1);
+    }
     SetPlayerProperty(0,0,PROP_FROZEN);
     TakeInventory("JetpackSpeedPower1",1);
     TakeInventory("JetpackSpeedPower2",1);
