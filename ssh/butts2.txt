@@ -34,8 +34,6 @@
 20: Polish up the jet thruster.
  ^- More consistent jet sound.
  ^- Some kind of trail flowing around.
-21: Unique weapon swapping sound.
- ^- Different one for the sword.
 22: Dying with grapple done doesn't cancel on death.
 23: Is it possible to make melee attacks home in on enemies in melee style?
 
@@ -69,3 +67,5 @@
  ^- Adjust the recovery. Once you're on the ground again, it can recover steadily even if you jump?
  ^- The higher up your view is, the lesser the boost. Otherwise it's too easy for people to just fly straight up.
   ^- Make a smoother curve
+21: Unique weapon swapping sound.
+ ^- Different one for the sword.

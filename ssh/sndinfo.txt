@@ -63,7 +63,7 @@ styleswap/prepra       STYSWAP5 // Taken from Kamen Rider Agito
 styleswap/preptr       STYSWAP6 // Taken from Kamen Rider Agito
 
 
-
+shihong/weaponswap     SSHWPSWP
 
 // Fists
 punchy/hit1            SSHPNCH1

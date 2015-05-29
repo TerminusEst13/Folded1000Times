@@ -67,37 +67,6 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 142: Implement Shivers' new idle animation.
 143:  <TerminusEst13> ...I should probably make it so that if the grenade hits the ceiling/floor, then the crucifix should spawn flat instead of vertical. Hmm.
 144: Look at Shivers' RotT fireball sprites and adjust for Hell Nobles.
-145: Insulting death messages when you die in singleplayer:
-   ^- "Oh, don't worry. It's not like the end of the world or anything."
-   ^- "Never trust a human to do an angel's job."
-   ^- "Smooth moves, slick."
-   ^- "Oooh, you totally almost saw that one coming."
-   ^- "And then you died."
-   ^- "Walk it off. Oh, wait, you can't."
-   ^- "You sure showed them."
-   ^- "You tried. And failed, but at least you tried."
-   ^- "A hero's death is still a death."
-   ^- "That was fun, what's your next plan?" // 10
-   ^- "Those guys just don't give up, do they? Hmmm..."
-   ^- "I hate it when that happens."
-   ^- "Ouch."
-   ^- "Did you expect saving the world to be easy?"
-   ^- "Oh, I'm sorry, did I break your concentration?"
-   ^- "I'm not angry. I'm just disappointed."
-   ^- "Surprise. You're dead."
-   ^- "Good to see you're putting those powers to good use."
-   ^- "You tried your best. Shame that it wasn't enough."
-   ^- "Looks like you blew it. Good work." // 20
-   ^- "You had one job."
-   ^- "Oops."
-   ^- "Pathetic."
-   ^- "I'd say better luck next time, but there won't be a next time."
-   ^- "Time for plan B, right?"
-   ^- "Spoiler alert: You die at the end."
-   ^- "Great work. Time to take the rest of eternity off."
-   ^- "The fate of all heroes is dying alone on the battlefield."
-   ^- "You're cute when you think you can do it."
-   ^- "If getting up and trying again was all it took, we'd all be winners, wouldn't we?" // 30
 146: MOCKERY WHEN PLAYING ON AUTOMATIC MODE:
    ^ Pretty pink bow on the HUD
    ^ Happy music when going in Iron Maiden (ModArchive - M.L. Gore - Enjoy the Silence.xm / ModArchive - radix - Unreal Superhero.xm / ModArchive - Tito - ~~P~i~z~z~a~~H~u~t.xm )
@@ -329,6 +298,37 @@ SgtShivers: haha yeah
 [11:12:13 PM] Sgt. Shivers: double tap crouch to stop midair and go straight down
 137: Uppercut slash should reflect, rather than just block.
 138: Unique slashes when done mid-dash
+145: Insulting death messages when you die in singleplayer:
+   ^- "Oh, don't worry. It's not like the end of the world or anything."
+   ^- "Never trust a human to do an angel's job."
+   ^- "Smooth moves, slick."
+   ^- "Oooh, you totally almost saw that one coming."
+   ^- "And then you died."
+   ^- "Walk it off. Oh, wait, you can't."
+   ^- "You sure showed them."
+   ^- "You tried. And failed, but at least you tried."
+   ^- "A hero's death is still a death."
+   ^- "That was fun, what's your next plan?" // 10
+   ^- "Those guys just don't give up, do they? Hmmm..."
+   ^- "I hate it when that happens."
+   ^- "Ouch."
+   ^- "Did you expect saving the world to be easy?"
+   ^- "Oh, I'm sorry, did I break your concentration?"
+   ^- "I'm not angry. I'm just disappointed."
+   ^- "Surprise. You're dead."
+   ^- "Good to see you're putting those powers to good use."
+   ^- "You tried your best. Shame that it wasn't enough."
+   ^- "Looks like you blew it. Good work." // 20
+   ^- "You had one job."
+   ^- "Oops."
+   ^- "Pathetic."
+   ^- "I'd say better luck next time, but there won't be a next time."
+   ^- "Time for plan B, right?"
+   ^- "Spoiler alert: You die at the end."
+   ^- "Great work. Time to take the rest of eternity off."
+   ^- "The fate of all heroes is dying alone on the battlefield."
+   ^- "You're cute when you think you can do it."
+   ^- "If getting up and trying again was all it took, we'd all be winners, wouldn't we?" // 30
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter

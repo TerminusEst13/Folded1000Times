@@ -7,7 +7,7 @@ actor "Fists" : Weapon
     Weapon.AmmoType ""
     Obituary "%k shattered %o's skull."
     DamageType "ShihongPunch"
-    Weapon.UpSound "weapon/switch"
+    Weapon.UpSound "shihong/weaponswap"
     +NOALERT
     +NOAUTOFIRE
     +ALT_AMMO_OPTIONAL
