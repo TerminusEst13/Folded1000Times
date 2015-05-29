@@ -696,13 +696,13 @@ script SINO_ENTER ENTER
 
         // Temporary equipment workaround.
         if (CheckInventory("Kharon + Omen") == 1)
-            { TakeInventory("Kharon + Omen",1); GiveInventory("01-T Triumph",1); }
+            { TakeInventory("Kharon + Omen",1); GiveInventory("01-T Tiger",1); }
         if (CheckInventory("Kharon + Testament") == 1)
-            { TakeInventory("Kharon + Testament",1); GiveInventory("03-C Challenger",1); }
+            { TakeInventory("Kharon + Testament",1); GiveInventory("03-W Wolf",1); }
         if (CheckInventory("Kharon + Exodus") == 1)
-            { TakeInventory("Kharon + Exodus",1); GiveInventory("05-R Ruin",1); }
+            { TakeInventory("Kharon + Exodus",1); GiveInventory("05-D Dragon",1); }
         if (CheckInventory("Kharon + Sabbath") == 1)
-            { TakeInventory("Kharon + Sabbath",1); GiveInventory("04-H Hunter",1); }
+            { TakeInventory("Kharon + Sabbath",1); GiveInventory("04-SS Scorpions",1); }
 
         Delay(1);
 

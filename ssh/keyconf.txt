@@ -1,7 +1,7 @@
 addplayerclass MeleePlayer2
 
-addslotdefault 1 "01-T Triumph"
-addslotdefault 2 "02-S Striker"
-addslotdefault 3 "03-C Challenger"
-addslotdefault 4 "04-H Hunter"
-addslotdefault 5 "05-R Ruin"
+addslotdefault 1 "01-T Tiger"
+addslotdefault 2 "02-V Viper"
+addslotdefault 3 "03-W Wolf"
+addslotdefault 4 "04-SS Scorpions"
+addslotdefault 5 "05-D Dragon"

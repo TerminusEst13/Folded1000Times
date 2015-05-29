@@ -3,11 +3,11 @@ GRAPHICS:
 - Hands by Marty Kirra and Sgt. Shivers
 - Pizza sprite taken off Pizza Hut
 - Doritos sprite originally by Golly Gosher/Orig01
-- Hunter dual pistols ripped by torridGristle
-- Striker revolver ripped by torridGristle, edited by Mike12 and Sgt. Shivers
-- Challenger shotgun ripped by Sgt. Shivers
-- Ruin grenades ripped by Captain J
-- Triumph sword ripped by Sgt. Shivers
+- Scorpions dual pistols ripped by torridGristle
+- Viper revolver ripped by torridGristle, edited by Mike12 and Sgt. Shivers
+- Wolf shotgun ripped by Sgt. Shivers, edited by Mike12
+- Dragon grenades ripped by Captain J
+- Tiger sword ripped by Sgt. Shivers, edited by CrasicalTheMage
 - Yuki Nagato sprites from Doom Radys Classes, made by Doom667Shogun
 - Melee style swapping icon from Fallout: Tactics
 - Ranged style swapping icon from Grand Knights History

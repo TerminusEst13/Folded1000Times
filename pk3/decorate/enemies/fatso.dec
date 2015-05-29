@@ -10,6 +10,8 @@ actor WeeabooFatty : Fatso replaces Fatso
     PainChance "MessiahDamage", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
+    PainChance "LittleMacUppercut", 255
+    PainChance "ShihongSpinAttack", 255
     PainChance "SabbathDamage", 192
     PainChance "IronFistDamage", 255
     PainChance "IronFistOverkill", 255
@@ -271,6 +273,23 @@ actor WeeabooFatty : Fatso replaces Fatso
         TNT1 A 0 A_SpawnItemEx("FatguyFrozen",0,0,0,0,0,0,0,32)
         NONE A 5 A_BossDeath
         Stop
+
+    Pain.LittleMacUppercut:
+        TNT1 A 0 A_Recoil(6)
+    Pain.ShihongSpinAttack:
+        TNT1 A 0 A_PlaySoundEx("specialpunch/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("SpecialPunchContactQuake",1)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Pain
+    Death.LittleMacUppercut:
+        TNT1 A 0 A_Recoil(3)
+    Death.ShihongSpinAttack:
+        TNT1 A 0 A_PlaySoundEx("specialpunch/hit","soundslot5",0,0)
+        TNT1 A 0 A_GiveToTarget("SpecialPunchContactQuake",1)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        goto Death
     }
 }
 

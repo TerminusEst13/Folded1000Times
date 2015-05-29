@@ -85,28 +85,33 @@ taser/hit              TASHIT   // Taken from Super Street Fighter IV
 taser/wall             TASWALL  // Taken from the General Series 6000
 
 // Triumph
-triumph/swing          SWRDSWNG
-triumph/hit            SWRDHIT
-triumph/wall           SWRDWALL // Taken from Ninja Gaiden
-triumph/swing2         SWRDSWN2
-triumph/hit2           SWRDHIT2
-triumph/wall2          SWRDWAL2
+$random triumph/swing { tswing1 tswing2 tswing3 }
+tswing1                SWRDSWN1
+tswing2                SWRDSWN2
+tswing3                SWRDSWN3
+
+$random triumph/hit { thit1 thit2 thit3 }
+thit1                  SWRDHIT1
+thit2                  SWRDHIT2
+thit3                  SWRDHIT3
+
+$random triumph/wall { twall1 twall2 twall3 }
+twall1                 SWRDWAL1
+twall2                 SWRDWAL2
+twall3                 SWRDWAL3
 
 $limit triumph/swing  0
 $limit triumph/hit    0
 $limit triumph/wall   0
-$limit triumph/swing2 0
-$limit triumph/hit2   0
-$limit triumph/wall2  0
 
-// Striker
+// Viper
 striker/dryfire        SREVDRYF // Taken from Doom 3
 striker/fire           SREVFIRE
 striker/firefinal      SREVFIR2
 striker/unload         SREVUNLD // Taken from Killing Floor
 striker/load           SREVRELD // Taken from Left 4 Dead 2
 
-// Challenger
+// Wolf
 avenger/fire           AVNGFIRE
 avenger/pump           AVNGPUMP // Taken from F.E.A.R.
 avenger/dryfire        AVNGDRYF // Taken from Doom 3
@@ -114,7 +119,7 @@ avenger/unload         AVNGUNLD // Taken from Killing Floor
 avenger/reload         AVNGRELD // Taken from F.E.A.R.
 avenger/reload2        AVNGRLD2 // The above mixed with a Halo 3 sound
 
-// Ruin
+// Dragon
 grenade/alert          GRNALERT // Taken from San Francisco Rush 2049
 grenade/armed          GRNARMED // Taken from F.E.A.R.
 grenade/throwweak      GRNTHWEK // Taken from Super Street Fighter IV
@@ -129,7 +134,7 @@ gbounc1                GRNBNCE1
 gbounc2                GRNBNCE2
 gbounc3                GRNBNCE3
 
-// Hunter
+// Scorpions
 special/dryfire        SPCLDRYF // Taken from Doom 3
 special/fire           SPCLFIRE
 special/fireleft       SPCLFIRL
@@ -138,14 +143,15 @@ special/unload         SPCLUNLD // Taken from Killing Floor
 special/load           SPCLRELD // Taken from Killing Floor
 
 // Special moves
-combo/ready             CHCMBCLK // Taken from Smash Bros. Melee
-stealth/engage          STELTHMD // Taken from Kamen Rider Kabuto
-supermissile/fire       SMISFIRE
+specialpunch/hit       SSHPNCSP
+combo/ready            CHCMBCLK // Taken from Smash Bros. Melee
+stealth/engage         STELTHMD // Taken from Kamen Rider Kabuto
+supermissile/fire      SMISFIRE
 
 $random missile/hit { miss/hit1 miss/hit2 miss/hit3 }
-miss/hit1               MISSEXP1
-miss/hit2               MISSEXP2
-miss/hit3               MISSEXP3
+miss/hit1              MISSEXP1
+miss/hit2              MISSEXP2
+miss/hit3              MISSEXP3
 $limit missile/hit 0
 
 claw/hit		       claw_hit  // Taken from Devil May Cry 3
