@@ -212,8 +212,8 @@ ACTOR BulletSpark2
     States
     {
     Spawn:
-        BPSP AAAAAAAAAAAAAAAAAAA 1 Bright
-        BPSP AAAAAAAAAA 2 Bright A_FadeOut(0.1)
+        BPS2 AAAAAAAAAAAAAAAAAAA 1 Bright
+        BPS2 AAAAAAAAAA 2 Bright A_FadeOut(0.1)
         Stop
     }
 }
