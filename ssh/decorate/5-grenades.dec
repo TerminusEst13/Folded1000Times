@@ -805,10 +805,10 @@ actor ThrownGrenade
     +THRUSPECIES
     Species "EnemyShot"
     DamageFactor "Normal", 0.0
-    DamageFactor "AcaciaDamage", 1.0
-    DamageFactor "SabbathDamage", 1.0
-    DamageFactor "TestamentDamage", 1.0
-    DamageFactor "EnforcerDamage", 1.0
+    DamageFactor "StrikerDamage", 1.0
+    DamageFactor "RebellionDamage", 1.0
+    DamageFactor "AvengerDamage", 1.0
+    DamageFactor "EnforcerDamage", 1.0 
     States
     {
     Spawn:
