@@ -2,7 +2,7 @@ Name: Sun Shihong
 Birthdate: February 14th, 2119
 Age: 27
 Birthplace: Lamma Island, Hong Kong, China
-Height: 5'8" (Increased height due to cybernetics)
+Height: 5'9" (Increased height due to cybernetics)
 Weight: 340lbs (Increased weight due to cybernetics)
 Blood Type: O+
 Family/Relatives: Sun Jinlong (Brother), Sun Benshan (Father), Sun Jiahui (Mother)
@@ -14,7 +14,7 @@ Special Skill: Can do physical exercises endlessly without tiring
 Favorite music: Progressive metal
 Favorite bands: Dream Theater, Mekong Delta
 Forte in Sports: Chess
-Fighting Style: Tie Shou Dao (Way of the Iron Beast), Hao Qi Fa (Law of the Heroic Soul)
+Fighting Style: Long Zhu Dao (Path of the Dragon Lord), Hao Qi Fa (Law of the Heroic Soul)
 
 Possible voice actresses:
 http://geeksotospeak.tumblr.com
@@ -73,9 +73,9 @@ All bullets are extensively customized, to the point where they technically can'
 
 GAMEPLAY FEATURES:
 - Moves slower than Hae-Lin (outside of the mobility/defensive style)
-- Teleports instead of dashes. Swings her a short distance instantly, and can do multiple in a row quickly, but don't travel as far or have as long a ghost duration.
-- Unlike Hae-Lin, which swings the hwando as fast as she clicks, the attacks are slower and stronger. They use a beat-'em-up style attack chain, minor combo capabilities.
-- Being that she's not an angel and her weapons are ordinary IRL weapons, she must reload. However, she has extended magazines and uses fast Goldeneye-style reloads, so they rarely break up the flow of combat. Holding alt-fire manually reloads the equipped weapon.
+- Has a jet booster instead of a dash. It can't be spammed like Hae-Lin's and runs off a temporary supply of fuel, but it's more consistent and controllable.
+- Unlike Hae-Lin, which swings the hwando as fast as she clicks, Shihong's punches use a beat-'em-up style attack chain.
+- Being that she's not an angel and her weapons are ordinary IRL weapons, she must reload. However, she has extended magazines and uses fast Goldeneye-style reloads, so they rarely break up the flow of combat. Launch Attack/Weapon Action manually reloads the equipped weapon.
 - Again, being that she's not an angel and her weapons are ordinary weapons, all of her weapons have a swap time.
 - DMC-esque style swapping, allowing her to switch between three different fighting modes on the go.
 - Soul meter refers to HER OWN SOUL, rather than absorbing the souls of enemies. Hitting enemies gives her more soul, rather than killing them, and shooting them gives less soul. While special moves burn off MUCH MORE soul, it's generally easier to gather.
@@ -94,9 +94,9 @@ Fist: Fist (Welcome to the gun show. Shihong's assassination martial arts combin
 Magazine size: N/A
 Attack: Primary fire is a simple five hit beat-'em-up combo--left jab, left jab, right punch, left hook, uppercut. Like Kharon, this is inherited by all weapons. Also like Kharon, holding down fire readies up for a special attack. Unlike Kharon, releasing hold does the next punch, allowing players to stall the combo. Alt-fire is a quick palm-thrust charged with electricity, blasting enemies with a 20m voltage blast, stunning them.
 
-Chainsaw: 01-T "Triumph" (An ancient sword passed down from generation to generation through her family, fighting against evil even in ancient times. While it still retains its holy powers, modern technology has sleekened it, reforged it, and bolstered it to maintain a razor-sharp edge while still being light and flexible)
+Chainsaw: 01-T "Tiger" (Reforged from an ancient jian that was passed down from generation to generation through her family. While it no longer has its edge and is more akin to a giant metal bludgeon, modern technology has reforged and bolstered it--constant arcs of electricity surge over its frame, forming a glistening plasma cutter that can sear through as the weapon bludgeons)
 Magazine size: N/A
-Attack: Swings the sword. Simple enough. Like the fists, the Triumph has a three-hit beat-'em-up combo, slash, reverse slash, thrust. The attacks of the fists and the Triumph are interchangeable, and can be used in between each other's chains for ever-increasing damage.
+Attack: Swings the sword. Simple enough. Hitting with the sword boosts up the charge of the weapon. 
 
 Pistol: 02-S "Striker" (A seven shot Magnum Research 45-70 revolver with a widened barrel, incredibly accurate)
 Magazine size: 7

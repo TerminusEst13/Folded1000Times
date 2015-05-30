@@ -108,6 +108,10 @@ triumph/raise          SWRDRISE // Taken from Kamen Rider Fourze
 triumph/idle           SWRDIDLE // Taken from the Radioactive Sci-Fi Sound Effects
 triumph/endidle        SWRDIDNO // Taken from the Radioactive Sci-Fi Sound Effects
 
+triumph/charge         SWRDCHRG
+triumph/laserswing     SWRDBEAM
+triumph/noammo         SWRDEMPT // Taken from BOUT
+
 // Viper
 striker/dryfire        SREVDRYF // Taken from Doom 3
 striker/fire           SREVFIRE

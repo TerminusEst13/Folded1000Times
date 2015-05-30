@@ -253,7 +253,10 @@ isselected "02-V Viper" { drawimage "SSHGOTS2", 281, 172, center; }
 isselected "03-W Wolf" { drawimage "SSHGOTA2", 286, 172, center; }
 isselected "04-SS Scorpions" { drawimage "SSHGOTR2", 291, 172, center; }
 isselected "05-D Dragon" { drawimage "SSHGOTE2", 296, 172, center; }
-isselected "01-T Tiger" { }
+isselected "01-T Tiger"
+{
+    drawbar "AMMOSWR2", "AMMOSWR1", SwordCharge, horizontal, interpolate (10), 258, 182;
+}
 isselected "02-V Viper"
 {
     drawimage "AMMOREV1", 261, 184, center;
@@ -366,6 +369,7 @@ isselected not "01-T Tiger" {
                    drawimage "AMMOEROR", 257, 179; 
                    drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 190; }}}}}}
 
+isselected "01-T Tiger" { drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 288, 190; }
 isselected "02-V Viper" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 288, 190; }
 isselected "03-W Wolf" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 288, 190; }
 isselected "04-SS Scorpions" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 288, 190; }

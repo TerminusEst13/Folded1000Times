@@ -2,7 +2,7 @@ actor HaggarModeExtraDamage : PowerDamage
 {
     DamageFactor "ShihongPunch", 1.25
     DamageFactor "EnforcerPunch", 1.25
-    DamageFactor "Triumph", 1.25
+    DamageFactor "Triumph", 1.25 // Don't put style special damages here, since they can't be used by other styles.
     Powerup.Duration 0x7FFFFFFF
 }
 
