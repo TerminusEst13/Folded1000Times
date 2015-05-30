@@ -858,7 +858,7 @@ actor TriumphSwordBeam
     Height 1
     Speed 90
     ReactionTime 4
-    Damage (35)
+    Damage (50)
     Projectile
     Obituary "%k cut %o up."
     DamageType "Triumph"
