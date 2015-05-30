@@ -177,12 +177,16 @@ script SINO_UNLOADING unloading
     TakeInventory("SwapToHaggarMode",1);
     TakeInventory("SwapToRangedMode",1);
     TakeInventory("SwapToTricksterMode",1);
+    TakeInventory("Grappling",1);
 
     TakeInventory("PunchComboCounter",0x7FFFFFFF);
     TakeInventory("GrenadeTimer",0x7FFFFFFF);
     TakeInventory("WallGrabbed",0x7FFFFFFF);
     TakeInventory("SwapCooldown",0x7FFFFFFF);
 }
+
+script SINO_DEATH DEATH
+{ ACS_ExecuteAlways("SINO_UNLOADING",0,0,0,0); }
 
 script 583 (int x, int y, int z)
 {

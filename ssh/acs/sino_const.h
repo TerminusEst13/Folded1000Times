@@ -7,6 +7,7 @@
 #define SINO_TURN                            364
 #define SINO_UNLOADING                       365
 #define SINO_ENTER_CLIENTSIDE                366
+#define SINO_DEATH                           367
 
 #define CLOCKWISE           0
 #define COUNTERCLOCKWISE    1
