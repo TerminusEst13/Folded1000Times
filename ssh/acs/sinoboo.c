@@ -186,7 +186,7 @@ script SINO_UNLOADING unloading
 }
 
 script SINO_DEATH DEATH
-{ ACS_ExecuteAlways("SINO_UNLOADING",0,0,0,0); }
+{ ACS_ExecuteAlways(SINO_UNLOADING,0,0,0,0); }
 
 script 583 (int x, int y, int z)
 {
