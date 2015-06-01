@@ -533,7 +533,7 @@ actor "04-SS Scorpions" : Fists
         TNT1 A 0 A_SetAngle(angle+(random(-300,300)/1000.000))
         TNT1 A 0 A_SetPitch(pitch-(random(200,450)/1000.000))
     NoRecoil:
-        W2PD C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        W2PD C 1 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_Light0
         W2PD DEEFF 1 A_WeaponReady(WRF_NOSWITCH)
         Goto AltFireFinish
@@ -564,7 +564,7 @@ actor "04-SS Scorpions" : Fists
         TNT1 A 0 A_SetAngle(angle+(random(-300,300)/1000.000))
         TNT1 A 0 A_SetPitch(pitch-(random(200,450)/1000.000))
     NoRecoil2:
-        W2PD H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        W2PD H 1 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_Light0
         W2PD IJJKK 1 A_WeaponReady(WRF_NOSWITCH)
     AltFireFinish:
