@@ -211,6 +211,7 @@ actor "01-T Tiger" : Fists
         TNT1 AAAAA 1 A_GiveInventory("TriumphSwung",1) // Put at the very end for a vague sense of realism.
                                                        // If it hit the wall and rebounded back, then it
                                                        // wouldn't come from the other angle.
+        TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         goto Fired
     FireGun2:
         W0S2 EEFFGH 1 BRIGHT
@@ -223,14 +224,17 @@ actor "01-T Tiger" : Fists
         W0S2 L 1 BRIGHT A_JumpIfInventory("TriumphHitWall",1,"FireHitWall2")
         W0S2 M 1 BRIGHT A_JumpIfInventory("TriumphHitWall",1,"FireHitWall2")
         TNT1 AAAAA 1 A_TakeInventory("TriumphSwung",1)
+        TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         goto Fired
     FireHitWall:
         W0SW RSTU 1 BRIGHT
         TNT1 AAAAA 1 A_TakeInventory("TriumphHitWall",1)
+        TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         goto Fired
     FireHitWall2:
         W0S2 NOPQ 1 BRIGHT
         TNT1 AAAAA 1 A_TakeInventory("TriumphHitWall",1)
+        TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         goto Fired
 
     Fired:
