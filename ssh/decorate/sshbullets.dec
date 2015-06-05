@@ -200,7 +200,7 @@ ACTOR BulletSpark2
     BounceFactor 0.6
     RenderStyle Add
     Alpha 0.99
-    Scale 0.055
+    Scale 0.025
     PROJECTILE
     +DOOMBOUNCE
     +FLOORCLIP

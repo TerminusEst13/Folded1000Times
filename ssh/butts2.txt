@@ -33,6 +33,7 @@
  ^- More consistent jet sound.
  ^- Some kind of trail flowing around.
 23: Is it possible to make melee attacks home in on enemies in melee style?
+24: More consistent coloring/shading for the HUD.
 
 
 1: Style swapping needs to be in.
