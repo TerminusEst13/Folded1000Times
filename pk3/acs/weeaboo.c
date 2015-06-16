@@ -357,16 +357,16 @@ int GravityOfLight;
         TakeInventory("Armor",0x7FFFFFFF);
         TakeInventory("HenshinActivated",1);
         GiveInventory("IronMaidenVisionReset",1);
-        GiveInventory("Kharon + Acacia A-22",1);
+        GiveInventory("KharonAcacia",1);
         GiveInventory("Kharon",1);
         SetActorProperty(0,APROP_JUMPZ,9.0);
-        if (CheckInventory("GotLegion") == 1) { GiveInventory("Kharon + Legion",1); }
-        if (CheckInventory("GotShotgun") == 1) { GiveInventory("Kharon + Testament",1); }
-        if (CheckInventory("GotUzi") == 1) { GiveInventory("Kharon + Sabbath",1); }
-        if (CheckInventory("GotCarronade") == 1) { GiveInventory("Kharon + Exodus",1); }
-        if (CheckInventory("GotHammer") == 1) { GiveInventory("Kharon + Omen",1); }
-        if (CheckInventory("GotFrosthammer") == 1) { GiveInventory("Kharon + Frosthammer",1); }
-        SetWeapon("Kharon + Acacia A-22");
+        if (CheckInventory("GotLegion") == 1) { GiveInventory("KharonLegion",1); }
+        if (CheckInventory("GotShotgun") == 1) { GiveInventory("KharonTestament",1); }
+        if (CheckInventory("GotUzi") == 1) { GiveInventory("KharonSabbath",1); }
+        if (CheckInventory("GotCarronade") == 1) { GiveInventory("KharonExodus",1); }
+        if (CheckInventory("GotHammer") == 1) { GiveInventory("KharonOmen",1); }
+        if (CheckInventory("GotFrosthammer") == 1) { GiveInventory("KharonFrosthammer",1); }
+        SetWeapon("KharonAcacia");
         ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUSBACK,0,0);
         delay(1);
         TakeInventory("IronMaidenArmor",0x7FFFFFFF);
@@ -735,7 +735,7 @@ script WEEB_PUKE3 (void) NET // why am i having to do separate scripts for this 
     TakeInventory("SwordAttack",0x7FFFFFFF);
 
     TakeInventory("SlashingLikeABaka",1);
-    TakeInventory("Kharon + Acacia A-22",1);
+    TakeInventory("KharonAcacia",1);
     TakeInventory("Kharon",1);
     TakeInventory("KamenRiderModeActivate",1);
     TakeInventory("UppercutTrigger",1);
@@ -743,7 +743,7 @@ script WEEB_PUKE3 (void) NET // why am i having to do separate scripts for this 
     TakeInventory("ZDoomTauntButton",1);
     TakeInventory("IsJungHaeLin",1);
     delay(1);
-    GiveInventory("Kharon + Acacia A-22",1);
+    GiveInventory("KharonAcacia",1);
     GiveInventory("Kharon",1);
     GiveInventory("KamenRiderModeActivate",1);
     GiveInventory("UppercutTrigger",1);
@@ -790,7 +790,7 @@ script WEEB_ENTER_CLIENT ENTER clientside
         {
             // In Z& 2.0, if a player exits the level while in Iron Maiden, he gets a desynched-client "ghost" version of the Kharon and K+A22.
             TakeInventory("Kharon",1);
-            TakeInventory("Kharon + Acacia A-22",1);
+            TakeInventory("KharonAcacia",1);
         }
 
         oExecInt = execInt;

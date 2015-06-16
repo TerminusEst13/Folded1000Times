@@ -225,7 +225,7 @@ actor ShotgunPickup2 : PickupBase replaces Shotgun
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,0,0)
         TNT1 A 0 A_PlaySound("weapon/shotgun", CHAN_ITEM)
         TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
-        TNT1 A 0 A_GiveInventory("Kharon + Testament",1)
+        TNT1 A 0 A_GiveInventory("KharonTestament",1)
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:
@@ -276,7 +276,7 @@ actor ShotgunPickup : PickupBase //replaces SuperShotgun
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,0,0)
         TNT1 A 0 A_PlaySound("weapon/shotgun", CHAN_ITEM)
         TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
-        TNT1 A 0 A_GiveInventory("Kharon + Testament",1)
+        TNT1 A 0 A_GiveInventory("KharonTestament",1)
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:
@@ -327,7 +327,7 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,1,0)
         TNT1 A 0 A_PlaySound("weapon/carronade", CHAN_ITEM)
         TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
-        TNT1 A 0 A_GiveInventory("Kharon + Exodus",1)
+        TNT1 A 0 A_GiveInventory("KharonExodus",1)
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:
@@ -378,7 +378,7 @@ actor UziPickup : PickupBase //replaces PlasmaRifle
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,2,0)
         TNT1 A 0 A_PlaySound("weapon/uzi", CHAN_ITEM)
         TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
-        TNT1 A 0 A_GiveInventory("Kharon + Sabbath",1)
+        TNT1 A 0 A_GiveInventory("KharonSabbath",1)
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:
@@ -429,7 +429,7 @@ actor HammerPickup : PickupBase replaces Chainsaw
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,3,0)
         TNT1 A 0 A_PlaySound("weapon/hammer", CHAN_ITEM)
         TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
-        TNT1 A 0 A_GiveInventory("Kharon + Omen",1)
+        TNT1 A 0 A_GiveInventory("KharonOmen",1)
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:
@@ -533,7 +533,7 @@ actor ChaingunPickup : PickupBase replaces Chaingun
         TNT1 A 0 ACS_ExecuteAlways(275,0,WEEB_DEC_GETMESSAGES,3,0)
         TNT1 A 0 A_PlaySound("weapon/hammer", CHAN_ITEM)
         TNT1 A 0 A_JumpIfInventory("InIronMaiden",1,"CheckStay")
-        TNT1 A 0 A_GiveInventory("Kharon + Omen",1)
+        TNT1 A 0 A_GiveInventory("KharonOmen",1)
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:

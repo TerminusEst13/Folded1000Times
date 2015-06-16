@@ -109,6 +109,7 @@ GRAPHICS:
 - Kyle873 (The Exodus/Frosthammer brightmaps)
 - Seryder (Decorating and polishing up MAPTEST)
 - Gundere (Hae-Lin's player sprites)
+- Herictator (The Game Over screen)
 
 CODE:
 =========

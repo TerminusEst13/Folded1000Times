@@ -91,7 +91,7 @@ script WEEB_ENTER ENTER
 
         if (GetCvar("dst_omenstart") == 1)
         {
-            GiveInventory("Kharon + Omen",1);
+            GiveInventory("KharonOmen",1);
             GiveInventory("GotHammer",1);
         }
 
