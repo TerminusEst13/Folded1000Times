@@ -13,6 +13,7 @@ FROM 0.82 TO 0.XX
 - In lieu of Zandronum 2.0, all A_JumpIf(CeilingZ-Z <= 16,"DeathUpperFinish") checks have been replaced with a simpler A_CheckCeiling("DeathUpperFinish").
 - Bisected body parts now have +CANTSEEK on them.
 - Weapons now have been changed to have Tag entries, removing spaces from their names, for ease of clientside weaponslot manipulation.
+- Souls no longer fly out of bisected body parts. Why was that even a thing?
 
 
 
