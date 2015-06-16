@@ -1,7 +1,7 @@
 addplayerclass MeleePlayer2
 
-addslotdefault 1 "01-T Tiger"
-addslotdefault 2 "02-V Viper"
-addslotdefault 3 "03-W Wolf"
-addslotdefault 4 "04-SS Scorpions"
-addslotdefault 5 "05-D Dragon"
+addslotdefault 1 "01Tiger"
+addslotdefault 2 "02Viper"
+addslotdefault 3 "03Wolf"
+addslotdefault 4 "04Scorpions"
+addslotdefault 5 "05Dragon"

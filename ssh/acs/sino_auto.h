@@ -695,14 +695,14 @@ script SINO_ENTER ENTER
             { TakeInventory("SynthFire",1); }
 
         // Temporary equipment workaround.
-        if (CheckInventory("Kharon + Omen") == 1)
-            { TakeInventory("Kharon + Omen",1); GiveInventory("01-T Tiger",1); }
-        if (CheckInventory("Kharon + Testament") == 1)
-            { TakeInventory("Kharon + Testament",1); GiveInventory("03-W Wolf",1); }
-        if (CheckInventory("Kharon + Exodus") == 1)
-            { TakeInventory("Kharon + Exodus",1); GiveInventory("05-D Dragon",1); }
-        if (CheckInventory("Kharon + Sabbath") == 1)
-            { TakeInventory("Kharon + Sabbath",1); GiveInventory("04-SS Scorpions",1); }
+        if (CheckInventory("KharonOmen") == 1)
+            { TakeInventory("KharonOmen",1); GiveInventory("01Tiger",1); }
+        if (CheckInventory("KharonTestament") == 1)
+            { TakeInventory("KharonTestament",1); GiveInventory("03Wolf",1); }
+        if (CheckInventory("KharonExodus") == 1)
+            { TakeInventory("KharonExodus",1); GiveInventory("05Dragon",1); }
+        if (CheckInventory("KharonSabbath") == 1)
+            { TakeInventory("KharonSabbath",1); GiveInventory("04Scorpions",1); }
 
         Delay(1);
 
@@ -797,7 +797,7 @@ script SINO_ENTER_UNREPLACED ENTER
 
         if (GetCvar("dst_omenstart") == 1)
         {
-            GiveInventory("Kharon + Omen",1);
+            GiveInventory("KharonOmen",1);
             GiveInventory("GotHammer",1);
         }
 

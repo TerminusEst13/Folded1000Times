@@ -1,5 +1,6 @@
-actor "05-D Dragon" : Fists
+actor 05Dragon : Fists
 {
+    Tag "05-D Dragon"
     Weapon.SlotNumber 5
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 5

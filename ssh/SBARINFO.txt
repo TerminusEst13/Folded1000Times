@@ -27,29 +27,29 @@ ininventory SkulltagWeaponsAcquired, 1
     ininventory GotIronMaiden, 1 { drawimage "AMMBOX2b", 308, 182, center; }
 }
 drawimage ammoicon1, 258, 187, center;
-isselected "Kharon + Omen" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
+isselected "KharonOmen" { InInventory HammerCharge, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
                                InInventory not HammerCharge, 100 { InInventory HammerCharge, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not HammerCharge, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
-isselected "Kharon + Acacia A-22" { InInventory WeebClip, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
+isselected "KharonAcacia" { InInventory WeebClip, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
                                InInventory not WeebClip, 100 { InInventory WeebClip, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not WeebClip, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
-isselected "Kharon + Testament" { InInventory WeebShell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+isselected "KharonTestament" { InInventory WeebShell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                InInventory not WeebShell, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; } }
-isselected "Kharon + Exodus" { InInventory WeebRocket, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
+isselected "KharonExodus" { InInventory WeebRocket, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                InInventory not WeebRocket, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; } }
-isselected "Kharon + Sabbath" { InInventory WeebCell, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
+isselected "KharonSabbath" { InInventory WeebCell, 100 { drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 294, 179; }
                                InInventory not WeebCell, 100 { InInventory WeebCell, 10 { drawnumber 2, DNDHUDF, untranslated, ammo1, drawshadow, 289, 179; }
                                                                InInventory not WeebCell, 10 { drawnumber 1, DNDHUDF, untranslated, ammo1, drawshadow, 284, 179; }}}
-isselected "Kharon + Frosthammer" { drawimage "FRSTAMMO", 252, 180; drawimage "INFNAMMO", 272, 182; }
-isselected "Kharon + Legion" { drawimage "KNIFAMMO", 251, 180; drawimage "INFNAMMO", 272, 182; }
+isselected "KharonFrosthammer" { drawimage "FRSTAMMO", 252, 180; drawimage "INFNAMMO", 272, 182; }
+isselected "KharonLegion" { drawimage "KNIFAMMO", 251, 180; drawimage "INFNAMMO", 272, 182; }
 
-isselected not "Kharon + Omen" {
-  isselected not "Kharon + Acacia A-22" {
-    isselected not "Kharon + Testament" {
-      isselected not "Kharon + Exodus" {
-        isselected not "Kharon + Sabbath" {
-          isselected not "Kharon + Legion" {
-            isselected not "Kharon + Frosthammer" {
+isselected not "KharonOmen" {
+  isselected not "KharonAcacia" {
+    isselected not "KharonTestament" {
+      isselected not "KharonExodus" {
+        isselected not "KharonSabbath" {
+          isselected not "KharonLegion" {
+            isselected not "KharonFrosthammer" {
               isselected not "Kharon" {
                 isselected not "Iron Fist" {
 
@@ -62,13 +62,13 @@ ininventory GotUzi, 1 { drawimage "GOTS2", 277, 171, center; }
 ininventory GotCarronade, 1 { drawimage "GOTE2", 282, 171, center; }
 ininventory GotLegion, 1 { drawimage "GOTL2", 291, 171, center; }
 ininventory GotFrosthammer, 1 { drawimage "GOTF2", 296, 171, center; }
-isselected "Kharon + Omen" { drawimage "GOTO1", 262, 171, center; }
-isselected "Kharon + Acacia A-22" { drawimage "GOTA1", 267, 171, center; }
-isselected "Kharon + Testament" { drawimage "GOTT1", 272, 171, center; }
-isselected "Kharon + Sabbath" { drawimage "GOTS1", 277, 171, center; }
-isselected "Kharon + Exodus" { drawimage "GOTE1", 282, 171, center; }
-isselected "Kharon + Legion" { drawimage "GOTL1", 291, 171, center; }
-isselected "Kharon + Frosthammer" { drawimage "GOTF1", 296, 171, center; }
+isselected "KharonOmen" { drawimage "GOTO1", 262, 171, center; }
+isselected "KharonAcacia" { drawimage "GOTA1", 267, 171, center; }
+isselected "KharonTestament" { drawimage "GOTT1", 272, 171, center; }
+isselected "KharonSabbath" { drawimage "GOTS1", 277, 171, center; }
+isselected "KharonExodus" { drawimage "GOTE1", 282, 171, center; }
+isselected "KharonLegion" { drawimage "GOTL1", 291, 171, center; }
+isselected "KharonFrosthammer" { drawimage "GOTF1", 296, 171, center; }
 ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 253, 171, center;
     ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 253, 171, center; }
     ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 253, 171, center; }}
@@ -248,16 +248,16 @@ drawimage "SSHGOTS1", 281, 172, center;
 ininventory GotShotgun, 1 { drawimage "SSHGOTA1", 286, 172, center; }
 ininventory GotUzi, 1 { drawimage "SSHGOTR1", 291, 172, center; }
 ininventory GotCarronade, 1 { drawimage "SSHGOTE1", 296, 172, center; }
-isselected "01-T Tiger" { drawimage "SSHGOTT2", 276, 172, center; }
-isselected "02-V Viper" { drawimage "SSHGOTS2", 281, 172, center; }
-isselected "03-W Wolf" { drawimage "SSHGOTA2", 286, 172, center; }
-isselected "04-SS Scorpions" { drawimage "SSHGOTR2", 291, 172, center; }
-isselected "05-D Dragon" { drawimage "SSHGOTE2", 296, 172, center; }
-isselected "01-T Tiger"
+isselected "01Tiger" { drawimage "SSHGOTT2", 276, 172, center; }
+isselected "02Viper" { drawimage "SSHGOTS2", 281, 172, center; }
+isselected "03Wolf" { drawimage "SSHGOTA2", 286, 172, center; }
+isselected "04Scorpions" { drawimage "SSHGOTR2", 291, 172, center; }
+isselected "05Dragon" { drawimage "SSHGOTE2", 296, 172, center; }
+isselected "01Tiger" 
 {
     drawbar "AMMOSWR2", "AMMOSWR1", SwordCharge, horizontal, interpolate (10), 258, 182;
 }
-isselected "02-V Viper"
+isselected "02Viper"
 {
     drawimage "AMMOREV1", 261, 184, center;
     drawimage "AMMOREV1", 266, 184, center;
@@ -274,7 +274,7 @@ isselected "02-V Viper"
     ininventory StrikerClip, 2 { drawimage "AMMOREV2", 286, 184, center; }
     ininventory StrikerClip, 1 { drawimage "AMMOREV2", 291, 184, center; }
 }
-isselected "03-W Wolf"
+isselected "03Wolf"
 {
     drawimage "AMMOSHT1", 262, 184, center;
     drawimage "AMMOSHT1", 265, 184, center;
@@ -297,7 +297,7 @@ isselected "03-W Wolf"
     ininventory AvengerMagazine, 2 { drawimage "AMMOSHT2", 286, 184, center; }
     ininventory AvengerMagazine, 1 { drawimage "AMMOSHT2", 289, 184, center; }
 }
-isselected "04-SS Scorpions"
+isselected "04Scorpions"
 {
     drawimage "AMMOPIS1", 265, 182, center;
     drawimage "AMMOPIS1", 267, 182, center;
@@ -353,27 +353,27 @@ isselected "04-SS Scorpions"
     ininventory SpecialistMagazine, 2 { drawimage "AMMOPIS2", 289, 182, center; }
     ininventory SpecialistMagazine, 1 { drawimage "AMMOPIS2", 286, 186, center; }
 }
-isselected "05-D Dragon"
+isselected "05Dragon"
 {
     drawimage "AMMOGRN1", 275, 184, center;
     ininventory GrenadeInHand, 1 { drawimage "AMMOGRN2", 275, 184, center; }
 }
 
-isselected not "01-T Tiger" {
-  isselected not "02-V Viper" {
-    isselected not "03-W Wolf" {
-      isselected not "04-SS Scorpions" {
-        isselected not "05-D Dragon" {
+isselected not "01Tiger" {
+  isselected not "02Viper" {
+    isselected not "03Wolf" {
+      isselected not "04Scorpions" {
+        isselected not "05Dragon" {
               isselected not "Fists" {
 
                    drawimage "AMMOEROR", 257, 179; 
                    drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 190; }}}}}}
 
-isselected "01-T Tiger" { drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 288, 190; }
-isselected "02-V Viper" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 288, 190; }
-isselected "03-W Wolf" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 288, 190; }
-isselected "04-SS Scorpions" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 288, 190; }
-isselected "05-D Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 288, 190; }
+isselected "01Tiger" { drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 288, 190; }
+isselected "02Viper" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 288, 190; }
+isselected "03Wolf" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 288, 190; }
+isselected "04Scorpions" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 288, 190; }
+isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 288, 190; }
 
 DrawImage "SSHHUD2", 7, 189;
 DrawBar "SSHSOLBA", "SSHSOLEM", SuperCounter1, Horizontal, 7, 190;
@@ -533,21 +533,23 @@ ininventory GotUzi, 1 { drawimage "GOTS2", 280, 174, center; }
 ininventory GotCarronade, 1 { drawimage "GOTE2", 285, 174, center; }
 ininventory GotLegion, 1 { drawimage "GOTL2", 290, 174, center; }
 ininventory GotFrosthammer, 1 { drawimage "GOTF2", 295, 174, center; }
-isselected "Kharon + Omen" { drawimage "GOTO1", 265, 174, center; }
-isselected "Kharon + Acacia A-22" { drawimage "GOTA1", 270, 174, center; }
-isselected "Kharon + Testament" { drawimage "GOTT1", 275, 174, center; }
-isselected "Kharon + Sabbath" { drawimage "GOTS1", 280, 174, center; }
-isselected "Kharon + Exodus" { drawimage "GOTE1", 285, 174, center; }
-isselected "Kharon + Legion" { drawimage "GOTL1", 290, 174, center; }
-isselected "Kharon + Frosthammer" { drawimage "GOTF1", 295, 174, center; }
+isselected "KharonOmen" { drawimage "GOTO1", 265, 174, center; }
+isselected "KharonAcacia" { drawimage "GOTA1", 270, 174, center; }
+isselected "KharonTestament" { drawimage "GOTT1", 275, 174, center; }
+isselected "KharonSabbath" { drawimage "GOTS1", 280, 174, center; }
+isselected "KharonExodus" { drawimage "GOTE1", 285, 174, center; }
+isselected "KharonLegion" { drawimage "GOTL1", 290, 174, center; }
+isselected "KharonFrosthammer" { drawimage "GOTF1", 295, 174, center; }
 ininventory GotIronMaiden, 1 { drawimage "IRONGEMX", 256, 174, center;
 ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 256, 174, center; }
 ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}
 }
 
-isselected "02-V Viper" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
-isselected "03-W Wolf" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
-isselected "04-SS Scorpions" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
+isselected "01Tiger" { drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 285, 166; }
+isselected "02Viper" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
+isselected "03Wolf" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
+isselected "04Scorpions" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
+isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 285, 166; }
 
 ininventory not InIronMaiden, 1 { DrawImage "HUDBARX", 5, 193; }
 ininventory InIronMaiden, 1 { DrawImage "HUDBARXb", 5, 190; }
@@ -711,6 +713,8 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
     }
     }
 
+    InInventory IsSSH, 1
+    {
     InInventory HaggarModeOn
     {
         AspectRatio "4:3"
@@ -755,6 +759,7 @@ ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32,
         {
             DrawImage "STYLTRCK", -52, 0;
         }
+    }
     }
 }
 

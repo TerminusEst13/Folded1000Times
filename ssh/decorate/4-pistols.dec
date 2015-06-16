@@ -17,8 +17,9 @@ actor SpecialistMagazine : Ammo
 
 actor PistolFired : Boolean {}
 
-actor "04-SS Scorpions" : Fists
+actor 04Scorpions : Fists
 {
+    Tag "04-SS Scorpions"
     Weapon.SlotNumber 4
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0

@@ -15,8 +15,9 @@ actor StrikerClip : Ammo
     }
 }
 
-actor "02-V Viper" : Fists
+actor 02Viper : Fists
 {
+    Tag "02-V Viper"
     Weapon.SlotNumber 2
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0

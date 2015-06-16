@@ -15,8 +15,9 @@ actor AvengerMagazine : Ammo
     }
 }
 
-actor "03-W Wolf" : Fists
+actor 03Wolf : Fists
 {
+    Tag "03-W Wolf"
     Weapon.SlotNumber 3
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0

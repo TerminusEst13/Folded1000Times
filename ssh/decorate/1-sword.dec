@@ -18,8 +18,9 @@ actor SwordCharge : Ammo
 actor TriumphSwung : Boolean {}
 actor TriumphHitWall : Boolean {}
 
-actor "01-T Tiger" : Fists
+actor 01Tiger : Fists
 {
+    Tag "01-T Tiger"
     Weapon.SlotNumber 1
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0
