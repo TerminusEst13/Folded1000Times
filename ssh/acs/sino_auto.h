@@ -1348,7 +1348,6 @@ script SINO_ENTER_UNREPLACED ENTER
         { SetPlayerProperty(0,0,PROP_BUDDHA); }
         
         Delay(1);
-
         // RIP in peas.
         if (isDead(0))
         {
@@ -1365,5 +1364,33 @@ script SINO_ENTER_UNREPLACED ENTER
             TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
             terminate;
         }
+    }
+}
+
+script SINO_JUSTFRAME ENTER
+{
+    int buttons;
+    while (1)
+    {
+        buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+
+        if (buttons & BT_ATTACK)
+        {
+          if (CheckInventory("JustFrameAcquired") == 0)
+          {
+            GiveInventory("JustFrame",1);
+            GiveInventory("JustFrameAcquired",1);
+            delay(2);
+            TakeInventory("JustFrame",1);
+          }
+        }
+        else
+        {
+            TakeInventory("JustFrame",1);
+            TakeInventory("JustFrameAcquired",1);
+        }
+
+        if (isDead(0)) { terminate; }
+        delay(1);
     }
 }

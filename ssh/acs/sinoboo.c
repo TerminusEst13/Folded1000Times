@@ -162,6 +162,7 @@ script SINO_RESPAWN respawn
     if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:PlayerNumber(), s:" respawning, executing SINO_ENTER."); }
     ACS_ExecuteAlways(SINO_ENTER,0,0,0);
     ACS_ExecuteAlways(SINO_ENTER_UNREPLACED,0,0,0);
+    ACS_ExecuteAlways(SINO_JUSTFRAME,0,0,0);
     ACS_ExecuteAlways(SINO_DOUBLEJUMP,0,0,0);
 }
 
@@ -171,6 +172,8 @@ script SINO_UNLOADING unloading
     TakeInventory("GrabbingTheWall",1);
     TakeInventory("Grappling",1);
     TakeInventory("SynthFire",1);
+    TakeInventory("JustFrame",1);
+    TakeInventory("JustFrameAcquired",1);
     TakeInventory("GrenadePunchHitWall",1);
     TakeInventory("GrenadePunchHit",1);
     TakeInventory("TriumphSwung",1);
