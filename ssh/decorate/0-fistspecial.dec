@@ -151,6 +151,26 @@ ACTOR LariatExplosion
     }
 }
 
+ACTOR LariatExplosionJF
+{
+    Radius 1
+    Height 1
+    Speed 0
+    +NOCLIP
+    +FORCERADIUSDMG
+    -SOLID
+    +SPECTRAL
+    DamageType "ShihongSpinAttack"
+    Obituary "%k kicked %o's lights out."
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_Explode(256,448,0)
+        Stop
+    }
+}
+
 actor DashUppercutExplosion
 {
     Radius 1
@@ -170,6 +190,29 @@ actor DashUppercutExplosion
       Spawn:
 		TNT1 A 1
         TNT1 A 1 A_Explode(448,196,0)
+        stop
+    }
+}
+
+actor DashUppercutExplosionJF
+{
+    Radius 1
+    Height 1
+    Speed 0
+	+FORCERADIUSDMG
+    +NOTELEPORT
+    +NOCLIP
+    +NODAMAGETHRUST
+    +PIERCEARMOR
+    +DONTREFLECT
+    -SOLID
+    Obituary "%k sent %o's skull to the heavens."
+	DamageType "LittleMacUppercut"
+    States
+    {
+      Spawn:
+		TNT1 A 1
+        TNT1 A 1 A_Explode(640,256,0)
         stop
     }
 }
