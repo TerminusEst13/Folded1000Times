@@ -60,7 +60,10 @@ OptionMenu "Changes-TurnThePage"
     Option "No Combo penalty when damaged",  "dst_nodamagepenalty", "OnOff"
     Option "Run speed modifier",             "dst_runmod", "RunModOptions"
     StaticText      ""
+    StaticText      "Figure These Out Yourself"
     Option "OH FUCK, SKELETONS!",            "dst_2brutal", "OnOff"
+    Option "FOR THE SWARM",                  "dst_enemymultiplier", "MultiplierOptions"
+    Option "Fake Difficulty",                "dst_multiplierplayerhealth", "MultiplierHealthOptions"
 }
 
 OptionValue ToasterOptions
@@ -105,6 +108,27 @@ OptionValue RunModOptions
     2000, "FUCK"
     5000, "AAAAAAAAAAA"
     10000, "JESUS TAKE THE WHEEL"
+}
+
+OptionValue MultiplierOptions
+{
+    1, "2x"
+    2, "3x"
+    3, "5x"
+    4, "10x"
+    5, "20x"
+    6, "50x"
+    7, "100x"
+}
+
+OptionValue MultiplierHealthOptions
+{
+    0, "Return to Serenity"
+    1, "Never Say Die"
+    2, "Take No Prisoners"
+    3, "Facing Hell"
+    4, "Killing Machine"
+    5, "Angel of Death"
 }
 
 

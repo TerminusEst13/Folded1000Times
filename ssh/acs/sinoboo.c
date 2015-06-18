@@ -145,11 +145,11 @@ script SINO_RESPAWN respawn
     // Death forcefully takes away all the player's remaining tokens (if killed
     // via divine intervention or freak accident or whatever), so respawning
     // hands over a fresh batch of tokens.
-    if (GameSkill () == 0) { GiveInventory("ContraLifeToken",10); }
-    if (GameSkill () == 1) { GiveInventory("ContraLifeToken",8);  }
-    if (GameSkill () == 2) { GiveInventory("ContraLifeToken",6); }
-    if (GameSkill () == 3) { GiveInventory("ContraLifeToken",4); }
-    if (GameSkill () == 4) { GiveInventory("ContraLifeToken",2); }
+    if (GameSkill () == 0 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 0)) { GiveInventory("ContraLifeToken",10); }
+    if (GameSkill () == 1 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 1)) { GiveInventory("ContraLifeToken",8);  }
+    if (GameSkill () == 2 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 2)) { GiveInventory("ContraLifeToken",6); }
+    if (GameSkill () == 3 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 4)) { GiveInventory("ContraLifeToken",4); }
+    if (GameSkill () == 4 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 5)) { GiveInventory("ContraLifeToken",2); }
     // Takes away a million points on respawn.
     // If you have at least ten million points, take ten million.
     // If you have a hundred million points, take a hundred million.

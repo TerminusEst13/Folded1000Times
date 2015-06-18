@@ -22,6 +22,7 @@ CONFIRM_NORMAL      = "You have six life tokens.\nPray for vast courage.\n\nPres
 CONFIRM_HARD        = "You have four life tokens.\nPray for iron will.\n\nPress Y to continue.";
 CONFIRM_NIGHTMARE   = "You have two life tokens.\nPray for a quick death.\n\nPress Y to continue.";
 CONFIRM_OHGODHELPME = "Your prayers are in vain.\n\nPress Y to continue.";
+CONFIRM_WATAERIC    = "Abandon all hope, ye who enter here.";
 
 STSTR_DQDON    = "Mrs. God, are you there? Laughing at us is not fair."; // Helloween - Mrs. God
 STSTR_DQDOFF   = "There's no bastard left to overcome."; // Rob Halford - Resurrection

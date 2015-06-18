@@ -214,6 +214,7 @@ const int WEEB_DEC_GUNSOULS      = 26;
 const int WEEB_DEC_LEGSPECIAL    = 27;
 const int WEEB_DEC_DOOMHEALTH    = 28;
 const int WEEB_DEC_ONLINECHECK2  = 29;
+const int WEEB_DEC_MULTIPLIER    = 30;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
@@ -263,6 +264,7 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/enemies/soulpain.dec"
 #include "decorate/enemies/misc.dec"
 #include "decorate/enemies/stealth.dec"
+#include "decorate/enemies/wataeric.dec"
 
 #include "decorate/skulltag.dec"
 #include "decorate/pickups2.dec"

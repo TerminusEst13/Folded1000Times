@@ -44,7 +44,6 @@ skill normal
 	Name = "Take No Prisoners" // Megadeth
 	MustConfirm = "$CONFIRM_NORMAL"
     TextColor = white
-	//DefaultSkill
 }
 
 skill hard
@@ -77,4 +76,35 @@ skill ohgodhelpme
 	MustConfirm = "$CONFIRM_OHGODHELPME"
     TextColor = white
 	Aggressiveness = 0.95
+}
+
+skill WataEric // let's see both of you nerds try and take this on
+{
+	ACSReturn = 6
+	FastMonsters
+	DisableCheats
+	SpawnFilter = Nightmare
+	Name = "    "
+	MustConfirm = "$CONFIRM_WATAERIC"
+    TextColor = white
+	Aggressiveness = 1.0
+    MonsterHealth = 1.25
+    ReplaceActor = "Zombieman", "WeebZombieSpawner"
+    ReplaceActor = "DoomImp", "WeebImpSpawner"
+    ReplaceActor = "Demon", "WeebDemonSpawner"
+    ReplaceActor = "ShotgunGuy", "WeebShotguySpawner"
+    ReplaceActor = "ChaingunGuy", "WeebChainguySpawner"
+    ReplaceActor = "LostSoul", "WeebLostSpawner"
+    ReplaceActor = "Cacodemon", "WeebCacoSpawner"
+    ReplaceActor = "HellKnight", "WeebKnightSpawner"
+    ReplaceActor = "BaronOfHell", "WeebBaronSpawner"
+    ReplaceActor = "PainElemental", "WeebPainSpawner"
+    ReplaceActor = "Revenant", "WeebRevSpawner"
+    ReplaceActor = "Fatso", "WeebFatSpawner"
+    ReplaceActor = "Spectre", "WeebSpectreSpawner"
+    ReplaceActor = "Arachnotron", "WeebArachnoSpawner"
+    ReplaceActor = "WolfensteinSS", "WeebNaziSpawner"
+    ReplaceActor = "Archvile", "WeebArchvileSpawner"
+    ReplaceActor = "Cyberdemon", "WeebCyberSpawner"
+    ReplaceActor = "SpiderMastermind", "WeebSpiderSpawner"
 }
