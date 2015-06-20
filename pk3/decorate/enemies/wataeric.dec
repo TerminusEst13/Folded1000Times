@@ -1030,7 +1030,7 @@ actor Yakuza2 : Yakuza
 +THRUSPECIES
 }
 
-actor WeebArchvileSpawner : Archvile replaces Archvile
+actor WeebArchvileSpawner : Archvile
 {
 - SOLID
 Height 0
