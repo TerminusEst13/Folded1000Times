@@ -69,6 +69,7 @@ actor WeeabooSoul : LostSoul replaces LostSoul
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
         goto Super::Pain
     Pain.Taser:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         SKUL E 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         SKUL E 2
         SKUL E 2 BRIGHT
@@ -93,6 +94,7 @@ actor WeeabooSoul : LostSoul replaces LostSoul
         SKUL E 2
         SKUL E 2 BRIGHT
         SKUL E 2
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
     Death.HaltHammerzeitImpact:
     Death.HaltHammerzeit:

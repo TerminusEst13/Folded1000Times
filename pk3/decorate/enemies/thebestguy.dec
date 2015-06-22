@@ -131,6 +131,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
         SKEL L 5 A_Pain
         Goto See
     Pain.Taser:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         SKEL L 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         SKEL L 2
         SKEL L 2 BRIGHT
@@ -155,6 +156,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
         SKEL L 2
         SKEL L 2 BRIGHT
         SKEL L 2
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
 
     Death.KubiRangeAttackSheathe:

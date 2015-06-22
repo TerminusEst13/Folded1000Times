@@ -171,6 +171,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS J 3 A_Pain
         Goto EnemyHang2
     Pain.Taser:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH A 2
         LDTH A 2 BRIGHT
@@ -195,6 +196,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         LDTH A 2
         LDTH A 2 BRIGHT
         LDTH A 2
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
 
 
@@ -842,6 +844,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         Goto EnemyHang2
 
     Pain.Taser:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH A 2
         LDTH A 2 BRIGHT
@@ -866,6 +869,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         LDTH A 2
         LDTH A 2 BRIGHT
         LDTH A 2
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
 
 
@@ -1502,6 +1506,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         goto Super::Pain
 
     Pain.Taser:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH A 2
         LDTH A 2 BRIGHT
@@ -1526,6 +1531,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         LDTH A 2
         LDTH A 2 BRIGHT
         LDTH A 2
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
 
 
@@ -1969,6 +1975,7 @@ ACTOR Yakuza replaces WolfensteinSS
         Goto EnemyHang2
 
     Pain.Taser:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH B 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH B 2
         LDTH B 2 BRIGHT
@@ -1993,6 +2000,7 @@ ACTOR Yakuza replaces WolfensteinSS
         LDTH B 2
         LDTH B 2 BRIGHT
         LDTH B 2
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
 
 

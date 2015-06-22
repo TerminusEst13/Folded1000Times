@@ -139,6 +139,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         Goto EnemyHang2
 
     Pain.Taser:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH A 2
         LDTH A 2 BRIGHT
@@ -163,6 +164,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         LDTH A 2
         LDTH A 2 BRIGHT
         LDTH A 2
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
 
 
