@@ -1,6 +1,36 @@
 // A bunch of functions that I've built up
 // They come in handy :>
 
+// ijon: my coding legacy
+// ijon: a bunch of bullshit functions
+// TerminusEst13: and "hey i can use this, right"
+// ijon: man, now I wish I could've slipped this into the license for my stuff
+//
+//       ROCKET LAUNCHER-BASED FREE SOFTWARE PUBLIC LICENSE 
+//                    Version 1, June 2015
+//
+// Copyright (C) 2015 Ijon Tichy
+//
+// Everyone is permitted to copy and distribute verbatim or modified 
+// copies of this license document, and changing it is allowed as long 
+// as the name is changed. 
+//
+//         ROCKET LAUNCHER-BASED FREE SOFTWARE PUBLIC LICENSE
+//   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+//
+//  0. If you use this, you must include a rocket launcher somewhere in the
+//     project you use it in.
+//
+// TerminusEst13: FUCK
+// TerminusEst13: um
+// TerminusEst13: do grenades count?
+// ijon: only if it's from aow
+// TerminusEst13: F
+// TerminusEst13: U
+// TerminusEst13: C
+// TerminusEst13: K
+// ijon: ur goin to cort
+
 #define PLAYERMAX 64
 #define TEAMCOUNT 8
 #define DEFAULTTID_SCRIPT 471
