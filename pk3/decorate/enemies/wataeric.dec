@@ -68,6 +68,7 @@ actor WeeabooZombie2 : WeeabooZombie
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebImpSpawner : DoomImp
@@ -137,6 +138,7 @@ actor WeeabooImp2 : WeeabooImp
 +DROPOFF
 +NOBLOCKMONST
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebDemonSpawner : Demon
@@ -205,6 +207,7 @@ actor WeeabooDemon2 : WeeabooDemon
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebShotguySpawner : ShotgunGuy
@@ -275,6 +278,7 @@ actor WeeabooShotgunner2 : WeeabooShotgunner
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebChainguySpawner : ChaingunGuy
@@ -341,6 +345,7 @@ actor WeeabooChaingunner2 : WeeabooChaingunner
 - MISSILE
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebLostSpawner : LostSoul
@@ -409,6 +414,7 @@ actor WeeabooSoul2 : WeeabooSoul
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebCacoSpawner : Cacodemon
@@ -478,6 +484,7 @@ actor WeeabooWizard2 : WeeabooWizard
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebKnightSpawner : HellKnight
@@ -547,6 +554,7 @@ actor WeeabooHellKnight2 : WeeabooHellKnight
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebBaronSpawner : BaronOfHell
@@ -617,6 +625,7 @@ actor WeeabooBaronOfHell2 : WeeabooBaronOfHell
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebPainSpawner : PainElemental
@@ -685,6 +694,7 @@ actor Blackened2 : Blackened
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebRevSpawner : Revenant
@@ -753,7 +763,7 @@ actor WeeabooRevenant2 : WeeabooRevenant
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
-
++NOBLOODDECALS
 }
 
 actor WeebFatSpawner : Fatso
@@ -823,6 +833,7 @@ actor WeeabooFatty2 : WeeabooFatty
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebSpectreSpawner : Spectre
@@ -891,6 +902,7 @@ actor WeeabooClink2 : WeeabooClink
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebArachnoSpawner : Arachnotron
@@ -955,11 +967,11 @@ actor Priest2 : Priest
 //+NOBLOCKMAP
 - SOLID
 - MISSILE
-
 +DROPOFF
 +NOBLOCKMONST
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebNaziSpawner : WolfensteinSS
@@ -1028,6 +1040,7 @@ actor Yakuza2 : Yakuza
 - MISSILE
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebArchvileSpawner : Archvile
@@ -1096,6 +1109,7 @@ actor WeeabooArchvile2 : WeeabooArchvile
 - MISSILE
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebCyberSpawner : Cyberdemon
@@ -1167,6 +1181,7 @@ actor DevilDriver2 : DevilDriver
 radius 31
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
 
 actor WeebSpiderSpawner : SpiderMastermind
@@ -1238,4 +1253,5 @@ actor Emperor2 : Emperor
 radius 31
 +NOINFIGHTING
 +THRUSPECIES
++NOBLOODDECALS
 }
