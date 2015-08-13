@@ -65,7 +65,7 @@ actor PowerupPickup2 : CustomInventory replaces Berserk
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2")
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3")
         TNT1 A 1
         loop
     Spawn1:
@@ -75,6 +75,10 @@ actor PowerupPickup2 : CustomInventory replaces Berserk
     Spawn2:
         DORI B 1 BRIGHT
         DORI B 30
+        loop
+    Spawn3:
+        DORI C 1 BRIGHT
+        DORI C 30
         loop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1,"DoomPickup")
