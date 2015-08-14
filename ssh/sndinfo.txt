@@ -154,6 +154,8 @@ special/unload         SPCLUNLD // Taken from Killing Floor
 special/load           SPCLRELD // Taken from Killing Floor
 
 // Special moves
+specialpunch/uppercut  SSHSWNSP
+specialpunch/spinkick  SSHKIKSP
 specialpunch/hit       SSHPNCSP
 combo/ready            CHCMBCLK // Taken from Smash Bros. Melee
 stealth/engage         STELTHMD // Taken from Kamen Rider Kabuto
