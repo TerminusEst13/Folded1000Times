@@ -40,6 +40,7 @@ shihong/walljump       SSHWJMP
 shihong/walljumpup     SSHWJMU
 shihong/wallgrab       SSHWGRB
 shihong/thruster       SSHTHRST // Taken from Darkstalkers 3
+shihong/justframe      JUSTFRAM // Taken from Street Fighter X Tekken
 
 $random shihong/healthwarning { lohealf1 lohealf2 lohealf3 lohealf4 lohealf5 lohealf6 } // Taken from the General Series 6000
 lohealf1               LOHEALF1
@@ -52,12 +53,14 @@ lohealf6               LOHEALF6
 health/doritos         DEWITNAO // Taira Komori's chips eating with Woodylein's bag crumpling and Kamen Rider OOO's scanning sound, all (but the latter) off Freesound
 health/pizza           PIZATIME // Squashy55's toasted ham sandwich with beatmad's sizzling frying pan and keweldog's apple eating, all off Freesound
 
-styleswap/open         STYSWAP1 // Taken from Kamen Rider Fourze
-styleswap/insert       STYSWAP2 // Taken from Kamen Rider Den-O
-styleswap/transform    STYSWAP3 // Taken from Kamen Rider Ryuki
-styleswap/melee        SWAPMELE // Taken from Kamen Rider Fourze
-styleswap/ranged       SWAPRANG // Taken from Kamen Rider Gaim
-styleswap/trickster    SWAPTRCK // Taken from Kamen Rider Drive
+styleswap/open         STYSWAP1 // Taken from Kamen Rider W
+styleswap/rev          STYSWAP8 // Taken from Kamen Rider Faiz
+styleswap/insert       STYSWAP2 // Taken from Kamen Rider Gaim
+styleswap/transform    STYSWAP3 // Taken from Kamen Rider Decade
+styleswap/elec         STYSWAP9 // Taken from Kamen Rider Fourze
+styleswap/melee        SWAPMELE // Taken from Kamen Rider Ryuki
+styleswap/ranged       SWAPRANG // Taken from Kamen Rider Kabuto
+styleswap/trickster    SWAPTRCK // Taken from Kamen Rider OOO
 styleswap/prepme       STYSWAP4 // Taken from Kamen Rider Agito
 styleswap/prepra       STYSWAP5 // Taken from Kamen Rider Agito
 styleswap/preptr       STYSWAP6 // Taken from Kamen Rider Agito

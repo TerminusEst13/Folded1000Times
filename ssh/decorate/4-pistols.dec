@@ -51,12 +51,31 @@ actor 04Scorpions : Fists
         TNT1 A 0 A_GiveInventory("StyleSwapping",1)
         W2PD LMNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 1
+        TNT1 A 0 A_PlayWeaponSound("idle/swing")
+        STYL ABBCCC 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL D 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlayWeaponSound("idle/swing")
+        STYL EEFGG 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL G 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("styleswap/open","soundslot5",0,0)
-        TNT1 A 30
+        STYL HHHIIIIII 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlayWeaponSound("styleswap/rev")
+        STYL JJKLMMMM 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL NNOOOPPP 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL P 4 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlayWeaponSound("idle/swing")
+        STYL QRS 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("styleswap/insert","soundslot6",0,0)
-        TNT1 A 25
+        STYL S 4 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL T 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL UVWXY 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlayWeaponSound("styleswap/elec")
+        STYL Z 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL [ 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        STYL ] 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("styleswap/transform","soundslot5",0,0)
-        TNT1 A 0 A_SetBlend("white",1.0,105)
+        TNT1 A 0 A_SetBlend("white",1.0,70)
+        STYL ] 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH) // Just in case the SetBlend comes a tic or two too late.
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwapHaggarFinish")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwapRangedFinish")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwapTricksterFinish")
@@ -64,6 +83,7 @@ actor 04Scorpions : Fists
         TNT1 A 0 A_TakeInventory("SwapToHaggarMode",1)
         TNT1 A 0 A_TakeInventory("SwapToRangedMode",1)
         TNT1 A 0 A_TakeInventory("SwapToTricksterMode",1)
+        TNT1 A 0 A_TakeInventory("StyleSwapping",1)
         goto Ready
     StyleSwapHaggarFinish:
         TNT1 A 0 ACS_ExecuteAlways(362,0,2,0,0)
