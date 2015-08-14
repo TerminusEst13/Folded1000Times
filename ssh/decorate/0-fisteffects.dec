@@ -94,6 +94,54 @@ ACTOR ShihongDashKickHit
     }
 }
 
+ACTOR ShihongLightPunchHit2
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.6
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        H2TL ABCDEF 2 Bright
+        Stop
+    }
+}
+
+ACTOR ShihongJumpKickHit2
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.7
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        H2TM ABCDEF 2 Bright
+        Stop
+    }
+}
+
+ACTOR ShihongDashKickHit2
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.75
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        H2TH ABCDEF 2 Bright
+        Stop
+    }
+}
+
 actor PunchWorldQuake
 {
     +NOINTERACTION
