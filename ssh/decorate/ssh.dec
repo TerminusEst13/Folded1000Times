@@ -133,6 +133,7 @@ ACTOR MeleePlayer2 : PlayerPawn
         TNT1 A 0
         TNT1 A 0 A_TakeInventory("EnviroDamageCooldown",75)
         TNT1 A 0 A_TakeInventory("EnviroDamageCount",3)
+        TNT1 A 0 A_TakeInventory("PunchComboCounter",10)
         TNT1 A 0 ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DAMAGE,0,0)
         TNT1 A 0 A_JumpIfInventory("ContraArmorToken",1,"PainArmored")
         TNT1 A 0 A_SetBlend("Red",1.0,15)

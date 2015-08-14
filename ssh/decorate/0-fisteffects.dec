@@ -1,0 +1,143 @@
+ACTOR ShihongMartialMiss1
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.6
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        BLKN ABCDE 2 Bright
+        stop
+    }
+}
+
+ACTOR ShihongMartialMiss2
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.7
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        BLKN ABCDE 2 Bright
+        stop
+    }
+}
+
+ACTOR ShihongMartialMiss3
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.75
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        BLKN ABCDE 2 Bright
+        stop
+    }
+}
+
+ACTOR ShihongLightPunchHit
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.6
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        HITL ABCDEF 2 Bright
+        Stop
+    }
+}
+
+ACTOR ShihongJumpKickHit
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.7
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        HITM ABCDEF 2 Bright
+        Stop
+    }
+}
+
+ACTOR ShihongDashKickHit
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    RenderStyle Add
+    Scale 0.75
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        HITH ABCDEF 2 Bright
+        Stop
+    }
+}
+
+actor PunchWorldQuake
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    -SOLID
+    +NOCLIP
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 Radius_Quake(1,3,0,16,0)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor PunchWorldQuake2
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    -SOLID
+    +NOCLIP
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 Radius_Quake(2,5,0,16,0)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor PunchWorldQuake3
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    -SOLID
+    +NOCLIP
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 Radius_Quake(3,6,0,16,0)
+        TNT1 A 1
+        stop
+    }
+}

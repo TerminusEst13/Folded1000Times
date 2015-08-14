@@ -1,0 +1,65 @@
+ACTOR PowerAttackStop : PowerSpeed
+{
+    Powerup.Duration 18
+    Speed 0.0
+}
+
+ACTOR ComboDamage1 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage2 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage3 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage4 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage5 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage6 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage7 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage8 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage9 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}
+
+ACTOR ComboDamage10 : PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "ShihongDamageSpecial", 1.1
+}

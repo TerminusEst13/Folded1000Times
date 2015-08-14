@@ -39,6 +39,7 @@ ACTOR Emperor replaces SpiderMastermind
     DeathSound "emperor/death" 
     ActiveSound "emperor/idle"
     PainChance "kubiutiCleave", 64
+    PainChance "ShihongPunchSpecial", 64
     PainChance "KharonSheathe", 128
     PainChance "IronFistDamage", 255
     PainChance "IronFistOverkill", 255

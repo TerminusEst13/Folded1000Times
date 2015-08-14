@@ -1,0 +1,16 @@
+#define DEBUG        0
+#define BASEOFFSET   653
+#define PLNOFFSET    845
+#define PROJOFFSET   745
+#define TIDSTART     2000
+
+
+#define GRAPPLE_OPEN         (BASEOFFSET - 3)
+#define GRAPPLE_ENTER        (BASEOFFSET - 2)
+#define GRAPPLE_RESPAWN      (BASEOFFSET - 1)
+
+#define GRAPPLE_HOOK         (BASEOFFSET + 1)
+#define GRAPPLE_REEL         (BASEOFFSET + 2)
+#define GRAPPLE_DRAWLINE     (BASEOFFSET + 3)
+#define GRAPPLE_GETUNUSEDTID (BASEOFFSET + 4)
+#define GETFIRERPLN          (BASEOFFSET + 6)

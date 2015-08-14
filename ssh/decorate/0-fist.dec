@@ -514,7 +514,7 @@ actor PunchAttack1 : FastProjectile
 {
     Radius 6
     Height 6
-    Damage (50)
+    Damage (45)
     Speed 96
     RenderStyle Add
     Alpha 0.6
@@ -538,11 +538,9 @@ actor PunchAttack1 : FastProjectile
     Crash:
         TNT1 A 1
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",4)
         TNT1 A 0 A_PlaySound("punchy/wall1")
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
-        TNT1 AA 0 A_SpawnItemEx("IronMaidenImpactSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
-        TNT1 AA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/150.00,random(-150,150)/150.00,random(-150,150)/150.00,0,160)
+        TNT1 A 0 A_SpawnItemEx("ShihongMartialMiss1",0,0,0,0,0,0,0,32)
         FHFX SS 1
         FHFX TU 2
         FHFX VW 3
@@ -555,6 +553,7 @@ actor PunchAttack1 : FastProjectile
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
         TNT1 A 0 A_PlaySound("punchy/hit1")
+        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
         FHFX SS 1  
         FHFX TU 2
@@ -563,74 +562,19 @@ actor PunchAttack1 : FastProjectile
     }
 }
 
-actor PunchAttack2 : PunchAttack1
-{
-    States
-    {
-    XDeath:
-        TNT1 A 1
-        TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("PunchComboCounter",2)
-        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",1)
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
-        TNT1 A 0 A_PlaySound("punchy/hit1")
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
-        FHFX SS 1  
-        FHFX TU 2
-        FHFX VW 3
-        stop
-   }
-}
-
-actor PunchAttack3 : PunchAttack1
-{
-    Damage (70)
-    States
-    {
-    Death:
-    Crash:
-        TNT1 A 1
-        TNT1 A 0 A_Stop
-        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",4)
-        TNT1 A 0 A_PlaySound("punchy/wall2")
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
-        TNT1 AA 0 A_SpawnItemEx("IronMaidenImpactSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
-        TNT1 AA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/150.00,random(-150,150)/150.00,random(-150,150)/150.00,0,160)
-        FHFX SS 1
-        FHFX TU 2
-        FHFX VW 3
-        stop
-    XDeath:
-        TNT1 A 1
-        TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("PunchComboCounter",3)
-        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",1)
-        TNT1 A 0 A_GiveToTarget("MidCombat",75)
-        TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
-        TNT1 A 0 A_PlaySound("punchy/hit2")
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
-        FHFX SS 1  
-        FHFX TU 2
-        FHFX VW 3
-        stop
-   }
-}
-
-actor PunchAttack4 : PunchAttack1
+actor JumpKickAttack : PunchAttack1
 {
     Damage (90)
+    DamageType "ShihongPunchSpecial"
     States
     {
     Death:
     Crash:
         TNT1 A 1
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",4)
         TNT1 A 0 A_PlaySound("punchy/wall3")
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
-        TNT1 AA 0 A_SpawnItemEx("IronMaidenImpactSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
-        TNT1 AA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/150.00,random(-150,150)/150.00,random(-150,150)/150.00,0,160)
+        TNT1 A 0 A_SpawnItemEx("ShihongMartialMiss2",0,0,0,0,0,0,0,32)
         FHFX SS 1
         FHFX TU 2
         FHFX VW 3
@@ -638,12 +582,13 @@ actor PunchAttack4 : PunchAttack1
     XDeath:
         TNT1 A 1
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("PunchComboCounter",4)
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
         TNT1 A 0 A_GiveToTarget("KharonSlashPoints",1)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",4)
         TNT1 A 0 A_PlaySound("punchy/hit3")
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongJumpKickHit",0,0,0,0,0,0,0,32)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -651,20 +596,19 @@ actor PunchAttack4 : PunchAttack1
    }
 }
 
-actor PunchAttack5 : PunchAttack1
+actor DashKickAttack : PunchAttack1
 {
     Damage (150)
+    DamageType "ShihongPunchSpecial"
     States
     {
     Death:
     Crash:
         TNT1 A 1
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",4)
         TNT1 A 0 A_PlaySound("punchy/wall4")
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
-        TNT1 AA 0 A_SpawnItemEx("IronMaidenImpactSmoke",0,0,0,random(-150,150)/100.00,random(-150,150)/100.00,random(-150,150)/100.00,0,160)
-        TNT1 AA 0 A_SpawnItemEx("HammerSmoke",0,0,0,random(-150,150)/150.00,random(-150,150)/150.00,random(-150,150)/150.00,0,160)
+        TNT1 A 0 A_SpawnItemEx("ShihongMartialMiss3",0,0,0,0,0,0,0,32)
         FHFX SS 1
         FHFX TU 2
         FHFX VW 3
@@ -672,63 +616,15 @@ actor PunchAttack5 : PunchAttack1
     XDeath:
         TNT1 A 1
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",4)
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
         TNT1 A 0 A_GiveToTarget("KharonSlashPoints",5)
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",6)
         TNT1 A 0 A_PlaySound("punchy/hit4")
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
-        stop
-    }
-}
-
-actor PunchWorldQuake
-{
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    -SOLID
-    +NOCLIP
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 Radius_Quake(1,3,0,16,0)
-        TNT1 A 1
-        stop
-    }
-}
-
-actor PunchWorldQuake2
-{
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    -SOLID
-    +NOCLIP
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 Radius_Quake(2,5,0,16,0)
-        TNT1 A 1
-        stop
-    }
-}
-
-actor PunchWorldQuake3
-{
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    -SOLID
-    +NOCLIP
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 Radius_Quake(3,6,0,16,0)
-        TNT1 A 1
         stop
     }
 }

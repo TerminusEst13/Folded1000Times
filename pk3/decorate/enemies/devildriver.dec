@@ -29,6 +29,7 @@ ACTOR DevilDriver replaces Cyberdemon
     YScale 0.9                       
     Species "DevilDriver"
     PainChance "kubiutiCleave", 64
+    PainChance "ShihongPunchSpecial", 64
     PainChance "KharonSheathe", 128
     PainChance "IronFistDamage", 255
     PainChance "IronFistOverkill", 255

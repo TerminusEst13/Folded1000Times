@@ -7,6 +7,7 @@ actor WeeabooRevenant : Revenant replaces Revenant
     Species "Body"
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255

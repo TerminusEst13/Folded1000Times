@@ -20,7 +20,7 @@ actor JustFrame : Boolean {}
 actor JustFrameAcquired : Boolean {}
 
 actor JetpackFuel : Counter { Inventory.MaxAmount 120 }
-actor PunchComboCounter : Counter { Inventory.MaxAmount 4 }
+actor PunchComboCounter : Counter { Inventory.MaxAmount 10 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
 actor InTheAir : Counter { Inventory.MaxAmount 10 }
 actor SwapCooldown : Counter { Inventory.MaxAmount 210 }
@@ -155,9 +155,11 @@ actor PowerupPickup2 : CustomInventory replaces Berserk
 
 #include "decorate/ssh.dec"
 #include "decorate/sshbullets.dec"
+#include "decorate/sshpowerups.dec"
 #include "decorate/mobility.dec"
 #include "decorate/0-fist.dec"
 #include "decorate/0-fistspecial.dec"
+#include "decorate/0-fisteffects.dec"
 #include "decorate/1-sword.dec"
 #include "decorate/2-revolver.dec"
 #include "decorate/3-shotty.dec"

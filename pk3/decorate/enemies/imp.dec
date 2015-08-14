@@ -7,6 +7,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     Species "Body"
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -34,6 +35,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     DamageFactor "ShihongSpinAttack", 2.25
     DamageFactor "AcaciaDamage", 1.65
     DamageFactor "KharonSheathe", 1.25
+    DamageFactor "ShihongPunchSpecial", 1.25
     DamageFactor "ChemiKill", 1.65
     DamageFactor "HaltHammerzeitImpact", 1.65
     DamageFactor "TestamentDamage", 1.65

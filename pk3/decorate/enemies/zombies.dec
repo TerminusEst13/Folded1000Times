@@ -7,6 +7,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Species "Body"
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -33,6 +34,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "AcaciaDamage", 3.0
     DamageFactor "ChemiKill", 5.0
     DamageFactor "KharonSheathe", 1.5
+    DamageFactor "ShihongPunchSpecial", 1.5
     DamageFactor "HaltHammerzeitImpact", 5.0
     DamageFactor "TestamentDamage", 5.0
     DamageFactor "SabbathDamage", 5.0
@@ -718,6 +720,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Species "Body"
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -744,6 +747,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "AcaciaDamage", 3.0
     DamageFactor "ChemiKill", 3.3
     DamageFactor "KharonSheathe", 1.5
+    DamageFactor "ShihongPunchSpecial", 1.5
     DamageFactor "HaltHammerzeitImpact", 3.3
     DamageFactor "TestamentDamage", 3.3
     DamageFactor "SabbathDamage", 3.3
@@ -1389,6 +1393,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Species "Body"
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -1415,6 +1420,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "AcaciaDamage", 1.5
     DamageFactor "ChemiKill", 1.5
     DamageFactor "KharonSheathe", 1.25
+    DamageFactor "ShihongPunchSpecial", 1.25
     DamageFactor "HaltHammerzeitImpact", 1.5
     DamageFactor "TestamentDamage", 1.5
     DamageFactor "SabbathDamage", 1.5
@@ -1860,6 +1866,7 @@ ACTOR Yakuza replaces WolfensteinSS
     DeathSound "yakuza/die"
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
     PainChance "KharonHookshot", 255
@@ -1884,6 +1891,7 @@ ACTOR Yakuza replaces WolfensteinSS
     DamageFactor "KubiRangeAttack", 2.0
     DamageFactor "LittleMacUppercut", 2.0
     DamageFactor "ShihongSpinAttack", 2.0
+    DamageFactor "ShihongPunchSpecial", 1.5
     Obituary "%o was assassinated by the Yakuza."
     DropItem "WeebClip", 128
     DropItem "WeebCell", 32

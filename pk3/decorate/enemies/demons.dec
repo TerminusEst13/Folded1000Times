@@ -5,6 +5,7 @@ ACTOR WeeabooDemon : Demon replaces Demon
     Species "Body"
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "KharonSheathe", 255
     PainChance "kubiuti", 255
     PainChance "kubiutiCleave", 255
@@ -538,6 +539,7 @@ ACTOR WeeabooClink replaces Spectre
     PainChance 64
     PainChance "Triumph", 255
     PainChance "ShihongPunch", 255
+    PainChance "ShihongPunchSpecial", 255
     PainChance "KharonSheathe", 255
     PainChance "KubiutiUpper", 255
     PainChance "IronFistUpper", 255
