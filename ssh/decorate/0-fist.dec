@@ -560,7 +560,15 @@ actor PunchAttack1 : FastProjectile
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
         TNT1 A 0 A_PlaySound("punchy/hit1")
-        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
+        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeathPower:
+        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit2",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
         FHFX SS 1  
         FHFX TU 2
@@ -594,8 +602,16 @@ actor JumpKickAttack : PunchAttack1
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",4)
         TNT1 A 0 A_PlaySound("punchy/hit3")
+        TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
+        TNT1 A 0 A_SpawnItemEx("ShihongJumpKickHit2",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeathPower:
         TNT1 A 0 A_SpawnItemEx("ShihongJumpKickHit",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -628,7 +644,16 @@ actor DashKickAttack : PunchAttack1
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",6)
         TNT1 A 0 A_PlaySound("punchy/hit4")
+        TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
+        TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeathPower:
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3

@@ -20,6 +20,7 @@ GRAPHICS:
  ^- Mega Man X
  ^- Mega Man & Bass
  ^- Armored Warriors
+- Hit sparks from Street Fighter Alpha 2
 
 CODE:
 ===========
