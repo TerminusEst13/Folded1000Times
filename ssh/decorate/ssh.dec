@@ -6,9 +6,11 @@ ACTOR MeleePlayer2 : PlayerPawn
     //Radius 12
     //Height 48
     Radius 14
-    Height 52
+    Height 56
     Mass 100
     PainChance 255
+    Player.ViewHeight 48
+    Player.AttackZOffset 16
     Speed 1
     //+NOSKIN
     -NORADIUSDMG
