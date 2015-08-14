@@ -568,7 +568,7 @@ actor PunchAttack1 : FastProjectile
         FHFX VW 3
         stop
     XDeathPower:
-        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
         FHFX SS 1  
         FHFX TU 2
