@@ -79,6 +79,19 @@ script SINO_ENTER ENTER
 
         TakeInventory("SwapCooldown",1);
 
+        // Punchcombo shit
+        if (CheckInventory("MidCombat") == 0) { TakeInventory("PunchComboCounter",1); }
+        if (CheckInventory("PunchComboCounter") == 1) { GiveInventory("ComboDamage1",1); } else { TakeInventory("ComboDamage1",1); }
+        if (CheckInventory("PunchComboCounter") == 2) { GiveInventory("ComboDamage2",1); } else { TakeInventory("ComboDamage2",1); }
+        if (CheckInventory("PunchComboCounter") == 3) { GiveInventory("ComboDamage3",1); } else { TakeInventory("ComboDamage3",1); }
+        if (CheckInventory("PunchComboCounter") == 4) { GiveInventory("ComboDamage4",1); } else { TakeInventory("ComboDamage4",1); }
+        if (CheckInventory("PunchComboCounter") == 5) { GiveInventory("ComboDamage5",1); } else { TakeInventory("ComboDamage5",1); }
+        if (CheckInventory("PunchComboCounter") == 6) { GiveInventory("ComboDamage6",1); } else { TakeInventory("ComboDamage6",1); }
+        if (CheckInventory("PunchComboCounter") == 7) { GiveInventory("ComboDamage7",1); } else { TakeInventory("ComboDamage7",1); }
+        if (CheckInventory("PunchComboCounter") == 8) { GiveInventory("ComboDamage8",1); } else { TakeInventory("ComboDamage8",1); }
+        if (CheckInventory("PunchComboCounter") == 9) { GiveInventory("ComboDamage9",1); } else { TakeInventory("ComboDamage9",1); }
+        if (CheckInventory("PunchComboCounter") == 10) { GiveInventory("ComboDamage10",1); } else { TakeInventory("ComboDamage10",1); }
+
         // Style swapping nonsense
         if (CheckInventory("HaggarModeOn") == 1) { GiveInventory("HaggarModeExtraDamage",1); }
         else { TakeInventory("HaggarModeExtraDamage",1); }
@@ -102,7 +115,7 @@ script SINO_ENTER ENTER
             GetSomeHealthAlready = 0;
         }
 
-    // Various ground and status checks for the kickjumping and idle animation.
+        // Various ground and status checks for the kickjumping and idle animation.
         xxx2 = xxx;
         yyy2 = yyy;
         xxx  = GetActorX(0);
@@ -150,7 +163,7 @@ script SINO_ENTER ENTER
 
         // The jet booster. Thrusts you across distances at great speeds, gives you ghost.
         // Only activates if run and a direction is pushed.
-        if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0 && buttons & (BT_FORWARD | BT_BACK | BT_MOVELEFT | BT_MOVERIGHT))
+        if (buttons & BT_SPEED && CheckInventory("JetpackFuel") > 0 && buttons & (BT_FORWARD | BT_BACK | BT_MOVELEFT | BT_MOVERIGHT) && CheckInventory("GrabbingTheWall") == 0)
         {
         // Checks for the player's pitch and checks how high they're looking up.
         // The further up they're looking, the slower the jet speed. Doom's

@@ -911,6 +911,10 @@ actor ThrownGrenade
     DamageFactor "RebellionDamage", 1.0
     DamageFactor "AvengerDamage", 1.0
     DamageFactor "EnforcerDamage", 1.0 
+    DamageFactor "StrikerDamageStyle", 1.0
+    DamageFactor "RebellionDamageStyle", 1.0
+    DamageFactor "AvengerDamageStyle", 1.0
+    DamageFactor "EnforcerDamageStyle", 1.0 
     States
     {
     Spawn:
