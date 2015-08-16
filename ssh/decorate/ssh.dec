@@ -176,7 +176,7 @@ actor HaggarModeActivate : CustomInventory
     Inventory.Amount 1
     Inventory.MaxAmount 1
     Inventory.Icon "STYLMELE"
-    Tag "Change: Fighter"
+    Tag "Change: Strength of Aeons" // Dominion III
     States
     {
     Use:
@@ -205,7 +205,8 @@ actor RangedModeActivate : CustomInventory
     Inventory.Amount 1
     Inventory.MaxAmount 1
     Inventory.Icon "STYLRANG"
-    Tag "Change: Trigger"
+    Tag "Change: Guns of War" // Ministers of Anger
+                              // Man, talk about an obscure reference. Wasn't even that good a song.
     States
     {
     Use:
@@ -234,7 +235,7 @@ actor TricksterModeActivate : CustomInventory
     Inventory.Amount 1
     Inventory.MaxAmount 1
     Inventory.Icon "STYLTRCK"
-    Tag "Change: Dodger"
+    Tag "Change: Speed of Life" // David Bowie
     States
     {
     Use:
