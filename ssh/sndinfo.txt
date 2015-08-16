@@ -160,6 +160,11 @@ specialpunch/hit       SSHPNCSP
 combo/ready            CHCMBCLK // Taken from Smash Bros. Melee
 stealth/engage         STELTHMD // Taken from Kamen Rider Kabuto
 supermissile/fire      SMISFIRE
+gigaton/charge         GGTPCHRG // Taken from Mechwarrior Online
+gigaton/fire           GGTPFIRE // Taken from Mechwarrior Online
+gigaton/swing          GGTPSWNG
+gigaton/hit            GGTPHITT
+gigaton/wall           GGTPWALL
 
 $random missile/hit { miss/hit1 miss/hit2 miss/hit3 }
 miss/hit1              MISSEXP1

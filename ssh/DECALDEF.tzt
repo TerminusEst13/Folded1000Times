@@ -8,3 +8,29 @@ DECAL Demon_BulletChip2
     Y-scale 0.04
     LowerDecal Demon_BulletChipLower1
 }
+
+decal WallCrack3
+{
+    pic BFGLITE1
+    shade "00 00 00"
+    x-scale 1.1
+    y-scale 1.1
+    randomflipx
+    randomflipy
+}
+
+decal WallCrack4
+{
+    pic BFGLITE2
+    shade "00 00 00"
+    x-scale 1.1
+    y-scale 1.1
+    randomflipx
+    randomflipy
+}
+
+Decalgroup WallCrackBig
+{
+    WallCrack3 1
+    WallCrack4 1
+}

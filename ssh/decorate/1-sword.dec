@@ -579,11 +579,50 @@ actor 01Tiger : Fists
         goto SpecialAttackFinish
 
     BackSpecial:
-        TNT1 A 0 A_JumpIfInventory("HaggarModeOn",1,"SpecialAttackFinish")
+        TNT1 A 0 A_JumpIfInventory("HaggarModeOn",1,"GigatonPunch")
         TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"SpecialAttackFinish")
         TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"EngageCloakingMode")
         TNT1 A 1
         loop
+    GigatonPunch:
+        TNT1 A 0 A_PlayWeaponSound("gigaton/charge")
+        TNT1 A 1
+        FSP3 ABCCDDD 1
+        FSP3 E 7
+        FSP3 DDDCCBA 1
+        TNT1 A 1
+        TNT1 A 0 A_Recoil(-2)
+        TNT1 A 0 A_PlaySoundEX("gigaton/fire","SoundSlot6")
+        TNT1 A 0 A_PlaySoundEX("gigaton/swing","SoundSlot7")
+        FSP5 A 1
+        TNT1 A 0 A_FireCustomMissile("IronFistGuard",0,0) 
+        TNT1 A 0 A_FireCustomMissile("GigatonPunch",0,0)
+        FSP5 B 1
+        TNT1 A 0 A_FireCustomMissile("IronFistGuard",0,0) 
+        FSP5 C 1
+        TNT1 A 0 A_FireCustomMissile("IronFistGuard",0,0) 
+        TNT1 A 0 A_JumpIfInventory("FistHit",1,"GigaHit")
+        TNT1 A 0 A_SetAngle(angle+1.25)
+        FSP5 D 1
+        TNT1 A 0 A_JumpIfInventory("FistHit",1,"GigaHit")
+        TNT1 A 0 A_FireCustomMissile("IronFistGuard",0,0) 
+        TNT1 A 0 A_SetAngle(angle+1.25)
+        FSP5 E 1
+        TNT1 A 0 A_JumpIfInventory("FistHit",1,"GigaHit")
+        FSP5 F 1
+        TNT1 A 2
+        goto SpecialAttackFinish
+    GigaHit:
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_FREEZE2,0,0)
+        FSP5 GHI 1 Radius_Quake(6,20,0,16,0)
+        FSP5 J 1 A_Recoil(8)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_UNFREEZE2,0,0)
+        FSP5 K 1
+        FSP5 L 1 A_TakeInventory("FistSwung",1)
+        TNT1 A 0 A_TakeInventory("FistHit",1)
+        //TNT1 A 4
+        TNT1 A 2
+        goto SpecialAttackFinish
     EngageCloakingMode:
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
         SHF1 AB 1
