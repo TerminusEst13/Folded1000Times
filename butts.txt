@@ -61,7 +61,6 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 [4:28:18 AM] Sgt. Shivers: have a crushed can appear
 [4:28:21 AM] Med: do it
 [4:28:26 AM] terminusest13: I have no clue how I'd account for respawning items in online play, but hey, worth a shot.
-139: Secret skeleton difficulty. (Scroton is doing thipfffttthahahahahahahahaha yeah no he's not)
 140: Cvar for zombies to drop their respective ammo type.
 141: Humming noise for holding down the Acacia's special shot.
 142: Implement Shivers' new idle animation.
@@ -76,6 +75,7 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 150: Question/Suggestion to Terminus:
 Would you kindly implement a "soul multiplier" slider in Demonsteele?
 (that would increase ammount of energy souls give you, obviously)
+151: <Eric`> btw term is there a cvar to disable shihong's intro thing with all the numbers? seems like it might be very disorienting for maps that expect you to
 
 
 
@@ -302,6 +302,7 @@ SgtShivers: haha yeah
 [11:12:13 PM] Sgt. Shivers: double tap crouch to stop midair and go straight down
 137: Uppercut slash should reflect, rather than just block.
 138: Unique slashes when done mid-dash
+139: Secret skeleton difficulty. (Scroton is doing thipfffttthahahahahahahahaha yeah no he's not)
 145: Insulting death messages when you die in singleplayer:
    ^- "Oh, don't worry. It's not like the end of the world or anything."
    ^- "Never trust a human to do an angel's job."
