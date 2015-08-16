@@ -165,6 +165,9 @@ gigaton/fire           GGTPFIRE // Taken from Mechwarrior Online
 gigaton/swing          GGTPSWNG
 gigaton/hit            GGTPHITT
 gigaton/wall           GGTPWALL
+gigaton/jfcharge       GGTHCHRG // Taken from Mechwarrior Online
+gigaton/jfhit          GGTHHITT
+gigaton/jfwall         GGTHWALL
 
 $random missile/hit { miss/hit1 miss/hit2 miss/hit3 }
 miss/hit1              MISSEXP1
