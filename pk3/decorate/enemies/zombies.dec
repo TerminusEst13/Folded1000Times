@@ -177,6 +177,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         TNT1 A 0 A_ClearTarget
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_GiveInventory("EMPulseWeakness",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH A 2
         LDTH A 2 BRIGHT
@@ -882,6 +883,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         TNT1 A 0 A_ChangeFlag("MISSILEMORE",0)
         TNT1 A 0 A_ChangeFlag("MISSILEEVENMORE",0)
+        TNT1 A 0 A_GiveInventory("EMPulseWeakness",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH A 2
         LDTH A 2 BRIGHT
@@ -1577,6 +1579,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         TNT1 A 0 A_ChangeFlag("MISSILEMORE",0)
         TNT1 A 0 A_ChangeFlag("MISSILEEVENMORE",0)
+        TNT1 A 0 A_GiveInventory("EMPulseWeakness",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH A 2
         LDTH A 2 BRIGHT
@@ -2079,6 +2082,7 @@ ACTOR Yakuza replaces WolfensteinSS
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         TNT1 A 0 A_ChangeFlag("MISSILEMORE",0)
         TNT1 A 0 A_ChangeFlag("MISSILEEVENMORE",0)
+        TNT1 A 0 A_GiveInventory("EMPulseWeakness",1)
         LDTH B 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         LDTH B 2
         LDTH B 2 BRIGHT

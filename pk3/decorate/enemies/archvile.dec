@@ -163,6 +163,7 @@ actor WeeabooArchvile : Archvile replaces Archvile
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         TNT1 A 0 A_ChangeFlag("MISSILEMORE",0)
         TNT1 A 0 A_ChangeFlag("MISSILEEVENMORE",0)
+        TNT1 A 0 A_GiveInventory("EMPulseWeakness",1)
         VILE Q 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         VILE Q 2
         VILE Q 2 BRIGHT

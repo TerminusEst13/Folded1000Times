@@ -457,7 +457,8 @@ ACTOR GigatonHammerExplosion
     }
 }
 
-ACTOR EMPulseExplode
+ACTOR EMPulseExplode // Technically not actually EMP, since EMP doesn't affect living things,
+                     // but I can't think of what else to call it. Muon neutrino burst?
 {
     Radius 1
     Height 1
@@ -477,4 +478,10 @@ ACTOR EMPulseExplode
         TNT1 A 1 A_Explode(8,512,0,0,512)
         Stop
     }
+}
+
+actor EMPulseWeakness : PowerProtection
+{
+    DamageFactor "Normal", 1.55
+    Powerup.Duration 0x7FFFFFFF
 }
