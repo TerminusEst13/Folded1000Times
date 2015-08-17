@@ -467,6 +467,7 @@ ACTOR EMPulseExplode
     -SOLID
     +NOEXTREMEDEATH
     +FORCEPAIN
+    +BLOODLESSIMPACT
     DamageType EMPulse
     Obituary "%k shouldn't have killed %o with this."
     States
