@@ -298,6 +298,7 @@ actor GigatonPunch : FastProjectile
     +BLOODSPLATTER
     +THRUSPECIES
     +EXTREMEDEATH
+    +SPECTRAL
     +FORCERADIUSDMG
     +FORCEPAIN
     Decal WallCrackBig
@@ -355,6 +356,7 @@ actor GigatonHammer : FastProjectile
     +BLOODSPLATTER
     +THRUSPECIES
     +EXTREMEDEATH
+    +SPECTRAL
     +FORCERADIUSDMG
     +FORCEPAIN
     Decal WallCrackBig
@@ -421,6 +423,7 @@ ACTOR GigatonPunchExplosion
     +NOCLIP
     +FORCERADIUSDMG
     +EXTREMEDEATH
+    +SPECTRAL
     -SOLID
     DamageType "ShihongPunchSpecial"
     Obituary "%k jackhammered %o with gigatons of force."
@@ -441,6 +444,7 @@ ACTOR GigatonHammerExplosion
     +NOCLIP
     +FORCERADIUSDMG
     +EXTREMEDEATH
+    +SPECTRAL
     -SOLID
     DamageType "ShihongPunchSpecial"
     Obituary "%k jackhammered %o with gigatons of force."
@@ -449,6 +453,27 @@ ACTOR GigatonHammerExplosion
       Spawn:
         TNT1 A 0
         TNT1 A 1 A_Explode(768,160,0,0,96)
+        Stop
+    }
+}
+
+ACTOR EMPulseExplode
+{
+    Radius 1
+    Height 1
+    Speed 0
+    +NOCLIP
+    +FORCERADIUSDMG
+    -SOLID
+    +NOEXTREMEDEATH
+    +FORCEPAIN
+    DamageType "Taser"
+    Obituary "%k shouldn't have killed %o with this."
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_Explode(8,512,0,0,512)
         Stop
     }
 }

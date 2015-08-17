@@ -454,7 +454,7 @@ actor 03Wolf : Fists
     SideSpecialLeft:
         TNT1 A 0 A_JumpIfInventory("HaggarModeOn",1,"SpinAttackLeft")
         TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"HomingMissilesLaunch")
-        TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"SpecialAttackFinish")
+        TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"EMPulse")
         TNT1 A 1
         loop
     SpinAttackLeft:
@@ -529,11 +529,22 @@ actor 03Wolf : Fists
         SHF1 E 1
         TNT1 A 10
         goto SpecialAttackFinish
+    EMPulse:
+        TNT1 A 0 A_PlayWeaponSound("combo/ready")
+        SHF1 AB 1
+        SHF1 C 15
+        TNT1 A 0 A_PlayWeaponSound("special/empulse")
+        TNT1 A 0 A_SetBlend("white",1.0,7)
+        TNT1 A 0 A_SpawnItemEx("EMPulseExplode",0,0,32,0,0,0,0,48)
+        SHF1 D 1
+        SHF1 E 1
+        TNT1 A 10
+        goto SpecialAttackFinish
 
     SideSpecialRight:
         TNT1 A 0 A_JumpIfInventory("HaggarModeOn",1,"SpinAttackRight")
         TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"HomingMissilesLaunch")
-        TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"SpecialAttackFinish")
+        TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"EMPulse")
         TNT1 A 1
         loop
     SpinAttackRight:
