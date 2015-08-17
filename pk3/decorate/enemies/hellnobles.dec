@@ -138,6 +138,8 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
         TNT1 A 0 A_ClearTarget
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_ChangeFlag("MISSILEMORE",0)
+        TNT1 A 0 A_ChangeFlag("MISSILEEVENMORE",0)
         BOS2 H 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         BOS2 H 2
         BOS2 H 2 BRIGHT
@@ -638,6 +640,8 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_ClearTarget
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_ChangeFlag("MISSILEMORE",0)
+        TNT1 A 0 A_ChangeFlag("MISSILEEVENMORE",0)
         BOSS H 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
         BOSS H 2
         BOSS H 2 BRIGHT
