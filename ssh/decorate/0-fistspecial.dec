@@ -467,7 +467,7 @@ ACTOR EMPulseExplode
     -SOLID
     +NOEXTREMEDEATH
     +FORCEPAIN
-    DamageType "Taser"
+    DamageType EMPulse
     Obituary "%k shouldn't have killed %o with this."
     States
     {

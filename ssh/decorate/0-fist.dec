@@ -325,7 +325,7 @@ actor "Fists" : Weapon
     ForwardSpecial:
         TNT1 A 0 A_JumpIfInventory("HaggarModeOn",1,"SuperUppercut")
         TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"ConcussionMissile")
-        TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"SpecialAttackFinish")
+        TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"GrappleBeam")
         TNT1 A 1
         loop
     SuperUppercut:

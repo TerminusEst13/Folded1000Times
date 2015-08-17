@@ -78,6 +78,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
     Death.Taser:
+    Death.EMPulse:
         TNT1 A 0 A_GiveToTarget("Points",500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         POSS G 1
@@ -172,6 +173,34 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS J 1 ThrustThingZ(0,8,0,0)
         POSS J 3 A_Pain
         Goto EnemyHang2
+    Pain.EMPulse:
+        TNT1 A 0 A_ClearTarget
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
     Pain.Taser:
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
@@ -847,6 +876,34 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         SPOS J 3 A_Pain
         Goto EnemyHang2
 
+    Pain.EMPulse:
+        TNT1 A 0 A_ClearTarget
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
     Pain.Taser:
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
@@ -977,6 +1034,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
     Death.Taser:
+    Death.EMPulse:
         TNT1 A 0 A_GiveToTarget("Points",1000)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         SPOS G 1
@@ -1511,6 +1569,34 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_GiveToTarget("MidCombat",75)
         goto Super::Pain
 
+    Pain.EMPulse:
+        TNT1 A 0 A_ClearTarget
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
+        LDTH A 2 BRIGHT
+        LDTH A 2
     Pain.Taser:
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH A 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
@@ -1641,6 +1727,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
     Death.Taser:
+    Death.EMPulse:
         TNT1 A 0 A_GiveToTarget("Points",1500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         CPOS G 1
@@ -1982,6 +2069,34 @@ ACTOR Yakuza replaces WolfensteinSS
         YKZA J 3 A_Pain
         Goto EnemyHang2
 
+    Pain.EMPulse:
+        TNT1 A 0 A_ClearTarget
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        LDTH B 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
+        LDTH B 2 BRIGHT
+        LDTH B 2
     Pain.Taser:
         TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         LDTH B 2 BRIGHT A_PlaySoundEx("taser/sparks","SoundSlot5",0)
@@ -2076,6 +2191,7 @@ ACTOR Yakuza replaces WolfensteinSS
     XDeath.KharonSheathe:
     XDeath.IronMaidenShot:
     Death.Taser:
+    Death.EMPulse:
         TNT1 A 0 A_GiveToTarget("Points",4500)
         TNT1 A 0 A_JumpIfInTargetInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1,"XDeath")
         YKZA H 1
