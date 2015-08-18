@@ -12,7 +12,7 @@ $playersound      Shihong   male    *grunt          QUIET
 $playersound      Shihong   male    *land           HLLAND   // Taken from Quake 3
 $playersound      Shihong   male    *usefail        SHINOPE  // Taken from Street Fighter X Tekken
 $playersound      Shihong   male    *taunt          SHITAUNT // Taken from Street Fighter X Tekken
-$playersound      Shihong   male    *jump           QUIET
+$playersound      Shihong   male    *jump           SHIJUMP  // Taken from Street Fighter X Tekken
 
 $random level/introssh { sshintro1 sshintro2 sshintro3 sshintro4 sshintro5 sshintro6 sshintro7 sshintro8 sshintro9 sshintro10 sshintro11 sshintro12 sshintro13 sshintro14 sshintro15 sshintro16 sshintro17 sshintro18 sshintro19 }
 sshintro1              SSHNTRO1 // Made by BouncyTEM

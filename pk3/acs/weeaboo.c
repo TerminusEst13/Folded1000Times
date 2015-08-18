@@ -493,31 +493,35 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         switch (bowlshot)
         {
         case 0:
-          Log(s:"\cfThe \cjTestament \cfshotgun. You may wield it...");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjTestament \cfshotgun. You may wield it..."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj03-W Wolf\cn authorization successful."); }
           break;
 
         case 1:
-          Log(s:"\cfThe \cjExodus \cfgrenade launcher. You may wield it...");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjExodus \cfgrenade launcher. You may wield it..."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj05-D Dragon\cn authorization successful."); }
           break;
 
         case 2:
-          Log(s:"\cfThe \cjSabbath \cfsubmachine gun. You may wield it...");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjSabbath \cfsubmachine gun. You may wield it..."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj04-SS Scorpions\cn authorization successful."); }
           break;
 
         case 3:
-          Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it...");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it..."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj01-T Triumph\cn authorization successful."); }
           break;
 
         case 4:
-          Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Use Inventory to activate)");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Use Inventory to activate)"); }
           break;
 
         case 5:
-          Log(s:"\ckThe \cbMaw of the Legion\ck. It screams for blood...");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\ckThe \cbMaw of the Legion\ck. It screams for blood..."); }
           break;
 
         case 6:
-          Log(s:"\ckThe \cbFrosthammer of Cocytus\ck. It screams for blood...");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\ckThe \cbFrosthammer of Cocytus\ck. It screams for blood..."); }
           break;
         }
         break;
