@@ -494,22 +494,22 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         {
         case 0:
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjTestament \cfshotgun. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj03-W Wolf\cn authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj03-W Wolf\cn SSH pattern identified. Authorization successful."); }
           break;
 
         case 1:
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjExodus \cfgrenade launcher. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj05-D Dragon\cn authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj05-D Dragon\cn SSH pattern identified. Authorization successful."); }
           break;
 
         case 2:
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjSabbath \cfsubmachine gun. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj04-SS Scorpions\cn authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj04-SS Scorpions\cn SSH pattern identified. Authorization successful."); }
           break;
 
         case 3:
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cnSSH pattern identified. \cj01-T Triumph\cn authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Triumph\cn SSH pattern identified. Authorization successful."); }
           break;
 
         case 4:
