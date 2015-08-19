@@ -2,18 +2,28 @@ script SINO_ENTER ENTER
 {
     int buttons;
     int oldbuttons;
+    int pln = PlayerNumber();
     int MichaelAngleoBatio;
     int xxx;
     int yyy;
     int xxx2;
     int yyy2;
     int GetSomeHealthAlready;
+    int SuperCount;
+    int ComboCount;
+    int EverybodyNeeds;
+    int RemoveFRankAnnouncer;
+    int RemoveDRankAnnouncer;
+    int RemoveCRankAnnouncer;
+    int RemoveBRankAnnouncer;
+    int RemoveARankAnnouncer;
+    int RemoveSRankAnnouncer;
 
-    //PrintBold(s:"script firing");
+    if (GetCvar("dst_debug") == 1) { Log(s:"SINO_ENTER executing on player ", d:pln); }
 
     if (CheckInventory("IsJungHaeLin") == 1)
     {
-        //PrintBold(s:"is hae-lin");
+        if (GetCvar("dst_debug") == 1) { Log(s:"Error: Player ", d:pln, s:" is not Shihong, terminating SINO_ENTER."); }
         terminate;
     }
 
@@ -69,6 +79,8 @@ script SINO_ENTER ENTER
     TakeInventory("JetpackModeOn",1);
     GiveInventory("DodgeGhostOff",1);
     GiveInventory("JetpackModeOff",1);
+
+    if (GetCvar("dst_debug") == 1) { Log(s:"Entering SINO_ENTER while(1) loop on player ", d:pln); }
 
     while (1)
     {
@@ -144,6 +156,7 @@ script SINO_ENTER ENTER
             GiveInventory("InTheAir",1);
         }
 
+        OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
         buttons = GetPlayerInput(-1, INPUT_BUTTONS);
         MichaelAngleoBatio = GetActorAngle(0) >> 8;
 
@@ -176,10 +189,171 @@ script SINO_ENTER ENTER
         if (CheckInventory("KharonSabbath") == 1)
             { TakeInventory("KharonSabbath",1); GiveInventory("04Scorpions",1); }
 
+
+    // ============ GENERIC COPY/PASTED SHIT HERE
+
+        // THE SUPER COUNTER. Not the kind you lean on.
+        SuperCount = CheckInventory("KiMeterCounter");
+        //SetInventory("SuperCounter1",SuperCount); // Life would be so much easier if this worked online.
+        // This script changes the display on the HUD.
+        // While SuperMeterCounter can be whatever, each of the bars on the HUD read 100 of SuperMeterCounter.
+        // Because of this, I have to manually see exactly how much of each level the player has and then give
+        // a dummy item which the bars then read.
+        TakeInventory("KiCounter1", 0x7FFFFFFF);
+        GiveInventory("KiCounter1", SuperCount);
+        if (SuperCount > 1000)
+            { TakeInventory("KiCounter2",0x7FFFFFFF);
+              GiveInventory("KiCounter2", SuperCount - 1000); } //SetInventory("SuperCounter2",(SuperCount - 100)); }
+            else { TakeInventory("KiCounter2",0x7FFFFFFF); }
+        if (SuperCount > 2000)
+            { TakeInventory("KiCounter3",0x7FFFFFFF);
+              GiveInventory("KiCounter3", SuperCount - 2000); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+            else { TakeInventory("KiCounter3",0x7FFFFFFF); }
+        if (SuperCount > 3000)
+            { TakeInventory("KiCounter4",0x7FFFFFFF);
+              GiveInventory("KiCounter4", SuperCount - 3000); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
+            else { TakeInventory("KiCounter4",0x7FFFFFFF); }
+        // If the player has less than 20 of SuperMeterCounter, they slowly regenerate.
+        if (SuperCount < 200) { if (EverybodyNeeds >= 280)
+            { GiveInventory("KiMeterCounter",10); EverybodyNeeds = 0; }}
+        EverybodyNeeds++;
+
+        // 666 COMBO! SUPER SWEET STYLISH!
+        // Likewise, this is mostly dedicated to showing the player how much combo meter they
+        // have on the HUD.
+        // It's all the same basic principal. Split the entire counter into bars of 1-100,
+        // see how much of each level the player has, give it to them as a dummy item.
+        // This is slightly more complicated by use of the ranking system.
+        ComboCount = CheckInventory("HyperComboCounter");
+        TakeInventory("ComboCounter1",0x7FFFFFFF);
+        GiveInventory("ComboCounter1",ComboCount);
+        if (ComboCount <= 50)
+        {
+            TakeInventory("FRank",1);
+            TakeInventory("DRank",1);
+            TakeInventory("CRank",1);
+            TakeInventory("BRank",1);
+            TakeInventory("ARank",1);
+            TakeInventory("SRank",1);
+        }
+
+        // Kyle873 once told me that "one-line code" was basically the worst thing a coder could do.
+        // If he ever sees this, I am so sorry. I am so, so sorry.
+        if (ComboCount > 50)
+            { TakeInventory("ComboCounter2",0x7FFFFFFF); GiveInventory("ComboCounter2",(ComboCount - 50)); GiveInventory("ComboDamageLevel1",1);
+              GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
+        if (ComboCount > 100)
+            { TakeInventory("ComboCounter3",0x7FFFFFFF); GiveInventory("ComboCounter3",(ComboCount - 100)); GiveInventory("ComboDamageLevel2",1);
+              TakeInventory("FRank",1); GiveInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter3",0x7FFFFFFF); TakeInventory("ComboDamageLevel2",0x7FFFFFFF); }
+        if (ComboCount > 150)
+            { TakeInventory("ComboCounter4",0x7FFFFFFF); GiveInventory("ComboCounter4",(ComboCount - 150)); GiveInventory("ComboDamageLevel3",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); GiveInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter4",0x7FFFFFFF); TakeInventory("ComboDamageLevel3",0x7FFFFFFF); }
+        if (ComboCount > 200)
+            { TakeInventory("ComboCounter5",0x7FFFFFFF); GiveInventory("ComboCounter5",(ComboCount - 200)); GiveInventory("ComboDamageLevel4",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
+        if (ComboCount > 250)
+            { TakeInventory("ComboCounter6",0x7FFFFFFF); GiveInventory("ComboCounter6",(ComboCount - 250)); GiveInventory("ComboDamageLevel5",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); }
+              else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
+        if (ComboCount > 300)
+            { TakeInventory("ComboCounter7",0x7FFFFFFF); GiveInventory("ComboCounter7",(ComboCount - 300)); GiveInventory("ComboDamageLevel6",1);
+              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); }
+              else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
+
+        // Technically it would be more efficient to integrate these into the combo level checks above.
+        // But you just saw that code. Fuck that code.
+        // FUCK that code.
+        if (ComboCount > 50)
+            { if (CheckInventory("FRankAnnounced") == 0)
+              { GiveInventory("FRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/fearless",127); }}}
+        if (ComboCount > 100)
+            { if (CheckInventory("DRankAnnounced") == 0)
+              { GiveInventory("DRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/destruction",127); }}}
+        if (ComboCount > 150)
+            { if (CheckInventory("CRankAnnounced") == 0)
+              { GiveInventory("CRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/champion",127); }}}
+        if (ComboCount > 200)
+            { if (CheckInventory("BRankAnnounced") == 0)
+              { GiveInventory("BRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/behemoth",127); }}}
+        if (ComboCount > 250)
+            { if (CheckInventory("ARankAnnounced") == 0)
+              { GiveInventory("ARankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/annihilator",127); }}}
+        if (ComboCount > 300)
+            { if (CheckInventory("SRankAnnounced") == 0)
+              { GiveInventory("SRankAnnounced",1);
+                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/slayer",127); }}}
+
+        if (ComboCount < 50 && CheckInventory("FRankAnnounced") == 1)
+           { RemoveFRankAnnouncer++; }
+           else { RemoveFRankAnnouncer = 0; }
+        if (ComboCount < 100 && CheckInventory("DRankAnnounced") == 1)
+           { RemoveDRankAnnouncer++; }
+           else { RemoveDRankAnnouncer = 0; }
+        if (ComboCount < 150 && CheckInventory("CRankAnnounced") == 1)
+           { RemoveCRankAnnouncer++; }
+           else { RemoveCRankAnnouncer = 0; }
+        if (ComboCount < 200 && CheckInventory("BRankAnnounced") == 1)
+           { RemoveBRankAnnouncer++; }
+           else { RemoveBRankAnnouncer = 0; }
+        if (ComboCount < 250 && CheckInventory("ARankAnnounced") == 1)
+           { RemoveARankAnnouncer++; }
+           else { RemoveARankAnnouncer = 0; }
+        if (ComboCount < 300 && CheckInventory("SRankAnnounced") == 1)
+           { RemoveSRankAnnouncer++; }
+           else { RemoveSRankAnnouncer = 0; }
+
+           if (RemoveFRankAnnouncer == 525) { TakeInventory("FRankAnnounced",1); }
+           if (RemoveDRankAnnouncer == 525) { TakeInventory("DRankAnnounced",1); }
+           if (RemoveCRankAnnouncer == 525) { TakeInventory("CRankAnnounced",1); }
+           if (RemoveBRankAnnouncer == 525) { TakeInventory("BRankAnnounced",1); }
+           if (RemoveARankAnnouncer == 525) { TakeInventory("ARankAnnounced",1); }
+           if (RemoveSRankAnnouncer == 525) { TakeInventory("SRankAnnounced",1); }
+
+        // Special move bollocks
+        if (GetCvar("dst_nospecials") == 0)
+        {
+        // This entire system is so brute force it's not even funny.
+        // I never said I was an elegant or even a good coder, but this is still
+        // extremely brute force, even for me.
+        // It's "simply" a matter of checking for what buttons the player pushed,
+        // then giving an inventory item. If the player pushes the button and the
+        // inventory item is still there, they're given another item saying that
+        // they double-tapped the button.
+
+          if (keypressed(BT_MOVERIGHT))
+            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyRight",6); }}}
+          if (keypressed(BT_MOVELEFT))
+            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyLeft",6); }}}
+          if (keypressed(BT_FORWARD))
+            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyForward",6); }}}
+          if (keypressed(BT_BACK))
+            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+                    { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
+                      else { GiveInventory("DoubleTapReadyBack",6); }}}
+          }
+
+    // ============= END GENERIC COPY-PASTED SHIT
+
         Delay(1);
 
         if (isDead(0))
         {
+            if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:pln, s:" dead, terminating SINO_ENTER."); }
             terminate;
         }
     }
@@ -189,9 +363,6 @@ script SINO_ENTER_UNREPLACED ENTER
 {
     int OldButtons;
     int Buttons;
-    int SuperCount;
-    int ComboCount;
-    int KurtAngle;
     int RideTheLightning;
     int XMen;
     int Ys;
@@ -216,7 +387,6 @@ script SINO_ENTER_UNREPLACED ENTER
     int nx3, ny3, nz3;
     int ShieldTID;
     int SentTID;
-    int TheAngerInside;
     int IntroChance;
     int ShieldHP;
     int SentinelHP;
@@ -229,12 +399,6 @@ script SINO_ENTER_UNREPLACED ENTER
     int sfound;
     int sfound2;
     int TimeStandStill;
-    int RemoveFRankAnnouncer;
-    int RemoveDRankAnnouncer;
-    int RemoveCRankAnnouncer;
-    int RemoveBRankAnnouncer;
-    int RemoveARankAnnouncer;
-    int RemoveSRankAnnouncer;
     int IFuckedTheGameUp;
     int DodgeCounter;
     int HaloTID;
@@ -490,131 +654,6 @@ script SINO_ENTER_UNREPLACED ENTER
             else
             { SetActorProperty(0,APROP_HEALTH,1); }
         }
-        
-        // THE SUPER COUNTER. Not the kind you lean on.
-        SuperCount = CheckInventory("SuperMeterCounter");
-        //SetInventory("SuperCounter1",SuperCount); // Life would be so much easier if this worked online.
-        // This script changes the display on the HUD.
-        // While SuperMeterCounter can be whatever, each of the bars on the HUD read 100 of SuperMeterCounter.
-        // Because of this, I have to manually see exactly how much of each level the player has and then give
-        // a dummy item which the bars then read.
-        TakeInventory("SuperCounter1", 0x7FFFFFFF);
-        GiveInventory("SuperCounter1", SuperCount);
-        if (SuperCount > 100)
-            { TakeInventory("SuperCounter2",0x7FFFFFFF);
-              GiveInventory("SuperCounter2", SuperCount - 100); } //SetInventory("SuperCounter2",(SuperCount - 100)); }
-            else { TakeInventory("SuperCounter2",0x7FFFFFFF); }
-        if (SuperCount > 200)
-            { TakeInventory("SuperCounter3",0x7FFFFFFF);
-              GiveInventory("SuperCounter3", SuperCount - 200); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
-            else { TakeInventory("SuperCounter3",0x7FFFFFFF); }
-        if (SuperCount > 300)
-            { TakeInventory("SuperCounter4",0x7FFFFFFF);
-              GiveInventory("SuperCounter4", SuperCount - 300); } //SetInventory("SuperCounter3",(SuperCount - 200)); }
-            else { TakeInventory("SuperCounter4",0x7FFFFFFF); }
-        // If the player has less than 20 of SuperMeterCounter, they slowly regenerate.
-        if (SuperCount < 20) { if (TheAngerInside >= 280)
-            { GiveInventory("SuperMeterCounter",1); TheAngerInside = 0; }}
-        TheAngerInside++;
-
-        // 666 COMBO! SUPER SWEET STYLISH!
-        // Likewise, this is mostly dedicated to showing the player how much combo meter they
-        // have on the HUD.
-        // It's all the same basic principal. Split the entire counter into bars of 1-100,
-        // see how much of each level the player has, give it to them as a dummy item.
-        // This is slightly more complicated by use of the ranking system.
-        ComboCount = CheckInventory("HyperComboCounter");
-        TakeInventory("ComboCounter1",0x7FFFFFFF);
-        GiveInventory("ComboCounter1",ComboCount);
-        if (ComboCount <= 50)
-        {
-            TakeInventory("FRank",1);
-            TakeInventory("DRank",1);
-            TakeInventory("CRank",1);
-            TakeInventory("BRank",1);
-            TakeInventory("ARank",1);
-            TakeInventory("SRank",1);
-        }
-        // Kyle873 once told me that "one-line code" was basically the worst thing a coder could do.
-        // If he ever sees this, I am so sorry. I am so, so sorry.
-        if (ComboCount > 50)
-            { TakeInventory("ComboCounter2",0x7FFFFFFF); GiveInventory("ComboCounter2",(ComboCount - 50)); GiveInventory("ComboDamageLevel1",1);
-              GiveInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
-              else { TakeInventory("ComboCounter2",0x7FFFFFFF); TakeInventory("ComboDamageLevel1",0x7FFFFFFF); }
-        if (ComboCount > 100)
-            { TakeInventory("ComboCounter3",0x7FFFFFFF); GiveInventory("ComboCounter3",(ComboCount - 100)); GiveInventory("ComboDamageLevel2",1);
-              TakeInventory("FRank",1); GiveInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
-              else { TakeInventory("ComboCounter3",0x7FFFFFFF); TakeInventory("ComboDamageLevel2",0x7FFFFFFF); }
-        if (ComboCount > 150)
-            { TakeInventory("ComboCounter4",0x7FFFFFFF); GiveInventory("ComboCounter4",(ComboCount - 150)); GiveInventory("ComboDamageLevel3",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); GiveInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
-              else { TakeInventory("ComboCounter4",0x7FFFFFFF); TakeInventory("ComboDamageLevel3",0x7FFFFFFF); }
-        if (ComboCount > 200)
-            { TakeInventory("ComboCounter5",0x7FFFFFFF); GiveInventory("ComboCounter5",(ComboCount - 200)); GiveInventory("ComboDamageLevel4",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); GiveInventory("BRank",1); TakeInventory("ARank",1); TakeInventory("SRank",1); }
-              else { TakeInventory("ComboCounter5",0x7FFFFFFF); TakeInventory("ComboDamageLevel4",0x7FFFFFFF); }
-        if (ComboCount > 250)
-            { TakeInventory("ComboCounter6",0x7FFFFFFF); GiveInventory("ComboCounter6",(ComboCount - 250)); GiveInventory("ComboDamageLevel5",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); GiveInventory("ARank",1); TakeInventory("SRank",1); }
-              else { TakeInventory("ComboCounter6",0x7FFFFFFF); TakeInventory("ComboDamageLevel5",0x7FFFFFFF); }
-        if (ComboCount > 300)
-            { TakeInventory("ComboCounter7",0x7FFFFFFF); GiveInventory("ComboCounter7",(ComboCount - 300)); GiveInventory("ComboDamageLevel6",1);
-              TakeInventory("FRank",1); TakeInventory("DRank",1); TakeInventory("CRank",1); TakeInventory("BRank",1); TakeInventory("ARank",1); GiveInventory("SRank",1); }
-              else { TakeInventory("ComboCounter7",0x7FFFFFFF); TakeInventory("ComboDamageLevel6",0x7FFFFFFF); }
-
-        // Technically it would be more efficient to integrate these into the combo level checks above.
-        // But you just saw that code. Fuck that code.
-        // FUCK that code.
-        if (ComboCount > 50)
-            { if (CheckInventory("FRankAnnounced") == 0)
-              { GiveInventory("FRankAnnounced",1);
-                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/fearless",127); }}}
-        if (ComboCount > 100)
-            { if (CheckInventory("DRankAnnounced") == 0)
-              { GiveInventory("DRankAnnounced",1);
-                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/destruction",127); }}}
-        if (ComboCount > 150)
-            { if (CheckInventory("CRankAnnounced") == 0)
-              { GiveInventory("CRankAnnounced",1);
-                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/champion",127); }}}
-        if (ComboCount > 200)
-            { if (CheckInventory("BRankAnnounced") == 0)
-              { GiveInventory("BRankAnnounced",1);
-                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/behemoth",127); }}}
-        if (ComboCount > 250)
-            { if (CheckInventory("ARankAnnounced") == 0)
-              { GiveInventory("ARankAnnounced",1);
-                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/annihilator",127); }}}
-        if (ComboCount > 300)
-            { if (CheckInventory("SRankAnnounced") == 0)
-              { GiveInventory("SRankAnnounced",1);
-                if (CheckInventory("IAmAQuietPersonWhoWantsMoreQuietRankings") == 0) { LocalAmbientSound("ranking/slayer",127); }}}
-
-        if (ComboCount < 50 && CheckInventory("FRankAnnounced") == 1)
-           { RemoveFRankAnnouncer++; }
-           else { RemoveFRankAnnouncer = 0; }
-        if (ComboCount < 100 && CheckInventory("DRankAnnounced") == 1)
-           { RemoveDRankAnnouncer++; }
-           else { RemoveDRankAnnouncer = 0; }
-        if (ComboCount < 150 && CheckInventory("CRankAnnounced") == 1)
-           { RemoveCRankAnnouncer++; }
-           else { RemoveCRankAnnouncer = 0; }
-        if (ComboCount < 200 && CheckInventory("BRankAnnounced") == 1)
-           { RemoveBRankAnnouncer++; }
-           else { RemoveBRankAnnouncer = 0; }
-        if (ComboCount < 250 && CheckInventory("ARankAnnounced") == 1)
-           { RemoveARankAnnouncer++; }
-           else { RemoveARankAnnouncer = 0; }
-        if (ComboCount < 300 && CheckInventory("SRankAnnounced") == 1)
-           { RemoveSRankAnnouncer++; }
-           else { RemoveSRankAnnouncer = 0; }
-
-           if (RemoveFRankAnnouncer == 525) { TakeInventory("FRankAnnounced",1); }
-           if (RemoveDRankAnnouncer == 525) { TakeInventory("DRankAnnounced",1); }
-           if (RemoveCRankAnnouncer == 525) { TakeInventory("CRankAnnounced",1); }
-           if (RemoveBRankAnnouncer == 525) { TakeInventory("BRankAnnounced",1); }
-           if (RemoveARankAnnouncer == 525) { TakeInventory("ARankAnnounced",1); }
-           if (RemoveSRankAnnouncer == 525) { TakeInventory("SRankAnnounced",1); }
 
         // Global variables
         // In singleplayer, these make the weapon pickups read if the player have actually
@@ -630,154 +669,6 @@ script SINO_ENTER_UNREPLACED ENTER
             if (CheckInventory("GotIronMaiden") == 1) { GotIronMaiden = 1; } 
             if (CheckInventory("GotLegion") == 1) { GotLegion = 1; } 
             if (CheckInventory("GotFrosthammer") == 1) { GotFrosthammer = 1; } 
-        }
-
-        // Special move bollocks
-        OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
-        Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
-        KurtAngle = GetActorAngle(0) >> 8;
-
-        if (GetCvar("dst_nospecials") == 0)
-        {
-        // This entire system is so brute force it's not even funny.
-        // I never said I was an elegant or even a good coder, but this is still
-        // extremely brute force, even for me.
-        // It's "simply" a matter of checking for what buttons the player pushed,
-        // then giving an inventory item. If the player pushes the button and the
-        // inventory item is still there, they're given another item saying that
-        // they double-tapped the button.
-
-          if (keypressed(BT_MOVERIGHT))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
-                      else { GiveInventory("DoubleTapReadyRight",6); }}}
-          if (keypressed(BT_MOVELEFT))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
-                      else { GiveInventory("DoubleTapReadyLeft",6); }}}
-          if (keypressed(BT_FORWARD))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
-                      else { GiveInventory("DoubleTapReadyForward",6); }}}
-          if (keypressed(BT_BACK))
-            { if (CheckInventory("SuperMeterCounter") >= 20 && CheckInventory("DoubleTapCooldown") == 0)
-                    { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
-                      else { GiveInventory("DoubleTapReadyBack",6); }}}
-          }      
-
-        // SUPER SAIYAN HNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
-        // HHHHHHHHHHHHHNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH
-        // HHHHHHHHHHHHHHHHHHNNNNNNNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGHHHHHHHH
-        // IRON MAIDEN SCRIPT
-        // HELL FUCKING YEAH
-        // THE MOST METAL SCRIPT IN ALL OF VIDEOGAMEDOM
-        oarmor = armor;
-        armor = CheckInventory("Armor");
-
-        // Oarmor is always one tic behind armor. If Oarmor is higher than armor, the player took a hit.
-        // Display a painflash as needed.
-        if (oarmor > armor && CheckInventory("InIronMaiden") == 1)
-        {
-          ActivatorSound("iron/armorhit", 127);
-          FadeRange(255,255,0,min(0.5,(oarmor-armor)*0.015),0,0,0,0.0,min(35.0,1.5*(oarmor-armor))/35); 
-          GiveInventory("MidCombat",75);
-          TakeInventory("HyperComboCounter",2);
-        }
-
-        if (CheckInventory("InIronMaiden") == 1)
-        {
-
-        // Gives differing levels of defenses based on the player's combo ranking.
-        // The higher their rank, the more, uh, defense-y they are.
-        GiveInventory("IronMaidenProtection",1);
-        if (ComboCount <= 50) { TakeInventory("IronMaidenProtectionF",1); TakeInventory("IronMaidenProtectionD",1); TakeInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
-        if (ComboCount > 50)
-            { GiveInventory("IronMaidenProtectionF",1); TakeInventory("IronMaidenProtectionD",1); TakeInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
-        if (ComboCount > 100)
-            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); TakeInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
-        if (ComboCount > 150)
-            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); TakeInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
-        if (ComboCount > 200)
-            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); GiveInventory("IronMaidenProtectionB",1); TakeInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
-        if (ComboCount > 250)
-            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); GiveInventory("IronMaidenProtectionB",1); GiveInventory("IronMaidenProtectionA",1); TakeInventory("IronMaidenProtectionS",1); }
-        if (ComboCount > 300)
-            { GiveInventory("IronMaidenProtectionF",1); GiveInventory("IronMaidenProtectionD",1); GiveInventory("IronMaidenProtectionC",1); GiveInventory("IronMaidenProtectionB",1); GiveInventory("IronMaidenProtectionA",1); GiveInventory("IronMaidenProtectionS",1); }
-
-          // Keeps going for as long as the player has meter.
-          if (CheckInventory("SuperMeterCounter") > 0)
-          {
-            SetActorProperty(0,APROP_JUMPZ,10.0);
-
-            // YO BRO
-            // I'M TELLING YOU NOW
-            // YOU CAN'T JUST CHECK YOUR LIFE
-            // YOU GOTTA CHECK YOUR SOOOOOOOOOOUL
-            if (CheckInventory("SuperMeterCounter") < 31 && CheckInventory("IronMaidenWarning") == 0)
-            {
-              GiveInventory("IronMaidenWarning",1);
-              FadeRange(255,255,255,0.50,0,0,0,0,0.5);
-              LocalAmbientSound("henshin/warning",127);
-            }
-
-            // If the player's manually de-activating with the, uh, Use Inventory thingermajob.
-            if (CheckInventory("HenshinDeactivation") == 1)
-            {
-              GiveInventory("HenshinCooldown",35);
-              LocalAmbientSound("henshin/complete",127);
-              ActivatorSound("henshin/completedismiss",127);
-              ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_REMOVEKEBAB,0,0);
-              MarchOfTheImmortal = 0;
-              IronArmor = 0;
-            }
-
-            // Armor regeneration.
-            if (IronArmor >= 3)
-            {
-              if (GetArmorType("IronMaidenArmor",PlayerNumber()) || GetArmorType("IronMaidenArmor2",PlayerNumber()))
-              {
-                  if (CheckInventory("Armor") < 30) { GiveInventory("IronMaidenArmor",1); }
-                  GiveInventory("IronMaidenArmor",1);
-              }
-              else // A failsafe just in case players have somehow managed to get their hands on some other kind of armor.
-              {
-                  TakeInventory("Armor",armor);
-                  GiveInventory("IronMaidenArmor",armor);
-                  GiveInventory("IronMaidenArmor",1);
-              }
-              IronArmor = 0;
-            }
-
-            // Soul degeneration. Faster if in the middle of combat, due to burning more energy or something.
-            if (CheckInventory("MidCombat") > 1)
-            {
-              if (MarchOfTheImmortal >= 21)
-              {
-                TakeInventory("SuperMeterCounter",1);
-                MarchOfTheImmortal = 0;
-              }
-            }
-            else
-            {
-              if (MarchOfTheImmortal >= 30)
-              {
-                TakeInventory("SuperMeterCounter",1);
-                MarchOfTheImmortal = 0;
-              }
-            }
-
-            MarchOfTheImmortal++;
-            IronArmor++;
-          }
-          else
-          {
-            GiveInventory("HenshinCooldown",35);
-            LocalAmbientSound("henshin/timeout",127);
-            ActivatorSound("henshin/timeoutdismiss",127);
-            ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_REMOVEKEBAB,0,0);
-            MarchOfTheImmortal = 0;
-            IronArmor = 0;
-          }
         }
 
         // NYRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR

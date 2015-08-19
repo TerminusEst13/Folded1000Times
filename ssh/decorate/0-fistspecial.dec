@@ -1,7 +1,20 @@
 actor ShadowCloak : PowerShadow
 {
-    Powerup.Duration -25
+    +GHOST
+    +CANTSEEK
+    Powerup.Duration -20
 }
+
+/*actor ShadowCloak : PowerInvisibility
+{
+  +SHADOW
+  +GHOST
+  +CANTSEEK
+  +STEALTH
+  Powerup.Duration -20
+  Powerup.Strength 100
+  Powerup.Mode "Fuzzy"
+}*/
 
 actor ConcussionMissile
 {

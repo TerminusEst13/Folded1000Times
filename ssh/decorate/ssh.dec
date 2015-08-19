@@ -46,7 +46,7 @@ ACTOR MeleePlayer2 : PlayerPawn
     RadiusDamageFactor 0.5
     Player.StartItem "02Viper", 1
     Player.StartItem "Fists", 1
-    Player.StartItem "SuperMeterCounter", 20
+    Player.StartItem "KiMeterCounter", 310
     Player.StartItem "WeebClip", 28
     Player.StartItem "UppercutTrigger", 1
     Player.StartItem "UppercutUntrigger", 1
@@ -235,7 +235,7 @@ actor TricksterModeActivate : CustomInventory
     Inventory.Amount 1
     Inventory.MaxAmount 1
     Inventory.Icon "STYLTRCK"
-    Tag "Change: Speed of Life" // David Bowie
+    Tag "Change: Ghost of Perdition" // Opeth
     States
     {
     Use:

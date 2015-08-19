@@ -342,6 +342,7 @@ actor "Fists" : Weapon
         FSP3 EE 2
         FSP3 DCBA 1
         TNT1 A 0
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",300)
         TNT1 A 0 A_SetShootable
         TNT1 A 0 A_PlaySoundEx("specialpunch/uppercut","soundslot7",0,0)
         TNT1 A 0 A_SetPitch(pitch-1)
@@ -382,6 +383,7 @@ actor "Fists" : Weapon
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
         SHF1 AB 1
         SHF1 C 15
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",300)
         TNT1 A 0 A_PlayWeaponSound("supermissile/fire")
 		TNT1 A 0 Radius_Quake(2,4,0,8,0)
 		TNT1 A 0 A_FireCustomMissile("ConcussionMissile",frandom(-4,4),0,12,16,0,frandom(-2,2))
@@ -427,6 +429,7 @@ actor "Fists" : Weapon
         //TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         TNT1 A 0 A_GiveInventory("Grappling",1)
         TNT1 A 1
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",100)
         TNT1 A 0 A_TakeInventory("PunchComboCounter",0x7FFFFFFF)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
@@ -447,6 +450,7 @@ actor "Fists" : Weapon
         loop
     SpinAttackLeft:
         TNT1 A 0
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",300)
         TNT1 A 1 A_SetAngle(angle+11.25)
         TNT1 A 1 A_SetAngle(angle+22.5)
         //TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -495,6 +499,7 @@ actor "Fists" : Weapon
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
         SHF1 AB 1
         SHF1 C 15
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",300)
         TNT1 A 0 A_PlayWeaponSound("supermissile/fire")
 		TNT1 A 0 Radius_Quake(2,4,0,8,0)
         TNT1 A 0 A_FireCustomMissile("HomingMissile",-10,0,16,16,0,frandom(-3,3))
@@ -521,6 +526,7 @@ actor "Fists" : Weapon
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
         SHF1 AB 1
         SHF1 C 15
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",100)
         TNT1 A 0 A_PlayWeaponSound("special/empulse")
         TNT1 A 0 A_SetBlend("white",1.0,7)
         TNT1 A 0 A_SpawnItemEx("EMPulseExplode",0,0,32,0,0,0,0,48)
@@ -537,6 +543,7 @@ actor "Fists" : Weapon
         loop
     SpinAttackRight:
         TNT1 A 0
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",300)
         TNT1 A 1 A_SetAngle(angle-11.25)
         TNT1 A 1 A_SetAngle(angle-22.5)
         //TNT1 A 0 A_TakeInventory("SuperMeterCounter",20)
@@ -598,6 +605,7 @@ actor "Fists" : Weapon
         TMT1 A 0 A_JumpIfInventory("JustFrame",1,"JustFrameGigatonHammer")
         FSP3 DDDCCBA 1
         TNT1 A 1
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",300)
         TNT1 A 0 A_Recoil(-2)
         TNT1 A 0 A_PlaySoundEx("gigaton/fire","SoundSlot6",0,0)
         TNT1 A 0 A_PlaySoundEx("gigaton/swing","SoundSlot7",0,0)
@@ -674,6 +682,7 @@ actor "Fists" : Weapon
         goto SpecialAttackFinish
     EngageCloakingMode:
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",100)
         SHF1 AB 1
         SHF1 C 15
         TNT1 A 0 A_PlayWeaponSound("stealth/engage")
@@ -849,6 +858,7 @@ actor PunchAttack1 : FastProjectile
         TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
         TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit2",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",2)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -856,6 +866,7 @@ actor PunchAttack1 : FastProjectile
     XDeathPower:
         TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",5)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -891,6 +902,7 @@ actor JumpKickAttack : PunchAttack1
         TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
         TNT1 A 0 A_SpawnItemEx("ShihongJumpKickHit2",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",2)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -898,6 +910,7 @@ actor JumpKickAttack : PunchAttack1
     XDeathPower:
         TNT1 A 0 A_SpawnItemEx("ShihongJumpKickHit",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",5)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -933,6 +946,7 @@ actor PowerKickAttack : PunchAttack1
         TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit2",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",4)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -940,6 +954,7 @@ actor PowerKickAttack : PunchAttack1
     XDeathPower:
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",10)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -976,6 +991,7 @@ actor DashKickAttack : PunchAttack1
         TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit2",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",4)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3
@@ -983,6 +999,7 @@ actor DashKickAttack : PunchAttack1
     XDeathPower:
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",10)
         FHFX SS 1  
         FHFX TU 2
         FHFX VW 3

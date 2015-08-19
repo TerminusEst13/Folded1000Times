@@ -376,10 +376,10 @@ isselected "04Scorpions" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, dr
 isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 288, 190; }
 
 DrawImage "SSHHUD2", 7, 189;
-DrawBar "SSHSOLBA", "SSHSOLEM", SuperCounter1, Horizontal, 7, 190;
-DrawBar "SSHSOLB2", "SSHSOLEM", SuperCounter2, Horizontal, 7, 190;
-DrawBar "SSHSOLB3", "SSHSOLEM", SuperCounter3, Horizontal, 7, 190;
-DrawBar "SSHSOLB4", "SSHSOLEM", SuperCounter4, Horizontal, 7, 190;
+DrawBar "SSHSOLBA", "SSHSOLEM", KiCounter1, Horizontal, 7, 190;
+DrawBar "SSHSOLB2", "SSHSOLEM", KiCounter2, Horizontal, 7, 190;
+DrawBar "SSHSOLB3", "SSHSOLEM", KiCounter3, Horizontal, 7, 190;
+DrawBar "SSHSOLB4", "SSHSOLEM", KiCounter4, Horizontal, 7, 190;
 
 DrawBar "JETFUBAR", "JETFUEMPT", JetpackFuel, Horizontal, 2, 182;
 
@@ -553,10 +553,20 @@ isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, dra
 
 ininventory not InIronMaiden, 1 { DrawImage "HUDBARX", 5, 193; }
 ininventory InIronMaiden, 1 { DrawImage "HUDBARXb", 5, 190; }
+ininventory IsSSH, 1
+{
+DrawBar "HARMOR", "HEMPTY", KiCounter1, Horizontal, 7, 195;
+DrawBar "HARMOR2", "HEMPTY", KiCounter2, Horizontal, 7, 195;
+DrawBar "HARMOR3", "HEMPTY", KiCounter3, Horizontal, 7, 195;
+DrawBar "HARMOR4", "HEMPTY", KiCounter4, Horizontal, 7, 195;
+}
+ininventory IsJungHaeLin, 1
+{
 DrawBar "HARMOR", "HEMPTY", SuperCounter1, Horizontal, 7, 195;
 DrawBar "HARMOR2", "HEMPTY", SuperCounter2, Horizontal, 7, 195;
 DrawBar "HARMOR3", "HEMPTY", SuperCounter3, Horizontal, 7, 195;
 DrawBar "HARMOR4", "HEMPTY", SuperCounter4, Horizontal, 7, 195;
+}
 
 DrawImage "STYBARX", 263, 6;
 DrawBar "STYBAR1", "STYBAR0", ComboCounter1, Horizontal, 265, 8;

@@ -1066,7 +1066,7 @@ script SINO_JETBOOSTER ENTER
             TakeInventory("JetpackSpeedPower20",1);
             SetPlayerProperty(0,0,PROP_FLY);//TakeInventory("JetpackFlightPower",1);
             TakeInventory("JetpackModeOn",1);
-            GiveInventory("DodgeGhostOff",1);
+            if (CheckInventory("ShadowCloak") == 0) { GiveInventory("DodgeGhostOff",1); }
             GiveInventory("JetpackModeOff",1);
         }
 

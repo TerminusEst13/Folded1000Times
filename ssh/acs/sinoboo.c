@@ -135,6 +135,11 @@ script SINO_DECORATE (int pihua, int hunzhang)
             break;
     }
     break;
+
+    case 3:
+        delay(35*20);
+        if (CheckInventory("JetpackModeOn") == 0) { GiveInventory("DodgeGhostOff",1); }
+        break;
     }
 }
 
