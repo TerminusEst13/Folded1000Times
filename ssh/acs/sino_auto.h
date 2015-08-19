@@ -655,22 +655,6 @@ script SINO_ENTER_UNREPLACED ENTER
             { SetActorProperty(0,APROP_HEALTH,1); }
         }
 
-        // Global variables
-        // In singleplayer, these make the weapon pickups read if the player have actually
-        // picked up the weapons, and if so they...well...
-        // They make the things spawn other things.
-        // That makes sense. I promise.
-        if (isSinglePlayer())
-        {
-            if (CheckInventory("GotShotgun") == 1) { GotShotgun = 1; }
-            if (CheckInventory("GotCarronade") == 1) { GotCarronade = 1; }
-            if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
-            if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
-            if (CheckInventory("GotIronMaiden") == 1) { GotIronMaiden = 1; } 
-            if (CheckInventory("GotLegion") == 1) { GotLegion = 1; } 
-            if (CheckInventory("GotFrosthammer") == 1) { GotFrosthammer = 1; } 
-        }
-
         // NYRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
         if (GetCvar("dst_runmod") < 10001 && GetCvar("dst_runmod") > -2) // I forget what the maximum integer is. 36525? Well, whatever, anything beyond that and it'll crash.
         {

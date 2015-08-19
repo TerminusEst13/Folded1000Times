@@ -173,7 +173,7 @@ script WEEB_ENTER ENTER
     // Likewise, if someone enters while in Iron Maiden.
     if (CheckInventory("InIronMaiden") == 1) { ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0); }
     
-    if (GetCvar("dst_debug") == 1) { Log(s:"Entering while(1) loop on player ", d:pln); }
+    if (GetCvar("dst_debug") == 1) { Log(s:"Entering WEEB_ENTER while(1) loop on player ", d:pln); }
 
     while (1)
     {
@@ -660,22 +660,6 @@ script WEEB_ENTER ENTER
            if (RemoveARankAnnouncer == 525) { TakeInventory("ARankAnnounced",1); }
            if (RemoveSRankAnnouncer == 525) { TakeInventory("SRankAnnounced",1); }
 
-        // Global variables
-        // In singleplayer, these make the weapon pickups read if the player have actually
-        // picked up the weapons, and if so they...well...
-        // They make the things spawn other things.
-        // That makes sense. I promise.
-        if (isSinglePlayer())
-        {
-            if (CheckInventory("GotShotgun") == 1) { GotShotgun = 1; }
-            if (CheckInventory("GotCarronade") == 1) { GotCarronade = 1; }
-            if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
-            if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
-            if (CheckInventory("GotIronMaiden") == 1) { GotIronMaiden = 1; } 
-            if (CheckInventory("GotLegion") == 1) { GotLegion = 1; } 
-            if (CheckInventory("GotFrosthammer") == 1) { GotFrosthammer = 1; } 
-        }
-
         // Special move bollocks
         OldButtons = GetPlayerInput(-1, INPUT_OLDBUTTONS);
         Buttons = GetPlayerInput(-1, INPUT_BUTTONS);
@@ -1034,10 +1018,13 @@ script WEEB_ENTER ENTER
             TakeInventory("BlindGuardianShieldActive",1);
             TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
             TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
+            if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:pln, s:" dead, terminating WEEB_ENTER."); }
             terminate;
         }
     }
 }
+
+// Below are universal scripts that affect both Shihong and Hae-Lin.
 
 script WEEB_DOUBLETAP ENTER
 {
@@ -1078,5 +1065,29 @@ script WEEB_COMBOREMOVAL ENTER
         if (CheckInventory("HyperComboCounter") >= 250 && CheckInventory("HyperComboCounter") < 300 ) { Delay(2); }
         if (CheckInventory("HyperComboCounter") >= 300 ) { Delay(1); }
         if (CheckInventory("MidCombat") == 0) { TakeInventory("HyperComboCounter",1); }
+    }
+}
+
+script WEEB_SINGLEPLAYER ENTER
+{
+    while(1)
+    {
+        // Global variables
+        // In singleplayer, these make the weapon pickups read if the player have actually
+        // picked up the weapons, and if so they...well...
+        // They make the things spawn other things.
+        // That makes sense. I promise.
+        if (isSinglePlayer())
+        {
+            if (CheckInventory("GotShotgun") == 1) { GotShotgun = 1; }
+            if (CheckInventory("GotCarronade") == 1) { GotCarronade = 1; }
+            if (CheckInventory("GotUzi") == 1) { GotUzi = 1; }
+            if (CheckInventory("GotHammer") == 1) { GotHam = 1; } // HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM
+            if (CheckInventory("GotIronMaiden") == 1) { GotIronMaiden = 1; } 
+            if (CheckInventory("GotLegion") == 1) { GotLegion = 1; } 
+            if (CheckInventory("GotFrosthammer") == 1) { GotFrosthammer = 1; } 
+        }
+        else { terminate; }
+        delay(1);
     }
 }

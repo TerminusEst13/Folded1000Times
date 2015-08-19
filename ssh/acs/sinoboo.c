@@ -24,14 +24,6 @@ int array_noannounce[PLAYERMAX];
 int flashlightOn[PLAYERMAX];
 int NotADoomGame;
 
-int GotShotgun;
-int GotCarronade;
-int GotUzi;
-int GotHam; // HAM
-int GotIronMaiden;
-int GotLegion;
-int GotFrosthammer;
-
 function void DrawScanlines(void)
 {
     int Y = Random(0, 240) << 16;
