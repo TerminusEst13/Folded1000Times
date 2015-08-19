@@ -79,6 +79,8 @@ script SINO_ENTER ENTER
     TakeInventory("JetpackModeOn",1);
     GiveInventory("DodgeGhostOff",1);
     GiveInventory("JetpackModeOff",1);
+    GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); // Shihong deals with ki, not souls.
+                                                                        // Souls are completely irrelevant to her.
 
     if (GetCvar("dst_debug") == 1) { Log(s:"Entering SINO_ENTER while(1) loop on player ", d:pln); }
 
@@ -495,9 +497,6 @@ script SINO_ENTER_UNREPLACED ENTER
         if (GetCvar("dst_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
            else { TakeInventory("NoTauntAllowed",1); }
-           
-        if (GetCvar("dst_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
-           else { TakeInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
 
         // Health nonsense
         if( GetCVar( "dst_doomhealth" ) == 1 )

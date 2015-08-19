@@ -1075,12 +1075,12 @@ script SINO_JETBOOSTER ENTER
         // First it checks to see whether you're in Dodger mode, then it checks to see whether you're on the ground or in the air.
         if (CheckInventory("JetpackModeOff") == 1)
         {
-            if (CheckInventory("TricksterModeOn") == 1 && ( (JetpackFuelCounter >= 3 && CheckInventory("OnTheGround") == 0) | (JetpackFuelCounter >= 2 && CheckInventory("OnTheGround") == 1) ) )
+            if (CheckInventory("TricksterModeOn") == 1 && ( (JetpackFuelCounter >= 2 && CheckInventory("OnTheGround") == 0) | (JetpackFuelCounter >= 2 && CheckInventory("OnTheGround") == 1) ) )
             {
               GiveInventory("JetpackFuel",1);
               JetpackFuelCounter = 0;
             }
-            else if (CheckInventory("TricksterModeOn") == 0 && ( (JetpackFuelCounter >= 5 && CheckInventory("OnTheGround") == 0) | (JetpackFuelCounter >= 4 && CheckInventory("OnTheGround") == 1) ) )
+            else if (CheckInventory("TricksterModeOn") == 0 && ( (JetpackFuelCounter >= 4 && CheckInventory("OnTheGround") == 0) | (JetpackFuelCounter >= 4 && CheckInventory("OnTheGround") == 1) ) )
             {
               GiveInventory("JetpackFuel",1);
               JetpackFuelCounter = 0;

@@ -156,6 +156,7 @@ actor PowerupPickup2 : CustomInventory replaces Berserk
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("HyperComboCounter",50)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",50)
+        TNT1 A 0 A_GiveInventory("KiMeterCounter",500)
         stop
     }
 }
