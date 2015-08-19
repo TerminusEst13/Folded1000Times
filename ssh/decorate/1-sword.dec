@@ -1100,7 +1100,7 @@ actor TriumphSwordBeam
     Damage (100)
     Projectile
     Obituary "%k cut %o up."
-    DamageType "Triumph"
+    DamageType "TriumphBeam"
     +RIPPER
     +PIERCEARMOR
     +NOEXTREMEDEATH

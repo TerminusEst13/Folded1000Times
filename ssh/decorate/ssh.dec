@@ -58,7 +58,7 @@ ACTOR MeleePlayer2 : PlayerPawn
     Player.StartItem "TricksterModeActivate", 1
     Player.StartItem "IsSSH", 1
     Player.ColorRange 112, 127
-    Player.AttackZOffset 16
+    Player.AttackZOffset 24
     States
     {
     Spawn:

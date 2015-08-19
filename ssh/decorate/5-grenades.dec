@@ -1430,7 +1430,7 @@ ACTOR EnforcerExplodeJumpage
     +EXPLODEONWATER
     -SOLID
     +DONTBLAST
-    DamageType "EnforcerJump"
+    DamageType "ExodusJump"
     Obituary "%k shouldn't have killed %o with this."
     States
     {

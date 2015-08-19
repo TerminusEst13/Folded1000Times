@@ -134,7 +134,6 @@ ACTOR HomingMissile
     +SEEKERMISSILE
     DeathSound "missile/hit"
     Obituary "%k blew %o up."
-    DamageType "Missile"
     Decal Scorch
     States
     {
@@ -306,7 +305,7 @@ actor GigatonPunch : FastProjectile
     SeeSound "none"
     DeathSound "none"
     Species "Player"
-    DamageType "ShihongPunchSpecial"
+    DamageType "ShihongGigatonPunch"
     Projectile
     +BLOODSPLATTER
     +THRUSPECIES
@@ -364,7 +363,7 @@ actor GigatonHammer : FastProjectile
     SeeSound "none"
     DeathSound "none"
     Species "Player"
-    DamageType "ShihongPunchSpecial"
+    DamageType "ShihongGigatonPunch"
     Projectile
     +BLOODSPLATTER
     +THRUSPECIES
@@ -438,7 +437,7 @@ ACTOR GigatonPunchExplosion
     +EXTREMEDEATH
     +SPECTRAL
     -SOLID
-    DamageType "ShihongPunchSpecial"
+    DamageType "ShihongGigatonPunch"
     Obituary "%k jackhammered %o with gigatons of force."
     States
     {
@@ -459,7 +458,7 @@ ACTOR GigatonHammerExplosion
     +EXTREMEDEATH
     +SPECTRAL
     -SOLID
-    DamageType "ShihongPunchSpecial"
+    DamageType "ShihongGigatonPunch"
     Obituary "%k jackhammered %o with gigatons of force."
     States
     {

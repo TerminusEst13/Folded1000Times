@@ -7,59 +7,59 @@ ACTOR PowerAttackStop : PowerSpeed
 ACTOR ComboDamage1 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.1
+    DamageFactor "ShihongPunchSpecial", 1.1
 }
 
 ACTOR ComboDamage2 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.125
+    DamageFactor "ShihongPunchSpecial", 1.125
 }
 
 ACTOR ComboDamage3 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.15
+    DamageFactor "ShihongPunchSpecial", 1.15
 }
 
 ACTOR ComboDamage4 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.175
+    DamageFactor "ShihongPunchSpecial", 1.175
 }
 
 ACTOR ComboDamage5 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.2
+    DamageFactor "ShihongPunchSpecial", 1.2
 }
 
 ACTOR ComboDamage6 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.225
+    DamageFactor "ShihongPunchSpecial", 1.225
 }
 
 ACTOR ComboDamage7 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.25
+    DamageFactor "ShihongPunchSpecial", 1.25
 }
 
 ACTOR ComboDamage8 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.275
+    DamageFactor "ShihongPunchSpecial", 1.275
 }
 
 ACTOR ComboDamage9 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.3
+    DamageFactor "ShihongPunchSpecial", 1.3
 }
 
 ACTOR ComboDamage10 : PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
-    DamageFactor "ShihongDamageSpecial", 1.5 // Finishes in 9.964292717[...] damage buff.
+    DamageFactor "ShihongPunchSpecial", 1.5 // Finishes in 9.964292717[...] damage buff.
 }

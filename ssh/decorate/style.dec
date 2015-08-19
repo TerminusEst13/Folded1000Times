@@ -14,6 +14,7 @@ actor RangedModeExtraDamage : PowerDamage
     DamageFactor "RebellionDamageStyle", 1.33
     DamageFactor "EnforcerDamageStyle", 1.33
     DamageFactor "EnforcerExplosive", 1.33
+    DamageFactor "TriumphBeam", 1.33
     Powerup.Duration 0x7FFFFFFF
 }
 

@@ -79,6 +79,9 @@ actor ComboDamageLevel1 : PowerDamage
 
     DamageFactor "ShihongPunch", 1.5
     DamageFactor "ShihongPunchSpecial", 1.5
+    DamageFactor "ShihongSpinAttack", 1.45
+    DamageFactor "LittleMacUppercut", 1.45
+    DamageFactor "ShihongGigatonPunch", 1.45
     DamageFactor "EnforcerPunch", 1.5
     DamageFactor "Triumph", 1.5
     DamageFactor "StrikerDamageStyle", 1.25
@@ -115,6 +118,9 @@ actor ComboDamageLevel2 : PowerDamage
 
     DamageFactor "ShihongPunch", 1.425
     DamageFactor "ShihongPunchSpecial", 1.425
+    DamageFactor "ShihongSpinAttack", 1.375
+    DamageFactor "LittleMacUppercut", 1.375
+    DamageFactor "ShihongGigatonPunch", 1.375
     DamageFactor "EnforcerPunch", 1.425
     DamageFactor "Triumph", 1.425
     DamageFactor "StrikerDamageStyle", 1.2125 // 1.515625
@@ -151,6 +157,9 @@ actor ComboDamageLevel3 : PowerDamage
 
     DamageFactor "ShihongPunch", 1.35
     DamageFactor "ShihongPunchSpecial", 1.35
+    DamageFactor "ShihongSpinAttack", 1.3
+    DamageFactor "LittleMacUppercut", 1.3
+    DamageFactor "ShihongGigatonPunch", 1.3
     DamageFactor "EnforcerPunch", 1.35
     DamageFactor "Triumph", 1.35
     DamageFactor "StrikerDamageStyle", 1.175 // 1.780859375
@@ -187,6 +196,9 @@ actor ComboDamageLevel4 : PowerDamage
 
     DamageFactor "ShihongPunch", 1.275
     DamageFactor "ShihongPunchSpecial", 1.275
+    DamageFactor "ShihongSpinAttack", 1.225
+    DamageFactor "LittleMacUppercut", 1.225
+    DamageFactor "ShihongGigatonPunch", 1.225
     DamageFactor "EnforcerPunch", 1.275
     DamageFactor "Triumph", 1.275
     DamageFactor "StrikerDamageStyle", 1.1375 // 2.0257275390625
@@ -223,6 +235,9 @@ actor ComboDamageLevel5 : PowerDamage
 
     DamageFactor "ShihongPunch", 1.2
     DamageFactor "ShihongPunchSpecial", 1.2
+    DamageFactor "ShihongSpinAttack", 1.15
+    DamageFactor "LittleMacUppercut", 1.15
+    DamageFactor "ShihongGigatonPunch", 1.15
     DamageFactor "EnforcerPunch", 1.2
     DamageFactor "Triumph", 1.2
     DamageFactor "StrikerDamageStyle", 1.1 // 2.22830029296875
@@ -259,6 +274,9 @@ actor ComboDamageLevel6 : PowerDamage
 
     DamageFactor "ShihongPunch", 1.15
     DamageFactor "ShihongPunchSpecial", 1.15
+    DamageFactor "ShihongSpinAttack", 1.075
+    DamageFactor "LittleMacUppercut", 1.075
+    DamageFactor "ShihongGigatonPunch", 1.075
     DamageFactor "EnforcerPunch", 1.15
     DamageFactor "Triumph", 1.15
     DamageFactor "StrikerDamageStyle", 1.075 // 2.395422814941406
