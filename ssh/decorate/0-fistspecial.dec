@@ -1,6 +1,6 @@
 actor ShadowCloak : PowerShadow
 {
-    Powerup.Duration -15
+    Powerup.Duration -25
 }
 
 actor ConcussionMissile

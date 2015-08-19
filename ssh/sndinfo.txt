@@ -121,6 +121,8 @@ striker/fire           SREVFIRE
 striker/firefinal      SREVFIR2
 striker/unload         SREVUNLD // Taken from Killing Floor
 striker/load           SREVRELD // Taken from Left 4 Dead 2
+striker/firesil        SSRVFIRE
+striker/firefinsil     SSRVFIR2
 
 // Wolf
 avenger/fire           AVNGFIRE
@@ -129,6 +131,7 @@ avenger/dryfire        AVNGDRYF // Taken from Doom 3
 avenger/unload         AVNGUNLD // Taken from Killing Floor
 avenger/reload         AVNGRELD // Taken from F.E.A.R.
 avenger/reload2        AVNGRLD2 // The above mixed with a Halo 3 sound
+avenger/firesil        AVNGFIRS
 
 // Dragon
 grenade/alert          GRNALERT // Taken from San Francisco Rush 2049
@@ -152,6 +155,9 @@ special/fireleft       SPCLFIRL
 special/fireright      SPCLFIRR
 special/unload         SPCLUNLD // Taken from Killing Floor
 special/load           SPCLRELD // Taken from Killing Floor
+special/firesil        SSPCFIRE
+special/firesilleft    SSPCFIRL
+special/firesilright   SSPCFIRR
 
 // Special moves
 specialpunch/uppercut  SSHSWNSP
