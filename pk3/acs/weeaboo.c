@@ -62,6 +62,7 @@ script WEEB_RESPAWN respawn
 
     if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:PlayerNumber(), s:" respawning, executing WEEB_ENTER."); }
     ACS_ExecuteAlways(WEEB_ENTER,0,0,0);
+    ACS_ExecuteAlways(292,0,0,0);
 }
 
 script WEEB_OPEN OPEN

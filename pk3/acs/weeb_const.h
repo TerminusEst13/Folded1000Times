@@ -26,7 +26,7 @@
 #define WEEB_JOY_BACK                        289
 #define WEEB_JOY_LOOP                        290
 #define WEEB_PUKE3                           291
-#define WEEB_SINGLEPLAYER                    292
+#define WEEB_GLOBAL                          292
 
 // Definitions
 

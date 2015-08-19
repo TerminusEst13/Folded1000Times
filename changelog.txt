@@ -15,6 +15,7 @@ FROM 0.82 TO 0.XX
 - Weapons now have been changed to have Tag entries, removing spaces from their names, for ease of clientside weaponslot manipulation.
 - Souls no longer fly out of bisected body parts. Why was that even a thing?
 - A new difficulty was added, for those who want even more challenge.
+- A WEEB_GLOBAL ACS script has been introduced, for streamlining of applying singular-but-important scripts to multiple players. Yes, this is important. Shut up.
 
 
 

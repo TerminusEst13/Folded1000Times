@@ -11,9 +11,7 @@ script WEEB_ENTER ENTER
     int Ys;
     int XMen2;
     int Ys2;
-    int IsBrutal = 0;
     int mytid;
-    int i, j, k, u, ang;
     int MarchOfTheImmortal;
     int IronArmor;
     int armor;
@@ -38,11 +36,6 @@ script WEEB_ENTER ENTER
     int NewSentinelHP;
     int GetSomeHealthAlready;
     int speedmod;
-    int mtotal;
-    int mkilled;
-    int stotal;
-    int sfound;
-    int sfound2;
     int TimeStandStill;
     int RemoveFRankAnnouncer;
     int RemoveDRankAnnouncer;
@@ -50,14 +43,9 @@ script WEEB_ENTER ENTER
     int RemoveBRankAnnouncer;
     int RemoveARankAnnouncer;
     int RemoveSRankAnnouncer;
-    int IFuckedTheGameUp;
     int DodgeCounter;
     int HaloTID;
-    // 71 ints and counting!
-
-    i = unusedTID(37000, 47000);
-    u = unusedTID(37000, 47000);
-    sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+    int u, ang;
 
     if (GetCvar("dst_debug") == 1) { Log(s:"WEEB_ENTER executing on player ", d:pln); }
 
@@ -127,25 +115,6 @@ script WEEB_ENTER ENTER
         GiveInventory("BlindGuardianFromPreviousLevel",1);
     }
 
-    if (GetCvar("dst_doomhealth") == 1)
-    {
-        GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
-        NotADoomGame = 0;
-    }
-    else
-    {
-        TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
-        NotADoomGame = 1;
-    }
-
-    // Brutal Doom compatibility check.
-    if (Spawn("Brutal_Blood",GetActorX(0),GetActorY(0),GetActorZ(0),i) || Spawn("BrutalPistol",GetActorX(0),GetActorY(0),GetActorZ(0),i) || GetCvar("dst_2brutal") == 1)
-    {
-        Thing_Remove(i);
-        isbrutal = 1;
-        GiveInventory("PointsIsBrutal",1);
-    }
-
     // Status resets for the sake of weapons/items/etc that change between levels.
     // Like in case some wiseass exits while in post-hit invulnerability.
     SetActorProperty(0,APROP_INVULNERABLE,0);
@@ -207,67 +176,6 @@ script WEEB_ENTER ENTER
            
         if (GetCvar("dst_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
            else { TakeInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
-
-        // If you do this mid-game, you're fucked.
-        // Millions of games are fucked over monthly by accidental or intentional negligence.
-        // Please, donate now to the Foundation for Unfucking Games, or FUG.
-        if (GetCvar("dst_doomhealth") == 1) { GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
-           else { TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
-        if ( (NotADoomGame == 1 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 1) || (NotADoomGame == 0 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 0) || IFuckedTheGameUp == 1)
-        {
-           SetFont("BIGFONT");
-           HudMessage(s:"PLEASE RESTART THE GAME";HUDMSG_PLAIN,13,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
-           IFuckedTheGameUp = 1;
-        }
-
-        // Points malarkey
-        if (CheckInventory("Points") >= 10000)
-        {
-            TakeInventory("Points",10000);
-            GiveInventory("ManPoints",1);
-        }
-
-        if (CheckInventory("ManPoints") >= 10000)
-        {
-            TakeInventory("ManPoints",10000);
-            GiveInventory("OkuPoints",1);
-        }
-
-        mtotal = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS);
-        mkilled = GetLevelInfo(LEVELINFO_KILLED_MONSTERS);
-        if (mtotal != 0 && mtotal == mkilled && CheckInventory("PointsKilledMonsters") == 0)
-        {
-        // Monster number can increase, be it through either resurrecting or summoning.
-        // So because I can't check for the total amount on Unloading, the player is just
-        // given a dummy token that indicates they got it, and pray that maps aren't so
-        // in-depth that they suddenly spawn another massive amount as soon as the existing
-        // amount is killed.
-            GiveInventory("PointsKilledMonsters",1);
-            if (mtotal <= 50) { GiveInventory("ManPoints",10); } // Vanilla Doom
-            if (mtotal > 50 && mtotal <= 100) { GiveInventory("ManPoints",25); } // 1994 mapwad
-            if (mtotal > 100 && mtotal <= 500) { GiveInventory("ManPoints",50); } // Scythe 2
-            if (mtotal > 500 && mtotal <= 1000) { GiveInventory("ManPoints",100); } // Babby's first slaughtermap
-            if (mtotal > 1000 && mtotal <= 5000) { GiveInventory("ManPoints",500); } // Slaughtermap
-            if (mtotal > 5000 && mtotal <= 10000) { GiveInventory("ManPoints",1000); } // Chillax
-            if (mtotal > 10000 && mtotal <= 50000) { GiveInventory("OkuPoints",1); } // OkuMap
-            if (mtotal > 50000) { GiveInventory("OkuPoints",10); } // What the hell are you playing?!
-        }
-
-        stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
-        sfound2 = sfound;
-        sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
-        // Found a secret.
-        if (sfound > sfound2)
-        {
-            GiveInventory("ManPoints",1);
-            sfound2 = sfound;
-        }
-        // Found all secrets.
-        if (stotal != 0 && stotal == sfound && CheckInventory("PointsFoundAllSecrets") == 0)
-        {
-            GiveInventory("ManPoints",9); // Plus the previous 10000 for a total of 100000.
-            GiveInventory("PointsFoundAllSecrets",1);
-        }
 
         // Health nonsense
         
@@ -953,33 +861,6 @@ script WEEB_ENTER ENTER
             SetActorProperty(0, APROP_Speed, speedmod); // And adjust the player's speed accordingly.
         }
 
-        // Yes, this mod is 100% compatible with Brutal Doom. Absolutely nothing bad will happen!
-        if (isbrutal)
-        {
-            k = unusedTID(23000, 33000);
-                
-            if (ThingCountName("GoldenBoner",0) < (20 * PlayerCount()))
-                { Spawn("GoldenBoner",GetActorX(0),GetActorY(0),GetActorZ(0),k); }
-
-            Thing_Hate(k,mytid,2);
-            Thing_ChangeTID(k,0);
-        }
-
-        // Clientside cvar arrays.
-        if (array_recoilrules[pln]) { GiveInventory("IAmASillyPersonWhoDoesntLikeRecoil", 1); }
-        else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
-        if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
-        else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
-        if (array_beepbeepbeep[pln]) { GiveInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie",1); }
-        else { TakeInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie", 0x7FFFFFFF); }
-        if (array_nopan[pln]) { GiveInventory("IAmABoringPersonWhoThinksPointsAreForNerds",1); }
-        else { TakeInventory("IAmABoringPersonWhoThinksPointsAreForNerds", 0x7FFFFFFF); }
-        if (array_noannounce[pln]) { GiveInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",1); }
-        else { TakeInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",0x7FFFFFFF); }
-
-        if (flashlightOn[pln])
-            { GiveInventory("FlashlightSpawner",1); }
-
         // OH SHIT I'M OUT OF HEALTH
         // SUDDENLY AND COINCIDENTALLY I HAVE A MASSIVE CRAVING FOR MUNCHIES
         if (CheckInventory("ContraLifeToken") == 0 && CheckInventory("OverLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
@@ -1011,7 +892,6 @@ script WEEB_ENTER ENTER
             SentTID = 0;
             Thing_Remove(ShieldTID);
             ShieldTID = 0;
-            flashlightOn[pln] = 0;
             TakeInventory("SentinelUp",1);
             TakeInventory("SentinelActive",1);
             TakeInventory("BlindGuardianShieldUp",1);
@@ -1068,10 +948,105 @@ script WEEB_COMBOREMOVAL ENTER
     }
 }
 
-script WEEB_SINGLEPLAYER ENTER
+script WEEB_GLOBAL ENTER
 {
+    int IsBrutal = 0;
+    int i, j, k;
+    int mtotal;
+    int mkilled;
+    int stotal;
+    int sfound;
+    int sfound2;
+    int IFuckedTheGameUp;
+    int pln = PlayerNumber();
+
+    i = unusedTID(37000, 47000);
+
+    sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+
+    if (GetCvar("dst_doomhealth") == 1)
+    {
+        GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
+        NotADoomGame = 0;
+    }
+    else
+    {
+        TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1);
+        NotADoomGame = 1;
+    }
+
+    // Brutal Doom compatibility check.
+    if (Spawn("Brutal_Blood",GetActorX(0),GetActorY(0),GetActorZ(0),i) || Spawn("BrutalPistol",GetActorX(0),GetActorY(0),GetActorZ(0),i) || GetCvar("dst_2brutal") == 1)
+    {
+        Thing_Remove(i);
+        isbrutal = 1;
+        GiveInventory("PointsIsBrutal",1);
+    }
+
     while(1)
     {
+        // Points malarkey
+        if (CheckInventory("Points") >= 10000)
+        {
+            TakeInventory("Points",10000);
+            GiveInventory("ManPoints",1);
+        }
+
+        if (CheckInventory("ManPoints") >= 10000)
+        {
+            TakeInventory("ManPoints",10000);
+            GiveInventory("OkuPoints",1);
+        }
+
+        mtotal = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS);
+        mkilled = GetLevelInfo(LEVELINFO_KILLED_MONSTERS);
+        if (mtotal != 0 && mtotal == mkilled && CheckInventory("PointsKilledMonsters") == 0)
+        {
+        // Monster number can increase, be it through either resurrecting or summoning.
+        // So because I can't check for the total amount on Unloading, the player is just
+        // given a dummy token that indicates they got it, and pray that maps aren't so
+        // in-depth that they suddenly spawn another massive amount as soon as the existing
+        // amount is killed.
+            GiveInventory("PointsKilledMonsters",1);
+            if (mtotal <= 50) { GiveInventory("ManPoints",10); } // Vanilla Doom
+            if (mtotal > 50 && mtotal <= 100) { GiveInventory("ManPoints",25); } // 1994 mapwad
+            if (mtotal > 100 && mtotal <= 500) { GiveInventory("ManPoints",50); } // Scythe 2
+            if (mtotal > 500 && mtotal <= 1000) { GiveInventory("ManPoints",100); } // Babby's first slaughtermap
+            if (mtotal > 1000 && mtotal <= 5000) { GiveInventory("ManPoints",500); } // Slaughtermap
+            if (mtotal > 5000 && mtotal <= 10000) { GiveInventory("ManPoints",1000); } // Chillax
+            if (mtotal > 10000 && mtotal <= 50000) { GiveInventory("OkuPoints",1); } // OkuMap
+            if (mtotal > 50000) { GiveInventory("OkuPoints",10); } // What the hell are you playing?!
+        }
+
+        stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
+        sfound2 = sfound;
+        sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+        // Found a secret.
+        if (sfound > sfound2)
+        {
+            GiveInventory("ManPoints",1);
+            sfound2 = sfound;
+        }
+        // Found all secrets.
+        if (stotal != 0 && stotal == sfound && CheckInventory("PointsFoundAllSecrets") == 0)
+        {
+            GiveInventory("ManPoints",9); // Plus the previous 10000 for a total of 100000.
+            GiveInventory("PointsFoundAllSecrets",1);
+        }
+
+
+        // If you do this mid-game, you're fucked.
+        // Millions of games are fucked over monthly by accidental or intentional negligence.
+        // Please, donate now to the Foundation for Unfucking Games, or FUG.
+        if (GetCvar("dst_doomhealth") == 1) { GiveInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
+           else { TakeInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1); }
+        if ( (NotADoomGame == 1 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 1) || (NotADoomGame == 0 && CheckInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens") == 0) || IFuckedTheGameUp == 1)
+        {
+           SetFont("BIGFONT");
+           HudMessage(s:"PLEASE RESTART THE GAME";HUDMSG_PLAIN,13,CR_GOLD,0.5,0.2,5.25,0.5,0.5);
+           IFuckedTheGameUp = 1;
+        }
+
         // Global variables
         // In singleplayer, these make the weapon pickups read if the player have actually
         // picked up the weapons, and if so they...well...
@@ -1087,7 +1062,36 @@ script WEEB_SINGLEPLAYER ENTER
             if (CheckInventory("GotLegion") == 1) { GotLegion = 1; } 
             if (CheckInventory("GotFrosthammer") == 1) { GotFrosthammer = 1; } 
         }
-        else { terminate; }
+
+        // Yes, this mod is 100% compatible with Brutal Doom. Absolutely nothing bad will happen!
+        if (isbrutal)
+        {
+            k = unusedTID(23000, 33000);
+                
+            if (ThingCountName("GoldenBoner",0) < (20 * PlayerCount()))
+                { Spawn("GoldenBoner",GetActorX(0),GetActorY(0),GetActorZ(0),k); }
+
+            Thing_Hate(k,0,2);
+            Thing_ChangeTID(k,0);
+        }
+
+        // Clientside cvar arrays.
+        if (array_recoilrules[pln]) { GiveInventory("IAmASillyPersonWhoDoesntLikeRecoil", 1); }
+        else { TakeInventory("IAmASillyPersonWhoDoesntLikeRecoil", 0x7FFFFFFF); }
+        if (array_autoswitch[pln]) { GiveInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 1); }
+        else { TakeInventory("IAmAnOkayPersonWhoLikesToAutoSwitch", 0x7FFFFFFF); }
+        if (array_beepbeepbeep[pln]) { GiveInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie",1); }
+        else { TakeInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie", 0x7FFFFFFF); }
+        if (array_nopan[pln]) { GiveInventory("IAmABoringPersonWhoThinksPointsAreForNerds",1); }
+        else { TakeInventory("IAmABoringPersonWhoThinksPointsAreForNerds", 0x7FFFFFFF); }
+        if (array_noannounce[pln]) { GiveInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",1); }
+        else { TakeInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",0x7FFFFFFF); }
+
+        if (flashlightOn[pln])
+            { GiveInventory("FlashlightSpawner",1); }
+
         delay(1);
+        if (IsDead(0))
+            { flashlightOn[pln] = 0; terminate; }
     }
 }

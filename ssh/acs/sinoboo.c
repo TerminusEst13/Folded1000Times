@@ -162,6 +162,7 @@ script SINO_RESPAWN respawn
     ACS_ExecuteAlways(SINO_ENTER_UNREPLACED,0,0,0);
     ACS_ExecuteAlways(SINO_JUSTFRAME,0,0,0);
     ACS_ExecuteAlways(SINO_DOUBLEJUMP,0,0,0);
+    ACS_ExecuteAlways(292,0,0,0);
 }
 
 script SINO_UNLOADING unloading
