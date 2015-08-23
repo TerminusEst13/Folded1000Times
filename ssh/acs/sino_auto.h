@@ -331,19 +331,19 @@ script SINO_ENTER ENTER
         // inventory item is still there, they're given another item saying that
         // they double-tapped the button.
 
-          if (keypressed(BT_MOVERIGHT))
+          if (keypressed(BT_MOVERIGHT) && keypressed(BT_ATTACK))
             { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyRight",6); }}}
-          if (keypressed(BT_MOVELEFT))
+          if (keypressed(BT_MOVELEFT) && keypressed(BT_ATTACK))
             { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyLeft",6); }}}
-          if (keypressed(BT_FORWARD))
+          if (keypressed(BT_FORWARD) && keypressed(BT_ATTACK))
             { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyForward",6); }}}
-          if (keypressed(BT_BACK))
+          if (keypressed(BT_BACK) && keypressed(BT_ATTACK))
             { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyBack",6); }}}

@@ -16,6 +16,7 @@ FROM 0.82 TO 0.XX
 - Souls no longer fly out of bisected body parts. Why was that even a thing?
 - A new difficulty was added, for those who want even more challenge.
 - A WEEB_GLOBAL ACS script has been introduced, for streamlining of applying singular-but-important scripts to multiple players. Yes, this is important. Shut up.
+- Special inputs now require fire to be held down first.
 
 
 
