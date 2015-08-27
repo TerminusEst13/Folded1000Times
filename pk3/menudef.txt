@@ -63,7 +63,7 @@ OptionMenu "Changes-TurnThePage"
     StaticText      "Figure These Out Yourself"
     Option "OH FUCK, SKELETONS!",            "dst_2brutal", "OnOff"
     Option "FOR THE SWARM",                  "dst_enemymultiplier", "MultiplierOptions"
-    Option "Fake Difficulty",                "dst_multiplierplayerhealth", "MultiplierHealthOptions"
+    Option "Fake Difficulty",                "dst_multiplierhealth", "MultiplierHealthOptions"
 }
 
 OptionValue ToasterOptions
