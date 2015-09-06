@@ -435,7 +435,7 @@ script SINO_ENTER_UNREPLACED ENTER
 
         if (GetCvar("dst_omenstart") == 1)
         {
-            GiveInventory("KharonOmen",1);
+            GiveInventory("01Tiger",1);
             GiveInventory("GotHammer",1);
         }
 
@@ -520,41 +520,6 @@ script SINO_ENTER_UNREPLACED ENTER
                 GiveInventory( "OverLifeToken", ( health - 90 ) / 10 );
             }
         }
-
-        // I will not make a Hammertime joke. I will not make a Hammertime joke. I will not make a Hammertime joke.
-        if (CheckInventory("HammerUp") == 1)
-        {
-           // Different levels of charging the hammer based on different states of the hammer
-           // when you're holding it out. The more charge you have, the slower it charges.
-           if (CheckInventory("HammerCharge") >= 90 && CheckInventory("HammerCharge") <= 100 )
-               { if (RideTheLightning >= 34)
-                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
-               // Overcharging is put here because of the explicit need of the previous level to be
-               // between 90 and 100, thanks to changing ammo capacities.
-               // Everything else can just be "meh, more than X".
-           else if (CheckInventory("HammerCharge") > 100)
-               { if (RideTheLightning >= 8)
-                  { GiveInventory("HammerCharge",1); GiveInventory("ChargeScreenFlash",1); RideTheLightning = 0; }}
-           else if (CheckInventory("HammerCharge") >= 80)
-               { if (RideTheLightning >= 27)
-                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
-           else if (CheckInventory("HammerCharge") >= 60)
-               { if (RideTheLightning >= 22)
-                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
-           else if (CheckInventory("HammerCharge") >= 40)
-               { if (RideTheLightning >= 17)
-                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
-           else if (CheckInventory("HammerCharge") >= 20)
-               { if (RideTheLightning >= 12)
-                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
-           else if (CheckInventory("HammerCharge") >= 0)
-               { if (RideTheLightning >= 7)
-                  { GiveInventory("HammerCharge",1); RideTheLightning = 0; }}
-        }
-        // If the player isn't holding the hammer, slowly take away ammo charge.
-        else { if (RideTheLightning >= 40 && CheckInventory("HammerCharge") >= 30)
-            { TakeInventory("HammerCharge",1); RideTheLightning = 0; }}
-        RideTheLightning++;
 
         TakeInventory("DoubleTapCooldown",1);
         TakeInventory("EnviroDamageCooldown",1);

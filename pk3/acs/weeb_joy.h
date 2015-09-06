@@ -32,6 +32,9 @@ Script WEEB_JOY_FORW Enter
 	Int TapCounterForward = 0;
 	While (True)
 	{
+        if (CheckInventory("IsSSH") == 1)
+        { terminate; }
+
 		stick_forward = GetPlayerInput (-1, ModInput_ForwardMove); // This needs to be constantly updated
 		
 		if (GetCvar("dst_nospecials") == 0)
@@ -83,6 +86,9 @@ Script WEEB_JOY_LEFT Enter
 	Int TapCounterBack = 0;
 	While (True)
 	{
+        if (CheckInventory("IsSSH") == 1)
+        { terminate; }
+
 		stick_forward = GetPlayerInput (-1, ModInput_ForwardMove);
 
 		if (GetCvar("dst_nospecials") == 0)
@@ -131,6 +137,9 @@ Script WEEB_JOY_RITE Enter
 	Int TapCounterLeft = 0;
 	While (True)
 	{
+        if (CheckInventory("IsSSH") == 1)
+        { terminate; }
+
 		stick_side = GetPlayerInput (-1, ModInput_SideMove);
 
 		if (GetCvar("dst_nospecials") == 0)
@@ -180,6 +189,9 @@ Script WEEB_JOY_BACK Enter
 	Int TapCounterRight = 0;
 	While (True)
 	{
+        if (CheckInventory("IsSSH") == 1)
+        { terminate; }
+
 		stick_side = GetPlayerInput (-1, ModInput_SideMove);
 
 		if (GetCvar("dst_nospecials") == 0)
@@ -229,6 +241,9 @@ Script WEEB_JOY_LOOP Enter
 {
 	While (True)
 	{
+        if (CheckInventory("IsSSH") == 1)
+        { terminate; }
+
 		stick_forward = GetPlayerInput (-1, ModInput_ForwardMove);
 		stick_side = GetPlayerInput (-1, ModInput_SideMove);
 		previous_buttons = GetPlayerInput (-1, ModInput_OldButtons);
