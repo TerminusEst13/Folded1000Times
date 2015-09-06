@@ -24,14 +24,6 @@ int array_noannounce[PLAYERMAX];
 int flashlightOn[PLAYERMAX];
 int NotADoomGame;
 
-int GotShotgun;
-int GotCarronade;
-int GotUzi;
-int GotHam; // HAM
-int GotIronMaiden;
-int GotLegion;
-int GotFrosthammer;
-
 function void DrawScanlines(void)
 {
     int Y = Random(0, 240) << 16;
@@ -68,8 +60,8 @@ function void DrawBinary(void)
 }
 
 #include "sino_auto.h"
-#include "sino_walljump.h"
-#include "sino_spacejump.h"
+#include "sino_movement.h"
+#include "sino_ijonmagic.h"
 
 script SINO_DECORATE (int pihua, int hunzhang)
 {
@@ -135,6 +127,11 @@ script SINO_DECORATE (int pihua, int hunzhang)
             break;
     }
     break;
+
+    case 3:
+        delay(35*20);
+        if (CheckInventory("JetpackModeOn") == 0) { GiveInventory("DodgeGhostOff",1); }
+        break;
     }
 }
 
@@ -161,9 +158,11 @@ script SINO_RESPAWN respawn
 
     if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:PlayerNumber(), s:" respawning, executing SINO_ENTER."); }
     ACS_ExecuteAlways(SINO_ENTER,0,0,0);
+    ACS_ExecuteAlways(SINO_JETBOOSTER,0,0,0);
     ACS_ExecuteAlways(SINO_ENTER_UNREPLACED,0,0,0);
     ACS_ExecuteAlways(SINO_JUSTFRAME,0,0,0);
     ACS_ExecuteAlways(SINO_DOUBLEJUMP,0,0,0);
+    ACS_ExecuteAlways(292,0,0,0);
 }
 
 script SINO_UNLOADING unloading

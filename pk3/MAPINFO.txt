@@ -22,7 +22,9 @@ skill baby
 	ACSReturn = 0
     EasyBossBrain
 	SpawnFilter = Hard
-	Name = "Return to Serenity" // Testament
+	Name = "Babby"
+    PlayerClassName = "Hae-Lin", "Return to Serenity" // Testament
+    PlayerClassName = "Shihong", "Resurrection" // Rob Halford
 	MustConfirm = "$CONFIRM_BABY"
     TextColor = white
 }
@@ -32,7 +34,9 @@ skill easy
 	ACSReturn = 1
 	EasyBossBrain
 	SpawnFilter = Hard
-	Name = "Never Say Die" // Black Sabbath
+	Name = "Easy"
+    PlayerClassName = "Hae-Lin", "Never Say Die" // Black Sabbath
+    PlayerClassName = "Shihong", "Come and Get It" // AC/DC
 	MustConfirm = "$CONFIRM_EASY"
     TextColor = white
 }
@@ -41,7 +45,9 @@ skill normal
 {
 	ACSReturn = 2
 	SpawnFilter = Hard
-	Name = "Take No Prisoners" // Megadeth
+	Name = "Normal"
+    PlayerClassName = "Hae-Lin", "Take No Prisoners" // Megadeth
+    PlayerClassName = "Shihong", "Into the Battle" // Stormwarrior
 	MustConfirm = "$CONFIRM_NORMAL"
     TextColor = white
 }
@@ -50,7 +56,9 @@ skill hard
 {
 	ACSReturn = 3
 	SpawnFilter = Hard
-	Name = "Facing Hell" // Ozzy Osbourne
+	Name = "Hard"
+    PlayerClassName = "Hae-Lin", "Facing Hell" // Ozzy Osbourne
+    PlayerClassName = "Shihong", "Seek & Destroy" // Metallica
 	MustConfirm = "$CONFIRM_HARD"
     TextColor = white
 }
@@ -60,7 +68,9 @@ skill nightmare
 	ACSReturn = 4
 	FastMonsters
 	SpawnFilter = Nightmare
-	Name = "Killing Machine" // Judas Priest
+	Name = "Nightmare"
+    PlayerClassName = "Hae-Lin", "Killing Machine" // Judas Priest
+    PlayerClassName = "Shihong", "All Guns Blazing" // Saxon
 	MustConfirm = "$CONFIRM_NIGHTMARE"
     TextColor = white
 	Aggressiveness = 0.55
@@ -72,7 +82,9 @@ skill ohgodhelpme
 	FastMonsters
 	DisableCheats
 	SpawnFilter = Nightmare
-	Name = "Angel of Death" // Slayer
+	Name = "Oh God Help Me"
+    PlayerClassName = "Hae-Lin", "Angel of Death" // Slayer
+    PlayerClassName = "Shihong", "War Machine" // AC/DC
 	MustConfirm = "$CONFIRM_OHGODHELPME"
     TextColor = white
 	Aggressiveness = 0.95

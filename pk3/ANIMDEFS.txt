@@ -40,3 +40,21 @@ Warp Texture FWATER4
 Warp Texture BLOOD1
 Warp Texture BLOOD2
 Warp Texture BLOOD3
+
+// Sun Shihong
+
+texture HLTHORB1
+pic 1 tics 6
+pic 2 tics 6
+pic 3 tics 6
+pic 4 tics 12
+pic 3 tics 6
+pic 2 tics 6
+
+texture HLTHORB5
+pic 1 tics 6
+pic 2 tics 6
+pic 3 tics 6
+pic 4 tics 12
+pic 3 tics 6
+pic 2 tics 6

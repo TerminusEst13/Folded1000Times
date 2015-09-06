@@ -1,3 +1,5 @@
+// Hae-Lin and/or universal tokens
+
 actor KharonSwung : Boolean {}
 actor SheatheSwung : Boolean {}
 actor SlashingLikeAGaijin : Boolean {}
@@ -161,3 +163,42 @@ actor ComboCounter4 : Counter { Inventory.MaxAmount 50 }
 actor ComboCounter5 : Counter { Inventory.MaxAmount 50 }
 actor ComboCounter6 : Counter { Inventory.MaxAmount 50 }
 actor ComboCounter7 : Counter { Inventory.MaxAmount 50 }
+
+
+
+// Shihong tokens
+
+actor KickJumped : Boolean {}
+actor GrabbingTheWall : Boolean {}
+actor Grappling : Boolean {}
+actor SynthFire : Boolean {}
+actor GrenadePunchHitWall : Boolean {}
+actor GrenadePunchHit : Boolean {}
+actor JetpackModeOn : Boolean {}
+actor JetpackModeOff : Boolean {}
+actor GrenadeInHand : Boolean {}
+
+actor SwapToHaggarMode : Boolean {}
+actor SwapToRangedMode : Boolean {}
+actor SwapToTricksterMode : Boolean {}
+actor HaggarModeOn : Boolean {}
+actor RangedModeOn : Boolean {}
+actor TricksterModeOn : Boolean {}
+actor StyleSwapping : Boolean {}
+
+actor JustFrame : Boolean {}
+actor JustFrameAcquired : Boolean {}
+
+actor JetpackFuel : Counter { Inventory.MaxAmount 120 }
+actor PunchComboCounter : Counter { Inventory.MaxAmount 10 }
+actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
+actor InTheAir : Counter { Inventory.MaxAmount 10 }
+actor SwapCooldown : Counter { Inventory.MaxAmount 210 }
+actor HunterBurstCounter : Counter { Inventory.MaxAmount 6 }
+
+actor KiMeterCounter : Counter { Inventory.MaxAmount 4000 }
+
+actor KiCounter1 : Counter { Inventory.MaxAmount 1000 }
+actor KiCounter2 : Counter { Inventory.MaxAmount 1000 }
+actor KiCounter3 : Counter { Inventory.MaxAmount 1000 }
+actor KiCounter4 : Counter { Inventory.MaxAmount 1000 }

@@ -1231,18 +1231,31 @@ actor MaybeMegasphere replaces Megasphere
 
 actor ArmorHealthMegaPackSpawner : RandomSpawner { -DROPPED DropItem "ArmorHealthMegaPack" }
 
-actor ArmorHealthMegaPack: CustomInventory
+actor ArmorHealthMegaPack : CustomInventory
 {
     Inventory.PickupMessage "Full recharge!"
-    Inventory.PickupSound "health/ramen"
+    Inventory.PickupSound "nah"//"health/ramen"
     +INVENTORY.ALWAYSPICKUP
     +FLOORCLIP
     Scale 0.8
     states
     {
     Spawn:
+        TNT1 A 0
+        BAL1 A 1 // Buffer, just in case.
+        TNT1 A 0 ACS_ExecuteAlways(275,0,3,0,0)
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_CLIENTDECORATE,WEEB_DEC_PICKUPCHECK) == 1, "SpawnRamen")
+        //TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_CLIENTDECORATE,WEEB_DEC_PICKUPCHECK) == 2, "SpawnPizza")
+        BAL1 A 35
+        loop // Probably not healthy if someone isn't either Shihong or Hae-Lin, but eh.
+
+    SpawnRamen:
         RAMN A 1 Bright
         RAMN AAAAAA 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
+        Loop
+    SpawnPizza:
+        PIZA B 1 Bright
+        PIZA BBBBBB 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
         Loop
     Pickup: // That strange sensation when you realize your health system has gotten
             // so complex that it's actually easier to do in ACS than in Decorate.
@@ -1250,6 +1263,7 @@ actor ArmorHealthMegaPack: CustomInventory
         TNT1 A 0 A_SetBlend("Blue",0.6,15)
         TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_GiveInventory("HaeLinFoodRamenComment")
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,0,0)
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_MEGASPHERE,0,0)
         TNT1 A 1
         stop

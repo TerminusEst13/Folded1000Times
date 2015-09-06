@@ -183,6 +183,7 @@ actor IceChunk2 : IceChunk { Health 1 +CLIENTSIDEONLY -SOLID }
 // Constants which are paired with their ACS counterparts
 
 const int WEEB_DECORATE          = 267;
+const int WEEB_CLIENTDECORATE    = 275;
 
 const int WEEB_DEC_DAMAGE        = 0;
 const int WEEB_DEC_FREEZE        = 1;
@@ -215,10 +216,12 @@ const int WEEB_DEC_LEGSPECIAL    = 27;
 const int WEEB_DEC_DOOMHEALTH    = 28;
 const int WEEB_DEC_ONLINECHECK2  = 29;
 const int WEEB_DEC_MULTIPLIER    = 30;
+const int WEEB_DEC_PLAYSOUND     = 31;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
 const int WEEB_DEC_CHANGEMUSBACK = 2;
+const int WEEB_DEC_PICKUPCHECK   = 3;
 const int WEEB_DEC_TOASTER       = 98;
 const int WEEB_DEC_TOASTER2      = 99;
 
@@ -271,3 +274,19 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/points.dec"
 
 #include "decorate/props.dec"
+
+// Sun Shihong stuff
+
+#include "decorate/ssh.dec"
+#include "decorate/sshbullets.dec"
+#include "decorate/sshpowerups.dec"
+#include "decorate/sshmobility.dec"
+#include "decorate/sshweapons/0-fist.dec"
+#include "decorate/sshweapons/0-fistspecial.dec"
+#include "decorate/sshweapons/0-fisteffects.dec"
+#include "decorate/sshweapons/1-sword.dec"
+#include "decorate/sshweapons/2-revolver.dec"
+#include "decorate/sshweapons/3-shotty.dec"
+#include "decorate/sshweapons/4-pistols.dec"
+#include "decorate/sshweapons/5-grenades.dec"
+#include "decorate/sshstyle.dec"

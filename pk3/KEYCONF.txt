@@ -1,6 +1,7 @@
 clearplayerclasses
 addplayerclass MeleePlayer
 //addplayerclass MeleePlayerCasual
+addplayerclass MeleePlayer2
 
 alias credits   "puke -280 1"
 alias changelog "puke -280 2"
@@ -17,6 +18,12 @@ addslotdefault 8 "KharonFrosthammer"
 //addslotdefault 9 "Messiah"
 addslotdefault 0 "Kharon"
 addslotdefault 0 "Iron Fist"
+
+addslotdefault 1 "01Tiger"
+addslotdefault 2 "02Viper"
+addslotdefault 3 "03Wolf"
+addslotdefault 4 "04Scorpions"
+addslotdefault 5 "05Dragon"
 
 AddKeySection "DemonSteele - Optional Keys" "demonsteeleoptional"
 AddMenuKey "Flashlight" "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis"

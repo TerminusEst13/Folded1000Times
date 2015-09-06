@@ -11,3 +11,14 @@ DNDHUDF
 	8 DND8
 	9 DND9
 }
+
+CYBRFONT
+{
+    0 CYBRF0
+    1 CYBRF1
+}
+
+CYBRBIG
+{
+   Template dcybrbig%03d
+}

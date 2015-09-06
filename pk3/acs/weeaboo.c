@@ -8,8 +8,7 @@
 #include "weeb_joy.h"
 
 global int 58:LevelCount;
-//global int 59:RunningInZandro;
-//global int 60:RunningInZDoom;
+global int 59:DemonSteeleClass;
 
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int playerTimeFreeze[PLAYERMAX];
@@ -479,6 +478,16 @@ int GravityOfLight;
     case WEEB_DEC_MULTIPLIER:
         SetResultValue(GetCVar("dst_enemymultiplier"));
         break;
+
+    case WEEB_DEC_PLAYSOUND:
+    switch (ballshat)
+    {
+    case 0: // Megasphere
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("health/ramen",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("health/pizza",127); }
+         break;
+    }
+    break;
     }
 }
 
@@ -540,6 +549,12 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1)
         { if (getcvar("norandommusic") == 0) { terminate; }}
         if(getcvar("dst_cl_nomusic") == 0) { LocalSetMusic("*"); }
+        break;
+
+    case WEEB_DEC_PICKUPCHECK:
+        //PrintBold(s:"Script is activated.");
+        if (DemonSteeleClass == 1) { SetActorState(0,"SpawnRamen"); }
+        if (DemonSteeleClass == 2) { SetActorState(0,"SpawnPizza"); }
         break;
 
     //[Scroton] cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
@@ -794,6 +809,11 @@ script WEEB_ENTER_CLIENT ENTER clientside
     while(1)
     {
         if (ConsolePlayerNumber() != PlayerNumber()) { Delay(1); continue; }
+
+        if (CheckInventory("IsJungHaeLin") == 1) { DemonSteeleClass = 1; }
+        if (CheckInventory("IsSSH") == 1) { DemonSteeleClass = 2; }
+
+        //Print(d:DemonSteeleClass);
 
         if (CheckInventory("InIronMaiden") == 1)
         {
