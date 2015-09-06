@@ -30,3 +30,5 @@ user int dst_cl_autoswitch       = 0;
 user int dst_cl_nobeeping        = 0;
 user int dst_cl_nopoints         = 0;
 user int dst_cl_noannouncer      = 0;
+
+user int dst_cl_classcheck       = 0; // I can't believe I'm using a cvar for this. How stupid.

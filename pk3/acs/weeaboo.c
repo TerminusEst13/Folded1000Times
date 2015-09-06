@@ -553,8 +553,9 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
     case WEEB_DEC_PICKUPCHECK:
         //PrintBold(s:"Script is activated.");
-        if (DemonSteeleClass == 1) { SetActorState(0,"SpawnRamen"); }
-        if (DemonSteeleClass == 2) { SetActorState(0,"SpawnPizza"); }
+        SetResultValue(GetCvar("dst_cl_classcheck"));
+        //if (GetCvar("dst_cl_classcheck") == 1) { SetActorState(0,"SpawnRamen"); }
+        //if (GetCvar("dst_cl_classcheck") == 2) { SetActorState(0,"SpawnPizza"); }
         break;
 
     //[Scroton] cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
@@ -810,8 +811,9 @@ script WEEB_ENTER_CLIENT ENTER clientside
     {
         if (ConsolePlayerNumber() != PlayerNumber()) { Delay(1); continue; }
 
-        if (CheckInventory("IsJungHaeLin") == 1) { DemonSteeleClass = 1; }
-        if (CheckInventory("IsSSH") == 1) { DemonSteeleClass = 2; }
+        if (CheckInventory("IsJungHaeLin") == 1) { SetCvar("dst_cl_classcheck",1); }
+        else if (CheckInventory("IsSSH") == 1) { SetCvar("dst_cl_classcheck",2); }
+        else { SetCvar("dst_cl_classcheck",0); }
 
         //Print(d:DemonSteeleClass);
 
