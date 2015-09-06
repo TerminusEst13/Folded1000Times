@@ -38,6 +38,7 @@ ACTOR MeleePlayer : PlayerPawn
     DamageFactor "HaltHammerzeit", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ExodusJump", 0.0
+    DamageFactor "Falling", 0.0
     DamageFactor "Telefrag", 2.00
     DamageFactor "Suicide", 2.00
     RadiusDamageFactor 0.5
