@@ -247,7 +247,7 @@ actor TricksterModeActivate : CustomInventory
         TNT1 A 0 A_TakeInventory("SwapToHaggarMode",1)
         TNT1 A 0 A_TakeInventory("SwapToRangedMode",1)
         TNT1 A 0 A_GiveInventory("SwapToTricksterMode",1)
-        TNT1 A 0 A_SetBlend("FF009A",0.15,15)
+        TNT1 A 0 A_SetBlend("8800FF",0.175,15)
         TNT1 A 0 A_PlaySoundEx("styleswap/preptr","soundslot6",0,0)
         TNT1 A 1
         fail
