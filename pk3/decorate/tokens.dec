@@ -177,6 +177,7 @@ actor GrenadePunchHit : Boolean {}
 actor JetpackModeOn : Boolean {}
 actor JetpackModeOff : Boolean {}
 actor GrenadeInHand : Boolean {}
+actor JumpedUp : Boolean {}
 
 actor SwapToHaggarMode : Boolean {}
 actor SwapToRangedMode : Boolean {}

@@ -150,6 +150,7 @@ script SINO_ENTER ENTER
         if (GetActorZ(0) - GetActorFloorZ(0) <= 0)
         {
             GiveInventory("OnTheGround",1);
+            TakeInventory("JumpedUp",1);
             TakeInventory("InTheAir",0x7FFFFFFF);
         }
         else
@@ -180,6 +181,9 @@ script SINO_ENTER ENTER
             { GiveInventory("SynthFire",1); }
           else
             { TakeInventory("SynthFire",1); }
+
+        if (buttons & BT_JUMP)
+            { GiveInventory("JumpedUp",1); }
 
         // Temporary equipment workaround.
         if (CheckInventory("KharonOmen") == 1)
