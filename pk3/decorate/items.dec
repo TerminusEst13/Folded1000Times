@@ -1248,15 +1248,6 @@ actor ArmorHealthMegaPack : CustomInventory
         TNT1 A 0
         TNT1 AAAAAA 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
         loop
-
-    SpawnRamen:
-        RAMN A 1 Bright
-        RAMN AAAAAA 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
-        Loop
-    SpawnPizza:
-        PIZA B 1 Bright
-        PIZA BBBBBB 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
-        Loop
     Pickup: // That strange sensation when you realize your health system has gotten
             // so complex that it's actually easier to do in ACS than in Decorate.
         TNT1 A 1
@@ -1288,7 +1279,7 @@ actor RamenDisguise : Inventory
     +QUIET
     +ALWAYSPICKUP
     -SOLID
-    +DONTGIB
+    +DONTGIB // Doesn't work in Zandro. But Zandronum hates DemonSteele anyway so NO BIG
     -COUNTITEM
     VisibleToPlayerClass MeleePlayer
     States
@@ -1411,15 +1402,17 @@ actor BluePowerLine : SilverPowerLine { Translation "80:111=192:207", "5:5=242:2
 
 actor PowerupPickup : CustomInventory replaces Berserk
 {
-    Inventory.PickupMessage "Fire surges through you..."
-    Inventory.PickupSound "health/pepper"
-    XScale 0.65
-    YScale 0.55
+    Inventory.PickupMessage "Picked up an energy boost."
+    Inventory.PickupSound "nah"
     States
     {
     Spawn:
-        PEPR A 1 BRIGHT
-        PEPR A 30
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("PepperDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+        TNT1 A 0 A_SpawnItemEx("DoritosDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+    Spawn1:
+        TNT1 A 30
         loop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("IAmATraditionalDoomerWhoLikesNumbersOverTokens",1,"DoomPickup")
@@ -1487,6 +1480,7 @@ actor PowerupPickup : CustomInventory replaces Berserk
     PickupFinish:
         TNT1 A 0 A_SetBlend(Red,0.5,70)
         TNT1 A 0 A_GiveInventory("Points",500)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,1,0)
         TNT1 A 0 A_GiveInventory("HaeLinFoodLargeComment")
         TNT1 A 0 A_GiveInventory("HyperComboCounter",50)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",50)
@@ -1580,5 +1574,65 @@ actor FortuneCookie : CustomInventory 30242
     PickupFinish:
         TNT1 A 1
         stop
+    }
+}
+
+actor PepperDisguise : Inventory
+{
+    XScale 0.65
+    YScale 0.55
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        PEPR A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        PEPR AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    }
+}
+
+actor DoritosDisguise : Inventory
+{
+    XScale 0.6
+    YScale 0.5
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3")
+        TNT1 A 1
+        loop
+    Spawn1:
+        DORI A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        DORI AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    Spawn2:
+        DORI B 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        DORI BBBBBB 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    Spawn3:
+        DORI C 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        DORI CCCCCC 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
     }
 }

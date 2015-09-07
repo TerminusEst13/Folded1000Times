@@ -486,6 +486,11 @@ int GravityOfLight;
          if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("health/ramen",127); }
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("health/pizza",127); }
          break;
+
+    case 1: // Berserk
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("health/pepper",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("health/doritos",127); }
+         break;
     }
     break;
     }
