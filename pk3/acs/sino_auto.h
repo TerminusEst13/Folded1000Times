@@ -331,23 +331,31 @@ script SINO_ENTER ENTER
         // inventory item is still there, they're given another item saying that
         // they double-tapped the button.
 
-          if (keypressed(BT_MOVERIGHT) && keypressed(BT_ATTACK))
-            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+        // This entire system is so brute force it's not even funny.
+        // I never said I was an elegant or even a good coder, but this is still
+        // extremely brute force, even for me.
+        // It's "simply" a matter of checking for what buttons the player pushed,
+        // then giving an inventory item. If the player pushes the button and the
+        // inventory item is still there, they're given another item saying that
+        // they double-tapped the button.
+
+          if (keypressed(BT_MOVERIGHT) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyRight",6); }}}
-          if (keypressed(BT_MOVELEFT) && keypressed(BT_ATTACK))
-            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+          if (keypressed(BT_MOVELEFT) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyLeft",6); }}}
-          if (keypressed(BT_FORWARD) && keypressed(BT_ATTACK))
-            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+          if (keypressed(BT_FORWARD) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyForward",6); }}}
-          if (keypressed(BT_BACK) && keypressed(BT_ATTACK))
-            { if (((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+          if (keypressed(BT_BACK) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyBack",6); }}}
-          }
+        }
 
     // ============= END GENERIC COPY-PASTED SHIT
 
