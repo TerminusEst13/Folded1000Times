@@ -1237,25 +1237,25 @@ actor ArmorHealthMegaPack : CustomInventory
     Inventory.PickupSound "nah"//"health/ramen"
     +INVENTORY.ALWAYSPICKUP
     +FLOORCLIP
-    Scale 0.8
     states
     {
     Spawn:
         TNT1 A 0
-        BAL1 A 1 // Buffer, just in case.
-        //TNT1 A 0 ACS_ExecuteAlways(275,0,3,0,0)
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_CLIENTDECORATE,WEEB_DEC_PICKUPCHECK) == 1, "SpawnRamen")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_CLIENTDECORATE,WEEB_DEC_PICKUPCHECK) == 2, "SpawnPizza")
-        BAL1 A 35
-        loop // Probably not healthy if someone isn't either Shihong or Hae-Lin, but eh.
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("RamenDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+        TNT1 A 0 A_SpawnItemEx("PizzaDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+    Spawn1:
+        TNT1 A 0
+        TNT1 AAAAAA 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
+        loop
 
     SpawnRamen:
         RAMN A 1 Bright
         RAMN AAAAAA 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
         Loop
     SpawnPizza:
-        PIZA A 1 Bright
-        PIZA AAAAAA 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
+        PIZA B 1 Bright
+        PIZA BBBBBB 5 A_SpawnItemEx("RamenSmoke",0,0,16,random(-150,150)/100.00,random(-150,150)/100.00,random(100,200)/100.00,random(-180,180),160)
         Loop
     Pickup: // That strange sensation when you realize your health system has gotten
             // so complex that it's actually easier to do in ACS than in Decorate.
@@ -1267,6 +1267,64 @@ actor ArmorHealthMegaPack : CustomInventory
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_MEGASPHERE,0,0)
         TNT1 A 1
         stop
+    }
+}
+
+actor RamenDisguise : Inventory
+{
+    // Boy, this is a hacky workaround.
+    // Okay, so the megasphere spawns these things as an appearance, right?
+    // So they're pickuppable items that add nothing and do nothing, so the player
+    // can pick them up alongside the original item.
+    // But because they're spawned via A_SpawnItemEx, they're considered dropped.
+    // Ergo, they can get crushed. So I get rid of +DROPPED and add +DONTGIB, but
+    // now that they're -DROPPED they can respawn.
+    // So I max out Inventory.RespawnTics and pray that nobody will actually stay
+    // on a fucking map for two years.
+    Scale 0.8
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        // And do a constant A_Warp so if the megasphere moves, this moves along with it.
+        RAMN A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        RAMN AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    }
+}
+
+actor PizzaDisguise : Inventory
+{
+    XScale 0.3
+    YScale 0.2
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        PIZA B 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        PIZA BBBBBB 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
     }
 }
 

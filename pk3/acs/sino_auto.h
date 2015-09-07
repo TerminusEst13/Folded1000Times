@@ -323,13 +323,6 @@ script SINO_ENTER ENTER
         // Special move bollocks
         if (GetCvar("dst_nospecials") == 0)
         {
-        // This entire system is so brute force it's not even funny.
-        // I never said I was an elegant or even a good coder, but this is still
-        // extremely brute force, even for me.
-        // It's "simply" a matter of checking for what buttons the player pushed,
-        // then giving an inventory item. If the player pushes the button and the
-        // inventory item is still there, they're given another item saying that
-        // they double-tapped the button.
 
         // This entire system is so brute force it's not even funny.
         // I never said I was an elegant or even a good coder, but this is still
