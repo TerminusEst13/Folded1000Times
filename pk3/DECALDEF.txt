@@ -5,6 +5,13 @@ Decal KharonSlash1
     y-scale 0.25
 }
 
+Decal LargeKharonSlash1
+{
+    pic SCRATCHA
+    x-scale 0.55
+    y-scale 0.55
+}
+
 Decal KharonSlash2
 {
     pic SCRATCHB

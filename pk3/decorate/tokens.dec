@@ -178,6 +178,7 @@ actor JetpackModeOn : Boolean {}
 actor JetpackModeOff : Boolean {}
 actor GrenadeInHand : Boolean {}
 actor JumpedUp : Boolean {}
+actor TigerRoar : Boolean {}
 
 actor SwapToHaggarMode : Boolean {}
 actor SwapToRangedMode : Boolean {}
