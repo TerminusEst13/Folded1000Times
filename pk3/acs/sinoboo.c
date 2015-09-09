@@ -159,7 +159,6 @@ script SINO_RESPAWN respawn
     if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:PlayerNumber(), s:" respawning, executing SINO_ENTER."); }
     ACS_ExecuteAlways(SINO_ENTER,0,0,0);
     ACS_ExecuteAlways(SINO_JETBOOSTER,0,0,0);
-    ACS_ExecuteAlways(SINO_ENTER_UNREPLACED,0,0,0);
     ACS_ExecuteAlways(SINO_JUSTFRAME,0,0,0);
     ACS_ExecuteAlways(SINO_DOUBLEJUMP,0,0,0);
     ACS_ExecuteAlways(292,0,0,0);

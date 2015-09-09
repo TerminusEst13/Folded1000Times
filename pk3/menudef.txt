@@ -50,7 +50,7 @@ OptionMenu "Changes-TurnThePage"
     StaticText "Gameplay Options", 1
     Option "Start with Omen",                "dst_omenstart", "OnOff"
     Option "Start with Backpack",            "dst_backpackstart", "OnOff"
-    Option "Infinite soul meter",            "dst_infinitesouls", "OnOff"
+    Option "Infinite power meter",           "dst_infinitemeter", "OnOff"
     Option "Testament spawns on",            "dst_noshotgun", "TestamentOptions"
     Option "Omen spawns on",                 "dst_nochaingun", "OmenOptions"
     Option "Disable special moves",          "dst_nospecials", "OnOff"

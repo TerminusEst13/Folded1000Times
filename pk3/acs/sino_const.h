@@ -14,8 +14,6 @@
 #define CLOCKWISE           0
 #define COUNTERCLOCKWISE    1
 
-#define SINO_ENTER_UNREPLACED                461
-
 // All previous scripts from Hae-Lin.
 
 #define WEEB_RESPAWN                         266

@@ -18,6 +18,8 @@ script SINO_ENTER ENTER
     int RemoveBRankAnnouncer;
     int RemoveARankAnnouncer;
     int RemoveSRankAnnouncer;
+    int IntroChance;
+    int speedmod;
 
     if (GetCvar("dst_debug") == 1) { Log(s:"SINO_ENTER executing on player ", d:pln); }
 
@@ -41,6 +43,24 @@ script SINO_ENTER ENTER
         LocalAmbientSound("level/introssh",127);
 
         GiveInventory("ImAlive",1);
+
+        if (GetCvar("dst_omenstart") == 1)
+        {
+            GiveInventory("01Tiger",1);
+            GiveInventory("GotHammer",1);
+        }
+
+        if (GetCvar("dst_backpackstart") == 1)
+        { GiveInventory("Backpack",1); }
+    }
+    else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
+    // If the player isn't respawning but is entering a level fresh.
+    {
+        IntroChance = random(0,2);
+        if (IntroChance == 2) { LocalAmbientSound("haelin/intro",127); }
+        TakeInventory("PointsFoundAllSecrets",1);
+        TakeInventory("PointsKilledMonsters",1);
+        TakeInventory("MaidenHalo",1);
     }
 
     // Restoring all the stuff from previous level, just in case someone exits under a special state.
@@ -81,6 +101,22 @@ script SINO_ENTER ENTER
     GiveInventory("JetpackModeOff",1);
     GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); // Shihong deals with ki, not souls.
                                                                         // Souls are completely irrelevant to her.
+
+    // Status resets for the sake of weapons/items/etc that change between levels.
+    // Like in case some wiseass exits while in post-hit invulnerability.
+    SetActorProperty(0,APROP_INVULNERABLE,0);
+    SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
+    if (GameType() == GAME_NET_DEATHMATCH) { SetActorProperty(0,APROP_Species,"DMPlayer"); }
+    else { SetActorProperty(0,APROP_Species,"Player"); }
+    SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
+    GiveInventory("NewLevelStatReset",1);
+    GiveInventory("FlashlightStopper",1);
+    if (CheckInventory("HyperComboCounter") < 50) { TakeInventory("FRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 100) { TakeInventory("DRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 150) { TakeInventory("CRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 200) { TakeInventory("BRankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 250) { TakeInventory("ARankAnnounced",1); }
+    if (CheckInventory("HyperComboCounter") < 300) { TakeInventory("SRankAnnounced",1); }
 
     if (GetCvar("dst_debug") == 1) { Log(s:"Entering SINO_ENTER while(1) loop on player ", d:pln); }
 
@@ -356,156 +392,9 @@ script SINO_ENTER ENTER
 
     // ============= END GENERIC COPY-PASTED SHIT
 
-        Delay(1);
-
-        if (isDead(0))
-        {
-            if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:pln, s:" dead, terminating SINO_ENTER."); }
-            terminate;
-        }
-    }
-}
-
-script SINO_ENTER_UNREPLACED ENTER
-{
-    int OldButtons;
-    int Buttons;
-    int RideTheLightning;
-    int XMen;
-    int Ys;
-    int XMen2;
-    int Ys2;
-    int IsBrutal = 0;
-    int mytid;
-    int i, j, k, u, ang;
-    int MarchOfTheImmortal;
-    int IronArmor;
-    int armor;
-    int oarmor;
-    int pln = PlayerNumber();
-    int ZDum;
-    int Angel;
-    int xOffset, yOffset, zOffset;
-    int xOffset2, yOffset2, zOffset2;
-    int xOffset3, yOffset3, zOffset3;
-    int velx, vely, velz;
-    int nx, ny, nz;
-    int nx2, ny2, nz2;
-    int nx3, ny3, nz3;
-    int ShieldTID;
-    int SentTID;
-    int IntroChance;
-    int ShieldHP;
-    int SentinelHP;
-    int NewShieldHP;
-    int NewSentinelHP;
-    int speedmod;
-    int mtotal;
-    int mkilled;
-    int stotal;
-    int sfound;
-    int sfound2;
-    int TimeStandStill;
-    int IFuckedTheGameUp;
-    int DodgeCounter;
-    int HaloTID;
-    // 71 ints and counting!
-
-    i = unusedTID(37000, 47000);
-    u = unusedTID(37000, 47000);
-    sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
-
-    if (GetCvar("dst_debug") == 1) { Log(s:"WEEB_ENTER executing on player ", d:pln); }
-
-    // If the player isn't playing as Hae-Lin, terminates.
-    // Inter-character scripts running off each other will cause a cluster of problems.
-    if (CheckInventory("IsJungHaeLin") == 1)
-    {
-        if (GetCvar("dst_debug") == 1) { Log(s:"Error: Player ", d:pln, s:" is not Shihong, terminating SINO_ENTER."); }
-        terminate;
-    }
-    //if (CheckInventory("IsSSH") == 1) { terminate; }
-
-    if (CheckInventory("ImAlive") == 0 && GameType() != GAME_TITLE_MAP)
-    // If the player is spawning for the first time.
-    // Don't run it on titlescreens, or else Things Would Happen.
-    {
-        // Check for if the metal jukebox is loaded as well.
-        /*if (Spawn("DemonSteeleIsSuperCoolAndYouShouldProbablyPlayIt", GetActorX(0), GetActorY(0), GetActorZ(0), u))
-        {
-            Thing_Remove(u);
-            MusicRandomizerIsIncluded = 1;
-            GiveInventory("IAmAnAwesomePersonWhoLikesCoolMusic",1);
-        }*/
-
-        if (GetCvar("dst_omenstart") == 1)
-        {
-            GiveInventory("01Tiger",1);
-            GiveInventory("GotHammer",1);
-        }
-
-        if (GetCvar("dst_backpackstart") == 1)
-        { GiveInventory("Backpack",1); }
-
-    }
-    else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
-    // If the player isn't respawning but is entering a level fresh.
-    {
-        IntroChance = random(0,2);
-        if (IntroChance == 2) { LocalAmbientSound("haelin/intro",127); }
-        TakeInventory("PointsFoundAllSecrets",1);
-        TakeInventory("PointsKilledMonsters",1);
-        TakeInventory("MaidenHalo",1);
-    }
-
-    // Status resets for the sake of weapons/items/etc that change between levels.
-    // Like in case some wiseass exits while in post-hit invulnerability.
-    SetActorProperty(0,APROP_INVULNERABLE,0);
-    SetActorProperty(0,APROP_RENDERSTYLE,STYLE_Normal);
-    if (GameType() == GAME_NET_DEATHMATCH) { SetActorProperty(0,APROP_Species,"DMPlayer"); }
-    else { SetActorProperty(0,APROP_Species,"Player"); }
-    SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
-    GiveInventory("NewLevelStatReset",1);
-    GiveInventory("FlashlightStopper",1);
-    if (CheckInventory("HyperComboCounter") < 50) { TakeInventory("FRankAnnounced",1); }
-    if (CheckInventory("HyperComboCounter") < 100) { TakeInventory("DRankAnnounced",1); }
-    if (CheckInventory("HyperComboCounter") < 150) { TakeInventory("CRankAnnounced",1); }
-    if (CheckInventory("HyperComboCounter") < 200) { TakeInventory("BRankAnnounced",1); }
-    if (CheckInventory("HyperComboCounter") < 250) { TakeInventory("ARankAnnounced",1); }
-    if (CheckInventory("HyperComboCounter") < 300) { TakeInventory("SRankAnnounced",1); }
-
-    // If someone enters the map while having been overcharging the hammer.
-    if (CheckInventory("HammerCharge") > 100)
-    {
-        TakeInventory("HammerCharge",100); // A bit brute-force, but they'll regain it back.
-        SetAmmoCapacity("HammerCharge",100);
-    }
-
-    // Likewise, if someone enters while in Iron Maiden.
-    if (CheckInventory("InIronMaiden") == 1) { ACS_ExecuteAlways(275,0,WEEB_DEC_CHANGEMUS,0,0); }
-    
-    if (GetCvar("dst_debug") == 1) { Log(s:"Entering SINO_ENTER_UNREPLACED while(1) loop on player ", d:pln); }
-
-    while (1)
-    {
-        if (CheckInventory("IsJungHaeLin") == 1)
-        {
-            if (GetCvar("dst_debug") == 1) { Log(s:"Error: Player ", d:pln, s:" is not Shihong, terminating SINO_ENTER."); }
-            terminate;
-        }
-
-        mytid = defaultTID(-1);
-        //if (CheckInventory("ImAlive") == 1) { if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } }
-
-        ZDum  = GetActorZ(mytid) + 24.0;
-        Angel = GetActorAngle(mytid);
-        velx  = GetActorVelX(mytid); // I can't think of any witty names for these.
-        vely  = GetActorVelY(mytid);
-        velz  = GetActorVelZ(mytid);
-
         // Cvar nonsense.
 
-        if (GetCvar("dst_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
+        if (GetCvar("dst_infinitemeter") == 1) { GiveInventory("KiMeterCounter",10); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
            else { TakeInventory("NoTauntAllowed",1); }
 
@@ -560,21 +449,12 @@ script SINO_ENTER_UNREPLACED ENTER
         { SetPlayerProperty(0,1,PROP_BUDDHA); }
         else
         { SetPlayerProperty(0,0,PROP_BUDDHA); }
-        
+
         Delay(1);
-        // RIP in peas.
+
         if (isDead(0))
         {
-            Thing_Remove(SentTID);
-            SentTID = 0;
-            Thing_Remove(ShieldTID);
-            ShieldTID = 0;
-            TakeInventory("SentinelUp",1);
-            TakeInventory("SentinelActive",1);
-            TakeInventory("BlindGuardianShieldUp",1);
-            TakeInventory("BlindGuardianShieldActive",1);
-            TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
-            TakeInventory("BlindGuardianLifeCounter",0x7FFFFFFF);
+            if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:pln, s:" dead, terminating SINO_ENTER."); }
             terminate;
         }
     }

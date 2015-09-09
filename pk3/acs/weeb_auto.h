@@ -170,7 +170,7 @@ script WEEB_ENTER ENTER
 
         // Cvar nonsense.
 
-        if (GetCvar("dst_infinitesouls") == 1) { GiveInventory("SuperMeterCounter",1); }
+        if (GetCvar("dst_infinitemeter") == 1) { GiveInventory("SuperMeterCounter",1); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
            else { TakeInventory("NoTauntAllowed",1); }
            
