@@ -92,6 +92,7 @@ script WEEB_OPEN OPEN
         if (GetCvar("dst_debug") == 1) { Log(s:"ZDoom check successful."); }
         SetCVar("dst_runninginzandro",0);
         SetCVar("dst_runninginzdoom",1);
+	    SetAirControl(1.0);
     }
     else
     {

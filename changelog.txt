@@ -19,6 +19,7 @@ FROM 0.82 TO 0.XX
 - Special inputs now require fire to be held down first.
 - Hae-Lin can no longer accientally crush herself by dashing while Falling damage is turned on.
 - The pickup message for the Berserk has been changed since people were confused as to what it actually does.
+- In ZDoom, there is now good air-control to help dodge while in mid-air. Zandronum air control remains unchanged.
 
 
 
