@@ -92,7 +92,6 @@ script WEEB_OPEN OPEN
         if (GetCvar("dst_debug") == 1) { Log(s:"ZDoom check successful."); }
         SetCVar("dst_runninginzandro",0);
         SetCVar("dst_runninginzdoom",1);
-	    SetAirControl(1.0);
     }
     else
     {
@@ -105,6 +104,11 @@ script WEEB_OPEN OPEN
     {
         if (GetCvar("dst_debug") == 1) { Log(s:"compat_clientssendfullbuttoninfo is turned off. Automatically turning it on."); }
         ConsoleCommand("compat_clientssendfullbuttoninfo 1");
+    }
+    if (GetCvar("dst_oldaircontrol") == 0)
+    {
+        if (GetCvar("dst_runninginzandro") == 1) { ConsoleCommand("Compat_Limited_AirMovement 1"); }
+	    SetAirControl(1.0);
     }
 }
 
