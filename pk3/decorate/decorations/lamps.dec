@@ -250,6 +250,8 @@ Actor LampRemains4 : LampRemains1
 
 Actor GlassRemains1
 {
+    Radius 2
+    Height 2
     Projectile
     -SOLID
     -NOGRAVITY

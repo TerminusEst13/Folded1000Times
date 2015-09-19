@@ -156,6 +156,8 @@ ACTOR XaserBarrelDeathSFX
 
 ACTOR BarrelRemains
 {
+    Radius 2
+    Height 2
     +FLOORCLIP
     +NOCLIP
     -DONTSPLASH
