@@ -19,7 +19,7 @@ ACTOR MeleePlayer2 : PlayerPawn
     Species "Player"
     //XScale 0.4
     //YScale 0.38
-    Scale 0.9
+    Scale 0.975
     Gravity 0.7
     Player.JumpZ 8.25
     Player.ForwardMove 2.0, 1.0

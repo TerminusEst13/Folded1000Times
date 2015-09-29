@@ -108,7 +108,7 @@ script WEEB_OPEN OPEN
     if (GetCvar("dst_oldaircontrol") == 0)
     {
         if (GetCvar("dst_runninginzandro") == 1) { ConsoleCommand("Compat_Limited_AirMovement 1"); }
-	    SetAirControl(1.0);
+	    SetAirControl(0.25);
     }
 }
 
@@ -495,6 +495,21 @@ int GravityOfLight;
     case 1: // Berserk
          if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("health/pepper",127); }
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("health/doritos",127); }
+         break;
+
+    case 2: // Food small
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("haelin/foodsmall",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("shihong/foodsmall",127); }
+         break;
+
+    case 3: // Food large
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("haelin/foodlarge",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("shihong/foodlarge",127); }
+         break;
+
+    case 4: // Food megasphere
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("haelin/foodramen",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("shihong/foodpizza",127); }
          break;
     }
     break;

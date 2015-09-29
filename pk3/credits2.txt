@@ -30,3 +30,7 @@ CODE:
 - Wallgrabbing by Xaser
 - Grappling hook and walljumping by Ijon Tichy
 - Enemy-tazed code by WildWeasel
+
+SOUNDS:
+=========
+- Heidi Tabing ( www.youtube.com/user/AderuMoro - Going above and beyond the line of duty for Shihong's voice!)

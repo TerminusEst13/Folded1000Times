@@ -698,7 +698,7 @@ script WEEB_ENTER ENTER
           // and are given a powerup and a cooldown.
           if (buttons & BT_SPEED && buttons & BT_CROUCH && CheckInventory("OnTheGround") == 0)
           {
-              ThrustThingZ(0,120,1,0);
+              ThrustThingZ(0,128,1,0);
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
@@ -707,7 +707,7 @@ script WEEB_ENTER ENTER
           }
           if (buttons & BT_SPEED && buttons & BT_FORWARD)
           {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+0,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+0,25,0,0); ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+0,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+0,40,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35);
@@ -715,7 +715,7 @@ script WEEB_ENTER ENTER
           }
           if (buttons & BT_SPEED && buttons & BT_MOVELEFT)
           {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+64,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+64,25,0,0); ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+64,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+64,40,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
@@ -723,7 +723,7 @@ script WEEB_ENTER ENTER
           }
           if (buttons & BT_SPEED && buttons & BT_BACK)
           {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+128,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+128,25,0,0); ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+128,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+128,40,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
@@ -731,7 +731,7 @@ script WEEB_ENTER ENTER
           }
           if (buttons & BT_SPEED && buttons & BT_MOVERIGHT)
           {
-              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+192,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+192,25,0,0); ThrustThingZ(0,20,0,0); }
+              if (CheckInventory("OnTheGround") == 1) { ThrustThing(KurtAngle+192,35,1,0); ThrustThingZ(0,85,1,1); } else { ThrustThing(KurtAngle+192,40,0,0); ThrustThingZ(0,20,0,0); }
               ActivatorSound("ghost/step",127);
               GiveInventory("GhostStepDone",1);
               GiveInventory("GhostStepCooldown",35); 
@@ -958,6 +958,7 @@ script WEEB_GLOBAL ENTER
     int sfound;
     int sfound2;
     int IFuckedTheGameUp;
+    int secretquote;
     int pln = PlayerNumber();
 
     i = unusedTID(37000, 47000);
@@ -1024,12 +1025,16 @@ script WEEB_GLOBAL ENTER
         // Found a secret.
         if (sfound > sfound2)
         {
+            secretquote = random(0,10);
+            if (secretquote == 10 && CheckInventory("IsSSH") == 1) { LocalAmbientSound("shihong/secret",127); }
             GiveInventory("ManPoints",1);
             sfound2 = sfound;
         }
         // Found all secrets.
         if (stotal != 0 && stotal == sfound && CheckInventory("PointsFoundAllSecrets") == 0)
         {
+            secretquote = random(0,6);
+            if (secretquote == 6 && CheckInventory("IsSSH") == 1) { LocalAmbientSound("shihong/secret",127); }
             GiveInventory("ManPoints",9); // Plus the previous 10000 for a total of 100000.
             GiveInventory("PointsFoundAllSecrets",1);
         }

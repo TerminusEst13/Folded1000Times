@@ -56,8 +56,8 @@ script SINO_ENTER ENTER
     else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
     // If the player isn't respawning but is entering a level fresh.
     {
-        IntroChance = random(0,2);
-        if (IntroChance == 2) { LocalAmbientSound("haelin/intro",127); }
+        IntroChance = random(0,4);
+        if (IntroChance == 4) { LocalAmbientSound("shihong/intro",127); }
         TakeInventory("PointsFoundAllSecrets",1);
         TakeInventory("PointsKilledMonsters",1);
         TakeInventory("MaidenHalo",1);
