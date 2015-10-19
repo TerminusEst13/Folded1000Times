@@ -19,8 +19,9 @@ FROM 0.82 TO 0.XX
 - Special inputs now require fire to be held down first.
 - Hae-Lin can no longer accientally crush herself by dashing while Falling damage is turned on.
 - The pickup message for the Berserk has been changed since people were confused as to what it actually does.
-- The air control in both Zandronum and ZDoom has been dramatically improved to allow more ease of use in aerial dodging and mobility. dst_oldaircontrol allows for swapping back to the original.
+- The air control in both Zandronum and ZDoom has been unified to allow more ease of use in aerial dodging and mobility. dst_oldaircontrol allows for swapping back to the original, but only on map load.
 - Destroyed barrel/lamp/candelabra pieces now have actual collision data.
+- Several GLdef errors have been fixed.
 
 
 

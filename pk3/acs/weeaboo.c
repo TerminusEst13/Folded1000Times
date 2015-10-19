@@ -544,7 +544,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
         case 3:
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Triumph\cn SSH pattern identified. Authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Tiger\cn SSH pattern identified. Authorization successful."); }
           break;
 
         case 4:

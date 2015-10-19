@@ -662,7 +662,7 @@ brightmap texture sw1wdmet
 
 brightmap texture sw2brik
 {
-  map "brightmaps/sw1wdmet.png"
+  map "brightmaps/sw2brik.png"
   iwad
 }
 
