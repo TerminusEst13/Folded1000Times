@@ -1,4 +1,4 @@
-actor DemonSteeleIsSuperCoolAndYouShouldProbablyPlayIt : Revenant
+actor DemonSteeleIsSuperCoolAndYouShouldProbablyPlayIt : BulletPuff
 {
     -SOLID
 }
