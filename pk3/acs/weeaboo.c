@@ -10,6 +10,27 @@
 global int 58:LevelCount;
 global int 59:DemonSteeleClass;
 
+//         _¦¯  ¦ ¯¦_
+//       _¦¯        ¯¦_
+//       ¦            ¦
+//       ¦            ¦
+//       ¯¦__  ¦   _¦¯
+//         ¦  _¯_  ¦
+//         ¦ ¯   ¯ ¦
+//         ¦       ¦
+//         ¦       ¦
+//         ¦       ¦
+//         ¦       ¦
+//         ¦       ¦
+//   _¦¯¯¦_¦       ¦_¦¯¦_
+// _¦¯¯    ¯            ¯¯¦
+//¦¯                      ¯¦
+//¦                        ¦
+//¦           _¦_          ¦
+//¯¦         ¦¯ ¯¦        ¦¯
+// ¯¦_      ¦¯   ¯¦     _¦¯
+//   ¯¦___¦¯      ¯¦___¦¯
+
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int playerTimeFreeze[PLAYERMAX];
 int ClientEnterLocks[PLAYERMAX];
