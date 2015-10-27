@@ -142,6 +142,8 @@ shinom8a                SHFOOD8a
 shinom8b                SHFOOD8b
 shinom9                 SHFOOD9
 
+// Not-voice important stuff
+
 shihong/teleport       NINJPORT
 shihong/walljump       SSHWJMP
 shihong/walljumpup     SSHWJMU
@@ -159,6 +161,9 @@ lohealf6               LOHEALF6
 
 health/doritos         DEWITNAO // Taira Komori's chips eating with Woodylein's bag crumpling and Kamen Rider OOO's scanning sound, all (but the latter) off Freesound
 health/pizza           PIZATIME // Squashy55's toasted ham sandwich with beatmad's sizzling frying pan and keweldog's apple eating, all off Freesound
+
+nightvision/on         NIVION   // Taken from System Shock 2
+nightvision/off        NIVIOFF  // Taken from Starcraft
 
 styleswap/open         STYSWAP1 // Taken from Kamen Rider W
 styleswap/rev          STYSWAP8 // Taken from Kamen Rider Faiz

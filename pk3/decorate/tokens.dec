@@ -25,6 +25,7 @@ actor Wounded : Boolean {}
 actor NoTauntAllowed : Boolean {}
 actor EnemyHasBeenLaunched : Boolean {}
 actor TimeFreezeModeOn : Boolean {}
+actor FlashlightOn : Boolean {}
 
 actor CheckYourPrivilege : Boolean {}
 actor BlindGuardianWaitForAnAnswer : Boolean {}

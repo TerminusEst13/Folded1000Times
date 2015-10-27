@@ -63,3 +63,9 @@ ACTOR ComboDamage10 : PowerDamage
     Powerup.Duration 0x7FFFFFFF
     DamageFactor "ShihongPunchSpecial", 1.5 // Finishes in 9.964292717[...] damage buff.
 }
+
+actor SSHNightVision : PowerLightAmp
+{
+    Powerup.Duration 0x7FFFFFFF
+    Powerup.Color GreenMap
+}

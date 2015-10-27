@@ -10,27 +10,6 @@
 global int 58:LevelCount;
 global int 59:DemonSteeleClass;
 
-//         _¦¯  ¦ ¯¦_
-//       _¦¯        ¯¦_
-//       ¦            ¦
-//       ¦            ¦
-//       ¯¦__  ¦   _¦¯
-//         ¦  _¯_  ¦
-//         ¦ ¯   ¯ ¦
-//         ¦       ¦
-//         ¦       ¦
-//         ¦       ¦
-//         ¦       ¦
-//         ¦       ¦
-//   _¦¯¯¦_¦       ¦_¦¯¦_
-// _¦¯¯    ¯            ¯¯¦
-//¦¯                      ¯¦
-//¦                        ¦
-//¦           _¦_          ¦
-//¯¦         ¦¯ ¯¦        ¦¯
-// ¯¦_      ¦¯   ¯¦     _¦¯
-//   ¯¦___¦¯      ¯¦___¦¯
-
 int playerTimers[PLAYERMAX][TIMER_COUNT];
 int playerTimeFreeze[PLAYERMAX];
 int ClientEnterLocks[PLAYERMAX];
@@ -41,7 +20,7 @@ int array_autoswitch[PLAYERMAX];
 int array_beepbeepbeep[PLAYERMAX];
 int array_nopan[PLAYERMAX];
 int array_noannounce[PLAYERMAX];
-int flashlightOn[PLAYERMAX];
+//int flashlightOn[PLAYERMAX];
 int NotADoomGame;
 
 int GotShotgun;
@@ -749,20 +728,22 @@ script WEEB_CREDITS (int changelogshit2) NET CLIENTSIDE
     }
 }
 
-script WEEB_PUKE2 (void) NET CLIENTSIDE
+script WEEB_PUKE2 (void) NET
 {
 // I can't believe I'm dedicating an entire script to this one instance.
 
-    if (flashlightOn[PlayerNumber()])
+    if (CheckInventory("FlashlightOn") == 1)
     {
-        flashlightOn[PlayerNumber()] = 0;
+        TakeInventory("FlashlightOn",1);
         GiveInventory("FlashlightStopper",1);
-        ActivatorSound("flashlight/off", 127);
+        if (CheckInventory("isJungHaeLin") == 1) { ActivatorSound("flashlight/off", 127); }
+        if (CheckInventory("IsSSH") == 1) { ActivatorSound("nightvision/off", 127); }
     }
     else
     {
-        flashlightOn[PlayerNumber()] = 1;
-        ActivatorSound("flashlight/on", 127);
+        GiveInventory("FlashlightOn",1);
+        if (CheckInventory("isJungHaeLin") == 1) { ActivatorSound("flashlight/on", 127); }
+        if (CheckInventory("IsSSH") == 1) { ActivatorSound("nightvision/on", 127); }
     }
 }
 

@@ -19,6 +19,7 @@ server int dst_nodamagepenalty   = 0;
 server int dst_runmod            = 100;
 server int dst_enemymultiplier   = 3;
 server int dst_multiplierhealth  = 3;
+server int dst_oldaircontrol     = 0;
 
 // Clientside cvars
 user int dst_cl_nomusic          = 0;

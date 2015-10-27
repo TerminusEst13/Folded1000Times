@@ -450,10 +450,14 @@ script SINO_ENTER ENTER
         else
         { SetPlayerProperty(0,0,PROP_BUDDHA); }
 
+        if (CheckInventory("FlashlightOn") == 1) { GiveInventory("SSHNightVision",1); }
+
         Delay(1);
 
         if (isDead(0))
         {
+            TakeInventory("FlashlightOn",1);//flashlightOn[pln] = 0;
+            TakeInventory("SSHNightVision",1);
             if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:pln, s:" dead, terminating SINO_ENTER."); }
             terminate;
         }

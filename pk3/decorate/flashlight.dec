@@ -38,6 +38,7 @@ actor FlashlightStopper : CustomInventory
     Pickup:
         TNT1 A 0 A_Light0
         TNT1 A 0 A_Light0
+        TNT1 A 0 A_TakeInventory("SSHNightVision",1)
         stop
     }
 }

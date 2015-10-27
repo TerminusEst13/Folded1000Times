@@ -882,6 +882,8 @@ script WEEB_ENTER ENTER
         { SetPlayerProperty(0,1,PROP_BUDDHA); }
         else
         { SetPlayerProperty(0,0,PROP_BUDDHA); }
+
+        if (CheckInventory("FlashlightOn") == 1) { GiveInventory("FlashlightSpawner",1); }
         
         Delay(1);
 
@@ -892,6 +894,7 @@ script WEEB_ENTER ENTER
             SentTID = 0;
             Thing_Remove(ShieldTID);
             ShieldTID = 0;
+            TakeInventory("FlashlightOn",1); //flashlightOn[pln] = 0;
             TakeInventory("SentinelUp",1);
             TakeInventory("SentinelActive",1);
             TakeInventory("BlindGuardianShieldUp",1);
@@ -1092,11 +1095,7 @@ script WEEB_GLOBAL ENTER
         if (array_noannounce[pln]) { GiveInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",1); }
         else { TakeInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",0x7FFFFFFF); }
 
-        if (flashlightOn[pln])
-            { GiveInventory("FlashlightSpawner",1); }
-
         delay(1);
-        if (IsDead(0))
-            { flashlightOn[pln] = 0; terminate; }
+        if (IsDead(0)) { terminate; }
     }
 }
