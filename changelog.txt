@@ -22,6 +22,8 @@ FROM 0.82 TO 0.XX
 - The air control in both Zandronum and ZDoom has been unified to allow more ease of use in aerial dodging and mobility. dst_oldaircontrol allows for swapping back to the original, but only on map load.
 - Destroyed barrel/lamp/candelabra pieces now have actual collision data.
 - Several GLdef errors have been fixed.
+- Explosive barrels have had their flares removed and are no longer horrendously laggy, especially in bunches, ESPECIALLY online.
+- Explosive flares have been tweaked to have tighter trails that last slightly shorter.
 
 
 

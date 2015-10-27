@@ -1074,7 +1074,7 @@ Actor FireTrail
 {
     Radius 4
     Height 2
-    Scale 0.4
+    Scale 0.35
     Gravity 0.2
     BounceCount 2
     RenderStyle Add
@@ -1089,14 +1089,10 @@ Actor FireTrail
     States
     {
     Spawn:
-        1090 Q 1 BRIGHT A_FadeOut(0.2)
-        1090 R 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
-        1090 S 1 BRIGHT
-        1090 T 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
-        1090 U 1 BRIGHT
-        1090 V 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
-        1090 W 1 BRIGHT
-        1090 X 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
+        TNT1 A 0 A_FadeOut(0.1)
+        1090 QRST 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,2,random(0,200)/100.00,random(-200,0)/100.00,0)
+        TNT1 A 0 A_FadeOut(0.1)
+        1090 UVWX 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,2,random(0,200)/100.00,random(-200,0)/100.00,0)
         loop
     death:
         1090 QRSTUVWX 1
@@ -1113,23 +1109,24 @@ actor FireTrailBouncing : FireTrail
     {
     Spawn:
         1090 Q 1 BRIGHT A_FadeOut(0.05)
-        1090 R 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
+        1090 R 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,2,random(0,200)/100.00,random(-200,0)/100.00,0)
         1090 S 1 BRIGHT
-        1090 T 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
+        1090 T 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,2,random(0,200)/100.00,random(-200,0)/100.00,0)
         1090 U 1 BRIGHT
-        1090 V 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
+        1090 V 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,2,random(0,200)/100.00,random(-200,0)/100.00,0)
         1090 W 1 BRIGHT
-        1090 X 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,0,random(0,200)/100.00,random(-200,0)/100.00,0)
+        1090 X 1 BRIGHT A_SpawnItemEx("FireTrail2",0,0,2,random(0,200)/100.00,random(-200,0)/100.00,0)
         loop
     }
 }
 
 Actor FireTrail2 : FireTrail
 {
+    Scale 0.4
     States
     {
     Spawn:
-        1091 ABCDE 3 BRIGHT
+        1091 ABCDE 2 BRIGHT
         stop
     }
 }
