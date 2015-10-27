@@ -22,8 +22,9 @@ $random bounce/barrel { dbnce1 dbnce2 dbnce3 } // Taken from Painkiller
 dbnce1                    BARLBNC1
 dbnce2                    BARLBNC2
 dbnce3                    BARLBNC3
-$volume bounce/barrel 0.6
+$volume bounce/barrel 0.3
 $limit bounce/barrel 0
+$rolloff bounce/barrel 100 600
 
 // Pickups
 
