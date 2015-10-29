@@ -274,6 +274,21 @@ gbounc1                GRNBNCE1
 gbounc2                GRNBNCE2
 gbounc3                GRNBNCE3
 
+$random ball/squeak { squeak1 squeak2 squeak3 squeak4 } // Taken from the General Series 6000
+squeak1                SQUEAK1
+squeak2                SQUEAK2
+squeak3                SQUEAK3
+squeak4                SQUEAK4
+
+baseball/hit           BALLHIT1 // Taken from the General Series 6000
+stimpack/hit           STIMHIT1 // Taken from Rainbow Six: Lockdown
+
+$random can/hit { canhit1 canhit2 canhit3 canhit4 } // Taken from Rainbow Six: Lockdown
+canhit1                CANBONC1
+canhit2                CANBONC2
+canhit3                CANBONC3
+canhit4                CANBONC4
+
 // Scorpions
 special/dryfire        SPCLDRYF // Taken from Doom 3
 special/fire           SPCLFIRE

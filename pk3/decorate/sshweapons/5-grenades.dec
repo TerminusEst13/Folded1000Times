@@ -18,6 +18,7 @@ actor 05Dragon : Fists
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("WeebRocket",1,"ReadyGotAmmoAgain")
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"AltFire3")
         Loop
     ReadyAmmo:
         TNT1 A 0 A_GiveInventory("GrenadeInHand",1)
@@ -818,7 +819,7 @@ actor 05Dragon : Fists
         TNT1 A 1 // A buffer, just in case.
         goto AltFireHoldFinish
     AltFire2:
-        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 A 0 A_JumpIfNoAmmo("AltFire3")
         TNT1 A 0 A_PlayWeaponSound("grenade/armed")
         W4GR BBCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
     AltFire2B:
@@ -924,6 +925,63 @@ actor 05Dragon : Fists
         TNT1 A 0 A_TakeInventory("GrenadeInHand",1) // It's already taken, but just in case.
         W4GR VWXX 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto ReadyEmpty
+
+    AltFire3:
+        W4GR XXWV 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"AltFire3b")
+        TNT1 A 5
+        goto GotoReadyEmpty
+    AltFire3b:
+        W4GR LMNNO 1
+    AltFireHold3:
+        W4GR O 1
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"AltFireHold3")//A_Refire("AltFireHold2")
+        W4GR ONNML 1
+        TNT1 A 1
+        TNT1 A 0 A_PlaySoundEx("grenade/throwstrong","soundslot5",0,0)
+        W4GR P 2
+        W4GR Q 1
+        TNT1 A 0 A_Jump(255,"ThrowRock1","ThrowRock2","ThrowRock3","ThrowRock4","ThrowRock1","ThrowRock2","ThrowRock3","ThrowRock4","ThrowSqueakyBall","ThrowBaseball","ThrowStimpack","ThrowCan")
+        W4GR Q 1
+    ThrowSqueakyBall:
+        TNT1 A 0 A_FireCustomMissile("SqueakyBall",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowBaseball:
+        TNT1 A 0 A_FireCustomMissile("Baseball",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowRock1:
+        TNT1 A 0 A_FireCustomMissile("ThrownRock1",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowRock2:
+        TNT1 A 0 A_FireCustomMissile("ThrownRock2",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowRock3:
+        TNT1 A 0 A_FireCustomMissile("ThrownRock3",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowRock4:
+        TNT1 A 0 A_FireCustomMissile("ThrownRock4",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowStimpack:
+        TNT1 A 0 A_FireCustomMissile("ThrownStimpack",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowCan:
+        TNT1 A 0 A_FireCustomMissile("ThrownCan",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    AltFireHold3Finish:
+        W4GR RSTU 1
+        TNT1 A 4
+        TNT1 A 0 A_JumpIfInventory("WeebRocket",1,2)
+        // A_JumpIfNoAmmo doesn't check for alt-fire ammo if primary fire was hit first beforehand.
+        // Because the player was brought to this state with an extra key rather than altfire, it
+        // would check for primary fire's ammo. Instead, I do an A_JumpIfInventory to check for
+        // ammo instead.
+        goto GotoReadyEmpty
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("GrenadeInHand",1)
+        W4GR DCBB 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto ReadyAmmo
 
     CalledReloadFromPunching:
         TNT1 A 0
@@ -1495,6 +1553,258 @@ actor GrenadePunch : FastProjectile
         TNT1 A 0 A_GiveToTarget("KiMeterCounter",6)
         TNT1 A 0 A_GiveToTarget("HyperComboCounter",7)
         TNT1 A 1
+        stop
+    }
+}
+
+actor SqueakyBall
+{
+    Radius 3
+    Height 3
+    Speed 65
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.45
+    Scale 0.55
+    BounceFactor 1.0
+    WallBounceFactor 1.0
+    BounceCount 30 // Heh.
+    +HEXENBOUNCE
+    +CANBOUNCEWATER
+    +ALLOWBOUNCEONACTORS
+    +BOUNCEONACTORS
+    +MOVEWITHSECTOR
+    //+THRUGHOST // Heh.
+    +THRUSPECIES
+    +FORCEPAIN
+    //+BLOODLESSIMPACT
+    SeeSound "ball/squeak"
+    DeathSound "ball/squeak"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
+        SQBL A 1
+    SpawnLoop:
+        SQBL A 1
+        loop
+    Death:
+        SQBL A 3500
+        SQBL AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor Baseball
+{
+    Radius 3
+    Height 3
+    Speed 75
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.3
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "baseball/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        BASB ABCD 3
+        loop
+    Death:
+        BASB A 3500
+        BASB AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ThrownRock1
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.7
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "baseball/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        RCK1 A 1
+        loop
+    Death:
+        RCK1 A 3500
+        RCK1 AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ThrownRock2
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.45
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "baseball/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        RCK2 A 1
+        loop
+    Death:
+        RCK2 A 3500
+        RCK2 AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ThrownRock3
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.4
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "baseball/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        RCK3 A 1
+        loop
+    Death:
+        RCK3 A 3500
+        RCK3 AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ThrownRock4
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.25
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "baseball/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        RCK4 A 1
+        loop
+    Death:
+        RCK4 A 3500
+        RCK4 AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ThrownStimpack
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.75
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "stimpack/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        STPK A 1
+        loop
+    Death:
+        STPK A 3500
+        STPK AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ThrownCan
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.75
+    Scale 0.75
+    BounceFactor 0.5
+    WallBounceFactor 0.5
+    BounceCount 5
+    +HEXENBOUNCE
+    +CANBOUNCEWATER
+    +ALLOWBOUNCEONACTORS
+    +BOUNCEONACTORS
+    +MOVEWITHSECTOR
+    //+THRUGHOST // Heh.
+    +THRUSPECIES
+    +FORCEPAIN
+    //+BLOODLESSIMPACT
+    SeeSound "can/hit"
+    DeathSound "can/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
+        TCAN A 1
+    SpawnLoop:
+        TCAN A 1
+        loop
+    Death:
+        TCAN A 3500
+        TCAN AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
     }
 }

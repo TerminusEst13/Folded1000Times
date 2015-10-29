@@ -18,7 +18,7 @@
 
 { // The old placeholder sprites and sounds for Shihong, before she got her current set of sounds.
   // Kept for legacy's sake.
-    name = "SSHPlaceholder"
+    name = "PlaceholderSSH"
     sprite = NGTO
     scale = 0.975
     class = "Shihong"
