@@ -282,6 +282,7 @@ squeak4                SQUEAK4
 
 baseball/hit           BALLHIT1 // Taken from the General Series 6000
 stimpack/hit           STIMHIT1 // Taken from Rainbow Six: Lockdown
+cup/hit                CUPHIT   // Taken from Rainbow Six: Lockdown
 
 $random can/hit { canhit1 canhit2 canhit3 canhit4 } // Taken from Rainbow Six: Lockdown
 canhit1                CANBONC1
