@@ -1261,7 +1261,10 @@ actor ArmorHealthMegaPack : CustomInventory
     }
 }
 
-actor RamenDisguise : Inventory
+actor RamenDisguise : RandomSpawner { DropItem "RamenDisguise2" }
+actor PizzaDisguise : RandomSpawner { DropItem "PizzaDisguise2" }
+
+actor RamenDisguise2 : Inventory
 {
     // Boy, this is a hacky workaround.
     // Okay, so the megasphere spawns these things as an appearance, right?
@@ -1269,7 +1272,9 @@ actor RamenDisguise : Inventory
     // can pick them up alongside the original item.
     // But because they're spawned via A_SpawnItemEx, they're considered dropped.
     // Ergo, they can get crushed. So I get rid of +DROPPED and add +DONTGIB, but
-    // now that they're -DROPPED they can respawn.
+    // now that they're -DROPPED they can respawn. And because Zandronum doesn't
+    // support +DONTGIB on dropped items, I have to put them in a RandomSpawner
+    // so they're considered properly spawned rather than dropped.
     // So I max out Inventory.RespawnTics and pray that nobody will actually stay
     // on a fucking map for two years.
     Scale 0.8
@@ -1280,6 +1285,8 @@ actor RamenDisguise : Inventory
     +ALWAYSPICKUP
     -SOLID
     +DONTGIB // Doesn't work in Zandro. But Zandronum hates DemonSteele anyway so NO BIG
+             // I can't wait until it updates, though, so I can have this directly on an
+             // A_SpawnItemEx'd item rather than having to RandomSpawner it first.
     -COUNTITEM
     VisibleToPlayerClass MeleePlayer
     States
@@ -1295,7 +1302,7 @@ actor RamenDisguise : Inventory
     }
 }
 
-actor PizzaDisguise : Inventory
+actor PizzaDisguise2 : Inventory
 {
     XScale 0.3
     YScale 0.2
@@ -1578,7 +1585,10 @@ actor FortuneCookie : CustomInventory 30242
     }
 }
 
-actor PepperDisguise : Inventory
+actor PepperDisguise : RandomSpawner { DropItem "PepperDisguise2" } // UUUUUUUUUUUUUGH HACK HACK HACK HACK HACK
+actor DoritosDisguise : RandomSpawner { DropItem "DoritosDisguise2" } // THE THINGS I DO FOR ZANDRONUM COMPAT
+
+actor PepperDisguise2 : Inventory
 {
     XScale 0.65
     YScale 0.55
@@ -1603,7 +1613,7 @@ actor PepperDisguise : Inventory
     }
 }
 
-actor DoritosDisguise : Inventory
+actor DoritosDisguise2 : Inventory
 {
     XScale 0.6
     YScale 0.5

@@ -84,7 +84,7 @@ skill ohgodhelpme
 	SpawnFilter = Nightmare
 	Name = "Oh God Help Me"
     PlayerClassName = "Hae-Lin", "Angel of Death" // Slayer
-    PlayerClassName = "Shihong", "War Machine" // AC/DC
+    PlayerClassName = "Shihong", "Armageddon Machine" // Mekong Delta
 	MustConfirm = "$CONFIRM_OHGODHELPME"
     TextColor = white
 	Aggressiveness = 0.95
