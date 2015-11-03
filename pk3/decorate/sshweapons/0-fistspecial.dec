@@ -494,6 +494,6 @@ ACTOR EMPulseExplode // Technically not actually EMP, since EMP doesn't affect l
 
 actor EMPulseWeakness : PowerProtection
 {
-    DamageFactor "Normal", 3.0
+    DamageFactor "Normal", 2.25
     Powerup.Duration 0x7FFFFFFF
 }
