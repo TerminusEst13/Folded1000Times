@@ -1,31 +1,24 @@
-actor StrikerClip : Ammo 
+actor 00Mastodon : Weapon
 {
-    Inventory.PickupMessage "Don't think you should've gotten this."
-    Inventory.Amount 1
-    Inventory.MaxAmount 7
-    Ammo.BackpackAmount 0
-    Ammo.BackpackMaxAmount 7
-    +IGNORESKILL
-    Inventory.Icon "ABULC0"
-    States
-    {
-    Spawn:
-        NOPE A 1
-        stop
-    }
-}
-
-actor 02Viper : Fists
-{
-    Tag "02-V Viper"
-    Weapon.SlotNumber 2
-    Weapon.AmmoUse2 1
-    Weapon.AmmoGive2 0
-    Weapon.AmmoType2 "StrikerClip"
+    Tag "00-M Mastodon"
+    Weapon.SlotNumber 0
+    Weapon.KickBack 50
+    Weapon.AmmoUse 0
+    Weapon.AmmoGive 0
+    Weapon.AmmoType ""
+    Obituary "%k shattered %o's skull."
+    DamageType "ShihongPunch"
+    Weapon.UpSound "shihong/weaponswap"
+    +NOALERT
+    +NOAUTOFIRE
+    +ALT_AMMO_OPTIONAL
+    +NOEXTREMEDEATH
+    +CHEATNOTWEAPON
+    +UNDROPPABLE
     States
     {
     Ready:
-        W1RV A 1 A_WeaponReady
+        SHF0 A 1 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
@@ -33,7 +26,7 @@ actor 02Viper : Fists
         Loop
     Select:
         TNT1 AAAA 0 A_Raise
-        W1RV A 1 A_Raise
+        SHF0 A 1 A_Raise
         loop
     Deselect:
         TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
@@ -42,11 +35,11 @@ actor 02Viper : Fists
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 AAAA 0 A_Lower
-        W1RV A 1 A_Lower
+        SHF0 A 1 A_Lower
         Loop
     StyleSwap:
         TNT1 A 0 A_GiveInventory("StyleSwapping",1)
-        W1RV HIJK 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        SHF0 BCDD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 1
         TNT1 A 0 A_PlayWeaponSound("idle/swing")
         STYL ABBCCC 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -117,21 +110,19 @@ actor 02Viper : Fists
         goto StyleSwapFinish
     StyleSwapFinish:
         TNT1 A 5
-        W1RV KJIHA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        SHF0 DDCBA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         Goto Ready
-        
 
     Fire:
         TNT1 A 0 A_JumpIfInventory("Grappling",1,"CancelGrapple")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"FirePrep")
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"PunchPrep")
-        W1RV HIJK 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        SHF0 BCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 1 A_GiveInventory("SlashingLikeAGaijin",1)
         goto PunchPrep
     FirePrep:
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
-        W1RV HIJK 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
     PunchPrep:
         TNT1 A 0 A_JumpIfInventory("JetpackModeOn",1,"DashKick")
         TNT1 A 0 A_JumpIfInventory("JumpedUp",1,"AirKick")
@@ -175,6 +166,21 @@ actor 02Viper : Fists
         //TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
         SHF4 DE 1
         SHF4 F 1 A_WeaponReady(WRF_NOSWITCH | WRF_NOSECONDARY)
+        goto Fired
+    ReloadCheck:
+        SHF0 BCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+    CalledReloadFromPunching:
+        TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
+        TNT1 A 0 A_Recoil(-5)
+        TNT1 A 0
+        KK1L A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlayWeaponSound("punchy/swing3")
+        KK1L B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardReflect",0,0)
+        TNT1 A 0 A_FireCustomMissile("JumpKickAttack",0,0,0,0,2)
+        KK1L CDEFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 5
         goto Fired
     AirKick:
         TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
@@ -294,34 +300,15 @@ actor 02Viper : Fists
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        W1RV KJIHA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        SHF0 DCB 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         Goto Ready
     Fired3:
         //TNT1 A 0 A_JumpIfInventory("SwordAttack",6,"HoldAttack")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching") // 5
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
-        TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching") // 5
+        TNT1 A 10 A_WeaponReady(WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        W1RV KJIHA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        SHF0 DCB 1 A_WeaponReady(WRF_NOSWITCH)
         Goto Ready
 
     Hold:
@@ -444,7 +431,7 @@ actor 02Viper : Fists
         //TNT1 A 0 A_TakeInventory("SuperMeterCounter",10)
         TNT1 A 0 A_GiveInventory("Grappling",1)
         TNT1 A 1
-        TNT1 A 0 A_TakeInventory("KiMeterCounter",200)
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",100)
         TNT1 A 0 A_TakeInventory("PunchComboCounter",0x7FFFFFFF)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
@@ -542,7 +529,7 @@ actor 02Viper : Fists
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
         SHF1 AB 1
         SHF1 C 15
-        TNT1 A 0 A_TakeInventory("KiMeterCounter",200)
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",100)
         TNT1 A 0 A_PlayWeaponSound("special/empulse")
         TNT1 A 0 A_SetBlend("white",1.0,7)
         TNT1 A 0 A_SpawnItemEx("EMPulseExplode",0,0,32,0,0,0,0,48)
@@ -701,7 +688,7 @@ actor 02Viper : Fists
         goto SpecialAttackFinish
     EngageCloakingMode:
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
-        TNT1 A 0 A_TakeInventory("KiMeterCounter",200)
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",100)
         SHF1 AB 1
         SHF1 C 15
         TNT1 A 0 A_PlayWeaponSound("stealth/engage")
@@ -724,193 +711,371 @@ actor 02Viper : Fists
         TNT1 A 0 A_ClearRefire
         goto Fired3
 
-
-
     AltFire:
-        TNT1 A 0
+        TNT1 A 0 //A_TakeInventory("PointsNoAttacks",1)
         TNT1 A 0 A_JumpIfInventory("SlashingLikeAGaijin",1,"AltFirePrepare")
         TNT1 A 0 A_JumpIfInventory("ShootingLikeABaka",1,"AltFireGun")
+        SHF0 BCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
         goto AltFireGun
     AltFirePrepare:
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
-        TNT1 A 0 A_TakeInventory("PunchComboCounter",4)
+        TNT1 A 0 //A_TakeInventory("PunchComboCounter",4)
         TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        W1RV KJIHA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
     AltFireGun:
-        TNT1 A 0 A_JumpIfNoAmmo("Nope")
-        TNT1 A 0 A_JumpIfInventory("StrikerClip",2,1)
-        goto AltFireGunFinal
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("ShadowCloak",1,"AltFireGunSilenced")
-        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"AltFireGunTracer")
-        W1RV U 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_Light1
-        TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_PlayWeaponSound("striker/fire")
-        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
-        TNT1 A 0 A_FireCustomMissile("RevolverBullet",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
-        goto AltFireGunFinish
-    AltFireGunSilenced:
-        W1RV A 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_Light1
-        TNT1 A 0 A_PlayWeaponSound("striker/firesil")
-        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
-        TNT1 A 0 A_FireCustomMissile("RevolverBullet",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
-        goto AltFireGunFinish
-    AltFireGunTracer:
-        W1RV W 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_Light1
-        TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_PlayWeaponSound("striker/fire")
-        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
-        TNT1 A 0 A_FireCustomMissile("RevolverBulletTracer",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
-    AltFireGunFinish:
-        TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
-        TNT1 A 0 A_Recoil(0.5)
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoil")
-        TNT1 A 0 A_SetAngle(angle+(random(-500,500)/1000.000))
-        TNT1 A 0 A_SetPitch(pitch-(random(200,500)/1000.000))
-    NoRecoil:
-        W1RV BCDEFF 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_Light0
-        W1RV GGA 1 A_WeaponReady(WRF_NOSWITCH)
-        Goto AltFireFinish
-    AltFireGunFinal:
-        TNT1 A 0 A_JumpIfInventory("ShadowCloak",1,"AltFireGunFinalSilenced")
-        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"AltFireGunFinalTracer")
-        W1RV V 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_Light1
-        TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_PlayWeaponSound("striker/firefinal")
-        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
-        TNT1 AAAAA 0 A_FireCustomMissile("RevolverBulletBlank",0,1,0,1,0,0)
-        TNT1 A 0 A_FireCustomMissile("RevolverBullet",0,1,0,1,0,0)
-        goto AltFireGunFinalFinish
-    AltFireGunFinalSilenced:
-        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"AltFireGunFinalTracer")
-        W1RV A 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_Light1
-        TNT1 A 0 A_PlayWeaponSound("striker/firefinsil")
-        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
-        TNT1 AAAAA 0 A_FireCustomMissile("RevolverBulletBlank",0,1,0,1,0,0)
-        TNT1 A 0 A_FireCustomMissile("RevolverBullet",0,1,0,1,0,0)
-        goto AltFireGunFinalFinish
-    AltFireGunFinalTracer:
-        W1RV X 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_GiveInventory("ShootingLikeABaka",1)
-        TNT1 A 0 A_Light1
-        TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_PlayWeaponSound("striker/firefinal")
-        TNT1 A 0 A_FireBullets(0,0,1,0,"BlankPuff", FBF_NORANDOM )
-        TNT1 AAAAA 0 A_FireCustomMissile("RevolverBulletBlank",0,1,0,1,0,0)
-        TNT1 A 0 A_FireCustomMissile("RevolverBulletTracer",random(-50,50)/100.00,1,0,1,0,random(-25,25)/100.00)
-    AltFireGunFinalFinish:
-        TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
-        TNT1 A 0 A_Recoil(0.75)
-        TNT1 A 0
-        TNT1 A 0 A_ZoomFactor(0.975,ZOOM_INSTANT)
-        TNT1 A 0 A_JumpIfInventory("IAmASillyPersonWhoDoesntLikeRecoil",1,"NoRecoilFinal")
-        TNT1 A 0 A_SetAngle(angle+(random(-1000,1000)/1000.000))
-        TNT1 A 0 A_SetPitch(pitch-(random(600,1500)/1000.000))
-    NoRecoilFinal:
-        W1RV L 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_ZoomFactor(0.99,ZOOM_INSTANT)
-        W1RV M 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
-        W1RV NOPQRR 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_Light0
-        W1RV SSTT 1 A_WeaponReady(WRF_NOSWITCH)
-    AltFireFinish:
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck") // 10
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
-        W1RV A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck") // 15
-        Goto AltFired
-
-    Nope:
-        TNT1 A 0 A_PlaySoundEx("striker/dryfire","soundslot7",0,0)
-        W1RV A 7 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        goto ReloadCheck
-    ReloadCheck:
-        TNT1 A 0 A_JumpIfInventory("WeebClip",1,1)
-        goto AltFired
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("StrikerClip",0,"AltFired")
-    Reload:
-        TNT1 A 0 A_PlaySoundEx("striker/unload","soundslot7",0,0)
-        W1RV HIJK 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 6
-    ReloadLoop:
-        TNT1 A 0 A_JumpIfInventory("WeebClip",1,1)
-        goto ReloadFinish
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("WeebClip",1)
-        TNT1 A 0 A_GiveInventory("StrikerClip",1)
-        TNT1 A 0 A_JumpIfInventory("StrikerClip",7,"ReloadFinish")
-        goto ReloadLoop
-    ReloadFinish:
-        TNT1 A 0 A_PlaySoundEx("striker/load","soundslot7",0,0)
-        TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
-        TNT1 A 1 A_ClearRefire
-        W1RV KJIHA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        Goto AltFired
+		SHTS AB 1
+		TNT1 A 0 A_PlayWeaponSound("taser/attack")
+        TNT1 A 0 A_SetBlend("white",0.2,3)
+		SHTS C 1 BRIGHT A_CustomPunch(35,1,0,"ElecPuff",128)
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS DE 1 BRIGHT
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS FG 1 BRIGHT
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS HI 1 BRIGHT
+        TNT1 A 0 A_FireCustomMissile("KharonGuard",0,0)
+		SHTS J 1 BRIGHT
+		SHTS KK 1
+		SHTS LLM 1 A_WeaponReady(WRF_NOSECONDARY | WRF_NOBOB)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady // 10
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady // 20
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady // 30
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady // 40
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady // 50
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady // 60
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"CalledReloadFromPunching")
+        TNT1 A 2 A_WeaponReady // 70
+		Goto AltFired
     AltFired:
-        TNT1 A 0 A_TakeInventory("PunchComboCounter",7)
+        TNT1 A 0 A_TakeInventory("PunchComboCounter",4)
         TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_ClearRefire
-        W1RV A 1
+        SHF0 DCB 1 A_WeaponReady
         Goto Ready
-
-    CalledReloadFromPunching: // The gun is down, and lifting it up just to
-                              // lower it back down again would look dumb.
-        TNT1 A 0 A_TakeInventory("PunchComboCounter",0x7FFFFFFF)
-        TNT1 A 0 A_TakeInventory("SlashingLikeAGaijin",1)
-        TNT1 A 0 A_ClearRefire
-        TNT1 A 0 A_JumpIfInventory("WeebClip",1,1)
-        goto PunchReloadNope
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("StrikerClip",0,"PunchReloadNope")
-        TNT1 A 0 A_PlaySoundEx("striker/unload","soundslot7",0,0)
-        TNT1 A 4 // Same duration as the one in Reload.
-        TNT1 A 6
-        goto ReloadLoop
-    PunchReloadNope:
-        TNT1 A 1 A_ClearRefire
-        W1RV KJIHA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        Goto AltFired
     }
+}
+
+actor PunchAttack1 : FastProjectile
+{
+    Radius 6
+    Height 6
+    Damage (45)
+    Speed 96
+    RenderStyle Add
+    Alpha 0.6
+    Scale 0.65
+    SeeSound "none"
+    DeathSound "none"
+    Species "Player"
+    DamageType "ShihongPunch"
+    Projectile
+    +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    +NOEXTREMEDEATH
+    //+FORCEPAIN - Nope. As much as I was looking forward to this flag, stunlocking a Cyber is a no-go.
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Death:
+    Crash:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_PlaySound("punchy/wall1")
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongMartialMiss1",0,0,0,0,0,0,0,32)
+        FHFX SS 1
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeath:
+        TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveToTarget("PunchComboCounter",1)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
+        TNT1 A 0 A_PlaySound("punchy/hit1")
+        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",2)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeathPower:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveToTarget("PunchComboCounter",1)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",3)
+        TNT1 A 0 A_PlaySound("punchy/hit1")
+        TNT1 A 0 A_SpawnItemEx("ShihongLightPunchHit",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",5)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    }
+}
+
+actor JumpKickAttack : PunchAttack1
+{
+    Damage (70)
+    DamageType "ShihongPunchSpecial"
+    States
+    {
+    Death:
+    Crash:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_PlaySound("punchy/wall3")
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongMartialMiss2",0,0,0,0,0,0,0,32)
+        FHFX SS 1
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeath:
+        TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",4)
+        TNT1 A 0 A_PlaySound("punchy/hit3")
+        TNT1 A 0 A_SpawnItemEx("ShihongJumpKickHit2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",2)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeathPower:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",4)
+        TNT1 A 0 A_PlaySound("punchy/hit3")
+        TNT1 A 0 A_SpawnItemEx("ShihongJumpKickHit",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",5)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+   }
+}
+
+actor PowerKickAttack : PunchAttack1
+{
+    Damage (120)
+    DamageType "ShihongPunchSpecial"
+    States
+    {
+    Death:
+    Crash:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_PlaySound("punchy/wall4")
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongMartialMiss3",0,0,0,0,0,0,0,32)
+        FHFX SS 1
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeath:
+        TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",5)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",6)
+        TNT1 A 0 A_PlaySound("punchy/hit4")
+        TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",4)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeathPower:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",5)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",6)
+        TNT1 A 0 A_PlaySound("punchy/hit4")
+        TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",10)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    }
+}
+
+actor DashKickAttack : PunchAttack1
+{
+    +FORCEPAIN
+    Damage (150)
+    DamageType "ShihongPunchSpecial"
+    States
+    {
+    Death:
+    Crash:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_PlaySound("punchy/wall4")
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongMartialMiss3",0,0,0,0,0,0,0,32)
+        FHFX SS 1
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeath:
+        TNT1 A 0 A_JumpIfInTargetInventory("HaggarModeOn",1,"XDeathPower")
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",5)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",6)
+        TNT1 A 0 A_PlaySound("punchy/hit4")
+        TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit2",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",4)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    XDeathPower:
+        TNT1 A 1
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_TakeFromTarget("PunchComboCounter",10)
+        TNT1 A 0 A_GiveToTarget("KharonSlashPoints",5)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",6)
+        TNT1 A 0 A_PlaySound("punchy/hit4")
+        TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_GiveToTarget("KiMeterCounter",10)
+        FHFX SS 1  
+        FHFX TU 2
+        FHFX VW 3
+        stop
+    }
+}
+
+ACTOR ElecPuff
+{ 
+    AttackSound "taser/wall"
+    SeeSound "taser/hit"
+    Scale 0.9
+    RenderStyle Add
+    Alpha 0.9
+    DamageType Taser
+    +NOGRAVITY
+    +NOEXTREMEDEATH
+    +PUFFONACTORS
+    +FORCEPAIN
+    +ALWAYSPUFF
+    +PUFFGETSOWNER
+    States
+    {
+    Spawn:
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+   	    TZOT ABCD 3 Bright
+        Stop
+	Melee:
+        TNT1 A 0 A_GiveToTarget("HyperComboCounter",1)
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+   	    TZOT ABCD 3 Bright
+        Stop
+	Crash:
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+        TNT1 AAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-200,200)/100.00,random(-200,200)/100.00,random(-200,200)/100.00,random(-180,180),128,0)
+   	    TZOT ABCD 3 Bright
+        Stop
+   }
 }

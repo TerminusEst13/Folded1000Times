@@ -12,13 +12,13 @@ actor RedArmor : BlindGuardianPickup 5040//replaces RedArmor
     SpawnID 168
 }
 
-actor MaxArmorBonus : SoulStoneSpawner1 5091//replaces MaxArmorBonus
+actor MaxArmorBonus : TinySoulKiSpawner 5091//replaces MaxArmorBonus
 {
     Game Doom
     SpawnID 167
 }
 
-actor MaxHealthBonus : SoulStoneSpawner1 5090//replaces MaxHealthBonus
+actor MaxHealthBonus : TinySoulKiSpawner 5090//replaces MaxHealthBonus
 {
     Game Doom
     SpawnID 166

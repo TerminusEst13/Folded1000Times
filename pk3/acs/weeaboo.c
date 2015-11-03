@@ -511,6 +511,10 @@ int GravityOfLight;
          if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("haelin/foodramen",127); }
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("shihong/foodpizza",127); }
          break;
+
+    case 5: // Tiny meter pickup
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("ammo/soulstone",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("battery/get",127); }
     }
     break;
     }

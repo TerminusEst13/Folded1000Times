@@ -25,6 +25,7 @@ FROM 0.82 TO 0.XX
 - Explosive barrels have had their flares removed and are no longer horrendously laggy, especially in bunches, ESPECIALLY online.
 - Explosive flares have been tweaked to have tighter trails that last slightly shorter.
 - Flashlights now work online.
+- DoomHealth mode now has armor bonuses spawn, well, armor bonuses.
 
 
 

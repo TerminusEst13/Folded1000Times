@@ -78,6 +78,10 @@ actor AllFearTheSentinel
     DamageFactor "FrosthammerExplode", 0.0 // Isn't used, but just in case.
     DamageFactor "ChemiKill", 0.0
     DamageFactor "Telefrag", 0.0
+    DamageFactor "Taser", 0.0
+    DamageFactor "EMPulse", 0.0
+    DamageFactor "SentinelDamage", 0.0
+    DamageFactor "ThatsSoRaven", 0.0
     RadiusDamageFactor 0.0
     States
     {

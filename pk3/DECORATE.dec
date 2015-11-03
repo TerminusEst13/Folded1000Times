@@ -290,3 +290,5 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/sshweapons/4-pistols.dec"
 #include "decorate/sshweapons/5-grenades.dec"
 #include "decorate/sshstyle.dec"
+
+#include "decorate/raven.dec"

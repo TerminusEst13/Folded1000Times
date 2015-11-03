@@ -192,6 +192,15 @@ actor StyleSwapping : Boolean {}
 actor JustFrame : Boolean {}
 actor JustFrameAcquired : Boolean {}
 
+actor RavenLeftActive : Boolean {}
+actor RavenRightActive : Boolean {}
+actor RavenUp : Boolean {}
+actor RavenGimmeJustALittle : Boolean {}
+actor RavenFromPreviousLevel : Boolean {}
+
+actor RavenLeftLifeCounter : Counter { Inventory.MaxAmount 150 }
+actor RavenRightLifeCounter : Counter { Inventory.MaxAmount 150 }
+
 actor JetpackFuel : Counter { Inventory.MaxAmount 120 }
 actor PunchComboCounter : Counter { Inventory.MaxAmount 10 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }

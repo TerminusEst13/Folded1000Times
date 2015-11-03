@@ -20,6 +20,13 @@ script SINO_ENTER ENTER
     int RemoveSRankAnnouncer;
     int IntroChance;
     int speedmod;
+    int zzz;
+    int angle;
+    int RavenLeftTID;
+    int RavenRightTID;
+    int xOffset, yOffset, yOffset2, zOffset;
+    int velx, vely, velz;
+    int nx, nx2, ny, ny2, nz;
 
     if (GetCvar("dst_debug") == 1) { Log(s:"SINO_ENTER executing on player ", d:pln); }
 
@@ -168,6 +175,11 @@ script SINO_ENTER ENTER
         yyy2 = yyy;
         xxx  = GetActorX(0);
         yyy  = GetActorY(0);
+        zzz  = GetActorZ(0);
+        angle = GetActorAngle(0);
+        velx  = GetActorVelX(0);
+        vely  = GetActorVelY(0);
+        velz  = GetActorVelZ(0);
 
         //Print(s:"Y is ", d:yyy, s:". X is ", d:xxx, s:". Y2 is ", d:yyy2, s:". X2 is ", d:xxx2);
         if (xxx2 == xxx && yyy2 == yyy)
@@ -231,6 +243,78 @@ script SINO_ENTER ENTER
         if (CheckInventory("KharonSabbath") == 1)
             { TakeInventory("KharonSabbath",1); GiveInventory("04Scorpions",1); }
 
+
+
+        // THE RAVEN
+        RavenLeftTID = 15000 + pln;
+        RavenRightTID = 15100 + pln;
+        if (CheckInventory("RavenUp") == 1)
+        {
+            // Eh, that's not as funny as buttshield.
+            if (CheckInventory("RavenLeftActive") == 0)
+            {
+                Spawn("UnleashTheRaven",xxx,yyy,zzz,RavenLeftTID,angle);
+                GiveInventory("RavenLeftActive",1);
+            }
+            // Eh, that's not as funny as buttshield.
+            if (CheckInventory("RavenRightActive") == 0)
+            {
+                Spawn("UnleashTheRaven",xxx,yyy,zzz,RavenRightTID,angle);
+                GiveInventory("RavenRightActive",1);
+            }
+
+            if (CheckInventory("RavenLeftActive") == 1 || CheckInventory("RavenRightActive") == 1)
+            {
+                xOffset = -12.0;
+                yOffset = -32.0;
+                yOffset2 = 32.0;
+                zOffset = 0;
+
+                nx = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset, sin(angle));
+                nx2 = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset2, sin(angle));
+                ny = yyy + FixedMul(xOffset, sin(angle)) - FixedMul(yOffset, cos(angle));
+                ny2 = yyy + FixedMul(xOffset, sin(angle)) - FixedMul(yOffset2, cos(angle));
+                nz = zzz + zOffset;
+
+                /*if (pln != ConsolePlayerNumber())
+                {
+                    nx -= velx; ny -= vely; ny2 -= vely; nz -= velz;
+                }
+                else
+                {
+                    nx -= velx; ny -= vely; ny2 -= vely; nz -= 2*velz;
+                }*/
+
+                SetActorAngle(RavenLeftTID, angle);
+                SetActorAngle(RavenRightTID, angle); 
+                SetActorPosition(RavenLeftTID,nx + FixedMul(32.0,cos(angle)),ny + FixedMul(32.0,sin(angle)),nz + 32.0,0);
+                SetActorPosition(RavenRightTID,nx2 + FixedMul(32.0,cos(angle)),ny2 + FixedMul(32.0,sin(angle)),nz + 32.0,0);
+                SetActorVelocity(RavenLeftTID,velx,vely,velz,0,0);
+                SetActorVelocity(RavenRightTID,velx,vely,velz,0,0);
+
+                //SentinelHP = GetActorProperty(SentTID, APROP_HEALTH);
+                //TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
+                //GiveInventory("SentinelLifeCounter",SentinelHP);
+
+                // It's probably not exactly very efficient, but honestly I don't care.
+                // As long as code works and doesn't crash, I think it's fine.
+                //if (CheckInventory("RavenGimmeJustALittle") == 1)
+                //{
+                //    GiveActorInventory(SentTID,"SentinelHealth",200);
+                //    TakeInventory("RavenGimmeJustALittle",1);
+                //}
+
+                // I don't have a lot of programmer friends.
+                //if (CheckActorInventory(SentTID,"RavenWhenTheGoingGetsTough"))
+                //{
+                //    Thing_Remove(SentTID);
+                //    SentTID = 0;
+                //    TakeInventory("SentinelUp",1);
+                //    TakeInventory("SentinelActive",1);
+                //    TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
+                //}
+            }
+        }
 
     // ============ GENERIC COPY/PASTED SHIT HERE
 
@@ -373,19 +457,19 @@ script SINO_ENTER ENTER
         // they double-tapped the button.
 
           if (keypressed(BT_MOVERIGHT) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyRight",6); }}}
           if (keypressed(BT_MOVELEFT) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyLeft",6); }}}
           if (keypressed(BT_FORWARD) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyForward",6); }}}
           if (keypressed(BT_BACK) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 100) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyBack",6); }}}
         }

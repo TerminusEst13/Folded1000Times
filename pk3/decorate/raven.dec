@@ -1,0 +1,195 @@
+// 13-R RAVEN
+
+ACTOR RavenHealth : Health
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 200
+}
+
+actor UnleashTheRaven
+{
+    Health 150
+    Radius 12
+    Height 8
+    Mass 0x7FFFFFFF
+    Speed 0
+    PainChance 256
+    MinMissileChance 10
+    Scale 0.5
+    Monster
+    -SOLID
+    +NOCLIP
+    +FLOAT
+    +FLOATBOB
+    +FRIENDLY
+    +NOGRAVITY
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +DONTFALL
+    +NOBLOOD
+    +LOOKALLAROUND
+    +NOTARGET
+    +QUICKTORETALIATE
+    +THRUSPECIES
+    Species "Player"
+    SeeSound "raven/see"
+    PainSound "raven/pain"
+    DeathSound "raven/dead"
+    ActiveSound "raven/idle"
+    Obituary "%o went into the jaws of death."
+    DamageFactor "kubiuti", 0.0
+    DamageFactor "kubispinattack", 0.0
+    DamageFactor "kubilungeattack", 0.0
+    DamageFactor "kubirangeattack", 0.0
+    DamageFactor "KharonHookshot", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
+    DamageFactor "HaltHammerzeit", 0.0
+    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "IronFistExplosion", 0.0
+    DamageFactor "AcaciaDamage", 0.0
+    DamageFactor "SabbathDamage", 0.0
+    DamageFactor "ExodusDamage", 0.0
+    DamageFactor "ExodusJump", 0.0
+    DamageFactor "Knife", 0.0
+    DamageFactor "TestamentDamage", 0.0
+    DamageFactor "Frosthammer", 0.0
+    DamageFactor "FrosthammerCharged", 0.0
+    DamageFactor "FrosthammerExplode", 0.0 // Isn't used, but just in case.
+    DamageFactor "ChemiKill", 0.0
+    DamageFactor "Telefrag", 0.0
+    DamageFactor "Taser", 0.0
+    DamageFactor "EMPulse", 0.0
+    DamageFactor "SentinelDamage", 0.0
+    DamageFactor "ThatsSoRaven", 0.0
+    RadiusDamageFactor 0.0
+    States
+    {
+    Spawn:
+        RVSR ABCD 4 A_Look
+        Loop
+    See:
+        RVSR AABBCCDD 2 A_Chase
+        Loop
+    Missile:
+        TNT1 A 0 A_PlaySound("raven/fire")
+        TNT1 A 0 A_CustomMissile("RavenBullet",8,0,0,0,0)
+        RVSR A 1 BRIGHT
+        goto See
+    Pain:
+        TNT1 A 0 A_Pain
+        goto See
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_Scream
+        TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("RavenFeather", 0, 0, 0, Random(1, 2), 0, Random(1, 2), Random(0, 360), 128)
+        TNT1 AAAAA 0 A_SpawnItemEx("RavenSmoke", 0, 0, 0, Random(1, 2), 0, Random(1, 2), Random(0, 360), 128)
+        Stop
+    }
+}
+
+Actor RavenSmoke
+{
+  Radius 0
+  Height 0
+  Scale 0.9
+  RenderStyle Add
+  Alpha 0.7
+  +NoGravity
+  +DontSplash
+  +CLIENTSIDEONLY
+  States
+  {
+  Spawn:
+    RVSR EFGHIJKL 2
+    Stop
+  }
+}
+
+Actor RavenFeather
+{
+    Radius 2
+    Height 4
+    +MISSILE
+    +DropOff
+    +NoTeleport
+    +CannotPush
+    +WindThrust
+    +DontSplash
+    +CLIENTSIDEONLY
+    Gravity 0.125
+    States
+    {
+    Spawn:
+        RVSR MNOPQPON 3
+        Loop
+    Death:
+        RVSR O 6
+        Stop
+    }
+}
+
+ACTOR RavenBullet
+{
+    Radius 4
+    Height 3
+    Speed 40
+    Damage (3)
+    SeeSound None
+    DeathSound None
+    Decal HImpScorch
+    DamageType "ThatsSoRaven"
+    Species "Player"
+    Projectile
+    +THRUGHOST
+    +THRUSPECIES
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_SpawnItemEx("RavenBulletBlasterTrail", 0,               0,              2)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (18*momx)/-35.0, -(18*momy)/-35.0, 2+(18*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (20*momx)/-35.0, -(20*momy)/-35.0, 2+(20*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (22*momx)/-35.0, -(22*momy)/-35.0, 2+(22*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (24*momx)/-35.0, -(24*momy)/-35.0, 2+(24*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (26*momx)/-35.0, -(26*momy)/-35.0, 2+(26*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (28*momx)/-35.0, -(28*momy)/-35.0, 2+(28*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (30*momx)/-35.0, -(30*momy)/-35.0, 2+(30*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (32*momx)/-35.0, -(32*momy)/-35.0, 2+(32*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (34*momx)/-35.0, -(34*momy)/-35.0, 2+(34*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (36*momx)/-35.0, -(36*momy)/-35.0, 2+(36*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (38*momx)/-35.0, -(38*momy)/-35.0, 2+(38*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("RavenBulletBlasterTrail", (40*momx)/-35.0, -(40*momy)/-35.0, 2+(40*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        Loop
+    Death:
+        TNT1 A 0 //A_UnsetShootable
+        TNT1 A 0 A_PlaySound("enemy/shothit")
+        TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LaserHaze",0,0,0,random(-100,100)/150.0,random(-100,100)/150.0,random(-100,100)/150.0,0,32)
+        TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("LaserHaze2",0,0,0,random(-100,100)/80.0,random(-100,100)/80.0,random(-100,100)/80.0,0,32)
+        TNT1 A 4
+        stop
+    }
+}
+
+actor RavenBulletBlasterTrail
+{
+    Scale 0.15
+    RenderStyle Add
+    Alpha 0.9
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        ELSR A 2 BRIGHT
+        stop
+    }
+}
