@@ -44,12 +44,12 @@ shipain1               SHPAIN1
 shipain2               SHPAIN2
 shipain3               SHPAIN3
 
-$random shihong/nope { shinope1 shinope2 shinope3 shinope4 shinope1 shinope2 shinope3 shinope4 shinope1 shinope2 shinope3 shinope4 shinope5 }
+$random shihong/nope { shinope1 shinope2 shinope3 shinope1 shinope2 shinope3 shinope1 shinope2 shinope3 shinope1 shinope2 shinope3 shinope5 }
 shinope1               SHNOPE1
 shinope2               SHNOPE2
 shinope3               SHNOPE3
 shinope4               SHNOPE4
-shinope5               SHNOPE5
+shinope5               SHINOPE5
 
 $random shihong/yawn { shiyawn1 shiyawn2 shiyawn3 shiyawn4 shiyawn5 }
 shiyawn1               SHYAWN1
