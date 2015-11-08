@@ -195,8 +195,14 @@ actor JustFrameAcquired : Boolean {}
 actor RavenLeftActive : Boolean {}
 actor RavenRightActive : Boolean {}
 actor RavenUp : Boolean {}
+actor RavenLeftUp : Boolean {}
+actor RavenRightUp : Boolean {}
+actor RavenLeftDead : Boolean {}
+actor RavenRightDead : Boolean {}
 actor RavenGimmeJustALittle : Boolean {}
-actor RavenFromPreviousLevel : Boolean {}
+actor RavenLeftFromPreviousLevel : Boolean {}
+actor RavenRightFromPreviousLevel : Boolean {}
+actor RavenWhenTheGoingGetsTough : Boolean {}
 
 actor RavenLeftLifeCounter : Counter { Inventory.MaxAmount 150 }
 actor RavenRightLifeCounter : Counter { Inventory.MaxAmount 150 }

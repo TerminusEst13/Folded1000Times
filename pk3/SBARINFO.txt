@@ -411,6 +411,43 @@ InInventory TricksterModeOn, 1
     DrawImage "HUDSTTRK", 3, 153;
 }
 
+    InInventory RavenRightActive
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "RAVICONR", 1, 20;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 45, 24;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "RAVICONR", -31, 20;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 13, 24;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "RAVICONR", -52, 20;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, -8, 24;
+        }
+    }
+    InInventory RavenLeftActive
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "RAVICONL", 1, 2;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 45, 6;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "RAVICONL", -31, 2;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 13, 6;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "RAVICONL", -52, 2;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, -8, 6;
+        }
+    }
+
 InInventory FRank, 1 { DrawImage "STYLVL1", 262, 15; }
 InInventory DRank, 1 { DrawImage "STYLVL2", 261, 16; }
 InInventory CRank, 1 { DrawImage "STYLVL3", 264, 15; }

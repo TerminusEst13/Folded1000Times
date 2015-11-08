@@ -183,6 +183,7 @@ styleswap/preptr       STYSWAP6 // Taken from Kamen Rider Agito
 raven/fire             RAVNFIRE // Taken from Killing Floor
 raven/pain             RAVNPAIN
 raven/death            RAVNDETH
+raven/pickup           RAVENGET
 
 
 shihong/weaponswap     SSHWPSWP
@@ -290,6 +291,7 @@ squeak4                SQUEAK4
 baseball/hit           BALLHIT1 // Taken from the General Series 6000
 stimpack/hit           STIMHIT1 // Taken from Rainbow Six: Lockdown
 cup/hit                CUPHIT   // Taken from Rainbow Six: Lockdown
+wan/hit                WAN      // Taken from the General Series 6000
 
 $random can/hit { canhit1 canhit2 canhit3 canhit4 } // Taken from Rainbow Six: Lockdown
 canhit1                CANBONC1
