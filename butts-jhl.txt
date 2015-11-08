@@ -39,7 +39,6 @@ TO DO in no particular order:
 <WaTaKiD> https://www.dropbox.com/s/a1p6ybfwukqgv41/Screenshot_Doom_20141217_192510.png?dl=0 after reconnecting
 <WaTaKiD> basically go to doom2 map22, kill some torches and reconnect
 127: Nick _sink's tracers and spatters from cyberpunk shootdown.
-128: Give the Acacia pistol a slide already.
 129: Uzi_idiot: I wish there was a mod to add ambient sounds to all levels
 Uzi_idiot: like computer walls large enough would play computer sounds
 Uzi_idiot: and lava would bubble
@@ -152,6 +151,7 @@ And the final style...ummm. Hm. // Kharon being wielded by itself will cover thi
 [04:32:35 pm] Badass adorkable: not as much shred as much as PAAAAAAIN
 [04:32:53 pm] Badass adorkable: kill a pinkie to stun pinkies behind it
 [04:33:30 pm] DRL 3.33: instead of gibing, they explode, damageing other monsters around them // Too complicated for something technically already in.
+128: Give the Acacia pistol a slide already. // Shivers is cheeky and made that impossible.
 
 
 DONE:

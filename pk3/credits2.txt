@@ -23,6 +23,9 @@ GRAPHICS:
  ^- Mega Man & Bass
  ^- Armored Warriors
 - Hit sparks from Street Fighter Alpha 2
+- Neoworm for the Raven sprites
+- Freedoom for the Raven lasers
+- birdinginformation.com for the HUD graphic for the Raven
 
 CODE:
 ===========

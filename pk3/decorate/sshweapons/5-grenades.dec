@@ -942,7 +942,7 @@ actor 05Dragon : Fists
         TNT1 A 0 A_PlaySoundEx("grenade/throwstrong","soundslot5",0,0)
         W4GR P 2
         W4GR Q 1
-        TNT1 A 0 A_Jump(255,"ThrowRock1","ThrowRock2","ThrowRock3","ThrowRock4","ThrowSqueakyBall","ThrowBaseball","ThrowStimpack","ThrowCan","ThrowShoe","ThrowCup")
+        TNT1 A 0 A_Jump(255,"ThrowRock1","ThrowRock2","ThrowRock3","ThrowRock4","ThrowSqueakyBall","ThrowBaseball","ThrowStimpack","ThrowCan","ThrowShoe","ThrowCup","ThrowDuck","ThrowChinese","ThrowWan","ThrowAnime")
         W4GR Q 1
     ThrowSqueakyBall:
         TNT1 A 0 A_FireCustomMissile("SqueakyBall",0,0,0,0,0,3)
@@ -973,6 +973,18 @@ actor 05Dragon : Fists
         goto AltFireHold3Finish
     ThrowCup:
         TNT1 A 0 A_FireCustomMissile("ThrownCup",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowDuck:
+        TNT1 A 0 A_FireCustomMissile("RubberDucky",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowChinese:
+        TNT1 A 0 A_FireCustomMissile("ChineseCanister",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowWan:
+        TNT1 A 0 A_FireCustomMissile("ThrownWan",0,0,0,0,0,3)
+        goto AltFireHold3Finish
+    ThrowAnime:
+        TNT1 A 0 A_FireCustomMissile("ThrownAnime",0,0,0,0,0,3)
         goto AltFireHold3Finish
     AltFireHold3Finish:
         W4GR RSTU 1
@@ -1104,6 +1116,7 @@ actor ThrownGrenade
     -TELESTOMP
     +THRUGHOST
     +THRUSPECIES
+    +SKYEXPLODE
     Species "EnemyShot"
     DamageFactor "Normal", 0.0
     DamageFactor "StrikerDamage", 1.0
@@ -1801,6 +1814,35 @@ actor ThrownCup
     }
 }
 
+actor ThrownAnime //: FastProjectile
+{
+    Radius 3
+    Height 3
+    Speed 100
+    Damage (5)
+    Projectile
+    DamageType "Knife"
+    XScale 0.05
+    YScale 0.0075
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "daki/pain"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        ANIM E 1
+        loop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Gravity
+        ANIM E 3500
+        ANIM EEEEEEEEEE 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
 actor ThrownStimpack
 {
     Radius 3
@@ -1825,6 +1867,62 @@ actor ThrownStimpack
     Death:
         STPK A 3500
         STPK AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ChineseCanister
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.35
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "stimpack/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        CHCN A 1
+        loop
+    Death:
+        CHCN A 3500
+        CHCN AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor ThrownWan
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.5
+    Scale 0.25
+    +MOVEWITHSECTOR
+    +THRUSPECIES
+    +FORCEPAIN
+    DeathSound "wan/hit"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        WANN A 1
+        loop
+    Death:
+        WANN A 3500
+        WANN AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -1867,6 +1965,48 @@ actor ThrownCan
     Death:
         TCAN A 3500
         TCAN AAAAAAAAAA 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor RubberDucky
+{
+    Radius 3
+    Height 3
+    Speed 60
+    Damage (5)
+    Projectile
+    -NOGRAVITY
+    DamageType "EnforcerExplosive"
+    Gravity 0.75
+    Scale 0.6
+    BounceFactor 0.5
+    WallBounceFactor 0.5
+    BounceCount 5
+    +HEXENBOUNCE
+    +CANBOUNCEWATER
+    +ALLOWBOUNCEONACTORS
+    +BOUNCEONACTORS
+    +MOVEWITHSECTOR
+    //+THRUGHOST // Heh.
+    +THRUSPECIES
+    +FORCEPAIN
+    //+BLOODLESSIMPACT
+    SeeSound "ball/squeak"
+    DeathSound "ball/squeak"
+    Species "EnemyShot"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
+        DUCK A 1
+    SpawnLoop:
+        DUCK A 1
+        loop
+    Death:
+        DUCK A 3500
+        DUCK AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
     }
 }
