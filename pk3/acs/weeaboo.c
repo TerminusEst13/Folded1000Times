@@ -522,6 +522,7 @@ int GravityOfLight;
 
 script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 {
+    int color;
     if (boreshut < 98 && ConsolePlayerNumber() != PlayerNumber()) { terminate; } 
 
     switch (boreshut)
@@ -531,36 +532,48 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         // I should do this with the weapon pickup checks.
         switch (bowlshot)
         {
-        case 0:
+        case 0: // Testament
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjTestament \cfshotgun. You may wield it..."); }
           else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj03-W Wolf\cn SSH pattern identified. Authorization successful."); }
           break;
 
-        case 1:
+        case 1: // Exodus
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjExodus \cfgrenade launcher. You may wield it..."); }
           else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj05-D Dragon\cn SSH pattern identified. Authorization successful."); }
           break;
 
-        case 2:
+        case 2: // Sabbath
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjSabbath \cfsubmachine gun. You may wield it..."); }
           else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj04-SS Scorpions\cn SSH pattern identified. Authorization successful."); }
           break;
 
-        case 3:
+        case 3: // Omen
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it..."); }
           else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Tiger\cn SSH pattern identified. Authorization successful."); }
           break;
 
-        case 4:
+        case 4: // Iron Savior
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Use Inventory to activate)"); }
           break;
 
-        case 5:
+        case 5: // Legion
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\ckThe \cbMaw of the Legion\ck. It screams for blood..."); }
           break;
 
-        case 6:
+        case 6: // Frosthammer
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\ckThe \cbFrosthammer of Cocytus\ck. It screams for blood..."); }
+          break;
+
+        case 7: // Sentinel
+          color = GetCvar("msg0color");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a Sentinel."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up the Ravens."); }
+          break;
+
+        case 8: // Energy Fragment
+          color = GetCvar("msg0color");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a soul fragment."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a ge-pi cell battery."); }
           break;
         }
         break;
@@ -581,10 +594,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         break;
 
     case WEEB_DEC_PICKUPCHECK:
-        //PrintBold(s:"Script is activated.");
-        SetResultValue(GetCvar("dst_cl_classcheck"));
-        //if (GetCvar("dst_cl_classcheck") == 1) { SetActorState(0,"SpawnRamen"); }
-        //if (GetCvar("dst_cl_classcheck") == 2) { SetActorState(0,"SpawnPizza"); }
+        SetResultValue(GetCvar("dst_cl_decorationnoise"));
         break;
 
     //[Scroton] cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check
@@ -841,12 +851,6 @@ script WEEB_ENTER_CLIENT ENTER clientside
     while(1)
     {
         if (ConsolePlayerNumber() != PlayerNumber()) { Delay(1); continue; }
-
-        if (CheckInventory("IsJungHaeLin") == 1) { SetCvar("dst_cl_classcheck",1); }
-        else if (CheckInventory("IsSSH") == 1) { SetCvar("dst_cl_classcheck",2); }
-        else { SetCvar("dst_cl_classcheck",0); }
-
-        //Print(d:DemonSteeleClass);
 
         if (CheckInventory("InIronMaiden") == 1)
         {

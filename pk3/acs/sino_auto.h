@@ -27,6 +27,10 @@ script SINO_ENTER ENTER
     int xOffset, yOffset, yOffset2, zOffset;
     int velx, vely, velz;
     int nx, nx2, ny, ny2, nz;
+    int RavenHPLeft;
+    int RavenHPRight;
+    int NewRavenHPLeft;
+    int NewRavenHPRight;
 
     if (GetCvar("dst_debug") == 1) { Log(s:"SINO_ENTER executing on player ", d:pln); }
 
@@ -108,6 +112,27 @@ script SINO_ENTER ENTER
     GiveInventory("JetpackModeOff",1);
     GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); // Shihong deals with ki, not souls.
                                                                         // Souls are completely irrelevant to her.
+
+    // If the Raven was carried over from a previous level...
+    if (CheckInventory("RavenUp") == 1)
+    {
+    // This is to prevent the Sentinel's info on the HUD from reading max value when we change levels with the Sentinel up.
+    // It's very work-around-y, but it's what I get for assuming stuff can transfer across levels.
+      if (CheckInventory("RavenLeftDead") == 0)
+      {
+        NewRavenHPLeft = CheckInventory("RavenLeftLifeCounter");
+        TakeInventory("RavenLeftActive",1);
+        TakeInventory("RavenLeftUp",1);
+        GiveInventory("RavenLeftFromPreviousLevel",1);
+      }
+      if (CheckInventory("RavenRightDead") == 0)
+      {
+        NewRavenHPRight = CheckInventory("RavenRightLifeCounter");
+        TakeInventory("RavenRightActive",1);
+        TakeInventory("RavenRightUp",1);
+        GiveInventory("RavenRightFromPreviousLevel",1);
+      }
+    }
 
     // Status resets for the sake of weapons/items/etc that change between levels.
     // Like in case some wiseass exits while in post-hit invulnerability.
@@ -250,25 +275,36 @@ script SINO_ENTER ENTER
         RavenRightTID = 15100 + pln;
         if (CheckInventory("RavenUp") == 1)
         {
-            // Eh, that's not as funny as buttshield.
-            if (CheckInventory("RavenLeftActive") == 0)
+            if (CheckInventory("RavenLeftActive") == 0 && CheckInventory("RavenLeftUp") == 0 && CheckInventory("RavenLeftDead") == 0)
             {
                 Spawn("UnleashTheRaven",xxx,yyy,zzz,RavenLeftTID,angle);
                 GiveInventory("RavenLeftActive",1);
+                GiveInventory("RavenLeftUp",1);
+                if (CheckInventory("RavenLeftFromPreviousLevel") == 1)
+                {
+                    SetActorProperty(RavenLeftTID,APROP_Health,NewRavenHPLeft);
+                    TakeInventory("RavenLeftFromPreviousLevel",1);
+                }
             }
-            // Eh, that's not as funny as buttshield.
-            if (CheckInventory("RavenRightActive") == 0)
+
+            if (CheckInventory("RavenRightActive") == 0 && CheckInventory("RavenRightUp") == 0 && CheckInventory("RavenRightDead") == 0)
             {
                 Spawn("UnleashTheRaven",xxx,yyy,zzz,RavenRightTID,angle);
                 GiveInventory("RavenRightActive",1);
+                GiveInventory("RavenRightUp",1);
+                if (CheckInventory("RavenRightFromPreviousLevel") == 1)
+                {
+                    SetActorProperty(RavenRightTID,APROP_Health,NewRavenHPRight);
+                    TakeInventory("RavenRightFromPreviousLevel",1);
+                }
             }
 
             if (CheckInventory("RavenLeftActive") == 1 || CheckInventory("RavenRightActive") == 1)
             {
-                xOffset = -12.0;
-                yOffset = -32.0;
-                yOffset2 = 32.0;
-                zOffset = 0;
+                xOffset = -28.0;
+                yOffset = -26.0;
+                yOffset2 = 26.0;
+                zOffset = 4.0;
 
                 nx = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset, sin(angle));
                 nx2 = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset2, sin(angle));
@@ -292,28 +328,47 @@ script SINO_ENTER ENTER
                 SetActorVelocity(RavenLeftTID,velx,vely,velz,0,0);
                 SetActorVelocity(RavenRightTID,velx,vely,velz,0,0);
 
-                //SentinelHP = GetActorProperty(SentTID, APROP_HEALTH);
-                //TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
-                //GiveInventory("SentinelLifeCounter",SentinelHP);
+                RavenHPLeft = GetActorProperty(RavenLeftTID, APROP_HEALTH);
+                RavenHPRight = GetActorProperty(RavenRightTID, APROP_HEALTH);
+                TakeInventory("RavenLeftLifeCounter",0x7FFFFFFF);
+                GiveInventory("RavenLeftLifeCounter",RavenHPLeft);
+                TakeInventory("RavenRightLifeCounter",0x7FFFFFFF);
+                GiveInventory("RavenRightLifeCounter",RavenHPRight);
 
-                // It's probably not exactly very efficient, but honestly I don't care.
-                // As long as code works and doesn't crash, I think it's fine.
-                //if (CheckInventory("RavenGimmeJustALittle") == 1)
-                //{
-                //    GiveActorInventory(SentTID,"SentinelHealth",200);
-                //    TakeInventory("RavenGimmeJustALittle",1);
-                //}
+                if (CheckInventory("RavenGimmeJustALittle") == 1)
+                {
+                    if (CheckInventory("RavenLeftDead") == 0) { GiveActorInventory(RavenLeftTID,"RavenHealthLeft",150); }
+                        else { TakeInventory("RavenLeftDead",1); TakeInventory("RavenLeftActive",1); TakeInventory("RavenLeftUp",1); }
+                    if (CheckInventory("RavenRightDead") == 0) { GiveActorInventory(RavenRightTID,"RavenHealthRight",150); }
+                        else { TakeInventory("RavenRightDead",1); TakeInventory("RavenRightActive",1); TakeInventory("RavenRightUp",1); }
+                    TakeInventory("RavenGimmeJustALittle",1);
+                }
 
-                // I don't have a lot of programmer friends.
-                //if (CheckActorInventory(SentTID,"RavenWhenTheGoingGetsTough"))
-                //{
-                //    Thing_Remove(SentTID);
-                //    SentTID = 0;
-                //    TakeInventory("SentinelUp",1);
-                //    TakeInventory("SentinelActive",1);
-                //    TakeInventory("SentinelLifeCounter",0x7FFFFFFF);
-                //}
+                if (CheckActorInventory(RavenLeftTID,"RavenWhenTheGoingGetsTough"))
+                {
+                    Thing_Remove(RavenLeftTID);
+                    RavenLeftTID = 0;
+                    GiveInventory("RavenLeftDead",1);
+                    TakeInventory("RavenLeftActive",1);
+                    TakeInventory("RavenLeftLifeCounter",0x7FFFFFFF);
+                }
+
+                if (CheckActorInventory(RavenRightTID,"RavenWhenTheGoingGetsTough"))
+                {
+                    Thing_Remove(RavenRightTID);
+                    RavenRightTID = 0;
+                    GiveInventory("RavenRightDead",1);
+                    TakeInventory("RavenRightActive",1);
+                    TakeInventory("RavenRightLifeCounter",0x7FFFFFFF);
+                }
             }
+        }
+
+        if (CheckInventory("RavenLeftDead") == 1 && CheckInventory("RavenRightDead") == 1)
+        {
+            TakeInventory("RavenUp",1);
+            TakeInventory("RavenLeftUp",1); TakeInventory("RavenRightUp",1);
+            TakeInventory("RavenLeftDead",1); TakeInventory("RavenRightDead",1);
         }
 
     // ============ GENERIC COPY/PASTED SHIT HERE
