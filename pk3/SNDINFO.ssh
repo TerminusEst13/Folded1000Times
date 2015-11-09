@@ -184,6 +184,7 @@ raven/fire             RAVNFIRE // Taken from Killing Floor
 raven/pain             RAVNPAIN
 raven/death            RAVNDETH
 raven/pickup           RAVENGET
+$limit raven/fire 0
 
 
 shihong/weaponswap     SSHWPSWP

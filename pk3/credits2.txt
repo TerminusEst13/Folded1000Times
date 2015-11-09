@@ -26,6 +26,7 @@ GRAPHICS:
 - Neoworm for the Raven sprites
 - Freedoom for the Raven lasers
 - birdinginformation.com for the HUD graphic for the Raven
+- chinabuye.com for the dog plush sprite
 
 CODE:
 ===========
