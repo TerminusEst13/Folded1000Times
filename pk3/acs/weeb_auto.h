@@ -170,10 +170,11 @@ script WEEB_ENTER ENTER
 
         // Cvar nonsense.
 
-        if (GetCvar("dst_nopistol") == 1) { TakeInventory("KharonAcacia",1); }
+        if (GetCvar("dst_nopistol") == 1) { TakeInventory("KharonAcacia",1); GiveInventory("DontGotPistol",1); }
+            else { GiveInventory("KharonAcacia",1); TakeInventory("DontGotPistol",1); }
         if (GetCvar("dst_infinitemeter") == 1) { GiveInventory("SuperMeterCounter",1); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
-           else { TakeInventory("NoTauntAllowed",1); }
+            else { TakeInventory("NoTauntAllowed",1); }
            
         if (GetCvar("dst_gunsouls") == 0) { GiveInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
            else { TakeInventory("IAmASkilledPersonWhoWantsOnlyMySwordToGiveSouls",1); }
