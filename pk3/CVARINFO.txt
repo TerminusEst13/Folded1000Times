@@ -20,6 +20,10 @@ server int dst_runmod            = 100;
 server int dst_enemymultiplier   = 3;
 server int dst_multiplierhealth  = 3;
 server int dst_oldaircontrol     = 0;
+server int dst_noweapons         = 0;
+server int dst_nohealth          = 0;
+server int dst_noarmor           = 0;
+server int dst_nopistol          = 0;
 
 // Clientside cvars
 user int dst_cl_nomusic          = 0;
@@ -31,5 +35,4 @@ user int dst_cl_autoswitch       = 0;
 user int dst_cl_nobeeping        = 0;
 user int dst_cl_nopoints         = 0;
 user int dst_cl_noannouncer      = 0;
-
-user int dst_cl_classcheck       = 0; // I can't believe I'm using a cvar for this. How stupid.
+user int dst_cl_decorationnoise  = 1;

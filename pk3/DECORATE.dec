@@ -217,6 +217,9 @@ const int WEEB_DEC_DOOMHEALTH    = 28;
 const int WEEB_DEC_ONLINECHECK2  = 29;
 const int WEEB_DEC_MULTIPLIER    = 30;
 const int WEEB_DEC_PLAYSOUND     = 31;
+const int WEEB_DEC_NOWEAPCHECK   = 32;
+const int WEEB_DEC_NOHEALTHCHECK = 33;
+const int WEEB_DEC_NOARMORCHECK  = 34;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;

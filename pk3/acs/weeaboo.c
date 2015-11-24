@@ -517,6 +517,18 @@ int GravityOfLight;
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("battery/get",127); }
     }
     break;
+        
+    case WEEB_DEC_NOWEAPCHECK:
+        SetResultValue(GetCVar("dst_noweapons"));
+        break;
+        
+    case WEEB_DEC_NOHEALTHCHECK:
+        SetResultValue(GetCVar("dst_nohealth"));
+        break;
+        
+    case WEEB_DEC_NOARMORCHECK:
+        SetResultValue(GetCVar("dst_noarmor"));
+        break;
     }
 }
 

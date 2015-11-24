@@ -56,7 +56,7 @@ isselected not "KharonOmen" {
                    drawnumber 3, DNDHUDF, untranslated, ammo1, fillzeros, drawshadow, 294, 179; }}}}}}}}}
 
 ininventory GotHammer, 1 { drawimage "GOTO2", 262, 171, center; }
-drawimage "GOTA2", 267, 171, center;
+ininventory not DontGotPistol, 1 { drawimage "GOTA2", 267, 171, center; }
 ininventory GotShotgun, 1 { drawimage "GOTT2", 272, 171, center; }
 ininventory GotUzi, 1 { drawimage "GOTS2", 277, 171, center; }
 ininventory GotCarronade, 1 { drawimage "GOTE2", 282, 171, center; }
@@ -244,7 +244,7 @@ ininventory IsSSH, 1
 drawimage "SSHHUD1", 312, 180, center;
 
 ininventory GotHammer, 1 { drawimage "SSHGOTT1", 276, 172, center; }
-drawimage "SSHGOTS1", 281, 172, center;
+ininventory not DontGotPistol, 1 { drawimage "SSHGOTS1", 281, 172, center; }
 ininventory GotShotgun, 1 { drawimage "SSHGOTA1", 286, 172, center; }
 ininventory GotUzi, 1 { drawimage "SSHGOTR1", 291, 172, center; }
 ininventory GotCarronade, 1 { drawimage "SSHGOTE1", 296, 172, center; }
@@ -548,7 +548,11 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
     }
 }
 }
+// SHIHONG'S HUD ENDS HERE
 
+
+// FULLSCREEN HUD STARTS HERE
+// =========================================
 statusbar fullscreen, forcescaled
 {
 InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
@@ -564,7 +568,7 @@ drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
 ininventory not IsSSH, 1
 {
 ininventory GotHammer, 1 { drawimage "GOTO2", 265, 174, center; }
-drawimage "GOTA2", 270, 174, center;
+ininventory not DontGotPistol { drawimage "GOTA2", 270, 174, center; }
 ininventory GotShotgun, 1 { drawimage "GOTT2", 275, 174, center; }
 ininventory GotUzi, 1 { drawimage "GOTS2", 280, 174, center; }
 ininventory GotCarronade, 1 { drawimage "GOTE2", 285, 174, center; }

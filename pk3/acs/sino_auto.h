@@ -533,6 +533,7 @@ script SINO_ENTER ENTER
 
         // Cvar nonsense.
 
+        if (GetCvar("dst_nopistol") == 1) { TakeInventory("02Viper",1); }
         if (GetCvar("dst_infinitemeter") == 1) { GiveInventory("KiMeterCounter",10); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
            else { TakeInventory("NoTauntAllowed",1); }
