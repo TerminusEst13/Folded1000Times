@@ -927,6 +927,7 @@ ACTOR SoulShotgunBullet1 : FastProjectile
     DamageType "TestamentDamage"
     Projectile
     +THRUGHOST
+    Obituary "%k hammered %o with a single strike that harkened Armageddon."
     States
     {
     Spawn:

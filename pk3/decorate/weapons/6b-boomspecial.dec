@@ -16,6 +16,7 @@ Actor ThrownKnifeSpecial
     +NOCLIP
     +THRUACTORS
     +FORCERADIUSDMG
+    Obituary "%k threw %o in the blender."
     States
     {
     Spawn:

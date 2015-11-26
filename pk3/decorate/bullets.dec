@@ -373,12 +373,12 @@ actor BulletBaseNoCombo : BulletBase
     }
 }
 
-actor HuntingPistolBullet : BulletBase { Damage (32) DamageType "AcaciaDamage" }
-actor ShotgunBullet1 : BulletBase { Damage (13) DamageType "TestamentDamage" }
-actor ShotgunBullet2 : BulletBaseNoCombo { Damage (13) DamageType "TestamentDamage" }
-actor UziBullet1 : BulletBase { Damage (20) DamageType "SabbathDamage" }
-actor UziBullet2 : BulletBaseNoCombo { Damage (20) DamageType "SabbathDamage" }
-actor SentinelBullet : BulletBaseNoCombo { Damage (2) DamageType "SentinelDamage" }
+actor HuntingPistolBullet : BulletBase { Damage (32) DamageType "AcaciaDamage" Obituary "%k rusted %p bullets on %o." }
+actor ShotgunBullet1 : BulletBase { Damage (13) DamageType "TestamentDamage" Obituary "%k sent %o down to the darkness." }
+actor ShotgunBullet2 : BulletBaseNoCombo { Damage (13) DamageType "TestamentDamage" Obituary "%k sent %o down to the darkness." }
+actor UziBullet1 : BulletBase { Damage (20) DamageType "SabbathDamage" Obituary "%k gave %o a bullet to bite on." }
+actor UziBullet2 : BulletBaseNoCombo { Damage (20) DamageType "SabbathDamage" Obituary "%k gave %o a bullet to bite on." }
+actor SentinelBullet : BulletBaseNoCombo { Damage (2) DamageType "SentinelDamage" Obituary "%k condemned %o to Hell." }
 
 ACTOR WeebBulletPuff
 {

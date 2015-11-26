@@ -2903,6 +2903,7 @@ ACTOR LightningShockwave
     DamageType "HaltHammerzeit"
     Alpha 0.99
     Renderstyle Add
+    Obituary "%k made %o ride the lightning."
     States
     {
     Spawn:
@@ -2945,6 +2946,7 @@ actor LGBeam: BulletPuff
 
     RenderStyle Add
     Alpha 0.25
+    Obituary "%k gave %o the shaft."
 
     States
     {
@@ -2992,8 +2994,8 @@ actor LGPuff: BulletPuff
     DamageType "HaltHammerzeit"//"OmenHeavyMetalThunder"
     VSpeed 0
     Scale 0.4
-
     RenderStyle Add
+    Obituary "%k gave %o the shaft."
 
     //Obituary "%o \csaccepts\c- %k's \csshaft.\c-"
 

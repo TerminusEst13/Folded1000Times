@@ -1117,6 +1117,7 @@ actor KharonSheatheSmack : FastProjectile
     +BLOODSPLATTER
     -NOBLOCKMAP
     +SPECTRAL
+    Obituary "%k spanked %o."
     States
     {
     Spawn:
@@ -1163,6 +1164,7 @@ ACTOR FakeLoreShot : LoreShot
     DeathSound ""
     DamageType "KharonHookshot"
     +SPECTRAL
+    Obituary "%k hooked %o."
     States
     {
     Spawn:

@@ -910,6 +910,7 @@ ACTOR HolyHuntingPistolBullet : FastProjectile
     DamageType "AcaciaDamage"
     Projectile
     +THRUGHOST
+    Obituary "%k burnt a hole in %o's back."
     States
     {
     Spawn:

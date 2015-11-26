@@ -908,6 +908,7 @@ Actor ThrownKnife
     +NOEXTREMEDEATH
     +SKYEXPLODE
     +THRUSPECIES
+    Obituary "%k fed %o to the beast."
     States
     {
     Spawn:

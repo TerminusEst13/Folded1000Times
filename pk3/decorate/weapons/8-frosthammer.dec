@@ -1136,6 +1136,7 @@ actor FrosthammerPuff
     +SERVERSIDEONLY
     DamageType "Frosthammer"
     Decal DoomImpScorch
+    Obituary "%k chilled %o to their soul."
     States
     {
     Spawn:
@@ -1168,6 +1169,7 @@ actor FrosthammerPuffCharged
     +SERVERSIDEONLY
     DamageType "FrosthammerCharged"
     Decal Scorch
+    Obituary "%k chilled %o to their soul."
     States
     {
     Spawn:
@@ -1199,7 +1201,7 @@ ACTOR FrosthammerDamage
     -SOLID
     +DONTBLAST
     DamageType "FrosthammerExplode"
-    Obituary "%k swallowed %o in ice."
+    Obituary "%k chilled %o to their soul."
     States
     {
     Spawn:
@@ -1385,6 +1387,7 @@ actor FreeziePop
     +NOGRAVITY
     +NOTELEPORT
     +DROPOFF
+    Obituary "%k swallowed %o in ice."
     States
     {
     Spawn:
@@ -1583,6 +1586,7 @@ actor FreezeExplodeDamage
     -SOLID
     +NODAMAGETHRUST
     +BLOODLESSIMPACT
+    Obituary "%k swallowed %o in ice."
     States
     {
     Spawn:
