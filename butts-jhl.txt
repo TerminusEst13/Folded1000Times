@@ -109,11 +109,10 @@ Tutorial map
 
 
 PVP-ONLY WOES: // Yes, some people actually tried PvP with this. Yes, these people have suggestions about fixing things.
+Add obituaries to weapons (Only Shihong is left now)
+Make melee instant-kill in DM
+
 - Invulnerability time needs to be much shorter
-- You shouldn't get the sound/fade-in on respawn
-- Obituaries need to be tied to weapons/bullets.
-- Sword slashes go through players
-- Player skin REALLY does not help in identifying team members
 - Something needs to encourage using the sword over the guns
 - Too easy for players to just camp health items with the invulnerability. Maybe a health cap? Maybe remove larger health spawns?
 
@@ -434,8 +433,8 @@ TorchTree               // Small Burned Tree
 
 
 
-
-
-
-QUOTES:
-========================
+PVP STUFF DONE:
+- You shouldn't get the sound/fade-in on respawn
+- Obituaries need to be tied to weapons/bullets.
+- Sword slashes go through players
+- Player skin REALLY does not help in identifying team members
