@@ -72,32 +72,24 @@ script WEEB_OPEN OPEN
     delay(1);
     if (GetCvar("dst_debug") == 1) { Log(s:"dst_runninginzandro is at ", d:GetCvar("dst_runninginzandro")); }
     if (GameType() != GAME_TITLE_MAP) { LevelCount++; } // Titlemaps add to the global variable, irritatingly.
-    /*if (Spawn("Doomsphere",0,0,0,s)) // Attempt to spawn a Doomsphere, a Zandronum-exclusive item.
-    {
+    // Zandronum/ZDoom check. It uses SpawnForced to spawn a Zandronum-exclusive
+    // item. If it's successful, well, Zandro is being used. Otherwise, it's ZDoom.
+    // This is not a future-proof method at all; there's a very high chance Zandronum
+    // and ZDoom items will become interchangeable in the future.
+    // If we ever reach that point and I am either dead or have moved on from Doom, you're fucked.
+    if (SpawnForced("Doomsphere",0,0,0,s,0))
+    { // ZDoom-exclusive items currently include PowerBuddha (not in GZDoom 1.9), CajunTrace, CajunBodyNode, ArtiPoisonBagShooter, ArtiPoisonBagGiver, and AmbientSoundNoGravity.
         Thing_Remove(s);
-        //RunningInZandro = 1;
+        //RunningInZDoom = 1;
         if (GetCvar("dst_debug") == 1) { Log(s:"Zandronum check successful."); }
         SetCVar("dst_runninginzandro",1);
         SetCVar("dst_runninginzdoom",0);
-    }*/
-    // This didn't work because the Spawn would choose to not work at various times, because of collision.
-    // If there is no room for an actor to exist, it simply won't spawn.
-    // To get around this, instead I'm doing it the opposite way, using SpawnForced to spawn a ZDoom-exclusive item.
-    // This is not a future-proof method at all; if Zandronum catches up with ZDoom (hahahaha), it'll spawn this item as well and read as ZDoom.
-    // If we ever reach that point and I am either dead or have moved on from Doom, simply replace the script with the uncommented above script and change it to SpawnForced.
-    if (SpawnForced("SpeakerIcon",0,0,0,s,0))
-    { // Other ZDoom-exclusive items include PowerBuddha (not in GZDoom 1.9), CajunTrace, CajunBodyNode, ArtiPoisonBagShooter, ArtiPoisonBagGiver, and AmbientSoundNoGravity.
-        Thing_Remove(s);
-        //RunningInZDoom = 1;
-        if (GetCvar("dst_debug") == 1) { Log(s:"ZDoom check successful."); }
-        SetCVar("dst_runninginzandro",0);
-        SetCVar("dst_runninginzdoom",1);
     }
     else
     {
-        if (GetCvar("dst_debug") == 1) { Log(s:"ZDoom check unsuccessful, assuming Zandronum run."); }
-        SetCVar("dst_runninginzandro",1);
-        SetCVar("dst_runninginzdoom",0);
+        if (GetCvar("dst_debug") == 1) { Log(s:"Zandronum check unsuccessful, assuming ZDoom."); }
+        SetCVar("dst_runninginzandro",0);
+        SetCVar("dst_runninginzdoom",1);
     }
     delay(1);
     if (GetCvar("compat_clientssendfullbuttoninfo") == 0 && GetCvar("dst_runninginzandro") == 1 && !isSinglePlayer()) // Singleplayer already reads extra player input, no need to make sure it's on.
