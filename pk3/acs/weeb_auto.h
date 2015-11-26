@@ -88,7 +88,7 @@ script WEEB_ENTER ENTER
 
         GiveInventory("ImAlive",1);
     }
-    else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0)
+    else if (CheckInventory("ImAlive") == 1 && CheckInventory("AlreadyInLevel") == 0 && GameType() != GAME_NET_DEATHMATCH)
     // If the player isn't respawning but is entering a level fresh.
     {
         IntroChance = random(0,2);
