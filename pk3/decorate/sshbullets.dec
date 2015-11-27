@@ -21,8 +21,8 @@ actor PistolBullet : BulletBase
 {
     Damage (30)
     DamageType "RebellionDamage"
-    States
     Obituary "%k pierced %o with the scorpion's stinger."
+    States
     {
     XDeath:
         TNT1 A 0
@@ -190,8 +190,8 @@ actor ShottyBullet3Tracer : BulletBaseRangedToaster
 {
     Damage (10)
     DamageType "AvengerDamage"
-    States
     Obituary "%k threw %o to the wolves."
+    States
     {
     XDeath:
         TNT1 A 0
