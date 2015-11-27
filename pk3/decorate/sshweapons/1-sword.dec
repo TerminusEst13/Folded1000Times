@@ -1067,6 +1067,7 @@ ACTOR TriumphAttack1 : FastProjectile
     +NOEXTREMEDEATH
     +SPECTRAL // THERE IS NOTHING THAT MY SWORD CANNOT CUT
     +FORCERADIUSDMG
+    Obituary "%k put %o under the blade."
     Decal KharonSlash1
     States
     {
@@ -1146,6 +1147,7 @@ ACTOR TriumphAttackPowered : FastProjectile
     +SPECTRAL // THERE IS NOTHING THAT MY SWORD CANNOT CUT
     +FORCERADIUSDMG
     Decal LargeKharonSlash1
+    Obituary "%k put %o under the guillotine."
     States
     {
     Spawn:
@@ -1325,7 +1327,7 @@ actor TriumphSwordBeam
     ReactionTime 10
     Damage (100)
     Projectile
-    Obituary "%k cut %o up."
+    Obituary "%k left %o in pieces."
     DamageType "TriumphBeam"
     +RIPPER
     +PIERCEARMOR

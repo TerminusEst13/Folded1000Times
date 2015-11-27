@@ -133,7 +133,7 @@ ACTOR HomingMissile
     +FORCERADIUSDMG
     +SEEKERMISSILE
     DeathSound "missile/hit"
-    Obituary "%k blew %o up."
+    Obituary "%k locked in on %o and left a smoking crater."
     Decal Scorch
     States
     {
@@ -239,7 +239,7 @@ actor DashUppercutExplosion
     +DONTREFLECT
     -SOLID
     +NOEXTREMEDEATH
-    Obituary "%k sent %o's skull to the heavens."
+    Obituary "%k sent %o's body to the heavens."
     DamageType "LittleMacUppercut"
     States
     {
@@ -263,7 +263,7 @@ actor DashUppercutExplosionJF
     +DONTREFLECT
     -SOLID
     +NOEXTREMEDEATH
-    Obituary "%k sent %o's skull to the heavens."
+    Obituary "%k sent %o's body to the heavens."
     DamageType "LittleMacUppercut"
     States
     {
@@ -372,7 +372,7 @@ actor GigatonHammer : FastProjectile
     +FORCERADIUSDMG
     +FORCEPAIN
     Decal WallCrackBig
-    Obituary "%k jackhammered %o with gigatons of force."
+    Obituary "%k jackhammered %o with millions of gigatons of force."
     States
     {
     Spawn:
@@ -459,7 +459,7 @@ ACTOR GigatonHammerExplosion
     +SPECTRAL
     -SOLID
     DamageType "ShihongGigatonPunch"
-    Obituary "%k jackhammered %o with gigatons of force."
+    Obituary "%k jackhammered %o with millions of gigatons of force."
     States
     {
       Spawn:
@@ -482,7 +482,7 @@ ACTOR EMPulseExplode // Technically not actually EMP, since EMP doesn't affect l
     +FORCEPAIN
     +BLOODLESSIMPACT
     DamageType EMPulse
-    Obituary "%k shouldn't have killed %o with this."
+    Obituary "%k shut %o down."
     States
     {
       Spawn:

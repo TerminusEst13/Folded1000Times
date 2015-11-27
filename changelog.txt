@@ -29,7 +29,7 @@ FROM 0.82 TO 0.XX
 - dst_nohealth, dst_noarmor, dst_nopistol, and dst_noweapons cvars have been included for those that want to customize for more challenging runs. Or just shitting around.
 - Separation between ZDoom and Zandronum versions of DemonSteele has been polished up and is hopefully more future-proofed.
 - Dramatic fade-ins no longer happen in DM.
-- All of Hae-Lin's weapons now have obituaries.
+- All weapons now have obituaries.
 
 
 

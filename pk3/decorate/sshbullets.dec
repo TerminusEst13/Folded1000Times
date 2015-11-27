@@ -2,6 +2,7 @@ actor RevolverBullet : BulletBase
 {
     Damage (35)
     DamageType "StrikerDamage"
+    Obituary "%k stung %o with the viper's fangs."
     States
     {
     XDeath:
@@ -14,13 +15,14 @@ actor RevolverBullet : BulletBase
         stop
     }
 }
-actor ShottyBullet1 : BulletBase { Damage (10) DamageType "AvengerDamage" }
-actor ShottyBullet2 : BulletBaseNoCombo { Damage (10) DamageType "AvengerDamage" }
+actor ShottyBullet1 : BulletBase { Damage (10) DamageType "AvengerDamage" Obituary "%k threw %o to the wolves." }
+actor ShottyBullet2 : BulletBaseNoCombo { Damage (10) DamageType "AvengerDamage" Obituary "%k threw %o to the wolves." }
 actor PistolBullet : BulletBase
 {
     Damage (30)
     DamageType "RebellionDamage"
     States
+    Obituary "%k pierced %o with the scorpion's stinger."
     {
     XDeath:
         TNT1 A 0
@@ -37,6 +39,7 @@ actor ShottyBullet3 : BulletBase
 {
     Damage (10)
     DamageType "AvengerDamage"
+    Obituary "%k threw %o to the wolves." 
     States
     {
     XDeath:
@@ -167,6 +170,7 @@ actor RevolverBulletTracer : BulletBaseRanged
 {
     Damage (35)
     DamageType "StrikerDamageStyle"
+    Obituary "%k stung %o with the viper's fangs."
     States
     {
     XDeath:
@@ -180,13 +184,14 @@ actor RevolverBulletTracer : BulletBaseRanged
     }
 }
 
-actor ShottyBullet1Tracer : BulletBaseRangedToaster { Damage (10) DamageType "AvengerDamageStyle" }
-actor ShottyBullet2Tracer : BulletBaseRangedToasterNoCombo { Damage (10) DamageType "AvengerDamageStyle" }
+actor ShottyBullet1Tracer : BulletBaseRangedToaster { Damage (10) DamageType "AvengerDamageStyle" Obituary "%k threw %o to the wolves." }
+actor ShottyBullet2Tracer : BulletBaseRangedToasterNoCombo { Damage (10) DamageType "AvengerDamageStyle" Obituary "%k threw %o to the wolves." }
 actor ShottyBullet3Tracer : BulletBaseRangedToaster
 {
     Damage (10)
     DamageType "AvengerDamage"
     States
+    Obituary "%k threw %o to the wolves."
     {
     XDeath:
         TNT1 A 0
@@ -203,6 +208,7 @@ actor PistolBulletTracer : BulletBaseRanged
 {
     Damage (30)
     DamageType "RebellionDamageStyle"
+    Obituary "%k pierced %o with the scorpion's stinger."
     States
     {
     XDeath:

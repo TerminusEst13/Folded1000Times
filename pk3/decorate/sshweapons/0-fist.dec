@@ -5,7 +5,7 @@ actor "Fists" : Weapon
     Weapon.AmmoUse 0
     Weapon.AmmoGive 0
     Weapon.AmmoType ""
-    Obituary "%k shattered %o's skull."
+    Obituary "%k split %o's skull."
     DamageType "ShihongPunch"
     Weapon.UpSound "shihong/weaponswap"
     +NOALERT
