@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "weeaboo"
 
-#include "commonfuncs.h"
+#include "commonFuncs.h"
 
 #include "weeb_const.h"
 #include "weeb_frosthammer.h"
