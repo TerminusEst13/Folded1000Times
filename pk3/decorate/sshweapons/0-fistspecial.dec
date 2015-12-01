@@ -443,7 +443,7 @@ ACTOR GigatonPunchExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(512,96,0,0,32)
+        TNT1 A 1 A_Explode(640,96,0,0,32)
         Stop
     }
 }
@@ -464,7 +464,7 @@ ACTOR GigatonHammerExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(1024,160,0,0,96)
+        TNT1 A 1 A_Explode(1280,160,0,0,96)
         Stop
     }
 }

@@ -30,6 +30,7 @@ FROM 0.82 TO 0.XX
 - Separation between ZDoom and Zandronum versions of DemonSteele has been polished up and is hopefully more future-proofed.
 - Dramatic fade-ins no longer happen in DM.
 - All weapons now have obituaries.
+- Decoration sounds are now mono and should no longer play at fulldistance with OpenAL.
 
 
 
