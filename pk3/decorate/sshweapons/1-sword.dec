@@ -796,16 +796,20 @@ actor 01Tiger : Fists
         TNT1 A 2
         goto SpecialAttackFinish
     EngageCloakingMode:
-        TNT1 A 0 A_PlayWeaponSound("combo/ready")
         TNT1 A 0 A_TakeInventory("KiMeterCounter",200)
-        SHF1 AB 1
-        SHF1 C 15
-        TNT1 A 0 A_PlayWeaponSound("stealth/engage")
-        TNT1 A 0 A_SetBlend("White",1,35)
+        SHCL ABC 1
+        SHCL DEFGHI 2
+        SHCL J 3 A_PlayWeaponSound("stealth/button")
+        SHCL KLL 1
+        SHCL M 3 A_PlayWeaponSound("stealth/button")
+        SHCL NOPPQQ 1
+        TNT1 A 0 A_SetBlend("White",0.75,35)
+        SHCL R 3 A_PlayWeaponSound("stealth/engage")
+        SHCL STUV 2
+        SHCL WXYZ 1
+        SHCL "[" 1
         TNT1 AA 0 A_GiveInventory("ShadowCloak",1)
-        SHF1 D 1
-        SHF1 E 1
-        TNT1 A 10
+        TNT1 A 3
         goto SpecialAttackFinish
 
     SpecialAttackFinish:

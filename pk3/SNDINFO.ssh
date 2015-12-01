@@ -316,6 +316,7 @@ specialpunch/uppercut  SSHSWNSP
 specialpunch/spinkick  SSHKIKSP
 specialpunch/hit       SSHPNCSP
 combo/ready            CHCMBCLK // Taken from Smash Bros. Melee
+stealth/button         STELTHCK // Taken from Tribes: Ascend
 stealth/engage         STELTHMD // Taken from Kamen Rider Kabuto
 special/empulse        EMPULSE  // Taken from TimeSplitters 2
 supermissile/fire      SMISFIRE
