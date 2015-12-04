@@ -311,6 +311,17 @@ special/firesil        SSPCFIRE
 special/firesilleft    SSPCFIRL
 special/firesilright   SSPCFIRR
 
+// Mastodon
+mastodon/fire          MASTSHOT
+mastodon/shothit       MASTSHIT
+mastodon/idle          MASTIDLE // Taken from Earthbound
+mastodon/idledown      MASTDOWN // Taken from Earthbound
+
+$volume mastodon/idle 0.25
+$volume mastodon/idledown 0.25
+$rolloff mastodon/shothit 600 2000
+$limit mastodon/shothit 0
+
 // Special moves
 specialpunch/uppercut  SSHSWNSP
 specialpunch/spinkick  SSHKIKSP

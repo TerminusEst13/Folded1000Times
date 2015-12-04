@@ -577,7 +577,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         case 8: // Energy Fragment
           color = GetCvar("msg0color");
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a soul fragment."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a ge-pi cell battery."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a dien li cell battery."); }
           break;
         }
         break;
