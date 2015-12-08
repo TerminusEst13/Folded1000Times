@@ -539,26 +539,27 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         {
         case 0: // Testament
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjTestament \cfshotgun. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj03-W Wolf\cn SSH pattern identified. Authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj03-W Wolf\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 1: // Exodus
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjExodus \cfgrenade launcher. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj05-D Dragon\cn SSH pattern identified. Authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj05-D Dragon\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 2: // Sabbath
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjSabbath \cfsubmachine gun. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj04-SS Scorpions\cn SSH pattern identified. Authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj04-SS Scorpions\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 3: // Omen
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Tiger\cn SSH pattern identified. Authorization successful."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Tiger\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 4: // Iron Savior
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Use Inventory to activate)"); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:"\cj00-M Mastodon\cn RSA pattern identified. \cgWARNING: Nuclear power surge detected!\n\cu(Select style in inventory to activate)"); }
           break;
 
         case 5: // Legion

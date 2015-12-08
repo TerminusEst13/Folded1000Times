@@ -189,6 +189,7 @@ actor ShotgunPickup2 : PickupBase replaces Shotgun
     Spawn:
         TNT1 A 5 // Momentary delay in case the map loads too fast for the weapon.
                  // Sounds crazy, but it's happened before.
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOWEAPCHECK,0,0) == 1,"Nope2")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_ONLINECHECK,0,0) == 1,"Nope") // Is the game online?
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope") // Does the player already have the shotgun?
     Spawn2:
@@ -229,6 +230,7 @@ actor ShotgunPickup2 : PickupBase replaces Shotgun
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:
+    Nope2:
         TNT1 A 0
         stop
     }
@@ -243,6 +245,7 @@ actor ShotgunPickup : PickupBase //replaces SuperShotgun
     {
     Spawn:
         TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOWEAPCHECK,0,0) == 1,"Nope2")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SHOTCHECK,0,0) == 1,"Nope")
     Spawn2:
         TNT1 AAAA 1 A_Look
@@ -281,6 +284,7 @@ actor ShotgunPickup : PickupBase //replaces SuperShotgun
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("ShellBox",0,0,0,0,0,0,0,32)
+    Nope2:
         TNT1 A 0
         stop
     }
@@ -294,6 +298,7 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
     {
     Spawn:
         TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOWEAPCHECK,0,0) == 1,"Nope2")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_CARRCHECK,0,0) == 1,"Nope")
     Spawn2:
         TNT1 AAAA 1 A_Look
@@ -332,6 +337,7 @@ actor CarronadePickup : PickupBase replaces RocketLauncher
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("RocketBox",0,0,0,0,0,0,0,32)
+    Nope2:
         TNT1 A 0
         stop
     }
@@ -345,6 +351,7 @@ actor UziPickup : PickupBase //replaces PlasmaRifle
     {
     Spawn:
         TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOWEAPCHECK,0,0) == 1,"Nope2")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_UZICHECK,0,0) == 1,"Nope")
     Spawn2:
         TNT1 AAAA 1 A_Look
@@ -383,6 +390,7 @@ actor UziPickup : PickupBase //replaces PlasmaRifle
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("CellPack",0,0,0,0,0,0,0,32)
+    Nope2:
         TNT1 A 0
         stop
     }
@@ -396,6 +404,7 @@ actor HammerPickup : PickupBase replaces Chainsaw
     {
     Spawn:
         TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOWEAPCHECK,0,0) == 1,"Nope2")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope") // Yum.
     Spawn2:
         TNT1 AAAA 1 A_Look
@@ -434,6 +443,7 @@ actor HammerPickup : PickupBase replaces Chainsaw
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("Stimpack",0,0,0,0,0,0,0,32)
+    Nope2:
         TNT1 A 0
         stop
     }
@@ -447,6 +457,7 @@ actor IronSaviorPickup : PickupBase replaces BFG9000
     {
     Spawn:
         TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOWEAPCHECK,0,0) == 1,"Nope2")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_ARMRCHECK,0,0) == 1,"Nope")
     Spawn2:
         TNT1 AAAA 1 A_Look
@@ -483,9 +494,14 @@ actor IronSaviorPickup : PickupBase replaces BFG9000
         TNT1 A 0 A_PlaySound("weapon/armor", CHAN_ITEM)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",100)
         TNT1 A 0 A_GiveInventory("Points",5000)
+        TNT1 A 0 A_JumpIfInventory("IsSSH",1,"PickupSSH")
+        goto CheckStay
+    PickupSSH:
+        TNT1 A 0 A_GiveInventory("BFGModeActivate",1)
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("LargeSoulGem",0,0,0,0,0,0,0,32)
+    Nope2:
         TNT1 A 0
         stop
     }
@@ -499,6 +515,7 @@ actor ChaingunPickup : PickupBase replaces Chaingun
     {
     Spawn:
         TNT1 A 5
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOWEAPCHECK,0,0) == 1,"Nope2")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_ONLINECHECK2,0,0) == 1,"Nope")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_HAMCHECK,0,0) == 1,"Nope") // HAAAAAAAAAAAAAAAAM
     Spawn2:
@@ -537,6 +554,7 @@ actor ChaingunPickup : PickupBase replaces Chaingun
         TNT1 A 0 A_GiveInventory("Points",1000)
         goto CheckStay
     Nope:
+    Nope2:
         TNT1 A 0
         stop
     }

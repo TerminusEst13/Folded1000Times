@@ -57,7 +57,7 @@ ACTOR MeleePlayer2 : PlayerPawn
     Player.StartItem "HaggarModeActivate", 1
     Player.StartItem "RangedModeActivate", 1
     Player.StartItem "TricksterModeActivate", 1
-    Player.StartItem "BFGModeActivate", 1
+    //Player.StartItem "BFGModeActivate", 1
     Player.StartItem "IsSSH", 1
     Player.ColorRange 112, 127
     Player.AttackZOffset 24
