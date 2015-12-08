@@ -170,8 +170,8 @@ script WEEB_ENTER ENTER
 
         // Cvar nonsense.
 
-        if (GetCvar("dst_nopistol") == 1) { TakeInventory("KharonAcacia",1); GiveInventory("DontGotPistol",1); }
-            else { GiveInventory("KharonAcacia",1); TakeInventory("DontGotPistol",1); }
+        if (GetCvar("dst_nopistol") == 1 && CheckInventory("InIronMaiden") == 0) { TakeInventory("KharonAcacia",1); GiveInventory("DontGotPistol",1); }
+            else if (GetCvar("dst_nopistol") == 0 && !CheckInventory("InIronMaiden")) { GiveInventory("KharonAcacia",1); TakeInventory("DontGotPistol",1); }
         if (GetCvar("dst_infinitemeter") == 1) { GiveInventory("SuperMeterCounter",1); }
         if (GetCvar("compat_disabletaunts") == 1) { GiveInventory("NoTauntAllowed",1); }
             else { TakeInventory("NoTauntAllowed",1); }

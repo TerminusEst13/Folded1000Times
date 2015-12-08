@@ -155,6 +155,7 @@ int GravityOfLight;
             }
 
         GiveInventory("Wounded",1);
+        if (CheckInventory("IsSSH") == 1) { ACS_ExecuteAlways(362,0,4,0,0); }
         
         SetActorProperty(0,APROP_INVULNERABLE,1);
         

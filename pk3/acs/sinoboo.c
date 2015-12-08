@@ -68,6 +68,7 @@ script SINO_DECORATE (int pihua, int hunzhang)
     int FontX;
     int FontY;
     int FontTim;
+    int Time;
 
     switch (pihua)
     {
@@ -80,7 +81,7 @@ script SINO_DECORATE (int pihua, int hunzhang)
         break;
 
     case 1:
-        int Time = 52;
+        Time = 52;
         while (Time > 0)
         {
           SetHudSize(320, 240, false);
@@ -125,12 +126,55 @@ script SINO_DECORATE (int pihua, int hunzhang)
             GiveInventory("TricksterModeSpeed",1);
             SetActorProperty(0,APROP_GRAVITY,0.6);
             break;
+
+        case 3:
+            ActivatorSound("mastodon/ready",127);
+            TakeInventory("TricksterModeSpeed",1);
+            SetActorProperty(0,APROP_GRAVITY,0.7);
+            break;
     }
     break;
 
     case 3:
         delay(35*20);
         if (CheckInventory("JetpackModeOn") == 0) { GiveInventory("DodgeGhostOff",1); }
+        break;
+
+    case 4:
+        Time = 25;
+        while (Time > 0)
+        {
+          SetHudSize(320, 240, false);
+          if ((Timer() % 3) == 0)
+            { DrawScanlines(); }
+          Time--;
+          Delay(1);
+        }
+        break;
+
+    case 5:
+        if (CheckInventory("GotHammer") == 1)
+            { GiveInventory("01Tiger",1); }
+        if (CheckInventory("GotShotgun") == 1)
+            { GiveInventory("03Wolf",1); }
+        if (CheckInventory("GotCarronade") == 1)
+            { GiveInventory("05Dragon",1); }
+        if (CheckInventory("GotUzi") == 1)
+            { GiveInventory("04Scorpions",1); }
+        if (GetCvar("dst_nopistol") == 0)
+            { GiveInventory("02Viper",1); }
+        break;
+
+    case 6:
+        Time = 70;
+        while (Time > 0)
+        {
+          SetHudSize(320, 240, false);
+          if ((Timer() % 3) == 0)
+            { DrawScanlines(); }
+          Time--;
+          Delay(1);
+        }
         break;
     }
 }
