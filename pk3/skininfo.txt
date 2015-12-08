@@ -25,7 +25,9 @@
     hidden = false
 }
 
-{ // CYBERDOG
+{ // CYBERDOG. In the original Doom Radys Edition by Toooooasty, there was a class that let you play
+  // as a dog with a gun on its back. This is a nod to it, as a thanks to Toasty for letting me use
+  // Radys as a base. Thanks, Toasty!
     name = "Cyberdog"
     sprite = CDOG
     scale = 1.0
