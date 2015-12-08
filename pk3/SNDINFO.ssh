@@ -32,6 +32,23 @@ $playersound      SSHPlaceholder   male    *usefail        SHLGNOPE  // Taken fr
 $playersound      SSHPlaceholder   male    *taunt          SHLGTANT // Taken from Street Fighter X Tekken
 $playersound      SSHPlaceholder   male    *jump           SHLGJUMP  // Taken from Street Fighter X Tekken
 
+// CYBERDOG
+$playersound      Cyberdog   male    *death          CYBRDETH
+$playersounddup   Cyberdog   male    *xdeath         *death
+$playersounddup   Cyberdog   male    *burndeath      *death
+$playersounddup   Cyberdog   male    *crazydeath     *death
+$playersounddup   Cyberdog   male    *wimpydeath     *death
+$playersounddup   Cyberdog   male    *gibbed         *death
+$playersound      Cyberdog   male    *pain100        CYBRPAIN
+$playersounddup   Cyberdog   male    *pain75         *pain100
+$playersounddup   Cyberdog   male    *pain50         *pain100
+$playersounddup   Cyberdog   male    *pain25         *pain100
+$playersound      Cyberdog   male    *grunt          QUIET
+$playersound      Cyberdog   male    *land           HLLAND   // Taken from Quake 3
+$playersound      Cyberdog   male    *usefail        CYBRNOPE // Taken from the General Series 6000
+$playersound      Cyberdog   male    *taunt          CYBRTANT // Taken from Sony Pictures Sound Effects
+$playersound      Cyberdog   male    *jump           CYBRJUMP // Taken from Sony Pictures Sound Effects
+
 shihong/secret         SHSECRET
 
 $random shihong/death { shideth1 shideth2 shideth3 }
@@ -316,11 +333,35 @@ mastodon/fire          MASTSHOT
 mastodon/shothit       MASTSHIT
 mastodon/idle          MASTIDLE // Taken from Earthbound
 mastodon/idledown      MASTDOWN // Taken from Earthbound
+mastodon/alert         MASTALRT // Taken from Touhou 11: Subterranean Animism
+mastodon/charge1       MASTCHG1
+mastodon/charge2       MASTCHG2
+mastodon/charge3       MASTCHG3
+mastodon/chargecock    MASTCOCK // Taken from Unreal Tournament 3
+mastodon/chargestart   MASTCHST // Taken from Unreal Tournament 3
+mastodon/shock         MASTSHCK // Taken from Unreal Tournament 3
+mastodon/style         MASTSTYL // Chaos Code
+mastodon/lift          MASTLIFT // Chaos Code
+mastodon/ready         MASTREDY
+mastodon/shortassemble MASTASMB
+mastodon/longassemble  MASTASML
+mastodon/plug          MASTPLUG // Taken from Kamen Rider Super Climax Heroes
+mastodon/beepshort     MASTBEPS // Taken from Kamen Rider Super Climax Heroes
+mastodon/beeplong      MASTBEPL // Taken from Kamen Rider Super Climax Heroes
+mastodon/lower         MASTLOWR // Taken from Kamen Rider Super Climax Heroes
+mastodon/railfire      MASTRSHT
+mastodon/railshothit   MASTRHIT
+mastodon/nukeready     MASTNRDY
+mastodon/nukefire      MASTNFIR
 
 $volume mastodon/idle 0.25
+$volume mastodon/charge1 0.5
+$volume mastodon/charge2 0.75
+$volume mastodon/charge3 0.9
 $volume mastodon/idledown 0.25
 $rolloff mastodon/shothit 600 2000
 $limit mastodon/shothit 0
+$limit mastodon/shock 0
 
 // Special moves
 specialpunch/uppercut  SSHSWNSP

@@ -8,7 +8,7 @@ actor 00Mastodon : Weapon
     Weapon.AmmoType ""
     Obituary "%k shattered %o's skull."
     DamageType "ShihongPunch"
-    Weapon.UpSound "shihong/weaponswap"
+    //Weapon.UpSound "shihong/weaponswap"
     +NOALERT
     +NOAUTOFIRE
     +ALT_AMMO_OPTIONAL
@@ -18,7 +18,43 @@ actor 00Mastodon : Weapon
     States
     {
     Ready:
-        MSTO ABCDEEEDCB 2 A_WeaponReady
+        MSTO A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        MSTO B 2 A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
@@ -41,35 +77,24 @@ actor 00Mastodon : Weapon
         TNT1 AAAA 0 A_Lower
         MAST A 1 A_Lower
         Loop
+        //MSTO A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        //goto Ready
     StyleSwap:
-        TNT1 A 0 A_GiveInventory("StyleSwapping",1)
-        SHF0 BCDD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 1
-        TNT1 A 0 A_PlayWeaponSound("idle/swing")
-        STYL ABBCCC 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL D 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlayWeaponSound("idle/swing")
-        STYL EEFGG 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL G 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlaySoundEx("styleswap/open","soundslot5",0,0)
-        STYL HHHIIIIII 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlayWeaponSound("styleswap/rev")
-        STYL JJKLMMMM 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL NNOOOPPP 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL P 4 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlayWeaponSound("idle/swing")
-        STYL QRS 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlaySoundEx("styleswap/insert","soundslot6",0,0)
-        STYL S 4 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL T 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL UVWXY 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("mastodon/lower","soundslot6",0,0)
+        MSLW ABC 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 //A_PlaySound of shit clacking
+        MSLW DEF 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 //A_PlaySound of shit clacking
+        MSLW GH 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 //A_PlaySound of weapon lowering
         TNT1 A 0 A_PlayWeaponSound("styleswap/elec")
-        STYL Z 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL [ 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        STYL ] 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MSLW IJK 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("Fists",1)
+        TNT1 A 0 ACS_ExecuteAlways(362,0,5,0,0)
         TNT1 A 0 A_PlaySoundEx("styleswap/transform","soundslot5",0,0)
         TNT1 A 0 A_SetBlend("white",1.0,70)
-        STYL ] 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH) // Just in case the SetBlend comes a tic or two too late.
+        TNT1 A 2 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH) // Just in case the SetBlend comes a tic or two too late.
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwapHaggarFinish")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwapRangedFinish")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwapTricksterFinish")
@@ -81,6 +106,7 @@ actor 00Mastodon : Weapon
         goto Ready
     StyleSwapHaggarFinish:
         TNT1 A 0 ACS_ExecuteAlways(362,0,2,0,0)
+        TNT1 A 0 A_TakeInventory("BFGModeOn",1)
         TNT1 A 0 A_GiveInventory("HaggarModeOn",1)
         TNT1 A 0 A_TakeInventory("RangedModeOn",1)
         TNT1 A 0 A_TakeInventory("TricksterModeOn",1)
@@ -92,6 +118,7 @@ actor 00Mastodon : Weapon
         goto StyleSwapFinish
     StyleSwapRangedFinish:
         TNT1 A 0 ACS_ExecuteAlways(362,0,2,1,0)
+        TNT1 A 0 A_TakeInventory("BFGModeOn",1)
         TNT1 A 0 A_TakeInventory("HaggarModeOn",1)
         TNT1 A 0 A_GiveInventory("RangedModeOn",1)
         TNT1 A 0 A_TakeInventory("TricksterModeOn",1)
@@ -103,6 +130,7 @@ actor 00Mastodon : Weapon
         goto StyleSwapFinish
     StyleSwapTricksterFinish:
         TNT1 A 0 ACS_ExecuteAlways(362,0,2,2,0)
+        TNT1 A 0 A_TakeInventory("BFGModeOn",1)
         TNT1 A 0 A_TakeInventory("HaggarModeOn",1)
         TNT1 A 0 A_TakeInventory("RangedModeOn",1)
         TNT1 A 0 A_GiveInventory("TricksterModeOn",1)
@@ -113,9 +141,19 @@ actor 00Mastodon : Weapon
         TNT1 A 0 A_GiveInventory("SwapCooldown",210)
         goto StyleSwapFinish
     StyleSwapFinish:
-        TNT1 A 5
-        SHF0 DDCBA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        Goto Ready
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("02Viper",1,"StyleSwapFinish2")
+        TNT1 A 1
+        TNT1 A 0 A_SelectWeapon("Fists")
+        TNT1 A 0 A_TakeInventory("00Mastodon")
+        SHF0 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Deselect
+    StyleSwapFinish2:
+        TNT1 A 1
+        TNT1 A 0 A_SelectWeapon("02Viper")
+        TNT1 A 0 A_TakeInventory("00Mastodon")
+        W1RV A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Deselect
 
     Fire:
         MSTO F 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -148,6 +186,275 @@ actor 00Mastodon : Weapon
         MSTO JKKLL 1 A_WeaponReady(WRF_NOSWITCH)
         //ERGG A 0 A_ReFire("AltLoop")
         Goto Ready
+
+    AltFire:
+        MSTO DE 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("mastodon/chargestart","soundslot6",0,0)
+        MSCH ABCD 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire
+        MSCH DCBA 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MSTO EDCB 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Ready
+    AltHold:
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("silence","soundslot7",0,0)
+        TNT1 A 0 A_PlaySoundEx("mastodon/charge1","soundslot7",1,0)
+    AltHold1:
+        TNT1 A 0 A_JumpIfInventory("ChargeLevel",105,"Charge2")
+        TNT1 A 0 A_Jump(32,"AltHoldB")
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire("AltHold1")
+        goto RailLevel1
+    AltHoldB:
+        TNT1 A 0 A_PlaySoundEx("mastodon/shock","soundslot5",0,0)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 F 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.025,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH1 G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire("AltHold1")
+        MCH1 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    RailLevel1:
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("silence","soundslot7",0,0)
+        TNT1 A 0 A_PlaySoundEx("mastodon/idle","soundslot7",1,0)
+        TNT1 A 0 A_TakeInventory("ChargeLevel",999)
+        TNT1 A 0 A_TakeInventory("MastodonCharge",999)
+        MSTO F 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(3,10,0,16,0)
+        TNT1 A 0 A_SetBlend("Green",0.1,20)
+        TNT1 A 0 A_PlayWeaponSound("mastodon/fire")
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_Light(5)
+        TNT1 A 0 A_SpawnItemEx("NuclearEmission",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 A 0 A_FireCustomMissile("MastodonTinyRail",0,0,6,-6,0,0)
+        TNT1 A 0 A_Recoil(3)
+        TNT1 A 0 A_SetAngle(Angle-frandom(-3,3))
+        TNT1 A 0 A_SetPitch(Pitch-frandom(2,5))
+        TNT1 A 0 A_ZoomFactor(0.95)
+        MSTO GG 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(3)
+        TNT1 A 0 A_ZoomFactor(0.98)
+        MSTO G 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(0.99)
+        MSTO G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(1)
+        TNT1 A 0 A_ZoomFactor(0.995)
+        MSTO H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(0.9975)
+        MSTO H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(1)
+        MSTO I 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(0)
+        MSTO IJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MSTO JKKLL 1 A_WeaponReady(WRF_NOSWITCH)
+        //ERGG A 0 A_ReFire("AltLoop")
+        Goto Ready
+    Charge2:
+        TNT1 A 0 A_PlaySoundEx("mastodon/chargecock","soundslot6",0,0)
+        TNT1 A 0 A_TakeInventory("ChargeLevel",999)
+        TNT1 A 0 A_GiveInventory("MastodonCharge",1)
+        TNT1 A 0 A_SetBlend("green",0.0375,2)
+        MCH2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.0375,2)
+        MCH2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.0375,2)
+        MCH2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.0375,2)
+        MCH2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.0375,2)
+        MCH2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.0375,2)
+        MCH2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("silence","soundslot7",0,0)
+        TNT1 A 0 A_PlaySoundEx("mastodon/charge2","soundslot7",1,0)
+        TNT1 A 0 A_Refire("Hold2")
+        goto RailLevel2
+    Hold2:
+        TNT1 A 0 A_JumpIfInventory("ChargeLevel",105,"Charge3")
+        TNT1 A 0 A_Jump(32,"Hold2B")
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 F 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 F 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire("Hold2")
+        MCH2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto RailLevel2
+    Hold2B:
+        TNT1 A 0 A_PlaySoundEx("mastodon/shock","soundslot5",0,0)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.05,2)
+        TNT1 A 0 A_GiveInventory("ChargeLevel",1)
+        MCH2 I 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire("Hold2")
+        MCH2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto RailLevel2
+    RailLevel2:
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("silence","soundslot7",0,0)
+        TNT1 A 0 A_PlaySoundEx("mastodon/idle","soundslot7",1,0)
+        TNT1 A 0 A_TakeInventory("ChargeLevel",999)
+        TNT1 A 0 A_TakeInventory("MastodonCharge",999)
+        TNT1 A 0 Radius_Quake(5,13,0,16,0)
+        TNT1 A 0 A_SetBlend("Green",0.125,25)
+        TNT1 A 0 A_PlayWeaponSound("mastodon/railfire")
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_Light(8)
+        TNT1 A 0 A_SpawnItemEx("NuclearEmissionBigger",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 A 0 A_FireCustomMissile("MastodonRailshot",0,0,6,-6,0,frandom(-1,1))
+        TNT1 A 0 A_Recoil(5)
+        TNT1 A 0 A_SetAngle(Angle-frandom(-5,5))
+        TNT1 A 0 A_SetPitch(Pitch-frandom(3,8))
+        TNT1 A 0 A_ZoomFactor(0.95)
+        MSTO GG 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(3)
+        TNT1 A 0 A_ZoomFactor(0.98)
+        MSTO G 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(0.99)
+        MSTO G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(1)
+        TNT1 A 0 A_ZoomFactor(0.995)
+        MSTO H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(0.9975)
+        MSTO H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(1)
+        MSTO I 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(0)
+        MSTO IJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MSTO JKKLL 1 A_WeaponReady(WRF_NOSWITCH)
+        //ERGG A 0 A_ReFire("AltLoop")
+        goto Ready
+    Charge3:
+        TNT1 A 0 A_PlaySoundEx("mastodon/chargecock","soundslot6",0,0)
+        TNT1 A 0 A_PlayWeaponSound("mastodon/alert")
+        TNT1 A 0 A_GiveInventory("MastodonCharge",1)
+        TNT1 A 0 A_SetBlend("green",0.075,2)
+        MCH3 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.075,2)
+        MCH3 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.075,2)
+        MCH3 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.075,2)
+        MCH3 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.075,2)
+        MCH3 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_SetBlend("green",0.075,2)
+        MCH3 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("silence","soundslot7",0,0)
+        TNT1 A 0 A_PlaySoundEx("mastodon/charge3","soundslot7",1,0)
+        TNT1 A 0 A_Refire("Hold3")
+        goto RailLevel3
+    Hold3:
+        TNT1 A 0 
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 F 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 F 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 Radius_Quake(1,2,0,8,0)
+        TNT1 A 0 A_SetBlend("green",frandom(0.09,0.11),random(1,3))
+        MCH3 G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire("Hold3")
+        MCH3 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    RailLevel3:
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("silence","soundslot7",0,0)
+        TNT1 A 0 A_PlaySoundEx("mastodon/idle","soundslot7",1,0)
+        TNT1 A 0 A_TakeInventory("ChargeLevel",999)
+        TNT1 A 0 A_TakeInventory("MastodonCharge",999)
+        TNT1 A 0 Radius_Quake(5,13,0,16,0)
+        TNT1 A 0 A_SetBlend("Green",0.125,25)
+        TNT1 A 0 A_PlayWeaponSound("mastodon/railfire")
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_Light(8)
+        TNT1 A 0 A_SpawnItemEx("NuclearEmissionBigger",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 A 0 A_FireCustomMissile("MastodonRailshot",0,0,6,-6,0,frandom(-1,1))
+        TNT1 A 0 A_Recoil(5)
+        TNT1 A 0 A_SetAngle(Angle-frandom(-5,5))
+        TNT1 A 0 A_SetPitch(Pitch-frandom(3,8))
+        TNT1 A 0 A_ZoomFactor(0.95)
+        MSTO GG 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(3)
+        TNT1 A 0 A_ZoomFactor(0.98)
+        MSTO G 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(0.99)
+        MSTO G 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(1)
+        TNT1 A 0 A_ZoomFactor(0.995)
+        MSTO H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(0.9975)
+        MSTO H 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_ZoomFactor(1)
+        MSTO I 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light(0)
+        MSTO IJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MSTO JKKLL 1 A_WeaponReady(WRF_NOSWITCH)
+        //ERGG A 0 A_ReFire("AltLoop")
+        goto Ready
     }
 }
 
@@ -334,5 +641,239 @@ ACTOR NuclearEmission
         TNT1 A 0
         TNT1 A 1 A_Explode(128,128,0,0,96)
         Stop
+    }
+}
+
+ACTOR NuclearEmissionBigger
+{
+    Radius 1
+    Height 1
+    Speed 0
+    +NOCLIP
+    +FORCERADIUSDMG
+    +EXTREMEDEATH
+    +SPECTRAL
+    -SOLID
+    Obituary "%k brought %o once more 'round the sun."
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_Explode(256,256,0,0,160)
+        Stop
+    }
+}
+
+ACTOR NuclearEmissionUltimate
+{
+    Radius 1
+    Height 1
+    Speed 0
+    +NOCLIP
+    +FORCERADIUSDMG
+    +EXTREMEDEATH
+    +SPECTRAL
+    -SOLID
+    Obituary "%k brought %o once more 'round the sun."
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_Explode(512,512,0,0,256)
+        Stop
+    }
+}
+
+
+
+actor MastodonTinyRail : MastodonShot
+{
+    Speed 500
+}
+
+ACTOR MastodonRailShot : FastProjectile
+{
+    Radius 6
+    Height 4
+    Speed 500
+    Damage (150)
+    DeathSound "mastodon/railshothit"
+    MissileType "MastodonRailTrail"
+    MissileHeight 12
+    +FORCERADIUSDMG
+    +BLOODLESSIMPACT
+    +DONTBLAST
+    +EXTREMEDEATH
+    +SPECTRAL
+    +THRUSPECIES
+    Species "Player"
+    Decal BFGScorch
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        Loop
+    Death:
+        TNT1 A 0
+        TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("MastodonTrailSpark",frandom(-20,20),frandom(-20,20),frandom(-20,20),frandom(5,20),0,frandom(-20,20),frandom(0,360),SXF_CLIENTSIDE,0)
+        TNT1 A 0 A_Explode(160,256,0,0,128)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("MastodonRailShotChildren",0,0,frandom(-180,180),CMF_AIMDIRECTION | CMF_TRACKOWNER | CMF_ABSOLUTEPITCH,0)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("MastodonRailShotChildren",0,0,frandom(-180,180),CMF_AIMDIRECTION | CMF_TRACKOWNER | CMF_ABSOLUTEPITCH,0)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("MastodonRailShotChildren",0,0,frandom(-180,180),CMF_AIMDIRECTION | CMF_TRACKOWNER | CMF_ABSOLUTEPITCH,0)
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("MastodonRailShotChildren",0,0,frandom(-180,180),CMF_AIMDIRECTION | CMF_TRACKOWNER | CMF_ABSOLUTEPITCH,0)
+        TNT1 A 0 A_SpawnItemEx("MastodonShock",0,0,0,0,0,0,0,128,0)
+        TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("MastodonShock",0,0,0,0,0,0,0,128,0)
+        TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 1
+        TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 1
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        stop
+    }
+}
+
+ACTOR MastodonRailTrail
+{
+    RenderStyle Add
+    Scale 0.2
+    Alpha 0.99
+    +NOINTERACTION
+    +NOGRAVITY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("MastodonShock",0,0,0,0,0,0,0,128,0)
+        TNT1 A 0 A_SpawnItemEx("MastodonTrailSpark",frandom(-4,4),frandom(-4,4),frandom(-4,4),0,0,0,0,SXF_CLIENTSIDE,128)
+        TNT1 AAA 0 A_SpawnItemEx("MastodonRailTrailSpark",frandom(-5,5),frandom(-5,5),frandom(-5,5),frandom(-3,3),frandom(-3,3),frandom(-3,3),0,SXF_CLIENTSIDE,128)
+        YAE4 A 25 Bright
+    Lolololo:
+        TNT1 A 0 A_JumpIf(ScaleX <= 0, "NULL")
+        TNT1 A 0 A_SetScale(ScaleX -0.0025, ScaleY -0.0025)
+        YAE4 A 1 bright A_FadeOut(0.025)
+        Loop
+    Null:
+        TNT1 A 0
+        TNT1 A 1
+        stop
+    }
+}
+
+ACTOR MastodonRailTrailSpark
+{
+    RenderStyle Add
+    Scale 0.05
+    Alpha 0.99
+    +NOINTERACTION
+    +NOGRAVITY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        YAE4 A 35 Bright
+    Lolololo:
+        TNT1 A 0 A_JumpIf(ScaleX <= 0, "NULL")
+        TNT1 A 0 A_SetScale(ScaleX -0.005, ScaleY -0.005)
+        YAE4 A 1 bright A_FadeOut(0.025)
+        Loop
+    Null:
+        TNT1 A 0
+        TNT1 A 1
+        stop
+    }
+}
+
+
+
+ACTOR MastodonRailShotChildren : FastProjectile
+{
+    Radius 6
+    Height 4
+    Speed 100
+    Damage (75)
+    DeathSound "mastodon/shothit"
+    MissileType "MastodonTrailTiny"
+    MissileHeight 12
+    +FORCERADIUSDMG
+    +BLOODLESSIMPACT
+    +DONTBLAST
+    +EXTREMEDEATH
+    +SPECTRAL
+    +THRUSPECIES
+    +RIPPER
+    Species "Player"
+    Decal Scorch
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        Loop
+    Death:
+        TNT1 A 0
+        TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("MastodonTrailSpark",frandom(-20,20),frandom(-20,20),frandom(-20,20),frandom(5,20),0,frandom(-20,20),frandom(0,360),SXF_CLIENTSIDE,0)
+        TNT1 A 0 A_Explode(96,96,0,0,64)
+        TNT1 A 0 A_SpawnItemEx("MastodonShock",0,0,0,0,0,0,0,128,0)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("MastodonShock",0,0,0,0,0,0,0,128,0)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 1
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 1
+        TNT1 AAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAAAAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        TNT1 A 2
+        TNT1 AAA 0 A_SpawnItemEx("MastodonExplode",frandom(-10,10),frandom(-10,10),frandom(-7,3),0,0,0,0,SXF_NOCHECKPOSITION | SXF_CLIENTSIDE,0)
+        stop
+    }
+}
+
+ACTOR MastodonTrailTiny
+{
+    RenderStyle Add
+    Scale 0.1
+    Alpha 0.99
+    +NOINTERACTION
+    +NOGRAVITY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf(ScaleX <= 0, "NULL")
+        TNT1 A 0 A_SetScale(ScaleX -0.01, ScaleY -0.01)
+        YAE4 A 1 bright A_FadeOut(0.015)
+        Loop
+    Null:
+        TNT1 A 0
+        TNT1 A 1
+        stop
     }
 }

@@ -410,6 +410,12 @@ InInventory TricksterModeOn, 1
     DrawImage "STCRYTR2", 251, 10, center;
     DrawImage "HUDSTTRK", 3, 153;
 }
+InInventory BFGModeOn, 1
+{
+    DrawImage "STCRYNUK", 280, 162, center;
+    DrawImage "STCRYNK2", 251, 10, center;
+    DrawImage "HUDSTNUK", 3, 153;
+}
 
     InInventory RavenRightActive
     {

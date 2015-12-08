@@ -27,6 +27,8 @@ GRAPHICS:
 - Freedoom for the Raven lasers
 - birdinginformation.com for the HUD graphic for the Raven
 - chinabuye.com for the dog plush sprite
+- Sgt. Shivers for the Mastodon nuclear death kill big gun
+- PresidentPeople for the Mode Change inventory graphics
 
 CODE:
 ===========

@@ -24,3 +24,11 @@
     class = "Shihong"
     hidden = false
 }
+
+{ // CYBERDOG
+    name = "Cyberdog"
+    sprite = CDOG
+    scale = 1.0
+    class = "Shihong"
+    hidden = false
+}
