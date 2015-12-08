@@ -169,6 +169,7 @@ shihong/walljumpup     SSHWJMU
 shihong/wallgrab       SSHWGRB
 shihong/thruster       SSHTHRST // Taken from Darkstalkers 3
 shihong/justframe      JUSTFRAM // Taken from Street Fighter X Tekken
+shihong/stomp          SSHSTOMP // Taken from Halo 3
 
 $random shihong/healthwarning { lohealf1 lohealf2 lohealf3 lohealf4 lohealf5 lohealf6 } // Taken from the General Series 6000
 lohealf1               LOHEALF1

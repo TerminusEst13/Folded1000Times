@@ -31,6 +31,8 @@ script SINO_ENTER ENTER
     int RavenHPRight;
     int NewRavenHPLeft;
     int NewRavenHPRight;
+    int lastvelocity;
+    int currvelocity;
 
     if (GetCvar("dst_debug") == 1) { Log(s:"SINO_ENTER executing on player ", d:pln); }
 
@@ -211,6 +213,15 @@ script SINO_ENTER ENTER
         { GiveInventory("WaitingTooLong",1); }
         else
         { TakeInventory("WaitingTooLong",0x7FFFFFFF); }
+
+        currvelocity = GetActorVelZ(0);
+
+        if(currvelocity == 0.0 && lastvelocity < -16.0)
+        {
+            SpawnForced("PuffItUpBro",xxx,yyy,zzz + 16.0,0,0);
+        }
+      
+        lastvelocity = currvelocity;
 
         // This is a now-useless function, but the math to see if someone's within a certain
         // distance of where they last were may come in handy in the future.
