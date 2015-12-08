@@ -34,81 +34,97 @@ actor 01Tiger : Fists
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW A 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW E 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW E 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         Loop
     ReadyPowered:
@@ -116,6 +132,7 @@ actor 01Tiger : Fists
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwapPowered")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwapPowered")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwapPowered")
+        TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwapPowered")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"PowerDown")
         loop
     Select:
@@ -253,7 +270,13 @@ actor 01Tiger : Fists
     MastodonStyleSwap:
         TNT1 A 0 A_GiveInventory("StyleSwapping",1)
         TNT1 A 0 A_PlaySoundEx("mastodon/alert","soundslot7",0,0)
-        W1RV HIJK 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        W0SW AFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto MastodonStyleSwapForReal
+    MastodonStyleSwapPowered:
+        TNT1 A 0 A_GiveInventory("StyleSwapping",1)
+        TNT1 A 0 A_PlaySoundEx("mastodon/alert","soundslot7",0,0)
+        W0S5 AFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    MastodonStyleSwapForReal:
         TNT1 A 15
         TNT1 A 0 A_PlayWeaponSound("idle/swing")
         MSDR ABBCCC 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH | WRF_NOBOB)
