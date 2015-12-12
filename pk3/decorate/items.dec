@@ -68,9 +68,17 @@ actor LargeSoulGem : CustomInventory
         SLST IJKLMNOPQRS 1 bright
         loop
     Pickup:
+        TNT1 A 0 A_JumpIfInventory("IsSSH",1,"SSHPickup")
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
         TNT1 A 0 A_SetBlend("White",0.75,35)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",100)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        TNT1 A 0 A_StopSoundEx("soundslot6")
+        stop
+    SSHPickup:
+        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("White",0.75,35)
+        TNT1 A 0 A_GiveInventory("KiMeterCounter",1000)
         TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_StopSoundEx("soundslot6")
         stop
@@ -457,6 +465,7 @@ actor HealPackSmall1 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA A 1 BRIGHT
@@ -474,6 +483,7 @@ actor HealPackSmall2 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA B 1 BRIGHT
@@ -491,6 +501,7 @@ actor HealPackSmall3 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA C 1 BRIGHT
@@ -508,6 +519,7 @@ actor HealPackSmall4 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA D 1 BRIGHT
@@ -526,6 +538,7 @@ actor HealPackSmall5 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA E 1 BRIGHT
@@ -544,6 +557,7 @@ actor HealPackSmall6 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA F 1 BRIGHT
@@ -562,6 +576,7 @@ actor HealPackSmall7 : HealPackSmall
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         SODA G 1 BRIGHT
@@ -745,6 +760,7 @@ actor HealPackMedium1 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL A 1 BRIGHT
@@ -762,6 +778,7 @@ actor HealPackMedium2 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL B 1 BRIGHT
@@ -779,6 +796,7 @@ actor HealPackMedium3 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL C 1 BRIGHT
@@ -796,6 +814,7 @@ actor HealPackMedium4 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL D 1 BRIGHT
@@ -814,6 +833,7 @@ actor HealPackMedium5 : HealPackMedium
     {
     Spawn:
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_DIFFCHECK,0,0) == 1,"PickupStop")
     Spawn2:
         APPL E 1 BRIGHT
@@ -946,6 +966,9 @@ actor OverHealPack1 : OverHealPack
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
+    Spawn0:
         BRGR A 1 BRIGHT
         BRGR A 30
         loop
@@ -957,6 +980,9 @@ actor OverHealPack2 : OverHealPack
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
+    Spawn0:
         BRGR B 1 BRIGHT
         BRGR B 30
         loop
@@ -968,6 +994,9 @@ actor OverHealPack3 : OverHealPack
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
+    Spawn0:
         BRGR C 1 BRIGHT
         BRGR C 30
         loop
@@ -979,6 +1008,9 @@ actor OverHealPack4 : OverHealPack
     States
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
+    Spawn0:
         BRGR D 1 BRIGHT
         BRGR D 30
         loop
@@ -1061,6 +1093,9 @@ actor ArmorPackSmall: CustomInventory
     states
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOARMORCHECK,0,0) == 1,"PickupStop")
+    Spawn0:
         ARMR A 1 Bright A_SpawnItemEx("SilverPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
         ARMR AAAAA 2 A_SpawnItemEx("SilverPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
         ARMR AAAAA 2 A_SpawnItemEx("SilverPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
@@ -1093,6 +1128,9 @@ actor ArmorPackSmall: CustomInventory
     PickupFail:
         TNT1 A 0
         fail
+    PickupStop:
+        TNT1 A 0
+        stop
     }
 }
 
@@ -1145,6 +1183,9 @@ actor ArmorPackLarge: CustomInventory
     states
     {
     Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOARMORCHECK,0,0) == 1,"PickupStop")
+    Spawn0:
         ARMR B 1 Bright A_SpawnItemEx("GoldPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
         ARMR BBBBB 2 A_SpawnItemEx("GoldPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
         ARMR BBBBB 2 A_SpawnItemEx("GoldPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
@@ -1271,6 +1312,8 @@ actor ArmorHealthMegaPack : CustomInventory
     Spawn:
         TNT1 A 0
         TNT1 A 1
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_NOHEALTHCHECK,0,0) == 1,"PickupStop")
+        TNT1 A 1
         TNT1 A 0 A_SpawnItemEx("RamenDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
         TNT1 A 0 A_SpawnItemEx("PizzaDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
     Spawn1:
@@ -1286,6 +1329,9 @@ actor ArmorHealthMegaPack : CustomInventory
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,0,0)
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_MEGASPHERE,0,0)
         TNT1 A 1
+        stop
+    PickupStop:
+        TNT1 A 0
         stop
     }
 }

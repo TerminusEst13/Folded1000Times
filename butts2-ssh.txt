@@ -13,10 +13,10 @@
 10: The trickster grapplebeam can lag people out when people teleport and go a long way away from the source. Is there a way to have the beam snap when teleporting?
 10b: Alternatively, rehaul grapplebeam completely. Two notches for one pull beam is not good.
 12: Separate Hae-Lin's pickups from Shihong's. Berserk/Megasphere/Soul shard done, still need to do:
- ^- Soul Prison
- ^- Backpack (Combat backpack)
+ ^- Soul Prison (GIGANTIC car battery? Fusion core?)
+ ^- Backpack (Combat backpack? Ammo briefcase?)
  ^- Radsuit (Coolant)
- ^- Armor
+ ^- Armor (Needs more tech-y armor instead of Hae-Lin's slabs of silver/gold)
  ^- Invulnsphere (Zero point force field)
 13: Blursphere replacement
 17: Spawning animation for guns.

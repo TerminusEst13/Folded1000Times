@@ -354,6 +354,8 @@ mastodon/railfire      MASTRSHT
 mastodon/railshothit   MASTRHIT
 mastodon/nukeready     MASTNRDY
 mastodon/nukefire      MASTNFIR
+mastodon/nope          MASTNOPE // Taken from San Francisco Rush 2049
+mastodon/childshothit  MASTSHIT
 
 $volume mastodon/idle 0.25
 $volume mastodon/charge1 0.5
@@ -361,8 +363,10 @@ $volume mastodon/charge2 0.75
 $volume mastodon/charge3 0.9
 $volume mastodon/idledown 0.25
 $rolloff mastodon/shothit 600 2000
+$rolloff mastodon/railshothit 800 2400
 $limit mastodon/shothit 0
 $limit mastodon/shock 0
+$volume mastodon/childshothit 0.5
 
 // Special moves
 specialpunch/uppercut  SSHSWNSP

@@ -260,7 +260,7 @@ actor 04Scorpions : Fists
         MSTO A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Deselect
     Flash:
-        MSOS ABCDEFGHIJKLMNOPQRSTUVW 2
+        MSOS ABCDEFGHIJKLMNOPQRSTUVW 2 BRIGHT
         stop
 
     Fire:
