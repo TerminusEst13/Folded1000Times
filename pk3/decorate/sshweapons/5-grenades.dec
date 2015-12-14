@@ -721,15 +721,21 @@ actor 05Dragon : Fists
         TNT1 A 10
         goto SpecialAttackFinish
     EMPulse:
+        SSHK A 2
+        TNT1 A 0 A_PlayWeaponSound("idle/swing")
+        SSHK BCD 2
+        SSHK D 1
+        SSHK EFG 2
         TNT1 A 0 A_PlayWeaponSound("combo/ready")
-        SHF1 AB 1
-        SHF1 C 15
+        SSHK H 2
+        SSHK IJK 1
         TNT1 A 0 A_TakeInventory("KiMeterCounter",200)
         TNT1 A 0 A_PlayWeaponSound("special/empulse")
         TNT1 A 0 A_SetBlend("white",1.0,7)
         TNT1 A 0 A_SpawnItemEx("EMPulseExplode",0,0,32,0,0,0,0,48)
-        SHF1 D 1
-        SHF1 E 1
+        SSHK LMNOPQRSTUV 1 bright
+        SSHK WXYZ 2
+        SHK2 ABCD 2
         TNT1 A 10
         goto SpecialAttackFinish
 
