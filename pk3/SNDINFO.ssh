@@ -171,6 +171,8 @@ shihong/thruster       SSHTHRST // Taken from Darkstalkers 3
 shihong/justframe      JUSTFRAM // Taken from Street Fighter X Tekken
 shihong/stomp          SSHSTOMP // Taken from Halo 3
 
+shihong/weaponteleport SSHWEPTL
+
 $random shihong/healthwarning { lohealf1 lohealf2 lohealf3 lohealf4 lohealf5 lohealf6 } // Taken from the General Series 6000
 lohealf1               LOHEALF1
 lohealf2               LOHEALF2
@@ -204,7 +206,11 @@ raven/death            RAVNDETH
 raven/pickup           RAVENGET
 $limit raven/fire 0
 
-
+pickup/wolf            GETWOLF
+pickup/tiger           GETTIGER
+pickup/scorpions       GETSCORP
+pickup/dragon          GETDRGON
+pickup/mastodon        GETMASTO
 shihong/weaponswap     SSHWPSWP
 
 // Fists
@@ -352,7 +358,7 @@ mastodon/beeplong      MASTBEPL // Taken from Kamen Rider Super Climax Heroes
 mastodon/lower         MASTLOWR // Taken from Kamen Rider Super Climax Heroes
 mastodon/railfire      MASTRSHT
 mastodon/railshothit   MASTRHIT
-mastodon/nukeready     MASTNRDY
+mastodon/nukeready     MASTNRDY // Taken from Unreal Tournament
 mastodon/nukefire      MASTNFIR
 mastodon/nope          MASTNOPE // Taken from San Francisco Rush 2049
 mastodon/childshothit  MASTSHIT

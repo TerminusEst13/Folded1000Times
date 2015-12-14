@@ -220,11 +220,13 @@ const int WEEB_DEC_PLAYSOUND     = 31;
 const int WEEB_DEC_NOWEAPCHECK   = 32;
 const int WEEB_DEC_NOHEALTHCHECK = 33;
 const int WEEB_DEC_NOARMORCHECK  = 34;
+const int WEEB_DEC_PICKUPFLASH   = 35;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;
 const int WEEB_DEC_CHANGEMUSBACK = 2;
 const int WEEB_DEC_PICKUPCHECK   = 3;
+const int WEEB_DEC_SUMMONSOUND   = 4;
 const int WEEB_DEC_TOASTER       = 98;
 const int WEEB_DEC_TOASTER2      = 99;
 
@@ -293,6 +295,7 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/sshweapons/4-pistols.dec"
 #include "decorate/sshweapons/5-grenades.dec"
 #include "decorate/sshweapons/0-cannon.dec"
+#include "decorate/sshweapons/0-masteffects.dec" // Bioware not involved
 #include "decorate/sshstyle.dec"
 
 #include "decorate/raven.dec"

@@ -36,6 +36,7 @@ CODE:
 - Wallgrabbing by Xaser
 - Grappling hook and walljumping by Ijon Tichy
 - Enemy-tazed code by WildWeasel
+- Data stream weapon spawns by PresidentPeople
 
 SOUNDS:
 =========

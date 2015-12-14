@@ -31,6 +31,7 @@ FROM 0.82 TO 0.XX
 - Dramatic fade-ins no longer happen in DM.
 - All weapons now have obituaries.
 - Decoration sounds are now mono and should no longer play at fulldistance with OpenAL.
+- Picking up weapons in Iron Maiden mode now gives points.
 
 
 

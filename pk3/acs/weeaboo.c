@@ -472,7 +472,7 @@ int GravityOfLight;
              { SetResultValue(1); }
         else { SetResultValue(0); }
         break;
-        
+
     case WEEB_DEC_MULTIPLIER:
         SetResultValue(GetCVar("dst_enemymultiplier"));
         break;
@@ -508,6 +508,32 @@ int GravityOfLight;
     case 5: // Tiny meter pickup
          if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("ammo/soulstone",127); }
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("battery/get",127); }
+         break;
+
+    case 6: // Omen/Tiger
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("weapon/hammer",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("pickup/tiger",127); }
+         break;
+
+    case 7: // Testament/Wolf
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("weapon/shotgun",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("pickup/wolf",127); }
+         break;
+
+    case 8: // Exodus/Dragon
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("weapon/carronade",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("pickup/dragon",127); }
+         break;
+
+    case 9: // Sabbath/Scorpions
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("weapon/uzi",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("pickup/scorpions",127); }
+         break;
+
+    case 10: // Iron Maiden/Mastodon
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("weapon/armor",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("pickup/mastodon",127); }
+         break;
     }
     break;
         
@@ -521,6 +547,11 @@ int GravityOfLight;
         
     case WEEB_DEC_NOARMORCHECK:
         SetResultValue(GetCVar("dst_noarmor"));
+        break;
+        
+    case WEEB_DEC_PICKUPFLASH:
+        if (CheckInventory("IsJungHaeLin") == 1) { FadeRange(1.00,1.00,1.00,0.45,0,0,0,0,1.00); }
+        if (CheckInventory("IsSSH") == 1) { FadeRange(0.875,1.00,1.00,0.45,0,0,0,0,1.00);  }
         break;
     }
 }
@@ -597,6 +628,10 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         if(CheckInventory("IAmAnAwesomePersonWhoLikesCoolMusic") == 1)
         { if (getcvar("norandommusic") == 0) { terminate; }}
         if(getcvar("dst_cl_nomusic") == 0) { LocalSetMusic("*"); }
+        break;
+
+    case WEEB_DEC_PICKUPCHECK:
+        SetResultValue(GetCvar("dst_cl_decorationnoise"));
         break;
 
     case WEEB_DEC_PICKUPCHECK:
@@ -858,12 +893,15 @@ script WEEB_ENTER_CLIENT ENTER clientside
     {
         if (ConsolePlayerNumber() != PlayerNumber()) { Delay(1); continue; }
 
-        if (CheckInventory("InIronMaiden") == 1)
+        if (CheckInventory("InIronMaiden") == 1 && CheckInventory("IsJungHaeLin") == 1)
         {
             // In Z& 2.0, if a player exits the level while in Iron Maiden, he gets a desynched-client "ghost" version of the Kharon and K+A22.
             TakeInventory("Kharon",1);
             TakeInventory("KharonAcacia",1);
         }
+
+        if (CheckInventory("IsJungHaeLin") == 1) { SetCvar("dst_fuckingcvars",1); }
+        if (CheckInventory("IsSSH") == 1) { SetCvar("dst_fuckingcvars",2); }
 
         oExecInt = execInt;
         execInt = WeebClientVars();
