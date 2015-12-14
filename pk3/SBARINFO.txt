@@ -569,10 +569,10 @@ InInventory not IAmABoringPersonWhoThinksPointsAreForNerds, 1
 }
 
 drawimage ammoicon1, 258, 187, center;
-drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
 
-ininventory not IsSSH, 1
+ininventory IsJungHaeLin, 1
 {
+drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
 ininventory GotHammer, 1 { drawimage "GOTO2", 265, 174, center; }
 ininventory not DontGotPistol { drawimage "GOTA2", 270, 174, center; }
 ininventory GotShotgun, 1 { drawimage "GOTT2", 275, 174, center; }
@@ -592,14 +592,41 @@ ininventory SuperMeterCounter, 100 { drawimage "IRONGEM1", 256, 174, center; }
 ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}
 }
 
-isselected "01Tiger" { drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 285, 166; }
-isselected "02Viper" { drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 285, 166; }
-isselected "03Wolf" { drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 285, 166; }
-isselected "04Scorpions" { drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 285, 166; }
-isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 285, 166; }
+ininventory IsSSH, 1
+{
+ininventory GotHammer, 1 { drawimage "SSHGOTT1", 265, 174, center; }
+ininventory not DontGotPistol { drawimage "SSHGOTS1", 270, 174, center; }
+ininventory GotShotgun, 1 { drawimage "SSHGOTA1", 275, 174, center; }
+ininventory GotUzi, 1 { drawimage "SSHGOTR1", 280, 174, center; }
+ininventory GotCarronade, 1 { drawimage "SSHGOTE1", 285, 174, center; }
+isselected "01Tiger" { drawimage "SSHGOTT2", 265, 174, center; }
+isselected "02Viper" { drawimage "SSHGOTS2", 270, 174, center; }
+isselected "03Wolf" { drawimage "SSHGOTA2", 275, 174, center; }
+isselected "04Scorpions" { drawimage "SSHGOTR2", 280, 174, center; }
+isselected "05Dragon" { drawimage "SSHGOTE2", 285, 174, center; }
+isselected "01Tiger" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
+                       drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 304, 186; }
+isselected "02Viper" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
+                       drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 304, 186; }
+isselected "03Wolf" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
+                      drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 304, 186; }
+isselected "04Scorpions" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
+                           drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 304, 186; }
+isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 296, 182; }
+//drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
+}
 
-ininventory not InIronMaiden, 1 { DrawImage "HUDBARX", 5, 193; }
-ininventory InIronMaiden, 1 { DrawImage "HUDBARXb", 5, 190; }
+ininventory IsJungHaeLin, 1
+{
+    ininventory not InIronMaiden, 1 { DrawImage "HUDBARX", 5, 193; }
+    ininventory InIronMaiden, 1 { DrawImage "HUDBARXb", 5, 190; }
+}
+ininventory IsSSH, 1
+{
+    DrawImage "HUDBARXb", 5, 190;
+    DrawBar "LIFBARB", "LIFBARA", JetpackFuel, horizontal, 7, 189;
+}
+
 ininventory IsSSH, 1
 {
 DrawBar "HARMOR", "HEMPTY", KiCounter1, Horizontal, 7, 195;
@@ -715,7 +742,7 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
     DrawNumber 3, smallfont, gold, Armor, fillzeros, 64, 184;
 }
 
-ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32, 152; }
+//ininventory IsSSH, 1 { DrawNumber 3, CONFONT, white, JetpackFuel, fillzeros, 32, 152; }
 
     gamemode cooperative, singleplayer
     {

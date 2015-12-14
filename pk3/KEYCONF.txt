@@ -27,18 +27,18 @@ addslotdefault 5 "05Dragon"
 
 AddKeySection "DemonSteele - Optional Keys" "demonsteeleoptional"
 AddMenuKey "Flashlight" "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis"
-AddMenuKey "ZDoom: Taunt" zdoomtaunt
 AddMenuKey "Weapon Action" +launchoctopus
-AddMenuKey "Shihong Mode Hotkey: Strength of Aeons" "ShihongHotkey1"
-AddMenuKey "Shihong Mode Hotkey: Guns of War" "ShihongHotkey2"
-AddMenuKey "Shihong Mode Hotkey: Ghost of Perdition" "ShihongHotkey3"
-AddMenuKey "Shihong Mode Hotkey: Dance of Eternity" "ShihongHotkey4"
+AddMenuKey "ZDoom: Taunt" zdoomtaunt
+AddMenuKey "Shihong Hotkey: Strength of Aeons" "ShihongHotkey1"
+AddMenuKey "Shihong Hotkey: Guns of War" "ShihongHotkey2"
+AddMenuKey "Shihong Hotkey: Ghost of Perdition" "ShihongHotkey3"
+AddMenuKey "Shihong Hotkey: Dance of Eternity" "ShihongHotkey4"
 
 Alias "IfZandronumHadTheReloadKeyThenIWouldntNeedToDoThis" "Puke -281"
 Alias zdoomtaunt "use ZDoomTauntButton"
 Alias +launchoctopus "use UppercutTrigger"
 Alias -launchoctopus "use UppercutUntrigger"
-Alias ShihongHotkey1 "Use HaggarModeActivate"
-Alias ShihongHotkey2 "Use RangedModeActivate"
-Alias ShihongHotkey3 "Use TricksterModeActivate"
+Alias ShihongHotkey1 "use HaggarModeActivate"
+Alias ShihongHotkey2 "use RangedModeActivate"
+Alias ShihongHotkey3 "use TricksterModeActivate"
 Alias ShihongHotkey4 "use BFGModeActivate"
