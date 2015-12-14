@@ -19,13 +19,10 @@
  ^- Armor (Needs more tech-y armor instead of Hae-Lin's slabs of silver/gold)
  ^- Invulnsphere (Zero point force field)
 13: Blursphere replacement
-17: Spawning animation for guns.
- ^- Pickup sprites for weapons
 19: A way to switch away from grenades before you throw them?
 20: Polish up the jet thruster.
  ^- More consistent jet sound.
  ^- Some kind of trail flowing around.
-23: Is it possible to make melee attacks home in on enemies in melee style?
 24: More consistent coloring/shading for the HUD.
 
 
@@ -62,6 +59,8 @@
 15: What to do with Rebellion? Dual-wielding is fun, and dual-wielding pistols in a stylish action game is kind of mandatory. But the current execution is very eehhh. The Striker is more accurate, the Avenger does more damage, and the Enforcer is faster, and tapping away rapidly at the keys to try and get the damage edge is clunky and unwieldy.
  ^- Alternate burst-fire mode. Hold-down fire for a rapid trio of shots from both guns.
 16: 19 spawning sounds
+17: Spawning animation for guns.
+ ^- Pickup sprites for weapons
 18: Flashlight replacement for Shihong (night vision?)
 20: Polish up the jet thruster.
  ^- Buffer--doesn't just automatically turn on if you hold down Run at low values.
@@ -72,4 +71,5 @@
 21: Unique weapon swapping sound.
  ^- Different one for the sword.
 22: Dying with grapple done doesn't cancel on death.
+23: Is it possible to make melee attacks home in on enemies in melee style? [Nope]
 25: +SKYEXPLODE on the grenades?

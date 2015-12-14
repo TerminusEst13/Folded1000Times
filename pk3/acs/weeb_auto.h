@@ -865,7 +865,7 @@ script WEEB_ENTER ENTER
 
         // OH SHIT I'M OUT OF HEALTH
         // SUDDENLY AND COINCIDENTALLY I HAVE A MASSIVE CRAVING FOR MUNCHIES
-        if (CheckInventory("ContraLifeToken") == 0 && CheckInventory("OverLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
+        if (CheckInventory("ContraLifeToken") == 0 && CheckInventory("OverLifeToken") == 0 && !isDead(0) && GameSkill() != 5 && GameSkill() != 6 && CheckInventory("IAmADumbPersonWhoWillProbablyAccidentallyDie") == 0)
         {
           if (GetSomeHealthAlready >= 60)
           {
