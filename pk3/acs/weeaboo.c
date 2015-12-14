@@ -550,8 +550,8 @@ int GravityOfLight;
         break;
         
     case WEEB_DEC_PICKUPFLASH:
-        if (CheckInventory("IsJungHaeLin") == 1) { FadeRange(1.00,1.00,1.00,0.45,0,0,0,0,1.00); }
-        if (CheckInventory("IsSSH") == 1) { FadeRange(0.875,1.00,1.00,0.45,0,0,0,0,1.00);  }
+        if (CheckInventory("IsJungHaeLin") == 1) { FadeRange(255,255,255,0.45,0,0,0,0,1.00); }
+        if (CheckInventory("IsSSH") == 1) { FadeRange(200,255,255,0.45,0,0,0,0,1.00);  }
         break;
     }
 }

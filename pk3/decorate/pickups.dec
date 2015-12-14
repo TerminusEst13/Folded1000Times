@@ -611,6 +611,7 @@ actor ShihongSummonParticle1
     +NOTELEPORT
     -SOLID
     +CLIENTSIDEONLY
+    VisibleToPlayerClass MeleePlayer2
     States
     {
     Spawn:
@@ -658,6 +659,7 @@ ACTOR TeleportFwoosh
     +NOINTERACTION
     +DONTSPLASH
     +CLIENTSIDEONLY
+    VisibleToPlayerClass MeleePlayer2
     States
     {
     Spawn:
