@@ -8,7 +8,6 @@
  ^- Some kind of visual effect after swapping
    (Orbs flying around you?)
 
-4: BFG9000 replacement
 10: The trickster grapplebeam can lag people out when people teleport and go a long way away from the source. Is there a way to have the beam snap when teleporting?
 10b: Alternatively, rehaul grapplebeam completely. Two notches for one pull beam is not good.
 12: Separate Hae-Lin's pickups from Shihong's. Berserk/Megasphere/Soul shard done, still need to do:
@@ -43,6 +42,7 @@
 2: Soul acquiring mechanic
  ^- Separate Shihong's bullets from Hae-Lin's
 3: Rehaul the Teleport/Dash entirely into a jet thruster.
+4: BFG9000 replacement
 5: Gameplay mechanic for Triumph sword (What happens when you get higher ammo? What can you use it for?)
 6: Muzzle flash for Striker revolver (Two, one for normal shot and one for final shot)
 7: Original sounds for low on health (look at Pres' submitted Marathon sounds, find source stock sounds)

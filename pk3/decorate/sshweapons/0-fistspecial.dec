@@ -28,6 +28,8 @@ actor ConcussionMissile
     +EXPLODEONWATER
     +SKYEXPLODE
     +FORCERADIUSDMG
+    +THRUSPECIES
+    Species "Player"
     Obituary "%k smeared %o across the wall."
     DeathSound "missile/hit"
     Scale 0.4
@@ -127,11 +129,13 @@ ACTOR HomingMissile
     Radius 4
     Height 2
     Speed 20
-    Damage (20)
+    Damage (10)
     Scale 0.4
     Projectile
     +FORCERADIUSDMG
     +SEEKERMISSILE
+    +THRUSPECIES
+    Species "Player"
     DeathSound "missile/hit"
     Obituary "%k locked in on %o and left a smoking crater."
     Decal Scorch

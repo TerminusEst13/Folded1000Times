@@ -599,7 +599,7 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
 
         case 4: // Iron Savior
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjIron Savior \cfarmor. You may now become the \cjIron Maiden\cf...\n\cu(Use Inventory to activate)"); }
-          if (CheckInventory("IsSSH") == 1) { Log(s:"\cj00-M Mastodon\cn RSA pattern identified. \cjWARNING: \cnNuclear power surge detected!\n\cu(Select style in inventory to activate)"); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:"\cj00-M Mastodon\cn RSA pattern identified. \cjWARNING: \clNuclear power surge detected!\n\cu(Select style in inventory to activate)"); }
           break;
 
         case 5: // Legion
