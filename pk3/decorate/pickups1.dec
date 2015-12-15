@@ -247,6 +247,10 @@ actor ShotgunPickup2 : PickupBase replaces Shotgun
         goto CheckStay
     PickupSSH:
         TNT1 A 0 A_GiveInventory("03Wolf",1)
+        // Shihong's weapons don't have WeebShell as their primary or secondary
+        // ammo, so Weapon.AmmoGive doesn't give them anything on pickup like
+        // Hae-Lin's weapons do. So here's a little bit for your new gun.
+        TNT1 A 0 A_GiveInventory("WeebShell",10)
         goto CheckStay
     Nope:
     Nope2:
@@ -319,6 +323,7 @@ actor ShotgunPickup : PickupBase //replaces SuperShotgun
         goto CheckStay
     PickupSSH:
         TNT1 A 0 A_GiveInventory("03Wolf",1)
+        TNT1 A 0 A_GiveInventory("WeebShell",10)
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("ShellBox",0,0,0,0,0,0,0,32)
@@ -582,6 +587,7 @@ actor UziPickup : PickupBase //replaces PlasmaRifle
         goto CheckStay
     PickupSSH:
         TNT1 A 0 A_GiveInventory("04Scorpions",1)
+        TNT1 A 0 A_GiveInventory("WeebCell",50)
         goto CheckStay
     Nope:
         TNT1 A 0 A_SpawnItemEx("CellPack",0,0,0,0,0,0,0,32)
