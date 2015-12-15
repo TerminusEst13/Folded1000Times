@@ -170,6 +170,10 @@ shihong/wallgrab       SSHWGRB
 shihong/thruster       SSHTHRST // Taken from Darkstalkers 3
 shihong/justframe      JUSTFRAM // Taken from Street Fighter X Tekken
 shihong/stomp          SSHSTOMP // Taken from Halo 3
+shihong/stomp2         SSHSTOM2
+shihong/stomp3         SSHSTOM3
+shihong/stomp4         SSHSTOM4
+shihong/stomp5         SSHSTOM5
 
 shihong/weaponteleport SSHWEPTL
 
@@ -378,7 +382,7 @@ $volume mastodon/childshothit 0.5
 specialpunch/uppercut  SSHSWNSP
 specialpunch/spinkick  SSHKIKSP
 specialpunch/hit       SSHPNCSP
-combo/ready            CHCMBCLK // Taken from Smash Bros. Melee
+combo/ready            CHCMBCLK // Taken from San Francisco Rush 2049
 stealth/button         STELTHCK // Taken from Tribes: Ascend
 stealth/engage         STELTHMD // Taken from Kamen Rider Kabuto
 special/empulse        EMPULSE  // Taken from TimeSplitters 2

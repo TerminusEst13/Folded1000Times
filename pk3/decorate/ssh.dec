@@ -316,6 +316,7 @@ actor PuffItUpBro
     +EXTREMEDEATH
     +NOGRAVITY
     +NODAMAGETHRUST
+    +BLOODLESSIMPACT
     Height 0
     Radius 0
     States

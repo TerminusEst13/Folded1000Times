@@ -23,8 +23,8 @@ GRAPHICS:
  ^- Mega Man & Bass
  ^- Armored Warriors
 - Hit sparks from Street Fighter Alpha 2
-- Neoworm for the Raven sprites
-- Freedoom for the Raven lasers
+- Raven sprites by Neoworm and Sgt. Shivers
+- Raven lasers from Freedoom
 - birdinginformation.com for the HUD graphic for the Raven
 - chinabuye.com for the dog plush sprite
 - Sgt. Shivers for the Mastodon nuclear death kill big gun
@@ -37,6 +37,7 @@ CODE:
 - Grappling hook and walljumping by Ijon Tichy
 - Enemy-tazed code by WildWeasel
 - Data stream weapon spawns by PresidentPeople
+- Enemy stomping by Marrub
 
 SOUNDS:
 =========

@@ -216,9 +216,13 @@ script SINO_ENTER ENTER
 
         currvelocity = GetActorVelZ(0);
 
-        if(currvelocity == 0.0 && lastvelocity < -16.0)
+        if(currvelocity == 0.0 && lastvelocity < -15.0)
         {
-            SpawnForced("PuffItUpBro",xxx,yyy,zzz + 16.0,0,0);
+            if (lastvelocity < -35.0) { SpawnForced("HeavyMetalStompboxUltimate",xxx,yyy,zzz + 16.0,0,0); }
+            else if (lastvelocity < -30.0) { SpawnForced("HeavyMetalStompboxHeaviest",xxx,yyy,zzz + 16.0,0,0); }
+            else if (lastvelocity < -25.0) { SpawnForced("HeavyMetalStompboxHeavier",xxx,yyy,zzz + 16.0,0,0); }
+            else if (lastvelocity < -20.0) { SpawnForced("HeavyMetalStompboxHeavy",xxx,yyy,zzz + 16.0,0,0); }
+            else SpawnForced("HeavyMetalStompbox",xxx,yyy,zzz + 16.0,0,0);
         }
       
         lastvelocity = currvelocity;
@@ -312,10 +316,10 @@ script SINO_ENTER ENTER
 
             if (CheckInventory("RavenLeftActive") == 1 || CheckInventory("RavenRightActive") == 1)
             {
-                xOffset = -28.0;
+                xOffset = -32.0;
                 yOffset = -26.0;
                 yOffset2 = 26.0;
-                zOffset = 4.0;
+                zOffset = 8.0;
 
                 nx = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset, sin(angle));
                 nx2 = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset2, sin(angle));
