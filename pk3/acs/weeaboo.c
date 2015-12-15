@@ -558,6 +558,10 @@ int GravityOfLight;
         if (CheckInventory("IsJungHaeLin") == 1) { FadeRange(255,255,255,0.45,0,0,0,0,1.00); }
         if (CheckInventory("IsSSH") == 1) { FadeRange(200,255,255,0.45,0,0,0,0,1.00);  }
         break;
+
+    case WEEB_DEC_CLASSCHECK:
+        SetResultValue(DemonSteeleClass);
+        break;
     }
 }
 
@@ -575,22 +579,22 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         {
         case 0: // Testament
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjTestament \cfshotgun. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj03-W Wolf\cn RSA pattern identified. Authorization successful."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:"\cj03-W Wolf\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 1: // Exodus
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjExodus \cfgrenade launcher. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj05-D Dragon\cn RSA pattern identified. Authorization successful."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:"\cj05-D Dragon\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 2: // Sabbath
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjSabbath \cfsubmachine gun. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj04-SS Scorpions\cn RSA pattern identified. Authorization successful."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:"\cj04-SS Scorpions\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 3: // Omen
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:"\cfThe \cjOmen \cfwarhammer. You may wield it..."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Tiger\cn RSA pattern identified. Authorization successful."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:"\cj01-T Tiger\cn RSA pattern identified. Authorization successful."); }
           break;
 
         case 4: // Iron Savior
@@ -609,19 +613,25 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         case 7: // Sentinel
           color = GetCvar("msg0color");
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a Sentinel."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up the Ravens."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up the Ravens."); }
           break;
 
         case 8: // Energy Fragment
           color = GetCvar("msg0color");
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a soul fragment."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a dien li cell battery."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a dien li cell battery."); }
           break;
 
         case 9: // Backpack
           color = GetCvar("msg0color");
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a bag of holding."); }
-          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up an ammo briefcase."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up an ammo briefcase."); }
+          break;
+
+        case 10: // Giant energy pickup thing
+          color = GetCvar("msg0color");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a soul prison."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a raw energy deposit."); }
           break;
         }
         break;

@@ -189,6 +189,8 @@ health/doritos         DEWITNAO // Taira Komori's chips eating with Woodylein's 
 health/pizza           PIZATIME // Squashy55's toasted ham sandwich with beatmad's sizzling frying pan and keweldog's apple eating, all off Freesound
 battery/get            BATRYGET // Taken from Killing Floor
 briefcase/get          BCASEGET
+ammo/rawenergy         RAWENGGT // Taken from Zero Tolerance
+ammo/rawenergyloop     RAWENGLP // Taken from Zero Tolerance
 
 nightvision/on         NIVION   // Taken from System Shock 2
 nightvision/off        NIVIOFF  // Taken from Starcraft

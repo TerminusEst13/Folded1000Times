@@ -5,7 +5,6 @@
    D: Back special
  ^- Trickster style
    B: Forward special (In, needs new graphics/sounds)
-   D: Back special (In, needs new graphics/sounds)
  ^- Some kind of visual effect after swapping
    (Orbs flying around you?)
 
@@ -13,8 +12,6 @@
 10: The trickster grapplebeam can lag people out when people teleport and go a long way away from the source. Is there a way to have the beam snap when teleporting?
 10b: Alternatively, rehaul grapplebeam completely. Two notches for one pull beam is not good.
 12: Separate Hae-Lin's pickups from Shihong's. Berserk/Megasphere/Soul shard done, still need to do:
- ^- Soul Prison (GIGANTIC car battery? Fusion core?)
- ^- Backpack (Combat backpack? Ammo briefcase?)
  ^- Radsuit (Coolant)
  ^- Armor (Needs more tech-y armor instead of Hae-Lin's slabs of silver/gold)
  ^- Invulnsphere (Zero point force field)
@@ -37,6 +34,7 @@
  ^- Trickster style
    A: Passive buff (Can grab walls, jetpack regenerates faster. In, needs separated)
    C: Side special
+   D: Back special (In, needs new graphics/sounds)
  ^- Unique icons showing what the styles are
    A: Gold Fist
    B: Blue Gun
@@ -55,6 +53,9 @@
  ^- Hunter
 11: Separate Hae-Lin's quotes from Shihong's
  ^- Find a voice actress
+12: Separate Hae-Lin's pickups from Shihong's. Berserk/megasphere/soul shard done, still need to do:
+ ^- Soul Prison (GIGANTIC car battery? Fusion core?)
+ ^- Backpack (Combat backpack? Ammo briefcase?)
 14: Allmap replacement
 15: What to do with Rebellion? Dual-wielding is fun, and dual-wielding pistols in a stylish action game is kind of mandatory. But the current execution is very eehhh. The Striker is more accurate, the Avenger does more damage, and the Enforcer is faster, and tapping away rapidly at the keys to try and get the damage edge is clunky and unwieldy.
  ^- Alternate burst-fire mode. Hold-down fire for a rapid trio of shots from both guns.

@@ -221,6 +221,7 @@ const int WEEB_DEC_NOWEAPCHECK   = 32;
 const int WEEB_DEC_NOHEALTHCHECK = 33;
 const int WEEB_DEC_NOARMORCHECK  = 34;
 const int WEEB_DEC_PICKUPFLASH   = 35;
+const int WEEB_DEC_CLASSCHECK    = 36;
 
 const int WEEB_DEC_GETMESSAGES   = 0;
 const int WEEB_DEC_CHANGEMUS     = 1;

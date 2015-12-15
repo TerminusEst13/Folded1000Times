@@ -969,6 +969,11 @@ script WEEB_GLOBAL ENTER
     i = unusedTID(37000, 47000);
 
     sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+    if (isSinglePlayer())
+    {
+        if (CheckInventory("IsJungHaeLin") == 1) { DemonSteeleClass = 1; }
+        if (CheckInventory("IsSSH") == 1) { DemonSteeleClass = 2; }
+    }
 
     if (GetCvar("dst_doomhealth") == 1)
     {

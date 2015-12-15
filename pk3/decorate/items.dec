@@ -56,31 +56,53 @@ actor TinyMeterPickup : CustomInventory
 
 actor LargeSoulGem : CustomInventory
 {
-    Inventory.PickupMessage "Picked up a soul prison."
-    Inventory.PickupSound "ammo/soulgem"
+    //Inventory.PickupMessage "Picked up a soul prison."
+    //Inventory.PickupSound "ammo/soulgem"
     Scale 0.65
+    +FLOORCLIP
     +FLOATBOB
+    +QUIET
     States
     {
     Spawn:
-        TNT1 A 0 A_PlaySoundEx("ammo/soulgemloop","soundslot6",0,0)
+        TNT1 A 0
+        // I can do this! Since this is an offline-only item and all.
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_CLASSCHECK,0,0) == 1,"SpawnSoulGem")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_CLASSCHECK,0,0) == 2,"SpawnRawEnergy")
+        TNT1 A 1
+        loop
+    SpawnSoulGem:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("ammo/soulgemloop","soundslot6",1,0)
+    Spawn1:
         SLST H 57 bright
         SLST IJKLMNOPQRS 1 bright
+        loop
+    SpawnRawEnergy:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("ammo/rawenergyloop","soundslot6",1,0)
+        TNT1 A 0 A_SetTranslucent(0.9,1)
+    Spawn1:
+        X016 ABCDEFGHIJKLMNOPQRSTUVWXY 2 BRIGHT
         loop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("IsSSH",1,"SSHPickup")
         TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
+        TNT1 A 0 ACS_ExecuteWithResult(275,0,10)
         TNT1 A 0 A_SetBlend("White",0.75,35)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",100)
         TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_StopSoundEx("soundslot6")
+        TNT1 A 0 A_PlaySoundEx("ammo/soulgem","soundslot6",0,0)
         stop
     SSHPickup:
         TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
+        TNT1 A 0 ACS_ExecuteWithResult(275,0,10)
         TNT1 A 0 A_SetBlend("White",0.75,35)
         TNT1 A 0 A_GiveInventory("KiMeterCounter",1000)
         TNT1 A 0 A_GiveInventory("Points",1000)
         TNT1 A 0 A_StopSoundEx("soundslot6")
+        TNT1 A 0 A_PlaySoundEx("ammo/rawenergy","soundslot6",0,0)
         stop
     PickupFail:
         TNT1 A 0
