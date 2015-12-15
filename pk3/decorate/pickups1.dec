@@ -818,23 +818,28 @@ actor IronSaviorPickup : PickupBase replaces BFG9000
         TNT1 A 0
         TNT1 A 1
         TNT1 A 0 A_SpawnItemEx("PickupEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_SpawnItemEx("UnzipEffects",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_SpawnItemEx("HaeLinIronSaviorProp",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("ShihongMastodonCaseProp",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_GiveToTarget("ScreenFlashWhite")
         TNT1 A 0 A_JumpIfInTargetInventory("IsSSH",1,"ShihongSound")
         TNT1 A 0 A_JumpIfInTargetInventory("IsJungHaeLin",1,"HaeLinSound")
         TNT1 A 1
-        goto Whoops
+        TNT1 A -1
+        stop
+        //goto Whoops
     HaeLinSound:
         TNT1 A 0 A_PlaySound("weapon/summon")
         TNT1 A 1
-        goto Whoops
+        TNT1 A -1
+        stop
+        //goto Whoops
     ShihongSound:
         TNT1 A 0 A_PlaySound("shihong/weaponteleport")
         TNT1 A 1
-        goto Whoops
-    Whoops:
-        IRNP A 10
-        IRNP BCDEDCB 4
-        loop
+        TNT1 A -1
+        stop
+        //goto Whoops
     Pickup:
         TNT1 A 0 A_JumpIfInventory("GotIronMaiden",1,"PickupFail")
         TNT1 A 0 A_GiveInventory("GotIronMaiden",1)
@@ -854,6 +859,67 @@ actor IronSaviorPickup : PickupBase replaces BFG9000
     Nope2:
         TNT1 A 0
         stop
+    }
+}
+
+actor HaeLinIronSaviorProp : CustomInventory
+{
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        IRNP A 10 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        IRNP BCDEDCB 4 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    CheckStay:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_WEPSTAY,0,0) == 1, "PickupFail")
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+actor ShihongMastodonCaseProp : CustomInventory
+{
+    Scale 0.8
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        MSPK ABCDEFGHIJLMN 2 BRIGHT
+        TNT1 A 0 A_SpawnItemEx("UnzipMastodon",0,0,8,0,0,0,0,160)
+    Spawn1:
+        MSPK O 10 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        MSPK PQRSRQP 4 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    CheckStay:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_WEPSTAY,0,0) == 1, "PickupFail")
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
     }
 }
 

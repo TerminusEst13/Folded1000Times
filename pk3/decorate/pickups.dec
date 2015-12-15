@@ -1261,6 +1261,94 @@ actor UnzipPistols6 : UnzipPistols
     }
 }
 
+
+actor UnzipMastodon
+{
+    Radius 1
+    Height 1
+    Scale 0.8
+    Speed 0
+    RenderStyle Add
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MSPK T 1 BRIGHT
+        TNT1 A 1 A_SpawnItemEx("UnzipMastodon2",0,0,0,0,0,0,0,32)
+        stop
+    }
+}
+
+actor UnzipMastodon2 : UnzipMastodon
+{
+    Scale 1.0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MSPK T 1 BRIGHT
+        TNT1 A 1 A_SpawnItemEx("UnzipMastodon3",0,0,0,0,0,0,0,32)
+        stop
+    }
+}
+
+actor UnzipMastodon3 : UnzipMastodon
+{
+    Scale 1.2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MSPK T 1 BRIGHT
+        TNT1 A 1 A_SpawnItemEx("UnzipMastodon4",0,0,0,0,0,0,0,32)
+        stop
+    }
+}
+
+actor UnzipMastodon4 : UnzipMastodon
+{
+    Alpha 0.7
+    Scale 1.4
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MSPK T 1 BRIGHT
+        TNT1 A 1 A_SpawnItemEx("UnzipMastodon5",0,0,0,0,0,0,0,32)
+        stop
+    }
+}
+
+actor UnzipMastodon5 : UnzipMastodon
+{
+    Alpha 0.4
+    Scale 1.6
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MSPK T 1 BRIGHT
+        TNT1 A 1 A_SpawnItemEx("UnzipMastodon6",0,0,0,0,0,0,0,32)
+        stop
+    }
+}
+
+actor UnzipMastodon6 : UnzipMastodon
+{
+    Alpha 0.1
+    Scale 1.8
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MSPK T 1 BRIGHT
+        stop
+    }
+}
+
 actor SummoningElectroSphere
 {
     Radius 1
