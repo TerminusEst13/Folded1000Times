@@ -32,6 +32,7 @@ FROM 0.82 TO 0.XX
 - All weapons now have obituaries.
 - Decoration sounds are now mono and should no longer play at fulldistance with OpenAL.
 - Picking up weapons in Iron Maiden mode now gives points.
+- There is now a D_TTFTW replacement.
 
 
 

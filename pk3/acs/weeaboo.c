@@ -534,21 +534,26 @@ int GravityOfLight;
          if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("weapon/armor",127); }
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("pickup/mastodon",127); }
          break;
+
+    case 11: // Backpack pickup
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("ammo/knapsack",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("briefcase/get",127); }
+         break;
     }
     break;
-        
+
     case WEEB_DEC_NOWEAPCHECK:
         SetResultValue(GetCVar("dst_noweapons"));
         break;
-        
+
     case WEEB_DEC_NOHEALTHCHECK:
         SetResultValue(GetCVar("dst_nohealth"));
         break;
-        
+
     case WEEB_DEC_NOARMORCHECK:
         SetResultValue(GetCVar("dst_noarmor"));
         break;
-        
+
     case WEEB_DEC_PICKUPFLASH:
         if (CheckInventory("IsJungHaeLin") == 1) { FadeRange(255,255,255,0.45,0,0,0,0,1.00); }
         if (CheckInventory("IsSSH") == 1) { FadeRange(200,255,255,0.45,0,0,0,0,1.00);  }
@@ -611,6 +616,12 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
           color = GetCvar("msg0color");
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a soul fragment."); }
           else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a dien li cell battery."); }
+          break;
+
+        case 9: // Backpack
+          color = GetCvar("msg0color");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a bag of holding."); }
+          else if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up an ammo briefcase."); }
           break;
         }
         break;

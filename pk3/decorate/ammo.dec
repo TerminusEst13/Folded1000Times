@@ -149,7 +149,82 @@ actor WeebCellPack : WeebCell replaces CellPack
     }
 }
 
-actor MagicKnapsack : Backpack replaces Backpack
+actor BackpackPickup : CustomInventory replaces Backpack
+{
+    +INVENTORY.BIGPOWERUP
+    +QUIET
+    states
+    {
+    Spawn:
+        //SENT Z 1 Bright
+        //SENT Z 30
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("BackpackDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+        TNT1 A 0 A_SpawnItemEx("BriefcaseDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+    Spawn1:
+        TNT1 A 30
+        loop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_SetBlend("FFFF00",0.1,5)
+        TNT1 A 0 ACS_ExecuteWithResult(275,0,9)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,11,0)
+        TNT1 A 0 A_GiveInventory("Backpack",1)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor BackpackDisguise : RandomSpawner { DropItem "BackpackDisguise2" }
+actor BriefcaseDisguise : RandomSpawner { DropItem "BriefcaseDisguise2" }
+
+actor BackpackDisguise2 : Inventory
+{
+    Scale 0.85
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        BKPK A -1 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        stop
+    }
+}
+
+actor BriefcaseDisguise2 : Inventory
+{
+    Scale 0.7
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        BKPK B -1 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    }
+}
+
+/*actor MagicKnapsack : Backpack replaces Backpack
 {
     Inventory.PickupMessage "Picked up a bag of holding."
     Inventory.PickupSound "ammo/knapsack"
@@ -161,4 +236,4 @@ actor MagicKnapsack : Backpack replaces Backpack
         BKPK A -1
         Stop
     }
-}
+}*/
