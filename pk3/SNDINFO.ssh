@@ -390,10 +390,15 @@ stealth/button         STELTHCK // Taken from Tribes: Ascend
 stealth/engage         STELTHMD // Taken from Kamen Rider Kabuto
 special/empulse        EMPULSE  // Taken from TimeSplitters 2
 supermissile/fire      SMISFIRE
+missile/fire           MISSFIRE
 missile/elec           SMISELEC // Taken from Devil May Cry 3
 missile/transformlock  SMISTRLK
 missile/transform      SMISTRNS
 missile/lockedon       SMISLKON
+missile/cock           SMISCOCK
+missile/uncock         SMISUCOK
+missile/steam          SMISTEAM // Taken from Doom 3
+missile/untransform    SMISUTRN
 gigaton/charge         GGTPCHRG // Taken from Mechwarrior Online
 gigaton/fire           GGTPFIRE // Taken from Mechwarrior Online
 gigaton/swing          GGTPSWNG
@@ -402,6 +407,8 @@ gigaton/wall           GGTPWALL
 gigaton/jfcharge       GGTHCHRG // Taken from Mechwarrior Online
 gigaton/jfhit          GGTHHITT
 gigaton/jfwall         GGTHWALL
+
+$limit missile/fire 0
 
 $random missile/hit { miss/hit1 miss/hit2 miss/hit3 }
 miss/hit1              MISSEXP1

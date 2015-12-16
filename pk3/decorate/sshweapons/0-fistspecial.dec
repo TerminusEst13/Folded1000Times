@@ -21,7 +21,7 @@ actor ConcussionMissile
     Radius 6
     Height 2
     Speed 25
-    Damage (25)
+    Damage (15)
     Projectile
     Decal Scorch
     +MISSILE
@@ -118,6 +118,44 @@ actor ConcussionMissile
         TNT1 AA 0 A_SpawnItemEx("MissileExplosionSmall",0,0,0,0,0,0,0,160)
         TNT1 A 0 Radius_Quake(2,5,0,16,0)
         TNT1 A 0 A_Explode(32,128,0,0,64)
+        TNT1 A 0 A_SetTranslucent(0.75,1)
+        WPXS ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 BRIGHT
+        stop
+    }
+}
+
+actor FinishConcussionMissile
+{
+    Radius 6
+    Height 2
+    Speed 25
+    Damage (30)
+    Projectile
+    Decal Scorch
+    +MISSILE
+    +EXPLODEONWATER
+    +SKYEXPLODE
+    +FORCERADIUSDMG
+    +THRUSPECIES
+    Species "Player"
+    Obituary "%k smeared %o across the wall."
+    DeathSound "missile/hit"
+    Scale 0.4
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SEKR AAAAA 1 A_SpawnItemEx("MissileTrail",0,0,1,0,0,0,0,160)
+    Spawn2:
+        TNT1 A 0
+        SEKR A 1 A_SpawnItemEx("MissileTrail",0,0,1,0,0,0,0,160)
+        goto Spawn2
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        TNT1 AA 0 A_SpawnItemEx("MissileExplosionSmall",0,0,0,0,0,0,0,160)
+        TNT1 A 0 Radius_Quake(2,5,0,16,0)
+        TNT1 A 0 A_Explode(64,128,0,0,64)
         TNT1 A 0 A_SetTranslucent(0.75,1)
         WPXS ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 BRIGHT
         stop
