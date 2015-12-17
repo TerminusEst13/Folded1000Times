@@ -31,96 +31,112 @@ actor 01Tiger : Fists
     Ready:
         TNT1 A 0 A_JumpIfInventory("TigerRoar",1,"ReadyPowered")
         W0SW A 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW A 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW E 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW E 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW D 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW C 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToBFGMode",1,"MastodonStyleSwap")
         TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadCheck")
         W0SW B 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
@@ -129,6 +145,7 @@ actor 01Tiger : Fists
         Loop
     ReadyPowered:
         W0S5 A 1 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimationPowered")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwapPowered")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwapPowered")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwapPowered")
@@ -406,6 +423,94 @@ actor 01Tiger : Fists
     Flash:
         MSOS ABCDEFGHIJKLMNOPQRSTUVW 2 BRIGHT
         stop
+    IdleAnimation:
+        W0SW AFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto IdleAnimationForReal
+    IdleAnimationPowered:
+        W0S5 AFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    IdleAnimationForReal:
+        TNT1 A 5
+        TNT1 A 0 ACS_ExecuteAlways(275,0,3,0,0)
+        TNT1 A 1 A_SetBlend("Black",0.025,2)
+        TNT1 A 1 A_SetBlend("Black",0.05,2)
+        TNT1 A 1 A_SetBlend("Black",0.075,2)
+        TNT1 A 1 A_SetBlend("Black",0.1,2)
+        TNT1 A 1 A_SetBlend("Black",0.125,2)
+        TNT1 A 1 A_SetBlend("Black",0.15,2)
+        TNT1 A 1 A_SetBlend("Black",0.175,2)
+        TNT1 A 1 A_SetBlend("Black",0.2,2)
+        TNT1 A 1 A_SetBlend("Black",0.225,2)
+        TNT1 A 1 A_SetBlend("Black",0.25,2)
+        TNT1 A 1 A_SetBlend("Black",0.275,2)
+        TNT1 A 1 A_SetBlend("Black",0.3,2)
+        TNT1 A 1 A_SetBlend("Black",0.325,2)
+        TNT1 A 1 A_SetBlend("Black",0.35,2)
+        TNT1 A 1 A_SetBlend("Black",0.375,2)
+        TNT1 A 1 A_SetBlend("Black",0.4,2)
+        TNT1 A 1 A_SetBlend("Black",0.425,2)
+        TNT1 A 1 A_SetBlend("Black",0.45,2)
+        TNT1 A 1 A_SetBlend("Black",0.475,2)
+        TNT1 A 1 A_SetBlend("Black",0.5,2)
+        TNT1 A 1 A_SetBlend("Black",0.525,2)
+        TNT1 A 1 A_SetBlend("Black",0.55,2)
+        TNT1 A 1 A_SetBlend("Black",0.575,2)
+        TNT1 A 1 A_SetBlend("Black",0.6,2)
+        TNT1 A 1 A_SetBlend("Black",0.625,2)
+        TNT1 A 1 A_SetBlend("Black",0.65,2)
+        TNT1 A 1 A_SetBlend("Black",0.675,2)
+        TNT1 A 1 A_SetBlend("Black",0.7,2)
+        TNT1 A 1 A_SetBlend("Black",0.725,2)
+        TNT1 A 1 A_SetBlend("Black",0.75,2)
+        TNT1 A 1 A_SetBlend("Black",0.775,2)
+        TNT1 A 1 A_SetBlend("Black",0.8,2)
+        TNT1 A 1 A_SetBlend("Black",0.825,2)
+        TNT1 A 1 A_SetBlend("Black",0.85,2)
+        TNT1 A 1 A_SetBlend("Black",0.875,2)
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+    Idling:
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+        TNT1 A 0 A_JumpIfInventory("StartedToSleep",75,"SleepIdle")
+        TNT1 A 0 A_GiveInventory("StartedToSleep",1)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"WakeUp")
+        TNT1 A 0 A_JumpIfInventory("SynthFire",1,"WakeUp")
+        TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"WakeUp")
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"Idling")
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+    WakeUp:
+        TNT1 A 0 ACS_ExecuteAlways(275,0,3,1,0)
+        TNT1 A 0 A_TakeInventory("WaitingTooLong",0x7FFFFFFF)
+        TNT1 A 0 A_TakeInventory("SleepCounter",0x7FFFFFFF)
+        TNT1 A 0 A_TakeInventory("SnoreCounter",0x7FFFFFFF)
+        TNT1 A 0 A_TakeInventory("StartedToSleep",0x7FFFFFFF)
+        TNT1 A 1 A_SetBlend("Black",0.9,35)
+        TNT1 A 0 A_JumpIfInventory("TigerRoar",1,"WakeUpPowered")
+        W0SW HGFA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Ready
+    WakeUpPowered:
+        W0S5 HGFA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Ready
+    SleepIdle:
+        TNT1 A 0 A_TakeInventory("SleepCounter",0x7FFFFFFF)
+        TNT1 A 0 A_TakeInventory("SnoreCounter",0x7FFFFFFF)
+        TNT1 A 0 A_TakeInventory("StartedToSleep",0x7FFFFFFF)
+        TNT1 A 0 A_PlaySoundEx("shihong/snore","soundslot6",0,0)
+        TNT1 A 0 A_SpawnItemEx("SnoreZ",0,0,52,frandom(-0.05,0.05),frandom(-0.05,0.05),0.25,0,160)
+    SleepIdle1:
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+        TNT1 A 0 A_JumpIfInventory("SleepCounter",35,"SleepIdle0")
+        TNT1 A 0 A_GiveInventory("SleepCounter",1)
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"WakeUp")
+        TNT1 A 0 A_JumpIfInventory("SynthFire",1,"WakeUp")
+        TNT1 A 0 A_JumpIfInventory("SynthAltFire",1,"WakeUp")
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"SleepIdle1")
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+        goto WakeUp
+    SleepIdle0:
+        TNT1 A 0 A_JumpIfInventory("SnoreCounter",4,"SleepIdle")
+        TNT1 A 0 A_SpawnItemEx("SnoreZ",0,0,52,frandom(-0.05,0.05),frandom(-0.05,0.05),0.25,0,160)
+        TNT1 A 0 A_TakeInventory("SleepCounter",0x7FFFFFFF)
+        TNT1 A 0 A_GiveInventory("SnoreCounter",1)
+        goto SleepIdle1
 
     Fire:
         TNT1 A 0

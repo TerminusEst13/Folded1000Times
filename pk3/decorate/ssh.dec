@@ -292,6 +292,23 @@ actor BFGModeActivate : CustomInventory
     }
 }
 
+actor SnoreZ
+{
+    +NOINTERACTION
+    Scale 0.15
+    Height 0
+    Radius 0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SSHZ A 70 bright
+    Spawn1:
+        SSHZ A 7 bright A_FadeOut(0.1)
+        loop
+    }
+}
+
 
 
 actor StompPuff

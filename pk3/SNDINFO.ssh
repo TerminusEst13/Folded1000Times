@@ -15,6 +15,16 @@ $playeralias      Shihong   male    *usefail        shihong/nope
 $playeralias      Shihong   male    *taunt          shihong/yawn
 $playeralias      Shihong   male    *jump           shihong/jump
 
+shihong/secret         SHSECRET
+
+$random shihong/snore { shisnore1 shisnore2 shisnore3 shisnore4 shisnore5 shisnore6 }
+shisnore1              SSHSNOR1
+shisnore2              SSHSNOR2
+shisnore3              SSHSNOR3
+shisnore4              SSHSNOR4
+shisnore5              SSHSNOR5
+shisnore6              SSHSNOR6
+
 // The original sounds, kept for posterity's sake
 $playersound      SSHPlaceholder   male    *death          SHLGDETH  // Taken from Neverwinter Nights
 $playersounddup   SSHPlaceholder   male    *xdeath         *death
@@ -49,7 +59,6 @@ $playersound      Cyberdog   male    *usefail        CYBRNOPE // Taken from the 
 $playersound      Cyberdog   male    *taunt          CYBRTANT // Taken from Sony Pictures Sound Effects
 $playersound      Cyberdog   male    *jump           CYBRJUMP // Taken from Sony Pictures Sound Effects
 
-shihong/secret         SHSECRET
 shihong/idlestart      SSHIDLE1 // Taken from omar-alvarado on Freesound
 shihong/idlestop       SSHIDLE2 // Mixed with sounds by ls, sempoo, xsub, and cosp-lcs13 on Freesound
 

@@ -219,6 +219,9 @@ actor SwapCooldown : Counter { Inventory.MaxAmount 210 }
 actor HunterBurstCounter : Counter { Inventory.MaxAmount 6 }
 actor ChargeLevel : Counter {}
 actor MastodonCharge : Counter {}
+actor StartedToSleep : Counter {}
+actor SleepCounter : Counter {}
+actor SnoreCounter : Counter {}
 
 actor KiMeterCounter : Counter { Inventory.MaxAmount 4000 }
 

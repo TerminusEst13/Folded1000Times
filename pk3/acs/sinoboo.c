@@ -228,6 +228,9 @@ script SINO_UNLOADING unloading
     TakeInventory("GrenadeTimer",0x7FFFFFFF);
     TakeInventory("WallGrabbed",0x7FFFFFFF);
     TakeInventory("SwapCooldown",0x7FFFFFFF);
+    TakeInventory("SleepCounter",0x7FFFFFFF);
+    TakeInventory("SnoreCounter",0x7FFFFFFF);
+    TakeInventory("StartedToSleep",0x7FFFFFFF);
 }
 
 script SINO_DEATH DEATH
