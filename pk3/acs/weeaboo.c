@@ -652,11 +652,16 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         break;
 
     case WEEB_DEC_PICKUPCHECK:
-        SetResultValue(GetCvar("dst_cl_decorationnoise"));
-        break;
+        switch (bowlshot)
+        {
+            case 0:
+            LocalAmbientSound("shihong/idlestart",127);
+            break;
 
-    case WEEB_DEC_PICKUPCHECK:
-        SetResultValue(GetCvar("dst_cl_decorationnoise"));
+            case 1:
+            LocalAmbientSound("shihong/idlestop",127);
+            break;
+        }
         break;
 
     //[Scroton] cases 98 and 99, here so they're not subject to the ConsolePlayerNumber check

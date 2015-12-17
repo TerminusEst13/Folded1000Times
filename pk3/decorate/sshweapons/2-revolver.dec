@@ -26,6 +26,7 @@ actor 02Viper : Fists
     {
     Ready:
         W1RV A 1 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"IdleAnimation")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
@@ -244,6 +245,55 @@ actor 02Viper : Fists
     Flash:
         MSOS ABCDEFGHIJKLMNOPQRSTUVW 2 BRIGHT
         stop
+    IdleAnimation:
+        W1RV HIJK 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 5
+        TNT1 A 0 ACS_ExecuteAlways(275,0,3,0,0)
+        TNT1 A 1 A_SetBlend("Black",0.025,2)
+        TNT1 A 1 A_SetBlend("Black",0.05,2)
+        TNT1 A 1 A_SetBlend("Black",0.075,2)
+        TNT1 A 1 A_SetBlend("Black",0.1,2)
+        TNT1 A 1 A_SetBlend("Black",0.125,2)
+        TNT1 A 1 A_SetBlend("Black",0.15,2)
+        TNT1 A 1 A_SetBlend("Black",0.175,2)
+        TNT1 A 1 A_SetBlend("Black",0.2,2)
+        TNT1 A 1 A_SetBlend("Black",0.225,2)
+        TNT1 A 1 A_SetBlend("Black",0.25,2)
+        TNT1 A 1 A_SetBlend("Black",0.275,2)
+        TNT1 A 1 A_SetBlend("Black",0.3,2)
+        TNT1 A 1 A_SetBlend("Black",0.325,2)
+        TNT1 A 1 A_SetBlend("Black",0.35,2)
+        TNT1 A 1 A_SetBlend("Black",0.375,2)
+        TNT1 A 1 A_SetBlend("Black",0.4,2)
+        TNT1 A 1 A_SetBlend("Black",0.425,2)
+        TNT1 A 1 A_SetBlend("Black",0.45,2)
+        TNT1 A 1 A_SetBlend("Black",0.475,2)
+        TNT1 A 1 A_SetBlend("Black",0.5,2)
+        TNT1 A 1 A_SetBlend("Black",0.525,2)
+        TNT1 A 1 A_SetBlend("Black",0.55,2)
+        TNT1 A 1 A_SetBlend("Black",0.575,2)
+        TNT1 A 1 A_SetBlend("Black",0.6,2)
+        TNT1 A 1 A_SetBlend("Black",0.625,2)
+        TNT1 A 1 A_SetBlend("Black",0.65,2)
+        TNT1 A 1 A_SetBlend("Black",0.675,2)
+        TNT1 A 1 A_SetBlend("Black",0.7,2)
+        TNT1 A 1 A_SetBlend("Black",0.725,2)
+        TNT1 A 1 A_SetBlend("Black",0.75,2)
+        TNT1 A 1 A_SetBlend("Black",0.775,2)
+        TNT1 A 1 A_SetBlend("Black",0.8,2)
+        TNT1 A 1 A_SetBlend("Black",0.825,2)
+        TNT1 A 1 A_SetBlend("Black",0.85,2)
+        TNT1 A 1 A_SetBlend("Black",0.875,2)
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+    Idling:
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+        TNT1 A 0 A_JumpIfInventory("WaitingTooLong",0,"Idling")
+        TNT1 A 1 A_SetBlend("Black",0.9,2)
+        TNT1 A 0 ACS_ExecuteAlways(275,0,3,1,0)
+        TNT1 A 1 A_SetBlend("Black",0.9,35)
+        W1RV KJIHA 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Ready
+        
 
     Fire:
         TNT1 A 0 A_JumpIfInventory("Grappling",1,"CancelGrapple")
