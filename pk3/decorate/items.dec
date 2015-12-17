@@ -238,7 +238,7 @@ actor DoomArmorBonus : CustomInventory//GreenArmor { -DROPPED }
 actor SoulFragmentDisguise : RandomSpawner { DropItem "SoulFragmentDisguise2" }
 actor BatteryDisguise : RandomSpawner { DropItem "BatteryDisguise2" }
 
-actor SoulFragmentDisguise2 : Inventory
+actor SoulFragmentDisguise2 : CustomInventory
 {
     Scale 0.5
     Inventory.RespawnTics 0x7FFFFFFF
@@ -320,10 +320,29 @@ actor SoulFragmentDisguise2 : Inventory
         SLST GGGGG 1 A_SpawnItemEx("SoulStoneEcho7",frandom(-1,1),frandom(-1,1),random(50,250)/100.00,frandom(-1,1),frandom(-1,1),frandom(-1,1),0,160,0)
         SLST GGGGG 1 A_SpawnItemEx("SoulStoneEcho7",frandom(-1,1),frandom(-1,1),random(50,250)/100.00,frandom(-1,1),frandom(-1,1),frandom(-1,1),0,160,0)
         loop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("IsJungHaeLin",1,"PickupHaeLin")
+        TNT1 A 0 A_JumpIfInventory("IsSSH",1,"PickupSSH")
+        TNT1 A 0
+        stop
+    PickupHaeLin:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
+        TNT1 A 0
+        stop
+    PickupSSH:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
+        TNT1 A 0
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
     }
 }
 
-actor BatteryDisguise2 : Inventory
+actor BatteryDisguise2 : CustomInventory
 {
     Scale 0.6
     Inventory.RespawnTics 0x7FFFFFFF
@@ -344,6 +363,25 @@ actor BatteryDisguise2 : Inventory
         BTRY A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
         BTRY AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
         loop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("IsJungHaeLin",1,"PickupHaeLin")
+        TNT1 A 0 A_JumpIfInventory("IsSSH",1,"PickupSSH")
+        TNT1 A 0
+        stop
+    PickupHaeLin:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
+        TNT1 A 0
+        stop
+    PickupSSH:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
+        TNT1 A 0
+        stop
+    PickupFail:
+        TNT1 A 0
+        fail
     }
 }
 
