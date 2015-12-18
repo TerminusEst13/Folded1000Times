@@ -74,7 +74,7 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 150: Question/Suggestion to Terminus:
 Would you kindly implement a "soul multiplier" slider in Demonsteele?
 (that would increase ammount of energy souls give you, obviously)
-151: <Eric`> btw term is there a cvar to disable shihong's intro thing with all the numbers? seems like it might be very disorienting for maps that expect you to
+
 
 
 
@@ -333,6 +333,7 @@ SgtShivers: haha yeah
    ^- "The fate of all heroes is dying alone on the battlefield."
    ^- "You're cute when you think you can do it."
    ^- "If getting up and trying again was all it took, we'd all be winners, wouldn't we?" // 30
+151: <Eric`> btw term is there a cvar to disable shihong's intro thing with all the numbers? seems like it might be very disorienting for maps that expect you to
 
 
 <PresidentPeople> Hey Term, suggestion.  Make Armoire/Healf bonuses give combo or DMC meter

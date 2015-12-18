@@ -33,6 +33,7 @@ FROM 0.82 TO 0.XX
 - Decoration sounds are now mono and should no longer play at fulldistance with OpenAL.
 - Picking up weapons in Iron Maiden mode now gives points.
 - There is now a D_TTFTW replacement.
+- For those playing maps where you jump right in the fray instantly, dst_nointro removes the over-dramatic presentation at the start.
 
 
 
