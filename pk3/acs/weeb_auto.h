@@ -66,8 +66,12 @@ script WEEB_ENTER ENTER
         if (GameSkill () == 2 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 2)) { GiveInventory("NormalMarker",1); GiveInventory("ContraLifeToken",6); }
         if (GameSkill () == 3 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 3)) { GiveInventory("HardMarker",1); GiveInventory("ContraLifeToken",4); }
         if (GameSkill () == 4 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 4)) { GiveInventory("NightmareMarker",1); GiveInventory("ContraLifeToken",2); }
-        FadeRange(0,0,0,1.00,0,0,0,0,3.50);
-        LocalAmbientSound("level/intro",127);
+
+        if (GetCvar("dst_nointro") == 1)
+        {
+            FadeRange(0,0,0,1.00,0,0,0,0,3.50);
+            LocalAmbientSound("level/intro",127);
+        }
 
         // Check for if the metal jukebox is loaded as well.
         if (Spawn("DemonSteeleIsSuperCoolAndYouShouldProbablyPlayIt", GetActorX(0), GetActorY(0), GetActorZ(0), u))

@@ -51,9 +51,12 @@ script SINO_ENTER ENTER
         if (GameSkill () == 3 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 3)) { GiveInventory("HardMarker",1); GiveInventory("ContraLifeToken",4); }
         if (GameSkill () == 4 || (GameSkill() == 6 && GetCvar("dst_multiplierhealth") == 4)) { GiveInventory("NightmareMarker",1); GiveInventory("ContraLifeToken",2); }
 
-        FadeRange(64,255,64,1.00,0,0,0,0,3.50);
-        ACS_ExecuteAlways(SINO_DECORATE,0,1,0,0);
-        LocalAmbientSound("level/introssh",127);
+        if (GetCvar("dst_nointro") == 1)
+        {
+            FadeRange(64,255,64,1.00,0,0,0,0,3.50);
+            ACS_ExecuteAlways(362,0,1,0,0);
+            LocalAmbientSound("level/introssh",127);
+        }
 
         GiveInventory("ImAlive",1);
 
