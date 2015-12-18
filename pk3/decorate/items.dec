@@ -1719,7 +1719,7 @@ actor SentinelDisguise2 : Inventory
 
 actor RavenDisguise2 : Inventory
 {
-    Scale 0.35
+    Scale 0.75
     -DROPPED
     +FLOORCLIP
     +QUIET
@@ -1735,8 +1735,8 @@ actor RavenDisguise2 : Inventory
         TNT1 A 0
         TNT1 A 1
     Spawn1:
-        RVIC A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
-        RVIC AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        RVIC ABCBA 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        RVIC AAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
         loop
     }
 }

@@ -40,7 +40,7 @@ actor UnleashTheRaven
     Species "Player"
     SeeSound "raven/see"
     PainSound "raven/pain"
-    DeathSound "raven/dead"
+    DeathSound "raven/death"
     ActiveSound "raven/idle"
     Obituary "%o went into the jaws of death."
     DamageFactor "kubiuti", 0.0
