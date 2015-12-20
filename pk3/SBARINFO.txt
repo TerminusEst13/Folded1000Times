@@ -242,6 +242,8 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
 ininventory IsSSH, 1
 {
 drawimage "SSHHUD1", 312, 180, center;
+ininventory BFGModeActivate, 1 { drawimage "SSHHUD1a", 312, 180, center; }
+ininventory BFGModeOn, 1 { drawimage "SSHHUD1b", 312, 180, center; }
 
 ininventory GotHammer, 1 { drawimage "SSHGOTT1", 276, 172, center; }
 ininventory not DontGotPistol, 1 { drawimage "SSHGOTS1", 281, 172, center; }
@@ -599,11 +601,13 @@ ininventory not DontGotPistol { drawimage "SSHGOTS1", 270, 174, center; }
 ininventory GotShotgun, 1 { drawimage "SSHGOTA1", 275, 174, center; }
 ininventory GotUzi, 1 { drawimage "SSHGOTR1", 280, 174, center; }
 ininventory GotCarronade, 1 { drawimage "SSHGOTE1", 285, 174, center; }
+ininventory BFGModeActivate, 1 { drawimage "SSHGOTM1", 294, 174, center; }
 isselected "01Tiger" { drawimage "SSHGOTT2", 265, 174, center; }
 isselected "02Viper" { drawimage "SSHGOTS2", 270, 174, center; }
 isselected "03Wolf" { drawimage "SSHGOTA2", 275, 174, center; }
 isselected "04Scorpions" { drawimage "SSHGOTR2", 280, 174, center; }
 isselected "05Dragon" { drawimage "SSHGOTE2", 285, 174, center; }
+isselected "00Mastodon" { drawimage "SSHGOTM2", 294, 174, center; }
 isselected "01Tiger" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
                        drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 304, 186; }
 isselected "02Viper" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
