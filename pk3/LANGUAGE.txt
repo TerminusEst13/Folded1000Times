@@ -55,7 +55,11 @@ OB_FRIENDLY2   = "%k decided to break the band up.";
 OB_FRIENDLY3   = "%k heard the call and buried them all."; // DevilDriver - I Dreamed I Died
 OB_FRIENDLY4   = "%k has another thing comin'."; // Judas Priest - Another Thing Coming
 
-C1TEXT = // Map07
+// Unfortunately, these can't go in any longer. Since the intermission texts do
+// not support more than one character, every time Shihong would get a text it
+// would be Hae-Lin's texts coming through.
+
+/*C1TEXT = // Map07
     "*RING RING, RING RING*\n"
     "\n"
     "Hello, God? It's me, Jung Hae-Lin.\n"
@@ -152,4 +156,4 @@ C6TEXT = // Map32
     "now. Yeah, again.\n"
     "\n"
     "All right, $7.31? I'll be there shortly.\n"
-    "Thanks, bye!";
+    "Thanks, bye!";*/

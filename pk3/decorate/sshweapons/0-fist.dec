@@ -1293,6 +1293,8 @@ actor PowerKickAttack : PunchAttack1
 
 actor DashKickAttack : PunchAttack1
 {
+    Radius 14
+    Height 12
     +FORCEPAIN
     Damage (150)
     DamageType "ShihongPunchSpecial"
