@@ -341,7 +341,7 @@ actor "Fists" : Weapon
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
     PunchPrep:
-        TNT1 A 0 A_JumpIfInventory("JetpackModeOn",1,"DashKick")
+        TNT1 A 0 A_JumpIfInventory("JetpackCooldown",1,"DashKick")
         TNT1 A 0 A_JumpIfInventory("JumpedUp",1,"AirKick")
         TNT1 A 0 A_Jump(255,"Punch1","Punch2","Punch3","Punch4")
         TNT1 A 1

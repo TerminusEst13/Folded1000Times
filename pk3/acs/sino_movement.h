@@ -95,15 +95,65 @@ script SINO_JETBOOSTER ENTER
     int buttons;
     int pitchy;
     int JetpackFuelCounter;
+    int KurtAngle;
 
     while (1)
     {
         if (CheckInventory("IsJungHaeLin") == 1)
         { terminate; }
 
+        KurtAngle = GetActorAngle(0) >> 8;
         buttons = GetPlayerInput(-1, INPUT_BUTTONS);
 
         pitchy = GetActorPitch(0);
+
+    // GET OUTTA DODGE
+        if (CheckInventory("JetpackCooldown") == 0 && CheckInventory("JetpackFuel") > 0)
+        {
+          // Simple stuff. If the player hits Run and another button, they get thrown in a direction
+          // and are given a powerup and a cooldown.
+          if (buttons & BT_SPEED && ( buttons & BT_FORWARD | buttons & BT_MOVELEFT | buttons & BT_BACK | buttons & BT_MOVERIGHT ) )
+          {
+              if (buttons & BT_FORWARD) { ThrustThing(KurtAngle+0,25,0,0); }
+              if (buttons & BT_MOVELEFT) { ThrustThing(KurtAngle+64,25,0,0); }
+              if (buttons & BT_BACK) { ThrustThing(KurtAngle+128,25,0,0); }
+              if (buttons & BT_MOVERIGHT) { ThrustThing(KurtAngle+192,25,0,0); }
+              ThrustThingZ(0,20,0,0);
+              ActivatorSound("shihong/thruster",127);
+              GiveInventory("JetpackThrustLimit",30);
+              GiveInventory("JetpackCooldown",15);
+              TakeInventory("JetpackFuel",20);
+              ACS_ExecuteAlways(267,0,6,0,0);
+          }
+        }
+
+        // Booster fuel regeneration.
+        // Fuel regenerates faster in Dodger mode. But it also regenerates faster when on the ground.
+        // First it checks to see whether you're in Dodger mode, then it checks to see whether you're on the ground or in the air.
+        if (CheckInventory("JetpackThrustLimit") == 0)
+        {
+            if (CheckInventory("TricksterModeOn") == 1 && JetpackFuelCounter >= 1)
+            {
+              GiveInventory("JetpackFuel",1);
+              JetpackFuelCounter = 0;
+            }
+            else if (CheckInventory("TricksterModeOn") == 0 && JetpackFuelCounter >= 3)
+            {
+              GiveInventory("JetpackFuel",1);
+              JetpackFuelCounter = 0;
+            }
+            JetpackFuelCounter++;
+        }
+
+        Delay(1);
+        if (isDead(0))
+        { terminate; }
+    }
+}
+
+/*
+
+
         //Print(d:pitchy);
 
         // In Zandro 2.0, for some reason, Shihong is able to execute Hae-Lin's dash.
@@ -1086,13 +1136,4 @@ script SINO_JETBOOSTER ENTER
               JetpackFuelCounter = 0;
             }
             JetpackFuelCounter++;
-        }
-
-        Delay(1);
-
-        if (isDead(0))
-        {
-            terminate;
-        }
-    }
-}
+        }*/

@@ -212,6 +212,7 @@ actor RavenLeftLifeCounter : Counter { Inventory.MaxAmount 150 }
 actor RavenRightLifeCounter : Counter { Inventory.MaxAmount 150 }
 
 actor JetpackFuel : Counter { Inventory.MaxAmount 120 }
+actor JetpackCooldown : Counter { Inventory.MaxAmount 35 }
 actor PunchComboCounter : Counter { Inventory.MaxAmount 10 }
 actor GrenadeTimer : Counter { Inventory.MaxAmount 140 }
 actor InTheAir : Counter { Inventory.MaxAmount 10 }
@@ -222,6 +223,7 @@ actor MastodonCharge : Counter {}
 actor StartedToSleep : Counter {}
 actor SleepCounter : Counter {}
 actor SnoreCounter : Counter {}
+actor JetpackThrustLimit : Counter { Inventory.MaxAmount 70 }
 
 actor KiMeterCounter : Counter { Inventory.MaxAmount 4000 }
 
