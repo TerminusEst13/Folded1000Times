@@ -28,6 +28,8 @@ GRAPHICS:
 - birdinginformation.com for the HUD graphic for the Raven
 - chinabuye.com for the dog plush sprite
 - Sgt. Shivers for the Mastodon nuclear death kill big gun
+- Sgt. Shivers for the Raven pickup sprites
+- Aeons of Death for the raw energy pickup sprites
 - PresidentPeople for the Mode Change inventory graphics
 
 CODE:

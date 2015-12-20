@@ -539,6 +539,11 @@ int GravityOfLight;
          if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("ammo/knapsack",127); }
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("briefcase/get",127); }
          break;
+
+    case 12: // Backpack pickup
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("armor/radsuit",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("shihong/coolant",127); }
+         break;
     }
     break;
 
@@ -632,6 +637,12 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
           color = GetCvar("msg0color");
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a soul prison."); }
           if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a raw energy deposit."); }
+          break;
+
+        case 11: // Radsuit
+          color = GetCvar("msg0color");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up the Boots of Protection."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Drank up some radiator coolant."); }
           break;
         }
         break;

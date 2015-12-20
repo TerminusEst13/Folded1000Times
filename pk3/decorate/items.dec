@@ -1367,7 +1367,7 @@ actor ArmorHealthMegaPack : CustomInventory
     Inventory.PickupSound "nah"//"health/ramen"
     +INVENTORY.ALWAYSPICKUP
     +FLOORCLIP
-    states
+    States
     {
     Spawn:
         TNT1 A 0
@@ -1499,7 +1499,7 @@ actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
     }
 }
 
-actor PowerBoots : PowerupGiver replaces RadSuit
+/*actor PowerBoots : PowerupGiver replaces RadSuit
 {
     Inventory.PickupMessage "Picked up the Boots of Protection!"
     Inventory.PickupSound "armor/radsuit"
@@ -1514,6 +1514,118 @@ actor PowerBoots : PowerupGiver replaces RadSuit
     Spawn:
         RDBT A 1 Bright
         RDBT A 30
+        loop
+    }
+}*/
+
+actor PowerBoots : CustomInventory replaces RadSuit
+{
+    //Inventory.PickupMessage "      " // COCKS
+    +INVENTORY.AUTOACTIVATE
+    +INVENTORY.ALWAYSPICKUP
+    +QUIET
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("BootsDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+        TNT1 A 0 A_SpawnItemEx("CoolantDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+    Spawn1:
+        TNT1 A 1
+        TNT1 A -1
+        stop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("SolesOfTheDamned",1)
+        TNT1 A 0 A_GiveInventory("Points",500)
+        TNT1 A 0 A_SetBlend("Green",0.25,15)
+        TNT1 A 0 ACS_ExecuteWithResult(275,0,11)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,12,0) // Y'know, in hindsight, this was kind of redundant.
+        stop
+    }
+}
+
+actor SolesOfTheDamned : PowerIronFeet
+{
+    Powerup.Duration -60
+    Powerup.Color green 0.1
+}
+
+actor BootsDisguise : RandomSpawner { DropItem "BootsDisguise2" }
+actor CoolantDisguise : RandomSpawner { DropItem "CoolantDisguise2" }
+
+actor BootsDisguise2 : Inventory
+{
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    +FLOATBOB
+    VisibleToPlayerClass MeleePlayer
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        // And do a constant A_Warp so if the megasphere moves, this moves along with it.
+        RDBT A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        RDBT AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    }
+}
+
+actor CoolantDisguise2 : Inventory
+{
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        // And do a constant A_Warp so if the megasphere moves, this moves along with it.
+        COOL A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        COOL AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+
+        // How COOL B)
+        loop
+    }
+}
+
+actor PizzaDisguise2 : Inventory
+{
+    XScale 0.3
+    YScale 0.2
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        PIZA B 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        PIZA BBBBBB 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
         loop
     }
 }
