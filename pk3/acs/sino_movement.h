@@ -118,7 +118,7 @@ script SINO_JETBOOSTER ENTER
               if (buttons & BT_MOVELEFT) { ThrustThing(KurtAngle+64,25,0,0); }
               if (buttons & BT_BACK) { ThrustThing(KurtAngle+128,25,0,0); }
               if (buttons & BT_MOVERIGHT) { ThrustThing(KurtAngle+192,25,0,0); }
-              ThrustThingZ(0,16,0,0);
+              ThrustThingZ(0,18,0,0);
               ActivatorSound("shihong/thruster",127);
               GiveInventory("JetpackThrustLimit",30);
               GiveInventory("JetpackCooldown",15);
