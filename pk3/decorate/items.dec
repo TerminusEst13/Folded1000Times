@@ -1606,30 +1606,6 @@ actor CoolantDisguise2 : Inventory
     }
 }
 
-actor PizzaDisguise2 : Inventory
-{
-    XScale 0.3
-    YScale 0.2
-    -DROPPED
-    +FLOORCLIP
-    +QUIET
-    +ALWAYSPICKUP
-    -SOLID
-    +DONTGIB
-    -COUNTITEM
-    VisibleToPlayerClass MeleePlayer2
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 1
-    Spawn1:
-        PIZA B 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
-        PIZA BBBBBB 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
-        loop
-    }
-}
-
 ACTOR SilverPowerLine
 {
     Speed 1
