@@ -19,7 +19,7 @@ actor DecorationSpawner
         TNT1 AAAAAAAAAA 1 A_LookEx(0,0,500)
         Goto DunSee
     See:
-        TNT1 A 0 A_Jump(255,"ShootMedikit","ShootStimpack","ShootBullets","ShootShells","ShootRockets","ShootCell","ShootSoul","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
+        TNT1 A 0 A_Jump(255,"ShootMedikit","ShootStimpack","ShootBullets","ShootShells","ShootRockets","ShootCell",/*"ShootSoul",*/"Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
         TNT1 A 1
         loop
     ShootStimpack:
@@ -61,7 +61,7 @@ actor DecorationSpawner
         TNT1 A 0
         stop
     DunSee:
-        TNT1 A 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell","SpawnSoul","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
+        TNT1 A 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell",/*"SpawnSoul",*/"Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
         TNT1 A 1
         loop
     SpawnStimpack:
@@ -110,7 +110,7 @@ ACTOR DestructableDecorationBaseStates
         "----" Z 1 A_Chase
         Goto DunSee
     Missile:
-        "----" Z 0 A_Jump(255,"ShootMedikit","ShootStimpack","ShootBullets","ShootShells","ShootRockets","ShootCell","ShootSoul","ShootPepper","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
+        "----" Z 0 A_Jump(255,"ShootMedikit","ShootStimpack","ShootBullets","ShootShells","ShootRockets","ShootCell",/*"ShootSoul",*/"ShootPepper","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
         "----" Z 1
         Loop
     ShootStimpack:
@@ -184,7 +184,7 @@ ACTOR DestructableDecorationBaseStates
         "----" Z 1
         Goto DoneCheck
     DunSee:
-        "----" Z 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell","SpawnSoul","SpawnPepper","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
+        "----" Z 0 A_Jump(255,"SpawnMedikit","SpawnStimpack","SpawnBullets","SpawnShells","SpawnRockets","SpawnCell",/*"SpawnSoul",*/"SpawnPepper","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing","Nothing")
         "----" Z 1
         Loop
     SpawnStimpack:
