@@ -33,6 +33,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     DamageFactor "KubiLungeAttack", 10.0
     DamageFactor "LittleMacUppercut", 10.0
     DamageFactor "ShihongSpinAttack", 10.0
+    DamageFactor "ShihongMissile", 10.0
     DamageFactor "AcaciaDamage", 3.0
     DamageFactor "ChemiKill", 5.0
     DamageFactor "KharonSheathe", 1.5
@@ -644,6 +645,7 @@ actor POSXKubiuted
     DamageFactor "EMPulse", 0.0
     DamageFactor "LittleMacUppercut", 0.0
     DamageFactor "ShihongSpinAttack", 0.0
+    DamageFactor "ShihongMissile", 0.0
     DamageFactor "KharonHookshot", 0.0
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
@@ -802,6 +804,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     DamageFactor "KubiLungeAttack", 6.6
     DamageFactor "LittleMacUppercut", 6.6
     DamageFactor "ShihongSpinAttack", 6.6
+    DamageFactor "ShihongMissile", 6.6
     DamageFactor "AcaciaDamage", 3.0
     DamageFactor "ChemiKill", 3.3
     DamageFactor "KharonSheathe", 1.5
@@ -1528,6 +1531,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     DamageFactor "KubiLungeAttack", 3.0
     DamageFactor "LittleMacUppercut", 3.0
     DamageFactor "ShihongSpinAttack", 3.0
+    DamageFactor "ShihongMissile", 3.0
     DamageFactor "AcaciaDamage", 1.5
     DamageFactor "ChemiKill", 1.5
     DamageFactor "KharonSheathe", 1.25
@@ -2056,6 +2060,7 @@ ACTOR Yakuza replaces WolfensteinSS
     DamageFactor "LittleMacUppercut", 2.0
     DamageFactor "ShihongSpinAttack", 2.0
     DamageFactor "ShihongPunchSpecial", 1.5
+    DamageFactor "ShihongMissile", 2.0
     Obituary "%o was assassinated by the Yakuza."
     DropItem "WeebClip", 128
     DropItem "WeebCell", 32

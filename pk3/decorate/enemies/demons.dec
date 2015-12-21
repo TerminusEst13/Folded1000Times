@@ -27,6 +27,12 @@ ACTOR WeeabooDemon : Demon replaces Demon
     DamageFactor "GuardMove", 0.0
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
+    DamageFactor "KubiSpinAttack", 1.5
+    DamageFactor "KubiRangeAttack", 1.5
+    DamageFactor "KubiLungeAttack", 1.5
+    DamageFactor "LittleMacUppercut", 1.5
+    DamageFactor "ShihongSpinAttack", 1.5
+    DamageFactor "ShihongMissile", 1.5
     SeeSound "pinky/see"
     PainSound "pinky/pain"
     DeathSound "pinky/death"

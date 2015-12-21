@@ -35,6 +35,7 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
     DamageFactor "KubiLungeAttack", 2.25
     DamageFactor "LittleMacUppercut", 2.25
     DamageFactor "ShihongSpinAttack", 2.25
+    DamageFactor "ShihongMissile", 2.25
     DamageFactor "AcaciaDamage", 1.65
     DamageFactor "KharonSheathe", 1.25
     DamageFactor "ShihongPunchSpecial", 1.25
