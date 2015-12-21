@@ -1,6 +1,8 @@
 actor PowerShieldProtection : PowerProtection
 {
     DamageFactor "Normal", 0.0
+    Powerup.Duration -30
+    Powerup.Color blue2 0.15
     +NORADIUSDMG
 }
 

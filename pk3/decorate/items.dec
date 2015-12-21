@@ -1476,25 +1476,91 @@ ACTOR RamenSmoke
     }
 }
 
-actor PowerShield : PowerupGiver replaces InvulnerabilitySphere
+actor PowerShield : CustomInventory replaces InvulnerabilitySphere
 {
-    Inventory.PickupMessage "Picked up a Majestic Vanguard!"
-    Inventory.PickupSound "armor/invuln"
-    Powerup.Type "ShieldProtection"
-    Powerup.Duration -30
-    Powerup.Color blue2 0.10
-    Inventory.MaxAmount 0
-    Scale 0.5
-    +FLOATBOB
+    Inventory.PickupMessage " "//"Picked up a Majestic Vanguard!"
+    //Inventory.PickupSound "armor/invuln"
+    //Powerup.Type "ShieldProtection"
+    //Powerup.Duration -30
+    //Powerup.Color blue2 0.10
+    //Inventory.MaxAmount 0
+    //Scale 0.5
+    //+FLOATBOB
     +INVENTORY.AUTOACTIVATE
     +INVENTORY.BIGPOWERUP
+    +QUIET
     States
     {
     Spawn:
-        ARMR C 1 Bright A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
-        ARMR CCCCC 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
-        ARMR CCCCC 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
-        ARMR CCCCC 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("HaloDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+        TNT1 A 0 A_SpawnItemEx("HelmetDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
+    Spawn1:
+        TNT1 A 1 Bright A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        TNT1 AAAAA 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        TNT1 AAAAA 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        TNT1 AAAAA 2 A_SpawnItemEx("BluePowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
+        loop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("PowerShieldProtection",1)
+        TNT1 A 0 A_GiveInventory("Points",1000)
+        TNT1 A 0 A_SetBlend("Blue",0.25,15)
+        TNT1 A 0 ACS_ExecuteWithResult(275,0,12)
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,13,0)
+        stop
+    }
+}
+
+actor HaloDisguise : RandomSpawner { DropItem "HaloDisguise2" }
+actor HelmetDisguise : RandomSpawner { DropItem "HelmetDisguise2" }
+
+actor HaloDisguise2 : Inventory
+{
+    Scale 0.5
+    Inventory.RespawnTics 0x7FFFFFFF
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    +FLOATBOB
+    VisibleToPlayerClass MeleePlayer
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        ARMR C 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        ARMR CCCCCC 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        loop
+    }
+}
+
+actor HelmetDisguise2 : Inventory
+{
+    Scale 0.5
+    -DROPPED
+    +FLOORCLIP
+    +QUIET
+    +ALWAYSPICKUP
+    -SOLID
+    +DONTGIB
+    -COUNTITEM
+    +FLOATBOB
+    VisibleToPlayerClass MeleePlayer2
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+    Spawn1:
+        HLMT A 1 Bright //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
+        HLMT AAAAAA 5 //A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_INTERPOLATE)
         loop
     }
 }
@@ -1539,9 +1605,9 @@ actor PowerBoots : CustomInventory replaces RadSuit
         TNT1 A 0
         TNT1 A 0 A_GiveInventory("SolesOfTheDamned",1)
         TNT1 A 0 A_GiveInventory("Points",500)
-        TNT1 A 0 A_SetBlend("Green",0.25,15)
+        TNT1 A 0 A_SetBlend("Green",0.5,20)
         TNT1 A 0 ACS_ExecuteWithResult(275,0,11)
-        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,12,0) // Y'know, in hindsight, this was kind of redundant.
+        TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_PLAYSOUND,12,0)
         stop
     }
 }
