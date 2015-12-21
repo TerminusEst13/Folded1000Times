@@ -108,7 +108,7 @@ script SINO_JETBOOSTER ENTER
         pitchy = GetActorPitch(0);
 
     // GET OUTTA DODGE
-        if (CheckInventory("JetpackCooldown") == 0 && CheckInventory("JetpackFuel") > 0)
+        if (CheckInventory("JetpackCooldown") == 0 && CheckInventory("JetpackFuel") > 0 && CheckInventory("GrabbingTheWall") == 0)
         {
           // Simple stuff. If the player hits Run and another button, they get thrown in a direction
           // and are given a powerup and a cooldown.

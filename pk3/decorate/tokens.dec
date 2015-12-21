@@ -223,7 +223,7 @@ actor MastodonCharge : Counter {}
 actor StartedToSleep : Counter {}
 actor SleepCounter : Counter {}
 actor SnoreCounter : Counter {}
-actor JetpackThrustLimit : Counter { Inventory.MaxAmount 70 }
+actor JetpackThrustLimit : Counter { Inventory.MaxAmount 105 }
 
 actor KiMeterCounter : Counter { Inventory.MaxAmount 4000 }
 
