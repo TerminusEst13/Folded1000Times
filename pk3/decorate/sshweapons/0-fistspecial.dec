@@ -242,7 +242,7 @@ ACTOR LariatExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(512,448,0)
+        TNT1 A 1 A_Explode(640,512,0)
         Stop
     }
 }
@@ -263,7 +263,7 @@ ACTOR LariatExplosionJF
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(256,448,0)
+        TNT1 A 1 A_Explode(256,512,0)
         Stop
     }
 }
@@ -287,7 +287,7 @@ actor DashUppercutExplosion
     {
       Spawn:
         TNT1 A 1
-        TNT1 A 1 A_Explode(448,196,0)
+        TNT1 A 1 A_Explode(512,196,0)
         stop
     }
 }
@@ -311,7 +311,7 @@ actor DashUppercutExplosionJF
     {
       Spawn:
         TNT1 A 1
-        TNT1 A 1 A_Explode(640,256,0)
+        TNT1 A 1 A_Explode(768,256,0)
         stop
     }
 }
@@ -339,7 +339,7 @@ actor GigatonPunch : FastProjectile
 {
     Radius 1
     Height 1
-    Damage (512)
+    Damage (640)
     Speed 96
     RenderStyle Add
     Alpha 0.6
@@ -397,7 +397,7 @@ actor GigatonHammer : FastProjectile
 {
     Radius 1
     Height 1
-    Damage (512)
+    Damage (640)
     Speed 96
     RenderStyle Add
     Alpha 0.6
@@ -485,7 +485,7 @@ ACTOR GigatonPunchExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(640,96,0,0,32)
+        TNT1 A 1 A_Explode(640,128,0,0,64)
         Stop
     }
 }
@@ -506,7 +506,7 @@ ACTOR GigatonHammerExplosion
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_Explode(1280,160,0,0,96)
+        TNT1 A 1 A_Explode(1280,192,0,0,96)
         Stop
     }
 }
