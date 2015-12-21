@@ -453,6 +453,7 @@ ACTOR Blackened replaces PainElemental
         TNT1 A 0 A_FaceTarget
         TNT1 A 0 A_PlaySoundEx("blackened/drain","soundslot7")
         TNT1 A 0 A_TakeFromTarget("SuperMeterCounter",1)
+        TNT1 A 0 A_TakeFromTarget("KiMeterCounter",10)
         TNT1 A 0 A_GiveToTarget("BlackenedFlicker",1)
         TNT1 A 0 A_GiveToTarget("BlackenedSlowdown",1)
         BLCK III 1 BRIGHT A_SpawnItemEx("DarkAfterimageD",random(-150,-50)/100.00,random(-100,100)/100.00,random(-100,100)/100.00,0,0,0,0,32)
