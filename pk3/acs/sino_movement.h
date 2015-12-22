@@ -120,8 +120,10 @@ script SINO_JETBOOSTER ENTER
               if (buttons & BT_MOVERIGHT) { ThrustThing(KurtAngle+192,25,0,0); }
               ThrustThingZ(0,18,0,0);
               ActivatorSound("shihong/thruster",127);
-              GiveInventory("JetpackThrustLimit",30);
-              GiveInventory("JetpackCooldown",15);
+              if (CheckInventory("TricksterModeOn") == 0) { GiveInventory("JetpackThrustLimit",30); }
+                  else { GiveInventory("JetpackThrustLimit",15); }
+              if (CheckInventory("TricksterModeOn") == 0) { GiveInventory("JetpackCooldown",15); }
+                  else { GiveInventory("JetpackCooldown",14); }
               TakeInventory("JetpackFuel",20);
               ACS_ExecuteAlways(267,0,6,0,0);
           }
