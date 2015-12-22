@@ -108,7 +108,7 @@ script SINO_JETBOOSTER ENTER
         pitchy = GetActorPitch(0);
 
     // GET OUTTA DODGE
-        if (CheckInventory("JetpackCooldown") == 0 && CheckInventory("JetpackFuel") > 0 && CheckInventory("GrabbingTheWall") == 0)
+        if (CheckInventory("JetpackCooldown") == 0 && CheckInventory("JetpackFuel") >= 20 && CheckInventory("GrabbingTheWall") == 0)
         {
           // Simple stuff. If the player hits Run and another button, they get thrown in a direction
           // and are given a powerup and a cooldown.
@@ -121,7 +121,7 @@ script SINO_JETBOOSTER ENTER
               ThrustThingZ(0,18,0,0);
               ActivatorSound("shihong/thruster",127);
               if (CheckInventory("TricksterModeOn") == 0) { GiveInventory("JetpackThrustLimit",30); }
-                  else { GiveInventory("JetpackThrustLimit",15); }
+                  else { GiveInventory("JetpackThrustLimit",20); }
               if (CheckInventory("TricksterModeOn") == 0) { GiveInventory("JetpackCooldown",15); }
                   else { GiveInventory("JetpackCooldown",14); }
               TakeInventory("JetpackFuel",20);
