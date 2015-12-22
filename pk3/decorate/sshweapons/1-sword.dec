@@ -1221,7 +1221,7 @@ actor 01Tiger : Fists
         W0SW FGH 1 BRIGHT
         TNT1 A 5
     Reload:
-        TNT1 A 1 A_TakeInventory("SwordCharge",10)
+        TNT1 A 1 A_TakeInventory("SwordCharge",5)
         W0S4 AB 2 BRIGHT
         W0S4 CD 2 BRIGHT
         TNT1 A 0 A_SetBlend("white",0.75,4)
@@ -1443,15 +1443,19 @@ actor 01Tiger : Fists
         TNT1 A 0 A_JumpIfInventory("SwordCharge",10,1)
         goto PoweredNope
         TNT1 A 5
-        TNT1 A 0 A_PlayWeaponSound("triumph/charge")
+        TNT1 A 0 A_PlayWeaponSound("triumph/powercharge")
         W0S7 ABCDE 2 BRIGHT
         W0S7 F 15 BRIGHT
-        TNT1 A 0 A_PlaySoundEx("triumph/laserswing","SoundSlot6")
+        TNT1 A 0 A_PlaySoundEx("triumph/powerlaser","SoundSlot6")
         W0S7 G 2 BRIGHT
         W0S7 HI 1 BRIGHT
         TNT1 A 0 A_SetBlend("white",0.25,10)
         TNT1 A 0 A_TakeInventory("SwordCharge",10)
-        TNT1 A 0 A_BFGSpray("BFGExtra",40,10)
+        TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",-16,0,2,0,0)
+        TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",-8,0,1,0,0)
+        TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",0,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",8,0,-1,0,0)
+        TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",16,0,-2,0,0)
         W0S7 JKLMN 1 BRIGHT
         TNT1 A 15
         TNT1 A 55 A_WeaponReady(WRF_NOSWITCH)
@@ -1468,7 +1472,7 @@ actor 01Tiger : Fists
     PoweredNope:
         TNT1 A 0 A_PlayWeaponSound("triumph/noammo")
         TNT1 A 15
-        goto AltFired
+        goto AltFiredPowered
     }
 }
 
@@ -1791,6 +1795,7 @@ actor TriumphSwordBeam
     +RIPPER
     +PIERCEARMOR
     +NOEXTREMEDEATH
+    +SPECTRAL
     +FOILINVUL
     +DONTREFLECT
     States
@@ -1815,6 +1820,43 @@ actor TriumphSwordBeam
     Death:
         TNT1 A 1
         Stop
+    }
+}
+
+actor TriumphPoweredRangeSlash
+{
+    Radius 12
+    Height 4
+    Speed 100
+    ReactionTime 15
+    Damage (50)
+    Projectile
+    Obituary "%k left %o in pieces."
+    DamageType "TriumphBeam"
+    +PIERCEARMOR
+    +NOEXTREMEDEATH
+    +SPECTRAL
+    +FOILINVUL
+    +DONTREFLECT
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_CountDown
+        loop
+    XDeath:
+        TNT1 A 0
+        TNT1 A 0 A_Explode(128,128,0,0,96)
+        TNT1 AA 0 A_SpawnItemEx("CuttingBlood",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_PlaySound("triumph/powerlaserhit")
+        TNT1 A 1
+        stop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Explode(128,128,0,0,96)
+        TNT1 A 1
+        stop
     }
 }
 

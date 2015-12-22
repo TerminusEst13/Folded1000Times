@@ -294,6 +294,11 @@ triumph/noammo         SWRDEMPT // Taken from BOUT
 triumph/powerup        SWRDPPOW // Taken from Xenosaga
 triumph/powerdown      SWRDPNOP // Taken from Xenosaga
 
+triumph/powercharge    SWRDPCHG
+triumph/powerlaser     SWRDPSLH
+triumph/powerlaserhit  SWRDPSHT
+$limit triumph/powerlaserhit 0
+
 // Viper
 striker/dryfire        SREVDRYF // Taken from Doom 3
 striker/fire           SREVFIRE
