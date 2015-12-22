@@ -34,6 +34,7 @@ ACTOR XaserBarrel : DestructableDecorationBaseStates replaces ExplosiveBarrel
     DamageFactor "KharonHookshot", 0.0
     DamageFactor "Triumph", 2.0
     DamageFactor "Stomp", 0.0
+    DamageFactor "TriumphExplode", 0.0
     Obituary "$OB_BARREL" 
     States
     {

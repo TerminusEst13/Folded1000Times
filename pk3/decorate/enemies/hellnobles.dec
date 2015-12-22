@@ -219,6 +219,7 @@ ACTOR WeeabooHellKnight : HellKnight replaces HellKnight
     Death.KubiSpinAttack:
     Death.Knife:
     Death.Triumph:
+    Death.TriumphExplode:
     Death.TriumphBeam:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",7500)
@@ -743,6 +744,7 @@ ACTOR WeeabooBaronOfHell : BaronOfHell replaces BaronOfHell
     Death.KubiSpinAttack:
     Death.Knife:
     Death.Triumph:
+    Death.TriumphExplode:
     Death.TriumphBeam:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("ManPoints",1)

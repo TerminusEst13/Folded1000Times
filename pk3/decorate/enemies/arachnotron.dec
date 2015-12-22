@@ -249,6 +249,7 @@ ACTOR Priest replaces Arachnotron
     Death.Knife:
     Death.Triumph:
     Death.TriumphBeam:
+    Death.TriumphExplode:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",8500)
         TNT1 A 0 A_PlaySoundEx("sword/hit","soundslot5",0,0)

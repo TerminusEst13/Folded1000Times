@@ -96,6 +96,7 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
     Death.KubiSpinAttackSheathe:
     Death.Knife:
     Death.Triumph:
+    Death.TriumphExplode:
     Death.TriumphBeam:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",4500)

@@ -276,6 +276,7 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Death.KubiSpinAttack:
     Death.Knife:
     Death.Triumph:
+    Death.TriumphExplode:
     Death.TriumphBeam:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",500)
@@ -992,6 +993,7 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Death.KubiSpinAttack:
     Death.Knife:
     Death.Triumph:
+    Death.TriumphExplode:
     Death.TriumphBeam:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",1000)
@@ -1710,6 +1712,7 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
     Death.KubiSpinAttack:
     Death.Knife:
     Death.Triumph:
+    Death.TriumphExplode:
     Death.TriumphBeam:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",1500)
@@ -2368,6 +2371,7 @@ ACTOR Yakuza replaces WolfensteinSS
     Death.KubiSpinAttack:
     Death.Knife:
     Death.Triumph:
+    Death.TriumphExplode:
     Death.TriumphBeam:
     //Death.OmenHeavyMetalThunder:
         TNT1 A 0 A_GiveToTarget("Points",4500)
