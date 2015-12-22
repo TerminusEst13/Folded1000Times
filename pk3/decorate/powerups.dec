@@ -6,9 +6,15 @@ actor PowerShieldProtection : PowerProtection
     +NORADIUSDMG
 }
 
+actor SolesOfTheDamned : PowerIronFeet
+{
+    Powerup.Duration -60
+    Powerup.Color green 0.1
+}
+
 actor EnemyLaunchedResistance : PowerProtection
 {
-    DamageFactor "Normal", 0.2
+    DamageFactor "Normal", 0.25
     DamageFactor "KubiutiUpper", 1.0
     DamageFactor "IronFistUpper", 1.0
     Powerup.Duration 0x7FFFFFFF
