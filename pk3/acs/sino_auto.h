@@ -276,7 +276,8 @@ script SINO_ENTER ENTER
         if (buttons & BT_JUMP)
             { GiveInventory("JumpedUp",1); }
 
-        // Temporary equipment workaround.
+        // [2/14/15] Temporary equipment workaround.
+        // [12/23/15] TEMPORARY MY ASS.
         if (CheckInventory("KharonOmen") == 1)
             { TakeInventory("KharonOmen",1); GiveInventory("01Tiger",1); }
         if (CheckInventory("KharonTestament") == 1)
@@ -285,6 +286,10 @@ script SINO_ENTER ENTER
             { TakeInventory("KharonExodus",1); GiveInventory("05Dragon",1); }
         if (CheckInventory("KharonSabbath") == 1)
             { TakeInventory("KharonSabbath",1); GiveInventory("04Scorpions",1); }
+        if (CheckInventory("KharonLegion") == 1)
+            { TakeInventory("KharonLegion",1); GiveInventory("KiMeterCounter",500); }
+        if (CheckInventory("KharonFrosthammer") == 1)
+            { TakeInventory("KharonFrosthammer",1); GiveInventory("KiMeterCounter",500); }
 
 
 

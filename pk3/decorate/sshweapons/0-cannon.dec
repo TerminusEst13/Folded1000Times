@@ -519,6 +519,7 @@ ACTOR MastodonShot : FastProjectile
     +SPECTRAL
     +THRUSPECIES
     Species "Player"
+    DamageType "Mastodon"
     Scale 3.0
     Decal BFGScorch
     States
@@ -571,6 +572,7 @@ ACTOR NuclearEmission
     +EXTREMEDEATH
     +SPECTRAL
     -SOLID
+    DamageType "Mastodon"
     Obituary "%k brought %o once more 'round the sun."
     States
     {
@@ -591,6 +593,7 @@ ACTOR NuclearEmissionBigger
     +EXTREMEDEATH
     +SPECTRAL
     -SOLID
+    DamageType "Mastodon"
     Obituary "%k brought %o once more 'round the sun."
     States
     {
@@ -611,6 +614,7 @@ ACTOR NuclearEmissionUltimate
     +EXTREMEDEATH
     +SPECTRAL
     -SOLID
+    DamageType "Mastodon"
     Obituary "%k brought %o once more 'round the sun."
     States
     {
@@ -634,6 +638,7 @@ ACTOR MastodonTinyRail : FastProjectile
     MissileType "MastodonTinyRailTrail"
     MissileHeight 10
     Decal BFGScorch
+    DamageType "Mastodon"
     States
     {
     Spawn:
@@ -679,6 +684,7 @@ ACTOR MastodonRailShot : FastProjectile
     DeathSound "mastodon/railshothit"
     MissileType "MinibeliskTrail"
     Decal BFGScorch
+    DamageType "Mastodon"
     States
     {
     Spawn:
@@ -759,6 +765,7 @@ ACTOR MastodonRailShotChildren : FastProjectile
     +RIPPER
     Species "Player"
     Decal DoomImpScorch
+    DamageType "Mastodon"
     States
     {
     Spawn:
@@ -787,6 +794,7 @@ ACTOR MastodonNukeShot : FastProjectile
     DeathSound "mastodon/railshothit"
     MissileType "NukeTrail"
     Decal BFGScorch
+    DamageType "Mastodon"
     States
     {
     Spawn:
@@ -981,7 +989,7 @@ Actor VindicatorProjectile //: FastProjectile
   Speed 100
   Radius 11
   Height 8
-  Damage 125
+  Damage (125)
   PROJECTILE
   //MissileType "VindicatorTrailSpawner"
   Obituary "%k burned down %o like a house, because %g didn't want %p goddamn lemons."
@@ -992,6 +1000,7 @@ Actor VindicatorProjectile //: FastProjectile
   +NOGRAVITY
   +FORCERADIUSDMG
   +EXPLODEONWATER
+    DamageType "Mastodon"
   states
   {
   Spawn:
@@ -1012,6 +1021,7 @@ ACTOR VindicatorExplodiumBlast
     +NOGRAVITY
     +FORCERADIUSDMG
     Renderstyle Add
+    DamageType "Mastodon"
     States
     {
     Spawn:

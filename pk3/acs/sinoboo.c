@@ -224,6 +224,9 @@ script SINO_UNLOADING unloading
     TakeInventory("SwapToTricksterMode",1);
     TakeInventory("Grappling",1);
 
+    TakeInventory("GotLegion",1); // Hopefully temporary
+    TakeInventory("GotFrosthammer",1); // Also hopefully temporary
+
     TakeInventory("PunchComboCounter",0x7FFFFFFF);
     TakeInventory("GrenadeTimer",0x7FFFFFFF);
     TakeInventory("WallGrabbed",0x7FFFFFFF);
