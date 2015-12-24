@@ -1039,8 +1039,8 @@ script WEEB_GLOBAL ENTER
         // Found a secret.
         if (sfound > sfound2)
         {
-            secretquote = random(0,10);
-            if (secretquote == 10 && CheckInventory("IsSSH") == 1) { LocalAmbientSound("shihong/secret",127); }
+            secretquote = random(0,20);
+            if (secretquote == 20 && CheckInventory("IsSSH") == 1) { LocalAmbientSound("shihong/secret",127); }
             GiveInventory("ManPoints",1);
             sfound2 = sfound;
         }
