@@ -1456,6 +1456,7 @@ actor 01Tiger : Fists
         TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",8,0,-1,0,0)
         TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",16,0,-2,0,0)
+        TNT1 A 0 Radius_Quake(3,8,0,16,0)
         W0S7 JKLMN 1 BRIGHT
         TNT1 A 15
         TNT1 A 55 A_WeaponReady(WRF_NOSWITCH)

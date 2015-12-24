@@ -69,6 +69,8 @@ actor UnleashTheRaven
     DamageFactor "ThatsSoRaven", 0.0
     DamageFactor "Stomp", 0.0
     DamageFactor "Mastodon", 0.0
+    DamageFactor "Triumph", 0.0
+    DamageFactor "TriumphExplode", 0.0
     RadiusDamageFactor 0.0
     States
     {
