@@ -32,7 +32,7 @@ actor TinyMeterPickup : CustomInventory
         stop
     PickupHaeLin:
         TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
+        //TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
         TNT1 A 0 ACS_ExecuteWithResult(275,0,8)
         TNT1 A 0 A_SetBlend("White",0.15,10)
         TNT1 A 0 A_GiveInventory("SuperMeterCounter",1)
@@ -41,7 +41,7 @@ actor TinyMeterPickup : CustomInventory
         stop
     PickupShihong:
         TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
+        //TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
         TNT1 A 0 ACS_ExecuteWithResult(275,0,8)
         TNT1 A 0 A_SetBlend("White",0.15,10)
         TNT1 A 0 A_GiveInventory("KiMeterCounter",10)
@@ -322,18 +322,8 @@ actor SoulFragmentDisguise2 : CustomInventory
         loop
     Pickup:
         TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("IsJungHaeLin",1,"PickupHaeLin")
-        TNT1 A 0 A_JumpIfInventory("IsSSH",1,"PickupSSH")
-        TNT1 A 0
-        stop
-    PickupHaeLin:
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
-        TNT1 A 0
-        stop
-    PickupSSH:
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
+        //TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
+        //TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
         TNT1 A 0
         stop
     PickupFail:
@@ -365,18 +355,8 @@ actor BatteryDisguise2 : CustomInventory
         loop
     Pickup:
         TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("IsJungHaeLin",1,"PickupHaeLin")
-        TNT1 A 0 A_JumpIfInventory("IsSSH",1,"PickupSSH")
-        TNT1 A 0
-        stop
-    PickupHaeLin:
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
-        TNT1 A 0
-        stop
-    PickupSSH:
-        TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
+        //TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
+        //TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
         TNT1 A 0
         stop
     PickupFail:

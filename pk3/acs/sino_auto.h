@@ -590,6 +590,7 @@ script SINO_ENTER ENTER
         TakeInventory("HenshinCooldown",1);
         TakeInventory("JetpackThrustLimit",1); 
         TakeInventory("JetpackCooldown",1); 
+        TakeInventory("SuperMeterCounter",0x7FFFFFFF);
         //TakeInventory("PointsSpeedrunning",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     

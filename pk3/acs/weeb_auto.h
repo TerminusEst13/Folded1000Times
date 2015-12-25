@@ -435,6 +435,7 @@ script WEEB_ENTER ENTER
         TakeInventory("MidCombat",1);
         TakeInventory("IsDodging",1);
         TakeInventory("HenshinCooldown",1);
+        TakeInventory("KiMeterCounter",0x7FFFFFFF);
         //TakeInventory("PointsSpeedrunning",1);
         if (CheckInventory("EnviroDamageCooldown") == 0) { TakeInventory("EnviroDamageCount",3); }
     
