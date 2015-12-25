@@ -425,6 +425,13 @@ gigaton/wall           GGTPWALL
 gigaton/jfcharge       GGTHCHRG // Taken from Mechwarrior Online
 gigaton/jfhit          GGTHHITT
 gigaton/jfwall         GGTHWALL
+mine/ready             MINESITE // Taken from Unreal 2
+mine/fire              MINEFIRE
+mine/bounce            MINEBNCE
+mine/explode           MINEXPLD
+
+$limit mine/bounce 0
+$limit mine/explode 0
 
 $limit missile/fire 0
 

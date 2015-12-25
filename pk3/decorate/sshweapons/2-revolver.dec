@@ -892,7 +892,7 @@ actor 02Viper : Fists
 
     BackSpecial:
         TNT1 A 0 A_JumpIfInventory("HaggarModeOn",1,"GigatonPunch")
-        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"SpecialAttackFinish")
+        TNT1 A 0 A_JumpIfInventory("RangedModeOn",1,"MineTrap")
         TNT1 A 0 A_JumpIfInventory("TricksterModeOn",1,"EngageCloakingMode")
         TNT1 A 1
         loop
@@ -996,6 +996,23 @@ actor 02Viper : Fists
         SHCL "[" 1
         TNT1 AA 0 A_GiveInventory("ShadowCloak",1)
         TNT1 A 3
+        goto SpecialAttackFinish
+    MineTrap:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("missile/elec","soundslot5",0,0)
+        SMNL ABCD 2
+        TNT1 A 0 A_PlaySoundEx("missile/transform","soundslot6",0,0)
+        SMNL E 2 bright
+        SMNL FGHIJKL 2
+        SMNL M 15
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",300)
+        TNT1 A 0 A_PlayWeaponSound("mine/fire")
+        TNT1 AAAAA 0 A_FireCustomMissile("ProxyMinePrepare",frandom(-12,12),0,8,-2,0,frandom(-8,8))
+        TNT1 AAAAA 0 A_FireCustomMissile("ProxyMinePrepare",frandom(-12,12),0,-8,-2,0,frandom(-8,8))
+        SMNL N 2 Bright
+        SMNL OPQRST 2
+        TNT1 A 0 A_PlaySoundEx("missile/untransform","soundslot5",0,0)
+        TNT1 A 10
         goto SpecialAttackFinish
 
     SpecialAttackFinish:
