@@ -74,6 +74,7 @@ Terminusest13: ...in fact, I think I'll do that for DemonSteele. Have some espec
 150: Question/Suggestion to Terminus:
 Would you kindly implement a "soul multiplier" slider in Demonsteele?
 (that would increase ammount of energy souls give you, obviously)
+152: Replace barrel sprites with blackened "Revenge of the 90s" sprites
 
 
 
