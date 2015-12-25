@@ -118,7 +118,8 @@ script SINO_JETBOOSTER ENTER
               if (buttons & BT_MOVELEFT) { ThrustThing(KurtAngle+64,25,0,0); }
               if (buttons & BT_BACK) { ThrustThing(KurtAngle+128,25,0,0); }
               if (buttons & BT_MOVERIGHT) { ThrustThing(KurtAngle+192,25,0,0); }
-              ThrustThingZ(0,18,0,0);
+              if (CheckInventory("OnTheGround") == 0) { ThrustThingZ(0,18,0,0); }
+                  else { ThrustThingZ(0,12,0,0); }
               ActivatorSound("shihong/thruster",127);
               if (CheckInventory("TricksterModeOn") == 0) { GiveInventory("JetpackThrustLimit",30); }
                   else { GiveInventory("JetpackThrustLimit",20); }
