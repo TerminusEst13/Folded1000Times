@@ -432,6 +432,7 @@ mine/explode           MINEXPLD
 
 $limit mine/bounce 0
 $limit mine/explode 0
+$volume mine/bounce 0.25
 
 $limit missile/fire 0
 

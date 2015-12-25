@@ -575,12 +575,14 @@ actor ProxyMinePrepare
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0 A_Recoil(-1)
         TNT1 A 0 A_PlaySound("silence", CHAN_VOICE)
     SpawnLoop:
         MINE A 1 A_CountDown
         loop
     Death:
         TNT1 A 0
+        TNT1 A 0 A_PlaySound("mine/bounce")
         MINE A 1 A_SpawnItemEx("ProxyMine",0,0,0,0,0,0,0,48)
         TNT1 A 1
         Stop
