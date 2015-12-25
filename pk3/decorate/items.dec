@@ -322,6 +322,7 @@ actor SoulFragmentDisguise2 : CustomInventory
         loop
     Pickup:
         TNT1 A 0
+        TNT1 A 0 A_GiveInventory("GrossHack",1)
         //TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
         //TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
         TNT1 A 0
@@ -355,6 +356,7 @@ actor BatteryDisguise2 : CustomInventory
         loop
     Pickup:
         TNT1 A 0
+        TNT1 A 0 A_GiveInventory("GrossHack",1)
         //TNT1 A 0 A_JumpIfInventory("SuperMeterCounter",0,"PickupFail")
         //TNT1 A 0 A_JumpIfInventory("KiMeterCounter",0,"PickupFail")
         TNT1 A 0

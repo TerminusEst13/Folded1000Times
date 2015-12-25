@@ -1107,6 +1107,8 @@ script WEEB_GLOBAL ENTER
         if (array_noannounce[pln]) { GiveInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",1); }
         else { TakeInventory("IAmAQuietPersonWhoWantsMoreQuietRankings",0x7FFFFFFF); }
 
+        TakeInventory("GrossHacks",255);
+
         delay(1);
         if (IsDead(0)) { terminate; }
     }

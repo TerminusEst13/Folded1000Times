@@ -112,6 +112,8 @@ actor SkulltagWeaponsAcquired : Boolean {}
 
 
 
+actor GrossHacks : Counter { Inventory.MaxAmount 255 }
+
 actor LungeCharge : Counter { Inventory.MaxAmount 99 }
 actor SwordAttack : Counter { Inventory.MaxAmount 99 }
 actor BlockLife : Counter { Inventory.MaxAmount 105 }
