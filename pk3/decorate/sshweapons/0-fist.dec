@@ -1305,7 +1305,7 @@ actor PowerKickAttack : PunchAttack1
         TNT1 A 0 A_PlaySound("punchy/hit4")
 		TNT1 A 0 A_PlaySoundEx("punchy/SLAM","soundslot6",0,0)
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit2",0,0,0,0,0,0,0,32)
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuakeRedone",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_GiveToTarget("KiMeterCounter",4)
         FHFX SS 1  
         FHFX TU 2
@@ -1321,7 +1321,7 @@ actor PowerKickAttack : PunchAttack1
         TNT1 A 0 A_PlaySound("punchy/hit4")
 		TNT1 A 0 A_PlaySoundEx("punchy/SLAM","soundslot6",0,0)
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuakeRedone",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_GiveToTarget("KiMeterCounter",10)
         FHFX SS 1  
         FHFX TU 2
@@ -1361,7 +1361,7 @@ actor DashKickAttack : PunchAttack1
         TNT1 A 0 A_PlaySound("punchy/hit4")
 		TNT1 A 0 A_PlaySoundEx("punchy/SLAM","soundslot6",0,0)
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit2",0,0,0,0,0,0,0,32)
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake3",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuakeRedone",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_GiveToTarget("KiMeterCounter",4)
         FHFX SS 1  
         FHFX TU 2
@@ -1377,7 +1377,7 @@ actor DashKickAttack : PunchAttack1
         TNT1 A 0 A_PlaySound("punchy/hit4")
 		TNT1 A 0 A_PlaySoundEx("punchy/SLAM","soundslot6",0,0)
         TNT1 A 0 A_SpawnItemEx("ShihongDashKickHit",0,0,0,0,0,0,0,32)
-        TNT1 A 0 A_SpawnItemEx("PunchWorldQuake",0,0,0,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("PunchWorldQuakeRedone",0,0,0,0,0,0,0,32)
         TNT1 A 0 A_GiveToTarget("KiMeterCounter",10)
         FHFX SS 1  
         FHFX TU 2
