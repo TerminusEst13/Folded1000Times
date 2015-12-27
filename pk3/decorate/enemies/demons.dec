@@ -112,6 +112,9 @@ ACTOR WeeabooDemon : Demon replaces Demon
         SARG H 5 //A_Recoil(2)
         SARG H 5 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        SARG H 3
+        goto Pain
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:
@@ -679,6 +682,9 @@ ACTOR WeeabooClink replaces Spectre
         CLNK H 5 A_Recoil(2)
         CLNK H 5 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        CLNK H 5
+        goto Pain
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:

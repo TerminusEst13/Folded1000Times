@@ -111,6 +111,9 @@ ACTOR WeeabooImp : DoomImp replaces DoomImp
         TROO H 2
         TROO H 2 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        TROO H 5
+        goto Pain
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:

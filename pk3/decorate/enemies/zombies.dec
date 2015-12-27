@@ -163,6 +163,9 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
         POSS G 3
         POSS G 3 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        POSS G 5
+        goto Pain
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:
@@ -877,6 +880,9 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
         SPOS G 3
         SPOS G 3 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        SPOS G 5
+        goto Pain
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:
@@ -1612,6 +1618,9 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         CPOS G 3
         CPOS G 3 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        CPOS G 3
+        goto Pain
     Pain.KubiLungeAttack:
     Pain.KubiSpinAttack:
     Pain.KubiLungeAttackSheathe:
@@ -2117,6 +2126,9 @@ ACTOR Yakuza replaces WolfensteinSS
         YKZA H 5 A_Pain
         YKZA H 5
         Goto See
+    Pain.ShihongPunch:
+        YKZA H 5
+        goto Pain
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:

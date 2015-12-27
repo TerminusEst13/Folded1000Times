@@ -120,6 +120,9 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
         WZRD C 3
         WZRD C 3 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        WZRD C 5
+        Goto Pain
 
     Pain.EMPulse:
         TNT1 A 0 A_ClearTarget

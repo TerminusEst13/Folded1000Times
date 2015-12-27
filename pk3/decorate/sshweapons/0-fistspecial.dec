@@ -176,7 +176,7 @@ ACTOR HomingMissile
     +SEEKERMISSILE
     +THRUSPECIES
     +HEXENBOUNCE
-    BounceCount 5
+    BounceCount 3
     DamageType "ShihongMissile"
     Species "Player"
     DeathSound "missile/hit"

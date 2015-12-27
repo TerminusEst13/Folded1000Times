@@ -133,6 +133,9 @@ actor WeeabooRevenant : Revenant replaces Revenant
         SKEL L 5
         SKEL L 5 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        SKEL L 3
+        Goto Pain
     Pain.EMPulse:
         TNT1 A 0 A_ClearTarget
         TNT1 A 0 ACS_ExecuteAlways(WEEB_DECORATE,0,WEEB_DEC_SLOWDOWN,0,0)

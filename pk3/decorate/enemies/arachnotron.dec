@@ -116,6 +116,9 @@ ACTOR Priest replaces Arachnotron
         PRST E 3 A_Stop
         PRST E 3 A_Pain
         Goto See
+    Pain.ShihongPunch:
+        PRST E 3
+        Goto Pain
     Pain.FrosthammerCharged:
     Pain.FrosthammerExplode:
     Pain.Frosthammer:
