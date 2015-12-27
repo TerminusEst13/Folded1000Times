@@ -39,7 +39,7 @@ function void DrawBinary(void)
     int X = Random(0, 320) << 16;
     int Y = Random(0, 240 / 6) << 16;
     int FadeInTime = 0.1;
-    int FadeOutTime = 0.25;
+    int FadeOutTime = 0.1;
     int Rows = Random(10, 30);
     str Binary;
     

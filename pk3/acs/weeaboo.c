@@ -130,7 +130,8 @@ int GravityOfLight;
         // If a player somehow manages to get hurt through the Invulnerability,
         // don't take any health anyway.
         if (CheckInventory("PowerShieldProtection") == 1) { terminate; }
-        
+
+
         //GiveInventory("PointsTookDamage",1);
 
         if( GetCVar( "dst_doomhealth" ) == 0 )
