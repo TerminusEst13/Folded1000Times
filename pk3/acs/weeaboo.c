@@ -221,7 +221,7 @@ int GravityOfLight;
     case 6:
         GiveInventory("DodgeGhostOn",1);
         Delay(18);
-        GiveInventory("DodgeGhostOff",1);
+        if (CheckInventory("ShadowCloak") == 0) { GiveInventory("DodgeGhostOff",1); }
         break;
 
     case WEEB_DEC_MEGASPHERE:
