@@ -423,36 +423,54 @@ InInventory BFGModeOn, 1
     {
         AspectRatio "4:3"
         {
-            DrawImage "RAVICONR", 1, 20;
-            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 45, 24;
+            DrawImage "RAVICONR", 1, 38;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 45, 42;
         }
         AspectRatio "16:10"
         {
-            DrawImage "RAVICONR", -31, 20;
-            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 13, 24;
+            DrawImage "RAVICONR", -31, 38;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 13, 42;
         }
         AspectRatio "16:9"
         {
-            DrawImage "RAVICONR", -52, 20;
-            DrawNumber 3, smallfont, white, RavenRightLifeCounter, -8, 24;
+            DrawImage "RAVICONR", -52, 38;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, -8, 42;
         }
     }
     InInventory RavenLeftActive
     {
         AspectRatio "4:3"
         {
-            DrawImage "RAVICONL", 1, 2;
-            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 45, 6;
+            DrawImage "RAVICONL", 1, 20;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 45, 24;
         }
         AspectRatio "16:10"
         {
-            DrawImage "RAVICONL", -31, 2;
-            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 13, 6;
+            DrawImage "RAVICONL", -31, 20;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 13, 24;
         }
         AspectRatio "16:9"
         {
-            DrawImage "RAVICONL", -52, 2;
-            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, -8, 6;
+            DrawImage "RAVICONL", -52, 20;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, -8, 24;
+        }
+    }
+    InInventory HatesphereUp
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "HATEICON", 1, 2;
+            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 45, 6;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "HATEICON", -31, 2;
+            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 13, 6;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "HATEICON", -52, 2;
+            DrawNumber 3, smallfont, white, HatesphereLifeCounter, -8, 6;
         }
     }
 
@@ -596,6 +614,12 @@ ininventory InIronMaiden, 1 { drawimage "IRONGEMA", 256, 174, center; }}
 
 ininventory IsSSH, 1
 {
+
+InInventory HaggarModeOn, 1 { DrawImage "HUDSTMEL", 252, 171; }
+InInventory RangedModeOn, 1 { DrawImage "HUDSTRNG", 252, 171; }
+InInventory TricksterModeOn, 1 { DrawImage "HUDSTTRK", 252, 171; }
+InInventory BFGModeOn, 1 { DrawImage "HUDSTNUK", 252, 171; }
+
 ininventory GotHammer, 1 { drawimage "SSHGOTT1", 265, 174, center; }
 ininventory not DontGotPistol { drawimage "SSHGOTS1", 270, 174, center; }
 ininventory GotShotgun, 1 { drawimage "SSHGOTA1", 275, 174, center; }
@@ -758,8 +782,8 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
         InInventory RedSkull, 1 { drawimage "STKEYS5", 303, 187; }
     }
 
-    InInventory IsJungHaeLin, 1
-    {
+  InInventory IsJungHaeLin, 1
+  {
     InInventory SentinelUp
     {
         AspectRatio "4:3"
@@ -799,56 +823,111 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
         InInventory not BlindGuardianLifeCounter, 1000 { DrawNumber 4, smallfont, lightblue, BlindGuardianLifeCounter, -8, 6; }
         }
     }
-    }
+  }
 
-    InInventory IsSSH, 1
-    {
-    InInventory HaggarModeOn
+  InInventory IsSSH, 1
+  {
+    InInventory RavenRightActive
     {
         AspectRatio "4:3"
         {
-            DrawImage "STYLMELE", 1, 0;
+            DrawImage "RAVICONR", 1, 38;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 45, 42;
         }
         AspectRatio "16:10"
         {
-            DrawImage "STYLMELE", -31, 0;
+            DrawImage "RAVICONR", -31, 38;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, 13, 42;
         }
         AspectRatio "16:9"
         {
-            DrawImage "STYLMELE", -52, 0;
+            DrawImage "RAVICONR", -52, 38;
+            DrawNumber 3, smallfont, white, RavenRightLifeCounter, -8, 42;
+        }
+    }
+    InInventory RavenLeftActive
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "RAVICONL", 1, 20;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 45, 24;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "RAVICONL", -31, 20;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, 13, 24;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "RAVICONL", -52, 20;
+            DrawNumber 3, smallfont, white, RavenLeftLifeCounter, -8, 24;
+        }
+    }
+    InInventory HatesphereUp
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "HATEICON", 1, 2;
+            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 45, 6;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "HATEICON", -31, 2;
+            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 13, 6;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "HATEICON", -52, 2;
+            DrawNumber 3, smallfont, white, HatesphereLifeCounter, -8, 6;
+        }
+    }
+
+    /*InInventory HaggarModeOn
+    {
+        AspectRatio "4:3"
+        {
+            DrawImage "STYLMELE", 1, 180;
+        }
+        AspectRatio "16:10"
+        {
+            DrawImage "STYLMELE", -31, 180;
+        }
+        AspectRatio "16:9"
+        {
+            DrawImage "STYLMELE", -52, 180;
         }
     }
     InInventory RangedModeOn
     {
         AspectRatio "4:3"
         {
-            DrawImage "STYLRANG", 1, 0;
+            DrawImage "STYLRANG", 1, 180;
         }
         AspectRatio "16:10"
         {
-            DrawImage "STYLRANG", -31, 0;
+            DrawImage "STYLRANG", -31, 180;
         }
         AspectRatio "16:9"
         {
-            DrawImage "STYLRANG", -52, 0;
+            DrawImage "STYLRANG", -52, 180;
         }
     }
     InInventory TricksterModeOn
     {
         AspectRatio "4:3"
         {
-            DrawImage "STYLTRCK", 1, 0;
+            DrawImage "STYLTRCK", 1, 180;
         }
         AspectRatio "16:10"
         {
-            DrawImage "STYLTRCK", -31, 0;
+            DrawImage "STYLTRCK", -31, 180;
         }
         AspectRatio "16:9"
         {
-            DrawImage "STYLTRCK", -52, 0;
+            DrawImage "STYLTRCK", -52, 180;
         }
-    }
-    }
+    }*/
+  }
 }
 
 statusbar automap, forcescaled

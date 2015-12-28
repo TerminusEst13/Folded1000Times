@@ -1356,7 +1356,7 @@ actor ShieldDisguise2 : Inventory
 
 actor SphereDisguise2 : Inventory
 {
-    Scale 0.8
+    Scale 0.6
     -DROPPED
     +FLOORCLIP
     +QUIET

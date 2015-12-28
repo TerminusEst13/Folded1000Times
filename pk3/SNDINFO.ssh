@@ -228,6 +228,14 @@ $limit raven/fire 0
 hate/pickup            HATEGET  // Taken from System Shock 2
 hate/pain              HATEPAIN // Taken from Unreal Tournament 3
 hate/dead              HATEDETH // Taken from Unreal Tournament 3
+hate/punch             HATEPNCH // Taken from Unreal Tournament 3
+hate/punchwall         HATEWALL // Taken from Unreal Tournament 3
+$rolloff hate/punch 400 1600
+$rolloff hate/punchwall 400 1600
+$limit hate/punch 0
+$limit hate/punchwall 0
+$volume hate/punch 0.75
+$volume hate/punchwall 0.75
 
 pickup/wolf            GETWOLF
 pickup/tiger           GETTIGER
