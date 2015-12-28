@@ -182,6 +182,7 @@ actor JetpackModeOn : Boolean {}
 actor JetpackModeOff : Boolean {}
 actor GrenadeInHand : Boolean {}
 actor JumpedUp : Boolean {}
+actor IsCrouching : Boolean {}
 actor TigerRoar : Boolean {}
 
 actor SwapToHaggarMode : Boolean {}
@@ -210,8 +211,15 @@ actor RavenLeftFromPreviousLevel : Boolean {}
 actor RavenRightFromPreviousLevel : Boolean {}
 actor RavenWhenTheGoingGetsTough : Boolean {}
 
+actor HatesphereUp : Boolean {}
+actor HatesphereActive : Boolean {}
+actor HatesphereFromPreviousLevel : Boolean {}
+actor HatesphereFeedingTheDemons : Boolean {}
+actor HatesphereBleedToDeath : Boolean {}
+
 actor RavenLeftLifeCounter : Counter { Inventory.MaxAmount 150 }
 actor RavenRightLifeCounter : Counter { Inventory.MaxAmount 150 }
+actor HatesphereLifeCounter : Counter { Inventory.MaxAmount 500 }
 
 actor JetpackFuel : Counter { Inventory.MaxAmount 120 }
 actor JetpackCooldown : Counter { Inventory.MaxAmount 35 }

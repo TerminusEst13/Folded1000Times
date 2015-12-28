@@ -11,9 +11,7 @@ actor BlindGuardian
     Height 32
     Speed 0
     PainChance 255
-    RenderStyle Add
-    Alpha 0.65
-    Scale 0.775
+    Scale 0.9
     Mass 0x7FFFFFFF
     DamageFactor "kubiuti", 0.0
     DamageFactor "kubispinattack", 0.0
@@ -35,6 +33,14 @@ actor BlindGuardian
     DamageFactor "FrosthammerExplode", 0.0 // Isn't used, but just in case.
     DamageFactor "ChemiKill", 0.0
     DamageFactor "Telefrag", 0.0
+    DamageFactor "Taser", 0.0
+    DamageFactor "EMPulse", 0.0
+    DamageFactor "SentinelDamage", 0.0
+    DamageFactor "ThatsSoRaven", 0.0
+    DamageFactor "Stomp", 0.0
+    DamageFactor "Mastodon", 0.0
+    DamageFactor "Triumph", 0.0
+    DamageFactor "TriumphExplode", 0.0
     RadiusDamageFactor 0.0
     Species "Player"
     +NOTARGET

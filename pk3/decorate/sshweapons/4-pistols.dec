@@ -356,7 +356,7 @@ actor 04Scorpions : Fists
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
         W2PD LMNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
     PunchPrep:
-        //TNT1 A 0 A_JumpIfInventory("JetpackCooldown",1,"DashKick")
+        TNT1 A 0 A_JumpIfInventory("IsCrouching",1,"CrouchKick")
         TNT1 A 0 A_JumpIfInventory("JumpedUp",1,"AirKick")
         TNT1 A 0 A_Jump(255,"Punch1","Punch2")//,"Punch3","Punch4")
         TNT1 A 1
@@ -411,18 +411,17 @@ actor 04Scorpions : Fists
         MDRK GHIJKLMNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 4
         goto Fired
-    DashKick:
-        TNT1 A 0 A_GiveInventory("PowerAttackStop",1)
-        TR2L AB 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    CrouchKick:
         TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
-        TNT1 A 0 A_Recoil(-10)
+        TNT1 A 0 A_Recoil(-5)
         TNT1 A 0
-        TNT1 A 0 A_PlayWeaponSound("punchy/swing4")
-        TR2L CDE 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        KK1L A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlayWeaponSound("punchy/swing3")
+        KK1L B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_FireCustomMissile("KharonGuardReflect",0,0)
-        TNT1 A 0 A_FireCustomMissile("DashKickAttack",0,0,0,0,2)
-        TR2L F 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TR2L GHIJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 //A_Print("oops")
+        TNT1 A 0 A_FireCustomMissile("CrouchKickAttack",0,0,0,0,2)
+        KK1L CDEFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 5
         goto Fired
 

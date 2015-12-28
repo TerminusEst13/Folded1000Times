@@ -24,15 +24,18 @@ script SINO_ENTER ENTER
     int angle;
     int RavenLeftTID;
     int RavenRightTID;
-    int xOffset, yOffset, yOffset2, zOffset;
+    int xOffset, yOffset, yOffset2, zOffset, xOffset3, yOffset3, zOffset3;
     int velx, vely, velz;
-    int nx, nx2, ny, ny2, nz;
+    int nx, nx2, ny, ny2, nz, nx3, ny3, nz3;
     int RavenHPLeft;
     int RavenHPRight;
     int NewRavenHPLeft;
     int NewRavenHPRight;
     int lastvelocity;
     int currvelocity;
+    int SphereTID;
+    int NewSphereHP;
+    int SphereHP;
 
     if (GetCvar("dst_debug") == 1) { Log(s:"SINO_ENTER executing on player ", d:pln); }
 
@@ -137,6 +140,13 @@ script SINO_ENTER ENTER
         TakeInventory("RavenRightUp",1);
         GiveInventory("RavenRightFromPreviousLevel",1);
       }
+    }
+    // Same shit, different git.
+    if (CheckInventory("HatesphereUp") == 1)
+    {
+        NewSphereHP = CheckInventory("HatesphereLifeCounter");
+        TakeInventory("HatesphereActive",1);
+        GiveInventory("HatesphereFromPreviousLevel",1);
     }
 
     // Status resets for the sake of weapons/items/etc that change between levels.
@@ -276,6 +286,11 @@ script SINO_ENTER ENTER
         if (buttons & BT_JUMP)
             { GiveInventory("JumpedUp",1); }
 
+        if (buttons & BT_CROUCH && CheckInventory("OnTheGround") == 1)
+            { GiveInventory("IsCrouching",1); }
+          else
+            { TakeInventory("IsCrouching",1); }
+
         // [2/14/15] Temporary equipment workaround.
         // [12/23/15] TEMPORARY MY ASS.
         if (CheckInventory("KharonOmen") == 1)
@@ -392,6 +407,81 @@ script SINO_ENTER ENTER
             TakeInventory("RavenUp",1);
             TakeInventory("RavenLeftUp",1); TakeInventory("RavenRightUp",1);
             TakeInventory("RavenLeftDead",1); TakeInventory("RavenRightDead",1);
+        }
+
+        // The Hatesphere, AKA the BUTTSPHERE
+        // It is a spherical battery for your butt, you see.
+        // A buttery, if you will.
+        SphereTID = 15200 + pln;
+        if (CheckInventory("HatesphereUp") == 1)
+        {
+            // I have three size D batteries lodged inside my asshole as a defensive measure.
+            // I call it 'The Shining Dragon'.
+            if (CheckInventory("HatesphereActive") == 0)
+            {
+                // I actually wanted to name this the Shining Dragon.
+                // But unfortunately Dragon is already in use from the grenades.
+                // And there aren't really a lot of alternatives that make use of "Shining".
+                Spawn("Hatesphere",xxx,yyy,zzz,SphereTID,angle);
+                GiveInventory("HatesphereActive",1);
+                // If the Buttsphere is carried over from a previous level, this summons a new one
+                // and then uses the player's NewSphereHP int (established earlier) to make it have
+                // the previous entity's HP. Because you can't quite carry monsters from level to
+                // level like you can inventory items.
+                if (CheckInventory("HatesphereFromPreviousLevel") == 1)
+                {
+                    SetActorProperty(SphereTID,APROP_Health,NewSphereHP);
+                    TakeInventory("HatesphereFromPreviousLevel",1);
+                }
+            }
+            else
+            {
+                // LOOK AT THE STORAGE ON THAT CAPASSITOR
+                // Move the buttshield in order to match the player's position.
+                // Angle's factored in but pitch isn't, since it'd be bad for an
+                // attack to slip through because the player's looking up/down.
+                xOffset3 = 0;
+                yOffset3 = 0;
+                zOffset3 = 0;
+
+                nx3 = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset, sin(angle));
+                ny3 = yyy + FixedMul(xOffset, sin(angle)) - FixedMul(yOffset, cos(angle));
+                nz3 = zzz + zOffset3;
+
+                // O-onee-chan, no! I can't download that much d-data!
+                if (pln != ConsolePlayerNumber())
+                { nx3 -= velx; ny3 -= vely; nz3 -= velz; }
+                else
+                { nx3 -= velx; ny3 -= vely; nz3 -= 2*velz; }
+
+                // MY OLDER SISTER CAN'T POSSIBLY HAVE THIS MUCH RAM
+                SetActorAngle(SphereTID,angle);
+                SetActorPosition(SphereTID,nx3 - FixedMul(32.0,cos(angle)),ny3 - FixedMul(32.0,sin(angle)),nz3,0);
+                SetActorVelocity(SphereTID,velx,vely,velz,0,0);
+
+                // Onee-chan back that system on up~
+                SphereHP = GetActorProperty(SphereTID, APROP_HEALTH);
+                TakeInventory("HatesphereLifeCounter",0x7FFFFFFF);
+                GiveInventory("HatesphereLifeCounter",SphereHP);
+
+                // K.I.S.S. x SIS
+                if (CheckInventory("HatesphereFeedingTheDemons") == 1)
+                {
+                    GiveActorInventory(SphereTID,"HatesphereHealth",500);
+                    TakeInventory("HatesphereFeedingTheDemons",1);
+                }
+
+                // There's probably other anime about older sisters out there,
+                // but I've already guaranteed my presence on 12 FBI watchlists.
+                if (CheckActorInventory(SphereTID,"HatesphereBleedToDeath"))
+                {
+                    Thing_Remove(SphereTID);
+                    SphereTID = 0;
+                    TakeInventory("HatesphereUp",1);
+                    TakeInventory("HatesphereActive",1);
+                    TakeInventory("HatesphereLifeCounter",0x7FFFFFFF);
+                }
+            }
         }
 
     // ============ GENERIC COPY/PASTED SHIT HERE

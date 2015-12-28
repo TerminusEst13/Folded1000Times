@@ -550,6 +550,11 @@ int GravityOfLight;
          if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("armor/invuln",127); }
          if (CheckInventory("IsSSH") == 1) { ActivatorSound("shihong/invuln",127); }
          break;
+
+    case 14: // Blursphere
+         if (CheckInventory("IsJungHaeLin") == 1) { ActivatorSound("shield/pickup",127); }
+         if (CheckInventory("IsSSH") == 1) { ActivatorSound("hate/pickup",127); }
+         break;
     }
     break;
 
@@ -654,7 +659,19 @@ script WEEB_CLIENTDECORATE (int boreshut, int bowlshot) clientside
         case 12: // Invulnsphere
           color = GetCvar("msg0color");
           if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a Majestic Vanguard!"); }
-          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a DFMS Sanctuary force-shield helmet."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a DFMS 'Sanctuary' energy shield helmet!"); }
+          break;
+
+        case 13: // Blursphere
+          color = GetCvar("msg0color");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Picked up a Blind Guardian."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Picked up a LLV 'Hatesphere' kinetic force engine!"); }
+          break;
+
+        case 14: // Healing the Blursphere
+          color = GetCvar("msg0color");
+          if (CheckInventory("IsJungHaeLin") == 1) { Log(s:msgColors[color], s:"Restored health for the Blind Guardian."); }
+          if (CheckInventory("IsSSH") == 1) { Log(s:msgColors[color], s:"Restored health for the LLV 'Hatesphere'."); }
           break;
         }
         break;

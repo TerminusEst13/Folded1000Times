@@ -1,0 +1,76 @@
+ACTOR HatesphereHealth : Health
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 500
+}
+
+actor Hatesphere
+{
+    Health 500
+    Radius 16
+    Height 32
+    Speed 0
+    PainChance 255
+    Scale 0.8
+    Mass 0x7FFFFFFF
+    DamageFactor "kubiuti", 0.0
+    DamageFactor "kubispinattack", 0.0
+    DamageFactor "kubilungeattack", 0.0
+    DamageFactor "kubirangeattack", 0.0
+    DamageFactor "KharonHookshot", 0.0
+    DamageFactor "HaltHammerzeitImpact", 0.0
+    DamageFactor "HaltHammerzeit", 0.0
+    DamageFactor "IronFistDamage", 0.0
+    DamageFactor "IronFistExplosion", 0.0
+    DamageFactor "AcaciaDamage", 0.0
+    DamageFactor "SabbathDamage", 0.0
+    DamageFactor "ExodusDamage", 0.0
+    DamageFactor "ExodusJump", 0.0
+    DamageFactor "Knife", 0.0
+    DamageFactor "TestamentDamage", 0.0
+    DamageFactor "Frosthammer", 0.0
+    DamageFactor "FrosthammerCharged", 0.0
+    DamageFactor "FrosthammerExplode", 0.0 // Isn't used, but just in case.
+    DamageFactor "ChemiKill", 0.0
+    DamageFactor "Telefrag", 0.0
+    DamageFactor "Taser", 0.0
+    DamageFactor "EMPulse", 0.0
+    DamageFactor "SentinelDamage", 0.0
+    DamageFactor "ThatsSoRaven", 0.0
+    DamageFactor "Stomp", 0.0
+    DamageFactor "Mastodon", 0.0
+    DamageFactor "Triumph", 0.0
+    DamageFactor "TriumphExplode", 0.0
+    RadiusDamageFactor 0.0
+    Species "Player"
+    +NOTARGET
+    +NOINFIGHTING
+    -SOLID
+    +NOGRAVITY
+    +THRUSPECIES
+    +SHOOTABLE
+    +NOBLOOD
+    +DONTSPLASH
+    +NOCLIP
+    //+PUSHABLE
+    //+MOVEWITHSECTOR
+    States
+    {
+    Spawn:
+        CBCR ABCD 2
+        loop
+    Pain:
+        TNT1 A 0
+        CBCR A 1 A_PlaySoundEx("hate/hurt","soundslot6",0,0)
+        goto Spawn
+    Death:
+        CBCR D 1 A_PlaySoundEx("hate/dead","soundslot6",0,0)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ElecSpark",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ElecSpark2",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ElecSpark3",random(-5,5),random(-5,5),0,random(-400,400)/100.00,random(-400,400)/100.00,random(0,400)/100.00,random(-180,180),128,0)
+        CBCR DDDDDDDDDD 1 A_FadeOut(0.05)
+        TNT1 A 0 A_GiveInventory("HatesphereBleedToDeath",1)
+        TNT1 A 10
+        stop
+    }
+}

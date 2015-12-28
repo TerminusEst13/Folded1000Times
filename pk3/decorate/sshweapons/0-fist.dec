@@ -341,7 +341,7 @@ actor "Fists" : Weapon
         TNT1 A 0 A_TakeInventory("ShootingLikeABaka",1)
         TNT1 A 0 A_GiveInventory("SlashingLikeAGaijin",1)
     PunchPrep:
-        //TNT1 A 0 A_JumpIfInventory("JetpackCooldown",1,"DashKick")
+        TNT1 A 0 A_JumpIfInventory("IsCrouching",1,"CrouchKick")
         TNT1 A 0 A_JumpIfInventory("JumpedUp",1,"AirKick")
         TNT1 A 0 A_Jump(255,"Punch1","Punch2")//,"Punch3","Punch4")
         TNT1 A 1
@@ -398,21 +398,6 @@ actor "Fists" : Weapon
         TR2L F 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TR2L GHIJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 5
-        goto Fired/*
-        TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
-        TNT1 A 0 A_Recoil(-5)
-        TNT1 A 0
-        KK1L A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlayWeaponSound("punchy/swing3")
-        KK1L B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_FireCustomMissile("KharonGuardReflect",0,0)
-        TNT1 A 0 //A_Print("oops")
-        TNT1 A 0 A_FireCustomMissile("JumpKickAttack",0,0,0,0,2)
-        TNT1 A 0 //A_RailAttack((random(1,8)*5),0,1,"none","Red",RGF_NOPIERCING | RGF_SILENT | RGF_FULLBRIGHT,0,"BulletPuff",0,0,0,3,1,0)
-        TNT1 A 0 //A_RailAttack(0,0,0,"none","Red",RGF_NOPIERCING | RGF_SILENT | RGF_FULLBRIGHT,0,"LGPuff",0,0,0,3,2.0,0,"LGPuff")
-        TNT1 A 0 //A_RailAttack(0,0,0,"none", White, RGF_SILENT | RGF_FULLBRIGHT, 50, "BulletPuff", 0, 0, 0, 1, 0.75, 0, "none", -2)
-        KK1L CDEFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 5*/
         goto Fired
     AirKick:
         TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
@@ -440,6 +425,19 @@ actor "Fists" : Weapon
         TNT1 A 0 A_FireCustomMissile("DashKickAttack",0,0,0,0,2)
         TR2L F 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TR2L GHIJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 5
+        goto Fired
+    CrouchKick:
+        TNT1 A 0 A_JumpIfInventory("GrabbingTheWall",1,2)
+        TNT1 A 0 A_Recoil(-5)
+        TNT1 A 0
+        KK1L A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlayWeaponSound("punchy/swing3")
+        KK1L B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_FireCustomMissile("KharonGuardReflect",0,0)
+        TNT1 A 0 //A_Print("oops")
+        TNT1 A 0 A_FireCustomMissile("CrouchKickAttack",0,0,0,0,2)
+        KK1L CDEFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 5
         goto Fired
 
@@ -1226,7 +1224,7 @@ actor PunchAttack1 : FastProjectile
     }
 }
 
-actor JumpKickAttack : PunchAttack1
+actor CrouchKickAttack : PunchAttack1
 {
     Damage (70)
     DamageType "ShihongPunchSpecial"
@@ -1502,7 +1500,7 @@ actor ShiningDragonPunchAttack : FastProjectile
     Radius 6
     Height 4
     Damage (75)
-    Speed 750
+    Speed 700
     RenderStyle Add
     Alpha 0.6
     Scale 0.65

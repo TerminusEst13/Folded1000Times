@@ -1,7 +1,13 @@
 ACTOR PowerAttackStop : PowerSpeed
 {
+    Powerup.Duration 2//18
+    Speed 0.25
+}
+
+ACTOR PowerAttackStop2 : PowerSpeed
+{
     Powerup.Duration 18
-    Speed 0.5
+    Speed 0.0
 }
 
 ACTOR ComboDamage1 : PowerDamage

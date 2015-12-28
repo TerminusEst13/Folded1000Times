@@ -300,3 +300,4 @@ const int WEEB_DEC_TOASTER2      = 99;
 #include "decorate/sshstyle.dec"
 
 #include "decorate/raven.dec"
+#include "decorate/capacitor.dec"

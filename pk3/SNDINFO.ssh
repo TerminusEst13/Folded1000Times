@@ -225,6 +225,9 @@ raven/pain             RAVNPAIN
 raven/death            RAVNDETH
 raven/pickup           RAVENGET
 $limit raven/fire 0
+hate/pickup            HATEGET  // Taken from System Shock 2
+hate/pain              HATEPAIN // Taken from Unreal Tournament 3
+hate/dead              HATEDETH // Taken from Unreal Tournament 3
 
 pickup/wolf            GETWOLF
 pickup/tiger           GETTIGER
@@ -446,3 +449,5 @@ claw/hit		       claw_hit  // Taken from Devil May Cry 3
 claw/firehit	       claw_yes
 claw/firemiss	       claw_no   // Taken from Devil May Cry 3
 claw/fireend           claw_end  // Taken from Tribes: Ascend
+
+punchy/SLAM			   SNKSMASH // Taken from King of Fighters 98
