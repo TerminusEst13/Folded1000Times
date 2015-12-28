@@ -1,4 +1,4 @@
-FROM 0.82 TO 0.XX
+FROM 0.82 TO 0.9
 =======================================
 - A second character, Sun Shihong, has been introduced. Sun Shihong offers a slightly bit more intricate playstyle to DemonSteele than Hae-Lin--while Hae-Lin focuses on utilizing W+M1 in crazier ways, Shihong needs to be paced. Utilizing a combination of guns, punching, and different styles in order to maximize her efficiency, Shihong is for people who want a change of combat is handled and want incentive to not just mash mouse 1 throughout maps.
 - The Skininfo entry for the Placeholder player skin has been fixed.
@@ -36,6 +36,7 @@ FROM 0.82 TO 0.XX
 - There is now a D_TTFTW replacement.
 - For those playing maps where you jump right in the fray instantly, dst_nointro removes the over-dramatic presentation at the start.
 - Numerous sounds have been converted from Stereo to Mono, since as of this time of writing OpenAL is currently glitched and plays Stereo sounds across the entire map. Theoretically, one can now play entirely in singleplayer in OpenAL in GZDoom and not hear anything especially ear-rendering.
+- The Blackened's death sequence is now, well, significantly more obvious as to when it's actually died.
 
 
 
