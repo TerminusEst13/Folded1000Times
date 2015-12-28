@@ -110,6 +110,7 @@ GRAPHICS:
 - Seryder (Decorating and polishing up MAPTEST)
 - Gundere (Hae-Lin's player sprites)
 - Herictator (The Game Over screen)
+- Exhumed (The damned soul the Blackened emits on death)
 
 CODE:
 =========
