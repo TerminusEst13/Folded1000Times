@@ -61,7 +61,7 @@ actor Hatesphere
         loop
     Pain:
         TNT1 A 0
-        CBCR E 1 A_PlaySoundEx("hate/hurt","soundslot6",0,0)
+        CBCR E 1 A_PlaySoundEx("hate/pain","soundslot6",0,0)
         goto Spawn
     Death:
         CBCR G 1 A_PlaySoundEx("hate/dead","soundslot6",0,0)
