@@ -226,8 +226,8 @@ raven/death            RAVNDETH
 raven/pickup           RAVENGET
 $limit raven/fire 0
 hate/pickup            HATEGET  // Taken from System Shock 2
-hate/pain              HATEPAIN // Taken from Unreal Tournament 3
-hate/dead              HATEDETH // Taken from Unreal Tournament 3
+hate/pain              HATEPAIN // Taken from Mega Man X6
+hate/dead              HATEDETH // Taken from Mega Man X6
 hate/punch             HATEPNCH // Taken from Unreal Tournament 3
 hate/punchwall         HATEWALL // Taken from Unreal Tournament 3
 $rolloff hate/punch 400 1600
