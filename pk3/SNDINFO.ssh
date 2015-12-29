@@ -204,6 +204,8 @@ ammo/rawenergy         RAWENGGT // Taken from Zero Tolerance
 ammo/rawenergyloop     RAWENGLP // Taken from Zero Tolerance
 shihong/coolant        SHCOOLNT // Mixed from abolla &_limetoe's sounds from Freesound and Chronicles of Riddick
 shihong/invuln         SHINVULN // Mixed from Chaos Core and System Shock II sounds
+infrasound/plant       INFRPLNT // Taken from F.E.A.R.
+infrasound/go          INFRGO   // Taken from Five Nights at Freddy's
 
 nightvision/on         NIVION   // Taken from System Shock 2
 nightvision/off        NIVIOFF  // Taken from Starcraft

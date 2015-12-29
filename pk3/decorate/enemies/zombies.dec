@@ -166,6 +166,16 @@ ACTOR WeeabooZombie : ZombieMan Replaces ZombieMan
     Pain.ShihongPunch:
         POSS G 5
         goto Pain
+    Pain.BrownNote:
+        TNT1 A 0 A_GiveInventory("HeavyInfrasoundEffect",1)
+        TNT1 A 0 A_Jump(64,"Pain")
+        TNT1 A 0 A_Jump(32,"Pain.Taser")
+        TNT1 A 0 A_Jump(16,"Pain.EMPulse")
+        TNT1 A 0 A_Jump(8,"DieDieTimeToDie")
+        goto See
+    DieDieTimeToDie:
+        TNT1 A 0 A_Die("Taser")
+        goto Death
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:
@@ -655,6 +665,7 @@ actor POSXKubiuted
     DamageFactor "ArchvileFire", 0.0
     DamageFactor "ExodusJump", 0.0
     DamageFactor "HaltHammerzeitImpact", 0.0
+    DamageFactor "BrownNote", 0.0
     AttackSound "wp/kickh1"
     DeathSound "S_Cut"
     Health 20
@@ -883,6 +894,16 @@ ACTOR WeeabooShotgunner : ShotgunGuy replaces ShotgunGuy
     Pain.ShihongPunch:
         SPOS G 5
         goto Pain
+    Pain.BrownNote:
+        TNT1 A 0 A_GiveInventory("HeavyInfrasoundEffect",1)
+        TNT1 A 0 A_Jump(64,"Pain")
+        TNT1 A 0 A_Jump(32,"Pain.Taser")
+        TNT1 A 0 A_Jump(16,"Pain.EMPulse")
+        TNT1 A 0 A_Jump(8,"DieDieTimeToDie")
+        goto See
+    DieDieTimeToDie:
+        TNT1 A 0 A_Die("Taser")
+        goto Death
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:
@@ -1696,6 +1717,16 @@ ACTOR WeeabooChaingunner : ChaingunGuy replaces ChaingunGuy
         LDTH A 2
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
+    Pain.BrownNote:
+        TNT1 A 0 A_GiveInventory("HeavyInfrasoundEffect",1)
+        TNT1 A 0 A_Jump(64,"Pain")
+        TNT1 A 0 A_Jump(32,"Pain.Taser")
+        TNT1 A 0 A_Jump(16,"Pain.EMPulse")
+        TNT1 A 0 A_Jump(8,"DieDieTimeToDie")
+        goto See
+    DieDieTimeToDie:
+        TNT1 A 0 A_Die("Taser")
+        goto Death
 
 
 
@@ -2129,6 +2160,16 @@ ACTOR Yakuza replaces WolfensteinSS
     Pain.ShihongPunch:
         YKZA H 5
         goto Pain
+    Pain.BrownNote:
+        TNT1 A 0 A_GiveInventory("HeavyInfrasoundEffect",1)
+        TNT1 A 0 A_Jump(64,"Pain")
+        TNT1 A 0 A_Jump(32,"Pain.Taser")
+        TNT1 A 0 A_Jump(16,"Pain.EMPulse")
+        TNT1 A 0 A_Jump(8,"DieDieTimeToDie")
+        goto See
+    DieDieTimeToDie:
+        TNT1 A 0 A_Die("Taser")
+        goto Death
 
     Pain.KubiutiUpper:
     Pain.IronFistUpper:

@@ -184,6 +184,12 @@ ACTOR WeeabooWizard replaces Cacodemon //Cacodemon : Cacodemon replaces Cacodemo
         WZRD C 2
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         Goto See
+    Pain.BrownNote:
+        TNT1 A 0 A_GiveInventory("HeavyInfrasoundEffect",1)
+        TNT1 A 0 A_Jump(64,"Pain")
+        TNT1 A 0 A_Jump(32,"Pain.Taser")
+        TNT1 A 0 A_Jump(16,"Pain.EMPulse")
+        goto See
 
 
     Death.Kubiuti:

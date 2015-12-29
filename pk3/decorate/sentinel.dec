@@ -87,6 +87,7 @@ actor AllFearTheSentinel
     DamageFactor "Triumph", 0.0
     DamageFactor "TriumphExplode", 0.0
     DamageFactor "TriumphBeam", 0.0
+    DamageFactor "BrownNote", 0.0
     RadiusDamageFactor 0.0
     States
     {
