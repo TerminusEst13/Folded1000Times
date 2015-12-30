@@ -632,14 +632,14 @@ isselected "03Wolf" { drawimage "SSHGOTA2", 275, 174, center; }
 isselected "04Scorpions" { drawimage "SSHGOTR2", 280, 174, center; }
 isselected "05Dragon" { drawimage "SSHGOTE2", 285, 174, center; }
 isselected "00Mastodon" { drawimage "SSHGOTM2", 294, 174, center; }
-isselected "01Tiger" { drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 296, 182; }
+isselected "01Tiger" { drawnumber 3, CONFONT, White, SwordCharge, fillzeros, drawshadow, 292, 182; }
 isselected "02Viper" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
-                       drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 304, 186; }
+                       drawnumber 3, CONFONT, White, WeebClip, fillzeros, drawshadow, 296, 186; }
 isselected "03Wolf" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
-                      drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 304, 186; }
+                      drawnumber 3, CONFONT, White, WeebShell, fillzeros, drawshadow, 296, 186; }
 isselected "04Scorpions" { drawnumber 3, CONFONT, white, ammo1, fillzeros, drawshadow, 288, 178;
-                           drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 304, 186; }
-isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 296, 182; }
+                           drawnumber 3, CONFONT, White, WeebCell, fillzeros, drawshadow, 296, 186; }
+isselected "05Dragon" { drawnumber 3, CONFONT, White, WeebRocket, fillzeros, drawshadow, 292, 182; }
 //drawnumber 3, DNDHUDF, untranslated, ammo1, drawshadow, 293, 179;
 }
 

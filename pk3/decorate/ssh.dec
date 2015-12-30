@@ -44,6 +44,7 @@ ACTOR MeleePlayer2 : PlayerPawn
     DamageFactor "Telefrag", 2.00
     DamageFactor "Suicide", 2.00
     DamageFactor "Stomp", 0.0
+    DamageFactor "Mastodon", 0.0
     RadiusDamageFactor 0.5
     Player.StartItem "02Viper", 1
     Player.StartItem "Fists", 1

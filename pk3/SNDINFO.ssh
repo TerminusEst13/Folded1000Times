@@ -187,6 +187,7 @@ shihong/stomp4         SSHSTOM4
 shihong/stomp5         SSHSTOM5
 
 shihong/weaponteleport SSHWEPTL
+$rolloff shihong/weaponteleport    800 5200
 
 $random shihong/healthwarning { lohealf1 lohealf2 lohealf3 lohealf4 lohealf5 lohealf6 } // Taken from the General Series 6000
 lohealf1               LOHEALF1
@@ -351,6 +352,13 @@ squeak2                SQUEAK2
 squeak3                SQUEAK3
 squeak4                SQUEAK4
 
+flak/hit               MASTFLHT
+flak/miss              MASTFLWL
+$volume flak/hit 0.75
+$volume flak/miss 0.75
+$limit flak/hit 0
+$limit flak/miss 0
+
 baseball/hit           BALLHIT1 // Taken from the General Series 6000
 stimpack/hit           STIMHIT1 // Taken from Rainbow Six: Lockdown
 cup/hit                CUPHIT   // Taken from Rainbow Six: Lockdown
@@ -400,6 +408,34 @@ mastodon/nukeready     MASTNRDY // Taken from Unreal Tournament
 mastodon/nukefire      MASTNFIR
 mastodon/nope          MASTNOPE // Taken from San Francisco Rush 2049
 mastodon/childshothit  MASTSHIT
+mastodon/flakcock      MASTFLCK // Taken from Unreal Championship 2
+mastodon/flakfire      MASTFLFR
+mastodon/flakrelease   MASTFLRL // Taken from Unreal 2
+
+Mastodon/Initiate      MASTINIT // UT2004/Epic Games
+Mastodon/Blast         MASTBLST // Wolfenstein 2009/Raven Soft.
+Mastodon/Incoming      MASTINCG // Wolfenstein 2009/Raven Soft.
+Mastodon/Loop1         MASTLOP1 // Wolfenstein 2009/Raven Soft.
+Mastodon/Loop2         MASTLOP2 // Diablo 2/Blizzard
+Mastodon/Loop3         MASTLOP3 // C&C Renegade/Westwood Ent.
+Mastodon/End3          MAST3END
+
+$random Mastodon/Bueller { Mastodon/Bueller1
+                           Mastodon/Bueller2 
+                           Mastodon/Bueller3
+                           Mastodon/Bueller4
+                           Mastodon/Bueller5 } // Wolfenstein 2009/Raven Soft.
+Mastodon/Bueller1      MASTBUE1
+Mastodon/Bueller2      MASTBUE2
+Mastodon/Bueller3      MASTBUE3
+Mastodon/Bueller4      MASTBUE4
+Mastodon/Bueller5      MASTBUE5
+
+$rolloff Mastodon/Initiate 1100 4200
+$rolloff Mastodon/Loop1 1100 4200
+$rolloff Mastodon/Incoming 1100 4200
+$rolloff Mastodon/Blast 1100 4200
+$limit Mastodon/Loop3 0
 
 $volume mastodon/idle 0.25
 $volume mastodon/charge1 0.5
@@ -455,9 +491,9 @@ miss/hit2              MISSEXP2
 miss/hit3              MISSEXP3
 $limit missile/hit 0
 
-claw/hit		       claw_hit  // Taken from Devil May Cry 3
-claw/firehit	       claw_yes
-claw/firemiss	       claw_no   // Taken from Devil May Cry 3
+claw/hit               claw_hit  // Taken from Devil May Cry 3
+claw/firehit           claw_yes
+claw/firemiss           claw_no   // Taken from Devil May Cry 3
 claw/fireend           claw_end  // Taken from Tribes: Ascend
 
-punchy/SLAM			   SNKSMASH // Taken from King of Fighters 98
+punchy/SLAM               SNKSMASH // Taken from King of Fighters 98

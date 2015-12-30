@@ -444,8 +444,8 @@ script SINO_ENTER ENTER
                 yOffset3 = 0;
                 zOffset3 = 0;
 
-                nx3 = xxx + FixedMul(xOffset, cos(angle)) + FixedMul(yOffset, sin(angle));
-                ny3 = yyy + FixedMul(xOffset, sin(angle)) - FixedMul(yOffset, cos(angle));
+                nx3 = xxx + FixedMul(xOffset3, cos(angle)) + FixedMul(yOffset3, sin(angle));
+                ny3 = yyy + FixedMul(xOffset3, sin(angle)) - FixedMul(yOffset3, cos(angle));
                 nz3 = zzz + zOffset3;
 
                 // O-onee-chan, no! I can't download that much d-data!
@@ -467,7 +467,7 @@ script SINO_ENTER ENTER
                 // K.I.S.S. x SIS
                 if (CheckInventory("HatesphereFeedingTheDemons") == 1)
                 {
-                    GiveActorInventory(SphereTID,"HatesphereHealth",500);
+                    GiveActorInventory(SphereTID,"HatesphereHealth",300);
                     TakeInventory("HatesphereFeedingTheDemons",1);
                 }
 

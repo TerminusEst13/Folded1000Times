@@ -19,42 +19,52 @@ actor 00Mastodon : Weapon
     {
     Ready:
         MSTO A 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO E 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO D 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO C 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
         MSTO B 2 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFire")
         TNT1 A 0 A_JumpIfInventory("SwapToHaggarMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToRangedMode",1,"StyleSwap")
         TNT1 A 0 A_JumpIfInventory("SwapToTricksterMode",1,"StyleSwap")
@@ -305,7 +315,7 @@ actor 00Mastodon : Weapon
         Goto Ready
     Charge2:
         TNT1 A 0 A_TakeInventory("ChargeLevel",999)
-        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",100,1)
+        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",200,1)
         goto AltHold1b
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("mastodon/chargecock","soundslot6",0,0)
@@ -386,7 +396,7 @@ actor 00Mastodon : Weapon
         TNT1 A 0 A_SetAngle(Angle-frandom(-5,5))
         TNT1 A 0 A_SetPitch(Pitch-frandom(3,8))
         TNT1 A 0 A_ZoomFactor(0.95)
-        TNT1 A 0 A_TakeInventory("KiMeterCounter",100)
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",200)
         MSTO GG 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Light(3)
         TNT1 A 0 A_ZoomFactor(0.98)
@@ -407,7 +417,7 @@ actor 00Mastodon : Weapon
         goto Ready
     Charge3:
         TNT1 A 0 A_TakeInventory("ChargeLevel",999)
-        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",500,1)
+        TNT1 A 0 A_JumpIfInventory("KiMeterCounter",1000,1)
         goto Hold2a
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("mastodon/chargecock","soundslot6",0,0)
@@ -473,7 +483,7 @@ actor 00Mastodon : Weapon
         MCHF ABC 1 bright
         TNT1 A 0 A_PlayWeaponSound("mastodon/nukefire")
         TNT1 A 0 A_SpawnItemEx("NuclearEmissionUltimate",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-        TNT1 A 0 A_FireCustomMissile("MastodonNukeShot",0,0,6,-6,0,frandom(-1,1))
+        TNT1 A 0 A_FireCustomMissile("MastodonNukeProjectile",0,0,6,-6,0,0)
         TNT1 A 0 A_SetBlend("green",1.0,140)
         TNT1 A 0 Radius_Quake(5,120,0,64,0)
         MCHF C 1 bright
@@ -481,7 +491,7 @@ actor 00Mastodon : Weapon
         TNT1 A 0 A_SetAngle(Angle-frandom(-5,5))
         TNT1 A 0 A_SetPitch(Pitch-frandom(3,8))
         TNT1 A 0 A_ZoomFactor(0.95)
-        TNT1 A 0 A_TakeInventory("KiMeterCounter",500)
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",1000)
         MSTO GG 1 Bright A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Light(3)
         TNT1 A 0 A_ZoomFactor(0.98)
@@ -499,6 +509,40 @@ actor 00Mastodon : Weapon
         MSTO IJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         MSTO JKKLL 1 A_WeaponReady(WRF_NOSWITCH)
         //ERGG A 0 A_ReFire("AltLoop")
+        goto Ready
+    ReloadFire:
+        TNT1 A 0 A_JumpifInventory("KiMeterCounter",1,"ReloadFireForReal")
+        TNT1 A 0 A_PlaySoundEx("mastodon/nope","soundslot5",0,0)
+        TNT1 A 0 A_PlaySoundEx("*pain","soundslot6",0,0)
+        TNT1 A 0 A_Print("Error: Insufficient ki reserve.")
+        TNT1 A 0 A_GiveInventory("HenshinCooldown",70)
+        TNT1 A 0 A_SetBlend("White",1.0,35)
+        TNT1 A 0 A_Recoil(10)
+        goto Ready
+    ReloadFireForReal:
+        MSTO A 10 A_PlaySoundEx("mastodon/flakcock","soundslot6",0,0)
+        MSAA A 1
+    ReloadFire2:
+        TNT1 A 0 A_PlayWeaponSound("mastodon/flakfire")
+        TNT1 A 0 A_FireCustomMissile("FlakBullet",frandom(-1.5,1.5),0,6,-6,0,frandom(-0.75,0.75))
+        //TNT1 A 0 A_FireBullets(2,1,-1,20,"WeebBulletPuff",FBF_NORANDOM)
+        TNT1 A 0 A_Recoil(0.5)
+        TNT1 A 0 Radius_Quake(3,2,0,8,0)
+        TNT1 A 0 A_TakeInventory("KiMeterCounter",1)
+        MSAA B 1 Bright A_SetPitch(pitch-frandom(0.5,0.7))
+        MSAA CDD 1 A_SetPitch(pitch+frandom(0.2,0.25))
+        MSAA A 2 A_JumpIfInventory("TimeToLaunchOctopus",1,"ReloadFireCheck")
+        MSTO A 1
+        MSTO A 10 A_PlaySoundEx("mastodon/flakrelease","soundslot5",0,0)
+        goto Ready
+    ReloadFireCheck:
+        TNT1 A 0 A_JumpifInventory("KiMeterCounter",1,"ReloadFire2")
+        TNT1 A 0 A_PlaySoundEx("mastodon/nope","soundslot5",0,0)
+        TNT1 A 0 A_PlaySoundEx("*pain","soundslot6",0,0)
+        TNT1 A 0 A_Print("Error: Insufficient ki reserve.")
+        TNT1 A 0 A_GiveInventory("HenshinCooldown",70)
+        TNT1 A 0 A_SetBlend("White",1.0,35)
+        TNT1 A 0 A_Recoil(10)
         goto Ready
     }
 }
@@ -632,6 +676,8 @@ ACTOR MastodonTinyRail : FastProjectile
     Height 10
     Damage (200)
     RenderStyle Add
+    Species "Player"
+    +THRUSPECIES
     +EXTREMEDEATH
     +FORCERADIUSDMG
     DeathSound "mastodon/shothit"
@@ -679,6 +725,8 @@ ACTOR MastodonRailShot : FastProjectile
     Height 10
     Damage (200)
     Renderstyle Add
+    Species "Player"
+    +THRUSPECIES
     +EXTREMEDEATH
     +FORCERADIUSDMG
     DeathSound "mastodon/railshothit"
@@ -782,254 +830,1081 @@ ACTOR MastodonRailShotChildren : FastProjectile
     }
 }
 
-ACTOR MastodonNukeShot : FastProjectile
+// All stuff below is placeholder superweapon stuff from Russian Overkill.
+// I really hope it's temporary.
+
+
+actor FlakBullet : FastProjectile
 {
-    Speed 500
-    Radius 17
-    Height 10
-    Damage (200)
-    Renderstyle Add
-    +EXTREMEDEATH
-    +FORCERADIUSDMG
-    DeathSound "mastodon/railshothit"
-    MissileType "NukeTrail"
-    Decal BFGScorch
+    Damage (25)
+    Radius 1
+    Height 1
+    Speed 320
+    Projectile
+    Renderstyle "Normal"
+    Species "Player"
     DamageType "Mastodon"
+    +BLOODSPLATTER
+    +THRUGHOST
+    +THRUSPECIES
+    +NOTIMEFREEZE
+    +NOEXTREMEDEATH
+    Alpha 1.0
+    Decal BulletChip
     States
     {
     Spawn:
-        TNT1 A 0
         TNT1 A 1
-        Loop
+        loop
     Death:
+    Crash:
         TNT1 A 0
-        TNT1 A 0 A_Explode(256,512,0,0,128)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.0,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.025,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.05,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.075,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.1,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.125,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.15,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.175,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.2,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.225,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.25,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.275,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.3,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.325,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.35,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.375,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.4,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.425,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.45,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.475,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.5,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.525,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.55,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.575,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.6,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.625,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.65,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.675,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.7,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.725,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.75,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.775,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.8,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.825,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.85,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.875,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.9,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.925,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.95,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        TNT1 A 0 A_CustomMissile("MastodonRailShotChildren",0,0,360.0 * 0.975,CMF_AIMDIRECTION | CMF_TRACKOWNER/* | CMF_ABSOLUTEPITCH*/,0)
-        //TNT1 A 0 A_SpawnItemEx("ObeliskExplode",0,0,0,0,0,0,0,128,0)
-        TNT1 AA 0 A_SpawnItemEx("MastodonBigShock",0,0,0,0,0,0,0,128,0)
-        TNT1 A 0 A_SpawnItemEx("VindicatorMinorBlast",0,0,40,0,0,0,0,SXF_CLIENTSIDE,0)
-        TNT1 A 0 A_SpawnItemEx("VindicatorMinorDamageBlast",0,0,40,0,0,0,0,SXF_TRANSFERPOINTERS,0)
-        TNT1 A 0 A_SpawnItemEx("VindicatorMinorSerpentine",0,0,40,0,0,0,0,SXF_TRANSFERPOINTERS,0)
-        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ObeliskTrailSpark", random(10,-10), random(10,-10), random(0,20), frandom(4,6), frandom(4,6), frandom(-6,6), random(0,359), 128, 0)
-        TNT1 AAAAA 0 A_SpawnItemEx("MinibeliskSmoke",random(23,-23),random(23,-23),random(33,-13),frandom(0.3,0.6),frandom(0.3,0.6),frandom(-0.2,0.5),random(0,359),128,0)
-        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("MinibeliskSmokeDeath",random(28,-28),random(28,-28),random(38,-18),frandom(-4,4),frandom(1,4),frandom(-3,4),random(0,359),128,0)
         TNT1 A 1
-        TNT1 A 0 A_SpawnItemEx("MastodonBigShock",0,0,0,0,0,0,0,128,0)
-        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("MinibeliskSmokeDeath",random(28,-28),random(28,-28),random(38,-18),frandom(1,4),frandom(1,4),frandom(1,4),random(0,359),128,0)
+        TNT1 A 0 A_PlaySound("flak/miss")
+        TNT1 A 1 A_SpawnItemEx("FlakBulletPuff",0,0,0,0,0,0,0,160)
+        stop
+    XDeath:
+        TNT1 A 0
         TNT1 A 1
+        TNT1 A 0 A_PlaySound("flak/hit")
+        TNT1 A 0 A_GiveToTarget("MidCombat",75)
+        TNT1 A 1 A_GiveToTarget("HyperComboCounter",1)
         stop
     }
 }
 
-// All stuff below is placeholder superweapon stuff from Russian Overkill.
-// I really hope it's temporary.
-
-ACTOR VindicatorMinorSerpentine
+ACTOR FlakBulletPuff
 {
-    +NOINTERACTION
+    Radius 1
+    Height 1
+    Scale 0.225
+    RenderStyle Add
+    VSpeed 0
+    Alpha 0.99
     +NOGRAVITY
-    ReactionTime 30
+    +NOBLOCKMAP
+    +FLOORCLIP
+    +NOTIMEFREEZE
     States
     {
     Spawn:
-    TNT1 A 0
-    TNT1 AA 0 A_SpawnItemEx("VindicatorSerpentine",random(60,-60),random(60,-60),random(60,-60),frandom(1.0,0.5),frandom(1.0,0.5),frandom(1.0,-1.0),frandom(0,360.0),0,0)
-    TNT1 A 1 A_Countdown
-    Loop
-    Death:
-    TNT1 A 1
-    Stop
+        TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteWithResult(275,WEEB_DEC_TOASTER)
+        TNT1 A 1
+        Loop
+    Toaster0:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAAAAAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        goto Toaster0+10
+    Toaster1:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        goto Toaster1+7
+    Toaster2:
+        TNT1 A 1
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        loop
+    Spawn1:
+        //BPFF A 1 Bright
+        BPFF A 1 Bright //A_SetTranslucent(.75,1)
+        BPFF B 1 Bright A_SetTranslucent(.5,1)
+        BPFF C 1 Bright A_SetTranslucent(.25,1)
+        stop
+    Spawn2:
+        //BPFF D 1 Bright
+        BPFF D 1 Bright //A_SetTranslucent(.75,1)
+        BPFF E 1 Bright A_SetTranslucent(.5,1)
+        BPFF F 1 Bright A_SetTranslucent(.25,1)
+        stop
+    Spawn3:
+        //BPFF H 1 Bright
+        BPFF H 1 Bright //A_SetTranslucent(.75,1)
+        BPFF I 1 Bright A_SetTranslucent(.5,1)
+        BPFF J 1 Bright A_SetTranslucent(.25,1)
+        stop
+    Spawn4:
+        //BPFF K 1 Bright
+        BPFF K 1 Bright //A_SetTranslucent(.75,1)
+        BPFF L 1 Bright A_SetTranslucent(.5,1)
+        BPFF M 1 Bright A_SetTranslucent(.25,1)
+        stop
     }
 }
 
-ACTOR VindicatorMinorBlast
+
+
+/*
+Pillowblaster here. Roughly based and inspired off my previous BFG,
+considering it also was based on, well, BFG. I wrote this scheise,
+if you wanna make use of any bits of it for your own envdeavours,
+I guess I'm okay with it, just drop me a credit, and ask Term for Sperm first!...
+I mean, perm. Short for Permission. Christ.
+
+Thanks in advance!
+*/
+
+//Here comes "More Mastodon than your body has room for" again.
+
+Actor MastodonBase
+{
+    Renderstyle Add
+    +NOINTERACTION
+    Alpha 0.99
+    //I dunno how Zimbabwe's rendering handles that,
+    //but I know from Keks that with HOI-RES PARTICLEZ IN GL-RENDERIN' in Gzdoom,
+    //it's best to put it on such alpha to ommit some eventual artifacts in rendering.
+}
+
+Actor MastodonSpawner
 {
     +NOINTERACTION
-    +NOGRAVITY
-    ReactionTime 50
-    States
-    {
-    Spawn:
-    TNT1 A 0
-    TNT1 A 0 A_PlaySound("Weapons/VindicatorExplosion2",5,0.8)
-    TNT1 A 0 A_PlaySound("Weapons/VindicatorKaboom2",6,0.8)
-    Looplet:
-    TNT1 A 0 A_SpawnItemEx("VindicatorBlast",random(60,-60),random(60,-60),random(60,-60),frandom(2.0,6.0),frandom(4.0,8.0),frandom(-5.0,5.0),frandom(0.0,360.0),SXF_CLIENTSIDE,0)
-    TNT1 A 0 A_Countdown
-    Loop
-    Death:
-    TNT1 A 1
-    Stop
-    }
+    var int User_Counter;
 }
 
-ACTOR VindicatorMinorDamageBlast
-{
-    +NOINTERACTION
-    +NOGRAVITY
-    ReactionTime 30
-    States
-    {
-    Spawn:
-    TNT1 A 0
-    Looplet:
-    TNT1 A 0 A_SpawnItemEx("VindicatorExplodiumBlast",random(60,-60),random(60,-60),random(60,-60),frandom(2.0,6.0),frandom(4.0,8.0),frandom(-5.0,5.0),frandom(0.0,360.0),SXF_TRANSFERPOINTERS,0)
-    TNT1 A 0 A_Countdown
-    Loop
-    Death:
-    TNT1 A 1
-    Stop
-    }
-}
+//Arrrre Arrrre Nuklearrreee~
 
-ACTOR VindicatorSerpentine// : FastProjectile
+ACTOR MastodonNukeProjectile : FastProjectile
 {
-  Radius 1
-  Height 1
-  PROJECTILE
-  Damage (100)
-  BounceType Hexen
-  ReactionTime 140
-  +CANBOUNCEWATER
-  +BOUNCEONACTORS
-  BounceFactor 1.0
-  WallBounceFactor 1.0
-  Renderstyle Add
-  Scale 1
-  States
-  {
-  Spawn:
-    VINF A 0
-    VINF A 0 A_SpawnItemEx("VindicatorTrailSpawner",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
-    VINF A 0 A_ChangeVelocity(frandom(-4,4),frandom(-4,4),frandom(-2,2),0)
-    VINF A 0 A_Jump(128,2)
-    VINF A 0 A_Countdown
-    VINF A 1 Bright
-    Loop
-  Death:
-    TNT1 A 0
-    TNT1 A 1 A_SpawnItemEx("VindicatorSeductor",0,0,0,0,0,0,0,0,0)
-    Stop
-  }
-}
-
-ACTOR VindicatorSeductor
-{
-   Radius 0
-   Height 0
-   +ISMONSTER
-   +FRIENDLY
-   +LOOKALLAROUND
-   +NOBLOCKMONST
-   +NOGRAVITY
-   +NOINTERACTION
-   +NOCLIP
-   States
-   {
-   Spawn:
-      TNT1 A 0
-      TNT1 A 1 A_LookEx(0,0,3072,3072,0,"See")
-      TNT1 A 1 A_SpawnItemEx("VindicatorHit",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
-      Stop
-   See:
-   Missile:
-      TNT1 A 0 A_FaceTarget
-      TNT1 A 1 A_CustomMissile("VindicatorProjectile",0,0,0)
-      Stop
-   XDeath:
-      TNT1 A 1
-      stop
-   Death:
-      TNT1 A 1
-      stop
-   }
-}
-
-Actor VindicatorProjectile //: FastProjectile
-{
-  Speed 100
-  Radius 11
-  Height 8
-  Damage (125)
-  PROJECTILE
-  //MissileType "VindicatorTrailSpawner"
-  Obituary "%k burned down %o like a house, because %g didn't want %p goddamn lemons."
-  DamageType Nope
-  Renderstyle Add
-  Scale 1
-  +SEEKERMISSILE
-  +NOGRAVITY
-  +FORCERADIUSDMG
-  +EXPLODEONWATER
+    Radius 20
+    Height 16
+    MissileHeight 16
+    MissileType "MastodonNukeTrail"
+    Speed 50
+    Damage (400)
+    Projectile
     DamageType "Mastodon"
-  states
-  {
-  Spawn:
-    TNT1 A 0
-    VINF A 0 A_SpawnItemEx("VindicatorTrailSpawner",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
-    VINF A 1 Bright
-    Loop
-  Death:
-    TNT1 A 0 A_Explode(160,198,0)
-    TNT1 A 1 A_SpawnItemEx("VindicatorHit",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
-    stop
-  }
-}
-
-ACTOR VindicatorExplodiumBlast
-{
-    +NOINTERACTION
-    +NOGRAVITY
+    Species "Player"
+    +THRUSPECIES
+    +EXPLODEONWATER
     +FORCERADIUSDMG
     Renderstyle Add
-    DamageType "Mastodon"
+    Alpha 0.99
+    Scale 0.4
+    var int User_Frame;
+    var int User_BlastRadius;
+    States
+    {
+    /*
+    Hereby I present thee the one and only patented (not really) method of mine
+    for saying "FUCK YOU" to repeating function on every 0-tic state
+    of an animated projectile! I't still retarded
+    */
+    Spawn:
+        TNT1 AA 0 A_SetUserVar("User_Frame",1)
+        TNT1 A 0 A_PlaySound("Mastodon/Loop2",5,1.0,1)
+    Cycle:
+        "####" "#" 0 A_JumpIf(User_Frame == 1,"FrameA")
+        "####" "#" 0 A_JumpIf(User_Frame == 2,"FrameB")
+        "####" "#" 0 A_JumpIf(User_Frame == 3,"FrameC")
+        "####" "#" 0 A_JumpIf(User_Frame == 4,"FrameD")
+        "####" "#" 0 A_JumpIf(User_Frame == 5,"FrameE")
+        "####" "#" 0 A_JumpIf(User_Frame == 6,"FrameF")
+        "####" "#" 0 A_JumpIf(User_Frame == 7,"FrameG")
+        "####" "#" 0 A_JumpIf(User_Frame == 8,"FrameH")
+        "####" "#" 0 A_JumpIf(User_Frame == 9,"FrameI")
+        "####" "#" 0 A_JumpIf(User_Frame == 10,"FrameJ")
+        "####" "#" 0 A_JumpIf(User_Frame == 11,"FrameK")
+        "####" "#" 0 A_JumpIf(User_Frame == 12,"FrameL")
+        "####" "#" 0 A_JumpIf(User_Frame == 13,"FrameM")
+        "####" "#" 0 A_JumpIf(User_Frame == 14,"FrameN")
+        "####" "#" 0 A_JumpIf(User_Frame == 15,"FrameO")
+        "####" "#" 0 A_JumpIf(User_Frame == 16,"FrameP")
+    FrameA: //And if I had SXT_TRANSFERSPRITEFRAME here!... I'd exactly use that instead of doing this shit. Thanks Zimbabwe, yer da best.
+        MSR3 A 0 A_SpawnItemEx("MastodonNukeTrailA",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameB:
+        MSR3 B 0 A_SpawnItemEx("MastodonNukeTrailB",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameC:
+        MSR3 C 0 A_SpawnItemEx("MastodonNukeTrailC",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameD:
+        MSR3 D 0 A_SpawnItemEx("MastodonNukeTrailD",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameE:
+        MSR3 E 0 A_SpawnItemEx("MastodonNukeTrailE",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameF:
+        MSR3 F 0 A_SpawnItemEx("MastodonNukeTrailF",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameG:
+        MSR3 G 0 A_SpawnItemEx("MastodonNukeTrailG",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameH:
+        MSR3 H 0 A_SpawnItemEx("MastodonNukeTrailH",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameI:
+        MSR3 I 0 A_SpawnItemEx("MastodonNukeTrailI",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameJ:
+        MSR3 J 0 A_SpawnItemEx("MastodonNukeTrailJ",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameK:
+        MSR3 K 0 A_SpawnItemEx("MastodonNukeTrailK",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameL:
+        MSR3 L 0 A_SpawnItemEx("MastodonNukeTrailL",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameM:
+        MSR3 M 0 A_SpawnItemEx("MastodonNukeTrailM",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameN:
+        MSR3 N 0 A_SpawnItemEx("MastodonNukeTrailN",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameO:
+        MSR3 O 0 A_SpawnItemEx("MastodonNukeTrailO",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Main
+    FrameP:
+        MSR3 O 0 A_SpawnItemEx("MastodonNukeTrailP",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        MSR3 P 0 A_SetUserVar("User_Frame",0)
+        Goto Main
+    Main:
+        "####" "#" 0 A_SetUserVar("User_Frame", User_Frame + 1)
+        "####" "#" 0 A_Explode((6),128,0)
+        "####" "#" 2 Bright //A_SpawnItemEx("MastodonNukeTrail",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Goto Cycle
+    Death:
+        "####" "#" 0 A_PlaySound("Mastodon/Initiate",5)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeProjectileBlast",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)    //Yes damage.
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeBlastRing",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeRift",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeCandyBlast",0,0,0,0,0,0,0,SXF_CLIENTSIDE)                 //No damage.
+        "####" "#" 0 A_Explode(150,256,0)
+        TNT1 A 75 A_Quake(7,75,0,1536,none)
+        Stop
+    }
+}
+
+//Trail
+ACTOR MastodonNukeTrailA : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 0.2 //Starting out with smaller scale in case of no A_SetScale so it won't be ginormous.
     States
     {
     Spawn:
-    ATGT A 0
-    ATGT A 0 A_Jump(164,4,3,2,1)
-    TNT1 AAAAAAAAAAAAAAAAAAAAAA 1 A_Explode(128,256,0)
-    TNT1 AAAAAAAAA 1 A_Explode(128,256,0)
-    TNT1 AAAAAAAAAAAAA 1 A_Explode(128,256,0)
-    Stop
+        "####" "##" 0 //A_SetScale(0.4)
+        "####" "#" 0 A_Jump(256,"Looplet")
+    Looplet:
+        "####" "#" 0 //A_SetScale(ScaleX - 0.001)
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        "####" "#" 0 A_FadeOut(0.05)
+        "####" "#" 0 A_Jump(256,"Looplet2")
+    Looplet2:
+        MSR3 A 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailB : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 B 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailC : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 C 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailD : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 D 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailE : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 E 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailF : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 F 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailG : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 G 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailH : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 H 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailI : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 I 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailJ : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 J 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailK : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 K 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailL : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 L 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailM : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 M 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailN : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 N 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailO : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 O 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrailP : MastodonNukeTrailA
+{
+    States
+    {
+    Looplet2:
+        MSR3 P 1 Bright
+        Goto Looplet
+    }
+}
+
+ACTOR MastodonNukeTrail : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 0.3
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        MSBL AA 0 A_SpawnItemEx("MastodonNukeTrailSmoke",frandom(5.0,-5.0),frandom(5.0,-5.0),frandom(5.0,-5.0),
+                                                                frandom(0.4,0.7),frandom(0.4,0.7),random(frandom(-0.4,-0.7),frandom(0.4,0.7)),
+                                                                frandom(0.0,360.0),SXF_CLIENTSIDE,224)
+        MSBL A 0 A_SpawnItemEx("MastodonNukeTrailParticle",0,0,0,
+                                                                frandom(0.4,0.7),frandom(0.4,0.7),frandom(1.5,3.7),
+                                                                frandom(0.0,360.0),SXF_CLIENTSIDE,224)
+    Looplet:
+        MSBL A 1 Bright A_FadeOut(0.05)
+        "####" "#" 0 //A_SetScale(ScaleX - frandom(0.005,0.01))
+        Loop
+    }
+}
+        
+ACTOR MastodonNukeTrailSmoke : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 0.05
+    Alpha 0
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(frandom(0.4,0.5))
+        TNT1 A 0 A_Jump(256,"FrameA","FrameB","FrameC","FrameD")
+    FrameA:
+        MSMK A 0
+        Goto FadeIn
+    FrameB:
+        MSMK B 0
+        Goto FadeIn
+    FrameC:
+        MSMK C 0
+        Goto FadeIn
+    FrameD:
+        MSMK D 0
+        Goto FadeIn
+    FadeIn:
+        "####" "#" 0 A_JumpIf(Alpha > 0.15, "FadeOut")
+        "####" "#" 0 //A_SetScale(ScaleX + frandom(0.001,0.002))
+        "####" "#" 1 Bright A_FadeIn(frandom(0.02,0.03))
+        Loop
+    FadeOut:
+        "####" "#" 0 //A_SetScale(ScaleX + frandom(0.001,0.002))
+        "####" "#" 1 Bright A_FadeOut(frandom(0.005,0.002))
+        Loop
+    }
+}
+
+ACTOR MastodonNukeTrailParticle : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Radius 6
+    Height 8
+    Scale 0.2
+    Gravity 0.3
+    Alpha 0.8
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(frandom(0.15,0.2))
+        MSBL D 0
+        Goto Main
+    Main:
+        "####" "#" 0 //A_SetScale(ScaleX - frandom(0.001,0.0005))
+        "####" "#" 1 Bright A_FadeOut(frandom(0.01,0.02))
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        Loop
+    }
+}
+
+//Blast Ring
+ACTOR MastodonNukeBlastRing : MastodonSpawner
+{
+    States
+    {
+    Spawn:        //Le full circle.
+        TNT1 AA 0 A_SetUserVar("User_Counter",180)
+    PhaseOne:
+        TNT1 A 0 A_SpawnItemEx("MastodonNukeWave",0,0,0,
+                                                  25.0,0,0,
+                                                  frandom(-1.0,1.0),SXF_TRANSFERPOINTERS)
+        TNT1 A 0 A_SetAngle(Angle + 2)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 0 A_JumpIf(User_Counter >= 1, "PhaseOne")
+        Stop
+        TNT1 A 0 A_SetUserVar("User_Counter",30)
+    PhaseTwo:    //Some extra, random ones.
+        TNT1 A 0 A_SpawnItemEx("MastodonNukeWave",0,0,0,
+                                                  25.0,0,0,
+                                                  frandom(0.0,360.0),SXF_TRANSFERPOINTERS)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 0 A_JumpIf(User_Counter >= 1, "PhaseTwo")
+        Stop
+    }
+}
+
+ACTOR MastodonNukeWave : MastodonBase    //In case you don't want it to go through walls (which'd suck - just keep the damage somewhat sane), I commented stuff out for that case
+{
+    Projectile
+    Scale 0.9
+    Alpha 0.8
+    var int User_BlastRadius;
+    var int User_Lifespan;    
+    var int User_Damagespan;
+    DamageType "Mastodon"
+    Species "Player"
+    +THRUSPECIES
+    +NOINTERACTION
+    //+FORCERADIUSDMG
+    States
+    {
+    Spawn:
+        MSBL AA 0 A_SetUserVar("User_Lifespan", 70)
+        MSBL A 0 A_PlaySound("Mastodon/Loop3",6,0.3,1)
+        Goto Main
+    Main:
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeTrailSmoke",frandom(5.0,-5.0),frandom(5.0,-5.0),frandom(5.0,-5.0),
+                                                                frandom(1.4,0.7),frandom(1.4,0.7),random(frandom(-1.4,-0.7),frandom(1.4,0.7)),
+                                                                frandom(0.0,360.0),SXF_CLIENTSIDE,164)
+        "####" "#" 0 //A_SetScale(ScaleX + frandom(0.003,0.006))
+        "####" "#" 0 A_Quake(5,5,0,256,none)
+        "####" "#" 0 A_SetUserVar("User_BlastRadius", User_BlastRadius + 1)
+        "####" "#" 0 A_SetUserVar("User_Lifespan", User_Lifespan - 1)
+        "####" "#" 0 A_SetUserVar("User_Damagespan", User_Damagespan + 1)
+        "####" "#" 0 A_JumpIf(User_Damagespan > 4, 2)
+        "####" "#" 0 A_Jump(256,3)
+        "####" "#" 0 A_SetUserVar("User_Damagespan", 0)
+        "####" "#" 0 A_Explode((20),64 + User_BlastRadius)
+        "####" "#" 0 A_JumpIf(User_Lifespan <= 0, "Herp")
+        "####" "#" 1 Bright
+        Loop
+    Herp:
+        //"####" "#" 0 A_JumpIf(Alpha <= 0, "Derp")
+        //"####" "#" 0 A_StopSound(6)
+        "####" "#" 0 A_PlaySound("Mastodon/End3",6,0.3)
+    Hurr:
+        "####" "#" 0 A_Quake(5,5,0,256,none)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeTrailSmoke",frandom(5.0,-5.0),frandom(5.0,-5.0),frandom(5.0,-5.0),
+                                                                frandom(1.4,0.7),frandom(1.4,0.7),random(frandom(-1.4,-0.7),frandom(1.4,0.7)),
+                                                                frandom(0.0,360.0),SXF_CLIENTSIDE,164)
+        "####" "#" 1 A_FadeOut(0.02)
+        Loop
+    Derp:
+        "####" "#" 0 A_StopSound(6)
+        Stop
+    }
+}
+
+ACTOR MastodonNukeCandyBlast : MastodonSpawner
+{
+    States
+    {
+    Spawn:
+        "####" "##" 0 A_SpawnItemEx("MastodonNukeRing1",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeRing2",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeGenerate1",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeGenerate2",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeFlash",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeSparkBlast",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeParticleBlast",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        TNT1 A 1
+        Stop
+    }
+}
+
+//Init blast stuff
+ACTOR MastodonNukeRing1 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.9
+    Scale 7.0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        "####" "##" 0 //A_SetScale(1.2)
+    Looplet:
+        //"####" "#" 0 A_SetScale(ScaleX + frandom(0.4,0.3))
+        MSRN A 1 Bright A_FadeOut(frandom(0.01,0.03))
+        Loop
+    }
+}
+
+ACTOR MastodonNukeRing2 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 5.0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        "####" "##" 0 //A_SetScale(1.0)
+    Looplet:
+        //"####" "#" 0 A_SetScale(ScaleX + frandom(0.1,0.2))
+        MSRN D 1 Bright A_FadeOut(frandom(0.01,0.02))
+        Loop
+    }
+}
+
+ACTOR MastodonNukeFlash : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 5.0
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(ScaleX - frandom(0.015,0.025))
+        MSFL A 1 Bright A_FadeOut(frandom(0.0125,0.001))
+        //"####" "#" 0 A_JumpIf(ScaleX <= 0, "Null")
+        Loop
+    }
+}
+
+//Spark Stuff
+ACTOR MastodonNukeSparkBlast : MastodonSpawner
+{
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 AA 0 A_SetUserVar("User_Counter",150)
+    PhaseOne:
+        TNT1 A 0 A_SpawnItemEx("MastodonNukeSpark",frandom(64.0,-64.0),frandom(64.0,-64.0),frandom(64.0,-64.0),
+                                                   frandom(5.0,10.0),frandom(5.0,10.0),random(frandom(5.0,10.0),frandom(-5.0,-10.0)),
+                                                   frandom(0.0,360.0),SXF_CLIENTSIDE,20)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 0 A_JumpIf(User_Counter >= 1, "PhaseOne")
+        TNT1 A 0 A_SetUserVar("User_Counter",135)
+    PhaseTwo:
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonNukeSpark",frandom(64.0,-64.0),frandom(64.0,-64.0),frandom(64.0,-64.0),
+                                                   frandom(5.0,10.0),frandom(5.0,10.0),random(frandom(5.0,10.0),frandom(-5.0,-10.0)),
+                                                   frandom(0.0,360.0),SXF_CLIENTSIDE,20)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(User_Counter >= 1, "PhaseTwo")
+        Stop
+    }
+}
+
+ACTOR MastodonNukeSpark : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 0.2
+    Alpha 0.7
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 35
+        TNT1 A 0 A_ScaleVelocity(-1.0)
+        //"####" "#" 0 A_SetScale(frandom(0.1,0.15))
+        TNT1 A 0 A_Jump(256,"FrameA","FrameB","FrameC","FrameD")
+    FrameA:
+        MSSP A 0
+        Goto Main
+    FrameB:
+        MSSP B 0
+        Goto Main
+    FrameC:
+        MSSP C 0
+        Goto Main
+    FrameD:
+        MSSP D 0
+        Goto Main
+    Main:
+        "####" "#" 0 //A_SetScale(ScaleX - frandom(0.002,0.003))
+        "####" "#" 1 Bright A_FadeOut(frandom(0.02,0.03))
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        Loop
+    }
+}
+
+//Particle stuff
+ACTOR MastodonNukeParticleBlast : MastodonSpawner
+{
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 AA 0 A_SetUserVar("User_Counter",150)
+    PhaseOne:
+        TNT1 A 0 A_SpawnItemEx("MastodonNukeParticle",frandom(5.0,-5.0),frandom(5.0,-5.0),frandom(5.0,-5.0),
+                                                   frandom(30.0,15.0),frandom(30.0,15.0),random(frandom(-30.0,-15.0),frandom(30.0,15.0)),
+                                                   frandom(0.0,360.0),SXF_CLIENTSIDE,20)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 0 A_JumpIf(User_Counter >= 1, "PhaseOne")
+        TNT1 A 0 A_SetUserVar("User_Counter",35)
+    PhaseTwo:
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MastodonNukeParticle",frandom(5.0,-5.0),frandom(5.0,-5.0),frandom(5.0,-5.0),
+                                                   frandom(30.0,15.0),frandom(30.0,15.0),random(frandom(-30.0,-15.0),frandom(30.0,15.0)),
+                                                   frandom(0.0,360.0),SXF_CLIENTSIDE,20)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 1
+        TNT1 A 0 A_JumpIf(User_Counter >= 1, "PhaseTwo")
+        Stop
+    }
+}
+
+ACTOR MastodonNukeParticle : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 0.8
+    Alpha 0.8
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(frandom(0.5,0.6))
+        MSBL D 0
+        Goto Main
+    Main:
+        "####" "#" 0 A_ChangeVelocity(frandom(-0.2,0.2),frandom(-0.2,0.2),frandom(-0.2,0.2),CVF_RELATIVE)
+        "####" "#" 0 //A_SetScale(ScaleX - frandom(0.002,0.003))
+        "####" "#" 1 Bright A_FadeOut(frandom(0.02,0.01))
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        Loop
+    }
+}
+
+//Rift
+ACTOR MastodonNukeRift : MastodonBase
+{
+    Scale 1.1
+    var int User_Frame;
+    var int User_Lifespan;
+    DamageType "Mastodon"
+    Species "Player"
+    +THRUSPECIES
+    +FORCERADIUSDMG
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 AA 0 A_SetUserVar("User_Lifespan",50)
+        TNT1 A 0 A_SetUserVar("User_Frame", 1)
+    Cycle:
+        "####" "#" 0 A_JumpIf(User_Frame == 1,"FrameA")
+        "####" "#" 0 A_JumpIf(User_Frame == 2,"FrameB")
+        "####" "#" 0 A_JumpIf(User_Frame == 3,"FrameC")
+        "####" "#" 0 A_JumpIf(User_Frame == 4,"FrameD")
+        "####" "#" 0 A_JumpIf(User_Frame == 5,"FrameE")
+        "####" "#" 0 A_JumpIf(User_Frame == 6,"FrameF")
+        "####" "#" 0 A_JumpIf(User_Frame == 7,"FrameG")
+        "####" "#" 0 A_JumpIf(User_Frame == 8,"FrameH")
+        "####" "#" 0 A_JumpIf(User_Frame == 9,"FrameI")
+        "####" "#" 0 A_JumpIf(User_Frame == 10,"FrameJ")
+        "####" "#" 0 A_JumpIf(User_Frame == 11,"FrameK")
+        "####" "#" 0 A_JumpIf(User_Frame == 12,"FrameL")
+        "####" "#" 0 A_JumpIf(User_Frame == 13,"FrameM")
+        "####" "#" 0 A_JumpIf(User_Frame == 14,"FrameN")
+        "####" "#" 0 A_JumpIf(User_Frame == 15,"FrameO")
+        "####" "#" 0 A_JumpIf(User_Frame == 16,"FrameP")
+    FrameA:
+        MSR2 A 0
+        Goto Main
+    FrameB:
+        MSR2 B 0
+        Goto Main
+    FrameC:
+        MSR2 C 0
+        Goto Main
+    FrameD:
+        MSR2 D 0
+        Goto Main
+    FrameE:
+        MSR2 E 0
+        Goto Main
+    FrameF:
+        MSR2 F 0
+        Goto Main
+    FrameG:
+        MSR2 G 0
+        Goto Main
+    FrameH:
+        MSR2 H 0
+        Goto Main
+    FrameI:
+        MSR2 I 0
+        Goto Main
+    FrameJ:
+        MSR2 J 0
+        Goto Main
+    FrameK:
+        MSR2 K 0
+        Goto Main
+    FrameL:
+        MSR2 L 0
+        Goto Main
+    FrameM:
+        MSR2 M 0
+        Goto Main
+    FrameN:
+        MSR2 N 0
+        Goto Main
+    FrameO:
+        MSR2 O 0
+        Goto Main
+    FrameP:
+        MSR2 P 0 A_SetUserVar("User_Frame",0)
+        Goto Main
+    Main:
+        "####" "#" 0 A_SetUserVar("User_Frame", User_Frame + 1)                //The animation cycle.
+        "####" "#" 0 A_SetUserVar("User_Lifespan", User_Lifespan - 1)        //The total life cycle.
+        "####" "#" 0 A_RadiusThrust (-2000, 1024, 0) //Suck it in, mong.
+        "####" "#" 2 Bright A_Explode((8),512)
+        "####" "#" 0 A_JumpIf(User_Lifespan >= 1, "Cycle")                    //Iz it still alive? Then don't dissipate.
+        "####" "#" 0 A_FadeOut(0.02)                                        //The dissipation cycle.
+        "####" "#" 0 A_Quake(3,2,0,1536,none)                                //Shake it baby.
+        "####" "#" 0 //A_SetScale(ScaleX - frandom(0.02,0.01))                    //Zimbabwe plz.
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")                            //A security check, juuust in case.
+        Goto Cycle                                                            //Feeling dizzy from this madness yet?
+    }
+}
+
+//Prepping for Phase Two
+ACTOR MastodonNukeGenerate1 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.0
+    Scale 0.5
+    var int User_Counter;
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 55
+        MSRN D 0 A_SetUserVar("User_Counter", 65)
+        //"####" "#" 0 A_SetScale(0.15)
+    PhaseOne:
+        "####" "#" 0 A_JumpIf(Alpha > 0.92, "PhaseTwo")
+        "####" "#" 0 //A_SetScale(ScaleX + 0.02)
+        "####" "#" 1 Bright A_FadeIn(frandom(0.01,0.02))
+        Loop
+    PhaseTwo:
+        "####" "#" 0 A_JumpIf(User_Counter <= 0, "PhaseThree")
+        "####" "#" 0 //A_SetScale(ScaleX + 0.02)
+        "####" "#" 1 Bright A_SetUserVar("User_Counter", User_Counter - 1)
+        Loop
+    PhaseThree:
+        "####" "#" 0 //A_SetScale(ScaleX - 0.1)
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        "####" "#" 1 Bright A_FadeOut(frandom(0.04,0.06))
+        Loop
+    }
+}
+
+ACTOR MastodonNukeGenerate2 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.0
+    Scale 1.0
+    var int User_Counter;
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 55
+        MSBL A 0 A_SetUserVar("User_Counter", 65)
+        //"####" "#" 0 A_SetScale(0.5)
+    PhaseOne:
+        "####" "#" 0 A_JumpIf(Alpha > 0.92, "PhaseTwo")
+        "####" "#" 0 //A_SetScale(ScaleX + 0.02)
+        "####" "#" 1 Bright A_FadeIn(frandom(0.01,0.02))
+        Loop
+    PhaseTwo:
+        "####" "#" 0 A_JumpIf(User_Counter <= 0, "PhaseThree")
+        "####" "#" 0 //A_SetScale(ScaleX + 0.02)
+        "####" "#" 1 Bright A_SetUserVar("User_Counter", User_Counter - 1)
+        Loop
+    PhaseThree:
+        "####" "#" 0 //A_SetScale(ScaleX - 0.1)
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        "####" "#" 1 Bright A_FadeOut(frandom(0.04,0.06))
+        Loop
+    }
+}
+
+//PHASE TWO
+
+ACTOR MastodonNukeFlash2 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 4.0
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(ScaleX - frandom(0.05,0.03))
+        MSFL A 1 Bright A_FadeOut(frandom(0.005,0.01))
+        //"####" "#" 0 A_JumpIf(ScaleX <= 0, "Null")
+        Loop
+    }
+}
+
+//Projectile Blast
+ACTOR MastodonNukeProjectileBlast : MastodonSpawner
+{
+    +FORCERADIUSDMG
+    DamageType "Mastodon"
+    Species "Player"
+    +THRUSPECIES
+    States
+    {
+    Spawn:
+        TNT1 AA 0 A_PlaySound("Mastodon/Loop1",5,1.0,1)
+        TNT1 A 140
+        TNT1 A 0 A_PlaySound("Mastodon/Incoming",6)
+        TNT1 A 45
+        TNT1 A 0 A_PlaySound("Mastodon/Blast",5)
+        TNT1 A 0 A_SpawnItemEx("MastodonNukeRing1",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        TNT1 A 0 A_SpawnItemEx("MastodonNukeRing2",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        TNT1 A 0 A_SpawnItemEx("MastodonNukeFlash2",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        TNT1 A 0 A_Explode(256,512,0)
+        TNT1 A 0 A_Quake(7,50,0,1536,none)    
+        TNT1 A 0 A_SetUserVar("User_Counter",60)
+    PhaseOne:
+        TNT1 A 0 A_SpawnItemEx("MastodonBueller",frandom(128.0,-128.0),frandom(128.0,-128.0),frandom(128.0,-128.0),
+                                                  frandom(60.0,45.0),frandom(65.0,45.0),random(frandom(-60.0,-45.0),frandom(60.0,45.0)),
+                                                  frandom(0.0,360.0),SXF_TRANSFERPOINTERS)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 0 A_JumpIf(User_Counter >= 1, "PhaseOne")
+        TNT1 A 0 A_SetUserVar("User_Counter",50)
+    PhaseTwo:
+        TNT1 AAAAAAA 0 A_SpawnItemEx("MastodonBueller",frandom(128.0,-128.0),frandom(128.0,-128.0),frandom(128.0,-128.0),
+                                                  frandom(60.0,45.0),frandom(65.0,45.0),random(frandom(-60.0,-45.0),frandom(60.0,45.0)),
+                                                  frandom(0.0,360.0),SXF_TRANSFERPOINTERS,64)
+        TNT1 A 0 A_SetUserVar("User_Counter", User_Counter - 1)
+        TNT1 A 1 A_JumpIf(User_Counter >= 1, "PhaseTwo")
+        Stop
+    }
+}
+
+Actor MastodonBueller //: FastProjectile
+{
+    Radius 10
+    Height 14
+    //MissileHeight 14
+    //MissileType "MastodonBuellerTrail"
+    Speed 30 //60
+    Damage (5)
+    Projectile
+    DamageType "Mastodon"
+    Species "Player"
+    +THRUSPECIES
+    +EXPLODEONWATER
+    +SCREENSEEKER
+    +SEEKERMISSILE
+    +FORCERADIUSDMG
+    var int User_StartSeek;
+    Scale 1.7
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        GBLT AA 0 A_ScaleVelocity(frandom(0.8,1.2))
+        GBLT A 0 A_SetUserVar("User_StartSeek", random(8,12))
+    Looplet:
+        GBLT A 0 A_SetUserVar("User_StartSeek", User_StartSeek - 1)
+        "####" "#" 0 A_ChangeVelocity(frandom(-1.6,1.6),frandom(-1.6,1.6),frandom(-1.6,1.6),CVF_RELATIVE)
+        GBLT A 1 Bright A_SpawnItemEx("MastodonBuellerTrail",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        GBLT A 0 A_JumpIf(User_StartSeek <= 0,1)
+        Loop
+        GBLT A 0 A_SeekerMissile(30,15,SMF_LOOK,256,5)
+        Loop
+    Death:
+        TNT1 A 0 A_PlaySound("Mastodon/Bueller",5,0.6)
+        TNT1 A 0 A_Explode(20,96,0)
+        TNT1 A 0 A_SpawnItemEx("MastodonBuellerHit",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        Stop
+    }
+}
+
+ACTOR MastodonBuellerTrail : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 1.5
+    Alpha 0.3
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        "####" "##" 0 //A_SetScale(frandom(1.5,1.6))
+    Looplet:
+        "####" "#" 0 //A_SetScale(ScaleX - frandom(0.02,0.05))
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        MSBL D 1 Bright A_FadeOut(frandom(0.03,0.02))
+        Loop
+    }
+}
+
+ACTOR MastodonBuellerHit : MastodonBase
+{
+    +CLIENTSIDEONLY
+    var int User_Counter;  //I do hope Zimbabwe has uservars or else I'll be unhappy, least to say.
+    Scale 0.8
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("MastodonHitRing",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0) 
+        TNT1 A 0 A_SpawnItemEx("MastodonHitFlash",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
+
+    Main:
+        GBLT BCDEFGH 2 Bright A_FadeOut(frandom(0.055,0.025))
+        Stop
+    }
+}
+
+ACTOR MastodonHitRing : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 0.4
+    Alpha 0.7
+    States
+    {
+    Spawn:
+        TNT1 A 0        //ZIMBABWE 2.0, WHY Y U NO A_SETSCALE. FUUUUUUUUUUU~
+        "####" "##" 0 //A_SetScale(frandom(0.3,0.4))
+    Looplet:
+        "####" "#" 0 //A_SetScale(ScaleX + frandom(0.1,0.15))
+        MSRN A 1 Bright A_FadeOut(frandom(0.1,0.075))
+        Loop
+    }
+}
+
+ACTOR MastodonHitFlash : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Scale 1.5
+    Alpha 0.6
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        "####" "##" 0 //A_SetScale(frandom(1.3,1.25))
+    Looplet:
+        "####" "#" 0 //A_SetScale(ScaleX - frandom(0.002,0.005))
+        "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
+        MSFL B 1 Bright A_FadeOut(frandom(0.06,0.05))
+        Loop
     }
 }

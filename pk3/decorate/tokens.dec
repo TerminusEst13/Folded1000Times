@@ -219,7 +219,7 @@ actor HatesphereBleedToDeath : Boolean {}
 
 actor RavenLeftLifeCounter : Counter { Inventory.MaxAmount 150 }
 actor RavenRightLifeCounter : Counter { Inventory.MaxAmount 150 }
-actor HatesphereLifeCounter : Counter { Inventory.MaxAmount 500 }
+actor HatesphereLifeCounter : Counter { Inventory.MaxAmount 300 }
 
 actor JetpackFuel : Counter { Inventory.MaxAmount 120 }
 actor JetpackCooldown : Counter { Inventory.MaxAmount 35 }
