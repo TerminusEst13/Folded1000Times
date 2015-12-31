@@ -41,6 +41,7 @@ CODE:
 - Enemy-tazed code by WildWeasel
 - Data stream weapon spawns by PresidentPeople
 - Enemy stomping by Marrub
+- Mastodon functions by PillowBlaster
 
 SOUNDS:
 =========

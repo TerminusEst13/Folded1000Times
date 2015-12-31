@@ -345,74 +345,74 @@ fatso/shotx               MANSHHIT // Taken from Gears of War
 $volume fatso/shotx 0.9
 $limit fatso/shotx 0
 
-drone/sight         dssntsee // Taken from Duke Nukem 3D
-drone/death         dssntdth // Taken from Duke Nukem 3D
-drone/active        dssntact // Taken from Duke Nukem 3D
+drone/sight               dssntsee // Taken from Duke Nukem 3D
+drone/death               dssntdth // Taken from Duke Nukem 3D
+drone/active              dssntact // Taken from Duke Nukem 3D
 
-ddbeep "Sounds/enemies/devildriver/bomb_timer2.ogg" // Taken from STALKER: Shadows of Chernobyl
-ddrockalert "Sounds/enemies/devildriver/rocketalert.ogg" // Taken from a simple pager
+ddbeep                    bomb_tim // Taken from STALKER: Shadows of Chernobyl
+ddrockalert               rocketal // Taken from a simple pager
 
-ddheal "Sounds/enemies/devildriver/DDHeal.ogg" // Edited from Chronicles of Riddick
+ddheal                    DDHeal   // Edited from Chronicles of Riddick
 
 $random devildriver/active { ddactive1 ddactive2 } // Taken from Killing Floor
 
-ddactive1 "Sounds/enemies/devildriver/DDActive1.ogg"
-ddactive2 "Sounds/enemies/devildriver/DDActive2.ogg"
+ddactive1                 DDAct1
+ddactive2                 DDAct2
 
 $rolloff devildriver/active 400 2400
 
 $random devildriver/death { dddeath1 dddeath2 } // Taken from Killing Floor
 
-dddeath1 "Sounds/enemies/devildriver/DDDeath1.ogg"
-dddeath2 "Sounds/enemies/devildriver/DDDeath2.ogg"
+dddeath1                  DDDeath1
+dddeath2                  DDDeath2
 
 $random devildriver/pain { ddpain1 ddpain2 } // Taken from Killing Floor
 
-ddpain1 "Sounds/enemies/devildriver/DDPain1.ogg"
-ddpain2 "Sounds/enemies/devildriver/DDPain2.ogg"
+ddpain1                   DDPain1
+ddpain2                   DDPain2
 
 $rolloff devildriver/pain 400 2400
 
 $random devildriver/see {ddsee1 ddsee2 ddsee3 ddsee4 } // Taken from Killing Floor
 
-ddsee1 "Sounds/enemies/devildriver/DDSee1.ogg"
-ddsee2 "Sounds/enemies/devildriver/DDSee2.ogg"
-ddsee3 "Sounds/enemies/devildriver/DDSee3.ogg"
-ddsee4 "Sounds/enemies/devildriver/DDSee4.ogg"
+ddsee1                    DDSee1
+ddsee2                    DDSee2
+ddsee3                    DDSee3
+ddsee4                    DDSee4
 
 $random devildriver/rocket { ddrock1 ddrock2 ddrock3 ddrock4 } // Taken from Halo: Reach
-ddrock1          DDFIRE1
-ddrock2          DDFIRE2
-ddrock3          DDFIRE3
-ddrock4          DDFIRE4
+ddrock1                   DDFIRE1
+ddrock2                   DDFIRE2
+ddrock3                   DDFIRE3
+ddrock4                   DDFIRE4
 
 $rolloff devildriver/rocket 400 2400
 
 $random devildriver/jukerocket { ddjrock1 ddjrock2 ddjrock3 } // Taken from Halo: Reach
-ddjrock1         DDHFIRE1
-ddjrock2         DDHFIRE2
-ddjrock3         DDHFIRE3
+ddjrock1                  DDHFIRE1
+ddjrock2                  DDHFIRE2
+ddjrock3                  DDHFIRE3
 
 $rolloff devildriver/jukerocket 800 3200
 
 $random devildriver/honk { ddhonk1 ddhonk2 ddhonk3 } // Taken from the General Series 6000
-ddhonk1          DDHONK1
-ddhonk2          DDHONK2
-ddhonk3          DDHONK3
+ddhonk1                   DDHONK1
+ddhonk2                   DDHONK2
+ddhonk3                   DDHONK3
 
 $rolloff devildriver/honk 1800 3200
 
 $random devildriver/seekrocket { ddsrock1 ddsrock2 ddsrock3 } // Taken from Halo: Reach
-ddsrock1         DDSFIRE1
-ddsrock2         DDSFIRE2
-ddsrock3         DDSFIRE3
+ddsrock1                  DDSFIRE1
+ddsrock2                  DDSFIRE2
+ddsrock3                  DDSFIRE3
 
 $rolloff devildriver/seekrocket 400 2400
 
-devildriver/loop         DDLOOP   // Taken from the General Series 6000
-devildriver/end          DDLOOPE  // Taken from the General Series 6000
-devildriver/tasecharge   DDECHARG // Taken from Devil May Cry 3
-devildriver/tase         DDETASE  // Taken from Derp May Herp 3
+devildriver/loop          DDLOOP   // Taken from the General Series 6000
+devildriver/end           DDLOOPE  // Taken from the General Series 6000
+devildriver/tasecharge    DDECHARG // Taken from Devil May Cry 3
+devildriver/tase          DDETASE  // Taken from Derp May Herp 3
 
 $rolloff devildriver/loop 400 2400
 $rolloff devildriver/end 400 2400

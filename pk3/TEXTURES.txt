@@ -116,4 +116,24 @@ Sprite LDTHB5, 64, 128
 	Patch LDTHA5, 15, 73
 }
 
+Sprite MSMKC0D0, 256, 256
+{
+	Offset 128, 128
+	Patch MSMKA0B0, 0, 0
+	{
+		FlipY
+		Style CopyAlpha
+	}
+}
+
+Sprite MSSPC0D0, 256, 256
+{
+	Offset 128, 128
+	Patch MSSPA0B0, 0, 0
+	{
+		FlipY
+		Style CopyAlpha
+	}
+}
+
 // End of texture definitions
