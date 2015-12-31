@@ -11,7 +11,6 @@ script WEEB_ENTER ENTER
     int Ys;
     int XMen2;
     int Ys2;
-    int mytid;
     int MarchOfTheImmortal;
     int IronArmor;
     int armor;
@@ -155,18 +154,17 @@ script WEEB_ENTER ENTER
             if (GetCvar("dst_debug") == 1) { Log(s:"Error: Player ", d:pln, s:" is not Hae-Lin, terminating WEEB_ENTER."); }
             terminate;
         }
-        mytid = defaultTID(-1);
         //if (CheckInventory("ImAlive") == 1) { if (ConsolePlayerNumber() != PlayerNumber()) { terminate; } }
 
         XMen2 = XMen;
         Ys2   = Ys;
         XMen  = GetActorX(0);
         Ys    = GetActorY(0);
-        ZDum  = GetActorZ(mytid) + 24.0;
-        Angel = GetActorAngle(mytid);
-        velx  = GetActorVelX(mytid); // I can't think of any witty names for these.
-        vely  = GetActorVelY(mytid);
-        velz  = GetActorVelZ(mytid);
+        ZDum  = GetActorZ(0) + 24.0;
+        Angel = GetActorAngle(0);
+        velx  = GetActorVelX(0); // I can't think of any witty names for these.
+        vely  = GetActorVelY(0);
+        velz  = GetActorVelZ(0);
 
         // If the player's staying in one spot, bring up the idle animation counter.
         if ((XMen2 == XMen) && (Ys2 == Ys)) { GiveInventory("WaitingTooLong",1); }
@@ -901,6 +899,9 @@ script WEEB_ENTER ENTER
             SentTID = 0;
             Thing_Remove(ShieldTID);
             ShieldTID = 0;
+            Thing_Remove(HaloTID);
+            HaloTID = 0;
+            TakeInventory("MaidenHalo",1);
             TakeInventory("FlashlightOn",1); //flashlightOn[pln] = 0;
             TakeInventory("SentinelUp",1);
             TakeInventory("SentinelActive",1);

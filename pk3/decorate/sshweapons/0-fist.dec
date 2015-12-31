@@ -1521,7 +1521,7 @@ actor ShiningDragonPunchAttack : FastProjectile
     Radius 6
     Height 4
     Damage (75)
-    Speed 600
+    Speed 500
     RenderStyle Add
     Alpha 0.6
     Scale 0.65

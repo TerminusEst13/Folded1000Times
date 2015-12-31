@@ -925,6 +925,37 @@ script WEEB_PUKE3 (void) NET // why am i having to do separate scripts for this 
     GiveInventory("IsJungHaeLin",1);
 }
 
+script WEEB_DISCONNECT (int gone) DISCONNECT
+{
+    int ShieldTID;
+    int SentTID;
+    int HaloTID;
+    int RavenLeftTID;
+    int RavenRightTID;
+    int SphereTID;
+
+    ShieldTID     = 12000 + gone;
+    SentTID       = 13000 + gone;
+    HaloTID       = 14000 + gone;
+    RavenLeftTID  = 15000 + gone;
+    RavenRightTID = 15100 + gone;
+    SphereTID     = 15200 + gone;
+
+    Thing_Remove(SentTID);
+    Thing_Remove(ShieldTID);
+    Thing_Remove(SphereTID);
+    Thing_Remove(RavenLeftTID);
+    Thing_Remove(RavenRightTID);
+    Thing_Remove(HaloTID);
+
+    HaloTID       = 0;
+    RavenLeftTID  = 0;
+    RavenRightTID = 0;
+    SphereTID     = 0;
+    SentTID       = 0;
+    ShieldTID     = 0;
+}
+
 
 
 // [13] Hoo, this shit.

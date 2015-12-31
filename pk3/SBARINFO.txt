@@ -460,17 +460,17 @@ InInventory BFGModeOn, 1
         AspectRatio "4:3"
         {
             DrawImage "HATEICON", 1, 2;
-            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 45, 6;
+            DrawNumber 3, smallfont, gold, HatesphereLifeCounter, 45, 6;
         }
         AspectRatio "16:10"
         {
             DrawImage "HATEICON", -31, 2;
-            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 13, 6;
+            DrawNumber 3, smallfont, gold, HatesphereLifeCounter, 13, 6;
         }
         AspectRatio "16:9"
         {
             DrawImage "HATEICON", -52, 2;
-            DrawNumber 3, smallfont, white, HatesphereLifeCounter, -8, 6;
+            DrawNumber 3, smallfont, gold, HatesphereLifeCounter, -8, 6;
         }
     }
 
@@ -867,17 +867,17 @@ InInventory IAmATraditionalDoomerWhoLikesNumbersOverTokens, 1
         AspectRatio "4:3"
         {
             DrawImage "HATEICON", 1, 2;
-            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 45, 6;
+            DrawNumber 3, smallfont, gold, HatesphereLifeCounter, 45, 6;
         }
         AspectRatio "16:10"
         {
             DrawImage "HATEICON", -31, 2;
-            DrawNumber 3, smallfont, white, HatesphereLifeCounter, 13, 6;
+            DrawNumber 3, smallfont, gold, HatesphereLifeCounter, 13, 6;
         }
         AspectRatio "16:9"
         {
             DrawImage "HATEICON", -52, 2;
-            DrawNumber 3, smallfont, white, HatesphereLifeCounter, -8, 6;
+            DrawNumber 3, smallfont, gold, HatesphereLifeCounter, -8, 6;
         }
     }
 

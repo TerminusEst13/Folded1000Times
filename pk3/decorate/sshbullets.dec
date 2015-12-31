@@ -15,13 +15,14 @@ actor RevolverBullet : BulletBase
         stop
     }
 }
-actor ShottyBullet1 : BulletBase { Damage (10) DamageType "AvengerDamage" Obituary "%k threw %o to the wolves." }
-actor ShottyBullet2 : BulletBaseNoCombo { Damage (10) DamageType "AvengerDamage" Obituary "%k threw %o to the wolves." }
-actor PistolBullet : BulletBase
+actor ShottyBullet1 : BulletBase { Damage (9) DamageType "AvengerDamage" Obituary "%k threw %o to the wolves." }
+actor ShottyBullet2 : BulletBaseNoCombo { Damage (8) DamageType "AvengerDamage" Obituary "%k threw %o to the wolves." }
+
+actor ShottyBullet3 : BulletBase
 {
-    Damage (32)
-    DamageType "RebellionDamage"
-    Obituary "%k pierced %o with the scorpion's stinger."
+    Damage (9)
+    DamageType "AvengerDamage"
+    Obituary "%k threw %o to the wolves." 
     States
     {
     XDeath:
@@ -35,11 +36,11 @@ actor PistolBullet : BulletBase
     }
 }
 
-actor ShottyBullet3 : BulletBase
+actor PistolBullet : BulletBase
 {
-    Damage (10)
-    DamageType "AvengerDamage"
-    Obituary "%k threw %o to the wolves." 
+    Damage (32)
+    DamageType "RebellionDamage"
+    Obituary "%k pierced %o with the scorpion's stinger."
     States
     {
     XDeath:
@@ -184,11 +185,11 @@ actor RevolverBulletTracer : BulletBaseRanged
     }
 }
 
-actor ShottyBullet1Tracer : BulletBaseRangedToaster { Damage (10) DamageType "AvengerDamageStyle" Obituary "%k threw %o to the wolves." }
-actor ShottyBullet2Tracer : BulletBaseRangedToasterNoCombo { Damage (10) DamageType "AvengerDamageStyle" Obituary "%k threw %o to the wolves." }
+actor ShottyBullet1Tracer : BulletBaseRangedToaster { Damage (9) DamageType "AvengerDamageStyle" Obituary "%k threw %o to the wolves." }
+actor ShottyBullet2Tracer : BulletBaseRangedToasterNoCombo { Damage (8) DamageType "AvengerDamageStyle" Obituary "%k threw %o to the wolves." }
 actor ShottyBullet3Tracer : BulletBaseRangedToaster
 {
-    Damage (10)
+    Damage (9)
     DamageType "AvengerDamage"
     Obituary "%k threw %o to the wolves."
     States

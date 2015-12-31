@@ -37,6 +37,7 @@ FROM 0.82 TO 0.9
 - For those playing maps where you jump right in the fray instantly, dst_nointro removes the over-dramatic presentation at the start.
 - Numerous sounds have been converted from Stereo to Mono, since as of this time of writing OpenAL is currently glitched and plays Stereo sounds across the entire map. Theoretically, one can now play entirely in singleplayer in OpenAL in GZDoom and not hear anything especially ear-rendering.
 - The Blackened's death sequence is now significantly more obvious as to when it's actually died.
+- Disconnecting will remove all existing floating buddies hanging around you.
 
 
 

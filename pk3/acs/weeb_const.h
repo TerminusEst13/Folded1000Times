@@ -27,6 +27,7 @@
 #define WEEB_JOY_LOOP                        290
 #define WEEB_PUKE3                           291
 #define WEEB_GLOBAL                          292
+#define WEEB_DISCONNECT                      293
 
 // Definitions
 
@@ -359,7 +360,8 @@ int DemonChangelog =
 - There is now a D_TTFTW replacement.\n\
 - For those playing maps where you jump right in the fray instantly, dst_nointro removes the over-dramatic presentation at the start.\n\
 - Numerous sounds have been converted from Stereo to Mono, since as of this time of writing OpenAL is currently glitched and plays Stereo sounds across the entire map. Theoretically, one can now play entirely in singleplayer in OpenAL in GZDoom and not hear anything especially ear-rendering.\n\
-- The Blackened's death sequence is now significantly more obvious as to when it's actually died.";
+- The Blackened's death sequence is now significantly more obvious as to when it's actually died.\n\
+- Disconnecting will remove all existing floating buddies hanging around you.";
 
 int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V for helping me with these!
 {

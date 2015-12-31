@@ -624,19 +624,19 @@ script SINO_ENTER ENTER
         // inventory item is still there, they're given another item saying that
         // they double-tapped the button.
 
-          if (keypressed(BT_MOVERIGHT) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+          if (keypressed(BT_MOVERIGHT) && buttons & BT_ATTACK)
             { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyRight",6); }}}
-          if (keypressed(BT_MOVELEFT) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+          if (keypressed(BT_MOVELEFT) && buttons & BT_ATTACK)
             { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyLeft",6); }}}
-          if (keypressed(BT_FORWARD) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+          if (keypressed(BT_FORWARD) && buttons & BT_ATTACK)
             { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyForward",6); }}}
-          if (keypressed(BT_BACK) && CheckInventory("SynthFire") == 1)//keypressed(BT_ATTACK))
+          if (keypressed(BT_BACK) && buttons & BT_ATTACK)
             { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyBack",6); }}}
@@ -713,6 +713,24 @@ script SINO_ENTER ENTER
 
         if (isDead(0))
         {
+            Thing_Remove(SphereTID);
+            SphereTID = 0;
+            TakeInventory("HatesphereUp",1);
+            TakeInventory("HatesphereActive",1);
+            TakeInventory("HatesphereLifeCounter",0x7FFFFFFF);
+
+            Thing_Remove(RavenLeftTID);
+            RavenLeftTID = 0;
+            Thing_Remove(RavenRightTID);
+            RavenRightTID = 0;
+            TakeInventory("RavenLeftActive",1);
+            TakeInventory("RavenLeftLifeCounter",0x7FFFFFFF);
+            TakeInventory("RavenRightActive",1);
+            TakeInventory("RavenRightLifeCounter",0x7FFFFFFF);
+            TakeInventory("RavenUp",1);
+            TakeInventory("RavenLeftUp",1); TakeInventory("RavenRightUp",1);
+            TakeInventory("RavenLeftDead",1); TakeInventory("RavenRightDead",1);
+
             TakeInventory("FlashlightOn",1);//flashlightOn[pln] = 0;
             TakeInventory("SSHNightVision",1);
             if (GetCvar("dst_debug") == 1) { Log(s:"Player ", d:pln, s:" dead, terminating SINO_ENTER."); }
