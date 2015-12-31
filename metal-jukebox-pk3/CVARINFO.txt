@@ -1,1 +1,3 @@
-server int mus_runninginzdoom = 1;
+server int mus_runninginzdoom = 0;
+user int nomusic            = 0;
+user int noinfo             = 0;

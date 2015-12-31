@@ -7,6 +7,21 @@ Ryan Cordell (Fixing the "song xxx" bug)
 Marrub (Converting all the ACS to use strParam instead of an array, clientsiding the music as well)
 
 
+FROM V3.2 TO V3.5
+===========================
+- 25 more songs.
+- SpawnForced was introduced into Zandronum since the update. ZDoom check
+  rewritten with this in mind.
+- nomusic was a server cvar instead of a user cvar. This has been fixed.
+- The DemonSteele check would break at seemingly random times and summon a
+  Revenant to punch the player. This has been fixed.
+
+
+FROM V3 TO V3.2
+===========================
+- 25 more songs.
+- Conversion of cvar handling from ConsoleCommand to cvarinfo.
+
 
 FROM V2 TO V3:
 ===========================

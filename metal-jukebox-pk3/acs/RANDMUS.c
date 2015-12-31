@@ -17,11 +17,16 @@ function int getSongStr(int SongNumber, int Type)
   int PrefixString;
   int OutputString;
   
-  if(Type == SONGSTR_INFO) {
+  if(Type == SONGSTR_INFO)
+  {
     PrefixString = "JUKEBOX_";
-  } else if(Type == SONGSTR_SONG) {
+  }
+  else if(Type == SONGSTR_SONG)
+  {
     PrefixString = "Song";
-  } else {
+  }
+  else
+  {
     PrefixString = "OhGodThisIsAnError";
   }
   
@@ -47,8 +52,10 @@ function int getMaxRandSong(void)
   int temp;
   int i;
   
-  for(i = 1; i < 9999; i++) { // Please do not use more than 9999 songs.
-    temp = getSongStr(i, SONGSTR_INFO); // Compare the string and the language text, if they're the same it's the last one.
+  for(i = 1; i < 9999; i++)
+  { // Please do not use more than 9999 songs.
+    temp = getSongStr(i, SONGSTR_INFO); // Compare the string and the language text,
+                                        // if they're the same it's the last one.
     if(!CStrCmp(temp, StrParam(l:temp)))
     {
       return i - 1;
@@ -58,13 +65,24 @@ function int getMaxRandSong(void)
   return -1;
 }
 
+script 345 OPEN
+{
+    int r = unusedTID(37000, 47000);
+
+    delay(1);
+    if (SpawnForced("Doomsphere",0,0,0,r,0))
+    { Thing_Remove(r); SetCVar("mus_runninginzdoom",0); }
+    else
+    { SetCVar("mus_runninginzdoom",1); }
+}
+
 Script 346 OPEN NET clientside
 {
   int i;
   int randomhack;
   int lastmus;
   
-  if(GetCvar("norandommusic") == 0)
+  if(GetCvar("nomusic") == 0)
   {
     MusicRandomizerOn = 1;
     
@@ -76,9 +94,9 @@ Script 346 OPEN NET clientside
     }
     else
     {
-      // Zandronum is funny about this. Online, it generates the same random seed every
-      // time, even though that's the opposite of what you'd expect from a random call.
-      // I have to use a workaround to generate pseudo-random behavior.
+      // [13] Zandronum is funny about this. Online, it generates the same random seed
+      // every time, even though that's the opposite of what you'd expect from a random
+      // call. I have to use a workaround to generate pseudo-random behavior.
       // But it's better than dealing with ZDoom's barely-functional slapshod netcode!
       
       // [marrub] The reason this happens is the C/S code wants to be extra-deterministic
@@ -102,7 +120,7 @@ Script 346 OPEN NET clientside
     
     Delay(35);
     
-    if(GetCvar("nomusicinfo") == 0)
+    if(GetCvar("noinfo") == 0)
     {
       MusicInfo = getSongStr(i, SONGSTR_INFO);
       if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)))
@@ -124,16 +142,16 @@ script 347 OPEN clientside
   
   if(GetCvar("mus_runninginzdoom") == 0) // No option to disable on ZDoom because I'm pretty sure the only way this'll
   {                                      // be happening is when you manually load it, ergo want to listen to it...
-    if(!GetCvar("norandommusic"))
+    if(!GetCvar("nomusic"))
     {
-      ConsoleCommand("set norandommusic 0");
-      ConsoleCommand("archivecvar norandommusic");
+      ConsoleCommand("set nomusic 0");
+      ConsoleCommand("archivecvar nomusic");
     }
     
-    if(!GetCvar("nomusicinfo"))
+    if(!GetCvar("noinfo"))
     {
-      ConsoleCommand("set nomusicinfo 0");
-      ConsoleCommand("archivecvar nomusicinfo");
+      ConsoleCommand("set noinfo 0");
+      ConsoleCommand("archivecvar noinfo");
     }
   }
 }
@@ -150,7 +168,7 @@ script 348 (int musicshit) NET clientside // Hitting "Next Song".
       SetMusic("silence");
       LocalAmbientSound("music/shift",127);
       Delay(35);
-      //if (GetCvar("norandommusic") == 0) // If they're hitting Next Song, even with the randomizer off, they want music.
+      //if (GetCvar("nomusic") == 0) // If they're hitting Next Song, even with the randomizer off, they want music.
       //{
         MusicRandomizerOn = 1;
         if (GetCvar("mus_runninginzdoom") == 1)
@@ -175,7 +193,7 @@ script 348 (int musicshit) NET clientside // Hitting "Next Song".
           MusicCurrentSong = i;
           SaveCVar("mus_cl_lastmusic", i + 1);
         }
-        if (GetCvar("nomusicinfo") == 0)
+        if (GetCvar("noinfo") == 0)
         {
           MusicInfo = getSongStr(i, SONGSTR_INFO);
           if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)))
@@ -205,37 +223,30 @@ script 349 (int fuckery) NET clientside // Manually changing the song
 {
   if(fuckery > 0)
   {
-    //if(GetCvar("norandommusic") == 0) // Likewise, if they're manually changing the song, they want music.
-    //{
-      SetMusic("silence");
-      LocalAmbientSound("music/shift",127);
-      Delay(35);
-      
-      MusicRandomizerOn = 1;
-      if(GetCvar("mus_runninginzdoom") == 1)
+    SetMusic("silence");
+    LocalAmbientSound("music/shift",127);
+    Delay(35);
+    
+    MusicRandomizerOn = 1;
+    if(GetCvar("mus_runninginzdoom") == 1)
+    {
+      SetMusic(getSongStr(fuckery, SONGSTR_SONG),0);
+      MusicCurrentSong = fuckery;
+    }
+    else
+    {
+      SetMusic(getSongStr(fuckery, SONGSTR_SONG), 0);
+      MusicCurrentSong = fuckery;
+    }
+    
+    if(GetCvar("noinfo") == 0)
+    {
+      MusicInfo = getSongStr(fuckery, SONGSTR_INFO);
+      if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)))
       {
-        SetMusic(getSongStr(fuckery, SONGSTR_SONG),0);
-        MusicCurrentSong = fuckery;
+        SetFont("SmallFont");
+        hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
       }
-      else
-      {
-        SetMusic(getSongStr(fuckery, SONGSTR_SONG), 0);
-        MusicCurrentSong = fuckery;
-      }
-      
-      if(GetCvar("nomusicinfo") == 0)
-      {
-        MusicInfo = getSongStr(fuckery, SONGSTR_INFO);
-        if(CStrCmp(MusicInfo, StrParam(l:MusicInfo)))
-        {
-          SetFont("SmallFont");
-          hudmessage(l:MusicInfo; HUDMSG_FADEINOUT | HUDMSG_LOG, 153, CR_WHITE, 0.1, 0.8, 3.0, 0.5, 1.0);
-        }
-      }
-    //}
-    //else
-    //{
-    //  MusicRandomizerOn = 0;
-    //}
+    }
   }
 }
