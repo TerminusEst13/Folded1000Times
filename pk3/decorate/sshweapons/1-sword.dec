@@ -1301,7 +1301,7 @@ actor 01Tiger : Fists
         TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         goto FiredPowered
     FirePoweredHitWall:
-        TNT1 A 0 Radius_Quake(3,10,0,16,0)
+        TNT1 A 0 Radius_Quake(3,10,0,8,0)
         TNT1 A 0 A_Stop
         W0S5 MNOPQR 1 BRIGHT
         TNT1 AAAAAAA 1
@@ -1325,7 +1325,7 @@ actor 01Tiger : Fists
         TNT1 A 5 A_WeaponReady(WRF_NOSWITCH)
         goto FiredPowered
     FirePoweredHitWall2:
-        TNT1 A 0 Radius_Quake(3,10,0,16,0)
+        TNT1 A 0 Radius_Quake(3,10,0,8,0)
         TNT1 A 0 A_Stop
         W0S6 HIJKL 1 BRIGHT
         TNT1 AAAAAAAA 1
@@ -1453,7 +1453,7 @@ actor 01Tiger : Fists
         TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",0,0,0,0,0)
         TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",8,0,-1,0,0)
         TNT1 A 0 A_FireCustomMissile("TriumphPoweredRangeSlash",16,0,-2,0,0)
-        TNT1 A 0 Radius_Quake(3,8,0,16,0)
+        TNT1 A 0 Radius_Quake(3,8,0,8,0)
         W0S7 JKLMN 1 BRIGHT
         TNT1 A 15
         TNT1 A 55 A_WeaponReady(WRF_NOSWITCH)
@@ -1772,7 +1772,7 @@ actor HitSlightFlashPowered : CustomInventory
         TNT1 A 0
         TNT1 A 0 A_SetBlend("White",0.1,10)
         TNT1 A 0 A_Stop
-        TNT1 A 0 Radius_Quake(2,10,0,16,0)
+        TNT1 A 0 Radius_Quake(2,10,0,8,0)
         stop
     UseStop:
         TNT1 A 0

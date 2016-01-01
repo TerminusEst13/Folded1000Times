@@ -1651,7 +1651,7 @@ actor PunchWorldQuakeRedone
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 Radius_Quake(7,7,0,16,0)
+        TNT1 A 0 Radius_Quake(7,7,0,8,0)
         TNT1 A 1
         stop
     }
@@ -1667,7 +1667,7 @@ actor PunchWorldQuakeRedoneRanged
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 Radius_Quake(8,10,0,24,0)
+        TNT1 A 0 Radius_Quake(8,10,0,16,0)
         TNT1 A 1
         stop
     }

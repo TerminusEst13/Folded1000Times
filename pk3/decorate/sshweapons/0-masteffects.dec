@@ -153,7 +153,7 @@ ACTOR MastodonTrailTiny
         TNT1 A 0
         TNT1 A 0 //A_JumpIf(ScaleX <= 0, "NULL")
         TNT1 A 0 //A_SetScale(ScaleX -0.01, ScaleY -0.01)
-        YAE4 A 1 bright A_FadeOut(0.5)
+        YAE4 A 1 bright A_FadeOut(0.1)
         Loop
     Null:
         TNT1 A 0
@@ -211,38 +211,38 @@ ACTOR NukeTrail
 
 ACTOR MinibeliskInherit
 {
-	+NOINTERACTION
-	+NOGRAVITY
+    +NOINTERACTION
+    +NOGRAVITY
     +CLIENTSIDEONLY
 }
 
 
 ACTOR MinibeliskSmoke : MinibeliskInherit
 {
-	Renderstyle Add
-	Alpha 0.4
-	States
-	{
-	Spawn:
-	TNT1 A 0
-	OBSK FGHIJKLMNOPQRST 1
-	OBSK UVWXYZ 1 A_FadeOut(0.05)
-	Stop
-	}
+    Renderstyle Add
+    Alpha 0.4
+    States
+    {
+    Spawn:
+    TNT1 A 0
+    OBSK FGHIJKLMNOPQRST 1
+    OBSK UVWXYZ 1 A_FadeOut(0.05)
+    Stop
+    }
 }
 
 ACTOR MinibeliskSmokeDeath : MinibeliskInherit
 {
-	Renderstyle Add
-	Alpha 0.75
-	States
-	{
-	Spawn:
-	TNT1 A 0
-	OBSK FGHIJKLMNOPQRST 2
-	OBSK UVWXYZ 2 A_FadeOut(0.1)
-	Stop
-	}
+    Renderstyle Add
+    Alpha 0.75
+    States
+    {
+    Spawn:
+    TNT1 A 0
+    OBSK FGHIJKLMNOPQRST 2
+    OBSK UVWXYZ 2 A_FadeOut(0.1)
+    Stop
+    }
 }
 
 ACTOR MastodonTinyRailTrail
@@ -258,7 +258,7 @@ ACTOR MastodonTinyRailTrail
     Spawn:
         TNT1 A 0
         TNT1 A 0 //A_SetScale(ScaleX -0.0775, ScaleY -0.0875)
-	    YAE4 A 1
+        YAE4 A 1
         YAE4 AAA 1 bright A_SpawnItemEx("ObeliskTrailSpark", random(4,-4), random(4,-4), random(4,-4), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
     Trolololo:
         YAE4 A 0 //A_JumpIf(ScaleY <= 0, "NULL")
@@ -279,8 +279,8 @@ ACTOR ObeliskTrailSpark
     States
     {
     Spawn:
-	YAE4 A 0
-	YAE4 A 0 //A_SetScale(ScaleX-0.00075)
+    YAE4 A 0
+    YAE4 A 0 //A_SetScale(ScaleX-0.00075)
     YAE4 A 3 bright A_ChangeVelocity (frandom(-0.8, 0.8), frandom(-0.8, 0.8), frandom(-0.8, 0.8), 0)
     YAE4 A 1 bright A_FadeOut(0.05)
     Loop
@@ -905,6 +905,173 @@ ACTOR MastodonHitFlash : MastodonBase
         "####" "#" 0 //A_SetScale(ScaleX - frandom(0.002,0.005))
         "####" "#" 0 //A_JumpIf(ScaleX <= 0, "Null")
         MSFL B 1 Bright A_FadeOut(frandom(0.06,0.05))
+        Loop
+    }
+}
+
+
+
+ACTOR MastodonNovaTrail : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 0.4
+    States
+    {
+    Spawn:
+        TNT1 AA 0 A_Jump(256,"FrameA","FrameB","FrameC","FrameD")
+    FrameA:
+        MSFL A 0
+        Goto Main
+    FrameB:
+        MSFL B 0
+        Goto Main
+    FrameC:
+        MSFL C 0
+        Goto Main
+    FrameD:
+        MSFL D 0
+        Goto Main
+    Main:
+        //This one's for use with SetScale on.
+        /*MSBL AA 0 A_SpawnItemEx("MastodonNukeTrailSmoke",frandom(5.0,-5.0),frandom(5.0,-5.0),frandom(5.0,-5.0),
+                                                                frandom(0.4,0.7),frandom(0.4,0.7),random(frandom(-0.4,-0.7),frandom(0.4,0.7)),
+                                                                frandom(0.0,360.0),SXF_CLIENTSIDE,224)*/
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeTrailSmoke",frandom(25.0,-25.0),frandom(25.0,-25.0),frandom(25.0,-25.0),
+                                                                frandom(1.4,0.7),frandom(1.4,0.7),random(frandom(-1.4,-0.7),frandom(1.4,0.7)),
+                                                                frandom(0.0,360.0),SXF_CLIENTSIDE,214)
+        "####" "#" 0 A_SpawnItemEx("MastodonNukeTrailParticle",0,0,0,
+                                                                frandom(0.4,0.7),frandom(0.4,0.7),frandom(1.5,3.7),
+                                                                frandom(0.0,360.0),SXF_CLIENTSIDE,236)
+    Looplet:
+        "####" "#" 1 Bright A_FadeOut(0.05)
+        Loop
+    }
+}
+
+//Impact
+ACTOR MastodonNovaImpact : MastodonBase
+{
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 AA 0 A_SpawnItemEx("MastodonNovaRing1",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        TNT1 A 0 A_SpawnItemEx("MastodonNovaRing2",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        TNT1 A 0 A_SpawnItemEx("MastodonNovaFlash",0,0,0,0,0,0,0,SXF_CLIENTSIDE)
+        TNT1 A 0 A_SpawnItemEx("MastodonHitRing",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0) 
+        TNT1 A 0 A_SpawnItemEx("MastodonHitFlash",0,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
+        Stop
+    }
+}
+
+
+ACTOR MastodonNovaRing1 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 1.2
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(0.5)
+    Looplet:
+        //"####" "#" 0 A_SetScale(ScaleX + frandom(0.02,0.03))
+        MSRN E 1 Bright A_FadeOut(frandom(0.05,0.03))
+        Loop
+    }
+}
+
+ACTOR MastodonNovaRing2 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 1.2
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(0.5)
+    Looplet:
+        //"####" "#" 0 A_SetScale(ScaleX + frandom(0.01,0.02))
+        MSRN C 1 Bright A_FadeOut(frandom(0.05,0.03))
+        Loop
+    }
+}
+
+ACTOR MastodonNovaFlash : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 1.5
+    States
+    {
+    Spawn:
+        "####" "##" 0 A_Jump(256,"SpriteA","SpriteB","SpriteC","SpriteD")
+    SpriteA:
+        MSFL A 0
+        Goto Main
+    SpriteB:
+        MSFL B 0
+        Goto Main
+    SpriteC:
+        MSFL C 0
+        Goto Main
+    SpriteD:
+        MSFL D 0
+        Goto Main
+    Main:
+        "####" "#" 1 Bright A_FadeOut(frandom(0.05,0.03))
+        //"####" "#" 0 A_SetScale(ScaleX - frandom(0.005,0.015))
+        //"####" "#" 0 A_JumpIf(ScaleX <= 0, "Null")
+        Loop
+    }
+}
+
+
+
+
+//Extra flashy stuff
+ACTOR MastodonNukeRing3 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 5.0
+    States
+    {
+    Spawn:
+        "####" "##" 0 //A_SetScale(1.0)
+    Looplet:
+        //"####" "#" 0 A_SetScale(ScaleX + frandom(0.1,0.2))
+        MSRN E 1 Bright A_FadeOut(frandom(0.01,0.02))
+        Loop
+    }
+}
+
+ACTOR MastodonNukeFlash3 : MastodonBase
+{
+    +CLIENTSIDEONLY
+    Alpha 0.7
+    Scale 6.0
+    States
+    {
+    Spawn:
+        "####" "##" 0 A_Jump(256,"SpriteA","SpriteB","SpriteC","SpriteD")
+    SpriteA:
+        MSFL A 0
+        Goto Main
+    SpriteB:
+        MSFL B 0
+        Goto Main
+    SpriteC:
+        MSFL C 0
+        Goto Main
+    SpriteD:
+        MSFL D 0
+        Goto Main
+    Main:
+        "####" "#" 1 Bright A_FadeOut(frandom(0.01,0.015))
+        //"####" "#" 0 A_SetScale(ScaleX - frandom(0.015,0.025))
+        //"####" "#" 0 A_JumpIf(ScaleX <= 0, "Null")
         Loop
     }
 }
