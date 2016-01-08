@@ -508,8 +508,12 @@ script SINO_ENTER ENTER
               GiveInventory("KiCounter4", KiCount - 3000); } //SetInventory("KiCounter3",(KiCount - 200)); }
             else { TakeInventory("KiCounter4",0x7FFFFFFF); }
         // If the player has less than 20 of SuperMeterCounter, they slowly regenerate.
-        if (KiCount < 200) { if (EverybodyNeeds >= 280)
-            { GiveInventory("KiMeterCounter",10); EverybodyNeeds = 0; }}
+
+        if (EverybodyNeeds >= 28 && KiCount < 200 && CheckInventory("BFGModeOn") == 0)
+            { GiveInventory("KiMeterCounter",1); EverybodyNeeds = 0; }
+        if (EverybodyNeeds >= 35 && CheckInventory("BFGModeOn") == 1)
+            { TakeInventory("KiMeterCounter",1); EverybodyNeeds = 0; }
+
         EverybodyNeeds++;
 
         // 666 COMBO! SUPER SWEET STYLISH!
@@ -625,19 +629,19 @@ script SINO_ENTER ENTER
         // they double-tapped the button.
 
           if (keypressed(BT_MOVERIGHT) && buttons & BT_ATTACK)
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) || (CheckInventory("BFGModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyRight") >= 1) { GiveInventory("DoubleTapRight",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyRight",6); }}}
           if (keypressed(BT_MOVELEFT) && buttons & BT_ATTACK)
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) || (CheckInventory("BFGModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyLeft") >= 1) { GiveInventory("DoubleTapLeft",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyLeft",6); }}}
           if (keypressed(BT_FORWARD) && buttons & BT_ATTACK)
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) || (CheckInventory("BFGModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyForward") >= 1) { GiveInventory("DoubleTapForward",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyForward",6); }}}
           if (keypressed(BT_BACK) && buttons & BT_ATTACK)
-            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) ) && CheckInventory("DoubleTapCooldown") == 0)
+            { if ( ((CheckInventory("HaggarModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("RangedModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) || (CheckInventory("TricksterModeOn") == 1 && CheckInventory("KiMeterCounter") >= 200) || (CheckInventory("BFGModeOn") == 1 && CheckInventory("KiMeterCounter") >= 300) ) && CheckInventory("DoubleTapCooldown") == 0)
                     { if (CheckInventory("DoubleTapReadyBack") >= 1) { GiveInventory("DoubleTapBack",1); GiveInventory("DoubleTapCooldown",16); }
                       else { GiveInventory("DoubleTapReadyBack",6); }}}
         }

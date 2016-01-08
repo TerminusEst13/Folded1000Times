@@ -222,6 +222,7 @@ script SINO_UNLOADING unloading
     TakeInventory("SwapToHaggarMode",1);
     TakeInventory("SwapToRangedMode",1);
     TakeInventory("SwapToTricksterMode",1);
+    TakeInventory("StyleSwapping",1);
     TakeInventory("Grappling",1);
 
     if (CheckInventory("IsSSH") == 1)

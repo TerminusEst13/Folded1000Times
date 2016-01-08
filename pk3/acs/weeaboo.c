@@ -578,6 +578,10 @@ int GravityOfLight;
     case WEEB_DEC_CLASSCHECK:
         SetResultValue(DemonSteeleClass);
         break;
+
+    case WEEB_DEC_SENTCHECK:
+        SetResultValue(GetCvar("dst_nosupport"));
+        break;
     }
 }
 

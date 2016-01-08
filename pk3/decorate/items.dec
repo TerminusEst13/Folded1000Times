@@ -1283,11 +1283,17 @@ actor BlindGuardianPickup : CustomInventory replaces Blursphere
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SENTCHECK) == 1, "Spawn2")
         TNT1 A 0 A_SpawnItemEx("ShieldDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
         TNT1 A 0 A_SpawnItemEx("SphereDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
     Spawn1:
         TNT1 A 2 A_SpawnItemEx("RedPowerLine",random(1200,-1200)/100.00,random(1200,-1200)/100.00,16,0,0,2,0,160,0)
         loop
+    Spawn2:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("FortuneCookie",0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
     Pickup:
         TNT1 A 0 A_JumpIfInventory("IsSSH",1,"PickupSSH")
         TNT1 A 0 A_JumpIfInventory("BlindGuardianShieldUp",1,"PickupHeal")
@@ -1851,11 +1857,17 @@ actor SentinelPickup : CustomInventory replaces AllMap
         //SENT Z 30
         TNT1 A 0
         TNT1 A 1
+        TNT1 A 0 A_JumpIf( ACS_ExecuteWithResult(WEEB_DECORATE,WEEB_DEC_SENTCHECK) == 1, "Spawn2")
         TNT1 A 0 A_SpawnItemEx("SentinelDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
         TNT1 A 0 A_SpawnItemEx("RavenDisguise",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_SETMASTER,0)
     Spawn1:
         TNT1 A 30
         loop
+    Spawn2:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("FortuneCookie",0,0,0,0,0,0,32)
+        TNT1 A 1
+        stop
     Pickup:
         TNT1 A 0
         TNT1 A 0 ACS_ExecuteWithResult(275,0,7)

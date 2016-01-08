@@ -25,6 +25,7 @@ server int dst_nohealth          = 0;
 server int dst_noarmor           = 0;
 server int dst_nopistol          = 0;
 server int dst_nointro           = 0;
+server int dst_nosupport         = 0;
 
 // Clientside cvars
 user int dst_cl_nomusic          = 0;

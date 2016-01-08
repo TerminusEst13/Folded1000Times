@@ -65,6 +65,7 @@ OptionMenu "Changes-TurnThePage"
     Option "No health spawns",               "dst_nohealth", "OnOff"
     Option "No armor spawns",                "dst_noarmor", "OnOff"
     Option "No pistol",                      "dst_nopistol", "OnOff"
+    Option "No support items",               "dst_nosupport", "OnOff"
     StaticText " "
     StaticText "Figure These Out Yourself", 1
     Option "OH FUCK, SKELETONS!",            "dst_2brutal", "OnOff"
