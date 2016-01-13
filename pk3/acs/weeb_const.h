@@ -32,7 +32,7 @@
 // Definitions
 
 #define TRAILCOUNT 3
-#define QUOTECOUNT 160
+#define QUOTECOUNT 200
 #define IRONMUS 7
 #define DEATHQUOTES 30
 
@@ -525,7 +525,47 @@ int CookieQuote[QUOTECOUNT] = // Thanks to Kinsie, ObviousIssues, and Hostile V 
 "You will enjoy good health. Until you die.",
 "There is no love so pure and passionate as the love of oneself. Just don't do it in public. Ew.",
 "They say 'May your dreams come true', but how many of your dreams aren't weird shit?",
-"Do you really think you'll find deep philosophical meaning from a little slip of paper inside a cookie?"
+"Do you really think you'll find deep philosophical meaning from a little slip of paper inside a cookie?",
+"For twelve years you've been asking 'Who is John Galt?' This is John Galt speaking. I'm the man who's taken away your victims and thus destroyed your world. You've heard it said that this is an age of moral crisis and that Man's sins are destroying the world. But your chief virtue has been sacrifice, and you've demanded more sacrifices at every disaster. You've sacrificed justice to mercy and happiness to duty. So why should you be afraid of the world around you? Your world is only the product of your sacrifices. While you were dragging the men who made your happiness possible to your sacrificial altars, I beat you to it. I reached them first and told them about the game you were playing and where it would take them. I explained the consequences of your 'brother-love' morality, which they had been too innocently generous to understand. You won't find them now, when you need them more than ever. We're on strike against your creed of unearned rewards and unrewarded duties. If you want to know how I made them quit, I told them exactly what I'm telling you tonight. I taught them the morality of Reason – that it was right to pursue one's own happiness as one's principal goal in life. I don't consider the pleasure of others my goal in life, nor do I consider my pleasure the goal of anyone else's life. I am a trader. I earn what I get in trade for what I produce. I ask for nothing more or nothing less than what I earn. That is justice. I don't force anyone to trade with me; I only trade for mutual benefit. Force is the great evil that has no place in a rational world. One may never force another human to act against his/her judgment. If you deny a man's right to Reason, you must also deny your right to your own judgment. Yet you have allowed your world to be run by means of force, by men who claim that fear and joy are equal incentives, but that fear and force are more practical. You've allowed such men to occupy positions of power in your world by preaching that all men are evil from the moment they're born. When men believe this, they see nothing wrong in acting in any way they please. The name of this absurdity is 'original sin'. That's inmpossible. That which is outside the possibility of choice is also outside the province of morality. To call sin that which is outside man's choice is a mockery of justice. To say that men are born with a free will but with a tendency toward evil is ridiculous. If the tendency is one of choice, it doesn't come at birth. If it is not a tendency of choice, then man's will is not free.", // This is about as much as the screen will take.
+"You have selected Microsoft Sam as the computer's default voice.",
+"What's the smallest amount of money you would reach into a toilet to get?",
+"Hey girl, let's turn this bouncy house into a bouncy home.",
+"I want a lady in the streets and a lady in the sheets. I want a lady covering the exits, one watching the car park, and one sniping from the roof.",
+"I'm getting worried, my boomerang should have been back hours ago.",
+"Son, I'm sorry you heard your mother and I fighting. But she's got a long way to go before she faces the Undertaker at Wrestlemania.",
+"Whoever named them missiles wasn't very optimistic.",
+"Gun safety helps save foolish lives. That's why God invented knives. Burma shave.",
+"A balanced person gives as good as they get. Don't do that. You're killing people, here.",
+"Say it with flowers. Daisy cutters count.",
+"I'll call you back, Cheryl, someone is rudely interrupting my alone time.",
+"FWD: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: Fwd: URGENT",
+"The lottery gives you about a 1 in 200 million chance you won't be going to work tomorrow. Alcohol will give you a 1 in 5.",
+"No. Of course I'm not mad. It's fine. It's fine!",
+"For a really awkward time, call me.",
+"If you love someone, poison them a little bit each day. If they don't suspect you at all, they might be the one.",
+"If you love them, set them free. If you REALLY love them, amputate limbs for your own personal memento.",
+"Sixteen men on a dead man's chest is how I'm gonna start my next yaoi fanfiction.",
+"Lose weight fast! See our associate Revenants for more details!",
+"So is it pronounced gibs or jibs?",
+"Hate. Let me tell you how much I've come to hate you since I began to live.",
+"SMUG INTELLECTUAL. Formerly-rampant human-coded AI with a sense of humor seeks bipedal oxygen-breathing cyborg for serious relationship in the galactic core. I've got cool guns if you like to break stuff. No yuppies. MRa2572 (5/23).",
+"do you like me y/n",
+"I dunno why people think you're into marrying Sue. Who even is Sue?",
+"Not now, I have a headache.",
+"Why is an angry drunk not called mean-spirited?",
+"Is this the real life? Is this just fantasy?",
+"I fell into a burning ring of fire, I went down down down and the flames went higher.",
+"It's a long way to the top, if you wanna rock n' roll.",
+"Take your flame, ignite the world.",
+"I am not a number. I am a free man!",
+"I understand about indecision, but I don't care if I get behind. People living in competition, all I want is to have my peace of mind.",
+"If you choose not to decide, you still have made a choice.",
+"Congratulations. You've just decoded the secret message. Please send your answer to Old Pink, in care of the Funny Farm.",
+"Good girls get their kicks after six.",
+"Acquire proficiency.",
+"Gee, I sure hope nothing blows up.",
+"Baka.",
+"Nope. Can't think of anything. Sorry."
 };
 
 int DeadQuotes[DEATHQUOTES] =

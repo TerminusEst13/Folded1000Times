@@ -2,6 +2,7 @@ FROM 0.9 TO 0.91
 =======================================
 - The boolean StyleSwapping is now taken away during intermission, which will keep Shihong from getting locked into one style if transforming mid-map.
 - A new cvar, dst_nosupport, has been added to take away support pickups like the Hatesphere, Ravens, Sentinel, and Blind Guardian. They're replaced with a cookie. Cookies are nice.
+- 40 extra fortune cookie messages have been added for a nice, even 200.
 
 
 FROM 0.82 TO 0.9

@@ -58,7 +58,7 @@ skill hard
 	SpawnFilter = Hard
 	Name = "Hard"
     PlayerClassName = "Hae-Lin", "Facing Hell" // Ozzy Osbourne
-    PlayerClassName = "Shihong", "Seek & Destroy" // Metallica
+    PlayerClassName = "Shihong", "Seek and Destroy" // Metallica
 	MustConfirm = "$CONFIRM_HARD"
     TextColor = white
 }
@@ -70,7 +70,7 @@ skill nightmare
 	SpawnFilter = Nightmare
 	Name = "Nightmare"
     PlayerClassName = "Hae-Lin", "Killing Machine" // Judas Priest
-    PlayerClassName = "Shihong", "All Guns Blazing" // Saxon
+    PlayerClassName = "Shihong", "Dawn of Victory" // Iron Fire
 	MustConfirm = "$CONFIRM_NIGHTMARE"
     TextColor = white
 	Aggressiveness = 0.55
